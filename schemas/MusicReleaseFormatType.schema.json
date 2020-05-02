@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/MusicReleaseFormatType",
+  "title": "MusicReleaseFormatType",
+  "description": "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
+  "type": "object",
+  "format": "http://schema.org/MusicReleaseFormatType",
+  "oneOf": [
+    {
+      "description": "DigitalAudioTapeFormat.",
+      "const": "DigitalAudioTapeFormat"
+    },
+    { "description": "CDFormat.", "const": "CDFormat" },
+    { "description": "VinylFormat.", "const": "VinylFormat" },
+    { "description": "CassetteFormat.", "const": "CassetteFormat" },
+    { "description": "LaserDiscFormat.", "const": "LaserDiscFormat" },
+    { "description": "DigitalFormat.", "const": "DigitalFormat" },
+    { "description": "DVDFormat.", "const": "DVDFormat" }
+  ]
+}

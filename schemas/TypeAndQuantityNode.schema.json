@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/TypeAndQuantityNode",
+  "title": "TypeAndQuantityNode",
+  "description": "A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.",
+  "type": "object",
+  "format": "http://schema.org/TypeAndQuantityNode",
+  "allOf": [
+    {
+      "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "properties": {
+    "unitCode": {
+      "description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+      "type": "string",
+      "format": "uri"
+    },
+    "typeOfGood": {
+      "description": "The product that this structured value is referring to.",
+      "anyOf": [
+        { "$ref": "Service.schema.json" },
+        { "$ref": "Product.schema.json" }
+      ]
+    },
+    "amountOfThisGood": {
+      "description": "The quantity of the goods included in the offer.",
+      "format": "http://schema.org/Number"
+    },
+    "unitText": {
+      "description": "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\nunitCode.",
+      "format": "http://schema.org/Text"
+    },
+    "businessFunction": {
+      "description": "The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.",
+      "$ref": "BusinessFunction.schema.json"
+    }
+  }
+}

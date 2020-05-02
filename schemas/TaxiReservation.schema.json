@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/TaxiReservation",
+  "title": "TaxiReservation",
+  "description": "A reservation for a taxi.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use Offer.",
+  "type": "object",
+  "format": "http://schema.org/TaxiReservation",
+  "allOf": [
+    {
+      "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use Offer.",
+      "$ref": "Reservation.schema.json"
+    }
+  ],
+  "properties": {
+    "pickupTime": {
+      "description": "When a taxi will pickup a passenger or a rental car can be picked up.",
+      "format": "http://schema.org/DateTime"
+    },
+    "partySize": {
+      "description": "Number of people the reservation should accommodate.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "type": "integer" },
+          { "$ref": "QuantitativeValue.schema.json" }
+        ]
+      }
+    },
+    "pickupLocation": {
+      "description": "Where a taxi will pick up a passenger or a rental car can be picked up.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    }
+  }
+}

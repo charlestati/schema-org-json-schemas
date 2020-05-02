@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/ProductModel",
+  "title": "ProductModel",
+  "description": "A datasheet or vendor specification of a product (in the sense of a prototypical description).",
+  "type": "object",
+  "format": "http://schema.org/ProductModel",
+  "allOf": [
+    {
+      "description": "Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.",
+      "$ref": "Product.schema.json"
+    }
+  ],
+  "properties": {
+    "predecessorOf": {
+      "description": "A pointer from a previous, often discontinued variant of the product to its newer variant.",
+      "type": "array",
+      "items": { "$ref": "ProductModel.schema.json" }
+    },
+    "successorOf": {
+      "description": "A pointer from a newer variant of a product  to its previous, often discontinued predecessor.",
+      "type": "array",
+      "items": { "$ref": "ProductModel.schema.json" }
+    },
+    "isVariantOf": {
+      "description": "A pointer to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive.",
+      "type": "array",
+      "items": { "$ref": "ProductModel.schema.json" }
+    }
+  }
+}

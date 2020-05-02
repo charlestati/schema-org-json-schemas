@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/TradeAction",
+  "title": "TradeAction",
+  "description": "The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.",
+  "type": "object",
+  "format": "http://schema.org/TradeAction",
+  "allOf": [
+    {
+      "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\n\nSee also blog post and Actions overview document.",
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "properties": {
+    "priceSpecification": {
+      "description": "One or more detailed price specifications, indicating the unit price and delivery or payment charges.",
+      "type": "array",
+      "items": { "$ref": "PriceSpecification.schema.json" }
+    },
+    "priceCurrency": {
+      "description": "The currency of the price, or a price component when attached to PriceSpecification and its subtypes.\n\nUse standard formats: ISO 4217 currency format e.g. \"USD\"; Ticker symbol for cryptocurrencies e.g. \"BTC\"; well known names for Local Exchange Tradings Systems (LETS) and other currency types e.g. \"Ithaca HOUR\".",
+      "format": "http://schema.org/Text"
+    },
+    "price": {
+      "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n\nUse the priceCurrency property (with standard formats: ISO 4217 currency format e.g. \"USD\"; Ticker symbol for cryptocurrencies e.g. \"BTC\"; well known names for Local Exchange Tradings Systems (LETS) and other currency types e.g. \"Ithaca HOUR\") instead of including ambiguous symbols such as '$' in the value.\nUse '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\nNote that both RDFa and Microdata syntax allow the use of a \"content=\" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\nUse values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n\n",
+      "format": "http://schema.org/Number"
+    }
+  }
+}

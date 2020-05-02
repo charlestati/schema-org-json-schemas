@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Episode",
+  "title": "Episode",
+  "description": "A media episode (e.g. TV, radio, video game) which can be part of a series or season.",
+  "type": "object",
+  "format": "http://schema.org/Episode",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "properties": {
+    "actor": {
+      "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "trailer": {
+      "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
+      "$ref": "VideoObject.schema.json"
+    },
+    "partOfSeries": {
+      "description": "The series to which this episode or season belongs.",
+      "$ref": "CreativeWorkSeries.schema.json"
+    },
+    "partOfSeason": {
+      "description": "The season to which this episode belongs.",
+      "$ref": "CreativeWorkSeason.schema.json"
+    },
+    "musicBy": {
+      "description": "The composer of the soundtrack.",
+      "anyOf": [
+        { "$ref": "Person.schema.json" },
+        { "$ref": "MusicGroup.schema.json" }
+      ]
+    },
+    "directors": {
+      "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "episodeNumber": {
+      "description": "Position of the episode within an ordered group of episodes.",
+      "type": "integer"
+    },
+    "director": {
+      "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+      "$ref": "Person.schema.json"
+    },
+    "productionCompany": {
+      "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
+      "$ref": "Organization.schema.json"
+    },
+    "actors": {
+      "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    }
+  }
+}

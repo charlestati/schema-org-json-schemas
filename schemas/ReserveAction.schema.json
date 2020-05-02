@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/ReserveAction",
+  "title": "ReserveAction",
+  "description": "Reserving a concrete object.\n\nRelated actions:\n\n\nScheduleAction: Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation.\n\n",
+  "type": "object",
+  "format": "http://schema.org/ReserveAction",
+  "allOf": [
+    {
+      "description": "The act of planning the execution of an event/task/action/reservation/plan to a future date.",
+      "$ref": "PlanAction.schema.json"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Hospital",
+  "title": "Hospital",
+  "description": "A hospital.",
+  "type": "object",
+  "format": "http://schema.org/Hospital",
+  "allOf": [
+    {
+      "description": "A public structure, such as a town hall or concert hall.",
+      "$ref": "CivicStructure.schema.json"
+    },
+    {
+      "description": "An emergency service, such as a fire station or ER.",
+      "$ref": "EmergencyService.schema.json"
+    },
+    {
+      "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
+      "$ref": "MedicalOrganization.schema.json"
+    }
+  ]
+}

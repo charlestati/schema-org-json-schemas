@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/RentalCarReservation",
+  "title": "RentalCarReservation",
+  "description": "A reservation for a rental car.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.",
+  "type": "object",
+  "format": "http://schema.org/RentalCarReservation",
+  "allOf": [
+    {
+      "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use Offer.",
+      "$ref": "Reservation.schema.json"
+    }
+  ],
+  "properties": {
+    "pickupTime": {
+      "description": "When a taxi will pickup a passenger or a rental car can be picked up.",
+      "format": "http://schema.org/DateTime"
+    },
+    "dropoffTime": {
+      "description": "When a rental car can be dropped off.",
+      "format": "http://schema.org/DateTime"
+    },
+    "dropoffLocation": {
+      "description": "Where a rental car can be dropped off.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "pickupLocation": {
+      "description": "Where a taxi will pick up a passenger or a rental car can be picked up.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    }
+  }
+}

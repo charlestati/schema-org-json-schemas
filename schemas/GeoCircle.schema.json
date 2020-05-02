@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/GeoCircle",
+  "title": "GeoCircle",
+  "description": "A GeoCircle is a GeoShape representing a circular geographic area. As it is a GeoShape\n          it provides the simple textual property 'circle', but also allows the combination of postalCode alongside geoRadius.\n          The center of the circle can be indicated via the 'geoMidpoint' property, or more approximately using 'address', 'postalCode'.",
+  "type": "object",
+  "format": "http://schema.org/GeoCircle",
+  "allOf": [
+    {
+      "description": "The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.",
+      "$ref": "GeoShape.schema.json"
+    }
+  ],
+  "properties": {
+    "geoRadius": {
+      "description": "Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).",
+      "type": "array",
+      "items": { "$ref": "Distance.schema.json" }
+    },
+    "geoMidpoint": {
+      "description": "Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.",
+      "type": "array",
+      "items": { "$ref": "GeoCoordinates.schema.json" }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/MusicRelease",
+  "title": "MusicRelease",
+  "description": "A MusicRelease is a specific release of a music album.",
+  "type": "object",
+  "format": "http://schema.org/MusicRelease",
+  "allOf": [
+    {
+      "description": "A collection of music tracks in playlist form.",
+      "$ref": "MusicPlaylist.schema.json"
+    }
+  ],
+  "properties": {
+    "recordLabel": {
+      "description": "The label that issued the release.",
+      "$ref": "Organization.schema.json"
+    },
+    "catalogNumber": {
+      "description": "The catalog number for the release.",
+      "format": "http://schema.org/Text"
+    },
+    "creditedTo": {
+      "description": "The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to \"Stefani Germanotta Band\", but by Lady Gaga.",
+      "anyOf": [
+        { "$ref": "Person.schema.json" },
+        { "$ref": "Organization.schema.json" }
+      ]
+    },
+    "releaseOf": {
+      "description": "The album this is a release of.",
+      "$ref": "MusicAlbum.schema.json"
+    },
+    "duration": {
+      "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+      "$ref": "Duration.schema.json"
+    },
+    "musicReleaseFormat": {
+      "description": "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
+      "type": "array",
+      "items": { "$ref": "MusicReleaseFormatType.schema.json" }
+    }
+  }
+}

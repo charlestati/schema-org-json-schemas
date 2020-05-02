@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/WatchAction",
+  "title": "WatchAction",
+  "description": "The act of consuming dynamic/moving visual content.",
+  "type": "object",
+  "format": "http://schema.org/WatchAction",
+  "allOf": [
+    {
+      "description": "The act of ingesting information/resources/food.",
+      "$ref": "ConsumeAction.schema.json"
+    }
+  ]
+}

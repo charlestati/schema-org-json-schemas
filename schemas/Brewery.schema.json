@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Brewery",
+  "title": "Brewery",
+  "description": "Brewery.",
+  "type": "object",
+  "format": "http://schema.org/Brewery",
+  "allOf": [
+    {
+      "description": "A food-related business.",
+      "$ref": "FoodEstablishment.schema.json"
+    }
+  ]
+}

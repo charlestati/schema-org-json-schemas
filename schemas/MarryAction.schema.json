@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/MarryAction",
+  "title": "MarryAction",
+  "description": "The act of marrying a person.",
+  "type": "object",
+  "format": "http://schema.org/MarryAction",
+  "allOf": [
+    {
+      "description": "The act of interacting with another person or organization.",
+      "$ref": "InteractAction.schema.json"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/EngineSpecification",
+  "title": "EngineSpecification",
+  "description": "Information about the engine of the vehicle. A vehicle can have multiple engines represented by multiple engine specification entities.",
+  "type": "object",
+  "format": "http://schema.org/EngineSpecification",
+  "allOf": [
+    {
+      "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "properties": {
+    "fuelType": {
+      "description": "The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.",
+      "anyOf": [
+        { "$ref": "QualitativeValue.schema.json" },
+        { "type": "string", "format": "uri" }
+      ]
+    }
+  }
+}

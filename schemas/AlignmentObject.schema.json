@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/AlignmentObject",
+  "title": "AlignmentObject",
+  "description": "An intangible item that describes an alignment between a learning resource and a node in an educational framework.\n\nShould not be used where the nature of the alignment can be described using a simple property, for example to express that a resource teaches or assesses a competency.",
+  "type": "object",
+  "format": "http://schema.org/AlignmentObject",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "properties": {
+    "targetDescription": {
+      "description": "The description of a node in an established educational framework.",
+      "format": "http://schema.org/Text"
+    },
+    "targetUrl": {
+      "description": "The URL of a node in an established educational framework.",
+      "type": "string",
+      "format": "uri"
+    },
+    "targetName": {
+      "description": "The name of a node in an established educational framework.",
+      "format": "http://schema.org/Text"
+    },
+    "alignmentType": {
+      "description": "A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.",
+      "format": "http://schema.org/Text"
+    },
+    "educationalFramework": {
+      "description": "The framework to which the resource being described is aligned.",
+      "format": "http://schema.org/Text"
+    }
+  }
+}

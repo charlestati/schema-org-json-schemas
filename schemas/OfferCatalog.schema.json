@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/OfferCatalog",
+  "title": "OfferCatalog",
+  "description": "An OfferCatalog is an ItemList that contains related Offers and/or further OfferCatalogs that are offeredBy the same provider.",
+  "type": "object",
+  "format": "http://schema.org/OfferCatalog",
+  "allOf": [
+    {
+      "description": "A list of items of any sort—for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.",
+      "$ref": "ItemList.schema.json"
+    }
+  ]
+}

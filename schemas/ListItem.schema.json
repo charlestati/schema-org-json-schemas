@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/ListItem",
+  "title": "ListItem",
+  "description": "An list item, e.g. a step in a checklist or how-to description.",
+  "type": "object",
+  "format": "http://schema.org/ListItem",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "properties": {
+    "nextItem": {
+      "description": "A link to the ListItem that follows the current one.",
+      "type": "array",
+      "items": { "$ref": "ListItem.schema.json" }
+    },
+    "position": {
+      "description": "The position of an item in a series or sequence of items.",
+      "type": "integer"
+    },
+    "previousItem": {
+      "description": "A link to the ListItem that preceeds the current one.",
+      "type": "array",
+      "items": { "$ref": "ListItem.schema.json" }
+    },
+    "item": {
+      "description": "An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.",
+      "type": "array",
+      "items": { "$ref": "Thing.schema.json" }
+    }
+  }
+}

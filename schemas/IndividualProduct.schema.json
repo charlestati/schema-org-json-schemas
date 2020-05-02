@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/IndividualProduct",
+  "title": "IndividualProduct",
+  "description": "A single, identifiable product instance (e.g. a laptop with a particular serial number).",
+  "type": "object",
+  "format": "http://schema.org/IndividualProduct",
+  "allOf": [
+    {
+      "description": "Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.",
+      "$ref": "Product.schema.json"
+    }
+  ],
+  "properties": {
+    "serialNumber": {
+      "description": "The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.",
+      "format": "http://schema.org/Text"
+    }
+  }
+}

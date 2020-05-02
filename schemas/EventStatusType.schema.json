@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/EventStatusType",
+  "title": "EventStatusType",
+  "description": "EventStatusType is an enumeration type whose instances represent several states that an Event may be in.",
+  "type": "object",
+  "format": "http://schema.org/EventStatusType",
+  "oneOf": [
+    {
+      "description": "The event has been postponed and no new date has been set. The event's previousStartDate should be set.",
+      "const": "EventPostponed"
+    },
+    {
+      "description": "The event has been rescheduled. The event's previousStartDate should be set to the old date and the startDate should be set to the event's new date. (If the event has been rescheduled multiple times, the previousStartDate property may be repeated).",
+      "const": "EventRescheduled"
+    },
+    {
+      "description": "Indicates that the event was changed to allow online participation. See <a class=\"localLink\" href=\"http://schema.org/eventAttendanceMode\">eventAttendanceMode</a> for specifics of whether it is now fully or partially online.",
+      "const": "EventMovedOnline"
+    },
+    {
+      "description": "The event is taking place or has taken place on the startDate as scheduled. Use of this value is optional, as it is assumed by default.",
+      "const": "EventScheduled"
+    },
+    {
+      "description": "The event has been cancelled. If the event has multiple startDate values, all are assumed to be cancelled. Either startDate or previousStartDate may be used to specify the event's cancelled date(s).",
+      "const": "EventCancelled"
+    }
+  ]
+}

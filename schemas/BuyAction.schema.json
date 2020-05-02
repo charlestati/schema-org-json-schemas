@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/BuyAction",
+  "title": "BuyAction",
+  "description": "The act of giving money to a seller in exchange for goods or services rendered. An agent buys an object, product, or service from a seller for a price. Reciprocal of SellAction.",
+  "type": "object",
+  "format": "http://schema.org/BuyAction",
+  "allOf": [
+    {
+      "description": "The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.",
+      "$ref": "TradeAction.schema.json"
+    }
+  ],
+  "properties": {
+    "seller": {
+      "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
+      "anyOf": [
+        { "$ref": "Person.schema.json" },
+        { "$ref": "Organization.schema.json" }
+      ]
+    },
+    "warrantyPromise": {
+      "description": "The warranty promise(s) included in the offer.",
+      "$ref": "WarrantyPromise.schema.json"
+    },
+    "vendor": {
+      "description": "'vendor' is an earlier term for 'seller'.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" }
+        ]
+      }
+    }
+  }
+}

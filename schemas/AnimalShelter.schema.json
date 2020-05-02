@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/AnimalShelter",
+  "title": "AnimalShelter",
+  "description": "Animal shelter.",
+  "type": "object",
+  "format": "http://schema.org/AnimalShelter",
+  "allOf": [
+    {
+      "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ]
+}

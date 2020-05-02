@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/DonateAction",
+  "title": "DonateAction",
+  "description": "The act of providing goods, services, or money without compensation, often for philanthropic reasons.",
+  "type": "object",
+  "format": "http://schema.org/DonateAction",
+  "allOf": [
+    {
+      "description": "The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.",
+      "$ref": "TradeAction.schema.json"
+    }
+  ],
+  "properties": {
+    "recipient": {
+      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "Audience.schema.json" },
+          { "$ref": "ContactPoint.schema.json" }
+        ]
+      }
+    }
+  }
+}

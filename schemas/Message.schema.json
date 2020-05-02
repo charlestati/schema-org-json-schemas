@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Message",
+  "title": "Message",
+  "description": "A single message from a sender to one or more organizations or people.",
+  "type": "object",
+  "format": "http://schema.org/Message",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "properties": {
+    "dateRead": {
+      "description": "The date/time at which the message has been read by the recipient if a single recipient exists.",
+      "format": "http://schema.org/DateTime"
+    },
+    "bccRecipient": {
+      "description": "A sub property of recipient. The recipient blind copied on a message.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "ContactPoint.schema.json" }
+        ]
+      }
+    },
+    "dateSent": {
+      "description": "The date/time at which the message was sent.",
+      "format": "http://schema.org/DateTime"
+    },
+    "ccRecipient": {
+      "description": "A sub property of recipient. The recipient copied on a message.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "ContactPoint.schema.json" }
+        ]
+      }
+    },
+    "recipient": {
+      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "Audience.schema.json" },
+          { "$ref": "ContactPoint.schema.json" }
+        ]
+      }
+    },
+    "messageAttachment": {
+      "description": "A CreativeWork attached to the message.",
+      "type": "array",
+      "items": { "$ref": "CreativeWork.schema.json" }
+    },
+    "dateReceived": {
+      "description": "The date/time the message was received if a single recipient exists.",
+      "format": "http://schema.org/DateTime"
+    },
+    "toRecipient": {
+      "description": "A sub property of recipient. The recipient who was directly sent the message.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "Audience.schema.json" },
+          { "$ref": "ContactPoint.schema.json" }
+        ]
+      }
+    },
+    "sender": {
+      "description": "A sub property of participant. The participant who is at the sending end of the action.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "Audience.schema.json" }
+        ]
+      }
+    }
+  }
+}

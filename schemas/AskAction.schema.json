@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/AskAction",
+  "title": "AskAction",
+  "description": "The act of posing a question / favor to someone.\n\nRelated actions:\n\n\nReplyAction: Appears generally as a response to AskAction.\n\n",
+  "type": "object",
+  "format": "http://schema.org/AskAction",
+  "allOf": [
+    {
+      "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",
+      "$ref": "CommunicateAction.schema.json"
+    }
+  ],
+  "properties": {
+    "question": {
+      "description": "A sub property of object. A question.",
+      "type": "array",
+      "items": { "$ref": "Question.schema.json" }
+    }
+  }
+}

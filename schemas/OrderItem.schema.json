@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/OrderItem",
+  "title": "OrderItem",
+  "description": "An order item is a line of an order. It includes the quantity and shipping details of a bought offer.",
+  "type": "object",
+  "format": "http://schema.org/OrderItem",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "properties": {
+    "orderItemStatus": {
+      "description": "The current status of the order item.",
+      "$ref": "OrderStatus.schema.json"
+    },
+    "orderQuantity": {
+      "description": "The number of the item ordered. If the property is not set, assume the quantity is one.",
+      "format": "http://schema.org/Number"
+    },
+    "orderDelivery": {
+      "description": "The delivery of the parcel related to this order or order item.",
+      "$ref": "ParcelDelivery.schema.json"
+    },
+    "orderedItem": {
+      "description": "The item ordered.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "OrderItem.schema.json" },
+          { "$ref": "Service.schema.json" },
+          { "$ref": "Product.schema.json" }
+        ]
+      }
+    },
+    "orderItemNumber": {
+      "description": "The identifier of the order item.",
+      "format": "http://schema.org/Text"
+    }
+  }
+}

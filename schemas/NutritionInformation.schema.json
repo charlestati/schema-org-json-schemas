@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/NutritionInformation",
+  "title": "NutritionInformation",
+  "description": "Nutritional information about the recipe.",
+  "type": "object",
+  "format": "http://schema.org/NutritionInformation",
+  "allOf": [
+    {
+      "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "properties": {
+    "saturatedFatContent": {
+      "description": "The number of grams of saturated fat.",
+      "$ref": "Mass.schema.json"
+    },
+    "fatContent": {
+      "description": "The number of grams of fat.",
+      "$ref": "Mass.schema.json"
+    },
+    "unsaturatedFatContent": {
+      "description": "The number of grams of unsaturated fat.",
+      "$ref": "Mass.schema.json"
+    },
+    "sugarContent": {
+      "description": "The number of grams of sugar.",
+      "$ref": "Mass.schema.json"
+    },
+    "cholesterolContent": {
+      "description": "The number of milligrams of cholesterol.",
+      "$ref": "Mass.schema.json"
+    },
+    "carbohydrateContent": {
+      "description": "The number of grams of carbohydrates.",
+      "$ref": "Mass.schema.json"
+    },
+    "proteinContent": {
+      "description": "The number of grams of protein.",
+      "$ref": "Mass.schema.json"
+    },
+    "sodiumContent": {
+      "description": "The number of milligrams of sodium.",
+      "$ref": "Mass.schema.json"
+    },
+    "transFatContent": {
+      "description": "The number of grams of trans fat.",
+      "$ref": "Mass.schema.json"
+    },
+    "fiberContent": {
+      "description": "The number of grams of fiber.",
+      "$ref": "Mass.schema.json"
+    },
+    "calories": {
+      "description": "The number of calories.",
+      "$ref": "Energy.schema.json"
+    },
+    "servingSize": {
+      "description": "The serving size, in terms of the number of volume or mass.",
+      "format": "http://schema.org/Text"
+    }
+  }
+}

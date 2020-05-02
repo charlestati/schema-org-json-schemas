@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/AgreeAction",
+  "title": "AgreeAction",
+  "description": "The act of expressing a consistency of opinion with the object. An agent agrees to/about an object (a proposition, topic or theme) with participants.",
+  "type": "object",
+  "format": "http://schema.org/AgreeAction",
+  "allOf": [
+    {
+      "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",
+      "$ref": "ReactAction.schema.json"
+    }
+  ]
+}

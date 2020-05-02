@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/StadiumOrArena",
+  "title": "StadiumOrArena",
+  "description": "A stadium.",
+  "type": "object",
+  "format": "http://schema.org/StadiumOrArena",
+  "allOf": [
+    {
+      "description": "A public structure, such as a town hall or concert hall.",
+      "$ref": "CivicStructure.schema.json"
+    },
+    {
+      "description": "A sports location, such as a playing field.",
+      "$ref": "SportsActivityLocation.schema.json"
+    }
+  ]
+}

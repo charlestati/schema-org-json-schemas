@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/MiddleSchool",
+  "title": "MiddleSchool",
+  "description": "A middle school (typically for children aged around 11-14, although this varies somewhat).",
+  "type": "object",
+  "format": "http://schema.org/MiddleSchool",
+  "allOf": [
+    {
+      "description": "An educational organization.",
+      "$ref": "EducationalOrganization.schema.json"
+    }
+  ]
+}

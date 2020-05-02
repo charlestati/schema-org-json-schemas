@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/CheckOutAction",
+  "title": "CheckOutAction",
+  "description": "The act of an agent communicating (service provider, social media, etc) their departure of a previously reserved service (e.g. flight check in) or place (e.g. hotel).\n\nRelated actions:\n\n\nCheckInAction: The antonym of CheckOutAction.\nDepartAction: Unlike DepartAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.\nCancelAction: Unlike CancelAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.\n\n",
+  "type": "object",
+  "format": "http://schema.org/CheckOutAction",
+  "allOf": [
+    {
+      "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",
+      "$ref": "CommunicateAction.schema.json"
+    }
+  ]
+}

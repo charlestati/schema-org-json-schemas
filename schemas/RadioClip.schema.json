@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/RadioClip",
+  "title": "RadioClip",
+  "description": "A short radio program or a segment/part of a radio program.",
+  "type": "object",
+  "format": "http://schema.org/RadioClip",
+  "allOf": [
+    {
+      "description": "A short TV or radio program or a segment/part of a program.",
+      "$ref": "Clip.schema.json"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/MusicRecording",
+  "title": "MusicRecording",
+  "description": "A music recording (track), usually a single song.",
+  "type": "object",
+  "format": "http://schema.org/MusicRecording",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "properties": {
+    "recordingOf": {
+      "description": "The composition this track is a recording of.",
+      "$ref": "MusicComposition.schema.json"
+    },
+    "isrcCode": {
+      "description": "The International Standard Recording Code for the recording.",
+      "format": "http://schema.org/Text"
+    },
+    "inAlbum": {
+      "description": "The album to which this recording belongs.",
+      "$ref": "MusicAlbum.schema.json"
+    },
+    "inPlaylist": {
+      "description": "The playlist to which this recording belongs.",
+      "$ref": "MusicPlaylist.schema.json"
+    },
+    "byArtist": {
+      "description": "The artist that performed this album or recording.",
+      "anyOf": [
+        { "$ref": "Person.schema.json" },
+        { "$ref": "MusicGroup.schema.json" }
+      ]
+    },
+    "duration": {
+      "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+      "$ref": "Duration.schema.json"
+    }
+  }
+}

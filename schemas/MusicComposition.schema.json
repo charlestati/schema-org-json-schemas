@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/MusicComposition",
+  "title": "MusicComposition",
+  "description": "A musical composition.",
+  "type": "object",
+  "format": "http://schema.org/MusicComposition",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "properties": {
+    "musicCompositionForm": {
+      "description": "The type of composition (e.g. overture, sonata, symphony, etc.).",
+      "format": "http://schema.org/Text"
+    },
+    "includedComposition": {
+      "description": "Smaller compositions included in this work (e.g. a movement in a symphony).",
+      "type": "array",
+      "items": { "$ref": "MusicComposition.schema.json" }
+    },
+    "lyricist": {
+      "description": "The person who wrote the words.",
+      "$ref": "Person.schema.json"
+    },
+    "recordedAs": {
+      "description": "An audio recording of the work.",
+      "type": "array",
+      "items": { "$ref": "MusicRecording.schema.json" }
+    },
+    "firstPerformance": {
+      "description": "The date and place the work was first performed.",
+      "$ref": "Event.schema.json"
+    },
+    "musicArrangement": {
+      "description": "An arrangement derived from the composition.",
+      "type": "array",
+      "items": { "$ref": "MusicComposition.schema.json" }
+    },
+    "lyrics": {
+      "description": "The words in the song.",
+      "$ref": "CreativeWork.schema.json"
+    },
+    "iswcCode": {
+      "description": "The International Standard Musical Work Code for the composition.",
+      "format": "http://schema.org/Text"
+    },
+    "composer": {
+      "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
+      "anyOf": [
+        { "$ref": "Person.schema.json" },
+        { "$ref": "Organization.schema.json" }
+      ]
+    },
+    "musicalKey": {
+      "description": "The key, mode, or scale this composition uses.",
+      "format": "http://schema.org/Text"
+    }
+  }
+}

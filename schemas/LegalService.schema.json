@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/LegalService",
+  "title": "LegalService",
+  "description": "A LegalService is a business that provides legally-oriented services, advice and representation, e.g. law firms.\n\nAs a LocalBusiness it can be described as a provider of one or more Service(s).",
+  "type": "object",
+  "format": "http://schema.org/LegalService",
+  "allOf": [
+    {
+      "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Resort",
+  "title": "Resort",
+  "description": "A resort is a place used for relaxation or recreation, attracting visitors for holidays or vacations. Resorts are places, towns or sometimes commercial establishment operated by a single company (Source: Wikipedia, the free encyclopedia, see http://en.wikipedia.org/wiki/Resort).\n\nSee also the dedicated document on the use of schema.org for marking up hotels and other forms of accommodations.",
+  "type": "object",
+  "format": "http://schema.org/Resort",
+  "allOf": [
+    {
+      "description": "A lodging business, such as a motel, hotel, or inn.",
+      "$ref": "LodgingBusiness.schema.json"
+    }
+  ]
+}

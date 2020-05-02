@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/GovernmentService",
+  "title": "GovernmentService",
+  "description": "A service provided by a government organization, e.g. food stamps, veterans benefits, etc.",
+  "type": "object",
+  "format": "http://schema.org/GovernmentService",
+  "allOf": [
+    {
+      "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
+      "$ref": "Service.schema.json"
+    }
+  ],
+  "properties": {
+    "serviceOperator": {
+      "description": "The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.",
+      "$ref": "Organization.schema.json"
+    }
+  }
+}

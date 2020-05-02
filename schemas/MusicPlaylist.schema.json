@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/MusicPlaylist",
+  "title": "MusicPlaylist",
+  "description": "A collection of music tracks in playlist form.",
+  "type": "object",
+  "format": "http://schema.org/MusicPlaylist",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "properties": {
+    "numTracks": {
+      "description": "The number of tracks in this album or playlist.",
+      "type": "integer"
+    },
+    "track": {
+      "description": "A music recording (track)—usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "MusicRecording.schema.json" },
+          { "$ref": "ItemList.schema.json" }
+        ]
+      }
+    },
+    "tracks": {
+      "description": "A music recording (track)—usually a single song.",
+      "type": "array",
+      "items": { "$ref": "MusicRecording.schema.json" }
+    }
+  }
+}

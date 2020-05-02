@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/BowlingAlley",
+  "title": "BowlingAlley",
+  "description": "A bowling alley.",
+  "type": "object",
+  "format": "http://schema.org/BowlingAlley",
+  "allOf": [
+    {
+      "description": "A sports location, such as a playing field.",
+      "$ref": "SportsActivityLocation.schema.json"
+    }
+  ]
+}

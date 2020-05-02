@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Book",
+  "title": "Book",
+  "description": "A book.",
+  "type": "object",
+  "format": "http://schema.org/Book",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "properties": {
+    "isbn": {
+      "description": "The ISBN of the book.",
+      "format": "http://schema.org/Text"
+    },
+    "bookEdition": {
+      "description": "The edition of the book.",
+      "format": "http://schema.org/Text"
+    },
+    "bookFormat": {
+      "description": "The format of the book.",
+      "$ref": "BookFormatType.schema.json"
+    },
+    "illustrator": {
+      "description": "The illustrator of the book.",
+      "$ref": "Person.schema.json"
+    },
+    "numberOfPages": {
+      "description": "The number of pages in the book.",
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/BodyOfWater",
+  "title": "BodyOfWater",
+  "description": "A body of water, such as a sea, ocean, or lake.",
+  "type": "object",
+  "format": "http://schema.org/BodyOfWater",
+  "allOf": [
+    {
+      "description": "A landform or physical feature.  Landform elements include mountains, plains, lakes, rivers, seascape and oceanic waterbody interface features such as bays, peninsulas, seas and so forth, including sub-aqueous terrain features such as submersed mountain ranges, volcanoes, and the great ocean basins.",
+      "$ref": "Landform.schema.json"
+    }
+  ]
+}

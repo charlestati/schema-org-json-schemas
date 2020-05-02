@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Dataset",
+  "title": "Dataset",
+  "description": "A body of structured information describing some topic(s) of interest.",
+  "type": "object",
+  "format": "http://schema.org/Dataset",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "properties": {
+    "includedInDataCatalog": {
+      "description": "A data catalog which contains this dataset.",
+      "type": "array",
+      "items": { "$ref": "DataCatalog.schema.json" }
+    },
+    "datasetTimeInterval": {
+      "description": "The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).",
+      "format": "http://schema.org/DateTime"
+    },
+    "issn": {
+      "description": "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
+      "format": "http://schema.org/Text"
+    },
+    "catalog": {
+      "description": "A data catalog which contains this dataset.",
+      "type": "array",
+      "items": { "$ref": "DataCatalog.schema.json" }
+    },
+    "includedDataCatalog": {
+      "description": "A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').",
+      "type": "array",
+      "items": { "$ref": "DataCatalog.schema.json" }
+    },
+    "distribution": {
+      "description": "A downloadable form of this dataset, at a specific location, in a specific format.",
+      "type": "array",
+      "items": { "$ref": "DataDownload.schema.json" }
+    }
+  }
+}

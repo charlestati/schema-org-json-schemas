@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/SportsTeam",
+  "title": "SportsTeam",
+  "description": "Organization: Sports team.",
+  "type": "object",
+  "format": "http://schema.org/SportsTeam",
+  "allOf": [
+    {
+      "description": "Represents the collection of all sports organizations, including sports teams, governing bodies, and sports associations.",
+      "$ref": "SportsOrganization.schema.json"
+    }
+  ],
+  "properties": {
+    "athlete": {
+      "description": "A person that acts as performing member of a sports team; a player as opposed to a coach.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "coach": {
+      "description": "A person that acts in a coaching role for a sports team.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    }
+  }
+}

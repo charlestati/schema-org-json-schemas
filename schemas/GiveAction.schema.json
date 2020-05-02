@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/GiveAction",
+  "title": "GiveAction",
+  "description": "The act of transferring ownership of an object to a destination. Reciprocal of TakeAction.\n\nRelated actions:\n\n\nTakeAction: Reciprocal of GiveAction.\nSendAction: Unlike SendAction, GiveAction implies that ownership is being transferred (e.g. I may send my laptop to you, but that doesn't mean I'm giving it to you).\n\n",
+  "type": "object",
+  "format": "http://schema.org/GiveAction",
+  "allOf": [
+    {
+      "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",
+      "$ref": "TransferAction.schema.json"
+    }
+  ],
+  "properties": {
+    "recipient": {
+      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "Audience.schema.json" },
+          { "$ref": "ContactPoint.schema.json" }
+        ]
+      }
+    }
+  }
+}

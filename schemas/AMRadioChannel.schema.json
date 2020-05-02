@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/AMRadioChannel",
+  "title": "AMRadioChannel",
+  "description": "A radio channel that uses AM.",
+  "type": "object",
+  "format": "http://schema.org/AMRadioChannel",
+  "allOf": [
+    {
+      "description": "A unique instance of a radio BroadcastService on a CableOrSatelliteService lineup.",
+      "$ref": "RadioChannel.schema.json"
+    }
+  ]
+}

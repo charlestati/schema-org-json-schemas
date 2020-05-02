@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/ItemListOrderType",
+  "title": "ItemListOrderType",
+  "description": "Enumerated for values for itemListOrder for indicating how an ordered ItemList is organized.",
+  "type": "object",
+  "format": "http://schema.org/ItemListOrderType",
+  "oneOf": [
+    {
+      "description": "An ItemList ordered with higher values listed first.",
+      "const": "ItemListOrderDescending"
+    },
+    {
+      "description": "An ItemList ordered with no explicit order.",
+      "const": "ItemListUnordered"
+    },
+    {
+      "description": "An ItemList ordered with lower values listed first.",
+      "const": "ItemListOrderAscending"
+    }
+  ]
+}

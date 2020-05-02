@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/SocialMediaPosting",
+  "title": "SocialMediaPosting",
+  "description": "A post to a social media platform, including blog posts, tweets, Facebook posts, etc.",
+  "type": "object",
+  "format": "http://schema.org/SocialMediaPosting",
+  "allOf": [
+    {
+      "description": "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\n\nSee also blog post.",
+      "$ref": "Article.schema.json"
+    }
+  ],
+  "properties": {
+    "sharedContent": {
+      "description": "A CreativeWork such as an image, video, or audio clip shared as part of this posting.",
+      "type": "array",
+      "items": { "$ref": "CreativeWork.schema.json" }
+    }
+  }
+}

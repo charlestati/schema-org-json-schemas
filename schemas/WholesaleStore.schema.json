@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/WholesaleStore",
+  "title": "WholesaleStore",
+  "description": "A wholesale store.",
+  "type": "object",
+  "format": "http://schema.org/WholesaleStore",
+  "allOf": [
+    { "description": "A retail good store.", "$ref": "Store.schema.json" }
+  ]
+}

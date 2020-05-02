@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/CommunicateAction",
+  "title": "CommunicateAction",
+  "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",
+  "type": "object",
+  "format": "http://schema.org/CommunicateAction",
+  "allOf": [
+    {
+      "description": "The act of interacting with another person or organization.",
+      "$ref": "InteractAction.schema.json"
+    }
+  ],
+  "properties": {
+    "about": {
+      "description": "The subject matter of the content.",
+      "$ref": "Thing.schema.json"
+    },
+    "inLanguage": {
+      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
+      "$ref": "Language.schema.json"
+    },
+    "recipient": {
+      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "Audience.schema.json" },
+          { "$ref": "ContactPoint.schema.json" }
+        ]
+      }
+    },
+    "language": {
+      "description": "A sub property of instrument. The language used on this action.",
+      "type": "array",
+      "items": { "$ref": "Language.schema.json" }
+    }
+  }
+}

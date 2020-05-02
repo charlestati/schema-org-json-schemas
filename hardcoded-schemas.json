@@ -1,0 +1,71 @@
+{
+  "Boolean": {
+    "type": "boolean"
+  },
+  "Date": {
+    "type": "string",
+    "format": "date"
+  },
+  "DateTime": {
+    "type": "string",
+    "format": "date-time"
+  },
+  "Float": {
+    "type": "number",
+    "format": "https://schema.org/Float"
+  },
+  "Integer": {
+    "type": "integer"
+  },
+  "Number": {
+    "type": "number"
+  },
+  "Text": {
+    "type": "string"
+  },
+  "Time": {
+    "type": "string",
+    "format": "time"
+  },
+  "URL": {
+    "type": "string",
+    "format": "uri"
+  },
+  "Quantity": {
+    "type": "string"
+  },
+  "acceptsReservations": {
+    "oneOf": [
+      {
+        "type": "boolean"
+      },
+      {
+        "type": "string",
+        "format": "uri"
+      },
+      {
+        "type": "string",
+        "enum": ["Yes", "No"]
+      }
+    ]
+  },
+  "occupationalCategory": {
+    "oneOf": [
+      {
+        "type": "string",
+        "format": "https://www.onetcenter.org/taxonomy.html"
+      },
+      {
+        "type": "string",
+        "format": "https://www.ilo.org/public/english/bureau/stat/isco/isco08/"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  "repetitions": {
+    "type": "integer",
+    "minimum": 1
+  }
+}

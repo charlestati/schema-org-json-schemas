@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/PublicationIssue",
+  "title": "PublicationIssue",
+  "description": "A part of a successively published publication such as a periodical or publication volume, often numbered, usually containing a grouping of works such as articles.\n\nSee also blog post.",
+  "type": "object",
+  "format": "http://schema.org/PublicationIssue",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "properties": {
+    "pagination": {
+      "description": "Any description of pages that is not separated into pageStart and pageEnd; for example, \"1-6, 9, 55\" or \"10-12, 46-49\".",
+      "format": "http://schema.org/Text"
+    },
+    "issueNumber": {
+      "description": "Identifies the issue of publication; for example, \"iii\" or \"2\".",
+      "type": "array",
+      "items": { "type": "integer" }
+    },
+    "pageEnd": {
+      "description": "The page on which the work ends; for example \"138\" or \"xvi\".",
+      "type": "integer"
+    },
+    "pageStart": {
+      "description": "The page on which the work starts; for example \"135\" or \"xiii\".",
+      "type": "integer"
+    }
+  }
+}

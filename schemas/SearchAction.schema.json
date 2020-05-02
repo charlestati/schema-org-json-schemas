@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/SearchAction",
+  "title": "SearchAction",
+  "description": "The act of searching for an object.\n\nRelated actions:\n\n\nFindAction: SearchAction generally leads to a FindAction, but not necessarily.\n\n",
+  "type": "object",
+  "format": "http://schema.org/SearchAction",
+  "allOf": [
+    {
+      "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\n\nSee also blog post and Actions overview document.",
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "properties": {
+    "query": {
+      "description": "A sub property of instrument. The query used on this action.",
+      "format": "http://schema.org/Text"
+    }
+  }
+}

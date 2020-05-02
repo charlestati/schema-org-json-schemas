@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Game",
+  "title": "Game",
+  "description": "The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.",
+  "type": "object",
+  "format": "http://schema.org/Game",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "properties": {
+    "gameItem": {
+      "description": "An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.",
+      "type": "array",
+      "items": { "$ref": "Thing.schema.json" }
+    },
+    "gameLocation": {
+      "description": "Real or fictional location of the game (or part of game).",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Place.schema.json" },
+          { "$ref": "PostalAddress.schema.json" },
+          { "type": "string", "format": "uri" }
+        ]
+      }
+    },
+    "quest": {
+      "description": "The task that a player-controlled character, or group of characters may complete in order to gain a reward.",
+      "$ref": "Thing.schema.json"
+    },
+    "characterAttribute": {
+      "description": "A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).",
+      "type": "array",
+      "items": { "$ref": "Thing.schema.json" }
+    },
+    "numberOfPlayers": {
+      "description": "Indicate how many people can play this game (minimum, maximum, or range).",
+      "type": "array",
+      "items": { "$ref": "QuantitativeValue.schema.json" }
+    }
+  }
+}

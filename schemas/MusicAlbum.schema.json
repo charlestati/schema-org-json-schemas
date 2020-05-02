@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/MusicAlbum",
+  "title": "MusicAlbum",
+  "description": "A collection of music tracks.",
+  "type": "object",
+  "format": "http://schema.org/MusicAlbum",
+  "allOf": [
+    {
+      "description": "A collection of music tracks in playlist form.",
+      "$ref": "MusicPlaylist.schema.json"
+    }
+  ],
+  "properties": {
+    "albumProductionType": {
+      "description": "Classification of the album by it's type of content: soundtrack, live album, studio album, etc.",
+      "type": "array",
+      "items": { "$ref": "MusicAlbumProductionType.schema.json" }
+    },
+    "albumReleaseType": {
+      "description": "The kind of release which this album is: single, EP or album.",
+      "$ref": "MusicAlbumReleaseType.schema.json"
+    },
+    "byArtist": {
+      "description": "The artist that performed this album or recording.",
+      "anyOf": [
+        { "$ref": "Person.schema.json" },
+        { "$ref": "MusicGroup.schema.json" }
+      ]
+    },
+    "albumRelease": {
+      "description": "A release of this album.",
+      "type": "array",
+      "items": { "$ref": "MusicRelease.schema.json" }
+    }
+  }
+}

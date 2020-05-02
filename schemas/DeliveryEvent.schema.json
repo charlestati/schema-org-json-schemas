@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/DeliveryEvent",
+  "title": "DeliveryEvent",
+  "description": "An event involving the delivery of an item.",
+  "type": "object",
+  "format": "http://schema.org/DeliveryEvent",
+  "allOf": [
+    {
+      "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "properties": {
+    "hasDeliveryMethod": {
+      "description": "Method used for delivery or shipping.",
+      "$ref": "DeliveryMethod.schema.json"
+    },
+    "availableThrough": {
+      "description": "After this date, the item will no longer be available for pickup.",
+      "format": "http://schema.org/DateTime"
+    },
+    "availableFrom": {
+      "description": "When the item is available for pickup from the store, locker, etc.",
+      "format": "http://schema.org/DateTime"
+    },
+    "accessCode": {
+      "description": "Password, PIN, or access code needed for delivery (e.g. from a locker).",
+      "format": "http://schema.org/Text"
+    }
+  }
+}

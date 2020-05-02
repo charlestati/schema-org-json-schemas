@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/LoanOrCredit",
+  "title": "LoanOrCredit",
+  "description": "A financial product for the loaning of an amount of money under agreed terms and charges.",
+  "type": "object",
+  "format": "http://schema.org/LoanOrCredit",
+  "allOf": [
+    {
+      "description": "A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.",
+      "$ref": "FinancialProduct.schema.json"
+    }
+  ],
+  "properties": {
+    "loanTerm": {
+      "description": "The duration of the loan or credit agreement.",
+      "$ref": "QuantitativeValue.schema.json"
+    },
+    "currency": {
+      "description": "The currency in which the monetary amount is expressed.\n\nUse standard formats: ISO 4217 currency format e.g. \"USD\"; Ticker symbol for cryptocurrencies e.g. \"BTC\"; well known names for Local Exchange Tradings Systems (LETS) and other currency types e.g. \"Ithaca HOUR\".",
+      "format": "http://schema.org/Text"
+    },
+    "amount": {
+      "description": "The amount of money.",
+      "$ref": "MonetaryAmount.schema.json"
+    },
+    "requiredCollateral": {
+      "description": "Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)",
+      "type": "array",
+      "items": { "$ref": "Thing.schema.json" }
+    }
+  }
+}

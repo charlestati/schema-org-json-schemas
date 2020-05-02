@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Occupation",
+  "title": "Occupation",
+  "description": "A profession, may involve prolonged training and/or a formal qualification.",
+  "type": "object",
+  "format": "http://schema.org/Occupation",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "properties": {
+    "occupationLocation": {
+      "description": "The region/country for which this occupational description is appropriate. Note that educational requirements and qualifications can vary between jurisdictions.",
+      "$ref": "AdministrativeArea.schema.json"
+    },
+    "skills": {
+      "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.",
+      "format": "http://schema.org/Text"
+    },
+    "responsibilities": {
+      "description": "Responsibilities associated with this role or Occupation.",
+      "format": "http://schema.org/Text"
+    },
+    "experienceRequirements": {
+      "description": "Description of skills and experience needed for the position or Occupation.",
+      "format": "http://schema.org/Text"
+    },
+    "estimatedSalary": {
+      "description": "An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "MonetaryAmount.schema.json" },
+          { "$ref": "MonetaryAmountDistribution.schema.json" }
+        ]
+      }
+    }
+  }
+}

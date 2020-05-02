@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/LodgingReservation",
+  "title": "LodgingReservation",
+  "description": "A reservation for lodging at a hotel, motel, inn, etc.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.",
+  "type": "object",
+  "format": "http://schema.org/LodgingReservation",
+  "allOf": [
+    {
+      "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use Offer.",
+      "$ref": "Reservation.schema.json"
+    }
+  ],
+  "properties": {
+    "lodgingUnitDescription": {
+      "description": "A full description of the lodging unit.",
+      "format": "http://schema.org/Text"
+    },
+    "checkinTime": {
+      "description": "The earliest someone may check into a lodging establishment.",
+      "format": "http://schema.org/DateTime"
+    },
+    "numChildren": {
+      "description": "The number of children staying in the unit.",
+      "anyOf": [
+        { "type": "integer" },
+        { "$ref": "QuantitativeValue.schema.json" }
+      ]
+    },
+    "checkoutTime": {
+      "description": "The latest someone may check out of a lodging establishment.",
+      "format": "http://schema.org/DateTime"
+    },
+    "lodgingUnitType": {
+      "description": "Textual description of the unit type (including suite vs. room, size of bed, etc.).",
+      "type": "array",
+      "items": { "$ref": "QualitativeValue.schema.json" }
+    },
+    "numAdults": {
+      "description": "The number of adults staying in the unit.",
+      "anyOf": [
+        { "type": "integer" },
+        { "$ref": "QuantitativeValue.schema.json" }
+      ]
+    }
+  }
+}

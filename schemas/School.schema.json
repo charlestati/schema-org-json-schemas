@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/School",
+  "title": "School",
+  "description": "A school.",
+  "type": "object",
+  "format": "http://schema.org/School",
+  "allOf": [
+    {
+      "description": "An educational organization.",
+      "$ref": "EducationalOrganization.schema.json"
+    }
+  ]
+}

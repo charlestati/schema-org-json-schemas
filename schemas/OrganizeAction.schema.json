@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/OrganizeAction",
+  "title": "OrganizeAction",
+  "description": "The act of manipulating/administering/supervising/controlling one or more objects.",
+  "type": "object",
+  "format": "http://schema.org/OrganizeAction",
+  "allOf": [
+    {
+      "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\n\nSee also blog post and Actions overview document.",
+      "$ref": "Action.schema.json"
+    }
+  ]
+}

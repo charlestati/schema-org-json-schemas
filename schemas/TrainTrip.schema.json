@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/TrainTrip",
+  "title": "TrainTrip",
+  "description": "A trip on a commercial train line.",
+  "type": "object",
+  "format": "http://schema.org/TrainTrip",
+  "allOf": [
+    {
+      "description": "A trip or journey. An itinerary of visits to one or more places.",
+      "$ref": "Trip.schema.json"
+    }
+  ],
+  "properties": {
+    "departureStation": {
+      "description": "The station from which the train departs.",
+      "$ref": "TrainStation.schema.json"
+    },
+    "arrivalPlatform": {
+      "description": "The platform where the train arrives.",
+      "format": "http://schema.org/Text"
+    },
+    "departurePlatform": {
+      "description": "The platform from which the train departs.",
+      "format": "http://schema.org/Text"
+    },
+    "trainName": {
+      "description": "The name of the train (e.g. The Orient Express).",
+      "format": "http://schema.org/Text"
+    },
+    "trainNumber": {
+      "description": "The unique identifier for the train.",
+      "format": "http://schema.org/Text"
+    },
+    "arrivalStation": {
+      "description": "The station where the train trip ends.",
+      "$ref": "TrainStation.schema.json"
+    }
+  }
+}

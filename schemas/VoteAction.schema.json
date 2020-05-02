@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/VoteAction",
+  "title": "VoteAction",
+  "description": "The act of expressing a preference from a fixed/finite/structured set of choices/options.",
+  "type": "object",
+  "format": "http://schema.org/VoteAction",
+  "allOf": [
+    {
+      "description": "The act of expressing a preference from a set of options or a large or unbounded set of choices/options.",
+      "$ref": "ChooseAction.schema.json"
+    }
+  ],
+  "properties": {
+    "candidate": {
+      "description": "A sub property of object. The candidate subject of this action.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/SeaBodyOfWater",
+  "title": "SeaBodyOfWater",
+  "description": "A sea (for example, the Caspian sea).",
+  "type": "object",
+  "format": "http://schema.org/SeaBodyOfWater",
+  "allOf": [
+    {
+      "description": "A body of water, such as a sea, ocean, or lake.",
+      "$ref": "BodyOfWater.schema.json"
+    }
+  ]
+}

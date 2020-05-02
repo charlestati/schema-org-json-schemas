@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/BedType",
+  "title": "BedType",
+  "description": "A type of bed. This is used for indicating the bed or beds available in an accommodation.",
+  "type": "object",
+  "format": "http://schema.org/BedType",
+  "allOf": [
+    {
+      "description": "A predefined value for a product characteristic, e.g. the power cord plug type 'US' or the garment sizes 'S', 'M', 'L', and 'XL'.",
+      "$ref": "QualitativeValue.schema.json"
+    }
+  ]
+}

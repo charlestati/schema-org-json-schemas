@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/GeoCoordinates",
+  "title": "GeoCoordinates",
+  "description": "The geographic coordinates of a place or event.",
+  "type": "object",
+  "format": "http://schema.org/GeoCoordinates",
+  "allOf": [
+    {
+      "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "properties": {
+    "latitude": {
+      "description": "The latitude of a location. For example 37.42242 (WGS 84).",
+      "format": "http://schema.org/Text"
+    },
+    "longitude": {
+      "description": "The longitude of a location. For example -122.08585 (WGS 84).",
+      "format": "http://schema.org/Number"
+    },
+    "address": {
+      "description": "Physical address of the item.",
+      "$ref": "PostalAddress.schema.json"
+    },
+    "addressCountry": {
+      "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
+      "$ref": "Country.schema.json"
+    },
+    "postalCode": {
+      "description": "The postal code. For example, 94043.",
+      "format": "http://schema.org/Text"
+    },
+    "elevation": {
+      "description": "The elevation of a location (WGS 84). Values may be of the form 'NUMBER UNITOFMEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",
+      "format": "http://schema.org/Number"
+    }
+  }
+}

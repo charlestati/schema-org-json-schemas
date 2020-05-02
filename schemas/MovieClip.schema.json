@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/MovieClip",
+  "title": "MovieClip",
+  "description": "A short segment/part of a movie.",
+  "type": "object",
+  "format": "http://schema.org/MovieClip",
+  "allOf": [
+    {
+      "description": "A short TV or radio program or a segment/part of a program.",
+      "$ref": "Clip.schema.json"
+    }
+  ]
+}

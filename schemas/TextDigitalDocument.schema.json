@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/TextDigitalDocument",
+  "title": "TextDigitalDocument",
+  "description": "A file composed primarily of text.",
+  "type": "object",
+  "format": "http://schema.org/TextDigitalDocument",
+  "allOf": [
+    {
+      "description": "An electronic file or document.",
+      "$ref": "DigitalDocument.schema.json"
+    }
+  ]
+}

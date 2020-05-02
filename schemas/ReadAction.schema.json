@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/ReadAction",
+  "title": "ReadAction",
+  "description": "The act of consuming written content.",
+  "type": "object",
+  "format": "http://schema.org/ReadAction",
+  "allOf": [
+    {
+      "description": "The act of ingesting information/resources/food.",
+      "$ref": "ConsumeAction.schema.json"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/OfficeEquipmentStore",
+  "title": "OfficeEquipmentStore",
+  "description": "An office equipment store.",
+  "type": "object",
+  "format": "http://schema.org/OfficeEquipmentStore",
+  "allOf": [
+    { "description": "A retail good store.", "$ref": "Store.schema.json" }
+  ]
+}

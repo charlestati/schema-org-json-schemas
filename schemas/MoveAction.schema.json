@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/MoveAction",
+  "title": "MoveAction",
+  "description": "The act of an agent relocating to a place.\n\nRelated actions:\n\n\nTransferAction: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.\n\n",
+  "type": "object",
+  "format": "http://schema.org/MoveAction",
+  "allOf": [
+    {
+      "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\n\nSee also blog post and Actions overview document.",
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "properties": {
+    "toLocation": {
+      "description": "A sub property of location. The final location of the object or the agent after the action.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "fromLocation": {
+      "description": "A sub property of location. The original location of the object or the agent before the action.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    }
+  }
+}

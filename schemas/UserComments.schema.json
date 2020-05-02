@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/UserComments",
+  "title": "UserComments",
+  "description": "UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use Action-based vocabulary, alongside types such as Comment.",
+  "type": "object",
+  "format": "http://schema.org/UserComments",
+  "allOf": [
+    {
+      "description": "UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use Action-based vocabulary, alongside types such as Comment.",
+      "$ref": "UserInteraction.schema.json"
+    }
+  ],
+  "properties": {
+    "discusses": {
+      "description": "Specifies the CreativeWork associated with the UserComment.",
+      "$ref": "CreativeWork.schema.json"
+    },
+    "commentText": {
+      "description": "The text of the UserComment.",
+      "format": "http://schema.org/Text"
+    },
+    "commentTime": {
+      "description": "The time at which the UserComment was made.",
+      "format": "http://schema.org/Date"
+    },
+    "creator": {
+      "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+      "anyOf": [
+        { "$ref": "Person.schema.json" },
+        { "$ref": "Organization.schema.json" }
+      ]
+    },
+    "replyToUrl": {
+      "description": "The URL at which a reply may be posted to the specified UserComment.",
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

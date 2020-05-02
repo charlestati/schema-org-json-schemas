@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/BroadcastEvent",
+  "title": "BroadcastEvent",
+  "description": "An over the air or online broadcast event.",
+  "type": "object",
+  "format": "http://schema.org/BroadcastEvent",
+  "allOf": [
+    {
+      "description": "A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.",
+      "$ref": "PublicationEvent.schema.json"
+    }
+  ],
+  "properties": {
+    "videoFormat": {
+      "description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
+      "format": "http://schema.org/Text"
+    },
+    "isLiveBroadcast": {
+      "description": "True is the broadcast is of a live event.",
+      "format": "http://schema.org/Boolean"
+    },
+    "broadcastOfEvent": {
+      "description": "The event being broadcast such as a sporting event or awards ceremony.",
+      "$ref": "Event.schema.json"
+    }
+  }
+}

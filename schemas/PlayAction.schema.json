@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/PlayAction",
+  "title": "PlayAction",
+  "description": "The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.\n\nRelated actions:\n\n\nListenAction: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\nWatchAction: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.\n\n",
+  "type": "object",
+  "format": "http://schema.org/PlayAction",
+  "allOf": [
+    {
+      "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\n\nSee also blog post and Actions overview document.",
+      "$ref": "Action.schema.json"
+    }
+  ],
+  "properties": {
+    "audience": {
+      "description": "An intended audience, i.e. a group for whom something was created.",
+      "$ref": "Audience.schema.json"
+    },
+    "event": {
+      "description": "Upcoming or past event associated with this place, organization, or action.",
+      "type": "array",
+      "items": { "$ref": "Event.schema.json" }
+    }
+  }
+}

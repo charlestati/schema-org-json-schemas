@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/PresentationDigitalDocument",
+  "title": "PresentationDigitalDocument",
+  "description": "A file containing slides or used for a presentation.",
+  "type": "object",
+  "format": "http://schema.org/PresentationDigitalDocument",
+  "allOf": [
+    {
+      "description": "An electronic file or document.",
+      "$ref": "DigitalDocument.schema.json"
+    }
+  ]
+}

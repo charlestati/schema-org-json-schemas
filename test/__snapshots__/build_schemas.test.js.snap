@@ -1,0 +1,437 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should build the JSON Schema of a Person 1`] = `
+Object {
+  "$id": "http://schema.org/Person",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "allOf": Array [
+    Object {
+      "$ref": "Thing.schema.json",
+      "description": "The most generic type of item.",
+    },
+  ],
+  "description": "A person (alive, dead, undead, or fictional).",
+  "format": "http://schema.org/Person",
+  "properties": Object {
+    "additionalName": Object {
+      "description": "An additional name for a Person, can be used for a middle name.",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
+    },
+    "address": Object {
+      "anyOf": Array [
+        Object {
+          "type": "string",
+        },
+        Object {
+          "$ref": "PostalAddress.schema.json",
+        },
+      ],
+      "description": "Physical address of the item.",
+    },
+    "affiliation": Object {
+      "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
+      "items": Object {
+        "$ref": "Organization.schema.json",
+      },
+      "type": "array",
+    },
+    "alumniOf": Object {
+      "description": "An organization that the person is an alumni of.",
+      "items": Object {
+        "oneOf": Array [
+          Object {
+            "$ref": "Organization.schema.json",
+          },
+          Object {
+            "$ref": "EducationalOrganization.schema.json",
+          },
+        ],
+      },
+      "type": "array",
+    },
+    "award": Object {
+      "description": "An award won by or for this item.",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
+    },
+    "awards": Object {
+      "description": "Awards won by or for this item.",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
+    },
+    "birthDate": Object {
+      "description": "Date of birth.",
+      "format": "date",
+      "type": "string",
+    },
+    "birthPlace": Object {
+      "$ref": "Place.schema.json",
+      "description": "The place where the person was born.",
+    },
+    "brand": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "Organization.schema.json",
+        },
+        Object {
+          "$ref": "Brand.schema.json",
+        },
+      ],
+      "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+    },
+    "children": Object {
+      "description": "A child of the person.",
+      "items": Object {
+        "$ref": "Person.schema.json",
+      },
+      "type": "array",
+    },
+    "colleague": Object {
+      "description": "A colleague of the person.",
+      "items": Object {
+        "oneOf": Array [
+          Object {
+            "$ref": "Person.schema.json",
+          },
+          Object {
+            "format": "uri",
+            "type": "string",
+          },
+        ],
+      },
+      "type": "array",
+    },
+    "colleagues": Object {
+      "description": "A colleague of the person.",
+      "items": Object {
+        "$ref": "Person.schema.json",
+      },
+      "type": "array",
+    },
+    "contactPoint": Object {
+      "description": "A contact point for a person or organization.",
+      "items": Object {
+        "$ref": "ContactPoint.schema.json",
+      },
+      "type": "array",
+    },
+    "contactPoints": Object {
+      "description": "A contact point for a person or organization.",
+      "items": Object {
+        "$ref": "ContactPoint.schema.json",
+      },
+      "type": "array",
+    },
+    "deathDate": Object {
+      "description": "Date of death.",
+      "format": "date",
+      "type": "string",
+    },
+    "deathPlace": Object {
+      "$ref": "Place.schema.json",
+      "description": "The place where the person died.",
+    },
+    "duns": Object {
+      "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+      "type": "string",
+    },
+    "email": Object {
+      "description": "Email address.",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
+    },
+    "familyName": Object {
+      "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
+      "type": "string",
+    },
+    "faxNumber": Object {
+      "description": "The fax number.",
+      "type": "string",
+    },
+    "follows": Object {
+      "description": "The most generic uni-directional social relation.",
+      "items": Object {
+        "$ref": "Person.schema.json",
+      },
+      "type": "array",
+    },
+    "funder": Object {
+      "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+      "items": Object {
+        "oneOf": Array [
+          Object {
+            "$ref": "Person.schema.json",
+          },
+          Object {
+            "$ref": "Organization.schema.json",
+          },
+        ],
+      },
+      "type": "array",
+    },
+    "givenName": Object {
+      "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
+    },
+    "globalLocationNumber": Object {
+      "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "type": "string",
+    },
+    "hasOccupation": Object {
+      "$ref": "Occupation.schema.json",
+      "description": "The Person's occupation. For past professions, use Role for expressing dates.",
+    },
+    "hasOfferCatalog": Object {
+      "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+      "items": Object {
+        "$ref": "OfferCatalog.schema.json",
+      },
+      "type": "array",
+    },
+    "hasPOS": Object {
+      "description": "Points-of-Sales operated by the organization or person.",
+      "items": Object {
+        "$ref": "Place.schema.json",
+      },
+      "type": "array",
+    },
+    "height": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "Distance.schema.json",
+        },
+        Object {
+          "$ref": "QuantitativeValue.schema.json",
+        },
+      ],
+      "description": "The height of the item.",
+    },
+    "homeLocation": Object {
+      "description": "A contact location for a person's residence.",
+      "items": Object {
+        "oneOf": Array [
+          Object {
+            "$ref": "Place.schema.json",
+          },
+          Object {
+            "$ref": "ContactPoint.schema.json",
+          },
+        ],
+      },
+      "type": "array",
+    },
+    "honorificPrefix": Object {
+      "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
+    },
+    "honorificSuffix": Object {
+      "description": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
+    },
+    "interactionStatistic": Object {
+      "$ref": "InteractionCounter.schema.json",
+      "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
+    },
+    "isicV4": Object {
+      "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+      "type": "string",
+    },
+    "knows": Object {
+      "$ref": "Person.schema.json",
+      "description": "The most generic bi-directional social/work relation.",
+    },
+    "makesOffer": Object {
+      "description": "A pointer to products or services offered by the organization or person.",
+      "items": Object {
+        "$ref": "Offer.schema.json",
+      },
+      "type": "array",
+    },
+    "memberOf": Object {
+      "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs.",
+      "items": Object {
+        "oneOf": Array [
+          Object {
+            "$ref": "Organization.schema.json",
+          },
+          Object {
+            "$ref": "ProgramMembership.schema.json",
+          },
+        ],
+      },
+      "type": "array",
+    },
+    "naics": Object {
+      "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
+      "type": "string",
+    },
+    "nationality": Object {
+      "description": "Nationality of the person.",
+      "items": Object {
+        "$ref": "Country.schema.json",
+      },
+      "type": "array",
+    },
+    "netWorth": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "PriceSpecification.schema.json",
+        },
+        Object {
+          "$ref": "MonetaryAmount.schema.json",
+        },
+      ],
+      "description": "The total financial value of the person as calculated by subtracting assets from liabilities.",
+    },
+    "owns": Object {
+      "description": "Products owned by the organization or person.",
+      "items": Object {
+        "oneOf": Array [
+          Object {
+            "$ref": "OwnershipInfo.schema.json",
+          },
+          Object {
+            "$ref": "Product.schema.json",
+          },
+        ],
+      },
+      "type": "array",
+    },
+    "parent": Object {
+      "description": "A parent of this person.",
+      "items": Object {
+        "$ref": "Person.schema.json",
+      },
+      "type": "array",
+    },
+    "parents": Object {
+      "description": "A parents of the person.",
+      "items": Object {
+        "$ref": "Person.schema.json",
+      },
+      "type": "array",
+    },
+    "performerIn": Object {
+      "description": "Event that this person is a performer or participant in.",
+      "items": Object {
+        "$ref": "Event.schema.json",
+      },
+      "type": "array",
+    },
+    "publishingPrinciples": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "CreativeWork.schema.json",
+        },
+        Object {
+          "format": "uri",
+          "type": "string",
+        },
+      ],
+      "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.
+
+While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
+    },
+    "relatedTo": Object {
+      "$ref": "Person.schema.json",
+      "description": "The most generic familial relation.",
+    },
+    "seeks": Object {
+      "description": "A pointer to products or services sought by the organization or person (demand).",
+      "items": Object {
+        "$ref": "Demand.schema.json",
+      },
+      "type": "array",
+    },
+    "sibling": Object {
+      "description": "A sibling of the person.",
+      "items": Object {
+        "$ref": "Person.schema.json",
+      },
+      "type": "array",
+    },
+    "siblings": Object {
+      "description": "A sibling of the person.",
+      "items": Object {
+        "$ref": "Person.schema.json",
+      },
+      "type": "array",
+    },
+    "sponsor": Object {
+      "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+      "items": Object {
+        "oneOf": Array [
+          Object {
+            "$ref": "Person.schema.json",
+          },
+          Object {
+            "$ref": "Organization.schema.json",
+          },
+        ],
+      },
+      "type": "array",
+    },
+    "spouse": Object {
+      "$ref": "Person.schema.json",
+      "description": "The person's spouse.",
+    },
+    "taxID": Object {
+      "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+      "type": "string",
+    },
+    "telephone": Object {
+      "description": "The telephone number.",
+      "type": "string",
+    },
+    "vatID": Object {
+      "description": "The Value-added Tax ID of the organization or person.",
+      "type": "string",
+    },
+    "weight": Object {
+      "$ref": "QuantitativeValue.schema.json",
+      "description": "The weight of the product or person.",
+    },
+    "workLocation": Object {
+      "description": "A contact location for a person's place of work.",
+      "items": Object {
+        "oneOf": Array [
+          Object {
+            "$ref": "Place.schema.json",
+          },
+          Object {
+            "$ref": "ContactPoint.schema.json",
+          },
+        ],
+      },
+      "type": "array",
+    },
+    "worksFor": Object {
+      "description": "Organizations that the person works for.",
+      "items": Object {
+        "$ref": "Organization.schema.json",
+      },
+      "type": "array",
+    },
+  },
+  "title": "Person",
+  "type": "object",
+}
+`;

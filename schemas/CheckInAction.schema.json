@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/CheckInAction",
+  "title": "CheckInAction",
+  "description": "The act of an agent communicating (service provider, social media, etc) their arrival by registering/confirming for a previously reserved service (e.g. flight check in) or at a place (e.g. hotel), possibly resulting in a result (boarding pass, etc).\n\nRelated actions:\n\n\nCheckOutAction: The antonym of CheckInAction.\nArriveAction: Unlike ArriveAction, CheckInAction implies that the agent is informing/confirming the start of a previously reserved service.\nConfirmAction: Unlike ConfirmAction, CheckInAction implies that the agent is informing/confirming the start of a previously reserved service rather than its validity/existence.\n\n",
+  "type": "object",
+  "format": "http://schema.org/CheckInAction",
+  "allOf": [
+    {
+      "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",
+      "$ref": "CommunicateAction.schema.json"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/OrderStatus",
+  "title": "OrderStatus",
+  "description": "Enumerated status values for Order.",
+  "type": "object",
+  "format": "http://schema.org/OrderStatus",
+  "oneOf": [
+    {
+      "description": "OrderStatus representing that an order has been returned.",
+      "const": "OrderReturned"
+    },
+    {
+      "description": "OrderStatus representing that an order is being processed.",
+      "const": "OrderProcessing"
+    },
+    {
+      "description": "OrderStatus representing availability of an order for pickup.",
+      "const": "OrderPickupAvailable"
+    },
+    {
+      "description": "OrderStatus representing that there is a problem with the order.",
+      "const": "OrderProblem"
+    },
+    {
+      "description": "OrderStatus representing successful delivery of an order.",
+      "const": "OrderDelivered"
+    },
+    {
+      "description": "OrderStatus representing that an order is in transit.",
+      "const": "OrderInTransit"
+    },
+    {
+      "description": "OrderStatus representing cancellation of an order.",
+      "const": "OrderCancelled"
+    },
+    {
+      "description": "OrderStatus representing that payment is due on an order.",
+      "const": "OrderPaymentDue"
+    }
+  ]
+}

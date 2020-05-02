@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/RestrictedDiet",
+  "title": "RestrictedDiet",
+  "description": "A diet restricted to certain foods or preparations for cultural, religious, health or lifestyle reasons.",
+  "type": "object",
+  "format": "http://schema.org/RestrictedDiet",
+  "oneOf": [
+    {
+      "description": "A diet exclusive of animal meat.",
+      "const": "VegetarianDiet"
+    },
+    {
+      "description": "A diet conforming to Jewish dietary practices.",
+      "const": "KosherDiet"
+    },
+    {
+      "description": "A diet exclusive of all animal products.",
+      "const": "VeganDiet"
+    },
+    {
+      "description": "A diet appropriate for people with diabetes.",
+      "const": "DiabeticDiet"
+    },
+    {
+      "description": "A diet conforming to Hindu dietary practices, in particular, beef-free.",
+      "const": "HinduDiet"
+    },
+    { "description": "A diet exclusive of gluten.", "const": "GlutenFreeDiet" },
+    {
+      "description": "A diet conforming to Islamic dietary practices.",
+      "const": "HalalDiet"
+    },
+    {
+      "description": "A diet appropriate for people with lactose intolerance.",
+      "const": "LowLactoseDiet"
+    },
+    {
+      "description": "A diet focused on reduced calorie intake.",
+      "const": "LowCalorieDiet"
+    },
+    {
+      "description": "A diet focused on reduced fat and cholesterol intake.",
+      "const": "LowFatDiet"
+    },
+    {
+      "description": "A diet focused on reduced sodium intake.",
+      "const": "LowSaltDiet"
+    }
+  ]
+}

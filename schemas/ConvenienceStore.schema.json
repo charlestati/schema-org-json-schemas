@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/ConvenienceStore",
+  "title": "ConvenienceStore",
+  "description": "A convenience store.",
+  "type": "object",
+  "format": "http://schema.org/ConvenienceStore",
+  "allOf": [
+    { "description": "A retail good store.", "$ref": "Store.schema.json" }
+  ]
+}

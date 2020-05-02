@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/GasStation",
+  "title": "GasStation",
+  "description": "A gas station.",
+  "type": "object",
+  "format": "http://schema.org/GasStation",
+  "allOf": [
+    {
+      "description": "Car repair, sales, or parts.",
+      "$ref": "AutomotiveBusiness.schema.json"
+    }
+  ]
+}

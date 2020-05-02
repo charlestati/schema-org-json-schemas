@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/SendAction",
+  "title": "SendAction",
+  "description": "The act of physically/electronically dispatching an object for transfer from an origin to a destination.Related actions:\n\n\nReceiveAction: The reciprocal of SendAction.\nGiveAction: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).\n\n",
+  "type": "object",
+  "format": "http://schema.org/SendAction",
+  "allOf": [
+    {
+      "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",
+      "$ref": "TransferAction.schema.json"
+    }
+  ],
+  "properties": {
+    "recipient": {
+      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "Audience.schema.json" },
+          { "$ref": "ContactPoint.schema.json" }
+        ]
+      }
+    },
+    "deliveryMethod": {
+      "description": "A sub property of instrument. The method of delivery.",
+      "type": "array",
+      "items": { "$ref": "DeliveryMethod.schema.json" }
+    }
+  }
+}

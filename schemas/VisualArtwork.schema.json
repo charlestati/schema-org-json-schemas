@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/VisualArtwork",
+  "title": "VisualArtwork",
+  "description": "A work of art that is primarily visual in character.",
+  "type": "object",
+  "format": "http://schema.org/VisualArtwork",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "CreativeWork.schema.json"
+    }
+  ],
+  "properties": {
+    "height": {
+      "description": "The height of the item.",
+      "anyOf": [
+        { "$ref": "Distance.schema.json" },
+        { "$ref": "QuantitativeValue.schema.json" }
+      ]
+    },
+    "artMedium": {
+      "description": "The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)",
+      "type": "string",
+      "format": "uri"
+    },
+    "artform": {
+      "description": "e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.",
+      "type": "array",
+      "items": { "type": "string", "format": "uri" }
+    },
+    "artworkSurface": {
+      "description": "The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.",
+      "type": "string",
+      "format": "uri"
+    },
+    "artEdition": {
+      "description": "The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example \"20\").",
+      "type": "integer"
+    },
+    "width": {
+      "description": "The width of the item.",
+      "anyOf": [
+        { "$ref": "Distance.schema.json" },
+        { "$ref": "QuantitativeValue.schema.json" }
+      ]
+    },
+    "surface": {
+      "description": "A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.",
+      "type": "array",
+      "items": { "type": "string", "format": "uri" }
+    },
+    "depth": {
+      "description": "The depth of the item.",
+      "anyOf": [
+        { "$ref": "Distance.schema.json" },
+        { "$ref": "QuantitativeValue.schema.json" }
+      ]
+    }
+  }
+}

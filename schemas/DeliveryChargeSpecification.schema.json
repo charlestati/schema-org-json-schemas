@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/DeliveryChargeSpecification",
+  "title": "DeliveryChargeSpecification",
+  "description": "The price for the delivery of an offer using a particular delivery method.",
+  "type": "object",
+  "format": "http://schema.org/DeliveryChargeSpecification",
+  "allOf": [
+    {
+      "description": "A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use MonetaryAmount to describe independent amounts of money such as a salary, credit card limits, etc.",
+      "$ref": "PriceSpecification.schema.json"
+    }
+  ],
+  "properties": {
+    "areaServed": {
+      "description": "The geographic area where a service or offered item is provided.",
+      "anyOf": [
+        { "$ref": "AdministrativeArea.schema.json" },
+        { "$ref": "Place.schema.json" },
+        { "$ref": "GeoShape.schema.json" }
+      ]
+    },
+    "appliesToDeliveryMethod": {
+      "description": "The delivery method(s) to which the delivery charge or payment charge specification applies.",
+      "$ref": "DeliveryMethod.schema.json"
+    },
+    "eligibleRegion": {
+      "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also ineligibleRegion.",
+      "anyOf": [
+        { "$ref": "Place.schema.json" },
+        { "$ref": "GeoShape.schema.json" }
+      ]
+    }
+  }
+}

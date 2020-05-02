@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/MovieTheater",
+  "title": "MovieTheater",
+  "description": "A movie theater.",
+  "type": "object",
+  "format": "http://schema.org/MovieTheater",
+  "allOf": [
+    {
+      "description": "A public structure, such as a town hall or concert hall.",
+      "$ref": "CivicStructure.schema.json"
+    },
+    {
+      "description": "A business providing entertainment.",
+      "$ref": "EntertainmentBusiness.schema.json"
+    }
+  ],
+  "properties": {
+    "screenCount": {
+      "description": "The number of screens in the movie theater.",
+      "format": "http://schema.org/Number"
+    }
+  }
+}

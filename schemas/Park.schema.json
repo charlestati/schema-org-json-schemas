@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Park",
+  "title": "Park",
+  "description": "A park.",
+  "type": "object",
+  "format": "http://schema.org/Park",
+  "allOf": [
+    {
+      "description": "A public structure, such as a town hall or concert hall.",
+      "$ref": "CivicStructure.schema.json"
+    }
+  ]
+}

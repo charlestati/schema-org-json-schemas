@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/WantAction",
+  "title": "WantAction",
+  "description": "The act of expressing a desire about the object. An agent wants an object.",
+  "type": "object",
+  "format": "http://schema.org/WantAction",
+  "allOf": [
+    {
+      "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",
+      "$ref": "ReactAction.schema.json"
+    }
+  ]
+}

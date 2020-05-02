@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/ServiceChannel",
+  "title": "ServiceChannel",
+  "description": "A means for accessing a service, e.g. a government office location, web site, or phone number.",
+  "type": "object",
+  "format": "http://schema.org/ServiceChannel",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "properties": {
+    "providesService": {
+      "description": "The service provided by this channel.",
+      "$ref": "Service.schema.json"
+    },
+    "serviceLocation": {
+      "description": "The location (e.g. civic structure, local business, etc.) where a person can go to access the service.",
+      "$ref": "Place.schema.json"
+    },
+    "servicePostalAddress": {
+      "description": "The address for accessing the service by mail.",
+      "$ref": "PostalAddress.schema.json"
+    },
+    "availableLanguage": {
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
+      "type": "array",
+      "items": { "$ref": "Language.schema.json" }
+    },
+    "serviceUrl": {
+      "description": "The website to access the service.",
+      "type": "string",
+      "format": "uri"
+    },
+    "servicePhone": {
+      "description": "The phone number to use to access the service.",
+      "$ref": "ContactPoint.schema.json"
+    },
+    "serviceSmsNumber": {
+      "description": "The number to access the service by text message.",
+      "$ref": "ContactPoint.schema.json"
+    },
+    "processingTime": {
+      "description": "Estimated processing time for the service using this channel.",
+      "$ref": "Duration.schema.json"
+    }
+  }
+}

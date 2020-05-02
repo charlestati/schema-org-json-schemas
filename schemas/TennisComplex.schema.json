@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/TennisComplex",
+  "title": "TennisComplex",
+  "description": "A tennis complex.",
+  "type": "object",
+  "format": "http://schema.org/TennisComplex",
+  "allOf": [
+    {
+      "description": "A sports location, such as a playing field.",
+      "$ref": "SportsActivityLocation.schema.json"
+    }
+  ]
+}

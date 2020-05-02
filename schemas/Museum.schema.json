@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Museum",
+  "title": "Museum",
+  "description": "A museum.",
+  "type": "object",
+  "format": "http://schema.org/Museum",
+  "allOf": [
+    {
+      "description": "A public structure, such as a town hall or concert hall.",
+      "$ref": "CivicStructure.schema.json"
+    }
+  ]
+}

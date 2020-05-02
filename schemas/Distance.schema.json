@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Distance",
+  "title": "Distance",
+  "description": "Properties that take Distances as values are of the form '<Number> <Length unit of measure>'. E.g., '7 ft'.",
+  "type": "object",
+  "format": "http://schema.org/Distance",
+  "allOf": [
+    {
+      "description": "Quantities such as distance, time, mass, weight, etc. Particular instances of say Mass are entities like '3 Kg' or '4 milligrams'.",
+      "$ref": "Quantity.schema.json"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/EducationalAudience",
+  "title": "EducationalAudience",
+  "description": "An EducationalAudience.",
+  "type": "object",
+  "format": "http://schema.org/EducationalAudience",
+  "allOf": [
+    {
+      "description": "Intended audience for an item, i.e. the group for whom the item was created.",
+      "$ref": "Audience.schema.json"
+    }
+  ],
+  "properties": {
+    "educationalRole": {
+      "description": "An educationalRole of an EducationalAudience.",
+      "format": "http://schema.org/Text"
+    }
+  }
+}

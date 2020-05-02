@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/PostalAddress",
+  "title": "PostalAddress",
+  "description": "The mailing address.",
+  "type": "object",
+  "format": "http://schema.org/PostalAddress",
+  "allOf": [
+    {
+      "description": "A contact point—for example, a Customer Complaints department.",
+      "$ref": "ContactPoint.schema.json"
+    }
+  ],
+  "properties": {
+    "postOfficeBoxNumber": {
+      "description": "The post office box number for PO box addresses.",
+      "format": "http://schema.org/Text"
+    },
+    "streetAddress": {
+      "description": "The street address. For example, 1600 Amphitheatre Pkwy.",
+      "format": "http://schema.org/Text"
+    },
+    "addressCountry": {
+      "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
+      "$ref": "Country.schema.json"
+    },
+    "addressRegion": {
+      "description": "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division",
+      "format": "http://schema.org/Text"
+    },
+    "postalCode": {
+      "description": "The postal code. For example, 94043.",
+      "format": "http://schema.org/Text"
+    },
+    "addressLocality": {
+      "description": "The locality in which the street address is, and which is in the region. For example, Mountain View.",
+      "format": "http://schema.org/Text"
+    }
+  }
+}

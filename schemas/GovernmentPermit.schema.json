@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/GovernmentPermit",
+  "title": "GovernmentPermit",
+  "description": "A permit issued by a government agency.",
+  "type": "object",
+  "format": "http://schema.org/GovernmentPermit",
+  "allOf": [
+    {
+      "description": "A permit issued by an organization, e.g. a parking pass.",
+      "$ref": "Permit.schema.json"
+    }
+  ]
+}

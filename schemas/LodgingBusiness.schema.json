@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/LodgingBusiness",
+  "title": "LodgingBusiness",
+  "description": "A lodging business, such as a motel, hotel, or inn.",
+  "type": "object",
+  "format": "http://schema.org/LodgingBusiness",
+  "allOf": [
+    {
+      "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",
+      "$ref": "LocalBusiness.schema.json"
+    }
+  ],
+  "properties": {
+    "audience": {
+      "description": "An intended audience, i.e. a group for whom something was created.",
+      "$ref": "Audience.schema.json"
+    },
+    "checkinTime": {
+      "description": "The earliest someone may check into a lodging establishment.",
+      "format": "http://schema.org/DateTime"
+    },
+    "petsAllowed": {
+      "description": "Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.",
+      "format": "http://schema.org/Boolean"
+    },
+    "availableLanguage": {
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
+      "type": "array",
+      "items": { "$ref": "Language.schema.json" }
+    },
+    "amenityFeature": {
+      "description": "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
+      "type": "array",
+      "items": { "$ref": "LocationFeatureSpecification.schema.json" }
+    },
+    "starRating": {
+      "description": "An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).",
+      "type": "array",
+      "items": { "$ref": "Rating.schema.json" }
+    },
+    "checkoutTime": {
+      "description": "The latest someone may check out of a lodging establishment.",
+      "format": "http://schema.org/DateTime"
+    },
+    "numberOfRooms": {
+      "description": "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
+      "$ref": "QuantitativeValue.schema.json"
+    }
+  }
+}

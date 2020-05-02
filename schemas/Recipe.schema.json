@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Recipe",
+  "title": "Recipe",
+  "description": "A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via suitableForDiet. The keywords property can also be used to add more detail.",
+  "type": "object",
+  "format": "http://schema.org/Recipe",
+  "allOf": [
+    {
+      "description": "Instructions that explain how to achieve a result by performing a sequence of steps.",
+      "$ref": "HowTo.schema.json"
+    }
+  ],
+  "properties": {
+    "recipeYield": {
+      "description": "The quantity produced by the recipe (for example, number of people served, number of servings, etc).",
+      "$ref": "QuantitativeValue.schema.json"
+    },
+    "recipeCategory": {
+      "description": "The category of the recipe—for example, appetizer, entree, etc.",
+      "format": "http://schema.org/Text"
+    },
+    "recipeIngredient": {
+      "description": "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
+      "format": "http://schema.org/Text"
+    },
+    "recipeInstructions": {
+      "description": "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
+      "anyOf": [
+        { "$ref": "CreativeWork.schema.json" },
+        { "$ref": "ItemList.schema.json" }
+      ]
+    },
+    "nutrition": {
+      "description": "Nutrition information about the recipe or menu item.",
+      "$ref": "NutritionInformation.schema.json"
+    },
+    "suitableForDiet": {
+      "description": "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
+      "type": "array",
+      "items": { "$ref": "RestrictedDiet.schema.json" }
+    },
+    "recipeCuisine": {
+      "description": "The cuisine of the recipe (for example, French or Ethiopian).",
+      "format": "http://schema.org/Text"
+    },
+    "cookTime": {
+      "description": "The time it takes to actually cook the dish, in ISO 8601 duration format.",
+      "$ref": "Duration.schema.json"
+    },
+    "cookingMethod": {
+      "description": "The method of cooking, such as Frying, Steaming, ...",
+      "format": "http://schema.org/Text"
+    },
+    "ingredients": {
+      "description": "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
+      "format": "http://schema.org/Text"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/ExerciseAction",
+  "title": "ExerciseAction",
+  "description": "The act of participating in exertive activity for the purposes of improving health and fitness.",
+  "type": "object",
+  "format": "http://schema.org/ExerciseAction",
+  "allOf": [
+    {
+      "description": "The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.\n\nRelated actions:\n\n\nListenAction: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\nWatchAction: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.\n\n",
+      "$ref": "PlayAction.schema.json"
+    }
+  ],
+  "properties": {
+    "course": {
+      "description": "A sub property of location. The course where this action was taken.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "sportsTeam": {
+      "description": "A sub property of participant. The sports team that participated on this action.",
+      "type": "array",
+      "items": { "$ref": "SportsTeam.schema.json" }
+    },
+    "sportsEvent": {
+      "description": "A sub property of location. The sports event where this action occurred.",
+      "type": "array",
+      "items": { "$ref": "SportsEvent.schema.json" }
+    },
+    "distance": {
+      "description": "The distance travelled, e.g. exercising or travelling.",
+      "type": "array",
+      "items": { "$ref": "Distance.schema.json" }
+    },
+    "opponent": {
+      "description": "A sub property of participant. The opponent on this action.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "sportsActivityLocation": {
+      "description": "A sub property of location. The sports activity location where this action occurred.",
+      "type": "array",
+      "items": { "$ref": "SportsActivityLocation.schema.json" }
+    },
+    "toLocation": {
+      "description": "A sub property of location. The final location of the object or the agent after the action.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "fromLocation": {
+      "description": "A sub property of location. The original location of the object or the agent before the action.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "exerciseCourse": {
+      "description": "A sub property of location. The course where this action was taken.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    }
+  }
+}

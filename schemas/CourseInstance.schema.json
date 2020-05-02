@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/CourseInstance",
+  "title": "CourseInstance",
+  "description": "An instance of a Course which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students.",
+  "type": "object",
+  "format": "http://schema.org/CourseInstance",
+  "allOf": [
+    {
+      "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",
+      "$ref": "Event.schema.json"
+    }
+  ],
+  "properties": {
+    "instructor": {
+      "description": "A person assigned to instruct or provide instructional assistance for the CourseInstance.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "courseMode": {
+      "description": "The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. \"online\", \"onsite\" or \"blended\"; \"synchronous\" or \"asynchronous\"; \"full-time\" or \"part-time\") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).",
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

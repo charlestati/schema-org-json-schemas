@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/BroadcastChannel",
+  "title": "BroadcastChannel",
+  "description": "A unique instance of a BroadcastService on a CableOrSatelliteService lineup.",
+  "type": "object",
+  "format": "http://schema.org/BroadcastChannel",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "properties": {
+    "broadcastFrequency": {
+      "description": "The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. \"87 FM\".",
+      "$ref": "BroadcastFrequencySpecification.schema.json"
+    },
+    "broadcastChannelId": {
+      "description": "The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.",
+      "format": "http://schema.org/Text"
+    },
+    "broadcastServiceTier": {
+      "description": "The type of service required to have access to the channel (e.g. Standard or Premium).",
+      "format": "http://schema.org/Text"
+    },
+    "inBroadcastLineup": {
+      "description": "The CableOrSatelliteService offering the channel.",
+      "$ref": "CableOrSatelliteService.schema.json"
+    },
+    "providesBroadcastService": {
+      "description": "The BroadcastService offered on this channel.",
+      "$ref": "BroadcastService.schema.json"
+    },
+    "genre": {
+      "description": "Genre of the creative work, broadcast channel or group.",
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

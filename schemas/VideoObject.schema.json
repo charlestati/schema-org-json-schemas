@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/VideoObject",
+  "title": "VideoObject",
+  "description": "A video file.",
+  "type": "object",
+  "format": "http://schema.org/VideoObject",
+  "allOf": [
+    {
+      "description": "A media object, such as an image, video, or audio object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's).",
+      "$ref": "MediaObject.schema.json"
+    }
+  ],
+  "properties": {
+    "actor": {
+      "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "videoFrameSize": {
+      "description": "The frame size of the video.",
+      "format": "http://schema.org/Text"
+    },
+    "musicBy": {
+      "description": "The composer of the soundtrack.",
+      "anyOf": [
+        { "$ref": "Person.schema.json" },
+        { "$ref": "MusicGroup.schema.json" }
+      ]
+    },
+    "directors": {
+      "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "director": {
+      "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+      "$ref": "Person.schema.json"
+    },
+    "transcript": {
+      "description": "If this MediaObject is an AudioObject or VideoObject, the transcript of that object.",
+      "format": "http://schema.org/Text"
+    },
+    "videoQuality": {
+      "description": "The quality of the video.",
+      "format": "http://schema.org/Text"
+    },
+    "thumbnail": {
+      "description": "Thumbnail image for an image or video.",
+      "$ref": "ImageObject.schema.json"
+    },
+    "caption": {
+      "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.",
+      "$ref": "MediaObject.schema.json"
+    },
+    "actors": {
+      "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    }
+  }
+}

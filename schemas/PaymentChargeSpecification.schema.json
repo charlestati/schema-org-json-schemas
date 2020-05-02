@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/PaymentChargeSpecification",
+  "title": "PaymentChargeSpecification",
+  "description": "The costs of settling the payment using a particular payment method.",
+  "type": "object",
+  "format": "http://schema.org/PaymentChargeSpecification",
+  "allOf": [
+    {
+      "description": "A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use MonetaryAmount to describe independent amounts of money such as a salary, credit card limits, etc.",
+      "$ref": "PriceSpecification.schema.json"
+    }
+  ],
+  "properties": {
+    "appliesToPaymentMethod": {
+      "description": "The payment method(s) to which the payment charge specification applies.",
+      "$ref": "PaymentMethod.schema.json"
+    },
+    "appliesToDeliveryMethod": {
+      "description": "The delivery method(s) to which the delivery charge or payment charge specification applies.",
+      "$ref": "DeliveryMethod.schema.json"
+    }
+  }
+}

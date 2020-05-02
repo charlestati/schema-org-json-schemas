@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/ParcelDelivery",
+  "title": "ParcelDelivery",
+  "description": "The delivery of a parcel either via the postal service or a commercial service.",
+  "type": "object",
+  "format": "http://schema.org/ParcelDelivery",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "Intangible.schema.json"
+    }
+  ],
+  "properties": {
+    "provider": {
+      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+      "anyOf": [
+        { "$ref": "Person.schema.json" },
+        { "$ref": "Organization.schema.json" }
+      ]
+    },
+    "trackingUrl": {
+      "description": "Tracking url for the parcel delivery.",
+      "type": "string",
+      "format": "uri"
+    },
+    "deliveryAddress": {
+      "description": "Destination address.",
+      "$ref": "PostalAddress.schema.json"
+    },
+    "trackingNumber": {
+      "description": "Shipper tracking number.",
+      "format": "http://schema.org/Text"
+    },
+    "hasDeliveryMethod": {
+      "description": "Method used for delivery or shipping.",
+      "$ref": "DeliveryMethod.schema.json"
+    },
+    "deliveryStatus": {
+      "description": "New entry added as the package passes through each leg of its journey (from shipment to final delivery).",
+      "type": "array",
+      "items": { "$ref": "DeliveryEvent.schema.json" }
+    },
+    "carrier": {
+      "description": "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
+      "$ref": "Organization.schema.json"
+    },
+    "originAddress": {
+      "description": "Shipper's address.",
+      "$ref": "PostalAddress.schema.json"
+    },
+    "itemShipped": {
+      "description": "Item(s) being shipped.",
+      "type": "array",
+      "items": { "$ref": "Product.schema.json" }
+    },
+    "partOfOrder": {
+      "description": "The overall order the items in this delivery were included in.",
+      "$ref": "Order.schema.json"
+    },
+    "expectedArrivalFrom": {
+      "description": "The earliest date the package may arrive.",
+      "format": "http://schema.org/Date"
+    },
+    "expectedArrivalUntil": {
+      "description": "The latest date the package may arrive.",
+      "format": "http://schema.org/DateTime"
+    }
+  }
+}

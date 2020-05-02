@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Attorney",
+  "title": "Attorney",
+  "description": "Professional service: Attorney. \n\nThis type is deprecated - LegalService is more inclusive and less ambiguous.",
+  "type": "object",
+  "format": "http://schema.org/Attorney",
+  "allOf": [
+    {
+      "description": "A LegalService is a business that provides legally-oriented services, advice and representation, e.g. law firms.\n\nAs a LocalBusiness it can be described as a provider of one or more Service(s).",
+      "$ref": "LegalService.schema.json"
+    }
+  ]
+}

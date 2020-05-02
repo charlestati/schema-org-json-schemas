@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/BookmarkAction",
+  "title": "BookmarkAction",
+  "description": "An agent bookmarks/flags/labels/tags/marks an object.",
+  "type": "object",
+  "format": "http://schema.org/BookmarkAction",
+  "allOf": [
+    {
+      "description": "The act of manipulating/administering/supervising/controlling one or more objects.",
+      "$ref": "OrganizeAction.schema.json"
+    }
+  ]
+}

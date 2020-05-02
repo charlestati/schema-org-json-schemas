@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/HousePainter",
+  "title": "HousePainter",
+  "description": "A house painting service.",
+  "type": "object",
+  "format": "http://schema.org/HousePainter",
+  "allOf": [
+    {
+      "description": "A construction business.\n\nA HomeAndConstructionBusiness is a LocalBusiness that provides services around homes and buildings.\n\nAs a LocalBusiness it can be described as a provider of one or more Service(s).",
+      "$ref": "HomeAndConstructionBusiness.schema.json"
+    }
+  ]
+}

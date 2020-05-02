@@ -1,0 +1,296 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/Organization",
+  "title": "Organization",
+  "description": "An organization such as a school, NGO, corporation, club, etc.",
+  "type": "object",
+  "format": "http://schema.org/Organization",
+  "allOf": [
+    {
+      "description": "The most generic type of item.",
+      "$ref": "Thing.schema.json"
+    }
+  ],
+  "properties": {
+    "serviceArea": {
+      "description": "The geographic area where the service is provided.",
+      "anyOf": [
+        { "$ref": "AdministrativeArea.schema.json" },
+        { "$ref": "Place.schema.json" },
+        { "$ref": "GeoShape.schema.json" }
+      ]
+    },
+    "memberOf": {
+      "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "ProgramMembership.schema.json" }
+        ]
+      }
+    },
+    "funder": {
+      "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" }
+        ]
+      }
+    },
+    "areaServed": {
+      "description": "The geographic area where a service or offered item is provided.",
+      "anyOf": [
+        { "$ref": "AdministrativeArea.schema.json" },
+        { "$ref": "Place.schema.json" },
+        { "$ref": "GeoShape.schema.json" }
+      ]
+    },
+    "events": {
+      "description": "Upcoming or past events associated with this place or organization.",
+      "type": "array",
+      "items": { "$ref": "Event.schema.json" }
+    },
+    "subOrganization": {
+      "description": "A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.",
+      "type": "array",
+      "items": { "$ref": "Organization.schema.json" }
+    },
+    "hasOfferCatalog": {
+      "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+      "type": "array",
+      "items": { "$ref": "OfferCatalog.schema.json" }
+    },
+    "globalLocationNumber": {
+      "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "format": "http://schema.org/Text"
+    },
+    "members": {
+      "description": "A member of this organization.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" }
+        ]
+      }
+    },
+    "aggregateRating": {
+      "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+      "$ref": "AggregateRating.schema.json"
+    },
+    "duns": {
+      "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+      "format": "http://schema.org/Text"
+    },
+    "taxID": {
+      "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+      "format": "http://schema.org/Text"
+    },
+    "reviews": {
+      "description": "Review of the item.",
+      "type": "array",
+      "items": { "$ref": "Review.schema.json" }
+    },
+    "award": {
+      "description": "An award won by or for this item.",
+      "format": "http://schema.org/Text"
+    },
+    "makesOffer": {
+      "description": "A pointer to products or services offered by the organization or person.",
+      "type": "array",
+      "items": { "$ref": "Offer.schema.json" }
+    },
+    "contactPoints": {
+      "description": "A contact point for a person or organization.",
+      "type": "array",
+      "items": { "$ref": "ContactPoint.schema.json" }
+    },
+    "awards": {
+      "description": "Awards won by or for this item.",
+      "format": "http://schema.org/Text"
+    },
+    "foundingDate": {
+      "description": "The date that this organization was founded.",
+      "format": "http://schema.org/Date"
+    },
+    "seeks": {
+      "description": "A pointer to products or services sought by the organization or person (demand).",
+      "type": "array",
+      "items": { "$ref": "Demand.schema.json" }
+    },
+    "member": {
+      "description": "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" }
+        ]
+      }
+    },
+    "founders": {
+      "description": "A person who founded this organization.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "alumni": {
+      "description": "Alumni of an organization.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "dissolutionDate": {
+      "description": "The date that this organization was dissolved.",
+      "format": "http://schema.org/Date"
+    },
+    "address": {
+      "description": "Physical address of the item.",
+      "$ref": "PostalAddress.schema.json"
+    },
+    "interactionStatistic": {
+      "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
+      "$ref": "InteractionCounter.schema.json"
+    },
+    "logo": {
+      "description": "An associated logo.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "ImageObject.schema.json" },
+          { "type": "string", "format": "uri" }
+        ]
+      }
+    },
+    "employees": {
+      "description": "People working for this organization.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "telephone": {
+      "description": "The telephone number.",
+      "format": "http://schema.org/Text"
+    },
+    "email": {
+      "description": "Email address.",
+      "format": "http://schema.org/Text"
+    },
+    "department": {
+      "description": "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.",
+      "type": "array",
+      "items": { "$ref": "Organization.schema.json" }
+    },
+    "contactPoint": {
+      "description": "A contact point for a person or organization.",
+      "type": "array",
+      "items": { "$ref": "ContactPoint.schema.json" }
+    },
+    "parentOrganization": {
+      "description": "The larger organization that this organization is a subOrganization of, if any.",
+      "$ref": "Organization.schema.json"
+    },
+    "legalName": {
+      "description": "The official name of the organization, e.g. the registered company name.",
+      "format": "http://schema.org/Text"
+    },
+    "employee": {
+      "description": "Someone working for this organization.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "numberOfEmployees": {
+      "description": "The number of employees in an organization e.g. business.",
+      "$ref": "QuantitativeValue.schema.json"
+    },
+    "naics": {
+      "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
+      "format": "http://schema.org/Text"
+    },
+    "hasPOS": {
+      "description": "Points-of-Sales operated by the organization or person.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "review": {
+      "description": "A review of the item.",
+      "type": "array",
+      "items": { "$ref": "Review.schema.json" }
+    },
+    "foundingLocation": {
+      "description": "The place where the Organization was founded.",
+      "$ref": "Place.schema.json"
+    },
+    "owns": {
+      "description": "Products owned by the organization or person.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "OwnershipInfo.schema.json" },
+          { "$ref": "Product.schema.json" }
+        ]
+      }
+    },
+    "event": {
+      "description": "Upcoming or past event associated with this place, organization, or action.",
+      "type": "array",
+      "items": { "$ref": "Event.schema.json" }
+    },
+    "founder": {
+      "description": "A person who founded this organization.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "publishingPrinciples": {
+      "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.\n\nWhile such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
+      "anyOf": [
+        { "$ref": "CreativeWork.schema.json" },
+        { "type": "string", "format": "uri" }
+      ]
+    },
+    "sponsor": {
+      "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" }
+        ]
+      }
+    },
+    "isicV4": {
+      "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+      "format": "http://schema.org/Text"
+    },
+    "slogan": {
+      "description": "A slogan or motto associated with the item.",
+      "format": "http://schema.org/Text"
+    },
+    "location": {
+      "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "anyOf": [
+        { "$ref": "Place.schema.json" },
+        { "$ref": "PostalAddress.schema.json" }
+      ]
+    },
+    "brand": {
+      "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+      "anyOf": [
+        { "$ref": "Organization.schema.json" },
+        { "$ref": "Brand.schema.json" }
+      ]
+    },
+    "vatID": {
+      "description": "The Value-added Tax ID of the organization or person.",
+      "format": "http://schema.org/Text"
+    },
+    "leiCode": {
+      "description": "An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.",
+      "format": "http://schema.org/Text"
+    },
+    "faxNumber": {
+      "description": "The fax number.",
+      "format": "http://schema.org/Text"
+    }
+  }
+}

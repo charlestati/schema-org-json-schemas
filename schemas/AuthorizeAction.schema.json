@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/AuthorizeAction",
+  "title": "AuthorizeAction",
+  "description": "The act of granting permission to an object.",
+  "type": "object",
+  "format": "http://schema.org/AuthorizeAction",
+  "allOf": [
+    {
+      "description": "The act of organizing tasks/objects/events by associating resources to it.",
+      "$ref": "AllocateAction.schema.json"
+    }
+  ],
+  "properties": {
+    "recipient": {
+      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "Person.schema.json" },
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "Audience.schema.json" },
+          { "$ref": "ContactPoint.schema.json" }
+        ]
+      }
+    }
+  }
+}

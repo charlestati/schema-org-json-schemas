@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/PublicSwimmingPool",
+  "title": "PublicSwimmingPool",
+  "description": "A public swimming pool.",
+  "type": "object",
+  "format": "http://schema.org/PublicSwimmingPool",
+  "allOf": [
+    {
+      "description": "A sports location, such as a playing field.",
+      "$ref": "SportsActivityLocation.schema.json"
+    }
+  ]
+}

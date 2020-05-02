@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/FlightReservation",
+  "title": "FlightReservation",
+  "description": "A reservation for air travel.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use Offer.",
+  "type": "object",
+  "format": "http://schema.org/FlightReservation",
+  "allOf": [
+    {
+      "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use Offer.",
+      "$ref": "Reservation.schema.json"
+    }
+  ],
+  "properties": {
+    "passengerSequenceNumber": {
+      "description": "The passenger's sequence number as assigned by the airline.",
+      "format": "http://schema.org/Text"
+    },
+    "securityScreening": {
+      "description": "The type of security screening the passenger is subject to.",
+      "format": "http://schema.org/Text"
+    },
+    "passengerPriorityStatus": {
+      "description": "The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).",
+      "$ref": "QualitativeValue.schema.json"
+    },
+    "boardingGroup": {
+      "description": "The airline-specific indicator of boarding order / preference.",
+      "format": "http://schema.org/Text"
+    }
+  }
+}

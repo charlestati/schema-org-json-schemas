@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/BlogPosting",
+  "title": "BlogPosting",
+  "description": "A blog post.",
+  "type": "object",
+  "format": "http://schema.org/BlogPosting",
+  "allOf": [
+    {
+      "description": "A post to a social media platform, including blog posts, tweets, Facebook posts, etc.",
+      "$ref": "SocialMediaPosting.schema.json"
+    }
+  ]
+}

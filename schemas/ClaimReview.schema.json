@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/ClaimReview",
+  "title": "ClaimReview",
+  "description": "A fact-checking review of claims made (or reported) in some creative work (referenced via itemReviewed).",
+  "type": "object",
+  "format": "http://schema.org/ClaimReview",
+  "allOf": [
+    {
+      "description": "A review of an item - for example, of a restaurant, movie, or store.",
+      "$ref": "Review.schema.json"
+    }
+  ],
+  "properties": {
+    "claimReviewed": {
+      "description": "A short summary of the specific claims reviewed in a ClaimReview.",
+      "format": "http://schema.org/Text"
+    }
+  }
+}

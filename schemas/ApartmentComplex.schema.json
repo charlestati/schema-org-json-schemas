@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/ApartmentComplex",
+  "title": "ApartmentComplex",
+  "description": "Residence type: Apartment complex.",
+  "type": "object",
+  "format": "http://schema.org/ApartmentComplex",
+  "allOf": [
+    {
+      "description": "The place where a person lives.",
+      "$ref": "Residence.schema.json"
+    }
+  ],
+  "properties": {
+    "petsAllowed": {
+      "description": "Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.",
+      "format": "http://schema.org/Boolean"
+    }
+  }
+}

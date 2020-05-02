@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/ItemAvailability",
+  "title": "ItemAvailability",
+  "description": "A list of possible product availability options.",
+  "type": "object",
+  "format": "http://schema.org/ItemAvailability",
+  "oneOf": [
+    {
+      "description": "Indicates that the item has sold out.",
+      "const": "SoldOut"
+    },
+    {
+      "description": "Indicates that the item is available for pre-order.",
+      "const": "PreOrder"
+    },
+    {
+      "description": "Indicates that the item is out of stock.",
+      "const": "OutOfStock"
+    },
+    {
+      "description": "Indicates that the item is available for ordering and delivery before general availability.",
+      "const": "PreSale"
+    },
+    {
+      "description": "Indicates that the item is in stock.",
+      "const": "InStock"
+    },
+    {
+      "description": "Indicates that the item has limited availability.",
+      "const": "LimitedAvailability"
+    },
+    {
+      "description": "Indicates that the item has been discontinued.",
+      "const": "Discontinued"
+    },
+    {
+      "description": "Indicates that the item is available only online.",
+      "const": "OnlineOnly"
+    },
+    {
+      "description": "Indicates that the item is available only at physical locations.",
+      "const": "InStoreOnly"
+    }
+  ]
+}

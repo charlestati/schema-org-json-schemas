@@ -1,0 +1,68 @@
+{
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:import/recommended",
+    "plugin:sort-class-members/recommended",
+    "plugin:promise/recommended",
+    "plugin:node/recommended",
+    "plugin:prettier/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:security/recommended",
+    "plugin:jsdoc/recommended",
+    "plugin:you-dont-need-lodash-underscore/compatible",
+    "prettier/unicorn"
+  ],
+  "rules": {
+    "import/extensions": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/order": 2,
+    "jsdoc/require-jsdoc": [
+      2,
+      {
+        "require": {
+          "MethodDefinition": true
+        }
+      }
+    ],
+    "jsdoc/require-param-type": 0,
+    "jsdoc/require-returns-type": 0,
+    "no-console": 0,
+    "no-underscore-dangle": [
+      2,
+      {
+        "allowAfterThis": true
+      }
+    ],
+    "node/exports-style": 2,
+    "node/no-missing-import": 0,
+    "node/no-unsupported-features/es-syntax": 0,
+    "node/prefer-global/buffer": 2,
+    "node/prefer-global/console": 2,
+    "node/prefer-global/process": 2,
+    "node/prefer-global/url-search-params": 2,
+    "node/prefer-global/url": 2,
+    "node/prefer-promises/dns": 2,
+    "node/prefer-promises/fs": 2,
+    "promise/always-return": 0,
+    "promise/prefer-await-to-callbacks": 2,
+    "promise/prefer-await-to-then": 2,
+    "security/detect-non-literal-fs-filename": 0,
+    "sonarjs/no-duplicate-string": 0,
+    "unicorn/filename-case": 0,
+    "unicorn/prefer-spread": 0,
+    "unicorn/prevent-abbreviations": 0
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.js"],
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"]
+    }
+  ]
+}

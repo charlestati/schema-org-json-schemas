@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/TVEpisode",
+  "title": "TVEpisode",
+  "description": "A TV episode which can be part of a series or season.",
+  "type": "object",
+  "format": "http://schema.org/TVEpisode",
+  "allOf": [
+    {
+      "description": "A media episode (e.g. TV, radio, video game) which can be part of a series or season.",
+      "$ref": "Episode.schema.json"
+    }
+  ],
+  "properties": {
+    "partOfTVSeries": {
+      "description": "The TV series to which this episode or season belongs.",
+      "$ref": "TVSeries.schema.json"
+    },
+    "countryOfOrigin": {
+      "description": "The country of the principal offices of the production company or individual responsible for the movie or program.",
+      "$ref": "Country.schema.json"
+    }
+  }
+}

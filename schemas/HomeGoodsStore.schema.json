@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/HomeGoodsStore",
+  "title": "HomeGoodsStore",
+  "description": "A home goods store.",
+  "type": "object",
+  "format": "http://schema.org/HomeGoodsStore",
+  "allOf": [
+    { "description": "A retail good store.", "$ref": "Store.schema.json" }
+  ]
+}

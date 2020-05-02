@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://schema.org/InteractionCounter",
+  "title": "InteractionCounter",
+  "description": "A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.",
+  "type": "object",
+  "format": "http://schema.org/InteractionCounter",
+  "allOf": [
+    {
+      "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "$ref": "StructuredValue.schema.json"
+    }
+  ],
+  "properties": {
+    "interactionService": {
+      "description": "The WebSite or SoftwareApplication where the interactions took place.",
+      "anyOf": [
+        { "$ref": "WebSite.schema.json" },
+        { "$ref": "SoftwareApplication.schema.json" }
+      ]
+    },
+    "userInteractionCount": {
+      "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.",
+      "type": "integer"
+    },
+    "interactionType": {
+      "description": "The Action representing the type of interaction. For up votes, +1s, etc. use LikeAction. For down votes use DislikeAction. Otherwise, use the most specific Action.",
+      "$ref": "Action.schema.json"
+    }
+  }
+}
