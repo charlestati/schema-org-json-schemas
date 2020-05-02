@@ -1,6 +1,6 @@
 {
   "name": "schema-org-json-schemas",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Generate JSON Schemas from Schema.org classes",
   "main": "index.js",
   "files": [
