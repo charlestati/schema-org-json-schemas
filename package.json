@@ -1,5 +1,5 @@
 {
-  "name": "schema-org-json-schema",
+  "name": "schema-org-json-schemas",
   "version": "0.0.0-development",
   "description": "Generate JSON Schemas from Schema.org classes",
   "main": "index.js",
