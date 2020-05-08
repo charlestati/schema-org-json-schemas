@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/schema-org-json-schema.iml" filepath="$PROJECT_DIR$/.idea/schema-org-json-schema.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../schema-org-json-schemas/.idea/schema-org-json-schemas.iml" filepath="$PROJECT_DIR$/../schema-org-json-schemas/.idea/schema-org-json-schemas.iml" />
     </modules>
   </component>
 </project>
