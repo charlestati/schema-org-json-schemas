@@ -48,7 +48,7 @@
     "height": {
       "description": "The height of the item.",
       "anyOf": [
-        { "$ref": "Distance.schema.json" },
+        { "type": "string", "format": "https://schema.org/Distance" },
         { "$ref": "QuantitativeValue.schema.json" }
       ]
     },

@@ -160,7 +160,8 @@
     },
     "duration": {
       "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
-      "$ref": "Duration.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Duration"
     },
     "translator": {
       "description": "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",

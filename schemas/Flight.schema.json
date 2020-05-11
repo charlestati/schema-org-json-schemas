@@ -57,11 +57,13 @@
     },
     "estimatedFlightDuration": {
       "description": "The estimated time the flight will take.",
-      "$ref": "Duration.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Duration"
     },
     "flightDistance": {
       "description": "The distance of the flight.",
-      "$ref": "Distance.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Distance"
     },
     "arrivalTerminal": {
       "description": "Identifier of the flight's arrival terminal.",

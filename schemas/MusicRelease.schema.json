@@ -33,7 +33,8 @@
     },
     "duration": {
       "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
-      "$ref": "Duration.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Duration"
     },
     "musicReleaseFormat": {
       "description": "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",

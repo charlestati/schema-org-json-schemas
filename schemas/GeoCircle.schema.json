@@ -15,7 +15,7 @@
     "geoRadius": {
       "description": "Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).",
       "type": "array",
-      "items": { "$ref": "Distance.schema.json" }
+      "items": { "type": "string", "format": "https://schema.org/Distance" }
     },
     "geoMidpoint": {
       "description": "Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.",

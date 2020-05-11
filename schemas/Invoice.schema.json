@@ -25,7 +25,8 @@
     },
     "billingPeriod": {
       "description": "The time interval used to compute the invoice.",
-      "$ref": "Duration.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Duration"
     },
     "confirmationNumber": {
       "description": "A number that confirms the given order or payment has been received.",

@@ -27,7 +27,7 @@
     "height": {
       "description": "The height of the item.",
       "anyOf": [
-        { "$ref": "Distance.schema.json" },
+        { "type": "string", "format": "https://schema.org/Distance" },
         { "$ref": "QuantitativeValue.schema.json" }
       ]
     },
@@ -59,7 +59,7 @@
     "width": {
       "description": "The width of the item.",
       "anyOf": [
-        { "$ref": "Distance.schema.json" },
+        { "type": "string", "format": "https://schema.org/Distance" },
         { "$ref": "QuantitativeValue.schema.json" }
       ]
     },
@@ -79,7 +79,8 @@
     },
     "duration": {
       "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
-      "$ref": "Duration.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Duration"
     },
     "encodesCreativeWork": {
       "description": "The CreativeWork encoded by this media object.",

@@ -14,47 +14,58 @@
   "properties": {
     "saturatedFatContent": {
       "description": "The number of grams of saturated fat.",
-      "$ref": "Mass.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Mass"
     },
     "fatContent": {
       "description": "The number of grams of fat.",
-      "$ref": "Mass.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Mass"
     },
     "unsaturatedFatContent": {
       "description": "The number of grams of unsaturated fat.",
-      "$ref": "Mass.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Mass"
     },
     "sugarContent": {
       "description": "The number of grams of sugar.",
-      "$ref": "Mass.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Mass"
     },
     "cholesterolContent": {
       "description": "The number of milligrams of cholesterol.",
-      "$ref": "Mass.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Mass"
     },
     "carbohydrateContent": {
       "description": "The number of grams of carbohydrates.",
-      "$ref": "Mass.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Mass"
     },
     "proteinContent": {
       "description": "The number of grams of protein.",
-      "$ref": "Mass.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Mass"
     },
     "sodiumContent": {
       "description": "The number of milligrams of sodium.",
-      "$ref": "Mass.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Mass"
     },
     "transFatContent": {
       "description": "The number of grams of trans fat.",
-      "$ref": "Mass.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Mass"
     },
     "fiberContent": {
       "description": "The number of grams of fiber.",
-      "$ref": "Mass.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Mass"
     },
     "calories": {
       "description": "The number of calories.",
-      "$ref": "Energy.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Energy"
     },
     "servingSize": {
       "description": "The serving size, in terms of the number of volume or mass.",

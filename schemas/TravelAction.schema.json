@@ -15,7 +15,7 @@
     "distance": {
       "description": "The distance travelled, e.g. exercising or travelling.",
       "type": "array",
-      "items": { "$ref": "Distance.schema.json" }
+      "items": { "type": "string", "format": "https://schema.org/Distance" }
     }
   }
 }

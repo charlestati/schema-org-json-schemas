@@ -14,7 +14,8 @@
   "properties": {
     "validFor": {
       "description": "The duration of validity of a permit or similar thing.",
-      "$ref": "Duration.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Duration"
     },
     "validUntil": {
       "description": "The date when the item is no longer valid.",

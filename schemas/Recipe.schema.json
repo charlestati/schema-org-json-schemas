@@ -46,7 +46,8 @@
     },
     "cookTime": {
       "description": "The time it takes to actually cook the dish, in ISO 8601 duration format.",
-      "$ref": "Duration.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Duration"
     },
     "cookingMethod": {
       "description": "The method of cooking, such as Frying, Steaming, ...",

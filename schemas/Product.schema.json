@@ -35,7 +35,7 @@
     "height": {
       "description": "The height of the item.",
       "anyOf": [
-        { "$ref": "Distance.schema.json" },
+        { "type": "string", "format": "https://schema.org/Distance" },
         { "$ref": "QuantitativeValue.schema.json" }
       ]
     },
@@ -84,7 +84,7 @@
     "width": {
       "description": "The width of the item.",
       "anyOf": [
-        { "$ref": "Distance.schema.json" },
+        { "type": "string", "format": "https://schema.org/Distance" },
         { "$ref": "QuantitativeValue.schema.json" }
       ]
     },
@@ -141,7 +141,7 @@
     "depth": {
       "description": "The depth of the item.",
       "anyOf": [
-        { "$ref": "Distance.schema.json" },
+        { "type": "string", "format": "https://schema.org/Distance" },
         { "$ref": "QuantitativeValue.schema.json" }
       ]
     },

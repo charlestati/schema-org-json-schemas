@@ -44,7 +44,8 @@
     },
     "processingTime": {
       "description": "Estimated processing time for the service using this channel.",
-      "$ref": "Duration.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Duration"
     }
   }
 }

@@ -186,7 +186,8 @@ Object {
     "height": Object {
       "anyOf": Array [
         Object {
-          "$ref": "Distance.schema.json",
+          "format": "https://schema.org/Distance",
+          "type": "string",
         },
         Object {
           "$ref": "QuantitativeValue.schema.json",

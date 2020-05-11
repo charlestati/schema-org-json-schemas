@@ -32,7 +32,24 @@
     "format": "uri"
   },
   "Quantity": {
-    "type": "string"
+    "type": "string",
+    "format": "https://schema.org/Quantity"
+  },
+  "Distance": {
+    "type": "string",
+    "format": "https://schema.org/Distance"
+  },
+  "Duration": {
+    "type": "string",
+    "format": "https://schema.org/Duration"
+  },
+  "Energy": {
+    "type": "string",
+    "format": "https://schema.org/Energy"
+  },
+  "Mass": {
+    "type": "string",
+    "format": "https://schema.org/Mass"
   },
   "acceptsReservations": {
     "oneOf": [

@@ -30,7 +30,8 @@
     },
     "duration": {
       "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
-      "$ref": "Duration.schema.json"
+      "type": "string",
+      "format": "https://schema.org/Duration"
     },
     "percentile90": {
       "description": "The 90th percentile value.",
