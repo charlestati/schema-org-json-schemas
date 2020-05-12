@@ -19,7 +19,7 @@
     },
     "position": {
       "description": "The position of an item in a series or sequence of items.",
-      "type": "integer"
+      "anyOf": [{ "type": "integer" }, { "type": "string" }]
     },
     "previousItem": {
       "description": "A link to the ListItem that preceeds the current one.",

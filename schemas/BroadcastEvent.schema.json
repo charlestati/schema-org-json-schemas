@@ -14,11 +14,12 @@
   "properties": {
     "videoFormat": {
       "description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "isLiveBroadcast": {
       "description": "True is the broadcast is of a live event.",
-      "format": "http://schema.org/Boolean"
+      "type": "array",
+      "items": { "type": "boolean" }
     },
     "broadcastOfEvent": {
       "description": "The event being broadcast such as a sporting event or awards ceremony.",

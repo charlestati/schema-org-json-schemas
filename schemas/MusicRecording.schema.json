@@ -18,7 +18,7 @@
     },
     "isrcCode": {
       "description": "The International Standard Recording Code for the recording.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "inAlbum": {
       "description": "The album to which this recording belongs.",

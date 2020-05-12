@@ -14,7 +14,8 @@
   "properties": {
     "educationalRole": {
       "description": "An educationalRole of an EducationalAudience.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     }
   }
 }

@@ -21,11 +21,13 @@
     },
     "ownedFrom": {
       "description": "The date and time of obtaining the product.",
-      "format": "http://schema.org/DateTime"
+      "type": "string",
+      "format": "date-time"
     },
     "ownedThrough": {
       "description": "The date and time of giving up ownership on the product.",
-      "format": "http://schema.org/DateTime"
+      "type": "string",
+      "format": "date-time"
     },
     "acquiredFrom": {
       "description": "The organization or person from which the product was acquired.",

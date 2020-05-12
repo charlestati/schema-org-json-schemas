@@ -18,7 +18,8 @@
     },
     "arrivalGate": {
       "description": "Identifier of the flight's arrival gate.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "carrier": {
       "description": "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
@@ -30,11 +31,12 @@
     },
     "aircraft": {
       "description": "The kind of aircraft (e.g., \"Boeing 747\").",
-      "$ref": "Vehicle.schema.json"
+      "anyOf": [{ "$ref": "Vehicle.schema.json" }, { "type": "string" }]
     },
     "webCheckinTime": {
       "description": "The time when a passenger can check into the flight online.",
-      "format": "http://schema.org/DateTime"
+      "type": "string",
+      "format": "date-time"
     },
     "seller": {
       "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
@@ -45,29 +47,37 @@
     },
     "mealService": {
       "description": "Description of the meals that will be provided or available for purchase.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "departureGate": {
       "description": "Identifier of the flight's departure gate.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "departureTerminal": {
       "description": "Identifier of the flight's departure terminal.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "estimatedFlightDuration": {
       "description": "The estimated time the flight will take.",
-      "type": "string",
-      "format": "https://schema.org/Duration"
+      "anyOf": [
+        { "type": "string", "format": "https://schema.org/Duration" },
+        { "type": "string" }
+      ]
     },
     "flightDistance": {
       "description": "The distance of the flight.",
-      "type": "string",
-      "format": "https://schema.org/Distance"
+      "anyOf": [
+        { "type": "string" },
+        { "type": "string", "format": "https://schema.org/Distance" }
+      ]
     },
     "arrivalTerminal": {
       "description": "Identifier of the flight's arrival terminal.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "departureAirport": {
       "description": "The airport where the flight originates.",
@@ -75,7 +85,7 @@
     },
     "flightNumber": {
       "description": "The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     }
   }
 }

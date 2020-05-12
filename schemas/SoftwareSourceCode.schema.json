@@ -25,23 +25,30 @@
     "programmingLanguage": {
       "description": "The computer programming language.",
       "type": "array",
-      "items": { "$ref": "ComputerLanguage.schema.json" }
+      "items": {
+        "oneOf": [
+          { "type": "string" },
+          { "$ref": "ComputerLanguage.schema.json" }
+        ]
+      }
     },
     "codeSampleType": {
       "description": "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "runtimePlatform": {
       "description": "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "sampleType": {
       "description": "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "runtime": {
       "description": "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     }
   }
 }

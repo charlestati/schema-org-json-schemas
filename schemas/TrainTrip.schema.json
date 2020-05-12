@@ -18,19 +18,19 @@
     },
     "arrivalPlatform": {
       "description": "The platform where the train arrives.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "departurePlatform": {
       "description": "The platform from which the train departs.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "trainName": {
       "description": "The name of the train (e.g. The Orient Express).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "trainNumber": {
       "description": "The unique identifier for the train.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "arrivalStation": {
       "description": "The station where the train trip ends.",

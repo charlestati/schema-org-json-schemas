@@ -52,7 +52,7 @@
     },
     "clipNumber": {
       "description": "Position of the clip within an ordered group of clips.",
-      "type": "integer"
+      "anyOf": [{ "type": "integer" }, { "type": "string" }]
     }
   }
 }

@@ -14,7 +14,7 @@
   "properties": {
     "characterName": {
       "description": "The name of a character played in some acting or performing role, i.e. in a PerformanceRole.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     }
   }
 }

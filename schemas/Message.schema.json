@@ -14,7 +14,10 @@
   "properties": {
     "dateRead": {
       "description": "The date/time at which the message has been read by the recipient if a single recipient exists.",
-      "format": "http://schema.org/DateTime"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "bccRecipient": {
       "description": "A sub property of recipient. The recipient blind copied on a message.",
@@ -29,7 +32,8 @@
     },
     "dateSent": {
       "description": "The date/time at which the message was sent.",
-      "format": "http://schema.org/DateTime"
+      "type": "string",
+      "format": "date-time"
     },
     "ccRecipient": {
       "description": "A sub property of recipient. The recipient copied on a message.",
@@ -61,7 +65,8 @@
     },
     "dateReceived": {
       "description": "The date/time the message was received if a single recipient exists.",
-      "format": "http://schema.org/DateTime"
+      "type": "string",
+      "format": "date-time"
     },
     "toRecipient": {
       "description": "A sub property of recipient. The recipient who was directly sent the message.",

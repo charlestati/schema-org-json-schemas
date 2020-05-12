@@ -14,7 +14,7 @@
   "properties": {
     "courseCode": {
       "description": "The identifier for the Course used by the course provider (e.g. CS101 or 6.001).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "coursePrerequisites": {
       "description": "Requirements for taking the Course. May be completion of another Course or a textual description like \"permission of instructor\". Requirements may be a pre-requisite competency, referenced using AlignmentObject.",
@@ -22,14 +22,17 @@
       "items": {
         "oneOf": [
           { "$ref": "Course.schema.json" },
-          { "$ref": "AlignmentObject.schema.json" }
+          { "$ref": "AlignmentObject.schema.json" },
+          { "type": "string" }
         ]
       }
     },
     "educationalCredentialAwarded": {
       "description": "A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.",
       "type": "array",
-      "items": { "type": "string", "format": "uri" }
+      "items": {
+        "oneOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      }
     },
     "hasCourseInstance": {
       "description": "An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.",

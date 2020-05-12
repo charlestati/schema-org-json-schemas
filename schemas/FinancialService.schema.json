@@ -15,7 +15,9 @@
     "feesAndCommissionsSpecification": {
       "description": "Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.",
       "type": "array",
-      "items": { "type": "string", "format": "uri" }
+      "items": {
+        "oneOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      }
     }
   }
 }

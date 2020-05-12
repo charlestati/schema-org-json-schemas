@@ -14,11 +14,11 @@
   "properties": {
     "childMaxAge": {
       "description": "Maximal age of the child.",
-      "format": "http://schema.org/Number"
+      "type": "number"
     },
     "childMinAge": {
       "description": "Minimal age of the child.",
-      "format": "http://schema.org/Number"
+      "type": "number"
     }
   }
 }

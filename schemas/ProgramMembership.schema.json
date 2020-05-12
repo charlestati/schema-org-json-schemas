@@ -14,7 +14,8 @@
   "properties": {
     "membershipNumber": {
       "description": "A unique identifier for the membership.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "members": {
       "description": "A member of this organization.",
@@ -38,7 +39,7 @@
     },
     "programName": {
       "description": "The program providing the membership.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "hostingOrganization": {
       "description": "The organization (airline, travelers' club, etc.) the membership is made with.",

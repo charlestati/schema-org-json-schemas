@@ -14,19 +14,22 @@
   "properties": {
     "seatingType": {
       "description": "The type/class of the seat.",
-      "$ref": "QualitativeValue.schema.json"
+      "anyOf": [
+        { "$ref": "QualitativeValue.schema.json" },
+        { "type": "string" }
+      ]
     },
     "seatSection": {
       "description": "The section location of the reserved seat (e.g. Orchestra).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "seatRow": {
       "description": "The row location of the reserved seat (e.g., B).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "seatNumber": {
       "description": "The location of the reserved seat (e.g., 27).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     }
   }
 }

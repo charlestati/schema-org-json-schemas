@@ -20,61 +20,65 @@
     "softwareRequirements": {
       "description": "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).",
       "type": "array",
-      "items": { "type": "string", "format": "uri" }
+      "items": {
+        "oneOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      }
     },
     "permissions": {
       "description": "Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "processorRequirements": {
       "description": "Processor architecture required to run the application (e.g. IA64).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "availableOnDevice": {
       "description": "Device required to run the application. Used in cases where a specific make/model is required to run the application.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "featureList": {
       "description": "Features or modules provided by this application (and possibly required by other applications).",
       "type": "array",
-      "items": { "type": "string", "format": "uri" }
+      "items": {
+        "oneOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      }
     },
     "applicationSubCategory": {
       "description": "Subcategory of the application, e.g. 'Arcade Game'.",
-      "type": "string",
-      "format": "uri"
+      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
     },
     "requirements": {
       "description": "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).",
       "type": "array",
-      "items": { "type": "string", "format": "uri" }
+      "items": {
+        "oneOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      }
     },
     "device": {
       "description": "Device required to run the application. Used in cases where a specific make/model is required to run the application.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "applicationCategory": {
       "description": "Type of software application, e.g. 'Game, Multimedia'.",
-      "type": "string",
-      "format": "uri"
+      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
     },
     "softwareVersion": {
       "description": "Version of the software instance.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "storageRequirements": {
       "description": "Storage requirements (free space required).",
-      "type": "string",
-      "format": "uri"
+      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
     },
     "applicationSuite": {
       "description": "The name of the application suite to which the application belongs (e.g. Excel belongs to Office).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "memoryRequirements": {
       "description": "Minimum memory requirements.",
-      "type": "string",
-      "format": "uri"
+      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
     },
     "screenshot": {
       "description": "A link to a screenshot image of the app.",
@@ -88,7 +92,8 @@
     },
     "countriesSupported": {
       "description": "Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "softwareHelp": {
       "description": "Software application help.",
@@ -102,8 +107,7 @@
     },
     "releaseNotes": {
       "description": "Description of what changed in this version.",
-      "type": "string",
-      "format": "uri"
+      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
     },
     "supportingData": {
       "description": "Supporting data for a SoftwareApplication.",
@@ -112,15 +116,17 @@
     },
     "countriesNotSupported": {
       "description": "Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "operatingSystem": {
       "description": "Operating systems supported (Windows 7, OSX 10.6, Android 1.6).",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "fileSize": {
       "description": "Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "installUrl": {
       "description": "URL at which the app may be installed, if different from the URL of the item.",

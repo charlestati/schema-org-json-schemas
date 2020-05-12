@@ -20,12 +20,16 @@
       "description": "The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.\n      If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.",
       "anyOf": [
         { "$ref": "BedType.schema.json" },
+        { "type": "string" },
         { "$ref": "BedDetails.schema.json" }
       ]
     },
     "numberOfRooms": {
       "description": "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
-      "$ref": "QuantitativeValue.schema.json"
+      "anyOf": [
+        { "type": "number" },
+        { "$ref": "QuantitativeValue.schema.json" }
+      ]
     }
   }
 }

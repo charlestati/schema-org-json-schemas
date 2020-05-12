@@ -14,27 +14,27 @@
   "properties": {
     "latitude": {
       "description": "The latitude of a location. For example 37.42242 (WGS 84).",
-      "format": "http://schema.org/Text"
+      "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "longitude": {
       "description": "The longitude of a location. For example -122.08585 (WGS 84).",
-      "format": "http://schema.org/Number"
+      "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "address": {
       "description": "Physical address of the item.",
-      "$ref": "PostalAddress.schema.json"
+      "anyOf": [{ "type": "string" }, { "$ref": "PostalAddress.schema.json" }]
     },
     "addressCountry": {
       "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-      "$ref": "Country.schema.json"
+      "anyOf": [{ "$ref": "Country.schema.json" }, { "type": "string" }]
     },
     "postalCode": {
       "description": "The postal code. For example, 94043.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "elevation": {
       "description": "The elevation of a location (WGS 84). Values may be of the form 'NUMBER UNITOFMEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",
-      "format": "http://schema.org/Number"
+      "anyOf": [{ "type": "number" }, { "type": "string" }]
     }
   }
 }

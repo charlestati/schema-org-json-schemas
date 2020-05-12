@@ -29,8 +29,7 @@
     },
     "genre": {
       "description": "Genre of the creative work, broadcast channel or group.",
-      "type": "string",
-      "format": "uri"
+      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
     },
     "tracks": {
       "description": "A music recording (track)—usually a single song.",

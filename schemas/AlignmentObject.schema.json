@@ -14,7 +14,7 @@
   "properties": {
     "targetDescription": {
       "description": "The description of a node in an established educational framework.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "targetUrl": {
       "description": "The URL of a node in an established educational framework.",
@@ -23,15 +23,16 @@
     },
     "targetName": {
       "description": "The name of a node in an established educational framework.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "alignmentType": {
       "description": "A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "educationalFramework": {
       "description": "The framework to which the resource being described is aligned.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     }
   }
 }

@@ -14,11 +14,11 @@
   "properties": {
     "exifData": {
       "description": "exif data for this object.",
-      "$ref": "PropertyValue.schema.json"
+      "anyOf": [{ "$ref": "PropertyValue.schema.json" }, { "type": "string" }]
     },
     "representativeOfPage": {
       "description": "Indicates whether this image is representative of the content of the page.",
-      "format": "http://schema.org/Boolean"
+      "type": "boolean"
     },
     "thumbnail": {
       "description": "Thumbnail image for an image or video.",
@@ -26,7 +26,7 @@
     },
     "caption": {
       "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.",
-      "$ref": "MediaObject.schema.json"
+      "anyOf": [{ "type": "string" }, { "$ref": "MediaObject.schema.json" }]
     }
   }
 }

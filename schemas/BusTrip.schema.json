@@ -14,7 +14,7 @@
   "properties": {
     "busName": {
       "description": "The name of the bus (e.g. Bolt Express).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "departureBusStop": {
       "description": "The stop or station from which the bus departs.",
@@ -32,7 +32,7 @@
     },
     "busNumber": {
       "description": "The unique identifier for the bus.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     }
   }
 }

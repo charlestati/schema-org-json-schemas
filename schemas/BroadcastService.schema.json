@@ -14,15 +14,18 @@
   "properties": {
     "broadcastFrequency": {
       "description": "The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. \"87 FM\".",
-      "$ref": "BroadcastFrequencySpecification.schema.json"
+      "anyOf": [
+        { "$ref": "BroadcastFrequencySpecification.schema.json" },
+        { "type": "string" }
+      ]
     },
     "broadcastTimezone": {
       "description": "The timezone in ISO 8601 format for which the service bases its broadcasts",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "videoFormat": {
       "description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "parentService": {
       "description": "A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.",
@@ -31,7 +34,7 @@
     },
     "broadcastDisplayName": {
       "description": "The name displayed in the channel guide. For many US affiliates, it is the network name.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "broadcastAffiliateOf": {
       "description": "The media network(s) whose content is broadcast on this station.",
@@ -48,7 +51,7 @@
     },
     "inLanguage": {
       "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
-      "$ref": "Language.schema.json"
+      "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
     },
     "broadcaster": {
       "description": "The organization owning or operating the broadcast service.",

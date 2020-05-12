@@ -18,15 +18,21 @@
   "properties": {
     "endDate": {
       "description": "The end date and time of the item (in ISO 8601 date format).",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "issn": {
       "description": "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "startDate": {
       "description": "The start date and time of the item (in ISO 8601 date format).",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     }
   }
 }

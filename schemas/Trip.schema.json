@@ -31,11 +31,17 @@
     },
     "arrivalTime": {
       "description": "The expected arrival time.",
-      "format": "http://schema.org/Time"
+      "anyOf": [
+        { "type": "string", "format": "time" },
+        { "type": "string", "format": "date-time" }
+      ]
     },
     "departureTime": {
       "description": "The expected departure time.",
-      "format": "http://schema.org/Time"
+      "anyOf": [
+        { "type": "string", "format": "time" },
+        { "type": "string", "format": "date-time" }
+      ]
     }
   }
 }

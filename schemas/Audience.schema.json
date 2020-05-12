@@ -14,7 +14,7 @@
   "properties": {
     "audienceType": {
       "description": "The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "geographicArea": {
       "description": "The geographic area associated with the audience.",

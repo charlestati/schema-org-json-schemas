@@ -18,21 +18,24 @@
     },
     "skills": {
       "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "responsibilities": {
       "description": "Responsibilities associated with this role or Occupation.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "experienceRequirements": {
       "description": "Description of skills and experience needed for the position or Occupation.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "estimatedSalary": {
       "description": "An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.",
       "type": "array",
       "items": {
         "oneOf": [
+          { "type": "number" },
           { "$ref": "MonetaryAmount.schema.json" },
           { "$ref": "MonetaryAmountDistribution.schema.json" }
         ]

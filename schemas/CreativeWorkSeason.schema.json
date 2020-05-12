@@ -27,7 +27,10 @@
     },
     "endDate": {
       "description": "The end date and time of the item (in ISO 8601 date format).",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "partOfSeries": {
       "description": "The series to which this episode or season belongs.",
@@ -40,7 +43,10 @@
     },
     "startDate": {
       "description": "The start date and time of the item (in ISO 8601 date format).",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
@@ -57,7 +63,7 @@
     },
     "seasonNumber": {
       "description": "Position of the season within an ordered group of seasons.",
-      "type": "integer"
+      "anyOf": [{ "type": "integer" }, { "type": "string" }]
     }
   }
 }

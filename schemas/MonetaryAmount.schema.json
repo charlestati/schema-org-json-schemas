@@ -14,27 +14,38 @@
   "properties": {
     "minValue": {
       "description": "The lower value of some characteristic or property.",
-      "format": "http://schema.org/Number"
+      "type": "number"
     },
     "currency": {
       "description": "The currency in which the monetary amount is expressed.\n\nUse standard formats: ISO 4217 currency format e.g. \"USD\"; Ticker symbol for cryptocurrencies e.g. \"BTC\"; well known names for Local Exchange Tradings Systems (LETS) and other currency types e.g. \"Ithaca HOUR\".",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "value": {
       "description": "The value of the quantitative value or property value node.\n\n\nFor QuantitativeValue and MonetaryAmount, the recommended type for values is 'Number'.\nFor PropertyValue, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\nUse values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\nUse '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n\n",
-      "$ref": "StructuredValue.schema.json"
+      "anyOf": [
+        { "type": "number" },
+        { "type": "string" },
+        { "type": "boolean" },
+        { "$ref": "StructuredValue.schema.json" }
+      ]
     },
     "validFrom": {
       "description": "The date when the item becomes valid.",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "validThrough": {
       "description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "maxValue": {
       "description": "The upper value of some characteristic or property.",
-      "format": "http://schema.org/Number"
+      "type": "number"
     }
   }
 }

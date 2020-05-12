@@ -14,7 +14,8 @@
   "properties": {
     "scheduledTime": {
       "description": "The time the object is scheduled to.",
-      "format": "http://schema.org/DateTime"
+      "type": "string",
+      "format": "date-time"
     }
   }
 }

@@ -14,19 +14,16 @@
   "properties": {
     "percentile25": {
       "description": "The 25th percentile value.",
-      "format": "http://schema.org/Number"
+      "type": "number"
     },
-    "median": {
-      "description": "The median value.",
-      "format": "http://schema.org/Number"
-    },
+    "median": { "description": "The median value.", "type": "number" },
     "percentile10": {
       "description": "The 10th percentile value.",
-      "format": "http://schema.org/Number"
+      "type": "number"
     },
     "percentile75": {
       "description": "The 75th percentile value.",
-      "format": "http://schema.org/Number"
+      "type": "number"
     },
     "duration": {
       "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
@@ -35,7 +32,7 @@
     },
     "percentile90": {
       "description": "The 90th percentile value.",
-      "format": "http://schema.org/Number"
+      "type": "number"
     }
   }
 }

@@ -18,7 +18,7 @@
   "properties": {
     "screenCount": {
       "description": "The number of screens in the movie theater.",
-      "format": "http://schema.org/Number"
+      "type": "number"
     }
   }
 }

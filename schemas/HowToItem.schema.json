@@ -14,7 +14,11 @@
   "properties": {
     "requiredQuantity": {
       "description": "The required quantity of the item(s).",
-      "$ref": "QuantitativeValue.schema.json"
+      "anyOf": [
+        { "type": "number" },
+        { "type": "string" },
+        { "$ref": "QuantitativeValue.schema.json" }
+      ]
     }
   }
 }

@@ -58,11 +58,17 @@
     },
     "endDate": {
       "description": "The end date and time of the item (in ISO 8601 date format).",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "doorTime": {
       "description": "The time admission will commence.",
-      "format": "http://schema.org/Time"
+      "anyOf": [
+        { "type": "string", "format": "time" },
+        { "type": "string", "format": "date-time" }
+      ]
     },
     "contributor": {
       "description": "A secondary contributor to the CreativeWork or Event.",
@@ -80,7 +86,7 @@
     },
     "typicalAgeRange": {
       "description": "The typical expected age range, e.g. '7-9', '11-'.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "organizer": {
       "description": "An organizer of an Event.",
@@ -123,7 +129,7 @@
     },
     "inLanguage": {
       "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
-      "$ref": "Language.schema.json"
+      "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
     },
     "attendee": {
       "description": "A person or organization attending the event.",
@@ -147,7 +153,10 @@
     },
     "startDate": {
       "description": "The start date and time of the item (in ISO 8601 date format).",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
@@ -175,7 +184,8 @@
     },
     "previousStartDate": {
       "description": "Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.",
-      "format": "http://schema.org/Date"
+      "type": "array",
+      "items": { "type": "string", "format": "date" }
     },
     "review": {
       "description": "A review of the item.",
@@ -196,6 +206,7 @@
       "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
       "anyOf": [
         { "$ref": "Place.schema.json" },
+        { "type": "string" },
         { "$ref": "PostalAddress.schema.json" }
       ]
     },
@@ -212,7 +223,8 @@
     },
     "isAccessibleForFree": {
       "description": "A flag to signal that the item, event, or place is accessible for free.",
-      "format": "http://schema.org/Boolean"
+      "type": "array",
+      "items": { "type": "boolean" }
     },
     "performer": {
       "description": "A performer at the event—for example, a presenter, musician, musical group or actor.",

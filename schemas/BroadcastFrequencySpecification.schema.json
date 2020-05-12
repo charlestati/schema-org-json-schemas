@@ -14,7 +14,10 @@
   "properties": {
     "broadcastFrequencyValue": {
       "description": "The frequency in MHz for a particular broadcast.",
-      "$ref": "QuantitativeValue.schema.json"
+      "anyOf": [
+        { "type": "number" },
+        { "$ref": "QuantitativeValue.schema.json" }
+      ]
     }
   }
 }

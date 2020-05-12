@@ -18,7 +18,7 @@
     },
     "catalogNumber": {
       "description": "The catalog number for the release.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "creditedTo": {
       "description": "The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to \"Stefani Germanotta Band\", but by Lady Gaga.",

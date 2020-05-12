@@ -14,7 +14,8 @@
   "properties": {
     "iataCode": {
       "description": "IATA identifier for an airline or airport.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "boardingPolicy": {
       "description": "The type of boarding policy used by the airline (e.g. zone-based or group-based).",

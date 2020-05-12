@@ -69,7 +69,7 @@
     },
     "servingSize": {
       "description": "The serving size, in terms of the number of volume or mass.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     }
   }
 }

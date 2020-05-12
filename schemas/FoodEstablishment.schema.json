@@ -14,13 +14,14 @@
   "properties": {
     "servesCuisine": {
       "description": "The cuisine of the restaurant.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "hasMenu": {
       "description": "Either the actual menu as a structured representation, as text, or a URL of the menu.",
       "type": "array",
       "items": {
         "oneOf": [
+          { "type": "string" },
           { "$ref": "Menu.schema.json" },
           { "type": "string", "format": "uri" }
         ]
@@ -29,6 +30,7 @@
     "menu": {
       "description": "Either the actual menu as a structured representation, as text, or a URL of the menu.",
       "anyOf": [
+        { "type": "string" },
         { "$ref": "Menu.schema.json" },
         { "type": "string", "format": "uri" }
       ]
@@ -40,8 +42,11 @@
     },
     "acceptsReservations": {
       "description": "Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings Yes or No.",
-      "type": "string",
-      "format": "uri"
+      "anyOf": [
+        { "type": "string" },
+        { "type": "boolean" },
+        { "type": "string", "format": "uri" }
+      ]
     }
   }
 }

@@ -23,6 +23,7 @@
       "items": {
         "oneOf": [
           { "$ref": "CreativeWork.schema.json" },
+          { "type": "string" },
           { "$ref": "ItemList.schema.json" }
         ]
       }
@@ -34,14 +35,17 @@
         "oneOf": [
           { "$ref": "CreativeWork.schema.json" },
           { "$ref": "HowToSection.schema.json" },
-          { "$ref": "HowToStep.schema.json" }
+          { "$ref": "HowToStep.schema.json" },
+          { "type": "string" }
         ]
       }
     },
     "tool": {
       "description": "A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.",
       "type": "array",
-      "items": { "$ref": "HowToTool.schema.json" }
+      "items": {
+        "oneOf": [{ "$ref": "HowToTool.schema.json" }, { "type": "string" }]
+      }
     },
     "performTime": {
       "description": "The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in ISO 8601 duration format.",
@@ -50,7 +54,7 @@
     },
     "estimatedCost": {
       "description": "The estimated cost of the supply or supplies consumed when performing instructions.",
-      "$ref": "MonetaryAmount.schema.json"
+      "anyOf": [{ "type": "string" }, { "$ref": "MonetaryAmount.schema.json" }]
     },
     "totalTime": {
       "description": "The total time required to perform instructions or a direction (including time to prepare the supplies), in ISO 8601 duration format.",
@@ -60,11 +64,16 @@
     "supply": {
       "description": "A sub-property of instrument. A supply consumed when performing instructions or a direction.",
       "type": "array",
-      "items": { "$ref": "HowToSupply.schema.json" }
+      "items": {
+        "oneOf": [{ "$ref": "HowToSupply.schema.json" }, { "type": "string" }]
+      }
     },
     "yield": {
       "description": "The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.",
-      "$ref": "QuantitativeValue.schema.json"
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "QuantitativeValue.schema.json" }
+      ]
     }
   }
 }

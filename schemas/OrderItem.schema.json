@@ -18,7 +18,7 @@
     },
     "orderQuantity": {
       "description": "The number of the item ordered. If the property is not set, assume the quantity is one.",
-      "format": "http://schema.org/Number"
+      "type": "number"
     },
     "orderDelivery": {
       "description": "The delivery of the parcel related to this order or order item.",
@@ -37,7 +37,7 @@
     },
     "orderItemNumber": {
       "description": "The identifier of the order item.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     }
   }
 }

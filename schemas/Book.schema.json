@@ -12,13 +12,10 @@
     }
   ],
   "properties": {
-    "isbn": {
-      "description": "The ISBN of the book.",
-      "format": "http://schema.org/Text"
-    },
+    "isbn": { "description": "The ISBN of the book.", "type": "string" },
     "bookEdition": {
       "description": "The edition of the book.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "bookFormat": {
       "description": "The format of the book.",

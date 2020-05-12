@@ -15,10 +15,20 @@ Object {
   "properties": Object {
     "additionalName": Object {
       "description": "An additional name for a Person, can be used for a middle name.",
-      "format": "http://schema.org/Text",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
     },
     "address": Object {
-      "$ref": "PostalAddress.schema.json",
+      "anyOf": Array [
+        Object {
+          "type": "string",
+        },
+        Object {
+          "$ref": "PostalAddress.schema.json",
+        },
+      ],
       "description": "Physical address of the item.",
     },
     "affiliation": Object {
@@ -44,15 +54,22 @@ Object {
     },
     "award": Object {
       "description": "An award won by or for this item.",
-      "format": "http://schema.org/Text",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
     },
     "awards": Object {
       "description": "Awards won by or for this item.",
-      "format": "http://schema.org/Text",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
     },
     "birthDate": Object {
       "description": "Date of birth.",
-      "format": "http://schema.org/Date",
+      "format": "date",
+      "type": "string",
     },
     "birthPlace": Object {
       "$ref": "Place.schema.json",
@@ -114,7 +131,8 @@ Object {
     },
     "deathDate": Object {
       "description": "Date of death.",
-      "format": "http://schema.org/Date",
+      "format": "date",
+      "type": "string",
     },
     "deathPlace": Object {
       "$ref": "Place.schema.json",
@@ -122,19 +140,22 @@ Object {
     },
     "duns": Object {
       "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
-      "format": "http://schema.org/Text",
+      "type": "string",
     },
     "email": Object {
       "description": "Email address.",
-      "format": "http://schema.org/Text",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
     },
     "familyName": Object {
       "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
-      "format": "http://schema.org/Text",
+      "type": "string",
     },
     "faxNumber": Object {
       "description": "The fax number.",
-      "format": "http://schema.org/Text",
+      "type": "string",
     },
     "follows": Object {
       "description": "The most generic uni-directional social relation.",
@@ -159,11 +180,14 @@ Object {
     },
     "givenName": Object {
       "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
-      "format": "http://schema.org/Text",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
     },
     "globalLocationNumber": Object {
       "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-      "format": "http://schema.org/Text",
+      "type": "string",
     },
     "hasOccupation": Object {
       "$ref": "Occupation.schema.json",
@@ -211,11 +235,17 @@ Object {
     },
     "honorificPrefix": Object {
       "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
-      "format": "http://schema.org/Text",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
     },
     "honorificSuffix": Object {
       "description": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.",
-      "format": "http://schema.org/Text",
+      "items": Object {
+        "type": "string",
+      },
+      "type": "array",
     },
     "interactionStatistic": Object {
       "$ref": "InteractionCounter.schema.json",
@@ -223,7 +253,7 @@ Object {
     },
     "isicV4": Object {
       "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
-      "format": "http://schema.org/Text",
+      "type": "string",
     },
     "knows": Object {
       "$ref": "Person.schema.json",
@@ -252,7 +282,7 @@ Object {
     },
     "naics": Object {
       "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
-      "format": "http://schema.org/Text",
+      "type": "string",
     },
     "nationality": Object {
       "description": "Nationality of the person.",
@@ -366,15 +396,15 @@ While such policies are most typically expressed in natural language, sometimes 
     },
     "taxID": Object {
       "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
-      "format": "http://schema.org/Text",
+      "type": "string",
     },
     "telephone": Object {
       "description": "The telephone number.",
-      "format": "http://schema.org/Text",
+      "type": "string",
     },
     "vatID": Object {
       "description": "The Value-added Tax ID of the organization or person.",
-      "format": "http://schema.org/Text",
+      "type": "string",
     },
     "weight": Object {
       "$ref": "QuantitativeValue.schema.json",

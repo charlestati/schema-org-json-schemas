@@ -14,11 +14,11 @@
   "properties": {
     "proficiencyLevel": {
       "description": "Proficiency needed for this content; expected values: 'Beginner', 'Expert'.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "dependencies": {
       "description": "Prerequisites needed to fulfill steps in article.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     }
   }
 }

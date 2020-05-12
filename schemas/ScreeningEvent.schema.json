@@ -14,7 +14,7 @@
   "properties": {
     "videoFormat": {
       "description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "workPresented": {
       "description": "The movie presented during this event.",

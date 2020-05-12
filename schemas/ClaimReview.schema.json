@@ -14,7 +14,8 @@
   "properties": {
     "claimReviewed": {
       "description": "A short summary of the specific claims reviewed in a ClaimReview.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     }
   }
 }

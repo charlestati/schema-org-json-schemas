@@ -240,13 +240,9 @@ function buildSchema(schemaClass, allSchemaClasses, allProperties, enumValues) {
 async function main() {
   const jsonld = await fetch(schemaOrgSchemasUrl);
   const graph = jsonld["@graph"];
-  const schemaClasses = graph.filter((vocabulary) => {
-    const types = castArray(vocabulary["@type"]);
-    return (
-      types.includes("rdfs:Class") &&
-      !types.includes("http://schema.org/DataType")
-    );
-  });
+  const schemaClasses = graph.filter((vocabulary) =>
+    castArray(vocabulary["@type"]).includes("rdfs:Class"),
+  );
   const properties = graph.filter((vocabulary) =>
     castArray(vocabulary["@type"]).includes("rdf:Property"),
   );

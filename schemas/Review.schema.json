@@ -22,11 +22,12 @@
     },
     "reviewBody": {
       "description": "The actual body of the review.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "reviewAspect": {
       "description": "This Review or Rating is relevant to this part or facet of the itemReviewed.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     }
   }
 }

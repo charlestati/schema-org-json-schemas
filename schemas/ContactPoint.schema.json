@@ -25,7 +25,8 @@
       "anyOf": [
         { "$ref": "AdministrativeArea.schema.json" },
         { "$ref": "Place.schema.json" },
-        { "$ref": "GeoShape.schema.json" }
+        { "$ref": "GeoShape.schema.json" },
+        { "type": "string" }
       ]
     },
     "hoursAvailable": {
@@ -40,27 +41,25 @@
     "availableLanguage": {
       "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
       "type": "array",
-      "items": { "$ref": "Language.schema.json" }
+      "items": {
+        "oneOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
+      }
     },
-    "telephone": {
-      "description": "The telephone number.",
-      "format": "http://schema.org/Text"
-    },
+    "telephone": { "description": "The telephone number.", "type": "string" },
     "email": {
       "description": "Email address.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "contactType": {
       "description": "A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "productSupported": {
       "description": "The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. \"iPhone\") or a general category of products or services (e.g. \"smartphones\").",
-      "$ref": "Product.schema.json"
+      "anyOf": [{ "type": "string" }, { "$ref": "Product.schema.json" }]
     },
-    "faxNumber": {
-      "description": "The fax number.",
-      "format": "http://schema.org/Text"
-    }
+    "faxNumber": { "description": "The fax number.", "type": "string" }
   }
 }

@@ -14,15 +14,19 @@
   "properties": {
     "orderDate": {
       "description": "Date order was placed.",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "paymentDue": {
       "description": "The date that payment is due.",
-      "format": "http://schema.org/DateTime"
+      "type": "string",
+      "format": "date-time"
     },
     "orderNumber": {
       "description": "The identifier of the transaction.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "paymentUrl": {
       "description": "The URL for sending a payment.",
@@ -43,7 +47,7 @@
     },
     "confirmationNumber": {
       "description": "A number that confirms the given order or payment has been received.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "customer": {
       "description": "Party placing the order or paying the invoice.",
@@ -71,7 +75,7 @@
     },
     "isGift": {
       "description": "Was the offer accepted as a gift for someone other than the buyer.",
-      "format": "http://schema.org/Boolean"
+      "type": "boolean"
     },
     "paymentMethod": {
       "description": "The name of the credit card or other method of payment for the order.",
@@ -86,11 +90,12 @@
     },
     "paymentMethodId": {
       "description": "An identifier for the method of payment used (e.g. the last 4 digits of the credit card).",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "discount": {
       "description": "Any discount applied (to an Order).",
-      "format": "http://schema.org/Number"
+      "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "orderDelivery": {
       "description": "The delivery of the parcel related to this order or order item.",
@@ -114,15 +119,18 @@
     },
     "discountCurrency": {
       "description": "The currency of the discount.\n\nUse standard formats: ISO 4217 currency format e.g. \"USD\"; Ticker symbol for cryptocurrencies e.g. \"BTC\"; well known names for Local Exchange Tradings Systems (LETS) and other currency types e.g. \"Ithaca HOUR\".",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "paymentDueDate": {
       "description": "The date that payment is due.",
-      "format": "http://schema.org/DateTime"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "discountCode": {
       "description": "Code used to redeem a discount.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     }
   }
 }

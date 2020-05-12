@@ -29,7 +29,6 @@ jest.mock("fs-extra");
 let schemaClasses;
 let properties;
 let enumValues;
-let dataTypes;
 
 beforeEach(() => {
   const graph = schemaOrgSchemas["@graph"];
@@ -45,9 +44,6 @@ beforeEach(() => {
         type.startsWith("http://schema.org/") &&
         type !== "http://schema.org/DataType",
     ),
-  );
-  dataTypes = graph.filter((vocabulary) =>
-    castArray(vocabulary["@type"]).includes("http://schema.org/DataType"),
   );
 });
 
@@ -82,7 +78,5 @@ it("should fetch data and write to file", async () => {
   fs.ensureDir.mockImplementation(() => Promise.resolve());
   await main();
   expect(axios.get).toHaveBeenCalled();
-  expect(fs.writeFileSync).toHaveBeenCalledTimes(
-    schemaClasses.length - dataTypes.length,
-  );
+  expect(fs.writeFileSync).toHaveBeenCalledTimes(schemaClasses.length);
 });

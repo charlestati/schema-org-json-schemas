@@ -14,7 +14,8 @@
   "properties": {
     "query": {
       "description": "A sub property of instrument. The query used on this action.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     }
   }
 }

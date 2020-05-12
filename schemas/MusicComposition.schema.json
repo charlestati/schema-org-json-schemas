@@ -14,7 +14,7 @@
   "properties": {
     "musicCompositionForm": {
       "description": "The type of composition (e.g. overture, sonata, symphony, etc.).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "includedComposition": {
       "description": "Smaller compositions included in this work (e.g. a movement in a symphony).",
@@ -45,7 +45,7 @@
     },
     "iswcCode": {
       "description": "The International Standard Musical Work Code for the composition.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "composer": {
       "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
@@ -56,7 +56,7 @@
     },
     "musicalKey": {
       "description": "The key, mode, or scale this composition uses.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     }
   }
 }

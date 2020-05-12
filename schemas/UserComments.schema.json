@@ -18,11 +18,14 @@
     },
     "commentText": {
       "description": "The text of the UserComment.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "commentTime": {
       "description": "The time at which the UserComment was made.",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "creator": {
       "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",

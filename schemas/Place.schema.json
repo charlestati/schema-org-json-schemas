@@ -24,7 +24,7 @@
     },
     "latitude": {
       "description": "The latitude of a location. For example 37.42242 (WGS 84).",
-      "format": "http://schema.org/Text"
+      "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "openingHoursSpecification": {
       "description": "The opening hours of a certain place.",
@@ -61,11 +61,12 @@
     },
     "smokingAllowed": {
       "description": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
-      "format": "http://schema.org/Boolean"
+      "type": "array",
+      "items": { "type": "boolean" }
     },
     "globalLocationNumber": {
       "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "maximumAttendeeCapacity": {
       "description": "The total number of individuals that may attend an event or venue.",
@@ -102,11 +103,12 @@
     },
     "branchCode": {
       "description": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "longitude": {
       "description": "The longitude of a location. For example -122.08585 (WGS 84).",
-      "format": "http://schema.org/Number"
+      "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "hasMap": {
       "description": "A URL to a map of the place.",
@@ -125,7 +127,7 @@
     },
     "address": {
       "description": "Physical address of the item.",
-      "$ref": "PostalAddress.schema.json"
+      "anyOf": [{ "type": "string" }, { "$ref": "PostalAddress.schema.json" }]
     },
     "specialOpeningHoursSpecification": {
       "description": "The special opening hours of a certain place.\n\nUse this to explicitly override general opening hours brought in scope by openingHoursSpecification or openingHours.",
@@ -146,10 +148,7 @@
         ]
       }
     },
-    "telephone": {
-      "description": "The telephone number.",
-      "format": "http://schema.org/Text"
-    },
+    "telephone": { "description": "The telephone number.", "type": "string" },
     "geo": {
       "description": "The geo coordinates of the place.",
       "anyOf": [
@@ -197,16 +196,14 @@
     },
     "isicV4": {
       "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "slogan": {
       "description": "A slogan or motto associated with the item.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
-    "faxNumber": {
-      "description": "The fax number.",
-      "format": "http://schema.org/Text"
-    },
+    "faxNumber": { "description": "The fax number.", "type": "string" },
     "geoIntersects": {
       "description": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in DE-9IM.",
       "type": "array",
@@ -214,7 +211,8 @@
     },
     "isAccessibleForFree": {
       "description": "A flag to signal that the item, event, or place is accessible for free.",
-      "format": "http://schema.org/Boolean"
+      "type": "array",
+      "items": { "type": "boolean" }
     },
     "geoCoveredBy": {
       "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in DE-9IM.",
@@ -223,7 +221,8 @@
     },
     "publicAccess": {
       "description": "A flag to signal that the Place is open to public visitors.  If this property is omitted there is no assumed default boolean value",
-      "format": "http://schema.org/Boolean"
+      "type": "array",
+      "items": { "type": "boolean" }
     }
   }
 }

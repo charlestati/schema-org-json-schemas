@@ -43,7 +43,8 @@
     },
     "deathDate": {
       "description": "Date of death.",
-      "format": "http://schema.org/Date"
+      "type": "string",
+      "format": "date"
     },
     "height": {
       "description": "The height of the item.",
@@ -77,7 +78,7 @@
     },
     "globalLocationNumber": {
       "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "birthPlace": {
       "description": "The place where the person was born.",
@@ -105,19 +106,21 @@
     },
     "duns": {
       "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "taxID": {
       "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "award": {
       "description": "An award won by or for this item.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "birthDate": {
       "description": "Date of birth.",
-      "format": "http://schema.org/Date"
+      "type": "string",
+      "format": "date"
     },
     "makesOffer": {
       "description": "A pointer to products or services offered by the organization or person.",
@@ -131,11 +134,12 @@
     },
     "awards": {
       "description": "Awards won by or for this item.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "familyName": {
       "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "seeks": {
       "description": "A pointer to products or services sought by the organization or person (demand).",
@@ -149,7 +153,7 @@
     },
     "address": {
       "description": "Physical address of the item.",
-      "$ref": "PostalAddress.schema.json"
+      "anyOf": [{ "type": "string" }, { "$ref": "PostalAddress.schema.json" }]
     },
     "performerIn": {
       "description": "Event that this person is a performer or participant in.",
@@ -158,11 +162,13 @@
     },
     "honorificPrefix": {
       "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "additionalName": {
       "description": "An additional name for a Person, can be used for a middle name.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "interactionStatistic": {
       "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
@@ -173,13 +179,11 @@
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     },
-    "telephone": {
-      "description": "The telephone number.",
-      "format": "http://schema.org/Text"
-    },
+    "telephone": { "description": "The telephone number.", "type": "string" },
     "email": {
       "description": "Email address.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "weight": {
       "description": "The weight of the product or person.",
@@ -212,11 +216,12 @@
     },
     "givenName": {
       "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "naics": {
       "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "hasPOS": {
       "description": "Points-of-Sales operated by the organization or person.",
@@ -262,7 +267,7 @@
     },
     "isicV4": {
       "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "brand": {
       "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
@@ -273,7 +278,8 @@
     },
     "honorificSuffix": {
       "description": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "netWorth": {
       "description": "The total financial value of the person as calculated by subtracting assets from liabilities.",
@@ -284,17 +290,14 @@
     },
     "vatID": {
       "description": "The Value-added Tax ID of the organization or person.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "nationality": {
       "description": "Nationality of the person.",
       "type": "array",
       "items": { "$ref": "Country.schema.json" }
     },
-    "faxNumber": {
-      "description": "The fax number.",
-      "format": "http://schema.org/Text"
-    },
+    "faxNumber": { "description": "The fax number.", "type": "string" },
     "relatedTo": {
       "description": "The most generic familial relation.",
       "$ref": "Person.schema.json"

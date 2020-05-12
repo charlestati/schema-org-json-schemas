@@ -45,7 +45,8 @@
       "anyOf": [
         { "$ref": "AdministrativeArea.schema.json" },
         { "$ref": "Place.schema.json" },
-        { "$ref": "GeoShape.schema.json" }
+        { "$ref": "GeoShape.schema.json" },
+        { "type": "string" }
       ]
     },
     "events": {
@@ -65,7 +66,7 @@
     },
     "globalLocationNumber": {
       "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "members": {
       "description": "A member of this organization.",
@@ -83,11 +84,11 @@
     },
     "duns": {
       "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "taxID": {
       "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "reviews": {
       "description": "Review of the item.",
@@ -96,7 +97,8 @@
     },
     "award": {
       "description": "An award won by or for this item.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "makesOffer": {
       "description": "A pointer to products or services offered by the organization or person.",
@@ -110,11 +112,13 @@
     },
     "awards": {
       "description": "Awards won by or for this item.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "foundingDate": {
       "description": "The date that this organization was founded.",
-      "format": "http://schema.org/Date"
+      "type": "string",
+      "format": "date"
     },
     "seeks": {
       "description": "A pointer to products or services sought by the organization or person (demand).",
@@ -143,11 +147,12 @@
     },
     "dissolutionDate": {
       "description": "The date that this organization was dissolved.",
-      "format": "http://schema.org/Date"
+      "type": "string",
+      "format": "date"
     },
     "address": {
       "description": "Physical address of the item.",
-      "$ref": "PostalAddress.schema.json"
+      "anyOf": [{ "type": "string" }, { "$ref": "PostalAddress.schema.json" }]
     },
     "interactionStatistic": {
       "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
@@ -168,13 +173,11 @@
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     },
-    "telephone": {
-      "description": "The telephone number.",
-      "format": "http://schema.org/Text"
-    },
+    "telephone": { "description": "The telephone number.", "type": "string" },
     "email": {
       "description": "Email address.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "department": {
       "description": "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.",
@@ -192,7 +195,7 @@
     },
     "legalName": {
       "description": "The official name of the organization, e.g. the registered company name.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "employee": {
       "description": "Someone working for this organization.",
@@ -205,7 +208,7 @@
     },
     "naics": {
       "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "hasPOS": {
       "description": "Points-of-Sales operated by the organization or person.",
@@ -260,16 +263,18 @@
     },
     "isicV4": {
       "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "slogan": {
       "description": "A slogan or motto associated with the item.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "location": {
       "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
       "anyOf": [
         { "$ref": "Place.schema.json" },
+        { "type": "string" },
         { "$ref": "PostalAddress.schema.json" }
       ]
     },
@@ -282,15 +287,13 @@
     },
     "vatID": {
       "description": "The Value-added Tax ID of the organization or person.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "leiCode": {
       "description": "An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
-    "faxNumber": {
-      "description": "The fax number.",
-      "format": "http://schema.org/Text"
-    }
+    "faxNumber": { "description": "The fax number.", "type": "string" }
   }
 }

@@ -14,19 +14,22 @@
   "properties": {
     "passengerSequenceNumber": {
       "description": "The passenger's sequence number as assigned by the airline.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "securityScreening": {
       "description": "The type of security screening the passenger is subject to.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "passengerPriorityStatus": {
       "description": "The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).",
-      "$ref": "QualitativeValue.schema.json"
+      "anyOf": [
+        { "$ref": "QualitativeValue.schema.json" },
+        { "type": "string" }
+      ]
     },
     "boardingGroup": {
       "description": "The airline-specific indicator of boarding order / preference.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     }
   }
 }

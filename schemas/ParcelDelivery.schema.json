@@ -30,7 +30,7 @@
     },
     "trackingNumber": {
       "description": "Shipper tracking number.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "hasDeliveryMethod": {
       "description": "Method used for delivery or shipping.",
@@ -60,11 +60,17 @@
     },
     "expectedArrivalFrom": {
       "description": "The earliest date the package may arrive.",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "expectedArrivalUntil": {
       "description": "The latest date the package may arrive.",
-      "format": "http://schema.org/DateTime"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     }
   }
 }

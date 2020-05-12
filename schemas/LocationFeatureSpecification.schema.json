@@ -18,11 +18,17 @@
     },
     "validFrom": {
       "description": "The date when the item becomes valid.",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "validThrough": {
       "description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     }
   }
 }

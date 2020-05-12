@@ -18,7 +18,10 @@
     },
     "startTime": {
       "description": "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
-      "format": "http://schema.org/Time"
+      "anyOf": [
+        { "type": "string", "format": "time" },
+        { "type": "string", "format": "date-time" }
+      ]
     },
     "actionStatus": {
       "description": "Indicates the current disposition of the Action.",
@@ -39,7 +42,10 @@
     },
     "endTime": {
       "description": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
-      "format": "http://schema.org/DateTime"
+      "anyOf": [
+        { "type": "string", "format": "time" },
+        { "type": "string", "format": "date-time" }
+      ]
     },
     "instrument": {
       "description": "The object that helped the agent perform the action. e.g. John wrote a book with a pen.",
@@ -68,6 +74,7 @@
       "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
       "anyOf": [
         { "$ref": "Place.schema.json" },
+        { "type": "string" },
         { "$ref": "PostalAddress.schema.json" }
       ]
     }

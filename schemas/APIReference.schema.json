@@ -14,23 +14,26 @@
   "properties": {
     "programmingModel": {
       "description": "Indicates whether API is managed or unmanaged.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "executableLibraryName": {
       "description": "Library file name e.g., mscorlib.dll, system.web.dll.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "assemblyVersion": {
       "description": "Associated product/technology version. e.g., .NET Framework 4.5.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "assembly": {
       "description": "Library file name e.g., mscorlib.dll, system.web.dll.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "targetPlatform": {
       "description": "Type of app development: phone, Metro style, desktop, XBox, etc.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     }
   }
 }

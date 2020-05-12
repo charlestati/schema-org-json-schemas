@@ -44,7 +44,9 @@
     "tool": {
       "description": "A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.",
       "type": "array",
-      "items": { "$ref": "HowToTool.schema.json" }
+      "items": {
+        "oneOf": [{ "$ref": "HowToTool.schema.json" }, { "type": "string" }]
+      }
     },
     "performTime": {
       "description": "The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in ISO 8601 duration format.",
@@ -59,7 +61,9 @@
     "supply": {
       "description": "A sub-property of instrument. A supply consumed when performing instructions or a direction.",
       "type": "array",
-      "items": { "$ref": "HowToSupply.schema.json" }
+      "items": {
+        "oneOf": [{ "$ref": "HowToSupply.schema.json" }, { "type": "string" }]
+      }
     },
     "afterMedia": {
       "description": "A media object representing the circumstances after performing this direction.",

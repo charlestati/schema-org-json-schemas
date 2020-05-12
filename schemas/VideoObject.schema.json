@@ -19,7 +19,7 @@
     },
     "videoFrameSize": {
       "description": "The frame size of the video.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "musicBy": {
       "description": "The composer of the soundtrack.",
@@ -39,11 +39,11 @@
     },
     "transcript": {
       "description": "If this MediaObject is an AudioObject or VideoObject, the transcript of that object.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "videoQuality": {
       "description": "The quality of the video.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "thumbnail": {
       "description": "Thumbnail image for an image or video.",
@@ -51,7 +51,7 @@
     },
     "caption": {
       "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.",
-      "$ref": "MediaObject.schema.json"
+      "anyOf": [{ "type": "string" }, { "$ref": "MediaObject.schema.json" }]
     },
     "actors": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",

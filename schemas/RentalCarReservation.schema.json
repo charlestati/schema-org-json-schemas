@@ -14,11 +14,13 @@
   "properties": {
     "pickupTime": {
       "description": "When a taxi will pickup a passenger or a rental car can be picked up.",
-      "format": "http://schema.org/DateTime"
+      "type": "array",
+      "items": { "type": "string", "format": "date-time" }
     },
     "dropoffTime": {
       "description": "When a rental car can be dropped off.",
-      "format": "http://schema.org/DateTime"
+      "type": "array",
+      "items": { "type": "string", "format": "date-time" }
     },
     "dropoffLocation": {
       "description": "Where a rental car can be dropped off.",

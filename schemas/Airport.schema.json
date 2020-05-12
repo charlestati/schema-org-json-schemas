@@ -14,11 +14,13 @@
   "properties": {
     "iataCode": {
       "description": "IATA identifier for an airline or airport.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "icaoCode": {
       "description": "ICAO identifier for an airport.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     }
   }
 }

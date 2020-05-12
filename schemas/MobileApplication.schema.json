@@ -14,7 +14,7 @@
   "properties": {
     "carrierRequirements": {
       "description": "Specifies specific carrier(s) requirements for the application (e.g. an application may only work on a specific carrier network).",
-      "format": "http://schema.org/Text"
+      "type": "string"
     }
   }
 }

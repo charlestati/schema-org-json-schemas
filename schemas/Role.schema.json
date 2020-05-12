@@ -14,21 +14,31 @@
   "properties": {
     "endDate": {
       "description": "The end date and time of the item (in ISO 8601 date format).",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "namedPosition": {
       "description": "A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'.",
       "type": "array",
-      "items": { "type": "string", "format": "uri" }
+      "items": {
+        "oneOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      }
     },
     "startDate": {
       "description": "The start date and time of the item (in ISO 8601 date format).",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "roleName": {
       "description": "A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.",
       "type": "array",
-      "items": { "type": "string", "format": "uri" }
+      "items": {
+        "oneOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      }
     }
   }
 }

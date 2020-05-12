@@ -19,11 +19,15 @@
     },
     "validUntil": {
       "description": "The date when the item is no longer valid.",
-      "format": "http://schema.org/Date"
+      "type": "string",
+      "format": "date"
     },
     "validFrom": {
       "description": "The date when the item becomes valid.",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "issuedBy": {
       "description": "The organization issuing the ticket or permit.",

@@ -14,11 +14,15 @@
   "properties": {
     "lodgingUnitDescription": {
       "description": "A full description of the lodging unit.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "checkinTime": {
       "description": "The earliest someone may check into a lodging establishment.",
-      "format": "http://schema.org/DateTime"
+      "anyOf": [
+        { "type": "string", "format": "time" },
+        { "type": "string", "format": "date-time" }
+      ]
     },
     "numChildren": {
       "description": "The number of children staying in the unit.",
@@ -29,12 +33,20 @@
     },
     "checkoutTime": {
       "description": "The latest someone may check out of a lodging establishment.",
-      "format": "http://schema.org/DateTime"
+      "anyOf": [
+        { "type": "string", "format": "time" },
+        { "type": "string", "format": "date-time" }
+      ]
     },
     "lodgingUnitType": {
       "description": "Textual description of the unit type (including suite vs. room, size of bed, etc.).",
       "type": "array",
-      "items": { "$ref": "QualitativeValue.schema.json" }
+      "items": {
+        "oneOf": [
+          { "$ref": "QualitativeValue.schema.json" },
+          { "type": "string" }
+        ]
+      }
     },
     "numAdults": {
       "description": "The number of adults staying in the unit.",

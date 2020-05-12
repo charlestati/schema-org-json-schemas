@@ -19,6 +19,7 @@
     "gamePlatform": {
       "description": "The electronic systems used to play video games.",
       "anyOf": [
+        { "type": "string" },
         { "type": "string", "format": "uri" },
         { "$ref": "Thing.schema.json" }
       ]

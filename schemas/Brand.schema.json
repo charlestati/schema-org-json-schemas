@@ -33,7 +33,8 @@
     },
     "slogan": {
       "description": "A slogan or motto associated with the item.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     }
   }
 }

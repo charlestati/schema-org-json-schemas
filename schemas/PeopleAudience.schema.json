@@ -14,7 +14,7 @@
   "properties": {
     "suggestedMaxAge": {
       "description": "Maximal age recommended for viewing content.",
-      "format": "http://schema.org/Number"
+      "type": "number"
     },
     "requiredMinAge": {
       "description": "Audiences defined by a person's minimum age.",
@@ -22,11 +22,11 @@
     },
     "requiredGender": {
       "description": "Audiences defined by a person's gender.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "suggestedGender": {
       "description": "The gender of the person or audience.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "requiredMaxAge": {
       "description": "Audiences defined by a person's maximum age.",
@@ -34,7 +34,7 @@
     },
     "suggestedMinAge": {
       "description": "Minimal age recommended for viewing content.",
-      "format": "http://schema.org/Number"
+      "type": "number"
     }
   }
 }

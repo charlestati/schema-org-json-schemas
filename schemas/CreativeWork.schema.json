@@ -37,7 +37,7 @@
     },
     "position": {
       "description": "The position of an item in a series or sequence of items.",
-      "type": "integer"
+      "anyOf": [{ "type": "integer" }, { "type": "string" }]
     },
     "audio": {
       "description": "An embedded audio object.",
@@ -64,7 +64,7 @@
     },
     "interactivityType": {
       "description": "The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "character": {
       "description": "Fictional person connected with a creative work.",
@@ -103,11 +103,12 @@
     },
     "text": {
       "description": "The textual content of this CreativeWork.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "expires": {
       "description": "Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, or a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.",
-      "format": "http://schema.org/Date"
+      "type": "string",
+      "format": "date"
     },
     "contributor": {
       "description": "A secondary contributor to the CreativeWork or Event.",
@@ -128,7 +129,7 @@
     },
     "typicalAgeRange": {
       "description": "The typical expected age range, e.g. '7-9', '11-'.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "releasedEvent": {
       "description": "The place and time the release was issued, expressed as a PublicationEvent.",
@@ -136,7 +137,7 @@
     },
     "educationalUse": {
       "description": "The purpose of a work in the context of education; for example, 'assignment', 'group work'.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "contentLocation": {
       "description": "The location depicted or described in the content. For example, the location in a photograph or painting.",
@@ -145,11 +146,14 @@
     "schemaVersion": {
       "description": "Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as http://schema.org/version/2.0/ if precise indication of schema version was required by some application.",
       "type": "array",
-      "items": { "type": "string", "format": "uri" }
+      "items": {
+        "oneOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      }
     },
     "accessibilityFeature": {
       "description": "Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility (WebSchemas wiki lists possible values).",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
@@ -157,7 +161,8 @@
     },
     "alternativeHeadline": {
       "description": "A secondary title of the CreativeWork.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "locationCreated": {
       "description": "The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.",
@@ -170,8 +175,11 @@
     },
     "temporalCoverage": {
       "description": "The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in ISO 8601 time interval format. In\n      the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written \"2011/2012\"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.\n      Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via \"1939/1945\".\n\nOpen-ended date ranges can be written with \"..\" in place of the end date. For example, \"2015-11/..\" indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.",
-      "type": "string",
-      "format": "uri"
+      "anyOf": [
+        { "type": "string" },
+        { "type": "string", "format": "uri" },
+        { "type": "string", "format": "date-time" }
+      ]
     },
     "accountablePerson": {
       "description": "Specifies the Person that is legally accountable for the CreativeWork.",
@@ -188,7 +196,7 @@
     },
     "accessibilitySummary": {
       "description": "A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as \"short descriptions are present but long descriptions will be needed for non-visual users\" or \"short descriptions are present and no long descriptions are needed.\"",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "offers": {
       "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
@@ -211,7 +219,8 @@
     },
     "award": {
       "description": "An award won by or for this item.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "copyrightHolder": {
       "description": "The party holding the legal copyright to the CreativeWork.",
@@ -222,15 +231,17 @@
     },
     "accessibilityHazard": {
       "description": "A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3 (WebSchemas wiki lists possible values).",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "copyrightYear": {
       "description": "The year during which the claimed copyright for the CreativeWork was first asserted.",
-      "format": "http://schema.org/Number"
+      "type": "number"
     },
     "awards": {
       "description": "Awards won by or for this item.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "recordedAt": {
       "description": "The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.",
@@ -246,20 +257,23 @@
     },
     "fileFormat": {
       "description": "Media type, typically MIME format (see IANA site) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.",
-      "type": "string",
-      "format": "uri"
+      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
     },
     "inLanguage": {
       "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
-      "$ref": "Language.schema.json"
+      "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
     },
     "temporal": {
       "description": "The \"temporal\" property can be used in cases where more specific properties\n(e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.",
-      "format": "http://schema.org/DateTime"
+      "anyOf": [
+        { "type": "string" },
+        { "type": "string", "format": "date-time" }
+      ]
     },
     "accessibilityAPI": {
       "description": "Indicates that the resource is compatible with the referenced accessibility API (WebSchemas wiki lists possible values).",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "interactionStatistic": {
       "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
@@ -268,21 +282,25 @@
     "contentRating": {
       "description": "Official rating of a piece of content—for example,'MPAA PG-13'.",
       "type": "array",
-      "items": { "$ref": "Rating.schema.json" }
+      "items": {
+        "oneOf": [{ "$ref": "Rating.schema.json" }, { "type": "string" }]
+      }
     },
     "learningResourceType": {
       "description": "The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "accessMode": {
       "description": "The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Expected values include: auditory, tactile, textual, visual, colorDependent, chartOnVisual, chemOnVisual, diagramOnVisual, mathOnVisual, musicOnVisual, textOnVisual.",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
     "material": {
       "description": "A material that something is made from, e.g. leather, wool, cotton, paper.",
       "type": "array",
       "items": {
         "oneOf": [
+          { "type": "string" },
           { "type": "string", "format": "uri" },
           { "$ref": "Product.schema.json" }
         ]
@@ -290,7 +308,7 @@
     },
     "isFamilyFriendly": {
       "description": "Indicates whether this content is family friendly.",
-      "format": "http://schema.org/Boolean"
+      "type": "boolean"
     },
     "exampleOfWork": {
       "description": "A creative work that this work is an example/instance/realization/derivation of.",
@@ -299,11 +317,14 @@
     },
     "version": {
       "description": "The version of the CreativeWork embodied by a specified resource.",
-      "format": "http://schema.org/Number"
+      "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "dateModified": {
       "description": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "mainEntity": {
       "description": "Indicates the primary entity described in some page or other CreativeWork.",
@@ -312,12 +333,11 @@
     },
     "genre": {
       "description": "Genre of the creative work, broadcast channel or group.",
-      "type": "string",
-      "format": "uri"
+      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
     },
     "keywords": {
       "description": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
-      "format": "http://schema.org/Text"
+      "type": "string"
     },
     "author": {
       "description": "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
@@ -374,8 +394,7 @@
     },
     "encodingFormat": {
       "description": "Media type typically expressed using a MIME format (see IANA site and MDN reference) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).\n\nIn cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information.\n\nUnregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.",
-      "type": "string",
-      "format": "uri"
+      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
     },
     "review": {
       "description": "A review of the item.",
@@ -394,12 +413,10 @@
     },
     "accessibilityControl": {
       "description": "Identifies input methods that are sufficient to fully control the described resource (WebSchemas wiki lists possible values).",
-      "format": "http://schema.org/Text"
+      "type": "array",
+      "items": { "type": "string" }
     },
-    "headline": {
-      "description": "Headline of the article.",
-      "format": "http://schema.org/Text"
-    },
+    "headline": { "description": "Headline of the article.", "type": "string" },
     "isBasedOn": {
       "description": "A resource from which this work is derived or from which it is a modification or adaption.",
       "type": "array",
@@ -454,20 +471,29 @@
     },
     "dateCreated": {
       "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
-      "format": "http://schema.org/Date"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "datePublished": {
       "description": "Date of first broadcast/publication.",
-      "format": "http://schema.org/DateTime"
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "date" }
+      ]
     },
     "isAccessibleForFree": {
       "description": "A flag to signal that the item, event, or place is accessible for free.",
-      "format": "http://schema.org/Boolean"
+      "type": "array",
+      "items": { "type": "boolean" }
     },
     "citation": {
       "description": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
       "type": "array",
-      "items": { "$ref": "CreativeWork.schema.json" }
+      "items": {
+        "oneOf": [{ "$ref": "CreativeWork.schema.json" }, { "type": "string" }]
+      }
     }
   }
 }
