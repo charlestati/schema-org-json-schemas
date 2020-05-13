@@ -50,7 +50,7 @@
       "description": "Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.",
       "type": "array",
       "items": {
-        "oneOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+        "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
       }
     },
     "ticketedSeat": {

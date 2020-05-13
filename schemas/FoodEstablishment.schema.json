@@ -20,7 +20,7 @@
       "description": "Either the actual menu as a structured representation, as text, or a URL of the menu.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "type": "string" },
           { "$ref": "Menu.schema.json" },
           { "type": "string", "format": "uri" }

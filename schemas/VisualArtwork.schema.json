@@ -27,7 +27,7 @@
       "description": "e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.",
       "type": "array",
       "items": {
-        "oneOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+        "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
       }
     },
     "artworkSurface": {
@@ -49,7 +49,7 @@
       "description": "A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.",
       "type": "array",
       "items": {
-        "oneOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+        "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
       }
     },
     "depth": {

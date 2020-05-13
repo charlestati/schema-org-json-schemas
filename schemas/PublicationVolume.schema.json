@@ -24,7 +24,7 @@
     "volumeNumber": {
       "description": "Identifies the volume of publication or multi-part work; for example, \"iii\" or \"2\".",
       "type": "array",
-      "items": { "oneOf": [{ "type": "integer" }, { "type": "string" }] }
+      "items": { "anyOf": [{ "type": "integer" }, { "type": "string" }] }
     },
     "pageStart": {
       "description": "The page on which the work starts; for example \"135\" or \"xiii\".",

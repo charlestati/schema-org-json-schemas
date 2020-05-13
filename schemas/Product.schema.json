@@ -62,7 +62,7 @@
       "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Demand.schema.json" },
           { "$ref": "Offer.schema.json" }
         ]
@@ -77,7 +77,7 @@
       "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "type": "string" },
           { "type": "string", "format": "uri" },
           { "$ref": "Thing.schema.json" }
@@ -110,7 +110,7 @@
       "description": "An associated logo.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "ImageObject.schema.json" },
           { "type": "string", "format": "uri" }
         ]
@@ -132,7 +132,7 @@
       "description": "A material that something is made from, e.g. leather, wool, cotton, paper.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "type": "string" },
           { "type": "string", "format": "uri" },
           { "$ref": "Product.schema.json" }
@@ -154,7 +154,7 @@
       "description": "A pointer to another, functionally similar product (or multiple products).",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Service.schema.json" },
           { "$ref": "Product.schema.json" }
         ]
@@ -169,7 +169,7 @@
       "description": "A pointer to another, somehow related product (or multiple products).",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Service.schema.json" },
           { "$ref": "Product.schema.json" }
         ]

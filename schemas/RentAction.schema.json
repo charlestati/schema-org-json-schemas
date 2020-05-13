@@ -16,7 +16,7 @@
       "description": "A sub property of participant. The owner of the real estate property.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]

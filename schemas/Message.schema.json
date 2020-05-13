@@ -23,7 +23,7 @@
       "description": "A sub property of recipient. The recipient blind copied on a message.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" },
           { "$ref": "ContactPoint.schema.json" }
@@ -39,7 +39,7 @@
       "description": "A sub property of recipient. The recipient copied on a message.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" },
           { "$ref": "ContactPoint.schema.json" }
@@ -50,7 +50,7 @@
       "description": "A sub property of participant. The participant who is at the receiving end of the action.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" },
           { "$ref": "Audience.schema.json" },
@@ -72,7 +72,7 @@
       "description": "A sub property of recipient. The recipient who was directly sent the message.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" },
           { "$ref": "Audience.schema.json" },
@@ -84,7 +84,7 @@
       "description": "A sub property of participant. The participant who is at the sending end of the action.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" },
           { "$ref": "Audience.schema.json" }

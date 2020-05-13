@@ -30,7 +30,7 @@
       "description": "A competitor in a sports event.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "SportsTeam.schema.json" },
           { "$ref": "Person.schema.json" }
         ]

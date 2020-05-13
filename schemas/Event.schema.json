@@ -20,7 +20,7 @@
       "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -74,7 +74,7 @@
       "description": "A secondary contributor to the CreativeWork or Event.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -92,7 +92,7 @@
       "description": "An organizer of an Event.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -102,7 +102,7 @@
       "description": "A person attending the event.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -121,7 +121,7 @@
       "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Demand.schema.json" },
           { "$ref": "Offer.schema.json" }
         ]
@@ -135,7 +135,7 @@
       "description": "A person or organization attending the event.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -176,7 +176,7 @@
       "description": "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -196,7 +196,7 @@
       "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -230,7 +230,7 @@
       "description": "A performer at the event—for example, a presenter, musician, musical group or actor.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]

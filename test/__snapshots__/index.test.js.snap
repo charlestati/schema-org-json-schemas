@@ -41,7 +41,7 @@ Object {
     "alumniOf": Object {
       "description": "An organization that the person is an alumni of.",
       "items": Object {
-        "oneOf": Array [
+        "anyOf": Array [
           Object {
             "$ref": "Organization.schema.json",
           },
@@ -96,7 +96,7 @@ Object {
     "colleague": Object {
       "description": "A colleague of the person.",
       "items": Object {
-        "oneOf": Array [
+        "anyOf": Array [
           Object {
             "$ref": "Person.schema.json",
           },
@@ -167,7 +167,7 @@ Object {
     "funder": Object {
       "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
       "items": Object {
-        "oneOf": Array [
+        "anyOf": Array [
           Object {
             "$ref": "Person.schema.json",
           },
@@ -222,7 +222,7 @@ Object {
     "homeLocation": Object {
       "description": "A contact location for a person's residence.",
       "items": Object {
-        "oneOf": Array [
+        "anyOf": Array [
           Object {
             "$ref": "Place.schema.json",
           },
@@ -269,7 +269,7 @@ Object {
     "memberOf": Object {
       "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs.",
       "items": Object {
-        "oneOf": Array [
+        "anyOf": Array [
           Object {
             "$ref": "Organization.schema.json",
           },
@@ -305,7 +305,7 @@ Object {
     "owns": Object {
       "description": "Products owned by the organization or person.",
       "items": Object {
-        "oneOf": Array [
+        "anyOf": Array [
           Object {
             "$ref": "OwnershipInfo.schema.json",
           },
@@ -379,7 +379,7 @@ While such policies are most typically expressed in natural language, sometimes 
     "sponsor": Object {
       "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
       "items": Object {
-        "oneOf": Array [
+        "anyOf": Array [
           Object {
             "$ref": "Person.schema.json",
           },
@@ -413,7 +413,7 @@ While such policies are most typically expressed in natural language, sometimes 
     "workLocation": Object {
       "description": "A contact location for a person's place of work.",
       "items": Object {
-        "oneOf": Array [
+        "anyOf": Array [
           Object {
             "$ref": "Place.schema.json",
           },

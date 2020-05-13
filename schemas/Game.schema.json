@@ -21,7 +21,7 @@
       "description": "Real or fictional location of the game (or part of game).",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Place.schema.json" },
           { "$ref": "PostalAddress.schema.json" },
           { "type": "string", "format": "uri" }

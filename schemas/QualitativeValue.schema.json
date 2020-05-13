@@ -41,7 +41,7 @@
       "description": "A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "PropertyValue.schema.json" },
           { "$ref": "QualitativeValue.schema.json" },
           { "$ref": "StructuredValue.schema.json" },

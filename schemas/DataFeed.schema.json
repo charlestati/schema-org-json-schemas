@@ -16,7 +16,7 @@
       "description": "An item within in a data feed. Data feeds may have many elements.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "type": "string" },
           { "$ref": "DataFeedItem.schema.json" },
           { "$ref": "Thing.schema.json" }

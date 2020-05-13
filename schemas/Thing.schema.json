@@ -20,7 +20,7 @@
       "description": "An image of the item. This can be a URL or a fully described ImageObject.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "ImageObject.schema.json" },
           { "type": "string", "format": "uri" }
         ]
@@ -44,7 +44,7 @@
       "description": "A CreativeWork or Event about this Thing.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "CreativeWork.schema.json" },
           { "$ref": "Event.schema.json" }
         ]
@@ -54,7 +54,7 @@
       "description": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "CreativeWork.schema.json" },
           { "type": "string", "format": "uri" }
         ]

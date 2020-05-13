@@ -21,7 +21,7 @@
       "description": "A music recording (track)—usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "MusicRecording.schema.json" },
           { "$ref": "ItemList.schema.json" }
         ]

@@ -31,7 +31,7 @@
       "description": "An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "ItemList.schema.json" },
           { "$ref": "Answer.schema.json" }
         ]

@@ -16,14 +16,14 @@
       "description": "A sub property of object. The options subject to this action.",
       "type": "array",
       "items": {
-        "oneOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
+        "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
       }
     },
     "option": {
       "description": "A sub property of object. The options subject to this action.",
       "type": "array",
       "items": {
-        "oneOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
+        "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
       }
     }
   }

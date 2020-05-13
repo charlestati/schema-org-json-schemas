@@ -20,7 +20,7 @@
       "description": "An associated logo.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "ImageObject.schema.json" },
           { "type": "string", "format": "uri" }
         ]

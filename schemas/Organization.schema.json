@@ -24,7 +24,7 @@
       "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Organization.schema.json" },
           { "$ref": "ProgramMembership.schema.json" }
         ]
@@ -34,7 +34,7 @@
       "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -72,7 +72,7 @@
       "description": "A member of this organization.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -129,7 +129,7 @@
       "description": "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -162,7 +162,7 @@
       "description": "An associated logo.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "ImageObject.schema.json" },
           { "type": "string", "format": "uri" }
         ]
@@ -228,7 +228,7 @@
       "description": "Products owned by the organization or person.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "OwnershipInfo.schema.json" },
           { "$ref": "Product.schema.json" }
         ]
@@ -255,7 +255,7 @@
       "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]

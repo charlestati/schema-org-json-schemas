@@ -26,7 +26,7 @@
       "description": "The computer programming language.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "type": "string" },
           { "$ref": "ComputerLanguage.schema.json" }
         ]

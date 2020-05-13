@@ -20,7 +20,7 @@
       "description": "Requirements for taking the Course. May be completion of another Course or a textual description like \"permission of instructor\". Requirements may be a pre-requisite competency, referenced using AlignmentObject.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Course.schema.json" },
           { "$ref": "AlignmentObject.schema.json" },
           { "type": "string" }
@@ -31,7 +31,7 @@
       "description": "A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.",
       "type": "array",
       "items": {
-        "oneOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+        "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
       }
     },
     "hasCourseInstance": {

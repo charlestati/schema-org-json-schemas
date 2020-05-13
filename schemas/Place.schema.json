@@ -44,7 +44,7 @@
       "description": "A photograph of this place.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "ImageObject.schema.json" },
           { "$ref": "Photograph.schema.json" }
         ]
@@ -90,7 +90,7 @@
       "description": "Photographs of this place.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "ImageObject.schema.json" },
           { "$ref": "Photograph.schema.json" }
         ]
@@ -114,7 +114,7 @@
       "description": "A URL to a map of the place.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Map.schema.json" },
           { "type": "string", "format": "uri" }
         ]
@@ -142,7 +142,7 @@
       "description": "An associated logo.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "ImageObject.schema.json" },
           { "type": "string", "format": "uri" }
         ]

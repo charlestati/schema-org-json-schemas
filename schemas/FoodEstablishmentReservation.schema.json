@@ -30,7 +30,7 @@
       "description": "Number of people the reservation should accommodate.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "type": "integer" },
           { "$ref": "QuantitativeValue.schema.json" }
         ]

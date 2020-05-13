@@ -29,7 +29,7 @@
       "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -43,7 +43,7 @@
       "description": "An embedded audio object.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "AudioObject.schema.json" },
           { "$ref": "MusicRecording.schema.json" },
           { "$ref": "Clip.schema.json" }
@@ -90,7 +90,7 @@
       "description": "An embedded video object.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "VideoObject.schema.json" },
           { "$ref": "Clip.schema.json" }
         ]
@@ -114,7 +114,7 @@
       "description": "A secondary contributor to the CreativeWork or Event.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -147,7 +147,7 @@
       "description": "Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as http://schema.org/version/2.0/ if precise indication of schema version was required by some application.",
       "type": "array",
       "items": {
-        "oneOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+        "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
       }
     },
     "accessibilityFeature": {
@@ -202,7 +202,7 @@
       "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Demand.schema.json" },
           { "$ref": "Offer.schema.json" }
         ]
@@ -283,7 +283,7 @@
       "description": "Official rating of a piece of content—for example,'MPAA PG-13'.",
       "type": "array",
       "items": {
-        "oneOf": [{ "$ref": "Rating.schema.json" }, { "type": "string" }]
+        "anyOf": [{ "$ref": "Rating.schema.json" }, { "type": "string" }]
       }
     },
     "learningResourceType": {
@@ -299,7 +299,7 @@
       "description": "A material that something is made from, e.g. leather, wool, cotton, paper.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "type": "string" },
           { "type": "string", "format": "uri" },
           { "$ref": "Product.schema.json" }
@@ -355,7 +355,7 @@
       "description": "A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "CreativeWork.schema.json" },
           { "type": "string", "format": "uri" },
           { "$ref": "Product.schema.json" }
@@ -371,7 +371,7 @@
       "description": "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -405,7 +405,7 @@
       "description": "A license document that applies to this content, typically indicated by URL.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "CreativeWork.schema.json" },
           { "type": "string", "format": "uri" }
         ]
@@ -421,7 +421,7 @@
       "description": "A resource from which this work is derived or from which it is a modification or adaption.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "CreativeWork.schema.json" },
           { "type": "string", "format": "uri" },
           { "$ref": "Product.schema.json" }
@@ -446,7 +446,7 @@
       "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" }
         ]
@@ -492,7 +492,7 @@
       "description": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
       "type": "array",
       "items": {
-        "oneOf": [{ "$ref": "CreativeWork.schema.json" }, { "type": "string" }]
+        "anyOf": [{ "$ref": "CreativeWork.schema.json" }, { "type": "string" }]
       }
     }
   }

@@ -28,7 +28,7 @@
       "description": "The item ordered.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "OrderItem.schema.json" },
           { "$ref": "Service.schema.json" },
           { "$ref": "Product.schema.json" }

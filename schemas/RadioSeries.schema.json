@@ -34,7 +34,7 @@
       "description": "A season in a media series.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "type": "string", "format": "uri" },
           { "$ref": "CreativeWorkSeason.schema.json" }
         ]

@@ -24,7 +24,7 @@
       "description": "A sub property of participant. The participant who is at the receiving end of the action.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "Person.schema.json" },
           { "$ref": "Organization.schema.json" },
           { "$ref": "Audience.schema.json" },

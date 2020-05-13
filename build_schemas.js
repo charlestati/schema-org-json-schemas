@@ -123,18 +123,19 @@ function buildTypes(types, isArray) {
       return {
         type: "array",
         items: {
-          oneOf: types.map((type) => buildType(type)),
+          anyOf: types.map((type) => buildType(type)),
         },
       };
     }
     return { anyOf: types.map((type) => buildType(type)) };
   }
+  const type = buildType(types[0]);
   return isArray
     ? {
         type: "array",
-        items: buildType(types[0]),
+        items: type,
       }
-    : buildType(types[0]);
+    : type;
 }
 
 /**

@@ -31,7 +31,7 @@
       "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "type": "string" },
           { "type": "string", "format": "uri" },
           { "$ref": "Thing.schema.json" }

@@ -16,7 +16,7 @@
       "description": "A sub property of location. The specific food establishment where the action occurred.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "FoodEstablishment.schema.json" },
           { "$ref": "Place.schema.json" }
         ]

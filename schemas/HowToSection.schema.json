@@ -24,7 +24,7 @@
       "description": "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "$ref": "CreativeWork.schema.json" },
           { "type": "string" },
           { "$ref": "ItemList.schema.json" }

@@ -102,7 +102,7 @@
       "description": "An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.",
       "type": "array",
       "items": {
-        "oneOf": [
+        "anyOf": [
           { "type": "number" },
           { "$ref": "MonetaryAmount.schema.json" },
           { "$ref": "MonetaryAmountDistribution.schema.json" }
