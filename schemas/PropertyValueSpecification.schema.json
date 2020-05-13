@@ -36,8 +36,7 @@
     },
     "readonlyValue": {
       "description": "Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a \"hidden\" input in an HTML form.",
-      "type": "array",
-      "items": { "type": "boolean" }
+      "type": "boolean"
     },
     "valueMinLength": {
       "description": "Specifies the minimum allowed range for number of characters in a literal value.",
@@ -55,13 +54,11 @@
     },
     "multipleValues": {
       "description": "Whether multiple values are allowed for the property.  Default is false.",
-      "type": "array",
-      "items": { "type": "boolean" }
+      "type": "boolean"
     },
     "valueRequired": {
       "description": "Whether the property must be filled in to complete the action.  Default is false.",
-      "type": "array",
-      "items": { "type": "boolean" }
+      "type": "boolean"
     }
   }
 }

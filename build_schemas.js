@@ -29,6 +29,7 @@ const schemaOrgSchemasUrl = "https://schema.org/version/latest/schema.jsonld";
 const schemaOrgDraftVersion = "http://json-schema.org/draft-07/schema#";
 const schemasDir = path.join(__dirname, "schemas");
 const schemaSuffix = ".schema.json";
+const typesWithoutMultiplicity = new Set(["Boolean"]);
 const inferredMultiplicity = new Set();
 
 /**
@@ -96,17 +97,16 @@ function buildParents(parentsIDs, allSchemaClasses) {
 }
 
 /**
- * Build a JSON Schema type from a Schema.org type
+ * Build a JSON Schema type from a Schema.org type label
  *
- * @param type {object} - The Schema.org type in JSON-LD format
+ * @param typeLabel {string} - The Schema.org type label
  * @returns {object} - The corresponding type in JSON Schema format
  */
-function buildType(type) {
-  const name = type["rdfs:label"];
-  return hasHardcodedSchema(name)
-    ? hardcodedSchemas[`${name}`]
+function buildType(typeLabel) {
+  return hasHardcodedSchema(typeLabel)
+    ? hardcodedSchemas[`${typeLabel}`]
     : {
-        $ref: `${name}${schemaSuffix}`,
+        $ref: `${typeLabel}${schemaSuffix}`,
       };
 }
 
@@ -123,14 +123,15 @@ function buildTypes(types, isArray) {
       return {
         type: "array",
         items: {
-          anyOf: types.map((type) => buildType(type)),
+          anyOf: types.map((type) => buildType(type["rdfs:label"])),
         },
       };
     }
-    return { anyOf: types.map((type) => buildType(type)) };
+    return { anyOf: types.map((type) => buildType(type["rdfs:label"])) };
   }
-  const type = buildType(types[0]);
-  return isArray
+  const typeLabel = types[0]["rdfs:label"];
+  const type = buildType(typeLabel);
+  return isArray && !typesWithoutMultiplicity.has(typeLabel)
     ? {
         type: "array",
         items: type,

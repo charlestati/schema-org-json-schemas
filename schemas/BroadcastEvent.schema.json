@@ -18,8 +18,7 @@
     },
     "isLiveBroadcast": {
       "description": "True is the broadcast is of a live event.",
-      "type": "array",
-      "items": { "type": "boolean" }
+      "type": "boolean"
     },
     "broadcastOfEvent": {
       "description": "The event being broadcast such as a sporting event or awards ceremony.",

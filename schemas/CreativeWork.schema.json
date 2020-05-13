@@ -485,8 +485,7 @@
     },
     "isAccessibleForFree": {
       "description": "A flag to signal that the item, event, or place is accessible for free.",
-      "type": "array",
-      "items": { "type": "boolean" }
+      "type": "boolean"
     },
     "citation": {
       "description": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",

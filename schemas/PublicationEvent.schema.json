@@ -19,13 +19,11 @@
     },
     "free": {
       "description": "A flag to signal that the item, event, or place is accessible for free.",
-      "type": "array",
-      "items": { "type": "boolean" }
+      "type": "boolean"
     },
     "isAccessibleForFree": {
       "description": "A flag to signal that the item, event, or place is accessible for free.",
-      "type": "array",
-      "items": { "type": "boolean" }
+      "type": "boolean"
     }
   }
 }

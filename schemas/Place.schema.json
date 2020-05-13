@@ -61,8 +61,7 @@
     },
     "smokingAllowed": {
       "description": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
-      "type": "array",
-      "items": { "type": "boolean" }
+      "type": "boolean"
     },
     "globalLocationNumber": {
       "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
@@ -211,8 +210,7 @@
     },
     "isAccessibleForFree": {
       "description": "A flag to signal that the item, event, or place is accessible for free.",
-      "type": "array",
-      "items": { "type": "boolean" }
+      "type": "boolean"
     },
     "geoCoveredBy": {
       "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in DE-9IM.",
@@ -221,8 +219,7 @@
     },
     "publicAccess": {
       "description": "A flag to signal that the Place is open to public visitors.  If this property is omitted there is no assumed default boolean value",
-      "type": "array",
-      "items": { "type": "boolean" }
+      "type": "boolean"
     }
   }
 }

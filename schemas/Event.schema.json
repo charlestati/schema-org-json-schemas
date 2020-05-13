@@ -223,8 +223,7 @@
     },
     "isAccessibleForFree": {
       "description": "A flag to signal that the item, event, or place is accessible for free.",
-      "type": "array",
-      "items": { "type": "boolean" }
+      "type": "boolean"
     },
     "performer": {
       "description": "A performer at the event—for example, a presenter, musician, musical group or actor.",
