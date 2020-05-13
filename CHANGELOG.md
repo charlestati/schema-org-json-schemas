@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/charlestati/schema-org-json-schema/compare/v1.1.0...v1.1.1) (2020-05-12)
+
+
+### Bug Fixes
+
+* use native data types properly ([b2e53fc](https://github.com/charlestati/schema-org-json-schema/commit/b2e53fc058740940d51ae80a92d53c99f0b57ab0))
+
 # [1.1.0](https://github.com/charlestati/schema-org-json-schema/compare/v1.0.0...v1.1.0) (2020-05-11)
 
 
