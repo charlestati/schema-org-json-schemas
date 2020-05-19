@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/charlestati/schema-org-json-schema/compare/v1.1.1...v1.2.0) (2020-05-13)
+
+
+### Bug Fixes
+
+* use anyOf instead of oneOf keyword for array items' type ([3b9f5eb](https://github.com/charlestati/schema-org-json-schema/commit/3b9f5eb6c2fa9a07a29aac6eb200a680ae3c385c))
+
+
+### Features
+
+* do not add multiplicity when type is boolean ([bff9801](https://github.com/charlestati/schema-org-json-schema/commit/bff980152b9479eca4d09d407e6df5567a3ebe2e))
+
 ## [1.1.1](https://github.com/charlestati/schema-org-json-schema/compare/v1.1.0...v1.1.1) (2020-05-12)
 
 
