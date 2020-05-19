@@ -23,10 +23,10 @@ Object {
     "address": Object {
       "anyOf": Array [
         Object {
-          "type": "string",
+          "$ref": "PostalAddress.schema.json",
         },
         Object {
-          "$ref": "PostalAddress.schema.json",
+          "type": "string",
         },
       ],
       "description": "Physical address of the item.",
@@ -43,10 +43,10 @@ Object {
       "items": Object {
         "anyOf": Array [
           Object {
-            "$ref": "Organization.schema.json",
+            "$ref": "EducationalOrganization.schema.json",
           },
           Object {
-            "$ref": "EducationalOrganization.schema.json",
+            "$ref": "Organization.schema.json",
           },
         ],
       },
@@ -78,10 +78,10 @@ Object {
     "brand": Object {
       "anyOf": Array [
         Object {
-          "$ref": "Organization.schema.json",
+          "$ref": "Brand.schema.json",
         },
         Object {
-          "$ref": "Brand.schema.json",
+          "$ref": "Organization.schema.json",
         },
       ],
       "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
@@ -169,10 +169,10 @@ Object {
       "items": Object {
         "anyOf": Array [
           Object {
-            "$ref": "Person.schema.json",
+            "$ref": "Organization.schema.json",
           },
           Object {
-            "$ref": "Organization.schema.json",
+            "$ref": "Person.schema.json",
           },
         ],
       },
@@ -224,10 +224,10 @@ Object {
       "items": Object {
         "anyOf": Array [
           Object {
-            "$ref": "Place.schema.json",
+            "$ref": "ContactPoint.schema.json",
           },
           Object {
-            "$ref": "ContactPoint.schema.json",
+            "$ref": "Place.schema.json",
           },
         ],
       },
@@ -294,10 +294,10 @@ Object {
     "netWorth": Object {
       "anyOf": Array [
         Object {
-          "$ref": "PriceSpecification.schema.json",
+          "$ref": "MonetaryAmount.schema.json",
         },
         Object {
-          "$ref": "MonetaryAmount.schema.json",
+          "$ref": "PriceSpecification.schema.json",
         },
       ],
       "description": "The total financial value of the person as calculated by subtracting assets from liabilities.",
@@ -381,10 +381,10 @@ While such policies are most typically expressed in natural language, sometimes 
       "items": Object {
         "anyOf": Array [
           Object {
-            "$ref": "Person.schema.json",
+            "$ref": "Organization.schema.json",
           },
           Object {
-            "$ref": "Organization.schema.json",
+            "$ref": "Person.schema.json",
           },
         ],
       },
@@ -415,10 +415,10 @@ While such policies are most typically expressed in natural language, sometimes 
       "items": Object {
         "anyOf": Array [
           Object {
-            "$ref": "Place.schema.json",
+            "$ref": "ContactPoint.schema.json",
           },
           Object {
-            "$ref": "ContactPoint.schema.json",
+            "$ref": "Place.schema.json",
           },
         ],
       },

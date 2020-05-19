@@ -15,15 +15,8 @@
     "awayTeam": {
       "description": "The away team in a sports event.",
       "anyOf": [
-        { "$ref": "SportsTeam.schema.json" },
-        { "$ref": "Person.schema.json" }
-      ]
-    },
-    "homeTeam": {
-      "description": "The home team in a sports event.",
-      "anyOf": [
-        { "$ref": "SportsTeam.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "Person.schema.json" },
+        { "$ref": "SportsTeam.schema.json" }
       ]
     },
     "competitor": {
@@ -31,10 +24,17 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "SportsTeam.schema.json" },
-          { "$ref": "Person.schema.json" }
+          { "$ref": "Person.schema.json" },
+          { "$ref": "SportsTeam.schema.json" }
         ]
       }
+    },
+    "homeTeam": {
+      "description": "The home team in a sports event.",
+      "anyOf": [
+        { "$ref": "Person.schema.json" },
+        { "$ref": "SportsTeam.schema.json" }
+      ]
     }
   }
 }

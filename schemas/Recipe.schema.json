@@ -12,43 +12,6 @@
     }
   ],
   "properties": {
-    "recipeYield": {
-      "description": "The quantity produced by the recipe (for example, number of people served, number of servings, etc).",
-      "anyOf": [
-        { "type": "string" },
-        { "$ref": "QuantitativeValue.schema.json" }
-      ]
-    },
-    "recipeCategory": {
-      "description": "The category of the recipe—for example, appetizer, entree, etc.",
-      "type": "string"
-    },
-    "recipeIngredient": {
-      "description": "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
-      "type": "array",
-      "items": { "type": "string" }
-    },
-    "recipeInstructions": {
-      "description": "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
-      "anyOf": [
-        { "$ref": "CreativeWork.schema.json" },
-        { "type": "string" },
-        { "$ref": "ItemList.schema.json" }
-      ]
-    },
-    "nutrition": {
-      "description": "Nutrition information about the recipe or menu item.",
-      "$ref": "NutritionInformation.schema.json"
-    },
-    "suitableForDiet": {
-      "description": "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
-      "type": "array",
-      "items": { "$ref": "RestrictedDiet.schema.json" }
-    },
-    "recipeCuisine": {
-      "description": "The cuisine of the recipe (for example, French or Ethiopian).",
-      "type": "string"
-    },
     "cookTime": {
       "description": "The time it takes to actually cook the dish, in ISO 8601 duration format.",
       "type": "string",
@@ -62,6 +25,43 @@
       "description": "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
       "type": "array",
       "items": { "type": "string" }
+    },
+    "nutrition": {
+      "description": "Nutrition information about the recipe or menu item.",
+      "$ref": "NutritionInformation.schema.json"
+    },
+    "recipeCategory": {
+      "description": "The category of the recipe—for example, appetizer, entree, etc.",
+      "type": "string"
+    },
+    "recipeCuisine": {
+      "description": "The cuisine of the recipe (for example, French or Ethiopian).",
+      "type": "string"
+    },
+    "recipeIngredient": {
+      "description": "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "recipeInstructions": {
+      "description": "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
+      "anyOf": [
+        { "$ref": "CreativeWork.schema.json" },
+        { "$ref": "ItemList.schema.json" },
+        { "type": "string" }
+      ]
+    },
+    "recipeYield": {
+      "description": "The quantity produced by the recipe (for example, number of people served, number of servings, etc).",
+      "anyOf": [
+        { "$ref": "QuantitativeValue.schema.json" },
+        { "type": "string" }
+      ]
+    },
+    "suitableForDiet": {
+      "description": "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
+      "type": "array",
+      "items": { "$ref": "RestrictedDiet.schema.json" }
     }
   }
 }

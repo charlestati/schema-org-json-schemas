@@ -15,10 +15,10 @@
     "grantee": {
       "description": "The person, organization, contact point, or audience that has been granted this permission.",
       "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "Organization.schema.json" },
         { "$ref": "Audience.schema.json" },
-        { "$ref": "ContactPoint.schema.json" }
+        { "$ref": "ContactPoint.schema.json" },
+        { "$ref": "Organization.schema.json" },
+        { "$ref": "Person.schema.json" }
       ]
     },
     "permissionType": {

@@ -12,14 +12,14 @@
     }
   ],
   "properties": {
+    "boardingPolicy": {
+      "description": "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
+      "$ref": "BoardingPolicyType.schema.json"
+    },
     "iataCode": {
       "description": "IATA identifier for an airline or airport.",
       "type": "array",
       "items": { "type": "string" }
-    },
-    "boardingPolicy": {
-      "description": "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
-      "$ref": "BoardingPolicyType.schema.json"
     }
   }
 }

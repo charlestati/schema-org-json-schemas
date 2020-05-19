@@ -22,15 +22,15 @@
         ]
       }
     },
-    "recipe": {
-      "description": "A sub property of instrument. The recipe/instructions used to perform the action.",
-      "type": "array",
-      "items": { "$ref": "Recipe.schema.json" }
-    },
     "foodEvent": {
       "description": "A sub property of location. The specific food event where the action occurred.",
       "type": "array",
       "items": { "$ref": "FoodEvent.schema.json" }
+    },
+    "recipe": {
+      "description": "A sub property of instrument. The recipe/instructions used to perform the action.",
+      "type": "array",
+      "items": { "$ref": "Recipe.schema.json" }
     }
   }
 }

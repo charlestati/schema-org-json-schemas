@@ -21,8 +21,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "Course.schema.json" },
           { "$ref": "AlignmentObject.schema.json" },
+          { "$ref": "Course.schema.json" },
           { "type": "string" }
         ]
       }

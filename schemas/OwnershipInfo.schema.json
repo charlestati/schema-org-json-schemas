@@ -12,11 +12,11 @@
     }
   ],
   "properties": {
-    "typeOfGood": {
-      "description": "The product that this structured value is referring to.",
+    "acquiredFrom": {
+      "description": "The organization or person from which the product was acquired.",
       "anyOf": [
-        { "$ref": "Service.schema.json" },
-        { "$ref": "Product.schema.json" }
+        { "$ref": "Organization.schema.json" },
+        { "$ref": "Person.schema.json" }
       ]
     },
     "ownedFrom": {
@@ -29,11 +29,11 @@
       "type": "string",
       "format": "date-time"
     },
-    "acquiredFrom": {
-      "description": "The organization or person from which the product was acquired.",
+    "typeOfGood": {
+      "description": "The product that this structured value is referring to.",
       "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "Organization.schema.json" }
+        { "$ref": "Product.schema.json" },
+        { "$ref": "Service.schema.json" }
       ]
     }
   }

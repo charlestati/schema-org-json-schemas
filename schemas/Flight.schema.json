@@ -12,6 +12,10 @@
     }
   ],
   "properties": {
+    "aircraft": {
+      "description": "The kind of aircraft (e.g., \"Boeing 747\").",
+      "anyOf": [{ "type": "string" }, { "$ref": "Vehicle.schema.json" }]
+    },
     "arrivalAirport": {
       "description": "The airport where the flight terminates.",
       "$ref": "Airport.schema.json"
@@ -21,34 +25,22 @@
       "type": "array",
       "items": { "type": "string" }
     },
-    "carrier": {
-      "description": "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
-      "$ref": "Organization.schema.json"
+    "arrivalTerminal": {
+      "description": "Identifier of the flight's arrival terminal.",
+      "type": "array",
+      "items": { "type": "string" }
     },
     "boardingPolicy": {
       "description": "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
       "$ref": "BoardingPolicyType.schema.json"
     },
-    "aircraft": {
-      "description": "The kind of aircraft (e.g., \"Boeing 747\").",
-      "anyOf": [{ "$ref": "Vehicle.schema.json" }, { "type": "string" }]
+    "carrier": {
+      "description": "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
+      "$ref": "Organization.schema.json"
     },
-    "webCheckinTime": {
-      "description": "The time when a passenger can check into the flight online.",
-      "type": "string",
-      "format": "date-time"
-    },
-    "seller": {
-      "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
-      "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "Organization.schema.json" }
-      ]
-    },
-    "mealService": {
-      "description": "Description of the meals that will be provided or available for purchase.",
-      "type": "array",
-      "items": { "type": "string" }
+    "departureAirport": {
+      "description": "The airport where the flight originates.",
+      "$ref": "Airport.schema.json"
     },
     "departureGate": {
       "description": "Identifier of the flight's departure gate.",
@@ -70,22 +62,30 @@
     "flightDistance": {
       "description": "The distance of the flight.",
       "anyOf": [
-        { "type": "string" },
-        { "type": "string", "format": "https://schema.org/Distance" }
+        { "type": "string", "format": "https://schema.org/Distance" },
+        { "type": "string" }
       ]
-    },
-    "arrivalTerminal": {
-      "description": "Identifier of the flight's arrival terminal.",
-      "type": "array",
-      "items": { "type": "string" }
-    },
-    "departureAirport": {
-      "description": "The airport where the flight originates.",
-      "$ref": "Airport.schema.json"
     },
     "flightNumber": {
       "description": "The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.",
       "type": "string"
+    },
+    "mealService": {
+      "description": "Description of the meals that will be provided or available for purchase.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "seller": {
+      "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
+      "anyOf": [
+        { "$ref": "Organization.schema.json" },
+        { "$ref": "Person.schema.json" }
+      ]
+    },
+    "webCheckinTime": {
+      "description": "The time when a passenger can check into the flight online.",
+      "type": "string",
+      "format": "date-time"
     }
   }
 }

@@ -17,46 +17,46 @@
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     },
-    "videoFrameSize": {
-      "description": "The frame size of the video.",
-      "type": "string"
+    "actors": {
+      "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
     },
-    "musicBy": {
-      "description": "The composer of the soundtrack.",
-      "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "MusicGroup.schema.json" }
-      ]
+    "caption": {
+      "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.",
+      "anyOf": [{ "$ref": "MediaObject.schema.json" }, { "type": "string" }]
+    },
+    "director": {
+      "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+      "$ref": "Person.schema.json"
     },
     "directors": {
       "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     },
-    "director": {
-      "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-      "$ref": "Person.schema.json"
-    },
-    "transcript": {
-      "description": "If this MediaObject is an AudioObject or VideoObject, the transcript of that object.",
-      "type": "string"
-    },
-    "videoQuality": {
-      "description": "The quality of the video.",
-      "type": "string"
+    "musicBy": {
+      "description": "The composer of the soundtrack.",
+      "anyOf": [
+        { "$ref": "MusicGroup.schema.json" },
+        { "$ref": "Person.schema.json" }
+      ]
     },
     "thumbnail": {
       "description": "Thumbnail image for an image or video.",
       "$ref": "ImageObject.schema.json"
     },
-    "caption": {
-      "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.",
-      "anyOf": [{ "type": "string" }, { "$ref": "MediaObject.schema.json" }]
+    "transcript": {
+      "description": "If this MediaObject is an AudioObject or VideoObject, the transcript of that object.",
+      "type": "string"
     },
-    "actors": {
-      "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+    "videoFrameSize": {
+      "description": "The frame size of the video.",
+      "type": "string"
+    },
+    "videoQuality": {
+      "description": "The quality of the video.",
+      "type": "string"
     }
   }
 }

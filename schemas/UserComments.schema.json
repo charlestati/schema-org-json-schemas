@@ -12,10 +12,6 @@
     }
   ],
   "properties": {
-    "discusses": {
-      "description": "Specifies the CreativeWork associated with the UserComment.",
-      "$ref": "CreativeWork.schema.json"
-    },
     "commentText": {
       "description": "The text of the UserComment.",
       "type": "string"
@@ -23,16 +19,20 @@
     "commentTime": {
       "description": "The time at which the UserComment was made.",
       "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
       ]
     },
     "creator": {
       "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
       "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "Organization.schema.json" }
+        { "$ref": "Organization.schema.json" },
+        { "$ref": "Person.schema.json" }
       ]
+    },
+    "discusses": {
+      "description": "Specifies the CreativeWork associated with the UserComment.",
+      "$ref": "CreativeWork.schema.json"
     },
     "replyToUrl": {
       "description": "The URL at which a reply may be posted to the specified UserComment.",

@@ -12,9 +12,9 @@
     }
   ],
   "properties": {
-    "unitCode": {
-      "description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
-      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+    "maxValue": {
+      "description": "The upper value of some characteristic or property.",
+      "type": "number"
     },
     "minValue": {
       "description": "The lower value of some characteristic or property.",
@@ -27,13 +27,22 @@
         "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
       }
     },
+    "unitCode": {
+      "description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+    },
+    "unitText": {
+      "description": "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\nunitCode.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
     "value": {
       "description": "The value of the quantitative value or property value node.\n\n\nFor QuantitativeValue and MonetaryAmount, the recommended type for values is 'Number'.\nFor PropertyValue, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\nUse values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\nUse '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n\n",
       "anyOf": [
-        { "type": "number" },
-        { "type": "string" },
         { "type": "boolean" },
-        { "$ref": "StructuredValue.schema.json" }
+        { "type": "number" },
+        { "$ref": "StructuredValue.schema.json" },
+        { "type": "string" }
       ]
     },
     "valueReference": {
@@ -41,22 +50,13 @@
       "type": "array",
       "items": {
         "anyOf": [
+          { "$ref": "Enumeration.schema.json" },
           { "$ref": "PropertyValue.schema.json" },
           { "$ref": "QualitativeValue.schema.json" },
-          { "$ref": "StructuredValue.schema.json" },
-          { "$ref": "Enumeration.schema.json" },
-          { "$ref": "QuantitativeValue.schema.json" }
+          { "$ref": "QuantitativeValue.schema.json" },
+          { "$ref": "StructuredValue.schema.json" }
         ]
       }
-    },
-    "maxValue": {
-      "description": "The upper value of some characteristic or property.",
-      "type": "number"
-    },
-    "unitText": {
-      "description": "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\nunitCode.",
-      "type": "array",
-      "items": { "type": "string" }
     }
   }
 }

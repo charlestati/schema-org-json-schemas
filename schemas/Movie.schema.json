@@ -17,43 +17,43 @@
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     },
-    "trailer": {
-      "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
-      "$ref": "VideoObject.schema.json"
+    "actors": {
+      "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
     },
     "countryOfOrigin": {
       "description": "The country of the principal offices of the production company or individual responsible for the movie or program.",
       "$ref": "Country.schema.json"
     },
-    "musicBy": {
-      "description": "The composer of the soundtrack.",
-      "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "MusicGroup.schema.json" }
-      ]
+    "director": {
+      "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+      "$ref": "Person.schema.json"
     },
     "directors": {
       "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     },
-    "director": {
-      "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-      "$ref": "Person.schema.json"
-    },
-    "productionCompany": {
-      "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
-      "$ref": "Organization.schema.json"
-    },
     "duration": {
       "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
       "type": "string",
       "format": "https://schema.org/Duration"
     },
-    "actors": {
-      "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+    "musicBy": {
+      "description": "The composer of the soundtrack.",
+      "anyOf": [
+        { "$ref": "MusicGroup.schema.json" },
+        { "$ref": "Person.schema.json" }
+      ]
+    },
+    "productionCompany": {
+      "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
+      "$ref": "Organization.schema.json"
+    },
+    "trailer": {
+      "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
+      "$ref": "VideoObject.schema.json"
     }
   }
 }

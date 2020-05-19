@@ -8,10 +8,10 @@
   "oneOf": [
     { "description": "A parking map.", "const": "ParkingMap" },
     { "description": "A seating map.", "const": "SeatingMap" },
+    { "description": "A transit map.", "const": "TransitMap" },
     {
       "description": "A venue map (e.g. for malls, auditoriums, museums, etc.).",
       "const": "VenueMap"
-    },
-    { "description": "A transit map.", "const": "TransitMap" }
+    }
   ]
 }

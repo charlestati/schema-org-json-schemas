@@ -17,8 +17,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "type": "string" },
           { "$ref": "DataFeedItem.schema.json" },
+          { "type": "string" },
           { "$ref": "Thing.schema.json" }
         ]
       }

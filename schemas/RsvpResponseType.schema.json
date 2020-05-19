@@ -6,11 +6,14 @@
   "type": "object",
   "format": "http://schema.org/RsvpResponseType",
   "oneOf": [
-    { "description": "The invitee will attend.", "const": "RsvpResponseYes" },
     {
       "description": "The invitee may or may not attend.",
       "const": "RsvpResponseMaybe"
     },
-    { "description": "The invitee will not attend.", "const": "RsvpResponseNo" }
+    {
+      "description": "The invitee will not attend.",
+      "const": "RsvpResponseNo"
+    },
+    { "description": "The invitee will attend.", "const": "RsvpResponseYes" }
   ]
 }

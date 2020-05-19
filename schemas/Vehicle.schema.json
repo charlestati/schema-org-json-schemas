@@ -12,51 +12,29 @@
     }
   ],
   "properties": {
-    "productionDate": {
-      "description": "The date of production of the item, e.g. vehicle.",
-      "type": "string",
-      "format": "date"
-    },
-    "numberOfForwardGears": {
-      "description": "The total number of forward gears available for the transmission system of the vehicle.\n\nTypical unit code(s): C62",
-      "anyOf": [
-        { "type": "number" },
-        { "$ref": "QuantitativeValue.schema.json" }
-      ]
-    },
     "cargoVolume": {
       "description": "The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.\n\nTypical unit code(s): LTR for liters, FTQ for cubic foot/feet\n\nNote: You can use minValue and maxValue to indicate ranges.",
       "$ref": "QuantitativeValue.schema.json"
     },
-    "vehicleInteriorColor": {
-      "description": "The color or color combination of the interior of the vehicle.",
-      "type": "string"
-    },
-    "steeringPosition": {
-      "description": "The position of the steering wheel or similar device (mostly for cars).",
-      "$ref": "SteeringPositionValue.schema.json"
-    },
-    "vehicleEngine": {
-      "description": "Information about the engine or engines of the vehicle.",
-      "type": "array",
-      "items": { "$ref": "EngineSpecification.schema.json" }
-    },
-    "vehicleModelDate": {
-      "description": "The release date of a vehicle model (often used to differentiate versions of the same make and model).",
+    "dateVehicleFirstRegistered": {
+      "description": "The date of the first registration of the vehicle with the respective public authorities.",
       "type": "string",
       "format": "date"
     },
-    "numberOfDoors": {
-      "description": "The number of doors.\n\nTypical unit code(s): C62",
+    "driveWheelConfiguration": {
+      "description": "The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.",
       "anyOf": [
-        { "type": "number" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "DriveWheelConfigurationValue.schema.json" },
+        { "type": "string" }
       ]
     },
-    "vehicleConfiguration": {
-      "description": "A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.",
-      "type": "array",
-      "items": { "type": "string" }
+    "fuelConsumption": {
+      "description": "The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\n\n\nNote 1: There are unfortunately no standard unit codes for liters per 100 km.  Use unitText to indicate the unit of measurement, e.g. L/100 km.\nNote 2: There are two ways of indicating the fuel consumption, fuelConsumption (e.g. 8 liters per 100 km) and fuelEfficiency (e.g. 30 miles per gallon). They are reciprocal.\nNote 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use valueReference to link the value for the fuel consumption to another value.\n\n",
+      "$ref": "QuantitativeValue.schema.json"
+    },
+    "fuelEfficiency": {
+      "description": "The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\n\n\nNote 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use unitText to indicate the unit of measurement, e.g. mpg or km/L.\nNote 2: There are two ways of indicating the fuel consumption, fuelConsumption (e.g. 8 liters per 100 km) and fuelEfficiency (e.g. 30 miles per gallon). They are reciprocal.\nNote 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use valueReference to link the value for the fuel economy to another value.\n\n",
+      "$ref": "QuantitativeValue.schema.json"
     },
     "fuelType": {
       "description": "The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.",
@@ -66,24 +44,18 @@
         { "type": "string", "format": "uri" }
       ]
     },
-    "vehicleIdentificationNumber": {
-      "description": "The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.",
-      "type": "string"
-    },
-    "fuelConsumption": {
-      "description": "The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\n\n\nNote 1: There are unfortunately no standard unit codes for liters per 100 km.  Use unitText to indicate the unit of measurement, e.g. L/100 km.\nNote 2: There are two ways of indicating the fuel consumption, fuelConsumption (e.g. 8 liters per 100 km) and fuelEfficiency (e.g. 30 miles per gallon). They are reciprocal.\nNote 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use valueReference to link the value for the fuel consumption to another value.\n\n",
-      "$ref": "QuantitativeValue.schema.json"
-    },
-    "numberOfPreviousOwners": {
-      "description": "The number of owners of the vehicle, including the current one.\n\nTypical unit code(s): C62",
-      "anyOf": [
-        { "type": "number" },
-        { "$ref": "QuantitativeValue.schema.json" }
-      ]
+    "knownVehicleDamages": {
+      "description": "A textual description of known damages, both repaired and unrepaired.",
+      "type": "array",
+      "items": { "type": "string" }
     },
     "mileageFromOdometer": {
       "description": "The total distance travelled by the particular vehicle since its initial production, as read from its odometer.\n\nTypical unit code(s): KMT for kilometers, SMI for statute miles",
       "$ref": "QuantitativeValue.schema.json"
+    },
+    "numberOfAirbags": {
+      "description": "The number or type of airbags in the vehicle.",
+      "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "numberOfAxles": {
       "description": "The number of axles.\n\nTypical unit code(s): C62",
@@ -92,18 +64,67 @@
         { "$ref": "QuantitativeValue.schema.json" }
       ]
     },
+    "numberOfDoors": {
+      "description": "The number of doors.\n\nTypical unit code(s): C62",
+      "anyOf": [
+        { "type": "number" },
+        { "$ref": "QuantitativeValue.schema.json" }
+      ]
+    },
+    "numberOfForwardGears": {
+      "description": "The total number of forward gears available for the transmission system of the vehicle.\n\nTypical unit code(s): C62",
+      "anyOf": [
+        { "type": "number" },
+        { "$ref": "QuantitativeValue.schema.json" }
+      ]
+    },
+    "numberOfPreviousOwners": {
+      "description": "The number of owners of the vehicle, including the current one.\n\nTypical unit code(s): C62",
+      "anyOf": [
+        { "type": "number" },
+        { "$ref": "QuantitativeValue.schema.json" }
+      ]
+    },
+    "productionDate": {
+      "description": "The date of production of the item, e.g. vehicle.",
+      "type": "string",
+      "format": "date"
+    },
+    "purchaseDate": {
+      "description": "The date the item e.g. vehicle was purchased by the current owner.",
+      "type": "string",
+      "format": "date"
+    },
+    "steeringPosition": {
+      "description": "The position of the steering wheel or similar device (mostly for cars).",
+      "$ref": "SteeringPositionValue.schema.json"
+    },
+    "vehicleConfiguration": {
+      "description": "A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "vehicleEngine": {
+      "description": "Information about the engine or engines of the vehicle.",
+      "type": "array",
+      "items": { "$ref": "EngineSpecification.schema.json" }
+    },
+    "vehicleIdentificationNumber": {
+      "description": "The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.",
+      "type": "string"
+    },
+    "vehicleInteriorColor": {
+      "description": "The color or color combination of the interior of the vehicle.",
+      "type": "string"
+    },
     "vehicleInteriorType": {
       "description": "The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.",
       "type": "string"
     },
-    "knownVehicleDamages": {
-      "description": "A textual description of known damages, both repaired and unrepaired.",
-      "type": "array",
-      "items": { "type": "string" }
-    },
-    "numberOfAirbags": {
-      "description": "The number or type of airbags in the vehicle.",
-      "anyOf": [{ "type": "number" }, { "type": "string" }]
+    "vehicleModelDate": {
+      "description": "The release date of a vehicle model (often used to differentiate versions of the same make and model).",
+      "type": "string",
+      "format": "date"
     },
     "vehicleSeatingCapacity": {
       "description": "The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.\n\nTypical unit code(s): C62 for persons.",
@@ -118,27 +139,6 @@
         { "$ref": "QualitativeValue.schema.json" },
         { "type": "string" },
         { "type": "string", "format": "uri" }
-      ]
-    },
-    "dateVehicleFirstRegistered": {
-      "description": "The date of the first registration of the vehicle with the respective public authorities.",
-      "type": "string",
-      "format": "date"
-    },
-    "purchaseDate": {
-      "description": "The date the item e.g. vehicle was purchased by the current owner.",
-      "type": "string",
-      "format": "date"
-    },
-    "fuelEfficiency": {
-      "description": "The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\n\n\nNote 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use unitText to indicate the unit of measurement, e.g. mpg or km/L.\nNote 2: There are two ways of indicating the fuel consumption, fuelConsumption (e.g. 8 liters per 100 km) and fuelEfficiency (e.g. 30 miles per gallon). They are reciprocal.\nNote 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use valueReference to link the value for the fuel economy to another value.\n\n",
-      "$ref": "QuantitativeValue.schema.json"
-    },
-    "driveWheelConfiguration": {
-      "description": "The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.",
-      "anyOf": [
-        { "type": "string" },
-        { "$ref": "DriveWheelConfigurationValue.schema.json" }
       ]
     }
   }

@@ -7,8 +7,8 @@
   "format": "http://schema.org/MusicAlbumReleaseType",
   "oneOf": [
     { "description": "AlbumRelease.", "const": "AlbumRelease" },
-    { "description": "EPRelease.", "const": "EPRelease" },
     { "description": "BroadcastRelease.", "const": "BroadcastRelease" },
+    { "description": "EPRelease.", "const": "EPRelease" },
     { "description": "SingleRelease.", "const": "SingleRelease" }
   ]
 }

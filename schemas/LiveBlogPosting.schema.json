@@ -9,13 +9,13 @@
     { "description": "A blog post.", "$ref": "BlogPosting.schema.json" }
   ],
   "properties": {
-    "coverageStartTime": {
-      "description": "The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.",
+    "coverageEndTime": {
+      "description": "The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.",
       "type": "string",
       "format": "date-time"
     },
-    "coverageEndTime": {
-      "description": "The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.",
+    "coverageStartTime": {
+      "description": "The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.",
       "type": "string",
       "format": "date-time"
     },

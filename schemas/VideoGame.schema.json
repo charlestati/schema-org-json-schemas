@@ -7,40 +7,50 @@
   "format": "http://schema.org/VideoGame",
   "allOf": [
     {
-      "description": "The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.",
-      "$ref": "Game.schema.json"
-    },
-    {
       "description": "A software application.",
       "$ref": "SoftwareApplication.schema.json"
+    },
+    {
+      "description": "The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.",
+      "$ref": "Game.schema.json"
     }
   ],
   "properties": {
-    "gamePlatform": {
-      "description": "The electronic systems used to play video games.",
-      "anyOf": [
-        { "type": "string" },
-        { "type": "string", "format": "uri" },
-        { "$ref": "Thing.schema.json" }
-      ]
-    },
-    "gameServer": {
-      "description": "The server on which  it is possible to play the game.",
-      "$ref": "GameServer.schema.json"
-    },
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     },
-    "trailer": {
-      "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
-      "$ref": "VideoObject.schema.json"
+    "actors": {
+      "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
     },
     "cheatCode": {
       "description": "Cheat codes to the game.",
       "type": "array",
       "items": { "$ref": "CreativeWork.schema.json" }
+    },
+    "director": {
+      "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+      "$ref": "Person.schema.json"
+    },
+    "directors": {
+      "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "gamePlatform": {
+      "description": "The electronic systems used to play video games.",
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "Thing.schema.json" },
+        { "type": "string", "format": "uri" }
+      ]
+    },
+    "gameServer": {
+      "description": "The server on which  it is possible to play the game.",
+      "$ref": "GameServer.schema.json"
     },
     "gameTip": {
       "description": "Links to tips, tactics, etc.",
@@ -50,28 +60,18 @@
     "musicBy": {
       "description": "The composer of the soundtrack.",
       "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "MusicGroup.schema.json" }
+        { "$ref": "MusicGroup.schema.json" },
+        { "$ref": "Person.schema.json" }
       ]
-    },
-    "directors": {
-      "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
     },
     "playMode": {
       "description": "Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.",
       "type": "array",
       "items": { "$ref": "GamePlayMode.schema.json" }
     },
-    "director": {
-      "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-      "$ref": "Person.schema.json"
-    },
-    "actors": {
-      "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+    "trailer": {
+      "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
+      "$ref": "VideoObject.schema.json"
     }
   }
 }

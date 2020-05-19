@@ -17,53 +17,53 @@
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     },
-    "numberOfEpisodes": {
-      "description": "The number of episodes in this season or series.",
-      "type": "integer"
-    },
-    "trailer": {
-      "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
-      "$ref": "VideoObject.schema.json"
-    },
-    "endDate": {
-      "description": "The end date and time of the item (in ISO 8601 date format).",
-      "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
-      ]
-    },
-    "partOfSeries": {
-      "description": "The series to which this episode or season belongs.",
-      "$ref": "CreativeWorkSeries.schema.json"
-    },
-    "episodes": {
-      "description": "An episode of a TV/radio series or season.",
-      "type": "array",
-      "items": { "$ref": "Episode.schema.json" }
-    },
-    "startDate": {
-      "description": "The start date and time of the item (in ISO 8601 date format).",
-      "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
-      ]
-    },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
       "$ref": "Person.schema.json"
     },
-    "productionCompany": {
-      "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
-      "$ref": "Organization.schema.json"
+    "endDate": {
+      "description": "The end date and time of the item (in ISO 8601 date format).",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
     },
     "episode": {
       "description": "An episode of a tv, radio or game media within a series or season.",
       "type": "array",
       "items": { "$ref": "Episode.schema.json" }
     },
+    "episodes": {
+      "description": "An episode of a TV/radio series or season.",
+      "type": "array",
+      "items": { "$ref": "Episode.schema.json" }
+    },
+    "numberOfEpisodes": {
+      "description": "The number of episodes in this season or series.",
+      "type": "integer"
+    },
+    "partOfSeries": {
+      "description": "The series to which this episode or season belongs.",
+      "$ref": "CreativeWorkSeries.schema.json"
+    },
+    "productionCompany": {
+      "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
+      "$ref": "Organization.schema.json"
+    },
     "seasonNumber": {
       "description": "Position of the season within an ordered group of seasons.",
       "anyOf": [{ "type": "integer" }, { "type": "string" }]
+    },
+    "startDate": {
+      "description": "The start date and time of the item (in ISO 8601 date format).",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
+    },
+    "trailer": {
+      "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
+      "$ref": "VideoObject.schema.json"
     }
   }
 }

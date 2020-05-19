@@ -6,11 +6,11 @@
   "type": "object",
   "format": "http://schema.org/BookFormatType",
   "oneOf": [
-    { "description": "Book format: Ebook.", "const": "EBook" },
     {
       "description": "Book format: Audiobook. This is an enumerated value for use with the bookFormat property. There is also a type 'Audiobook' in the bib extension which includes Audiobook specific properties.",
       "const": "AudiobookFormat"
     },
+    { "description": "Book format: Ebook.", "const": "EBook" },
     { "description": "Book format: Hardcover.", "const": "Hardcover" },
     { "description": "Book format: Paperback.", "const": "Paperback" }
   ]

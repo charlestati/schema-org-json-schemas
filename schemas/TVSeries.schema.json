@@ -7,83 +7,40 @@
   "format": "http://schema.org/TVSeries",
   "allOf": [
     {
-      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
-    },
-    {
       "description": "A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind. CreativeWorkSeries are usually organized into some order, often chronological. Unlike ItemList which is a general purpose data structure for lists of things, the emphasis with CreativeWorkSeries is on published materials (written e.g. books and periodicals, or media such as tv, radio and games).\n\nSpecific subtypes are available for describing TVSeries, RadioSeries, MovieSeries, BookSeries, Periodical and VideoGameSeries. In each case, the hasPart / isPartOf properties can be used to relate the CreativeWorkSeries to its parts. The general CreativeWorkSeries type serves largely just to organize these more specific and practical subtypes.\n\nIt is common for properties applicable to an item from the series to be usefully applied to the containing group. Schema.org attempts to anticipate some of these cases, but publishers should be free to apply properties of the series parts to the series as a whole wherever they seem appropriate.",
       "$ref": "CreativeWorkSeries.schema.json"
+    },
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "CreativeWork.schema.json"
     }
   ],
   "properties": {
-    "seasons": {
-      "description": "A season in a media series.",
-      "type": "array",
-      "items": { "$ref": "CreativeWorkSeason.schema.json" }
-    },
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     },
-    "numberOfEpisodes": {
-      "description": "The number of episodes in this season or series.",
-      "type": "integer"
-    },
-    "trailer": {
-      "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
-      "$ref": "VideoObject.schema.json"
-    },
-    "season": {
-      "description": "A season in a media series.",
+    "actors": {
+      "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
       "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "CreativeWorkSeason.schema.json" }
-        ]
-      }
-    },
-    "episodes": {
-      "description": "An episode of a TV/radio series or season.",
-      "type": "array",
-      "items": { "$ref": "Episode.schema.json" }
-    },
-    "countryOfOrigin": {
-      "description": "The country of the principal offices of the production company or individual responsible for the movie or program.",
-      "$ref": "Country.schema.json"
-    },
-    "musicBy": {
-      "description": "The composer of the soundtrack.",
-      "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "MusicGroup.schema.json" }
-      ]
+      "items": { "$ref": "Person.schema.json" }
     },
     "containsSeason": {
       "description": "A season that is part of the media series.",
       "type": "array",
       "items": { "$ref": "CreativeWorkSeason.schema.json" }
     },
-    "directors": {
-      "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
-    },
-    "numberOfSeasons": {
-      "description": "The number of seasons in this series.",
-      "type": "integer"
+    "countryOfOrigin": {
+      "description": "The country of the principal offices of the production company or individual responsible for the movie or program.",
+      "$ref": "Country.schema.json"
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
       "$ref": "Person.schema.json"
     },
-    "productionCompany": {
-      "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
-      "$ref": "Organization.schema.json"
-    },
-    "actors": {
-      "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
+    "directors": {
+      "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     },
@@ -91,6 +48,49 @@
       "description": "An episode of a tv, radio or game media within a series or season.",
       "type": "array",
       "items": { "$ref": "Episode.schema.json" }
+    },
+    "episodes": {
+      "description": "An episode of a TV/radio series or season.",
+      "type": "array",
+      "items": { "$ref": "Episode.schema.json" }
+    },
+    "musicBy": {
+      "description": "The composer of the soundtrack.",
+      "anyOf": [
+        { "$ref": "MusicGroup.schema.json" },
+        { "$ref": "Person.schema.json" }
+      ]
+    },
+    "numberOfEpisodes": {
+      "description": "The number of episodes in this season or series.",
+      "type": "integer"
+    },
+    "numberOfSeasons": {
+      "description": "The number of seasons in this series.",
+      "type": "integer"
+    },
+    "productionCompany": {
+      "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
+      "$ref": "Organization.schema.json"
+    },
+    "season": {
+      "description": "A season in a media series.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          { "$ref": "CreativeWorkSeason.schema.json" },
+          { "type": "string", "format": "uri" }
+        ]
+      }
+    },
+    "seasons": {
+      "description": "A season in a media series.",
+      "type": "array",
+      "items": { "$ref": "CreativeWorkSeason.schema.json" }
+    },
+    "trailer": {
+      "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
+      "$ref": "VideoObject.schema.json"
     }
   }
 }

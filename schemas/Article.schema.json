@@ -12,14 +12,27 @@
     }
   ],
   "properties": {
+    "articleBody": {
+      "description": "The actual body of the article.",
+      "type": "string"
+    },
+    "articleSection": {
+      "description": "Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "pageEnd": {
+      "description": "The page on which the work ends; for example \"138\" or \"xvi\".",
+      "anyOf": [{ "type": "integer" }, { "type": "string" }]
+    },
+    "pageStart": {
+      "description": "The page on which the work starts; for example \"135\" or \"xiii\".",
+      "anyOf": [{ "type": "integer" }, { "type": "string" }]
+    },
     "pagination": {
       "description": "Any description of pages that is not separated into pageStart and pageEnd; for example, \"1-6, 9, 55\" or \"10-12, 46-49\".",
       "type": "array",
       "items": { "type": "string" }
-    },
-    "wordCount": {
-      "description": "The number of words in the text of the Article.",
-      "type": "integer"
     },
     "speakable": {
       "description": "Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.\n\nThe speakable property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:\n\n1.) id-value URL references - uses id-value of an element in the page being annotated. The simplest use of speakable has (potentially relative) URL values, referencing identified sections of the document concerned.\n\n2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the cssSelector property.\n\n3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the xpath property.\n\nFor more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this\nwe define a supporting type, SpeakableSpecification  which is defined to be a possible value of the speakable property.",
@@ -31,22 +44,9 @@
         ]
       }
     },
-    "pageEnd": {
-      "description": "The page on which the work ends; for example \"138\" or \"xvi\".",
-      "anyOf": [{ "type": "integer" }, { "type": "string" }]
-    },
-    "articleSection": {
-      "description": "Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.",
-      "type": "array",
-      "items": { "type": "string" }
-    },
-    "pageStart": {
-      "description": "The page on which the work starts; for example \"135\" or \"xiii\".",
-      "anyOf": [{ "type": "integer" }, { "type": "string" }]
-    },
-    "articleBody": {
-      "description": "The actual body of the article.",
-      "type": "string"
+    "wordCount": {
+      "description": "The number of words in the text of the Article.",
+      "type": "integer"
     }
   }
 }

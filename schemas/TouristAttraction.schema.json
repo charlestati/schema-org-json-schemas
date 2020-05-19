@@ -12,18 +12,18 @@
     }
   ],
   "properties": {
+    "availableLanguage": {
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
+      "type": "array",
+      "items": {
+        "anyOf": [{ "$ref": "Language.schema.json" }, { "type": "string" }]
+      }
+    },
     "touristType": {
       "description": "Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc.",
       "type": "array",
       "items": {
         "anyOf": [{ "$ref": "Audience.schema.json" }, { "type": "string" }]
-      }
-    },
-    "availableLanguage": {
-      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
       }
     }
   }

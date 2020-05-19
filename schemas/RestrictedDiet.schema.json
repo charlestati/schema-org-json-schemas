@@ -7,24 +7,8 @@
   "format": "http://schema.org/RestrictedDiet",
   "oneOf": [
     {
-      "description": "A diet exclusive of animal meat.",
-      "const": "VegetarianDiet"
-    },
-    {
-      "description": "A diet conforming to Jewish dietary practices.",
-      "const": "KosherDiet"
-    },
-    {
-      "description": "A diet exclusive of all animal products.",
-      "const": "VeganDiet"
-    },
-    {
       "description": "A diet appropriate for people with diabetes.",
       "const": "DiabeticDiet"
-    },
-    {
-      "description": "A diet conforming to Hindu dietary practices, in particular, beef-free.",
-      "const": "HinduDiet"
     },
     { "description": "A diet exclusive of gluten.", "const": "GlutenFreeDiet" },
     {
@@ -32,8 +16,12 @@
       "const": "HalalDiet"
     },
     {
-      "description": "A diet appropriate for people with lactose intolerance.",
-      "const": "LowLactoseDiet"
+      "description": "A diet conforming to Hindu dietary practices, in particular, beef-free.",
+      "const": "HinduDiet"
+    },
+    {
+      "description": "A diet conforming to Jewish dietary practices.",
+      "const": "KosherDiet"
     },
     {
       "description": "A diet focused on reduced calorie intake.",
@@ -44,8 +32,20 @@
       "const": "LowFatDiet"
     },
     {
+      "description": "A diet appropriate for people with lactose intolerance.",
+      "const": "LowLactoseDiet"
+    },
+    {
       "description": "A diet focused on reduced sodium intake.",
       "const": "LowSaltDiet"
+    },
+    {
+      "description": "A diet exclusive of all animal products.",
+      "const": "VeganDiet"
+    },
+    {
+      "description": "A diet exclusive of animal meat.",
+      "const": "VegetarianDiet"
     }
   ]
 }

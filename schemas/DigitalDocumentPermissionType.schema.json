@@ -7,16 +7,16 @@
   "format": "http://schema.org/DigitalDocumentPermissionType",
   "oneOf": [
     {
+      "description": "Permission to add comments to the document.",
+      "const": "CommentPermission"
+    },
+    {
       "description": "Permission to read or view the document.",
       "const": "ReadPermission"
     },
     {
       "description": "Permission to write or edit the document.",
       "const": "WritePermission"
-    },
-    {
-      "description": "Permission to add comments to the document.",
-      "const": "CommentPermission"
     }
   ]
 }

@@ -12,6 +12,18 @@
     }
   ],
   "properties": {
+    "address": {
+      "description": "Physical address of the item.",
+      "anyOf": [{ "$ref": "PostalAddress.schema.json" }, { "type": "string" }]
+    },
+    "addressCountry": {
+      "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
+      "anyOf": [{ "$ref": "Country.schema.json" }, { "type": "string" }]
+    },
+    "elevation": {
+      "description": "The elevation of a location (WGS 84). Values may be of the form 'NUMBER UNITOFMEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",
+      "anyOf": [{ "type": "number" }, { "type": "string" }]
+    },
     "latitude": {
       "description": "The latitude of a location. For example 37.42242 (WGS 84).",
       "anyOf": [{ "type": "number" }, { "type": "string" }]
@@ -20,21 +32,9 @@
       "description": "The longitude of a location. For example -122.08585 (WGS 84).",
       "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
-    "address": {
-      "description": "Physical address of the item.",
-      "anyOf": [{ "type": "string" }, { "$ref": "PostalAddress.schema.json" }]
-    },
-    "addressCountry": {
-      "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-      "anyOf": [{ "$ref": "Country.schema.json" }, { "type": "string" }]
-    },
     "postalCode": {
       "description": "The postal code. For example, 94043.",
       "type": "string"
-    },
-    "elevation": {
-      "description": "The elevation of a location (WGS 84). Values may be of the form 'NUMBER UNITOFMEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",
-      "anyOf": [{ "type": "number" }, { "type": "string" }]
     }
   }
 }

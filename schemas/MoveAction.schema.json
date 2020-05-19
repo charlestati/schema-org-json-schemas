@@ -12,13 +12,13 @@
     }
   ],
   "properties": {
-    "toLocation": {
-      "description": "A sub property of location. The final location of the object or the agent after the action.",
+    "fromLocation": {
+      "description": "A sub property of location. The original location of the object or the agent before the action.",
       "type": "array",
       "items": { "$ref": "Place.schema.json" }
     },
-    "fromLocation": {
-      "description": "A sub property of location. The original location of the object or the agent before the action.",
+    "toLocation": {
+      "description": "A sub property of location. The final location of the object or the agent after the action.",
       "type": "array",
       "items": { "$ref": "Place.schema.json" }
     }

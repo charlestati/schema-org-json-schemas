@@ -12,25 +12,25 @@
     }
   ],
   "properties": {
-    "dateModified": {
-      "description": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
+    "dateCreated": {
+      "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
       "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
       ]
     },
     "dateDeleted": {
       "description": "The datetime the item was removed from the DataFeed.",
       "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
       ]
     },
-    "dateCreated": {
-      "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
+    "dateModified": {
+      "description": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
       "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
       ]
     },
     "item": {

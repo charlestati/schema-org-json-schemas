@@ -12,23 +12,23 @@
     }
   ],
   "properties": {
-    "programmingModel": {
-      "description": "Indicates whether API is managed or unmanaged.",
-      "type": "array",
-      "items": { "type": "string" }
+    "assembly": {
+      "description": "Library file name e.g., mscorlib.dll, system.web.dll.",
+      "type": "string"
+    },
+    "assemblyVersion": {
+      "description": "Associated product/technology version. e.g., .NET Framework 4.5.",
+      "type": "string"
     },
     "executableLibraryName": {
       "description": "Library file name e.g., mscorlib.dll, system.web.dll.",
       "type": "array",
       "items": { "type": "string" }
     },
-    "assemblyVersion": {
-      "description": "Associated product/technology version. e.g., .NET Framework 4.5.",
-      "type": "string"
-    },
-    "assembly": {
-      "description": "Library file name e.g., mscorlib.dll, system.web.dll.",
-      "type": "string"
+    "programmingModel": {
+      "description": "Indicates whether API is managed or unmanaged.",
+      "type": "array",
+      "items": { "type": "string" }
     },
     "targetPlatform": {
       "description": "Type of app development: phone, Metro style, desktop, XBox, etc.",

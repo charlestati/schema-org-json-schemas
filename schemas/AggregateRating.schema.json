@@ -16,12 +16,12 @@
       "description": "The item that is being reviewed/rated.",
       "$ref": "Thing.schema.json"
     },
-    "reviewCount": {
-      "description": "The count of total number of reviews.",
-      "type": "integer"
-    },
     "ratingCount": {
       "description": "The count of total number of ratings.",
+      "type": "integer"
+    },
+    "reviewCount": {
+      "description": "The count of total number of reviews.",
       "type": "integer"
     }
   }

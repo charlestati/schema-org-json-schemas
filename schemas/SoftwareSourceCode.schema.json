@@ -12,30 +12,29 @@
     }
   ],
   "properties": {
-    "targetProduct": {
-      "description": "Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.",
-      "type": "array",
-      "items": { "$ref": "SoftwareApplication.schema.json" }
-    },
     "codeRepository": {
       "description": "Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).",
       "type": "array",
       "items": { "type": "string", "format": "uri" }
+    },
+    "codeSampleType": {
+      "description": "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.",
+      "type": "array",
+      "items": { "type": "string" }
     },
     "programmingLanguage": {
       "description": "The computer programming language.",
       "type": "array",
       "items": {
         "anyOf": [
-          { "type": "string" },
-          { "$ref": "ComputerLanguage.schema.json" }
+          { "$ref": "ComputerLanguage.schema.json" },
+          { "type": "string" }
         ]
       }
     },
-    "codeSampleType": {
-      "description": "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.",
-      "type": "array",
-      "items": { "type": "string" }
+    "runtime": {
+      "description": "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
+      "type": "string"
     },
     "runtimePlatform": {
       "description": "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
@@ -46,9 +45,10 @@
       "description": "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.",
       "type": "string"
     },
-    "runtime": {
-      "description": "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
-      "type": "string"
+    "targetProduct": {
+      "description": "Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.",
+      "type": "array",
+      "items": { "$ref": "SoftwareApplication.schema.json" }
     }
   }
 }

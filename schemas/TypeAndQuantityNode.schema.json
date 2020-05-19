@@ -12,29 +12,29 @@
     }
   ],
   "properties": {
-    "unitCode": {
-      "description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
-      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+    "amountOfThisGood": {
+      "description": "The quantity of the goods included in the offer.",
+      "type": "number"
+    },
+    "businessFunction": {
+      "description": "The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.",
+      "$ref": "BusinessFunction.schema.json"
     },
     "typeOfGood": {
       "description": "The product that this structured value is referring to.",
       "anyOf": [
-        { "$ref": "Service.schema.json" },
-        { "$ref": "Product.schema.json" }
+        { "$ref": "Product.schema.json" },
+        { "$ref": "Service.schema.json" }
       ]
     },
-    "amountOfThisGood": {
-      "description": "The quantity of the goods included in the offer.",
-      "type": "number"
+    "unitCode": {
+      "description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
     },
     "unitText": {
       "description": "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\nunitCode.",
       "type": "array",
       "items": { "type": "string" }
-    },
-    "businessFunction": {
-      "description": "The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.",
-      "$ref": "BusinessFunction.schema.json"
     }
   }
 }

@@ -12,6 +12,14 @@
     }
   ],
   "properties": {
+    "orderDelivery": {
+      "description": "The delivery of the parcel related to this order or order item.",
+      "$ref": "ParcelDelivery.schema.json"
+    },
+    "orderItemNumber": {
+      "description": "The identifier of the order item.",
+      "type": "string"
+    },
     "orderItemStatus": {
       "description": "The current status of the order item.",
       "$ref": "OrderStatus.schema.json"
@@ -20,24 +28,16 @@
       "description": "The number of the item ordered. If the property is not set, assume the quantity is one.",
       "type": "number"
     },
-    "orderDelivery": {
-      "description": "The delivery of the parcel related to this order or order item.",
-      "$ref": "ParcelDelivery.schema.json"
-    },
     "orderedItem": {
       "description": "The item ordered.",
       "type": "array",
       "items": {
         "anyOf": [
           { "$ref": "OrderItem.schema.json" },
-          { "$ref": "Service.schema.json" },
-          { "$ref": "Product.schema.json" }
+          { "$ref": "Product.schema.json" },
+          { "$ref": "Service.schema.json" }
         ]
       }
-    },
-    "orderItemNumber": {
-      "description": "The identifier of the order item.",
-      "type": "string"
     }
   }
 }

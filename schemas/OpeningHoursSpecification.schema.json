@@ -12,25 +12,6 @@
     }
   ],
   "properties": {
-    "validFrom": {
-      "description": "The date when the item becomes valid.",
-      "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
-      ]
-    },
-    "validThrough": {
-      "description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
-      "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
-      ]
-    },
-    "opens": {
-      "description": "The opening hour of the place or service on the given day(s) of the week.",
-      "type": "string",
-      "format": "time"
-    },
     "closes": {
       "description": "The closing hour of the place or service on the given day(s) of the week.",
       "type": "string",
@@ -39,6 +20,25 @@
     "dayOfWeek": {
       "description": "The day of the week for which these opening hours are valid.",
       "$ref": "DayOfWeek.schema.json"
+    },
+    "opens": {
+      "description": "The opening hour of the place or service on the given day(s) of the week.",
+      "type": "string",
+      "format": "time"
+    },
+    "validFrom": {
+      "description": "The date when the item becomes valid.",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
+    },
+    "validThrough": {
+      "description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
     }
   }
 }

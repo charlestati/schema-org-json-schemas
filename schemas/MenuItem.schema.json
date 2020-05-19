@@ -17,8 +17,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "MenuSection.schema.json" },
-          { "$ref": "MenuItem.schema.json" }
+          { "$ref": "MenuItem.schema.json" },
+          { "$ref": "MenuSection.schema.json" }
         ]
       }
     },

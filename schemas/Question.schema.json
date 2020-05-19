@@ -12,19 +12,19 @@
     }
   ],
   "properties": {
+    "acceptedAnswer": {
+      "description": "The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.",
+      "anyOf": [
+        { "$ref": "Answer.schema.json" },
+        { "$ref": "ItemList.schema.json" }
+      ]
+    },
     "answerCount": {
       "description": "The number of answers this question has received.",
       "type": "integer"
     },
-    "acceptedAnswer": {
-      "description": "The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.",
-      "anyOf": [
-        { "$ref": "ItemList.schema.json" },
-        { "$ref": "Answer.schema.json" }
-      ]
-    },
-    "upvoteCount": {
-      "description": "The number of upvotes this question, answer or comment has received from the community.",
+    "downvoteCount": {
+      "description": "The number of downvotes this question, answer or comment has received from the community.",
       "type": "integer"
     },
     "suggestedAnswer": {
@@ -32,13 +32,13 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "ItemList.schema.json" },
-          { "$ref": "Answer.schema.json" }
+          { "$ref": "Answer.schema.json" },
+          { "$ref": "ItemList.schema.json" }
         ]
       }
     },
-    "downvoteCount": {
-      "description": "The number of downvotes this question, answer or comment has received from the community.",
+    "upvoteCount": {
+      "description": "The number of upvotes this question, answer or comment has received from the community.",
       "type": "integer"
     }
   }

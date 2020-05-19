@@ -6,10 +6,10 @@
   "type": "object",
   "format": "http://schema.org/AutoPartsStore",
   "allOf": [
-    { "description": "A retail good store.", "$ref": "Store.schema.json" },
     {
       "description": "Car repair, sales, or parts.",
       "$ref": "AutomotiveBusiness.schema.json"
-    }
+    },
+    { "description": "A retail good store.", "$ref": "Store.schema.json" }
   ]
 }

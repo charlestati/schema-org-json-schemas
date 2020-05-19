@@ -12,6 +12,11 @@
     }
   ],
   "properties": {
+    "isVariantOf": {
+      "description": "A pointer to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive.",
+      "type": "array",
+      "items": { "$ref": "ProductModel.schema.json" }
+    },
     "predecessorOf": {
       "description": "A pointer from a previous, often discontinued variant of the product to its newer variant.",
       "type": "array",
@@ -19,11 +24,6 @@
     },
     "successorOf": {
       "description": "A pointer from a newer variant of a product  to its previous, often discontinued predecessor.",
-      "type": "array",
-      "items": { "$ref": "ProductModel.schema.json" }
-    },
-    "isVariantOf": {
-      "description": "A pointer to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive.",
       "type": "array",
       "items": { "$ref": "ProductModel.schema.json" }
     }

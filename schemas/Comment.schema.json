@@ -12,16 +12,16 @@
     }
   ],
   "properties": {
+    "downvoteCount": {
+      "description": "The number of downvotes this question, answer or comment has received from the community.",
+      "type": "integer"
+    },
     "parentItem": {
       "description": "The parent of a question, answer or item in general.",
       "$ref": "Question.schema.json"
     },
     "upvoteCount": {
       "description": "The number of upvotes this question, answer or comment has received from the community.",
-      "type": "integer"
-    },
-    "downvoteCount": {
-      "description": "The number of downvotes this question, answer or comment has received from the community.",
       "type": "integer"
     }
   }

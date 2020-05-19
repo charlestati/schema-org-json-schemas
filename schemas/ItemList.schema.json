@@ -26,8 +26,8 @@
     "itemListOrder": {
       "description": "Type of ordering (e.g. Ascending, Descending, Unordered).",
       "anyOf": [
-        { "type": "string" },
-        { "$ref": "ItemListOrderType.schema.json" }
+        { "$ref": "ItemListOrderType.schema.json" },
+        { "type": "string" }
       ]
     },
     "numberOfItems": {

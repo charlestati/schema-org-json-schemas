@@ -12,25 +12,25 @@
     }
   ],
   "properties": {
-    "suggestedMaxAge": {
-      "description": "Maximal age recommended for viewing content.",
-      "type": "number"
-    },
-    "requiredMinAge": {
-      "description": "Audiences defined by a person's minimum age.",
-      "type": "integer"
-    },
     "requiredGender": {
       "description": "Audiences defined by a person's gender.",
-      "type": "string"
-    },
-    "suggestedGender": {
-      "description": "The gender of the person or audience.",
       "type": "string"
     },
     "requiredMaxAge": {
       "description": "Audiences defined by a person's maximum age.",
       "type": "integer"
+    },
+    "requiredMinAge": {
+      "description": "Audiences defined by a person's minimum age.",
+      "type": "integer"
+    },
+    "suggestedGender": {
+      "description": "The gender of the person or audience.",
+      "type": "string"
+    },
+    "suggestedMaxAge": {
+      "description": "Maximal age recommended for viewing content.",
+      "type": "number"
     },
     "suggestedMinAge": {
       "description": "Minimal age recommended for viewing content.",

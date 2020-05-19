@@ -12,102 +12,112 @@
     }
   ],
   "properties": {
-    "geoWithin": {
-      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in DE-9IM.",
+    "additionalProperty": {
+      "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
       "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+      "items": { "$ref": "PropertyValue.schema.json" }
     },
-    "geoContains": {
-      "description": "Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. \"a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a\". As defined in DE-9IM.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
-    },
-    "latitude": {
-      "description": "The latitude of a location. For example 37.42242 (WGS 84).",
-      "anyOf": [{ "type": "number" }, { "type": "string" }]
-    },
-    "openingHoursSpecification": {
-      "description": "The opening hours of a certain place.",
-      "$ref": "OpeningHoursSpecification.schema.json"
-    },
-    "maps": {
-      "description": "A URL to a map of the place.",
-      "type": "array",
-      "items": { "type": "string", "format": "uri" }
-    },
-    "events": {
-      "description": "Upcoming or past events associated with this place or organization.",
-      "type": "array",
-      "items": { "$ref": "Event.schema.json" }
-    },
-    "photo": {
-      "description": "A photograph of this place.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "ImageObject.schema.json" },
-          { "$ref": "Photograph.schema.json" }
-        ]
-      }
-    },
-    "containedInPlace": {
-      "description": "The basic containment relation between a place and one that contains it.",
-      "$ref": "Place.schema.json"
-    },
-    "geoOverlaps": {
-      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in DE-9IM.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
-    },
-    "smokingAllowed": {
-      "description": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
-      "type": "boolean"
-    },
-    "globalLocationNumber": {
-      "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-      "type": "string"
-    },
-    "maximumAttendeeCapacity": {
-      "description": "The total number of individuals that may attend an event or venue.",
-      "type": "integer"
-    },
-    "geoCrosses": {
-      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in DE-9IM.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+    "address": {
+      "description": "Physical address of the item.",
+      "anyOf": [{ "$ref": "PostalAddress.schema.json" }, { "type": "string" }]
     },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
       "$ref": "AggregateRating.schema.json"
     },
-    "reviews": {
-      "description": "Review of the item.",
+    "amenityFeature": {
+      "description": "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
       "type": "array",
-      "items": { "$ref": "Review.schema.json" }
-    },
-    "photos": {
-      "description": "Photographs of this place.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "ImageObject.schema.json" },
-          { "$ref": "Photograph.schema.json" }
-        ]
-      }
-    },
-    "map": {
-      "description": "A URL to a map of the place.",
-      "type": "array",
-      "items": { "type": "string", "format": "uri" }
+      "items": { "$ref": "LocationFeatureSpecification.schema.json" }
     },
     "branchCode": {
       "description": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.",
       "type": "array",
       "items": { "type": "string" }
     },
-    "longitude": {
-      "description": "The longitude of a location. For example -122.08585 (WGS 84).",
-      "anyOf": [{ "type": "number" }, { "type": "string" }]
+    "containedIn": {
+      "description": "The basic containment relation between a place and one that contains it.",
+      "$ref": "Place.schema.json"
+    },
+    "containedInPlace": {
+      "description": "The basic containment relation between a place and one that contains it.",
+      "$ref": "Place.schema.json"
+    },
+    "containsPlace": {
+      "description": "The basic containment relation between a place and another that it contains.",
+      "$ref": "Place.schema.json"
+    },
+    "event": {
+      "description": "Upcoming or past event associated with this place, organization, or action.",
+      "type": "array",
+      "items": { "$ref": "Event.schema.json" }
+    },
+    "events": {
+      "description": "Upcoming or past events associated with this place or organization.",
+      "type": "array",
+      "items": { "$ref": "Event.schema.json" }
+    },
+    "faxNumber": { "description": "The fax number.", "type": "string" },
+    "geo": {
+      "description": "The geo coordinates of the place.",
+      "anyOf": [
+        { "$ref": "GeoCoordinates.schema.json" },
+        { "$ref": "GeoShape.schema.json" }
+      ]
+    },
+    "geoContains": {
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. \"a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a\". As defined in DE-9IM.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "geoCoveredBy": {
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in DE-9IM.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "geoCovers": {
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. \"Every point of b is a point of (the interior or boundary of) a\". As defined in DE-9IM.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "geoCrosses": {
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in DE-9IM.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "geoDisjoint": {
+      "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in DE-9IM)",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "geoEquals": {
+      "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in DE-9IM. \"Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other\" (a symmetric relationship)",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "geoIntersects": {
+      "description": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in DE-9IM.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "geoOverlaps": {
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in DE-9IM.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "geoTouches": {
+      "description": "Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.\" (a symmetric relationship, as defined in DE-9IM )",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "geoWithin": {
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in DE-9IM.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "globalLocationNumber": {
+      "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "type": "string"
     },
     "hasMap": {
       "description": "A URL to a map of the place.",
@@ -119,23 +129,17 @@
         ]
       }
     },
-    "additionalProperty": {
-      "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
-      "type": "array",
-      "items": { "$ref": "PropertyValue.schema.json" }
+    "isAccessibleForFree": {
+      "description": "A flag to signal that the item, event, or place is accessible for free.",
+      "type": "boolean"
     },
-    "address": {
-      "description": "Physical address of the item.",
-      "anyOf": [{ "type": "string" }, { "$ref": "PostalAddress.schema.json" }]
+    "isicV4": {
+      "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+      "type": "string"
     },
-    "specialOpeningHoursSpecification": {
-      "description": "The special opening hours of a certain place.\n\nUse this to explicitly override general opening hours brought in scope by openingHoursSpecification or openingHours.",
-      "$ref": "OpeningHoursSpecification.schema.json"
-    },
-    "amenityFeature": {
-      "description": "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
-      "type": "array",
-      "items": { "$ref": "LocationFeatureSpecification.schema.json" }
+    "latitude": {
+      "description": "The latitude of a location. For example 37.42242 (WGS 84).",
+      "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "logo": {
       "description": "An associated logo.",
@@ -147,79 +151,75 @@
         ]
       }
     },
-    "telephone": { "description": "The telephone number.", "type": "string" },
-    "geo": {
-      "description": "The geo coordinates of the place.",
-      "anyOf": [
-        { "$ref": "GeoShape.schema.json" },
-        { "$ref": "GeoCoordinates.schema.json" }
-      ]
+    "longitude": {
+      "description": "The longitude of a location. For example -122.08585 (WGS 84).",
+      "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
-    "geoCovers": {
-      "description": "Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. \"Every point of b is a point of (the interior or boundary of) a\". As defined in DE-9IM.",
+    "map": {
+      "description": "A URL to a map of the place.",
       "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+      "items": { "type": "string", "format": "uri" }
     },
-    "geoEquals": {
-      "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in DE-9IM. \"Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other\" (a symmetric relationship)",
+    "maps": {
+      "description": "A URL to a map of the place.",
       "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+      "items": { "type": "string", "format": "uri" }
+    },
+    "maximumAttendeeCapacity": {
+      "description": "The total number of individuals that may attend an event or venue.",
+      "type": "integer"
+    },
+    "openingHoursSpecification": {
+      "description": "The opening hours of a certain place.",
+      "$ref": "OpeningHoursSpecification.schema.json"
+    },
+    "photo": {
+      "description": "A photograph of this place.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          { "$ref": "ImageObject.schema.json" },
+          { "$ref": "Photograph.schema.json" }
+        ]
+      }
+    },
+    "photos": {
+      "description": "Photographs of this place.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          { "$ref": "ImageObject.schema.json" },
+          { "$ref": "Photograph.schema.json" }
+        ]
+      }
+    },
+    "publicAccess": {
+      "description": "A flag to signal that the Place is open to public visitors.  If this property is omitted there is no assumed default boolean value",
+      "type": "boolean"
     },
     "review": {
       "description": "A review of the item.",
       "type": "array",
       "items": { "$ref": "Review.schema.json" }
     },
-    "containedIn": {
-      "description": "The basic containment relation between a place and one that contains it.",
-      "$ref": "Place.schema.json"
-    },
-    "event": {
-      "description": "Upcoming or past event associated with this place, organization, or action.",
+    "reviews": {
+      "description": "Review of the item.",
       "type": "array",
-      "items": { "$ref": "Event.schema.json" }
-    },
-    "geoTouches": {
-      "description": "Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.\" (a symmetric relationship, as defined in DE-9IM )",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
-    },
-    "containsPlace": {
-      "description": "The basic containment relation between a place and another that it contains.",
-      "$ref": "Place.schema.json"
-    },
-    "geoDisjoint": {
-      "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in DE-9IM)",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
-    },
-    "isicV4": {
-      "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
-      "type": "string"
+      "items": { "$ref": "Review.schema.json" }
     },
     "slogan": {
       "description": "A slogan or motto associated with the item.",
       "type": "array",
       "items": { "type": "string" }
     },
-    "faxNumber": { "description": "The fax number.", "type": "string" },
-    "geoIntersects": {
-      "description": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in DE-9IM.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
-    },
-    "isAccessibleForFree": {
-      "description": "A flag to signal that the item, event, or place is accessible for free.",
+    "smokingAllowed": {
+      "description": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
       "type": "boolean"
     },
-    "geoCoveredBy": {
-      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in DE-9IM.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+    "specialOpeningHoursSpecification": {
+      "description": "The special opening hours of a certain place.\n\nUse this to explicitly override general opening hours brought in scope by openingHoursSpecification or openingHours.",
+      "$ref": "OpeningHoursSpecification.schema.json"
     },
-    "publicAccess": {
-      "description": "A flag to signal that the Place is open to public visitors.  If this property is omitted there is no assumed default boolean value",
-      "type": "boolean"
-    }
+    "telephone": { "description": "The telephone number.", "type": "string" }
   }
 }

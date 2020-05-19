@@ -12,17 +12,17 @@
     }
   ],
   "properties": {
-    "salaryCurrency": {
-      "description": "The currency (coded using ISO 4217 ) used for the main salary information in this job posting or for this employee.",
-      "type": "string"
-    },
     "baseSalary": {
       "description": "The base salary of the job or of an employee in an EmployeeRole.",
       "anyOf": [
-        { "$ref": "PriceSpecification.schema.json" },
+        { "$ref": "MonetaryAmount.schema.json" },
         { "type": "number" },
-        { "$ref": "MonetaryAmount.schema.json" }
+        { "$ref": "PriceSpecification.schema.json" }
       ]
+    },
+    "salaryCurrency": {
+      "description": "The currency (coded using ISO 4217 ) used for the main salary information in this job posting or for this employee.",
+      "type": "string"
     }
   }
 }

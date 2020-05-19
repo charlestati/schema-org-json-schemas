@@ -7,12 +7,12 @@
   "format": "http://schema.org/GamePlayMode",
   "oneOf": [
     {
-      "description": "Play mode: MultiPlayer. Requiring or allowing multiple human players to play simultaneously.",
-      "const": "MultiPlayer"
-    },
-    {
       "description": "Play mode: CoOp. Co-operative games, where you play on the same team with friends.",
       "const": "CoOp"
+    },
+    {
+      "description": "Play mode: MultiPlayer. Requiring or allowing multiple human players to play simultaneously.",
+      "const": "MultiPlayer"
     },
     {
       "description": "Play mode: SinglePlayer. Which is played by a lone player.",

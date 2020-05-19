@@ -12,51 +12,51 @@
     }
   ],
   "properties": {
-    "musicCompositionForm": {
-      "description": "The type of composition (e.g. overture, sonata, symphony, etc.).",
-      "type": "string"
+    "composer": {
+      "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
+      "anyOf": [
+        { "$ref": "Organization.schema.json" },
+        { "$ref": "Person.schema.json" }
+      ]
+    },
+    "firstPerformance": {
+      "description": "The date and place the work was first performed.",
+      "$ref": "Event.schema.json"
     },
     "includedComposition": {
       "description": "Smaller compositions included in this work (e.g. a movement in a symphony).",
       "type": "array",
       "items": { "$ref": "MusicComposition.schema.json" }
     },
+    "iswcCode": {
+      "description": "The International Standard Musical Work Code for the composition.",
+      "type": "string"
+    },
     "lyricist": {
       "description": "The person who wrote the words.",
       "$ref": "Person.schema.json"
     },
-    "recordedAs": {
-      "description": "An audio recording of the work.",
-      "type": "array",
-      "items": { "$ref": "MusicRecording.schema.json" }
-    },
-    "firstPerformance": {
-      "description": "The date and place the work was first performed.",
-      "$ref": "Event.schema.json"
+    "lyrics": {
+      "description": "The words in the song.",
+      "$ref": "CreativeWork.schema.json"
     },
     "musicArrangement": {
       "description": "An arrangement derived from the composition.",
       "type": "array",
       "items": { "$ref": "MusicComposition.schema.json" }
     },
-    "lyrics": {
-      "description": "The words in the song.",
-      "$ref": "CreativeWork.schema.json"
-    },
-    "iswcCode": {
-      "description": "The International Standard Musical Work Code for the composition.",
+    "musicCompositionForm": {
+      "description": "The type of composition (e.g. overture, sonata, symphony, etc.).",
       "type": "string"
-    },
-    "composer": {
-      "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
-      "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "Organization.schema.json" }
-      ]
     },
     "musicalKey": {
       "description": "The key, mode, or scale this composition uses.",
       "type": "string"
+    },
+    "recordedAs": {
+      "description": "An audio recording of the work.",
+      "type": "array",
+      "items": { "$ref": "MusicRecording.schema.json" }
     }
   }
 }

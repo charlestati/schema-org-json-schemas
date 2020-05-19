@@ -12,56 +12,54 @@
     }
   ],
   "properties": {
-    "gameItem": {
-      "description": "An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
-    },
-    "seasons": {
-      "description": "A season in a media series.",
-      "type": "array",
-      "items": { "$ref": "CreativeWorkSeason.schema.json" }
-    },
-    "gamePlatform": {
-      "description": "The electronic systems used to play video games.",
-      "anyOf": [
-        { "type": "string" },
-        { "type": "string", "format": "uri" },
-        { "$ref": "Thing.schema.json" }
-      ]
-    },
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     },
-    "numberOfEpisodes": {
-      "description": "The number of episodes in this season or series.",
-      "type": "integer"
-    },
-    "trailer": {
-      "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
-      "$ref": "VideoObject.schema.json"
-    },
-    "season": {
-      "description": "A season in a media series.",
+    "actors": {
+      "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
       "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "CreativeWorkSeason.schema.json" }
-        ]
-      }
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "characterAttribute": {
+      "description": "A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).",
+      "type": "array",
+      "items": { "$ref": "Thing.schema.json" }
+    },
+    "cheatCode": {
+      "description": "Cheat codes to the game.",
+      "type": "array",
+      "items": { "$ref": "CreativeWork.schema.json" }
+    },
+    "containsSeason": {
+      "description": "A season that is part of the media series.",
+      "type": "array",
+      "items": { "$ref": "CreativeWorkSeason.schema.json" }
+    },
+    "director": {
+      "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+      "$ref": "Person.schema.json"
+    },
+    "directors": {
+      "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
+      "type": "array",
+      "items": { "$ref": "Person.schema.json" }
+    },
+    "episode": {
+      "description": "An episode of a tv, radio or game media within a series or season.",
+      "type": "array",
+      "items": { "$ref": "Episode.schema.json" }
     },
     "episodes": {
       "description": "An episode of a TV/radio series or season.",
       "type": "array",
       "items": { "$ref": "Episode.schema.json" }
     },
-    "cheatCode": {
-      "description": "Cheat codes to the game.",
+    "gameItem": {
+      "description": "An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.",
       "type": "array",
-      "items": { "$ref": "CreativeWork.schema.json" }
+      "items": { "$ref": "Thing.schema.json" }
     },
     "gameLocation": {
       "description": "Real or fictional location of the game (or part of game).",
@@ -74,63 +72,65 @@
         ]
       }
     },
+    "gamePlatform": {
+      "description": "The electronic systems used to play video games.",
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "Thing.schema.json" },
+        { "type": "string", "format": "uri" }
+      ]
+    },
     "musicBy": {
       "description": "The composer of the soundtrack.",
       "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "MusicGroup.schema.json" }
+        { "$ref": "MusicGroup.schema.json" },
+        { "$ref": "Person.schema.json" }
       ]
     },
-    "containsSeason": {
-      "description": "A season that is part of the media series.",
-      "type": "array",
-      "items": { "$ref": "CreativeWorkSeason.schema.json" }
-    },
-    "directors": {
-      "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
-    },
-    "quest": {
-      "description": "The task that a player-controlled character, or group of characters may complete in order to gain a reward.",
-      "$ref": "Thing.schema.json"
-    },
-    "playMode": {
-      "description": "Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.",
-      "type": "array",
-      "items": { "$ref": "GamePlayMode.schema.json" }
-    },
-    "numberOfSeasons": {
-      "description": "The number of seasons in this series.",
+    "numberOfEpisodes": {
+      "description": "The number of episodes in this season or series.",
       "type": "integer"
-    },
-    "director": {
-      "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-      "$ref": "Person.schema.json"
-    },
-    "productionCompany": {
-      "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
-      "$ref": "Organization.schema.json"
-    },
-    "characterAttribute": {
-      "description": "A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
     },
     "numberOfPlayers": {
       "description": "Indicate how many people can play this game (minimum, maximum, or range).",
       "type": "array",
       "items": { "$ref": "QuantitativeValue.schema.json" }
     },
-    "actors": {
-      "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+    "numberOfSeasons": {
+      "description": "The number of seasons in this series.",
+      "type": "integer"
     },
-    "episode": {
-      "description": "An episode of a tv, radio or game media within a series or season.",
+    "playMode": {
+      "description": "Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.",
       "type": "array",
-      "items": { "$ref": "Episode.schema.json" }
+      "items": { "$ref": "GamePlayMode.schema.json" }
+    },
+    "productionCompany": {
+      "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
+      "$ref": "Organization.schema.json"
+    },
+    "quest": {
+      "description": "The task that a player-controlled character, or group of characters may complete in order to gain a reward.",
+      "$ref": "Thing.schema.json"
+    },
+    "season": {
+      "description": "A season in a media series.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          { "$ref": "CreativeWorkSeason.schema.json" },
+          { "type": "string", "format": "uri" }
+        ]
+      }
+    },
+    "seasons": {
+      "description": "A season in a media series.",
+      "type": "array",
+      "items": { "$ref": "CreativeWorkSeason.schema.json" }
+    },
+    "trailer": {
+      "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
+      "$ref": "VideoObject.schema.json"
     }
   }
 }

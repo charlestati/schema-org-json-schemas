@@ -12,11 +12,6 @@
     }
   ],
   "properties": {
-    "petsAllowed": {
-      "description": "Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.",
-      "type": "array",
-      "items": { "anyOf": [{ "type": "string" }, { "type": "boolean" }] }
-    },
     "amenityFeature": {
       "description": "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
       "type": "array",
@@ -37,6 +32,11 @@
       "description": "Indications regarding the permitted usage of the accommodation.",
       "type": "array",
       "items": { "type": "string" }
+    },
+    "petsAllowed": {
+      "description": "Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.",
+      "type": "array",
+      "items": { "anyOf": [{ "type": "boolean" }, { "type": "string" }] }
     }
   }
 }

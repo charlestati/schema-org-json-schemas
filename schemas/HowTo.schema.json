@@ -12,21 +12,19 @@
     }
   ],
   "properties": {
+    "estimatedCost": {
+      "description": "The estimated cost of the supply or supplies consumed when performing instructions.",
+      "anyOf": [{ "$ref": "MonetaryAmount.schema.json" }, { "type": "string" }]
+    },
+    "performTime": {
+      "description": "The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in ISO 8601 duration format.",
+      "type": "string",
+      "format": "https://schema.org/Duration"
+    },
     "prepTime": {
       "description": "The length of time it takes to prepare the items to be used in instructions or a direction, in ISO 8601 duration format.",
       "type": "string",
       "format": "https://schema.org/Duration"
-    },
-    "steps": {
-      "description": "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "CreativeWork.schema.json" },
-          { "type": "string" },
-          { "$ref": "ItemList.schema.json" }
-        ]
-      }
     },
     "step": {
       "description": "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.",
@@ -40,26 +38,16 @@
         ]
       }
     },
-    "tool": {
-      "description": "A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.",
+    "steps": {
+      "description": "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).",
       "type": "array",
       "items": {
-        "anyOf": [{ "$ref": "HowToTool.schema.json" }, { "type": "string" }]
+        "anyOf": [
+          { "$ref": "CreativeWork.schema.json" },
+          { "$ref": "ItemList.schema.json" },
+          { "type": "string" }
+        ]
       }
-    },
-    "performTime": {
-      "description": "The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in ISO 8601 duration format.",
-      "type": "string",
-      "format": "https://schema.org/Duration"
-    },
-    "estimatedCost": {
-      "description": "The estimated cost of the supply or supplies consumed when performing instructions.",
-      "anyOf": [{ "type": "string" }, { "$ref": "MonetaryAmount.schema.json" }]
-    },
-    "totalTime": {
-      "description": "The total time required to perform instructions or a direction (including time to prepare the supplies), in ISO 8601 duration format.",
-      "type": "string",
-      "format": "https://schema.org/Duration"
     },
     "supply": {
       "description": "A sub-property of instrument. A supply consumed when performing instructions or a direction.",
@@ -68,11 +56,23 @@
         "anyOf": [{ "$ref": "HowToSupply.schema.json" }, { "type": "string" }]
       }
     },
+    "tool": {
+      "description": "A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.",
+      "type": "array",
+      "items": {
+        "anyOf": [{ "$ref": "HowToTool.schema.json" }, { "type": "string" }]
+      }
+    },
+    "totalTime": {
+      "description": "The total time required to perform instructions or a direction (including time to prepare the supplies), in ISO 8601 duration format.",
+      "type": "string",
+      "format": "https://schema.org/Duration"
+    },
     "yield": {
       "description": "The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.",
       "anyOf": [
-        { "type": "string" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "QuantitativeValue.schema.json" },
+        { "type": "string" }
       ]
     }
   }

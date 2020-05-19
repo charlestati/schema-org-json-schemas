@@ -12,6 +12,10 @@
     }
   ],
   "properties": {
+    "caption": {
+      "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.",
+      "anyOf": [{ "$ref": "MediaObject.schema.json" }, { "type": "string" }]
+    },
     "exifData": {
       "description": "exif data for this object.",
       "anyOf": [{ "$ref": "PropertyValue.schema.json" }, { "type": "string" }]
@@ -23,10 +27,6 @@
     "thumbnail": {
       "description": "Thumbnail image for an image or video.",
       "$ref": "ImageObject.schema.json"
-    },
-    "caption": {
-      "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.",
-      "anyOf": [{ "type": "string" }, { "$ref": "MediaObject.schema.json" }]
     }
   }
 }

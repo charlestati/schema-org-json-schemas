@@ -6,14 +6,14 @@
   "type": "object",
   "format": "http://schema.org/MusicAlbumProductionType",
   "oneOf": [
-    { "description": "SoundtrackAlbum.", "const": "SoundtrackAlbum" },
-    { "description": "RemixAlbum.", "const": "RemixAlbum" },
-    { "description": "DJMixAlbum.", "const": "DJMixAlbum" },
-    { "description": "LiveAlbum.", "const": "LiveAlbum" },
-    { "description": "DemoAlbum.", "const": "DemoAlbum" },
-    { "description": "SpokenWordAlbum.", "const": "SpokenWordAlbum" },
     { "description": "CompilationAlbum.", "const": "CompilationAlbum" },
-    { "description": "StudioAlbum.", "const": "StudioAlbum" },
-    { "description": "MixtapeAlbum.", "const": "MixtapeAlbum" }
+    { "description": "DJMixAlbum.", "const": "DJMixAlbum" },
+    { "description": "DemoAlbum.", "const": "DemoAlbum" },
+    { "description": "LiveAlbum.", "const": "LiveAlbum" },
+    { "description": "MixtapeAlbum.", "const": "MixtapeAlbum" },
+    { "description": "RemixAlbum.", "const": "RemixAlbum" },
+    { "description": "SoundtrackAlbum.", "const": "SoundtrackAlbum" },
+    { "description": "SpokenWordAlbum.", "const": "SpokenWordAlbum" },
+    { "description": "StudioAlbum.", "const": "StudioAlbum" }
   ]
 }

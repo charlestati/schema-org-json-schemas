@@ -19,8 +19,8 @@
     "endDate": {
       "description": "The end date and time of the item (in ISO 8601 date format).",
       "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
       ]
     },
     "issn": {
@@ -30,8 +30,8 @@
     "startDate": {
       "description": "The start date and time of the item (in ISO 8601 date format).",
       "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
       ]
     }
   }

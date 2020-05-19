@@ -17,6 +17,11 @@
       "type": "array",
       "items": { "$ref": "MusicAlbumProductionType.schema.json" }
     },
+    "albumRelease": {
+      "description": "A release of this album.",
+      "type": "array",
+      "items": { "$ref": "MusicRelease.schema.json" }
+    },
     "albumReleaseType": {
       "description": "The kind of release which this album is: single, EP or album.",
       "$ref": "MusicAlbumReleaseType.schema.json"
@@ -24,14 +29,9 @@
     "byArtist": {
       "description": "The artist that performed this album or recording.",
       "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "MusicGroup.schema.json" }
+        { "$ref": "MusicGroup.schema.json" },
+        { "$ref": "Person.schema.json" }
       ]
-    },
-    "albumRelease": {
-      "description": "A release of this album.",
-      "type": "array",
-      "items": { "$ref": "MusicRelease.schema.json" }
     }
   }
 }

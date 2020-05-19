@@ -12,38 +12,24 @@
     }
   ],
   "properties": {
-    "provider": {
-      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
-      "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "Organization.schema.json" }
-      ]
-    },
-    "paymentDue": {
-      "description": "The date that payment is due.",
-      "type": "string",
-      "format": "date-time"
+    "accountId": {
+      "description": "The identifier for the account the payment will be applied to.",
+      "type": "string"
     },
     "billingPeriod": {
       "description": "The time interval used to compute the invoice.",
       "type": "string",
       "format": "https://schema.org/Duration"
     },
-    "confirmationNumber": {
-      "description": "A number that confirms the given order or payment has been received.",
-      "type": "string"
-    },
-    "scheduledPaymentDate": {
-      "description": "The date the invoice is scheduled to be paid.",
-      "type": "string",
-      "format": "date"
-    },
-    "customer": {
-      "description": "Party placing the order or paying the invoice.",
-      "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "Organization.schema.json" }
-      ]
+    "broker": {
+      "description": "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "Person.schema.json" }
+        ]
+      }
     },
     "category": {
       "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
@@ -51,27 +37,40 @@
       "items": {
         "anyOf": [
           { "type": "string" },
-          { "type": "string", "format": "uri" },
-          { "$ref": "Thing.schema.json" }
+          { "$ref": "Thing.schema.json" },
+          { "type": "string", "format": "uri" }
         ]
       }
     },
-    "paymentStatus": {
-      "description": "The status of payment; whether the invoice has been paid or not.",
+    "confirmationNumber": {
+      "description": "A number that confirms the given order or payment has been received.",
+      "type": "string"
+    },
+    "customer": {
+      "description": "Party placing the order or paying the invoice.",
       "anyOf": [
-        { "$ref": "PaymentStatusType.schema.json" },
-        { "type": "string" }
+        { "$ref": "Organization.schema.json" },
+        { "$ref": "Person.schema.json" }
       ]
     },
-    "broker": {
-      "description": "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Person.schema.json" },
-          { "$ref": "Organization.schema.json" }
-        ]
-      }
+    "minimumPaymentDue": {
+      "description": "The minimum payment required at this time.",
+      "anyOf": [
+        { "$ref": "MonetaryAmount.schema.json" },
+        { "$ref": "PriceSpecification.schema.json" }
+      ]
+    },
+    "paymentDue": {
+      "description": "The date that payment is due.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "paymentDueDate": {
+      "description": "The date that payment is due.",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
     },
     "paymentMethod": {
       "description": "The name of the credit card or other method of payment for the order.",
@@ -82,33 +81,34 @@
       "type": "array",
       "items": { "type": "string" }
     },
-    "minimumPaymentDue": {
-      "description": "The minimum payment required at this time.",
+    "paymentStatus": {
+      "description": "The status of payment; whether the invoice has been paid or not.",
       "anyOf": [
-        { "$ref": "PriceSpecification.schema.json" },
-        { "$ref": "MonetaryAmount.schema.json" }
+        { "$ref": "PaymentStatusType.schema.json" },
+        { "type": "string" }
       ]
     },
-    "totalPaymentDue": {
-      "description": "The total amount due.",
+    "provider": {
+      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
       "anyOf": [
-        { "$ref": "PriceSpecification.schema.json" },
-        { "$ref": "MonetaryAmount.schema.json" }
+        { "$ref": "Organization.schema.json" },
+        { "$ref": "Person.schema.json" }
       ]
-    },
-    "accountId": {
-      "description": "The identifier for the account the payment will be applied to.",
-      "type": "string"
     },
     "referencesOrder": {
       "description": "The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.",
       "$ref": "Order.schema.json"
     },
-    "paymentDueDate": {
-      "description": "The date that payment is due.",
+    "scheduledPaymentDate": {
+      "description": "The date the invoice is scheduled to be paid.",
+      "type": "string",
+      "format": "date"
+    },
+    "totalPaymentDue": {
+      "description": "The total amount due.",
       "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
+        { "$ref": "MonetaryAmount.schema.json" },
+        { "$ref": "PriceSpecification.schema.json" }
       ]
     }
   }

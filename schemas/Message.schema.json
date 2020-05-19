@@ -12,71 +12,59 @@
     }
   ],
   "properties": {
-    "dateRead": {
-      "description": "The date/time at which the message has been read by the recipient if a single recipient exists.",
-      "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
-      ]
-    },
     "bccRecipient": {
       "description": "A sub property of recipient. The recipient blind copied on a message.",
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "Person.schema.json" },
+          { "$ref": "ContactPoint.schema.json" },
           { "$ref": "Organization.schema.json" },
-          { "$ref": "ContactPoint.schema.json" }
+          { "$ref": "Person.schema.json" }
         ]
       }
-    },
-    "dateSent": {
-      "description": "The date/time at which the message was sent.",
-      "type": "string",
-      "format": "date-time"
     },
     "ccRecipient": {
       "description": "A sub property of recipient. The recipient copied on a message.",
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "Person.schema.json" },
+          { "$ref": "ContactPoint.schema.json" },
           { "$ref": "Organization.schema.json" },
-          { "$ref": "ContactPoint.schema.json" }
+          { "$ref": "Person.schema.json" }
         ]
       }
     },
-    "recipient": {
-      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Person.schema.json" },
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Audience.schema.json" },
-          { "$ref": "ContactPoint.schema.json" }
-        ]
-      }
-    },
-    "messageAttachment": {
-      "description": "A CreativeWork attached to the message.",
-      "type": "array",
-      "items": { "$ref": "CreativeWork.schema.json" }
+    "dateRead": {
+      "description": "The date/time at which the message has been read by the recipient if a single recipient exists.",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
     },
     "dateReceived": {
       "description": "The date/time the message was received if a single recipient exists.",
       "type": "string",
       "format": "date-time"
     },
-    "toRecipient": {
-      "description": "A sub property of recipient. The recipient who was directly sent the message.",
+    "dateSent": {
+      "description": "The date/time at which the message was sent.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "messageAttachment": {
+      "description": "A CreativeWork attached to the message.",
+      "type": "array",
+      "items": { "$ref": "CreativeWork.schema.json" }
+    },
+    "recipient": {
+      "description": "A sub property of participant. The participant who is at the receiving end of the action.",
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "Person.schema.json" },
-          { "$ref": "Organization.schema.json" },
           { "$ref": "Audience.schema.json" },
-          { "$ref": "ContactPoint.schema.json" }
+          { "$ref": "ContactPoint.schema.json" },
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "Person.schema.json" }
         ]
       }
     },
@@ -85,9 +73,21 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "Person.schema.json" },
+          { "$ref": "Audience.schema.json" },
           { "$ref": "Organization.schema.json" },
-          { "$ref": "Audience.schema.json" }
+          { "$ref": "Person.schema.json" }
+        ]
+      }
+    },
+    "toRecipient": {
+      "description": "A sub property of recipient. The recipient who was directly sent the message.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          { "$ref": "Audience.schema.json" },
+          { "$ref": "ContactPoint.schema.json" },
+          { "$ref": "Organization.schema.json" },
+          { "$ref": "Person.schema.json" }
         ]
       }
     }

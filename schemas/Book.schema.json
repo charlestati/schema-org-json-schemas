@@ -12,7 +12,6 @@
     }
   ],
   "properties": {
-    "isbn": { "description": "The ISBN of the book.", "type": "string" },
     "bookEdition": {
       "description": "The edition of the book.",
       "type": "string"
@@ -25,6 +24,7 @@
       "description": "The illustrator of the book.",
       "$ref": "Person.schema.json"
     },
+    "isbn": { "description": "The ISBN of the book.", "type": "string" },
     "numberOfPages": {
       "description": "The number of pages in the book.",
       "type": "integer"

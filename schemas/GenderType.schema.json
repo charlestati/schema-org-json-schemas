@@ -6,7 +6,7 @@
   "type": "object",
   "format": "http://schema.org/GenderType",
   "oneOf": [
-    { "description": "The male gender.", "const": "Male" },
-    { "description": "The female gender.", "const": "Female" }
+    { "description": "The female gender.", "const": "Female" },
+    { "description": "The male gender.", "const": "Male" }
   ]
 }

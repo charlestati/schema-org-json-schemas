@@ -12,19 +12,6 @@
     }
   ],
   "properties": {
-    "targetDescription": {
-      "description": "The description of a node in an established educational framework.",
-      "type": "string"
-    },
-    "targetUrl": {
-      "description": "The URL of a node in an established educational framework.",
-      "type": "string",
-      "format": "uri"
-    },
-    "targetName": {
-      "description": "The name of a node in an established educational framework.",
-      "type": "string"
-    },
     "alignmentType": {
       "description": "A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.",
       "type": "array",
@@ -33,6 +20,19 @@
     "educationalFramework": {
       "description": "The framework to which the resource being described is aligned.",
       "type": "string"
+    },
+    "targetDescription": {
+      "description": "The description of a node in an established educational framework.",
+      "type": "string"
+    },
+    "targetName": {
+      "description": "The name of a node in an established educational framework.",
+      "type": "string"
+    },
+    "targetUrl": {
+      "description": "The URL of a node in an established educational framework.",
+      "type": "string",
+      "format": "uri"
     }
   }
 }

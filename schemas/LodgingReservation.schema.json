@@ -12,31 +12,24 @@
     }
   ],
   "properties": {
-    "lodgingUnitDescription": {
-      "description": "A full description of the lodging unit.",
-      "type": "array",
-      "items": { "type": "string" }
-    },
     "checkinTime": {
       "description": "The earliest someone may check into a lodging establishment.",
       "anyOf": [
-        { "type": "string", "format": "time" },
-        { "type": "string", "format": "date-time" }
-      ]
-    },
-    "numChildren": {
-      "description": "The number of children staying in the unit.",
-      "anyOf": [
-        { "type": "integer" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "time" }
       ]
     },
     "checkoutTime": {
       "description": "The latest someone may check out of a lodging establishment.",
       "anyOf": [
-        { "type": "string", "format": "time" },
-        { "type": "string", "format": "date-time" }
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "time" }
       ]
+    },
+    "lodgingUnitDescription": {
+      "description": "A full description of the lodging unit.",
+      "type": "array",
+      "items": { "type": "string" }
     },
     "lodgingUnitType": {
       "description": "Textual description of the unit type (including suite vs. room, size of bed, etc.).",
@@ -50,6 +43,13 @@
     },
     "numAdults": {
       "description": "The number of adults staying in the unit.",
+      "anyOf": [
+        { "type": "integer" },
+        { "$ref": "QuantitativeValue.schema.json" }
+      ]
+    },
+    "numChildren": {
+      "description": "The number of children staying in the unit.",
       "anyOf": [
         { "type": "integer" },
         { "$ref": "QuantitativeValue.schema.json" }

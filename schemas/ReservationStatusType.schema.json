@@ -7,20 +7,20 @@
   "format": "http://schema.org/ReservationStatusType",
   "oneOf": [
     {
-      "description": "The status of a confirmed reservation.",
-      "const": "ReservationConfirmed"
-    },
-    {
-      "description": "The status of a reservation when a request has been sent, but not confirmed.",
-      "const": "ReservationPending"
-    },
-    {
       "description": "The status for a previously confirmed reservation that is now cancelled.",
       "const": "ReservationCancelled"
     },
     {
+      "description": "The status of a confirmed reservation.",
+      "const": "ReservationConfirmed"
+    },
+    {
       "description": "The status of a reservation on hold pending an update like credit card number or flight changes.",
       "const": "ReservationHold"
+    },
+    {
+      "description": "The status of a reservation when a request has been sent, but not confirmed.",
+      "const": "ReservationPending"
     }
   ]
 }

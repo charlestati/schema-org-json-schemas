@@ -11,16 +11,16 @@
       "const": "DamagedCondition"
     },
     {
+      "description": "Indicates that the item is new.",
+      "const": "NewCondition"
+    },
+    {
       "description": "Indicates that the item is refurbished.",
       "const": "RefurbishedCondition"
     },
     {
       "description": "Indicates that the item is used.",
       "const": "UsedCondition"
-    },
-    {
-      "description": "Indicates that the item is new.",
-      "const": "NewCondition"
     }
   ]
 }

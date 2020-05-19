@@ -12,19 +12,20 @@
     }
   ],
   "properties": {
+    "availabilityEnds": {
+      "description": "The end of the availability of the product or service included in the offer.",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "time" }
+      ]
+    },
     "availabilityStarts": {
       "description": "The beginning of the availability of the product or service included in the offer.",
       "anyOf": [
-        { "type": "string", "format": "time" },
+        { "type": "string", "format": "date" },
         { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
-      ]
-    },
-    "requiresSubscription": {
-      "description": "Indicates if use of the media require a subscription  (either paid or free). Allowed values are true or false (note that an earlier version had 'yes', 'no').",
-      "anyOf": [
-        { "$ref": "MediaSubscription.schema.json" },
-        { "type": "boolean" }
+        { "type": "string", "format": "time" }
       ]
     },
     "category": {
@@ -33,17 +34,17 @@
       "items": {
         "anyOf": [
           { "type": "string" },
-          { "type": "string", "format": "uri" },
-          { "$ref": "Thing.schema.json" }
+          { "$ref": "Thing.schema.json" },
+          { "type": "string", "format": "uri" }
         ]
       }
     },
-    "availabilityEnds": {
-      "description": "The end of the availability of the product or service included in the offer.",
+    "eligibleRegion": {
+      "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also ineligibleRegion.",
       "anyOf": [
-        { "type": "string", "format": "time" },
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
+        { "$ref": "GeoShape.schema.json" },
+        { "$ref": "Place.schema.json" },
+        { "type": "string" }
       ]
     },
     "expectsAcceptanceOf": {
@@ -51,12 +52,11 @@
       "type": "array",
       "items": { "$ref": "Offer.schema.json" }
     },
-    "eligibleRegion": {
-      "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also ineligibleRegion.",
+    "requiresSubscription": {
+      "description": "Indicates if use of the media require a subscription  (either paid or free). Allowed values are true or false (note that an earlier version had 'yes', 'no').",
       "anyOf": [
-        { "$ref": "Place.schema.json" },
-        { "$ref": "GeoShape.schema.json" },
-        { "type": "string" }
+        { "type": "boolean" },
+        { "$ref": "MediaSubscription.schema.json" }
       ]
     }
   }

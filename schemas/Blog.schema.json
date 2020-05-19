@@ -12,14 +12,14 @@
     }
   ],
   "properties": {
-    "blogPosts": {
-      "description": "The postings that are part of this blog.",
-      "$ref": "BlogPosting.schema.json"
-    },
     "blogPost": {
       "description": "A posting that is part of this blog.",
       "type": "array",
       "items": { "$ref": "BlogPosting.schema.json" }
+    },
+    "blogPosts": {
+      "description": "The postings that are part of this blog.",
+      "$ref": "BlogPosting.schema.json"
     },
     "issn": {
       "description": "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",

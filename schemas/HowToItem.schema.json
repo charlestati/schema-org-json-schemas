@@ -16,8 +16,8 @@
       "description": "The required quantity of the item(s).",
       "anyOf": [
         { "type": "number" },
-        { "type": "string" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "QuantitativeValue.schema.json" },
+        { "type": "string" }
       ]
     }
   }

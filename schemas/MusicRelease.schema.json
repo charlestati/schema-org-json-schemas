@@ -12,10 +12,6 @@
     }
   ],
   "properties": {
-    "recordLabel": {
-      "description": "The label that issued the release.",
-      "$ref": "Organization.schema.json"
-    },
     "catalogNumber": {
       "description": "The catalog number for the release.",
       "type": "string"
@@ -23,13 +19,9 @@
     "creditedTo": {
       "description": "The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to \"Stefani Germanotta Band\", but by Lady Gaga.",
       "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "Organization.schema.json" }
+        { "$ref": "Organization.schema.json" },
+        { "$ref": "Person.schema.json" }
       ]
-    },
-    "releaseOf": {
-      "description": "The album this is a release of.",
-      "$ref": "MusicAlbum.schema.json"
     },
     "duration": {
       "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
@@ -40,6 +32,14 @@
       "description": "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
       "type": "array",
       "items": { "$ref": "MusicReleaseFormatType.schema.json" }
+    },
+    "recordLabel": {
+      "description": "The label that issued the release.",
+      "$ref": "Organization.schema.json"
+    },
+    "releaseOf": {
+      "description": "The album this is a release of.",
+      "$ref": "MusicAlbum.schema.json"
     }
   }
 }

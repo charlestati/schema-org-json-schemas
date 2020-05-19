@@ -12,13 +12,17 @@
     }
   ],
   "properties": {
-    "recordingOf": {
-      "description": "The composition this track is a recording of.",
-      "$ref": "MusicComposition.schema.json"
+    "byArtist": {
+      "description": "The artist that performed this album or recording.",
+      "anyOf": [
+        { "$ref": "MusicGroup.schema.json" },
+        { "$ref": "Person.schema.json" }
+      ]
     },
-    "isrcCode": {
-      "description": "The International Standard Recording Code for the recording.",
-      "type": "string"
+    "duration": {
+      "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+      "type": "string",
+      "format": "https://schema.org/Duration"
     },
     "inAlbum": {
       "description": "The album to which this recording belongs.",
@@ -28,17 +32,13 @@
       "description": "The playlist to which this recording belongs.",
       "$ref": "MusicPlaylist.schema.json"
     },
-    "byArtist": {
-      "description": "The artist that performed this album or recording.",
-      "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "MusicGroup.schema.json" }
-      ]
+    "isrcCode": {
+      "description": "The International Standard Recording Code for the recording.",
+      "type": "string"
     },
-    "duration": {
-      "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
-      "type": "string",
-      "format": "https://schema.org/Duration"
+    "recordingOf": {
+      "description": "The composition this track is a recording of.",
+      "$ref": "MusicComposition.schema.json"
     }
   }
 }

@@ -7,16 +7,16 @@
   "format": "http://schema.org/ItemListOrderType",
   "oneOf": [
     {
+      "description": "An ItemList ordered with lower values listed first.",
+      "const": "ItemListOrderAscending"
+    },
+    {
       "description": "An ItemList ordered with higher values listed first.",
       "const": "ItemListOrderDescending"
     },
     {
       "description": "An ItemList ordered with no explicit order.",
       "const": "ItemListUnordered"
-    },
-    {
-      "description": "An ItemList ordered with lower values listed first.",
-      "const": "ItemListOrderAscending"
     }
   ]
 }

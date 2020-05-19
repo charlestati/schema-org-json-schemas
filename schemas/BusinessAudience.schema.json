@@ -12,16 +12,16 @@
     }
   ],
   "properties": {
-    "yearsInOperation": {
-      "description": "The age of the business.",
+    "numberOfEmployees": {
+      "description": "The number of employees in an organization e.g. business.",
       "$ref": "QuantitativeValue.schema.json"
     },
     "yearlyRevenue": {
       "description": "The size of the business in annual revenue.",
       "$ref": "QuantitativeValue.schema.json"
     },
-    "numberOfEmployees": {
-      "description": "The number of employees in an organization e.g. business.",
+    "yearsInOperation": {
+      "description": "The age of the business.",
       "$ref": "QuantitativeValue.schema.json"
     }
   }

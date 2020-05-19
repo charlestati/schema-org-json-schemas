@@ -12,23 +12,6 @@
     }
   ],
   "properties": {
-    "validFor": {
-      "description": "The duration of validity of a permit or similar thing.",
-      "type": "string",
-      "format": "https://schema.org/Duration"
-    },
-    "validUntil": {
-      "description": "The date when the item is no longer valid.",
-      "type": "string",
-      "format": "date"
-    },
-    "validFrom": {
-      "description": "The date when the item becomes valid.",
-      "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
-      ]
-    },
     "issuedBy": {
       "description": "The organization issuing the ticket or permit.",
       "$ref": "Organization.schema.json"
@@ -41,9 +24,26 @@
       "description": "The target audience for this permit.",
       "$ref": "Audience.schema.json"
     },
+    "validFor": {
+      "description": "The duration of validity of a permit or similar thing.",
+      "type": "string",
+      "format": "https://schema.org/Duration"
+    },
+    "validFrom": {
+      "description": "The date when the item becomes valid.",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
+    },
     "validIn": {
       "description": "The geographic area where a permit or similar thing is valid.",
       "$ref": "AdministrativeArea.schema.json"
+    },
+    "validUntil": {
+      "description": "The date when the item is no longer valid.",
+      "type": "string",
+      "format": "date"
     }
   }
 }

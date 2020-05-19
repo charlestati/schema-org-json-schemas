@@ -12,11 +12,18 @@
     }
   ],
   "properties": {
-    "provider": {
-      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+    "arrivalTime": {
+      "description": "The expected arrival time.",
       "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "Organization.schema.json" }
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "time" }
+      ]
+    },
+    "departureTime": {
+      "description": "The expected departure time.",
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "time" }
       ]
     },
     "offers": {
@@ -29,18 +36,11 @@
         ]
       }
     },
-    "arrivalTime": {
-      "description": "The expected arrival time.",
+    "provider": {
+      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
       "anyOf": [
-        { "type": "string", "format": "time" },
-        { "type": "string", "format": "date-time" }
-      ]
-    },
-    "departureTime": {
-      "description": "The expected departure time.",
-      "anyOf": [
-        { "type": "string", "format": "time" },
-        { "type": "string", "format": "date-time" }
+        { "$ref": "Organization.schema.json" },
+        { "$ref": "Person.schema.json" }
       ]
     }
   }

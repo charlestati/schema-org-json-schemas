@@ -12,86 +12,24 @@
     }
   ],
   "properties": {
-    "jobLocation": {
-      "description": "A (typically single) geographic location associated with the job position.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+    "baseSalary": {
+      "description": "The base salary of the job or of an employee in an EmployeeRole.",
+      "anyOf": [
+        { "$ref": "MonetaryAmount.schema.json" },
+        { "type": "number" },
+        { "$ref": "PriceSpecification.schema.json" }
+      ]
     },
     "benefits": {
       "description": "Description of benefits associated with the job.",
       "type": "string"
     },
-    "incentiveCompensation": {
-      "description": "Description of bonus and commission compensation aspects of the job.",
-      "type": "array",
-      "items": { "type": "string" }
-    },
-    "workHours": {
-      "description": "The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).",
-      "type": "string"
-    },
-    "salaryCurrency": {
-      "description": "The currency (coded using ISO 4217 ) used for the main salary information in this job posting or for this employee.",
-      "type": "string"
-    },
-    "jobBenefits": {
-      "description": "Description of benefits associated with the job.",
-      "type": "array",
-      "items": { "type": "string" }
-    },
     "datePosted": {
       "description": "Publication date of an online listing.",
       "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
       ]
-    },
-    "skills": {
-      "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.",
-      "type": "array",
-      "items": { "type": "string" }
-    },
-    "incentives": {
-      "description": "Description of bonus and commission compensation aspects of the job.",
-      "type": "array",
-      "items": { "type": "string" }
-    },
-    "responsibilities": {
-      "description": "Responsibilities associated with this role or Occupation.",
-      "type": "array",
-      "items": { "type": "string" }
-    },
-    "baseSalary": {
-      "description": "The base salary of the job or of an employee in an EmployeeRole.",
-      "anyOf": [
-        { "$ref": "PriceSpecification.schema.json" },
-        { "type": "number" },
-        { "$ref": "MonetaryAmount.schema.json" }
-      ]
-    },
-    "validThrough": {
-      "description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
-      "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
-      ]
-    },
-    "hiringOrganization": {
-      "description": "Organization offering the job position.",
-      "$ref": "Organization.schema.json"
-    },
-    "relevantOccupation": {
-      "description": "The Occupation for the JobPosting.",
-      "$ref": "Occupation.schema.json"
-    },
-    "specialCommitments": {
-      "description": "Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.",
-      "type": "array",
-      "items": { "type": "string" }
-    },
-    "experienceRequirements": {
-      "description": "Description of skills and experience needed for the position or Occupation.",
-      "type": "string"
     },
     "employmentType": {
       "description": "Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).",
@@ -103,15 +41,77 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "type": "number" },
           { "$ref": "MonetaryAmount.schema.json" },
-          { "$ref": "MonetaryAmountDistribution.schema.json" }
+          { "$ref": "MonetaryAmountDistribution.schema.json" },
+          { "type": "number" }
         ]
       }
     },
-    "title": { "description": "The title of the job.", "type": "string" },
+    "experienceRequirements": {
+      "description": "Description of skills and experience needed for the position or Occupation.",
+      "type": "string"
+    },
+    "hiringOrganization": {
+      "description": "Organization offering the job position.",
+      "$ref": "Organization.schema.json"
+    },
+    "incentiveCompensation": {
+      "description": "Description of bonus and commission compensation aspects of the job.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "incentives": {
+      "description": "Description of bonus and commission compensation aspects of the job.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
     "industry": {
       "description": "The industry associated with the job position.",
+      "type": "string"
+    },
+    "jobBenefits": {
+      "description": "Description of benefits associated with the job.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "jobLocation": {
+      "description": "A (typically single) geographic location associated with the job position.",
+      "type": "array",
+      "items": { "$ref": "Place.schema.json" }
+    },
+    "relevantOccupation": {
+      "description": "The Occupation for the JobPosting.",
+      "$ref": "Occupation.schema.json"
+    },
+    "responsibilities": {
+      "description": "Responsibilities associated with this role or Occupation.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "salaryCurrency": {
+      "description": "The currency (coded using ISO 4217 ) used for the main salary information in this job posting or for this employee.",
+      "type": "string"
+    },
+    "skills": {
+      "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "specialCommitments": {
+      "description": "Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "title": { "description": "The title of the job.", "type": "string" },
+    "validThrough": {
+      "description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
+    },
+    "workHours": {
+      "description": "The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).",
       "type": "string"
     }
   }

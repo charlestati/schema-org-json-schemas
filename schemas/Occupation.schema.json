@@ -12,34 +12,34 @@
     }
   ],
   "properties": {
+    "estimatedSalary": {
+      "description": "An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          { "$ref": "MonetaryAmount.schema.json" },
+          { "$ref": "MonetaryAmountDistribution.schema.json" },
+          { "type": "number" }
+        ]
+      }
+    },
+    "experienceRequirements": {
+      "description": "Description of skills and experience needed for the position or Occupation.",
+      "type": "string"
+    },
     "occupationLocation": {
       "description": "The region/country for which this occupational description is appropriate. Note that educational requirements and qualifications can vary between jurisdictions.",
       "$ref": "AdministrativeArea.schema.json"
-    },
-    "skills": {
-      "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.",
-      "type": "array",
-      "items": { "type": "string" }
     },
     "responsibilities": {
       "description": "Responsibilities associated with this role or Occupation.",
       "type": "array",
       "items": { "type": "string" }
     },
-    "experienceRequirements": {
-      "description": "Description of skills and experience needed for the position or Occupation.",
-      "type": "string"
-    },
-    "estimatedSalary": {
-      "description": "An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.",
+    "skills": {
+      "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.",
       "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "number" },
-          { "$ref": "MonetaryAmount.schema.json" },
-          { "$ref": "MonetaryAmountDistribution.schema.json" }
-        ]
-      }
+      "items": { "type": "string" }
     }
   }
 }

@@ -21,8 +21,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "MusicRecording.schema.json" },
-          { "$ref": "ItemList.schema.json" }
+          { "$ref": "ItemList.schema.json" },
+          { "$ref": "MusicRecording.schema.json" }
         ]
       }
     },

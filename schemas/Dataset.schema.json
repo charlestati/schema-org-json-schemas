@@ -12,7 +12,7 @@
     }
   ],
   "properties": {
-    "includedInDataCatalog": {
+    "catalog": {
       "description": "A data catalog which contains this dataset.",
       "type": "array",
       "items": { "$ref": "DataCatalog.schema.json" }
@@ -22,24 +22,24 @@
       "type": "string",
       "format": "date-time"
     },
-    "issn": {
-      "description": "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
-      "type": "string"
-    },
-    "catalog": {
-      "description": "A data catalog which contains this dataset.",
+    "distribution": {
+      "description": "A downloadable form of this dataset, at a specific location, in a specific format.",
       "type": "array",
-      "items": { "$ref": "DataCatalog.schema.json" }
+      "items": { "$ref": "DataDownload.schema.json" }
     },
     "includedDataCatalog": {
       "description": "A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').",
       "type": "array",
       "items": { "$ref": "DataCatalog.schema.json" }
     },
-    "distribution": {
-      "description": "A downloadable form of this dataset, at a specific location, in a specific format.",
+    "includedInDataCatalog": {
+      "description": "A data catalog which contains this dataset.",
       "type": "array",
-      "items": { "$ref": "DataDownload.schema.json" }
+      "items": { "$ref": "DataCatalog.schema.json" }
+    },
+    "issn": {
+      "description": "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
+      "type": "string"
     }
   }
 }

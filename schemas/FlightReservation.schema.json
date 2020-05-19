@@ -12,12 +12,8 @@
     }
   ],
   "properties": {
-    "passengerSequenceNumber": {
-      "description": "The passenger's sequence number as assigned by the airline.",
-      "type": "string"
-    },
-    "securityScreening": {
-      "description": "The type of security screening the passenger is subject to.",
+    "boardingGroup": {
+      "description": "The airline-specific indicator of boarding order / preference.",
       "type": "string"
     },
     "passengerPriorityStatus": {
@@ -27,8 +23,12 @@
         { "type": "string" }
       ]
     },
-    "boardingGroup": {
-      "description": "The airline-specific indicator of boarding order / preference.",
+    "passengerSequenceNumber": {
+      "description": "The passenger's sequence number as assigned by the airline.",
+      "type": "string"
+    },
+    "securityScreening": {
+      "description": "The type of security screening the passenger is subject to.",
       "type": "string"
     }
   }

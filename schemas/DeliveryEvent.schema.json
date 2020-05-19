@@ -12,23 +12,23 @@
     }
   ],
   "properties": {
-    "hasDeliveryMethod": {
-      "description": "Method used for delivery or shipping.",
-      "$ref": "DeliveryMethod.schema.json"
-    },
-    "availableThrough": {
-      "description": "After this date, the item will no longer be available for pickup.",
-      "type": "string",
-      "format": "date-time"
+    "accessCode": {
+      "description": "Password, PIN, or access code needed for delivery (e.g. from a locker).",
+      "type": "string"
     },
     "availableFrom": {
       "description": "When the item is available for pickup from the store, locker, etc.",
       "type": "string",
       "format": "date-time"
     },
-    "accessCode": {
-      "description": "Password, PIN, or access code needed for delivery (e.g. from a locker).",
-      "type": "string"
+    "availableThrough": {
+      "description": "After this date, the item will no longer be available for pickup.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "hasDeliveryMethod": {
+      "description": "Method used for delivery or shipping.",
+      "$ref": "DeliveryMethod.schema.json"
     }
   }
 }

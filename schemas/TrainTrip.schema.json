@@ -12,17 +12,21 @@
     }
   ],
   "properties": {
-    "departureStation": {
-      "description": "The station from which the train departs.",
-      "$ref": "TrainStation.schema.json"
-    },
     "arrivalPlatform": {
       "description": "The platform where the train arrives.",
       "type": "string"
     },
+    "arrivalStation": {
+      "description": "The station where the train trip ends.",
+      "$ref": "TrainStation.schema.json"
+    },
     "departurePlatform": {
       "description": "The platform from which the train departs.",
       "type": "string"
+    },
+    "departureStation": {
+      "description": "The station from which the train departs.",
+      "$ref": "TrainStation.schema.json"
     },
     "trainName": {
       "description": "The name of the train (e.g. The Orient Express).",
@@ -31,10 +35,6 @@
     "trainNumber": {
       "description": "The unique identifier for the train.",
       "type": "string"
-    },
-    "arrivalStation": {
-      "description": "The station where the train trip ends.",
-      "$ref": "TrainStation.schema.json"
     }
   }
 }

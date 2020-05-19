@@ -12,24 +12,24 @@
     }
   ],
   "properties": {
-    "seatingType": {
-      "description": "The type/class of the seat.",
-      "anyOf": [
-        { "$ref": "QualitativeValue.schema.json" },
-        { "type": "string" }
-      ]
-    },
-    "seatSection": {
-      "description": "The section location of the reserved seat (e.g. Orchestra).",
+    "seatNumber": {
+      "description": "The location of the reserved seat (e.g., 27).",
       "type": "string"
     },
     "seatRow": {
       "description": "The row location of the reserved seat (e.g., B).",
       "type": "string"
     },
-    "seatNumber": {
-      "description": "The location of the reserved seat (e.g., 27).",
+    "seatSection": {
+      "description": "The section location of the reserved seat (e.g. Orchestra).",
       "type": "string"
+    },
+    "seatingType": {
+      "description": "The type/class of the seat.",
+      "anyOf": [
+        { "$ref": "QualitativeValue.schema.json" },
+        { "type": "string" }
+      ]
     }
   }
 }

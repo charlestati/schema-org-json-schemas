@@ -7,12 +7,12 @@
   "format": "http://schema.org/BoardingPolicyType",
   "oneOf": [
     {
-      "description": "The airline boards by zones of the plane.",
-      "const": "ZoneBoardingPolicy"
-    },
-    {
       "description": "The airline boards by groups based on check-in time, priority, etc.",
       "const": "GroupBoardingPolicy"
+    },
+    {
+      "description": "The airline boards by zones of the plane.",
+      "const": "ZoneBoardingPolicy"
     }
   ]
 }

@@ -17,7 +17,7 @@
 const path = require("path");
 const fs = require("fs-extra");
 const axios = require("axios");
-const { castArray, has, get, set } = require("lodash");
+const { castArray, has, get, set, sortBy } = require("lodash");
 const cheerio = require("cheerio");
 const prettier = require("prettier");
 const chalk = require("chalk");
@@ -123,11 +123,17 @@ function buildTypes(types, isArray) {
       return {
         type: "array",
         items: {
-          anyOf: types.map((type) => buildType(type["rdfs:label"])),
+          anyOf: sortBy(types, ["rdfs:label"]).map((type) =>
+            buildType(type["rdfs:label"]),
+          ),
         },
       };
     }
-    return { anyOf: types.map((type) => buildType(type["rdfs:label"])) };
+    return {
+      anyOf: sortBy(types, ["rdfs:label"]).map((type) =>
+        buildType(type["rdfs:label"]),
+      ),
+    };
   }
   const typeLabel = types[0]["rdfs:label"];
   const type = buildType(typeLabel);
@@ -189,7 +195,7 @@ function buildSchema(schemaClass, allSchemaClasses, allProperties, enumValues) {
       parentsIDs.includes("http://schema.org/Enumeration") &&
       enumMembers.length > 0
     ) {
-      schema.oneOf = enumMembers.map((enumMember) => ({
+      schema.oneOf = sortBy(enumMembers, ["rdfs:label"]).map((enumMember) => ({
         description: enumMember["rdfs:comment"],
         const: enumMember["rdfs:label"],
       }));
@@ -198,7 +204,7 @@ function buildSchema(schemaClass, allSchemaClasses, allProperties, enumValues) {
     }
   }
   const properties = getProperties(id, allProperties);
-  properties.forEach((property) => {
+  sortBy(properties, ["rdfs:label"]).forEach((property) => {
     const propertyLabel = property["rdfs:label"];
     const propertyDescription = htmlToPlainText(property["rdfs:comment"]);
     const types = allSchemaClasses.filter((_schemaClass) =>

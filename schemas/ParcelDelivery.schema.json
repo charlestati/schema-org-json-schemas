@@ -12,65 +12,65 @@
     }
   ],
   "properties": {
-    "provider": {
-      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
-      "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "Organization.schema.json" }
-      ]
-    },
-    "trackingUrl": {
-      "description": "Tracking url for the parcel delivery.",
-      "type": "string",
-      "format": "uri"
+    "carrier": {
+      "description": "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
+      "$ref": "Organization.schema.json"
     },
     "deliveryAddress": {
       "description": "Destination address.",
       "$ref": "PostalAddress.schema.json"
-    },
-    "trackingNumber": {
-      "description": "Shipper tracking number.",
-      "type": "string"
-    },
-    "hasDeliveryMethod": {
-      "description": "Method used for delivery or shipping.",
-      "$ref": "DeliveryMethod.schema.json"
     },
     "deliveryStatus": {
       "description": "New entry added as the package passes through each leg of its journey (from shipment to final delivery).",
       "type": "array",
       "items": { "$ref": "DeliveryEvent.schema.json" }
     },
-    "carrier": {
-      "description": "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
-      "$ref": "Organization.schema.json"
+    "expectedArrivalFrom": {
+      "description": "The earliest date the package may arrive.",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
     },
-    "originAddress": {
-      "description": "Shipper's address.",
-      "$ref": "PostalAddress.schema.json"
+    "expectedArrivalUntil": {
+      "description": "The latest date the package may arrive.",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
+    },
+    "hasDeliveryMethod": {
+      "description": "Method used for delivery or shipping.",
+      "$ref": "DeliveryMethod.schema.json"
     },
     "itemShipped": {
       "description": "Item(s) being shipped.",
       "type": "array",
       "items": { "$ref": "Product.schema.json" }
     },
+    "originAddress": {
+      "description": "Shipper's address.",
+      "$ref": "PostalAddress.schema.json"
+    },
     "partOfOrder": {
       "description": "The overall order the items in this delivery were included in.",
       "$ref": "Order.schema.json"
     },
-    "expectedArrivalFrom": {
-      "description": "The earliest date the package may arrive.",
+    "provider": {
+      "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
       "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
+        { "$ref": "Organization.schema.json" },
+        { "$ref": "Person.schema.json" }
       ]
     },
-    "expectedArrivalUntil": {
-      "description": "The latest date the package may arrive.",
-      "anyOf": [
-        { "type": "string", "format": "date-time" },
-        { "type": "string", "format": "date" }
-      ]
+    "trackingNumber": {
+      "description": "Shipper tracking number.",
+      "type": "string"
+    },
+    "trackingUrl": {
+      "description": "Tracking url for the parcel delivery.",
+      "type": "string",
+      "format": "uri"
     }
   }
 }

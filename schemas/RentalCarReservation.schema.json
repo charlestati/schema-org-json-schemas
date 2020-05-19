@@ -12,25 +12,25 @@
     }
   ],
   "properties": {
-    "pickupTime": {
-      "description": "When a taxi will pickup a passenger or a rental car can be picked up.",
+    "dropoffLocation": {
+      "description": "Where a rental car can be dropped off.",
       "type": "array",
-      "items": { "type": "string", "format": "date-time" }
+      "items": { "$ref": "Place.schema.json" }
     },
     "dropoffTime": {
       "description": "When a rental car can be dropped off.",
       "type": "array",
       "items": { "type": "string", "format": "date-time" }
     },
-    "dropoffLocation": {
-      "description": "Where a rental car can be dropped off.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
-    },
     "pickupLocation": {
       "description": "Where a taxi will pick up a passenger or a rental car can be picked up.",
       "type": "array",
       "items": { "$ref": "Place.schema.json" }
+    },
+    "pickupTime": {
+      "description": "When a taxi will pickup a passenger or a rental car can be picked up.",
+      "type": "array",
+      "items": { "type": "string", "format": "date-time" }
     }
   }
 }

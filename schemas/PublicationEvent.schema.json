@@ -12,11 +12,6 @@
     }
   ],
   "properties": {
-    "publishedOn": {
-      "description": "A broadcast service associated with the publication event.",
-      "type": "array",
-      "items": { "$ref": "BroadcastService.schema.json" }
-    },
     "free": {
       "description": "A flag to signal that the item, event, or place is accessible for free.",
       "type": "boolean"
@@ -24,6 +19,11 @@
     "isAccessibleForFree": {
       "description": "A flag to signal that the item, event, or place is accessible for free.",
       "type": "boolean"
+    },
+    "publishedOn": {
+      "description": "A broadcast service associated with the publication event.",
+      "type": "array",
+      "items": { "$ref": "BroadcastService.schema.json" }
     }
   }
 }
