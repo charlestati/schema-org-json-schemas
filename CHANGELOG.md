@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/charlestati/schema-org-json-schema/compare/v1.2.0...v1.3.0) (2020-05-19)
+
+
+### Features
+
+* sort properties to avoid confusing diff ([cadd369](https://github.com/charlestati/schema-org-json-schema/commit/cadd3691264c91598c783327c7e2e9823e41023a))
+
 # [1.2.0](https://github.com/charlestati/schema-org-json-schema/compare/v1.1.1...v1.2.0) (2020-05-13)
 
 
