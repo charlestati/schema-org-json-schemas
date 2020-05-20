@@ -19,8 +19,8 @@
     "broadcastFrequency": {
       "description": "The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. \"87 FM\".",
       "anyOf": [
-        { "$ref": "BroadcastFrequencySpecification.schema.json" },
-        { "type": "string" }
+        { "type": "string" },
+        { "$ref": "BroadcastFrequencySpecification.schema.json" }
       ]
     },
     "broadcastServiceTier": {
@@ -29,7 +29,7 @@
     },
     "genre": {
       "description": "Genre of the creative work, broadcast channel or group.",
-      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
     },
     "inBroadcastLineup": {
       "description": "The CableOrSatelliteService offering the channel.",

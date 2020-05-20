@@ -21,8 +21,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "ImageObject.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "type": "string", "format": "uri" },
+          { "$ref": "ImageObject.schema.json" }
         ]
       }
     },

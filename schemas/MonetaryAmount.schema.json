@@ -43,8 +43,8 @@
       "anyOf": [
         { "type": "boolean" },
         { "type": "number" },
-        { "$ref": "StructuredValue.schema.json" },
-        { "type": "string" }
+        { "type": "string" },
+        { "$ref": "StructuredValue.schema.json" }
       ]
     }
   }

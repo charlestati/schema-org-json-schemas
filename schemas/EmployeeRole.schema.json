@@ -15,8 +15,8 @@
     "baseSalary": {
       "description": "The base salary of the job or of an employee in an EmployeeRole.",
       "anyOf": [
-        { "$ref": "MonetaryAmount.schema.json" },
         { "type": "number" },
+        { "$ref": "MonetaryAmount.schema.json" },
         { "$ref": "PriceSpecification.schema.json" }
       ]
     },

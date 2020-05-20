@@ -7,12 +7,12 @@
   "format": "http://schema.org/HowToTip",
   "allOf": [
     {
-      "description": "An list item, e.g. a step in a checklist or how-to description.",
-      "$ref": "ListItem.schema.json"
-    },
-    {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
       "$ref": "CreativeWork.schema.json"
+    },
+    {
+      "description": "An list item, e.g. a step in a checklist or how-to description.",
+      "$ref": "ListItem.schema.json"
     }
   ]
 }

@@ -29,9 +29,9 @@
     "identifier": {
       "description": "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
       "anyOf": [
-        { "$ref": "PropertyValue.schema.json" },
+        { "type": "string", "format": "uri" },
         { "type": "string" },
-        { "type": "string", "format": "uri" }
+        { "$ref": "PropertyValue.schema.json" }
       ]
     },
     "image": {
@@ -39,8 +39,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "ImageObject.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "type": "string", "format": "uri" },
+          { "$ref": "ImageObject.schema.json" }
         ]
       }
     },
@@ -49,8 +49,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "CreativeWork.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "type": "string", "format": "uri" },
+          { "$ref": "CreativeWork.schema.json" }
         ]
       }
     },

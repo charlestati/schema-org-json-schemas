@@ -7,12 +7,12 @@
   "format": "http://schema.org/CreditCard",
   "allOf": [
     {
-      "description": "A payment method using a credit, debit, store or other card to associate the payment with an account.",
-      "$ref": "PaymentCard.schema.json"
-    },
-    {
       "description": "A financial product for the loaning of an amount of money under agreed terms and charges.",
       "$ref": "LoanOrCredit.schema.json"
+    },
+    {
+      "description": "A payment method using a credit, debit, store or other card to associate the payment with an account.",
+      "$ref": "PaymentCard.schema.json"
     }
   ]
 }

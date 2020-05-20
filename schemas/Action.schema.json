@@ -43,9 +43,9 @@
     "location": {
       "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
       "anyOf": [
+        { "type": "string" },
         { "$ref": "Place.schema.json" },
-        { "$ref": "PostalAddress.schema.json" },
-        { "type": "string" }
+        { "$ref": "PostalAddress.schema.json" }
       ]
     },
     "object": {

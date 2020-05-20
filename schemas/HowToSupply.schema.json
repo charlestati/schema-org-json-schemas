@@ -14,7 +14,7 @@
   "properties": {
     "estimatedCost": {
       "description": "The estimated cost of the supply or supplies consumed when performing instructions.",
-      "anyOf": [{ "$ref": "MonetaryAmount.schema.json" }, { "type": "string" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "MonetaryAmount.schema.json" }]
     }
   }
 }

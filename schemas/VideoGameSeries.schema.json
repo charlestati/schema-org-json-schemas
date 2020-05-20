@@ -66,18 +66,18 @@
       "type": "array",
       "items": {
         "anyOf": [
+          { "type": "string", "format": "uri" },
           { "$ref": "Place.schema.json" },
-          { "$ref": "PostalAddress.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "$ref": "PostalAddress.schema.json" }
         ]
       }
     },
     "gamePlatform": {
       "description": "The electronic systems used to play video games.",
       "anyOf": [
+        { "type": "string", "format": "uri" },
         { "type": "string" },
-        { "$ref": "Thing.schema.json" },
-        { "type": "string", "format": "uri" }
+        { "$ref": "Thing.schema.json" }
       ]
     },
     "musicBy": {
@@ -118,8 +118,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "CreativeWorkSeason.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "type": "string", "format": "uri" },
+          { "$ref": "CreativeWorkSeason.schema.json" }
         ]
       }
     },

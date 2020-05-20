@@ -22,8 +22,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "type": "string", "format": "https://schema.org/Distance" },
           { "type": "number" },
+          { "type": "string", "format": "https://schema.org/Distance" },
           { "type": "string" }
         ]
       }

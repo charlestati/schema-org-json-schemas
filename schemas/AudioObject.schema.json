@@ -14,7 +14,7 @@
   "properties": {
     "caption": {
       "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.",
-      "anyOf": [{ "$ref": "MediaObject.schema.json" }, { "type": "string" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "MediaObject.schema.json" }]
     },
     "transcript": {
       "description": "If this MediaObject is an AudioObject or VideoObject, the transcript of that object.",

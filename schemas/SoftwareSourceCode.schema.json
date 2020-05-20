@@ -27,8 +27,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "ComputerLanguage.schema.json" },
-          { "type": "string" }
+          { "type": "string" },
+          { "$ref": "ComputerLanguage.schema.json" }
         ]
       }
     },

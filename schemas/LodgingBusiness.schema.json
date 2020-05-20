@@ -25,7 +25,7 @@
       "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
       "type": "array",
       "items": {
-        "anyOf": [{ "$ref": "Language.schema.json" }, { "type": "string" }]
+        "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
       }
     },
     "checkinTime": {

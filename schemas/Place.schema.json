@@ -19,7 +19,7 @@
     },
     "address": {
       "description": "Physical address of the item.",
-      "anyOf": [{ "$ref": "PostalAddress.schema.json" }, { "type": "string" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "PostalAddress.schema.json" }]
     },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
@@ -124,8 +124,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "Map.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "type": "string", "format": "uri" },
+          { "$ref": "Map.schema.json" }
         ]
       }
     },
@@ -146,8 +146,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "ImageObject.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "type": "string", "format": "uri" },
+          { "$ref": "ImageObject.schema.json" }
         ]
       }
     },

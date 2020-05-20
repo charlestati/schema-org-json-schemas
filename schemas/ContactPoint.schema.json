@@ -15,17 +15,17 @@
     "areaServed": {
       "description": "The geographic area where a service or offered item is provided.",
       "anyOf": [
+        { "type": "string" },
         { "$ref": "AdministrativeArea.schema.json" },
         { "$ref": "GeoShape.schema.json" },
-        { "$ref": "Place.schema.json" },
-        { "type": "string" }
+        { "$ref": "Place.schema.json" }
       ]
     },
     "availableLanguage": {
       "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
       "type": "array",
       "items": {
-        "anyOf": [{ "$ref": "Language.schema.json" }, { "type": "string" }]
+        "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
       }
     },
     "contactOption": {
@@ -50,7 +50,7 @@
     },
     "productSupported": {
       "description": "The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. \"iPhone\") or a general category of products or services (e.g. \"smartphones\").",
-      "anyOf": [{ "$ref": "Product.schema.json" }, { "type": "string" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "Product.schema.json" }]
     },
     "serviceArea": {
       "description": "The geographic area where the service is provided.",

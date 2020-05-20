@@ -18,7 +18,7 @@
     },
     "typeOfBed": {
       "description": "The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.",
-      "anyOf": [{ "$ref": "BedType.schema.json" }, { "type": "string" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "BedType.schema.json" }]
     }
   }
 }

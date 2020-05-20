@@ -14,7 +14,7 @@
   "properties": {
     "amount": {
       "description": "The amount of money.",
-      "anyOf": [{ "$ref": "MonetaryAmount.schema.json" }, { "type": "number" }]
+      "anyOf": [{ "type": "number" }, { "$ref": "MonetaryAmount.schema.json" }]
     }
   }
 }

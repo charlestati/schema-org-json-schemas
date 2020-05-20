@@ -24,7 +24,7 @@
     },
     "genre": {
       "description": "Genre of the creative work, broadcast channel or group.",
-      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
     },
     "musicGroupMember": {
       "description": "A member of a music group—for example, John, Paul, George, or Ringo.",

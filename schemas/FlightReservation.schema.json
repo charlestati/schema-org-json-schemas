@@ -19,8 +19,8 @@
     "passengerPriorityStatus": {
       "description": "The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).",
       "anyOf": [
-        { "$ref": "QualitativeValue.schema.json" },
-        { "type": "string" }
+        { "type": "string" },
+        { "$ref": "QualitativeValue.schema.json" }
       ]
     },
     "passengerSequenceNumber": {

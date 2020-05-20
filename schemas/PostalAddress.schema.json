@@ -14,7 +14,7 @@
   "properties": {
     "addressCountry": {
       "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-      "anyOf": [{ "$ref": "Country.schema.json" }, { "type": "string" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "Country.schema.json" }]
     },
     "addressLocality": {
       "description": "The locality in which the street address is, and which is in the region. For example, Mountain View.",

@@ -36,9 +36,9 @@
       "type": "array",
       "items": {
         "anyOf": [
+          { "type": "string", "format": "uri" },
           { "type": "string" },
-          { "$ref": "Thing.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "$ref": "Thing.schema.json" }
         ]
       }
     },
@@ -84,8 +84,8 @@
     "paymentStatus": {
       "description": "The status of payment; whether the invoice has been paid or not.",
       "anyOf": [
-        { "$ref": "PaymentStatusType.schema.json" },
-        { "type": "string" }
+        { "type": "string" },
+        { "$ref": "PaymentStatusType.schema.json" }
       ]
     },
     "provider": {

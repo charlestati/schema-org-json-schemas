@@ -14,11 +14,11 @@
   "properties": {
     "address": {
       "description": "Physical address of the item.",
-      "anyOf": [{ "$ref": "PostalAddress.schema.json" }, { "type": "string" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "PostalAddress.schema.json" }]
     },
     "addressCountry": {
       "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-      "anyOf": [{ "$ref": "Country.schema.json" }, { "type": "string" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "Country.schema.json" }]
     },
     "elevation": {
       "description": "The elevation of a location (WGS 84). Values may be of the form 'NUMBER UNITOFMEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",

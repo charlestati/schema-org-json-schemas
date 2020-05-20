@@ -27,7 +27,7 @@
     },
     "unitCode": {
       "description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
-      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
     },
     "unitText": {
       "description": "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\nunitCode.",
@@ -39,8 +39,8 @@
       "anyOf": [
         { "type": "boolean" },
         { "type": "number" },
-        { "$ref": "StructuredValue.schema.json" },
-        { "type": "string" }
+        { "type": "string" },
+        { "$ref": "StructuredValue.schema.json" }
       ]
     },
     "valueReference": {

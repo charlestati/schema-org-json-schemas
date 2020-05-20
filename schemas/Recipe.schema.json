@@ -46,16 +46,16 @@
     "recipeInstructions": {
       "description": "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
       "anyOf": [
+        { "type": "string" },
         { "$ref": "CreativeWork.schema.json" },
-        { "$ref": "ItemList.schema.json" },
-        { "type": "string" }
+        { "$ref": "ItemList.schema.json" }
       ]
     },
     "recipeYield": {
       "description": "The quantity produced by the recipe (for example, number of people served, number of servings, etc).",
       "anyOf": [
-        { "$ref": "QuantitativeValue.schema.json" },
-        { "type": "string" }
+        { "type": "string" },
+        { "$ref": "QuantitativeValue.schema.json" }
       ]
     },
     "suitableForDiet": {

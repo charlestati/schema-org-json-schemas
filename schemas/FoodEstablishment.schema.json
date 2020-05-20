@@ -16,8 +16,8 @@
       "description": "Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings Yes or No.",
       "anyOf": [
         { "type": "boolean" },
-        { "type": "string" },
-        { "type": "string", "format": "uri" }
+        { "type": "string", "format": "uri" },
+        { "type": "string" }
       ]
     },
     "hasMenu": {
@@ -25,18 +25,18 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "Menu.schema.json" },
+          { "type": "string", "format": "uri" },
           { "type": "string" },
-          { "type": "string", "format": "uri" }
+          { "$ref": "Menu.schema.json" }
         ]
       }
     },
     "menu": {
       "description": "Either the actual menu as a structured representation, as text, or a URL of the menu.",
       "anyOf": [
-        { "$ref": "Menu.schema.json" },
+        { "type": "string", "format": "uri" },
         { "type": "string" },
-        { "type": "string", "format": "uri" }
+        { "$ref": "Menu.schema.json" }
       ]
     },
     "servesCuisine": {

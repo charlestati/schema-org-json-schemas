@@ -27,8 +27,8 @@
     "seatingType": {
       "description": "The type/class of the seat.",
       "anyOf": [
-        { "$ref": "QualitativeValue.schema.json" },
-        { "type": "string" }
+        { "type": "string" },
+        { "$ref": "QualitativeValue.schema.json" }
       ]
     }
   }

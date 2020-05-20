@@ -27,9 +27,9 @@
       "type": "array",
       "items": {
         "anyOf": [
+          { "type": "string", "format": "uri" },
           { "$ref": "Place.schema.json" },
-          { "$ref": "PostalAddress.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "$ref": "PostalAddress.schema.json" }
         ]
       }
     },

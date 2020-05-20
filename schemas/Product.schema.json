@@ -47,9 +47,9 @@
       "type": "array",
       "items": {
         "anyOf": [
+          { "type": "string", "format": "uri" },
           { "type": "string" },
-          { "$ref": "Thing.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "$ref": "Thing.schema.json" }
         ]
       }
     },
@@ -124,8 +124,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "ImageObject.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "type": "string", "format": "uri" },
+          { "$ref": "ImageObject.schema.json" }
         ]
       }
     },
@@ -138,15 +138,15 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "Product.schema.json" },
+          { "type": "string", "format": "uri" },
           { "type": "string" },
-          { "type": "string", "format": "uri" }
+          { "$ref": "Product.schema.json" }
         ]
       }
     },
     "model": {
       "description": "The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.",
-      "anyOf": [{ "$ref": "ProductModel.schema.json" }, { "type": "string" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "ProductModel.schema.json" }]
     },
     "mpn": {
       "description": "The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.",

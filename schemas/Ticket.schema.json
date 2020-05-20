@@ -35,7 +35,7 @@
       "description": "Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.",
       "type": "array",
       "items": {
-        "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+        "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
       }
     },
     "ticketedSeat": {
@@ -46,8 +46,8 @@
       "description": "The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n\nUse values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\nUse '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n\n",
       "anyOf": [
         { "type": "number" },
-        { "$ref": "PriceSpecification.schema.json" },
-        { "type": "string" }
+        { "type": "string" },
+        { "$ref": "PriceSpecification.schema.json" }
       ]
     },
     "underName": {

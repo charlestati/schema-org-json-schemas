@@ -17,8 +17,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "ListItem.schema.json" },
           { "type": "string" },
+          { "$ref": "ListItem.schema.json" },
           { "$ref": "Thing.schema.json" }
         ]
       }
@@ -26,8 +26,8 @@
     "itemListOrder": {
       "description": "Type of ordering (e.g. Ascending, Descending, Unordered).",
       "anyOf": [
-        { "$ref": "ItemListOrderType.schema.json" },
-        { "type": "string" }
+        { "type": "string" },
+        { "$ref": "ItemListOrderType.schema.json" }
       ]
     },
     "numberOfItems": {

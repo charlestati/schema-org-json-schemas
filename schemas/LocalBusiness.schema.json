@@ -7,12 +7,12 @@
   "format": "http://schema.org/LocalBusiness",
   "allOf": [
     {
-      "description": "Entities that have a somewhat fixed, physical extension.",
-      "$ref": "Place.schema.json"
-    },
-    {
       "description": "An organization such as a school, NGO, corporation, club, etc.",
       "$ref": "Organization.schema.json"
+    },
+    {
+      "description": "Entities that have a somewhat fixed, physical extension.",
+      "$ref": "Place.schema.json"
     }
   ],
   "properties": {

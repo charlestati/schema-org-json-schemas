@@ -14,11 +14,11 @@
   "properties": {
     "applicationCategory": {
       "description": "Type of software application, e.g. 'Game, Multimedia'.",
-      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
     },
     "applicationSubCategory": {
       "description": "Subcategory of the application, e.g. 'Arcade Game'.",
-      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
     },
     "applicationSuite": {
       "description": "The name of the application suite to which the application belongs (e.g. Excel belongs to Office).",
@@ -52,7 +52,7 @@
       "description": "Features or modules provided by this application (and possibly required by other applications).",
       "type": "array",
       "items": {
-        "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+        "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
       }
     },
     "fileSize": {
@@ -66,7 +66,7 @@
     },
     "memoryRequirements": {
       "description": "Minimum memory requirements.",
-      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
     },
     "operatingSystem": {
       "description": "Operating systems supported (Windows 7, OSX 10.6, Android 1.6).",
@@ -84,13 +84,13 @@
     },
     "releaseNotes": {
       "description": "Description of what changed in this version.",
-      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
     },
     "requirements": {
       "description": "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).",
       "type": "array",
       "items": {
-        "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+        "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
       }
     },
     "screenshot": {
@@ -98,8 +98,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "ImageObject.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "type": "string", "format": "uri" },
+          { "$ref": "ImageObject.schema.json" }
         ]
       }
     },
@@ -117,7 +117,7 @@
       "description": "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).",
       "type": "array",
       "items": {
-        "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+        "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
       }
     },
     "softwareVersion": {
@@ -126,7 +126,7 @@
     },
     "storageRequirements": {
       "description": "Storage requirements (free space required).",
-      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
     },
     "supportingData": {
       "description": "Supporting data for a SoftwareApplication.",

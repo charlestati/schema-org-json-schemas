@@ -27,8 +27,8 @@
     "broadcastFrequency": {
       "description": "The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. \"87 FM\".",
       "anyOf": [
-        { "$ref": "BroadcastFrequencySpecification.schema.json" },
-        { "type": "string" }
+        { "type": "string" },
+        { "$ref": "BroadcastFrequencySpecification.schema.json" }
       ]
     },
     "broadcastTimezone": {
@@ -46,7 +46,7 @@
     },
     "inLanguage": {
       "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
-      "anyOf": [{ "$ref": "Language.schema.json" }, { "type": "string" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
     },
     "parentService": {
       "description": "A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.",

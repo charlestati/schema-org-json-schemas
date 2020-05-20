@@ -90,7 +90,7 @@ function buildParents(parentsIDs, allSchemaClasses) {
   const parents = allSchemaClasses.filter((type) =>
     parentsIDs.includes(type["@id"]),
   );
-  return parents.map((parent) => ({
+  return sortBy(parents, ["rdfs:label"]).map((parent) => ({
     description: htmlToPlainText(parent["rdfs:comment"]),
     $ref: `${parent["rdfs:label"]}${schemaSuffix}`,
   }));
@@ -123,15 +123,17 @@ function buildTypes(types, isArray) {
       return {
         type: "array",
         items: {
-          anyOf: sortBy(types, ["rdfs:label"]).map((type) =>
-            buildType(type["rdfs:label"]),
+          anyOf: sortBy(
+            types.map((type) => buildType(type["rdfs:label"])),
+            ["type", "format", "$ref"],
           ),
         },
       };
     }
     return {
-      anyOf: sortBy(types, ["rdfs:label"]).map((type) =>
-        buildType(type["rdfs:label"]),
+      anyOf: sortBy(
+        types.map((type) => buildType(type["rdfs:label"])),
+        ["type", "format", "$ref"],
       ),
     };
   }

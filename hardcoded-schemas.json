@@ -1,88 +1,37 @@
 {
-  "Boolean": {
-    "type": "boolean"
-  },
-  "Date": {
-    "type": "string",
-    "format": "date"
-  },
-  "DateTime": {
-    "type": "string",
-    "format": "date-time"
-  },
-  "Float": {
-    "type": "number",
-    "format": "https://schema.org/Float"
-  },
-  "Integer": {
-    "type": "integer"
-  },
-  "Number": {
-    "type": "number"
-  },
-  "Text": {
-    "type": "string"
-  },
-  "Time": {
-    "type": "string",
-    "format": "time"
-  },
-  "URL": {
-    "type": "string",
-    "format": "uri"
-  },
-  "Quantity": {
-    "type": "string",
-    "format": "https://schema.org/Quantity"
-  },
-  "Distance": {
-    "type": "string",
-    "format": "https://schema.org/Distance"
-  },
-  "Duration": {
-    "type": "string",
-    "format": "https://schema.org/Duration"
-  },
-  "Energy": {
-    "type": "string",
-    "format": "https://schema.org/Energy"
-  },
-  "Mass": {
-    "type": "string",
-    "format": "https://schema.org/Mass"
-  },
+  "Boolean": { "type": "boolean" },
+  "Date": { "type": "string", "format": "date" },
+  "DateTime": { "type": "string", "format": "date-time" },
+  "Float": { "type": "number", "format": "https://schema.org/Float" },
+  "Integer": { "type": "integer" },
+  "Number": { "type": "number" },
+  "Text": { "type": "string" },
+  "Time": { "type": "string", "format": "time" },
+  "URL": { "type": "string", "format": "uri" },
+  "Quantity": { "type": "string", "format": "https://schema.org/Quantity" },
+  "Distance": { "type": "string", "format": "https://schema.org/Distance" },
+  "Duration": { "type": "string", "format": "https://schema.org/Duration" },
+  "Energy": { "type": "string", "format": "https://schema.org/Energy" },
+  "Mass": { "type": "string", "format": "https://schema.org/Mass" },
   "acceptsReservations": {
-    "oneOf": [
-      {
-        "type": "boolean"
-      },
-      {
-        "type": "string",
-        "format": "uri"
-      },
-      {
-        "type": "string",
-        "enum": ["Yes", "No"]
-      }
+    "anyOf": [
+      { "type": "boolean" },
+      { "type": "string", "format": "uri" },
+      { "type": "string", "enum": ["Yes", "No"] }
     ]
   },
   "occupationalCategory": {
-    "oneOf": [
-      {
-        "type": "string",
-        "format": "https://www.onetcenter.org/taxonomy.html"
-      },
+    "anyOf": [
       {
         "type": "string",
         "format": "https://www.ilo.org/public/english/bureau/stat/isco/isco08/"
       },
       {
-        "type": "string"
-      }
+        "type": "string",
+        "format": "https://www.onetcenter.org/taxonomy.html"
+      },
+      { "type": "string" }
     ]
   },
-  "repetitions": {
-    "type": "integer",
-    "minimum": 1
-  }
+  "repetitions": { "type": "integer", "minimum": 1 }
 }

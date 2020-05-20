@@ -39,8 +39,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "SpeakableSpecification.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "type": "string", "format": "uri" },
+          { "$ref": "SpeakableSpecification.schema.json" }
         ]
       }
     },

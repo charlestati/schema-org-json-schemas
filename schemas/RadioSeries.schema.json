@@ -70,8 +70,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "CreativeWorkSeason.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "type": "string", "format": "uri" },
+          { "$ref": "CreativeWorkSeason.schema.json" }
         ]
       }
     },

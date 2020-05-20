@@ -17,9 +17,9 @@
       "type": "array",
       "items": {
         "anyOf": [
+          { "type": "number" },
           { "$ref": "MonetaryAmount.schema.json" },
-          { "$ref": "MonetaryAmountDistribution.schema.json" },
-          { "type": "number" }
+          { "$ref": "MonetaryAmountDistribution.schema.json" }
         ]
       }
     },

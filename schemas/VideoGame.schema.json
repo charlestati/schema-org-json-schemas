@@ -7,12 +7,12 @@
   "format": "http://schema.org/VideoGame",
   "allOf": [
     {
-      "description": "A software application.",
-      "$ref": "SoftwareApplication.schema.json"
-    },
-    {
       "description": "The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.",
       "$ref": "Game.schema.json"
+    },
+    {
+      "description": "A software application.",
+      "$ref": "SoftwareApplication.schema.json"
     }
   ],
   "properties": {
@@ -43,9 +43,9 @@
     "gamePlatform": {
       "description": "The electronic systems used to play video games.",
       "anyOf": [
+        { "type": "string", "format": "uri" },
         { "type": "string" },
-        { "$ref": "Thing.schema.json" },
-        { "type": "string", "format": "uri" }
+        { "$ref": "Thing.schema.json" }
       ]
     },
     "gameServer": {

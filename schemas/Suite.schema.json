@@ -15,9 +15,9 @@
     "bed": {
       "description": "The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.\n      If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.",
       "anyOf": [
+        { "type": "string" },
         { "$ref": "BedDetails.schema.json" },
-        { "$ref": "BedType.schema.json" },
-        { "type": "string" }
+        { "$ref": "BedType.schema.json" }
       ]
     },
     "numberOfRooms": {

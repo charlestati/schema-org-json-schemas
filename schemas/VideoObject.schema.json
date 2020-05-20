@@ -24,7 +24,7 @@
     },
     "caption": {
       "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.",
-      "anyOf": [{ "$ref": "MediaObject.schema.json" }, { "type": "string" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "MediaObject.schema.json" }]
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",

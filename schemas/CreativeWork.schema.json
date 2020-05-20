@@ -108,7 +108,7 @@
       "description": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
       "type": "array",
       "items": {
-        "anyOf": [{ "$ref": "CreativeWork.schema.json" }, { "type": "string" }]
+        "anyOf": [{ "type": "string" }, { "$ref": "CreativeWork.schema.json" }]
       }
     },
     "comment": {
@@ -128,7 +128,7 @@
       "description": "Official rating of a piece of content—for example,'MPAA PG-13'.",
       "type": "array",
       "items": {
-        "anyOf": [{ "$ref": "Rating.schema.json" }, { "type": "string" }]
+        "anyOf": [{ "type": "string" }, { "$ref": "Rating.schema.json" }]
       }
     },
     "contributor": {
@@ -205,7 +205,7 @@
     },
     "encodingFormat": {
       "description": "Media type typically expressed using a MIME format (see IANA site and MDN reference) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).\n\nIn cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information.\n\nUnregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.",
-      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
     },
     "encodings": {
       "description": "A media object that encodes this CreativeWork.",
@@ -224,7 +224,7 @@
     },
     "fileFormat": {
       "description": "Media type, typically MIME format (see IANA site) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.",
-      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
     },
     "funder": {
       "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
@@ -238,7 +238,7 @@
     },
     "genre": {
       "description": "Genre of the creative work, broadcast channel or group.",
-      "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
     },
     "hasPart": {
       "description": "Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).",
@@ -248,7 +248,7 @@
     "headline": { "description": "Headline of the article.", "type": "string" },
     "inLanguage": {
       "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
-      "anyOf": [{ "$ref": "Language.schema.json" }, { "type": "string" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
     },
     "interactionStatistic": {
       "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
@@ -267,9 +267,9 @@
       "type": "array",
       "items": {
         "anyOf": [
+          { "type": "string", "format": "uri" },
           { "$ref": "CreativeWork.schema.json" },
-          { "$ref": "Product.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "$ref": "Product.schema.json" }
         ]
       }
     },
@@ -278,9 +278,9 @@
       "type": "array",
       "items": {
         "anyOf": [
+          { "type": "string", "format": "uri" },
           { "$ref": "CreativeWork.schema.json" },
-          { "$ref": "Product.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "$ref": "Product.schema.json" }
         ]
       }
     },
@@ -291,8 +291,8 @@
     "isPartOf": {
       "description": "Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.",
       "anyOf": [
-        { "$ref": "CreativeWork.schema.json" },
-        { "type": "string", "format": "uri" }
+        { "type": "string", "format": "uri" },
+        { "$ref": "CreativeWork.schema.json" }
       ]
     },
     "keywords": {
@@ -308,8 +308,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "CreativeWork.schema.json" },
-          { "type": "string", "format": "uri" }
+          { "type": "string", "format": "uri" },
+          { "$ref": "CreativeWork.schema.json" }
         ]
       }
     },
@@ -327,9 +327,9 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "Product.schema.json" },
+          { "type": "string", "format": "uri" },
           { "type": "string" },
-          { "type": "string", "format": "uri" }
+          { "$ref": "Product.schema.json" }
         ]
       }
     },
@@ -381,8 +381,8 @@
     "publishingPrinciples": {
       "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.\n\nWhile such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
       "anyOf": [
-        { "$ref": "CreativeWork.schema.json" },
-        { "type": "string", "format": "uri" }
+        { "type": "string", "format": "uri" },
+        { "$ref": "CreativeWork.schema.json" }
       ]
     },
     "recordedAt": {
@@ -407,7 +407,7 @@
       "description": "Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as http://schema.org/version/2.0/ if precise indication of schema version was required by some application.",
       "type": "array",
       "items": {
-        "anyOf": [{ "type": "string" }, { "type": "string", "format": "uri" }]
+        "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
       }
     },
     "sourceOrganization": {
@@ -443,8 +443,8 @@
       "description": "The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in ISO 8601 time interval format. In\n      the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written \"2011/2012\"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.\n      Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via \"1939/1945\".\n\nOpen-ended date ranges can be written with \"..\" in place of the end date. For example, \"2015-11/..\" indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.",
       "anyOf": [
         { "type": "string", "format": "date-time" },
-        { "type": "string" },
-        { "type": "string", "format": "uri" }
+        { "type": "string", "format": "uri" },
+        { "type": "string" }
       ]
     },
     "text": {
