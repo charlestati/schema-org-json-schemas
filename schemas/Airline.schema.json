@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Airline" },
     "boardingPolicy": {
       "description": "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
       "$ref": "BoardingPolicyType.schema.json"
@@ -25,6 +23,5 @@
         { "type": "array", "items": { "type": "string" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

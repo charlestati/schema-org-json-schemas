@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "MusicPlaylist" },
     "numTracks": {
       "description": "The number of tracks in this album or playlist.",
       "type": "integer"
@@ -45,6 +43,5 @@
         { "type": "array", "items": { "$ref": "MusicRecording.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

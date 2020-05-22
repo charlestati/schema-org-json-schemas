@@ -10,10 +10,5 @@
     { "description": "BroadcastRelease.", "const": "BroadcastRelease" },
     { "description": "EPRelease.", "const": "EPRelease" },
     { "description": "SingleRelease.", "const": "SingleRelease" }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "MusicAlbumReleaseType" }
-  },
-  "required": ["@type"]
+  ]
 }

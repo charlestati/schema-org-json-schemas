@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "DigitalDocumentPermission" },
     "grantee": {
       "description": "The person, organization, contact point, or audience that has been granted this permission.",
       "anyOf": [
@@ -27,6 +25,5 @@
       "description": "The type of permission granted the person, organization, or audience.",
       "$ref": "DigitalDocumentPermissionType.schema.json"
     }
-  },
-  "required": ["@type"]
+  }
 }

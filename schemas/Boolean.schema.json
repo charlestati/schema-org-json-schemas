@@ -4,10 +4,5 @@
   "title": "Boolean",
   "description": "Boolean: True or False.",
   "type": "object",
-  "format": "http://schema.org/Boolean",
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Boolean" }
-  },
-  "required": ["@type"]
+  "format": "http://schema.org/Boolean"
 }

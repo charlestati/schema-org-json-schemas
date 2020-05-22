@@ -10,10 +10,5 @@
       "description": "An agent controls a device or application.",
       "$ref": "ControlAction.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ActivateAction" }
-  },
-  "required": ["@type"]
+  ]
 }

@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "DataCatalog" },
     "dataset": {
       "description": "A dataset contained in this catalog.",
       "oneOf": [
@@ -21,6 +19,5 @@
         { "type": "array", "items": { "$ref": "Dataset.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

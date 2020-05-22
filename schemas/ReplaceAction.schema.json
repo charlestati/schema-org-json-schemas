@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ReplaceAction" },
     "replacee": {
       "description": "A sub property of object. The object that is being replaced.",
       "oneOf": [
@@ -28,6 +26,5 @@
         { "type": "array", "items": { "$ref": "Thing.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

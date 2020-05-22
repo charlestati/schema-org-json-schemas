@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "FlightReservation" },
     "boardingGroup": {
       "description": "The airline-specific indicator of boarding order / preference.",
       "type": "string"
@@ -33,6 +31,5 @@
       "description": "The type of security screening the passenger is subject to.",
       "type": "string"
     }
-  },
-  "required": ["@type"]
+  }
 }

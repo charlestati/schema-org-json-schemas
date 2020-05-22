@@ -10,10 +10,5 @@
       "description": "The place where a person lives.",
       "$ref": "Residence.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "GatedResidenceCommunity" }
-  },
-  "required": ["@type"]
+  ]
 }

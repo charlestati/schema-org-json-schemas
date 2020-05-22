@@ -10,10 +10,5 @@
       "description": "A single message from a sender to one or more organizations or people.",
       "$ref": "Message.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "EmailMessage" }
-  },
-  "required": ["@type"]
+  ]
 }

@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "PriceSpecification" },
     "eligibleQuantity": {
       "description": "The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.",
       "$ref": "QuantitativeValue.schema.json"
@@ -56,6 +54,5 @@
       "description": "Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.",
       "type": "boolean"
     }
-  },
-  "required": ["@type"]
+  }
 }

@@ -10,10 +10,5 @@
       "description": "The act of managing by changing/editing the state of the object.",
       "$ref": "UpdateAction.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "DeleteAction" }
-  },
-  "required": ["@type"]
+  ]
 }

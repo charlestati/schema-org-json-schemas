@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "SoftwareSourceCode" },
     "codeRepository": {
       "description": "Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).",
       "oneOf": [
@@ -73,6 +71,5 @@
         }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

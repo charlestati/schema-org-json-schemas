@@ -4,10 +4,5 @@
   "title": "Date",
   "description": "A date value in ISO 8601 date format.",
   "type": "object",
-  "format": "http://schema.org/Date",
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Date" }
-  },
-  "required": ["@type"]
+  "format": "http://schema.org/Date"
 }

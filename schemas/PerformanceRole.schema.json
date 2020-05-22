@@ -12,12 +12,9 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "PerformanceRole" },
     "characterName": {
       "description": "The name of a character played in some acting or performing role, i.e. in a PerformanceRole.",
       "type": "string"
     }
-  },
-  "required": ["@type"]
+  }
 }

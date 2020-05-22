@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "BuyAction" },
     "seller": {
       "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
       "anyOf": [
@@ -45,6 +43,5 @@
       "description": "The warranty promise(s) included in the offer.",
       "$ref": "WarrantyPromise.schema.json"
     }
-  },
-  "required": ["@type"]
+  }
 }

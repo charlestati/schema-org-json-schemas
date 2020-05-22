@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "SellAction" },
     "buyer": {
       "description": "A sub property of participant. The participant/person/organization that bought the object.",
       "oneOf": [
@@ -25,6 +23,5 @@
       "description": "The warranty promise(s) included in the offer.",
       "$ref": "WarrantyPromise.schema.json"
     }
-  },
-  "required": ["@type"]
+  }
 }

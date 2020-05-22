@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "RentalCarReservation" },
     "dropoffLocation": {
       "description": "Where a rental car can be dropped off.",
       "oneOf": [
@@ -48,6 +46,5 @@
         }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

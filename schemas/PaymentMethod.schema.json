@@ -4,16 +4,5 @@
   "title": "PaymentMethod",
   "description": "A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.\n\nCommonly used values:\n\n\nhttp://purl.org/goodrelations/v1#ByBankTransferInAdvance\nhttp://purl.org/goodrelations/v1#ByInvoice\nhttp://purl.org/goodrelations/v1#Cash\nhttp://purl.org/goodrelations/v1#CheckInAdvance\nhttp://purl.org/goodrelations/v1#COD\nhttp://purl.org/goodrelations/v1#DirectDebit\nhttp://purl.org/goodrelations/v1#GoogleCheckout\nhttp://purl.org/goodrelations/v1#PayPal\nhttp://purl.org/goodrelations/v1#PaySwarm\n\n",
   "type": "object",
-  "format": "http://schema.org/PaymentMethod",
-  "allOf": [
-    {
-      "description": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
-      "$ref": "Enumeration.schema.json"
-    }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "PaymentMethod" }
-  },
-  "required": ["@type"]
+  "format": "http://schema.org/PaymentMethod"
 }

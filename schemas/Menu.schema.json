@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Menu" },
     "hasMenuItem": {
       "description": "A food or drink item contained in a menu or menu section.",
       "oneOf": [
@@ -28,6 +26,5 @@
         { "type": "array", "items": { "$ref": "MenuSection.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

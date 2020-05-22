@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "LodgingReservation" },
     "checkinTime": {
       "description": "The earliest someone may check into a lodging establishment.",
       "anyOf": [
@@ -69,6 +67,5 @@
         { "$ref": "QuantitativeValue.schema.json" }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

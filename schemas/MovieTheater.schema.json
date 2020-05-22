@@ -16,12 +16,9 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "MovieTheater" },
     "screenCount": {
       "description": "The number of screens in the movie theater.",
       "type": "number"
     }
-  },
-  "required": ["@type"]
+  }
 }

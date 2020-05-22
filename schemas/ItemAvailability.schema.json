@@ -42,10 +42,5 @@
       "description": "Indicates that the item has sold out.",
       "const": "SoldOut"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ItemAvailability" }
-  },
-  "required": ["@type"]
+  ]
 }

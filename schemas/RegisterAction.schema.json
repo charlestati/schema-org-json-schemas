@@ -10,10 +10,5 @@
       "description": "The act of interacting with another person or organization.",
       "$ref": "InteractAction.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "RegisterAction" }
-  },
-  "required": ["@type"]
+  ]
 }

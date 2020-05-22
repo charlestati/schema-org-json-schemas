@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ListItem" },
     "item": {
       "description": "An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.",
       "oneOf": [
@@ -39,6 +37,5 @@
         { "type": "array", "items": { "$ref": "ListItem.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

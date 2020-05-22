@@ -22,10 +22,5 @@
       "description": "The status of a reservation when a request has been sent, but not confirmed.",
       "const": "ReservationPending"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ReservationStatusType" }
-  },
-  "required": ["@type"]
+  ]
 }

@@ -10,10 +10,5 @@
       "description": "An item used as either a tool or supply when performing the instructions for how to to achieve a result.",
       "$ref": "HowToItem.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "HowToTool" }
-  },
-  "required": ["@type"]
+  ]
 }

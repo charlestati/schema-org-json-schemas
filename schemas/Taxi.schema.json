@@ -10,10 +10,5 @@
       "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
       "$ref": "Service.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Taxi" }
-  },
-  "required": ["@type"]
+  ]
 }

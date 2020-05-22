@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "DataFeed" },
     "dataFeedElement": {
       "description": "An item within in a data feed. Data feeds may have many elements.",
       "oneOf": [
@@ -36,6 +34,5 @@
         }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

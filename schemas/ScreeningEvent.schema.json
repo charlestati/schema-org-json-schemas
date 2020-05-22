@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ScreeningEvent" },
     "videoFormat": {
       "description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
       "type": "string"
@@ -22,6 +20,5 @@
       "description": "The movie presented during this event.",
       "$ref": "Movie.schema.json"
     }
-  },
-  "required": ["@type"]
+  }
 }

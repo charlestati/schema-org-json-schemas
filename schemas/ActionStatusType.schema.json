@@ -22,10 +22,5 @@
       "description": "A description of an action that is supported.",
       "const": "PotentialActionStatus"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ActionStatusType" }
-  },
-  "required": ["@type"]
+  ]
 }

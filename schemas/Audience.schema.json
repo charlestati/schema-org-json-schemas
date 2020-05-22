@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Audience" },
     "audienceType": {
       "description": "The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).",
       "type": "string"
@@ -22,6 +20,5 @@
       "description": "The geographic area associated with the audience.",
       "$ref": "AdministrativeArea.schema.json"
     }
-  },
-  "required": ["@type"]
+  }
 }

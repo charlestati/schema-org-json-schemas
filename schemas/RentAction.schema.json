@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "RentAction" },
     "landlord": {
       "description": "A sub property of participant. The owner of the real estate property.",
       "oneOf": [
@@ -41,6 +39,5 @@
         { "type": "array", "items": { "$ref": "RealEstateAgent.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

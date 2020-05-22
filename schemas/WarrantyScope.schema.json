@@ -4,16 +4,5 @@
   "title": "WarrantyScope",
   "description": "A range of of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.\n\nCommonly used values:\n\n\nhttp://purl.org/goodrelations/v1#Labor-BringIn\nhttp://purl.org/goodrelations/v1#PartsAndLabor-BringIn\nhttp://purl.org/goodrelations/v1#PartsAndLabor-PickUp\n\n",
   "type": "object",
-  "format": "http://schema.org/WarrantyScope",
-  "allOf": [
-    {
-      "description": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
-      "$ref": "Enumeration.schema.json"
-    }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "WarrantyScope" }
-  },
-  "required": ["@type"]
+  "format": "http://schema.org/WarrantyScope"
 }

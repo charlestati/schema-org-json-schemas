@@ -10,10 +10,5 @@
       "description": "A performance group, such as a band, an orchestra, or a circus.",
       "$ref": "PerformingGroup.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "DanceGroup" }
-  },
-  "required": ["@type"]
+  ]
 }

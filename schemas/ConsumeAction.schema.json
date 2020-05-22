@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ConsumeAction" },
     "actionAccessibilityRequirement": {
       "description": "A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.",
       "oneOf": [
@@ -31,6 +29,5 @@
         { "type": "array", "items": { "$ref": "Offer.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

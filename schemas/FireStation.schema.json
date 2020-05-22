@@ -14,10 +14,5 @@
       "description": "An emergency service, such as a fire station or ER.",
       "$ref": "EmergencyService.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "FireStation" }
-  },
-  "required": ["@type"]
+  ]
 }

@@ -18,10 +18,5 @@
       "description": "Permission to write or edit the document.",
       "const": "WritePermission"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "DigitalDocumentPermissionType" }
-  },
-  "required": ["@type"]
+  ]
 }

@@ -10,10 +10,5 @@
       "description": "A government building.",
       "$ref": "GovernmentBuilding.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "CityHall" }
-  },
-  "required": ["@type"]
+  ]
 }

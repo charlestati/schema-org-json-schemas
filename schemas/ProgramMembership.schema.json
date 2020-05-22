@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ProgramMembership" },
     "hostingOrganization": {
       "description": "The organization (airline, travelers' club, etc.) the membership is made with.",
       "$ref": "Organization.schema.json"
@@ -69,6 +67,5 @@
       "description": "The program providing the membership.",
       "type": "string"
     }
-  },
-  "required": ["@type"]
+  }
 }

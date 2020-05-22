@@ -10,10 +10,5 @@
       "description": "The act of forming one's opinion, reaction or sentiment.",
       "$ref": "AssessAction.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ReactAction" }
-  },
-  "required": ["@type"]
+  ]
 }

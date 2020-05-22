@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ChooseAction" },
     "actionOption": {
       "description": "A sub property of object. The options subject to this action.",
       "oneOf": [
@@ -38,6 +36,5 @@
         }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ActionAccessSpecification" },
     "availabilityEnds": {
       "description": "The end of the availability of the product or service included in the offer.",
       "anyOf": [
@@ -74,6 +72,5 @@
         { "$ref": "MediaSubscription.schema.json" }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

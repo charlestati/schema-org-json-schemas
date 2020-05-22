@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ParcelDelivery" },
     "carrier": {
       "description": "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
       "$ref": "Organization.schema.json"
@@ -78,6 +76,5 @@
       "type": "string",
       "format": "uri"
     }
-  },
-  "required": ["@type"]
+  }
 }

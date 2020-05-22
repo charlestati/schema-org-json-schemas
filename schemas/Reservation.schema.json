@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Reservation" },
     "bookingAgent": {
       "description": "'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.",
       "oneOf": [
@@ -122,6 +120,5 @@
         { "$ref": "Person.schema.json" }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

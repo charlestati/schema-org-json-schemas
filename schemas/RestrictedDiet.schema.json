@@ -47,10 +47,5 @@
       "description": "A diet exclusive of animal meat.",
       "const": "VegetarianDiet"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "RestrictedDiet" }
-  },
-  "required": ["@type"]
+  ]
 }

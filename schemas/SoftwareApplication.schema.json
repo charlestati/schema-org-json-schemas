@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "SoftwareApplication" },
     "applicationCategory": {
       "description": "Type of software application, e.g. 'Game, Multimedia'.",
       "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
@@ -194,6 +192,5 @@
         { "type": "array", "items": { "$ref": "DataFeed.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

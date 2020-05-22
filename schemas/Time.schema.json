@@ -4,10 +4,5 @@
   "title": "Time",
   "description": "A point in time recurring on multiple days in the form hh:mm:ss[Z|(+|-)hh:mm] (see XML schema for details).",
   "type": "object",
-  "format": "http://schema.org/Time",
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Time" }
-  },
-  "required": ["@type"]
+  "format": "http://schema.org/Time"
 }

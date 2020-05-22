@@ -13,10 +13,5 @@
     { "description": "Book format: Ebook.", "const": "EBook" },
     { "description": "Book format: Hardcover.", "const": "Hardcover" },
     { "description": "Book format: Paperback.", "const": "Paperback" }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "BookFormatType" }
-  },
-  "required": ["@type"]
+  ]
 }

@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "AudioObject" },
     "caption": {
       "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.",
       "anyOf": [{ "type": "string" }, { "$ref": "MediaObject.schema.json" }]
@@ -22,6 +20,5 @@
       "description": "If this MediaObject is an AudioObject or VideoObject, the transcript of that object.",
       "type": "string"
     }
-  },
-  "required": ["@type"]
+  }
 }

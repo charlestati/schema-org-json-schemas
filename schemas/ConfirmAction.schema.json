@@ -10,10 +10,5 @@
       "description": "The act of notifying someone of information pertinent to them, with no expectation of a response.",
       "$ref": "InformAction.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ConfirmAction" }
-  },
-  "required": ["@type"]
+  ]
 }

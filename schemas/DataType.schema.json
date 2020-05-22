@@ -4,10 +4,5 @@
   "title": "DataType",
   "description": "The basic data types such as Integers, Strings, etc.",
   "type": "object",
-  "format": "http://schema.org/DataType",
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "DataType" }
-  },
-  "required": ["@type"]
+  "format": "http://schema.org/DataType"
 }

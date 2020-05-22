@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "OwnershipInfo" },
     "acquiredFrom": {
       "description": "The organization or person from which the product was acquired.",
       "anyOf": [
@@ -38,6 +36,5 @@
         { "$ref": "Service.schema.json" }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

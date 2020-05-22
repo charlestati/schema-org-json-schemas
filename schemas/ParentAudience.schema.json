@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ParentAudience" },
     "childMaxAge": {
       "description": "Maximal age of the child.",
       "type": "number"
@@ -22,6 +20,5 @@
       "description": "Minimal age of the child.",
       "type": "number"
     }
-  },
-  "required": ["@type"]
+  }
 }

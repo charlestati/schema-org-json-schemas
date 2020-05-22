@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Rating" },
     "author": {
       "description": "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
       "anyOf": [
@@ -40,6 +38,5 @@
       "description": "The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.",
       "anyOf": [{ "type": "number" }, { "type": "string" }]
     }
-  },
-  "required": ["@type"]
+  }
 }

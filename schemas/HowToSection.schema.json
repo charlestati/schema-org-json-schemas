@@ -20,8 +20,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "HowToSection" },
     "steps": {
       "description": "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).",
       "oneOf": [
@@ -44,6 +42,5 @@
         }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

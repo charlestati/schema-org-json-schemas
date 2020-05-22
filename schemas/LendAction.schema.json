@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "LendAction" },
     "borrower": {
       "description": "A sub property of participant. The person that borrows the object being lent.",
       "oneOf": [
@@ -21,6 +19,5 @@
         { "type": "array", "items": { "$ref": "Person.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

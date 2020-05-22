@@ -12,12 +12,9 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "HowToSupply" },
     "estimatedCost": {
       "description": "The estimated cost of the supply or supplies consumed when performing instructions.",
       "anyOf": [{ "type": "string" }, { "$ref": "MonetaryAmount.schema.json" }]
     }
-  },
-  "required": ["@type"]
+  }
 }

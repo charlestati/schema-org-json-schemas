@@ -10,10 +10,5 @@
       "description": "An educational organization.",
       "$ref": "EducationalOrganization.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "CollegeOrUniversity" }
-  },
-  "required": ["@type"]
+  ]
 }

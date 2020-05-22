@@ -12,12 +12,9 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Report" },
     "reportNumber": {
       "description": "The number or other unique designator assigned to a Report by the publishing organization.",
       "type": "string"
     }
-  },
-  "required": ["@type"]
+  }
 }

@@ -10,10 +10,5 @@
       "description": "The act of organizing tasks/objects/events by associating resources to it.",
       "$ref": "AllocateAction.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "AssignAction" }
-  },
-  "required": ["@type"]
+  ]
 }

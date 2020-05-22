@@ -16,8 +16,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "EducationalOrganization" },
     "alumni": {
       "description": "Alumni of an organization.",
       "oneOf": [
@@ -25,6 +23,5 @@
         { "type": "array", "items": { "$ref": "Person.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

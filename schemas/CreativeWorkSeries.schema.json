@@ -16,8 +16,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "CreativeWorkSeries" },
     "endDate": {
       "description": "The end date and time of the item (in ISO 8601 date format).",
       "anyOf": [
@@ -36,6 +34,5 @@
         { "type": "string", "format": "date-time" }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

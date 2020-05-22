@@ -10,10 +10,5 @@
       "description": "A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the text property, and its topic via about, properties shared with all CreativeWorks.",
       "$ref": "Comment.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Answer" }
-  },
-  "required": ["@type"]
+  ]
 }

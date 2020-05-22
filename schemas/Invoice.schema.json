@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Invoice" },
     "accountId": {
       "description": "The identifier for the account the payment will be applied to.",
       "type": "string"
@@ -136,6 +134,5 @@
         { "$ref": "PriceSpecification.schema.json" }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

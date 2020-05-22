@@ -10,10 +10,5 @@
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
       "$ref": "Intangible.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ComputerLanguage" }
-  },
-  "required": ["@type"]
+  ]
 }

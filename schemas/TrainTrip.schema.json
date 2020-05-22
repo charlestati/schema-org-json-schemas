@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "TrainTrip" },
     "arrivalPlatform": {
       "description": "The platform where the train arrives.",
       "type": "string"
@@ -38,6 +36,5 @@
       "description": "The unique identifier for the train.",
       "type": "string"
     }
-  },
-  "required": ["@type"]
+  }
 }

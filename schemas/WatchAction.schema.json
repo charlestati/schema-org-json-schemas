@@ -10,10 +10,5 @@
       "description": "The act of ingesting information/resources/food.",
       "$ref": "ConsumeAction.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "WatchAction" }
-  },
-  "required": ["@type"]
+  ]
 }

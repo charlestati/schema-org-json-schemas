@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "TVEpisode" },
     "countryOfOrigin": {
       "description": "The country of the principal offices of the production company or individual responsible for the movie or program.",
       "$ref": "Country.schema.json"
@@ -22,6 +20,5 @@
       "description": "The TV series to which this episode or season belongs.",
       "$ref": "TVSeries.schema.json"
     }
-  },
-  "required": ["@type"]
+  }
 }

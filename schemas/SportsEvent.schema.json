@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "SportsEvent" },
     "awayTeam": {
       "description": "The away team in a sports event.",
       "anyOf": [
@@ -48,6 +46,5 @@
         { "$ref": "SportsTeam.schema.json" }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

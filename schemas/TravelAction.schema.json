@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "TravelAction" },
     "distance": {
       "description": "The distance travelled, e.g. exercising or travelling.",
       "oneOf": [
@@ -24,6 +22,5 @@
         }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

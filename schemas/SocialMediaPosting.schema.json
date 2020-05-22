@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "SocialMediaPosting" },
     "sharedContent": {
       "description": "A CreativeWork such as an image, video, or audio clip shared as part of this posting.",
       "oneOf": [
@@ -21,6 +19,5 @@
         { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

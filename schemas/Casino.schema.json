@@ -10,10 +10,5 @@
       "description": "A business providing entertainment.",
       "$ref": "EntertainmentBusiness.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Casino" }
-  },
-  "required": ["@type"]
+  ]
 }

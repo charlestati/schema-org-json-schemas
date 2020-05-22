@@ -10,10 +10,5 @@
       "description": "An electronic file or document.",
       "$ref": "DigitalDocument.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "TextDigitalDocument" }
-  },
-  "required": ["@type"]
+  ]
 }

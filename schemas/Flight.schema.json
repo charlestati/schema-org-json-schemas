@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Flight" },
     "aircraft": {
       "description": "The kind of aircraft (e.g., \"Boeing 747\").",
       "anyOf": [{ "type": "string" }, { "$ref": "Vehicle.schema.json" }]
@@ -99,6 +97,5 @@
       "type": "string",
       "format": "date-time"
     }
-  },
-  "required": ["@type"]
+  }
 }

@@ -38,10 +38,5 @@
       "description": "OrderStatus representing that an order has been returned.",
       "const": "OrderReturned"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "OrderStatus" }
-  },
-  "required": ["@type"]
+  ]
 }

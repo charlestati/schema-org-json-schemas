@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "House" },
     "numberOfRooms": {
       "description": "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
       "anyOf": [
@@ -21,6 +19,5 @@
         { "$ref": "QuantitativeValue.schema.json" }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

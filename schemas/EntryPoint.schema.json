@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "EntryPoint" },
     "actionApplication": {
       "description": "An application that can complete the request.",
       "oneOf": [
@@ -60,6 +58,5 @@
         { "type": "array", "items": { "type": "string" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

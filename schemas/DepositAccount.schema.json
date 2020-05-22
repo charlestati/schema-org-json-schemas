@@ -14,10 +14,5 @@
       "description": "A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.",
       "$ref": "InvestmentOrDeposit.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "DepositAccount" }
-  },
-  "required": ["@type"]
+  ]
 }

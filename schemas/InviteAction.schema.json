@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "InviteAction" },
     "event": {
       "description": "Upcoming or past event associated with this place, organization, or action.",
       "oneOf": [
@@ -21,6 +19,5 @@
         { "type": "array", "items": { "$ref": "Event.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

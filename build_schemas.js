@@ -27,11 +27,11 @@ const propertyMultiplicity = require("./property-multiplicity.json");
 
 const schemaOrgSchemasUrl = "https://schema.org/version/latest/schema.jsonld";
 const schemaOrgDraftVersion = "http://json-schema.org/draft-07/schema#";
-const schemaOrgContext = "https://schema.org";
 const schemasDir = path.join(__dirname, "schemas");
 const schemaSuffix = ".schema.json";
 const typesWithoutMultiplicity = new Set(["Boolean"]);
 const inferredMultiplicity = new Set();
+const rootSchema = "Thing";
 
 /**
  * Perform a GET request
@@ -172,6 +172,50 @@ function getProperties(id, allProperties) {
 }
 
 /**
+ * Build JSON Schema properties from Schema.org properties
+ *
+ * @param properties {object[]} - The Schema.org properties in JSON-LD format
+ * @param allSchemaClasses {object[]} - All the Schema.org classes in JSON-LD format
+ * @returns {object} - The object representing the properties in JSON Schema format
+ */
+function buildProperties(properties, allSchemaClasses) {
+  return properties.reduce((accumulator, property) => {
+    const propertyLabel = property["rdfs:label"];
+    const propertyDescription = htmlToPlainText(property["rdfs:comment"]);
+    const types = allSchemaClasses.filter((_schemaClass) =>
+      castArray(property["http://schema.org/rangeIncludes"]).some(
+        (possibleType) => possibleType["@id"] === _schemaClass["@id"],
+      ),
+    );
+    if (types.length > 0) {
+      let isArray;
+      if (hasHardcodedMultiplicity(propertyLabel)) {
+        isArray = propertyMultiplicity[`${propertyLabel}`];
+      } else {
+        isArray = !htmlToPlainText(propertyDescription).startsWith("The ");
+        inferredMultiplicity.add(propertyLabel);
+      }
+      set(accumulator, [propertyLabel], {
+        description: propertyDescription,
+        ...buildTypes(types, isArray),
+      });
+    } else {
+      const format = get(
+        castArray(property["http://schema.org/rangeIncludes"]),
+        [0, "@id"],
+      );
+      if (format) {
+        set(accumulator, [propertyLabel], {
+          description: htmlToPlainText(propertyDescription),
+          format,
+        });
+      }
+    }
+    return accumulator;
+  }, {});
+}
+
+/**
  * Build a JSON Schema from a Schema.org class
  *
  * @param schemaClass {object} - The Schema.org class in JSON-LD format
@@ -196,65 +240,43 @@ function buildSchema(schemaClass, allSchemaClasses, allProperties, enumValues) {
     const parentsIDs = castArray(schemaClass["rdfs:subClassOf"]).map(
       (parent) => parent["@id"],
     );
-    const enumMembers = enumValues.filter(
-      (enumValue) => enumValue["@type"] === id,
-    );
-    const parents = buildParents(parentsIDs, allSchemaClasses);
-    if (
-      parentsIDs.includes("http://schema.org/Enumeration") &&
-      enumMembers.length > 0
-    ) {
-      schema.oneOf = sortBy(enumMembers, ["rdfs:label"]).map((enumMember) => ({
-        description: enumMember["rdfs:comment"],
-        const: enumMember["rdfs:label"],
-      }));
-    } else if (parents.length > 0) {
-      schema.allOf = parents;
+    if (parentsIDs.includes("http://schema.org/Enumeration")) {
+      const enumMembers = enumValues.filter(
+        (enumValue) => enumValue["@type"] === id,
+      );
+      if (enumMembers.length > 0) {
+        schema.oneOf = sortBy(enumMembers, ["rdfs:label"]).map(
+          (enumMember) => ({
+            description: enumMember["rdfs:comment"],
+            const: enumMember["rdfs:label"],
+          }),
+        );
+      }
+    } else {
+      const parents = buildParents(parentsIDs, allSchemaClasses);
+      if (parents.length > 0) {
+        schema.allOf = parents;
+      }
     }
   }
-  schema.properties = {
-    "@context": {
-      const: schemaOrgContext,
-    },
-    "@type": {
-      const: title,
-    },
-  };
-  const properties = getProperties(id, allProperties);
-  sortBy(properties, ["rdfs:label"]).forEach((property) => {
-    const propertyLabel = property["rdfs:label"];
-    const propertyDescription = htmlToPlainText(property["rdfs:comment"]);
-    const types = allSchemaClasses.filter((_schemaClass) =>
-      castArray(property["http://schema.org/rangeIncludes"]).some(
-        (possibleType) => possibleType["@id"] === _schemaClass["@id"],
-      ),
-    );
-    if (types.length > 0) {
-      let isArray;
-      if (hasHardcodedMultiplicity(propertyLabel)) {
-        isArray = propertyMultiplicity[`${propertyLabel}`];
-      } else {
-        isArray = !htmlToPlainText(propertyDescription).startsWith("The ");
-        inferredMultiplicity.add(propertyLabel);
-      }
-      set(schema, ["properties", propertyLabel], {
-        description: propertyDescription,
-        ...buildTypes(types, isArray),
-      });
-    } else {
-      const format = get(
-        castArray(property["http://schema.org/rangeIncludes"]),
-        [0, "@id"],
-      );
-      if (format) {
-        set(schema, ["properties", propertyLabel], {
-          description: htmlToPlainText(propertyDescription),
-          format,
-        });
-      }
-    }
+  if (title === rootSchema) {
+    schema.properties = {
+      "@context": {
+        type: "string",
+      },
+      "@type": {
+        type: "string",
+      },
+    };
+  }
+  const propertiesToBuild = getProperties(id, allProperties);
+  const properties = buildProperties(
+    sortBy(propertiesToBuild, ["rdfs:label"]),
+    allSchemaClasses,
+  );
+  Object.entries(properties).forEach(([propertyLabel, property]) => {
+    set(schema, ["properties", propertyLabel], property);
   });
-  schema.required = ["@type"];
   return schema;
 }
 

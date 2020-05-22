@@ -10,10 +10,5 @@
       "description": "A lodging business, such as a motel, hotel, or inn.",
       "$ref": "LodgingBusiness.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Hotel" }
-  },
-  "required": ["@type"]
+  ]
 }

@@ -10,10 +10,5 @@
       "description": "Web page type: Collection page.",
       "$ref": "CollectionPage.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "MediaGallery" }
-  },
-  "required": ["@type"]
+  ]
 }

@@ -7,10 +7,5 @@
   "format": "http://schema.org/ConvenienceStore",
   "allOf": [
     { "description": "A retail good store.", "$ref": "Store.schema.json" }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ConvenienceStore" }
-  },
-  "required": ["@type"]
+  ]
 }

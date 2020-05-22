@@ -22,10 +22,5 @@
       "description": "Game server status: OnlineFull. Server is online but unavailable. The maximum number of players has reached.",
       "const": "OnlineFull"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "GameServerStatus" }
-  },
-  "required": ["@type"]
+  ]
 }

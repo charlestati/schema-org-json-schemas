@@ -10,10 +10,5 @@
       "description": "Car repair, sales, or parts.",
       "$ref": "AutomotiveBusiness.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "MotorcycleRepair" }
-  },
-  "required": ["@type"]
+  ]
 }

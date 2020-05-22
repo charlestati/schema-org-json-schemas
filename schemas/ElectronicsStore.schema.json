@@ -7,10 +7,5 @@
   "format": "http://schema.org/ElectronicsStore",
   "allOf": [
     { "description": "A retail good store.", "$ref": "Store.schema.json" }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ElectronicsStore" }
-  },
-  "required": ["@type"]
+  ]
 }

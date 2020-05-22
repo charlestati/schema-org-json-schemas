@@ -4,16 +4,5 @@
   "title": "Specialty",
   "description": "Any branch of a field in which people typically develop specific expertise, usually after significant study, time, and effort.",
   "type": "object",
-  "format": "http://schema.org/Specialty",
-  "allOf": [
-    {
-      "description": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
-      "$ref": "Enumeration.schema.json"
-    }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Specialty" }
-  },
-  "required": ["@type"]
+  "format": "http://schema.org/Specialty"
 }

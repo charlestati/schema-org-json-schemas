@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "TechArticle" },
     "dependencies": {
       "description": "Prerequisites needed to fulfill steps in article.",
       "type": "string"
@@ -22,6 +20,5 @@
       "description": "Proficiency needed for this content; expected values: 'Beginner', 'Expert'.",
       "type": "string"
     }
-  },
-  "required": ["@type"]
+  }
 }

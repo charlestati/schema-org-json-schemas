@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ImageObject" },
     "caption": {
       "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.",
       "anyOf": [{ "type": "string" }, { "$ref": "MediaObject.schema.json" }]
@@ -30,6 +28,5 @@
       "description": "Thumbnail image for an image or video.",
       "$ref": "ImageObject.schema.json"
     }
-  },
-  "required": ["@type"]
+  }
 }

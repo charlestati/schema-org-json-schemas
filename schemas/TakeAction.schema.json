@@ -10,10 +10,5 @@
       "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",
       "$ref": "TransferAction.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "TakeAction" }
-  },
-  "required": ["@type"]
+  ]
 }

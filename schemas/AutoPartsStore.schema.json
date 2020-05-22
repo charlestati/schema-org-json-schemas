@@ -11,10 +11,5 @@
       "$ref": "AutomotiveBusiness.schema.json"
     },
     { "description": "A retail good store.", "$ref": "Store.schema.json" }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "AutoPartsStore" }
-  },
-  "required": ["@type"]
+  ]
 }

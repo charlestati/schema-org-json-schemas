@@ -18,10 +18,5 @@
       "description": "Play mode: SinglePlayer. Which is played by a lone player.",
       "const": "SinglePlayer"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "GamePlayMode" }
-  },
-  "required": ["@type"]
+  ]
 }

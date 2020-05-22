@@ -10,10 +10,5 @@
       "description": "UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use Action-based vocabulary, alongside types such as Comment.",
       "$ref": "UserInteraction.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "UserDownloads" }
-  },
-  "required": ["@type"]
+  ]
 }

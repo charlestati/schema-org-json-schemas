@@ -5,10 +5,5 @@
   "description": "Data type: URL.",
   "type": "object",
   "format": "http://schema.org/URL",
-  "allOf": [{ "description": "Data type: Text.", "$ref": "Text.schema.json" }],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "URL" }
-  },
-  "required": ["@type"]
+  "allOf": [{ "description": "Data type: Text.", "$ref": "Text.schema.json" }]
 }

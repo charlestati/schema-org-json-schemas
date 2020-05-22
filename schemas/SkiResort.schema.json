@@ -10,10 +10,5 @@
       "description": "A sports location, such as a playing field.",
       "$ref": "SportsActivityLocation.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "SkiResort" }
-  },
-  "required": ["@type"]
+  ]
 }

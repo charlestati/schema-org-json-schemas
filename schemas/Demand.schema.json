@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Demand" },
     "acceptedPaymentMethod": {
       "description": "The payment method(s) accepted by seller for this offer.",
       "anyOf": [
@@ -193,6 +191,5 @@
       "description": "The warranty promise(s) included in the offer.",
       "$ref": "WarrantyPromise.schema.json"
     }
-  },
-  "required": ["@type"]
+  }
 }

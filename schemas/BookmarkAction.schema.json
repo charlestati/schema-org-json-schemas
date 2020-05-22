@@ -10,10 +10,5 @@
       "description": "The act of manipulating/administering/supervising/controlling one or more objects.",
       "$ref": "OrganizeAction.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "BookmarkAction" }
-  },
-  "required": ["@type"]
+  ]
 }

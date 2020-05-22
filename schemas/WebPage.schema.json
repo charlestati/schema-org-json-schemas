@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "WebPage" },
     "breadcrumb": {
       "description": "A set of links that can help a user understand and navigate a website hierarchy.",
       "oneOf": [
@@ -113,6 +111,5 @@
         { "type": "array", "items": { "$ref": "Specialty.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

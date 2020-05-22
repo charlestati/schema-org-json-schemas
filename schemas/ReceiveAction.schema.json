@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ReceiveAction" },
     "deliveryMethod": {
       "description": "A sub property of instrument. The method of delivery.",
       "oneOf": [
@@ -43,6 +41,5 @@
         }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

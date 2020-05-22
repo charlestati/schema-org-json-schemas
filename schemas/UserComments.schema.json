@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "UserComments" },
     "commentText": {
       "description": "The text of the UserComment.",
       "type": "string"
@@ -41,6 +39,5 @@
       "type": "string",
       "format": "uri"
     }
-  },
-  "required": ["@type"]
+  }
 }

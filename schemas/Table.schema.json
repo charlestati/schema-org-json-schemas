@@ -10,10 +10,5 @@
       "description": "A web page element, like a table or an image.",
       "$ref": "WebPageElement.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Table" }
-  },
-  "required": ["@type"]
+  ]
 }

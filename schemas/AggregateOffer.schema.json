@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "AggregateOffer" },
     "highPrice": {
       "description": "The highest price of all offers available.\n\nUsage guidelines:\n\n\nUse values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\nUse '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n\n",
       "anyOf": [{ "type": "number" }, { "type": "string" }]
@@ -46,6 +44,5 @@
         }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

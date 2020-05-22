@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Action" },
     "actionStatus": {
       "description": "Indicates the current disposition of the Action.",
       "oneOf": [
@@ -96,6 +94,5 @@
         { "type": "array", "items": { "$ref": "EntryPoint.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

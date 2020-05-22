@@ -10,10 +10,5 @@
       "description": "A permit issued by an organization, e.g. a parking pass.",
       "$ref": "Permit.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "GovernmentPermit" }
-  },
-  "required": ["@type"]
+  ]
 }

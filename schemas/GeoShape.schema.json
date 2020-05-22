@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "GeoShape" },
     "address": {
       "description": "Physical address of the item.",
       "anyOf": [{ "type": "string" }, { "$ref": "PostalAddress.schema.json" }]
@@ -58,6 +56,5 @@
       "description": "The postal code. For example, 94043.",
       "type": "string"
     }
-  },
-  "required": ["@type"]
+  }
 }

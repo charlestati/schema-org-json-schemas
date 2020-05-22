@@ -13,10 +13,5 @@
       "description": "A venue map (e.g. for malls, auditoriums, museums, etc.).",
       "const": "VenueMap"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "MapCategoryType" }
-  },
-  "required": ["@type"]
+  ]
 }

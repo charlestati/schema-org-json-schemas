@@ -12,12 +12,9 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "InvestmentOrDeposit" },
     "amount": {
       "description": "The amount of money.",
       "anyOf": [{ "type": "number" }, { "$ref": "MonetaryAmount.schema.json" }]
     }
-  },
-  "required": ["@type"]
+  }
 }

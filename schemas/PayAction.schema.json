@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "PayAction" },
     "recipient": {
       "description": "A sub property of participant. The participant who is at the receiving end of the action.",
       "oneOf": [
@@ -38,6 +36,5 @@
         }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

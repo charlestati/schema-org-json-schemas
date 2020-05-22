@@ -12,12 +12,9 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "MobileApplication" },
     "carrierRequirements": {
       "description": "Specifies specific carrier(s) requirements for the application (e.g. an application may only work on a specific carrier network).",
       "type": "string"
     }
-  },
-  "required": ["@type"]
+  }
 }

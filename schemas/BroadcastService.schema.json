@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "BroadcastService" },
     "area": {
       "description": "The area within which users can expect to reach the broadcast service.",
       "$ref": "Place.schema.json"
@@ -63,6 +61,5 @@
       "description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
       "type": "string"
     }
-  },
-  "required": ["@type"]
+  }
 }

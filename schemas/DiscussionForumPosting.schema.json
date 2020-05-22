@@ -10,10 +10,5 @@
       "description": "A post to a social media platform, including blog posts, tweets, Facebook posts, etc.",
       "$ref": "SocialMediaPosting.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "DiscussionForumPosting" }
-  },
-  "required": ["@type"]
+  ]
 }

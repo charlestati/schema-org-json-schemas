@@ -15,10 +15,5 @@
       "const": "RsvpResponseNo"
     },
     { "description": "The invitee will attend.", "const": "RsvpResponseYes" }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "RsvpResponseType" }
-  },
-  "required": ["@type"]
+  ]
 }

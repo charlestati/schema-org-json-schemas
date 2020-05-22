@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "UnitPriceSpecification" },
     "billingIncrement": {
       "description": "This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.",
       "type": "number"
@@ -40,6 +38,5 @@
         { "type": "array", "items": { "type": "string" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "NutritionInformation" },
     "calories": {
       "description": "The number of calories.",
       "type": "string",
@@ -73,6 +71,5 @@
       "type": "string",
       "format": "https://schema.org/Mass"
     }
-  },
-  "required": ["@type"]
+  }
 }

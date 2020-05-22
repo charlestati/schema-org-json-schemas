@@ -10,10 +10,5 @@
       "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",
       "$ref": "ReactAction.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "LikeAction" }
-  },
-  "required": ["@type"]
+  ]
 }

@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "OpeningHoursSpecification" },
     "closes": {
       "description": "The closing hour of the place or service on the given day(s) of the week.",
       "type": "string",
@@ -42,6 +40,5 @@
         { "type": "string", "format": "date-time" }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

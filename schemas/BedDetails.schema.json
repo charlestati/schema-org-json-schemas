@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "BedDetails" },
     "numberOfBeds": {
       "description": "The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.",
       "type": "number"
@@ -22,6 +20,5 @@
       "description": "The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.",
       "anyOf": [{ "type": "string" }, { "$ref": "BedType.schema.json" }]
     }
-  },
-  "required": ["@type"]
+  }
 }

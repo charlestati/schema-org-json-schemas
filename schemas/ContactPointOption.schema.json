@@ -14,10 +14,5 @@
       "description": "The associated telephone number is toll free.",
       "const": "TollFree"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ContactPointOption" }
-  },
-  "required": ["@type"]
+  ]
 }

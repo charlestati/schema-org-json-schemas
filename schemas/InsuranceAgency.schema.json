@@ -10,10 +10,5 @@
       "description": "Financial services business.",
       "$ref": "FinancialService.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "InsuranceAgency" }
-  },
-  "required": ["@type"]
+  ]
 }

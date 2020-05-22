@@ -12,12 +12,9 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "TVClip" },
     "partOfTVSeries": {
       "description": "The TV series to which this episode or season belongs.",
       "$ref": "TVSeries.schema.json"
     }
-  },
-  "required": ["@type"]
+  }
 }

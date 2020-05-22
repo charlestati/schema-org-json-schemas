@@ -18,10 +18,5 @@
       "description": "An list item, e.g. a step in a checklist or how-to description.",
       "$ref": "ListItem.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "HowToStep" }
-  },
-  "required": ["@type"]
+  ]
 }

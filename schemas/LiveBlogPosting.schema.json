@@ -9,8 +9,6 @@
     { "description": "A blog post.", "$ref": "BlogPosting.schema.json" }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "LiveBlogPosting" },
     "coverageEndTime": {
       "description": "The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.",
       "type": "string",
@@ -28,6 +26,5 @@
         { "type": "array", "items": { "$ref": "BlogPosting.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

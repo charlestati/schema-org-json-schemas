@@ -10,10 +10,5 @@
       "description": "A unique instance of a BroadcastService on a CableOrSatelliteService lineup.",
       "$ref": "BroadcastChannel.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "RadioChannel" }
-  },
-  "required": ["@type"]
+  ]
 }

@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "GameServer" },
     "game": {
       "description": "Video game which is played on this server.",
       "oneOf": [
@@ -35,6 +33,5 @@
         { "type": "array", "items": { "$ref": "GameServerStatus.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

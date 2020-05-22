@@ -16,8 +16,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "HowToDirection" },
     "afterMedia": {
       "description": "A media object representing the circumstances after performing this direction.",
       "oneOf": [
@@ -124,6 +122,5 @@
       "type": "string",
       "format": "https://schema.org/Duration"
     }
-  },
-  "required": ["@type"]
+  }
 }

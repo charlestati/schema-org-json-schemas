@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Article" },
     "articleBody": {
       "description": "The actual body of the article.",
       "type": "string"
@@ -64,6 +62,5 @@
       "description": "The number of words in the text of the Article.",
       "type": "integer"
     }
-  },
-  "required": ["@type"]
+  }
 }

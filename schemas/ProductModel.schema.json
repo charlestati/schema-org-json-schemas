@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ProductModel" },
     "isVariantOf": {
       "description": "A pointer to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive.",
       "oneOf": [
@@ -35,6 +33,5 @@
         { "type": "array", "items": { "$ref": "ProductModel.schema.json" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

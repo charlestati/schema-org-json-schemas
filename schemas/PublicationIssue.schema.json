@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "PublicationIssue" },
     "issueNumber": {
       "description": "Identifies the issue of publication; for example, \"iii\" or \"2\".",
       "oneOf": [
@@ -39,6 +37,5 @@
         { "type": "array", "items": { "type": "string" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

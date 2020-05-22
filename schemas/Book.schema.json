@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Book" },
     "bookEdition": {
       "description": "The edition of the book.",
       "type": "string"
@@ -31,6 +29,5 @@
       "description": "The number of pages in the book.",
       "type": "integer"
     }
-  },
-  "required": ["@type"]
+  }
 }

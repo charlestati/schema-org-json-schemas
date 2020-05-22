@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "MediaObject" },
     "associatedArticle": {
       "description": "A NewsArticle associated with the Media Object.",
       "oneOf": [
@@ -107,6 +105,5 @@
         { "$ref": "QuantitativeValue.schema.json" }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

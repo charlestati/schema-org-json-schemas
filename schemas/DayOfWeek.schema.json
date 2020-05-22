@@ -38,10 +38,5 @@
       "description": "The day of the week between Tuesday and Thursday.",
       "const": "Wednesday"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "DayOfWeek" }
-  },
-  "required": ["@type"]
+  ]
 }

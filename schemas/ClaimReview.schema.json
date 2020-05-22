@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "ClaimReview" },
     "claimReviewed": {
       "description": "A short summary of the specific claims reviewed in a ClaimReview.",
       "oneOf": [
@@ -21,6 +19,5 @@
         { "type": "array", "items": { "type": "string" } }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

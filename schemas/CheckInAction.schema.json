@@ -10,10 +10,5 @@
       "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",
       "$ref": "CommunicateAction.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "CheckInAction" }
-  },
-  "required": ["@type"]
+  ]
 }

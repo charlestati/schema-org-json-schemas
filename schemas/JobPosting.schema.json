@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "JobPosting" },
     "baseSalary": {
       "description": "The base salary of the job or of an employee in an EmployeeRole.",
       "anyOf": [
@@ -143,6 +141,5 @@
       "description": "The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).",
       "type": "string"
     }
-  },
-  "required": ["@type"]
+  }
 }

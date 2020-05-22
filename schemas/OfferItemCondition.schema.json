@@ -22,10 +22,5 @@
       "description": "Indicates that the item is used.",
       "const": "UsedCondition"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "OfferItemCondition" }
-  },
-  "required": ["@type"]
+  ]
 }

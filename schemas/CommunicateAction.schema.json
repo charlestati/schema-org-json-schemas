@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "CommunicateAction" },
     "about": {
       "description": "The subject matter of the content.",
       "$ref": "Thing.schema.json"
@@ -53,6 +51,5 @@
         }
       ]
     }
-  },
-  "required": ["@type"]
+  }
 }

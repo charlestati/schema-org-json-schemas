@@ -26,10 +26,5 @@
       "description": "The payment is due and considered late.",
       "const": "PaymentPastDue"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "PaymentStatusType" }
-  },
-  "required": ["@type"]
+  ]
 }

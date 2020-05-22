@@ -4,10 +4,5 @@
   "title": "Text",
   "description": "Data type: Text.",
   "type": "object",
-  "format": "http://schema.org/Text",
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Text" }
-  },
-  "required": ["@type"]
+  "format": "http://schema.org/Text"
 }

@@ -13,12 +13,6 @@ Object {
   "description": "A person (alive, dead, undead, or fictional).",
   "format": "http://schema.org/Person",
   "properties": Object {
-    "@context": Object {
-      "const": "https://schema.org",
-    },
-    "@type": Object {
-      "const": "Person",
-    },
     "additionalName": Object {
       "description": "An additional name for a Person, can be used for a middle name.",
       "oneOf": Array [
@@ -719,9 +713,6 @@ While such policies are most typically expressed in natural language, sometimes 
       ],
     },
   },
-  "required": Array [
-    "@type",
-  ],
   "title": "Person",
   "type": "object",
 }

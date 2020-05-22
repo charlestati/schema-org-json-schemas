@@ -10,10 +10,5 @@
       "description": "A body of water, such as a sea, ocean, or lake.",
       "$ref": "BodyOfWater.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "RiverBodyOfWater" }
-  },
-  "required": ["@type"]
+  ]
 }

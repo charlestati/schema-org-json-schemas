@@ -10,10 +10,5 @@
       "description": "The act of finding an object.\n\nRelated actions:\n\n\nSearchAction: FindAction is generally lead by a SearchAction, but not necessarily.\n\n",
       "$ref": "FindAction.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "DiscoverAction" }
-  },
-  "required": ["@type"]
+  ]
 }

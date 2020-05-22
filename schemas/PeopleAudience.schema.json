@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "PeopleAudience" },
     "requiredGender": {
       "description": "Audiences defined by a person's gender.",
       "type": "string"
@@ -38,6 +36,5 @@
       "description": "Minimal age recommended for viewing content.",
       "type": "number"
     }
-  },
-  "required": ["@type"]
+  }
 }

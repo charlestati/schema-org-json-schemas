@@ -3,7 +3,7 @@
 
 ### Features
 
-* Added required `[@type](https://github.com/type)` property ([cf09e56](https://github.com/charlestati/schema-org-json-schema/commit/cf09e5607a380dfe3692839d5ca86c0dd9bd6e0c))
+* Added required `@type` property ([cf09e56](https://github.com/charlestati/schema-org-json-schema/commit/cf09e5607a380dfe3692839d5ca86c0dd9bd6e0c))
 * Added support for single values in addition to arrays ([dcbb428](https://github.com/charlestati/schema-org-json-schema/commit/dcbb428317ce07ab8dcff50247c907f15443fb2f))
 * sort parents and property types ([d93f16a](https://github.com/charlestati/schema-org-json-schema/commit/d93f16a26bf98d23eb806d03ccce08d7cf15b99a))
 

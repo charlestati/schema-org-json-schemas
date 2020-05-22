@@ -10,10 +10,5 @@
       "description": "Health and beauty.",
       "$ref": "HealthAndBeautyBusiness.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "BeautySalon" }
-  },
-  "required": ["@type"]
+  ]
 }

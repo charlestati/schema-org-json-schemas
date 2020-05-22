@@ -10,10 +10,5 @@
       "description": "A media season e.g. tv, radio, video game etc.",
       "$ref": "CreativeWorkSeason.schema.json"
     }
-  ],
-  "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "RadioSeason" }
-  },
-  "required": ["@type"]
+  ]
 }

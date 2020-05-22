@@ -12,8 +12,6 @@
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "PostalAddress" },
     "addressCountry": {
       "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
       "anyOf": [{ "type": "string" }, { "$ref": "Country.schema.json" }]
@@ -38,6 +36,5 @@
       "description": "The street address. For example, 1600 Amphitheatre Pkwy.",
       "type": "string"
     }
-  },
-  "required": ["@type"]
+  }
 }
