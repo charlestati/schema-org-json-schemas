@@ -8,5 +8,10 @@
   "oneOf": [
     { "description": "The female gender.", "const": "Female" },
     { "description": "The male gender.", "const": "Male" }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "GenderType" }
+  },
+  "required": ["@type"]
 }

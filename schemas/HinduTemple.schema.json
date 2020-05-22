@@ -10,5 +10,10 @@
       "description": "Place of worship, such as a church, synagogue, or mosque.",
       "$ref": "PlaceOfWorship.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "HinduTemple" }
+  },
+  "required": ["@type"]
 }

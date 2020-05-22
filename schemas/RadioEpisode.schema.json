@@ -10,5 +10,10 @@
       "description": "A media episode (e.g. TV, radio, video game) which can be part of a series or season.",
       "$ref": "Episode.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "RadioEpisode" }
+  },
+  "required": ["@type"]
 }

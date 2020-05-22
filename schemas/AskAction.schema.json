@@ -12,10 +12,13 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "AskAction" },
     "question": {
       "description": "A sub property of object. A question.",
       "type": "array",
       "items": { "$ref": "Question.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

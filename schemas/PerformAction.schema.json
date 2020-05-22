@@ -12,10 +12,13 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "PerformAction" },
     "entertainmentBusiness": {
       "description": "A sub property of location. The entertainment business where the action occurred.",
       "type": "array",
       "items": { "$ref": "EntertainmentBusiness.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

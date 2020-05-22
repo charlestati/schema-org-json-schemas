@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "OrderItem" },
     "orderDelivery": {
       "description": "The delivery of the parcel related to this order or order item.",
       "$ref": "ParcelDelivery.schema.json"
@@ -39,5 +41,6 @@
         ]
       }
     }
-  }
+  },
+  "required": ["@type"]
 }

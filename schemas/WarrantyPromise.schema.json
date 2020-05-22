@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "WarrantyPromise" },
     "durationOfWarranty": {
       "description": "The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.",
       "$ref": "QuantitativeValue.schema.json"
@@ -20,5 +22,6 @@
       "description": "The scope of the warranty promise.",
       "$ref": "WarrantyScope.schema.json"
     }
-  }
+  },
+  "required": ["@type"]
 }

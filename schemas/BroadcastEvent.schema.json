@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "BroadcastEvent" },
     "broadcastOfEvent": {
       "description": "The event being broadcast such as a sporting event or awards ceremony.",
       "$ref": "Event.schema.json"
@@ -24,5 +26,6 @@
       "description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
       "type": "string"
     }
-  }
+  },
+  "required": ["@type"]
 }

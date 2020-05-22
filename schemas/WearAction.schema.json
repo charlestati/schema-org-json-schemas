@@ -10,5 +10,10 @@
       "description": "The act of applying an object to its intended purpose.",
       "$ref": "UseAction.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "WearAction" }
+  },
+  "required": ["@type"]
 }

@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "HowToItem" },
     "requiredQuantity": {
       "description": "The required quantity of the item(s).",
       "anyOf": [
@@ -20,5 +22,6 @@
         { "$ref": "QuantitativeValue.schema.json" }
       ]
     }
-  }
+  },
+  "required": ["@type"]
 }

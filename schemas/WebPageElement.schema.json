@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "WebPageElement" },
     "cssSelector": {
       "description": "A CSS selector, e.g. of a SpeakableSpecification or WebPageElement. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
       "format": "http://schema.org/CssSelectorType"
@@ -20,5 +22,6 @@
       "description": "An XPath, e.g. of a SpeakableSpecification or WebPageElement. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
       "format": "http://schema.org/XPathType"
     }
-  }
+  },
+  "required": ["@type"]
 }

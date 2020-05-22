@@ -13,6 +13,12 @@ Object {
   "description": "A person (alive, dead, undead, or fictional).",
   "format": "http://schema.org/Person",
   "properties": Object {
+    "@context": Object {
+      "const": "https://schema.org",
+    },
+    "@type": Object {
+      "const": "Person",
+    },
     "additionalName": Object {
       "description": "An additional name for a Person, can be used for a middle name.",
       "items": Object {
@@ -23,10 +29,10 @@ Object {
     "address": Object {
       "anyOf": Array [
         Object {
-          "$ref": "PostalAddress.schema.json",
+          "type": "string",
         },
         Object {
-          "type": "string",
+          "$ref": "PostalAddress.schema.json",
         },
       ],
       "description": "Physical address of the item.",
@@ -98,11 +104,11 @@ Object {
       "items": Object {
         "anyOf": Array [
           Object {
-            "$ref": "Person.schema.json",
-          },
-          Object {
             "format": "uri",
             "type": "string",
+          },
+          Object {
+            "$ref": "Person.schema.json",
           },
         ],
       },
@@ -340,11 +346,11 @@ Object {
     "publishingPrinciples": Object {
       "anyOf": Array [
         Object {
-          "$ref": "CreativeWork.schema.json",
-        },
-        Object {
           "format": "uri",
           "type": "string",
+        },
+        Object {
+          "$ref": "CreativeWork.schema.json",
         },
       ],
       "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.
@@ -432,6 +438,9 @@ While such policies are most typically expressed in natural language, sometimes 
       "type": "array",
     },
   },
+  "required": Array [
+    "@type",
+  ],
   "title": "Person",
   "type": "object",
 }

@@ -7,5 +7,10 @@
   "format": "http://schema.org/MensClothingStore",
   "allOf": [
     { "description": "A retail good store.", "$ref": "Store.schema.json" }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "MensClothingStore" }
+  },
+  "required": ["@type"]
 }

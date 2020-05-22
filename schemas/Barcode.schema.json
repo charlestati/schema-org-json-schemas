@@ -7,5 +7,10 @@
   "format": "http://schema.org/Barcode",
   "allOf": [
     { "description": "An image file.", "$ref": "ImageObject.schema.json" }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Barcode" }
+  },
+  "required": ["@type"]
 }

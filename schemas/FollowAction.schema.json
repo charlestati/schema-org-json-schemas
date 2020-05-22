@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "FollowAction" },
     "followee": {
       "description": "A sub property of object. The person or organization being followed.",
       "type": "array",
@@ -22,5 +24,6 @@
         ]
       }
     }
-  }
+  },
+  "required": ["@type"]
 }

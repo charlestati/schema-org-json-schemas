@@ -12,10 +12,13 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "TrackAction" },
     "deliveryMethod": {
       "description": "A sub property of instrument. The method of delivery.",
       "type": "array",
       "items": { "$ref": "DeliveryMethod.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

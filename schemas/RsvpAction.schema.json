@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "RsvpAction" },
     "additionalNumberOfGuests": {
       "description": "If responding yes, the number of guests who will attend in addition to the invitee.",
       "type": "array",
@@ -26,5 +28,6 @@
       "description": "The response (yes, no, maybe) to the RSVP.",
       "$ref": "RsvpResponseType.schema.json"
     }
-  }
+  },
+  "required": ["@type"]
 }

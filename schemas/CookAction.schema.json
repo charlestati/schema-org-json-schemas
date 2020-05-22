@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "CookAction" },
     "foodEstablishment": {
       "description": "A sub property of location. The specific food establishment where the action occurred.",
       "type": "array",
@@ -32,5 +34,6 @@
       "type": "array",
       "items": { "$ref": "Recipe.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

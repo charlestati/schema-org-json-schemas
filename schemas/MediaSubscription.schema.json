@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "MediaSubscription" },
     "authenticator": {
       "description": "The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.",
       "$ref": "Organization.schema.json"
@@ -21,5 +23,6 @@
       "type": "array",
       "items": { "$ref": "Offer.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

@@ -10,5 +10,10 @@
       "description": "Quantities such as distance, time, mass, weight, etc. Particular instances of say Mass are entities like '3 Kg' or '4 milligrams'.",
       "$ref": "Quantity.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Distance" }
+  },
+  "required": ["@type"]
 }

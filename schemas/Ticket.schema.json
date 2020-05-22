@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Ticket" },
     "dateIssued": {
       "description": "The date the ticket was issued.",
       "anyOf": [
@@ -57,5 +59,6 @@
         { "$ref": "Person.schema.json" }
       ]
     }
-  }
+  },
+  "required": ["@type"]
 }

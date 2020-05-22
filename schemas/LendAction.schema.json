@@ -12,10 +12,13 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "LendAction" },
     "borrower": {
       "description": "A sub property of participant. The person that borrows the object being lent.",
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

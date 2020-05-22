@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "AlignmentObject" },
     "alignmentType": {
       "description": "A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.",
       "type": "array",
@@ -34,5 +36,6 @@
       "type": "string",
       "format": "uri"
     }
-  }
+  },
+  "required": ["@type"]
 }

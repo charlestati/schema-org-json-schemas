@@ -12,10 +12,13 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "PlanAction" },
     "scheduledTime": {
       "description": "The time the object is scheduled to.",
       "type": "string",
       "format": "date-time"
     }
-  }
+  },
+  "required": ["@type"]
 }

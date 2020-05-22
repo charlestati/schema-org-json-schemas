@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Brand" },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
       "$ref": "AggregateRating.schema.json"
@@ -36,5 +38,6 @@
       "type": "array",
       "items": { "type": "string" }
     }
-  }
+  },
+  "required": ["@type"]
 }

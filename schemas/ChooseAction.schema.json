@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "ChooseAction" },
     "actionOption": {
       "description": "A sub property of object. The options subject to this action.",
       "type": "array",
@@ -26,5 +28,6 @@
         "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
       }
     }
-  }
+  },
+  "required": ["@type"]
 }

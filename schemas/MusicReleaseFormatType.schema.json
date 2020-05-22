@@ -16,5 +16,10 @@
     { "description": "DigitalFormat.", "const": "DigitalFormat" },
     { "description": "LaserDiscFormat.", "const": "LaserDiscFormat" },
     { "description": "VinylFormat.", "const": "VinylFormat" }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "MusicReleaseFormatType" }
+  },
+  "required": ["@type"]
 }

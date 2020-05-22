@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "PublicationVolume" },
     "pageEnd": {
       "description": "The page on which the work ends; for example \"138\" or \"xvi\".",
       "anyOf": [{ "type": "integer" }, { "type": "string" }]
@@ -30,5 +32,6 @@
       "type": "array",
       "items": { "anyOf": [{ "type": "integer" }, { "type": "string" }] }
     }
-  }
+  },
+  "required": ["@type"]
 }

@@ -10,5 +10,10 @@
       "description": "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\n\nSee also blog post.",
       "$ref": "Article.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "ScholarlyArticle" }
+  },
+  "required": ["@type"]
 }

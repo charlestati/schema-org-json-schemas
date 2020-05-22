@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "APIReference" },
     "assembly": {
       "description": "Library file name e.g., mscorlib.dll, system.web.dll.",
       "type": "string"
@@ -35,5 +37,6 @@
       "type": "array",
       "items": { "type": "string" }
     }
-  }
+  },
+  "required": ["@type"]
 }

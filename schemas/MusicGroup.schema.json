@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "MusicGroup" },
     "album": {
       "description": "A music album.",
       "type": "array",
@@ -46,5 +48,6 @@
       "type": "array",
       "items": { "$ref": "MusicRecording.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

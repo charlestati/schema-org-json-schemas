@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Event" },
     "about": {
       "description": "The subject matter of the content.",
       "$ref": "Thing.schema.json"
@@ -235,5 +237,6 @@
       "type": "array",
       "items": { "$ref": "CreativeWork.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

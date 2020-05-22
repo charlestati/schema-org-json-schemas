@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Course" },
     "courseCode": {
       "description": "The identifier for the Course used by the course provider (e.g. CS101 or 6.001).",
       "type": "string"
@@ -39,5 +41,6 @@
       "type": "array",
       "items": { "$ref": "CourseInstance.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

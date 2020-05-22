@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Organization" },
     "address": {
       "description": "Physical address of the item.",
       "anyOf": [{ "type": "string" }, { "$ref": "PostalAddress.schema.json" }]
@@ -295,5 +297,6 @@
       "description": "The Value-added Tax ID of the organization or person.",
       "type": "string"
     }
-  }
+  },
+  "required": ["@type"]
 }

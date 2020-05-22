@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Airport" },
     "iataCode": {
       "description": "IATA identifier for an airline or airport.",
       "type": "array",
@@ -22,5 +24,6 @@
       "type": "array",
       "items": { "type": "string" }
     }
-  }
+  },
+  "required": ["@type"]
 }

@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Trip" },
     "arrivalTime": {
       "description": "The expected arrival time.",
       "anyOf": [
@@ -43,5 +45,6 @@
         { "$ref": "Person.schema.json" }
       ]
     }
-  }
+  },
+  "required": ["@type"]
 }

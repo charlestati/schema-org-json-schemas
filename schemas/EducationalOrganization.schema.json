@@ -16,10 +16,13 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "EducationalOrganization" },
     "alumni": {
       "description": "Alumni of an organization.",
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

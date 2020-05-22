@@ -14,5 +14,10 @@
       "description": "The airline boards by zones of the plane.",
       "const": "ZoneBoardingPolicy"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "BoardingPolicyType" }
+  },
+  "required": ["@type"]
 }

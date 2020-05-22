@@ -12,9 +12,12 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "SomeProducts" },
     "inventoryLevel": {
       "description": "The current approximate inventory level for the item or items.",
       "$ref": "QuantitativeValue.schema.json"
     }
-  }
+  },
+  "required": ["@type"]
 }

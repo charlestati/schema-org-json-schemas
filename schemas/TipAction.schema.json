@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "TipAction" },
     "recipient": {
       "description": "A sub property of participant. The participant who is at the receiving end of the action.",
       "type": "array",
@@ -24,5 +26,6 @@
         ]
       }
     }
-  }
+  },
+  "required": ["@type"]
 }

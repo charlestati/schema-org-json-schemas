@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "SendAction" },
     "deliveryMethod": {
       "description": "A sub property of instrument. The method of delivery.",
       "type": "array",
@@ -29,5 +31,6 @@
         ]
       }
     }
-  }
+  },
+  "required": ["@type"]
 }

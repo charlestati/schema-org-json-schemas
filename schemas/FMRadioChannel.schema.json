@@ -10,5 +10,10 @@
       "description": "A unique instance of a radio BroadcastService on a CableOrSatelliteService lineup.",
       "$ref": "RadioChannel.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "FMRadioChannel" }
+  },
+  "required": ["@type"]
 }

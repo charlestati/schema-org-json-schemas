@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Permit" },
     "issuedBy": {
       "description": "The organization issuing the ticket or permit.",
       "$ref": "Organization.schema.json"
@@ -45,5 +47,6 @@
       "type": "string",
       "format": "date"
     }
-  }
+  },
+  "required": ["@type"]
 }

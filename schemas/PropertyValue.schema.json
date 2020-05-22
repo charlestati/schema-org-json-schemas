@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "PropertyValue" },
     "maxValue": {
       "description": "The upper value of some characteristic or property.",
       "type": "number"
@@ -58,5 +60,6 @@
         ]
       }
     }
-  }
+  },
+  "required": ["@type"]
 }

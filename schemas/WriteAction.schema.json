@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "WriteAction" },
     "inLanguage": {
       "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
       "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
@@ -21,5 +23,6 @@
       "type": "array",
       "items": { "$ref": "Language.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

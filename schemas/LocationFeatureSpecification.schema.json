@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "LocationFeatureSpecification" },
     "hoursAvailable": {
       "description": "The hours during which this service or contact is available.",
       "$ref": "OpeningHoursSpecification.schema.json"
@@ -30,5 +32,6 @@
         { "type": "string", "format": "date-time" }
       ]
     }
-  }
+  },
+  "required": ["@type"]
 }

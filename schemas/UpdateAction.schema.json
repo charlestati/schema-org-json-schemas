@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "UpdateAction" },
     "collection": {
       "description": "A sub property of object. The collection target of the action.",
       "type": "array",
@@ -22,5 +24,6 @@
       "type": "array",
       "items": { "$ref": "Thing.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "TaxiReservation" },
     "partySize": {
       "description": "Number of people the reservation should accommodate.",
       "type": "array",
@@ -32,5 +34,6 @@
       "type": "array",
       "items": { "type": "string", "format": "date-time" }
     }
-  }
+  },
+  "required": ["@type"]
 }

@@ -16,6 +16,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "LocalBusiness" },
     "branchOf": {
       "description": "The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical)branch.",
       "$ref": "Organization.schema.json"
@@ -37,5 +39,6 @@
       "description": "The price range of the business, for example $$$.",
       "type": "string"
     }
-  }
+  },
+  "required": ["@type"]
 }

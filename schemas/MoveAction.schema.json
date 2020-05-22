@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "MoveAction" },
     "fromLocation": {
       "description": "A sub property of location. The original location of the object or the agent before the action.",
       "type": "array",
@@ -22,5 +24,6 @@
       "type": "array",
       "items": { "$ref": "Place.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

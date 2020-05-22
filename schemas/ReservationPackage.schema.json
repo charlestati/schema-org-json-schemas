@@ -12,9 +12,12 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "ReservationPackage" },
     "subReservation": {
       "description": "The individual reservations included in the package. Typically a repeated property.",
       "$ref": "Reservation.schema.json"
     }
-  }
+  },
+  "required": ["@type"]
 }

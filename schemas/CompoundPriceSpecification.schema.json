@@ -12,10 +12,13 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "CompoundPriceSpecification" },
     "priceComponent": {
       "description": "This property links to all UnitPriceSpecification nodes that apply in parallel for the CompoundPriceSpecification node.",
       "type": "array",
       "items": { "$ref": "UnitPriceSpecification.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

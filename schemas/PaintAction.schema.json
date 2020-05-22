@@ -10,5 +10,10 @@
       "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",
       "$ref": "CreateAction.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "PaintAction" }
+  },
+  "required": ["@type"]
 }

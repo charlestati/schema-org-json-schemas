@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "ContactPoint" },
     "areaServed": {
       "description": "The geographic area where a service or offered item is provided.",
       "anyOf": [
@@ -61,5 +63,6 @@
       ]
     },
     "telephone": { "description": "The telephone number.", "type": "string" }
-  }
+  },
+  "required": ["@type"]
 }

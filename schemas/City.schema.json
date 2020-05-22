@@ -10,5 +10,10 @@
       "description": "A geographical region, typically under the jurisdiction of a particular government.",
       "$ref": "AdministrativeArea.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "City" }
+  },
+  "required": ["@type"]
 }

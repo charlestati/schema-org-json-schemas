@@ -10,5 +10,10 @@
       "description": "A short TV or radio program or a segment/part of a program.",
       "$ref": "Clip.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "MovieClip" }
+  },
+  "required": ["@type"]
 }

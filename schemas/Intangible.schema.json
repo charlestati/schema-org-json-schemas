@@ -10,5 +10,10 @@
       "description": "The most generic type of item.",
       "$ref": "Thing.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Intangible" }
+  },
+  "required": ["@type"]
 }

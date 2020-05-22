@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "VideoObject" },
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
       "type": "array",
@@ -58,5 +60,6 @@
       "description": "The quality of the video.",
       "type": "string"
     }
-  }
+  },
+  "required": ["@type"]
 }

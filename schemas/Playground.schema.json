@@ -10,5 +10,10 @@
       "description": "A public structure, such as a town hall or concert hall.",
       "$ref": "CivicStructure.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Playground" }
+  },
+  "required": ["@type"]
 }

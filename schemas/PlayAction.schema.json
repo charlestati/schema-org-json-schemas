@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "PlayAction" },
     "audience": {
       "description": "An intended audience, i.e. a group for whom something was created.",
       "$ref": "Audience.schema.json"
@@ -21,5 +23,6 @@
       "type": "array",
       "items": { "$ref": "Event.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

@@ -27,6 +27,7 @@ const propertyMultiplicity = require("./property-multiplicity.json");
 
 const schemaOrgSchemasUrl = "https://schema.org/version/latest/schema.jsonld";
 const schemaOrgDraftVersion = "http://json-schema.org/draft-07/schema#";
+const schemaOrgContext = "https://schema.org";
 const schemasDir = path.join(__dirname, "schemas");
 const schemaSuffix = ".schema.json";
 const typesWithoutMultiplicity = new Set(["Boolean"]);
@@ -205,6 +206,14 @@ function buildSchema(schemaClass, allSchemaClasses, allProperties, enumValues) {
       schema.allOf = parents;
     }
   }
+  schema.properties = {
+    "@context": {
+      const: schemaOrgContext,
+    },
+    "@type": {
+      const: title,
+    },
+  };
   const properties = getProperties(id, allProperties);
   sortBy(properties, ["rdfs:label"]).forEach((property) => {
     const propertyLabel = property["rdfs:label"];
@@ -239,6 +248,7 @@ function buildSchema(schemaClass, allSchemaClasses, allProperties, enumValues) {
       }
     }
   });
+  schema.required = ["@type"];
   return schema;
 }
 

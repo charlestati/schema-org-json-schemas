@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "SportsTeam" },
     "athlete": {
       "description": "A person that acts as performing member of a sports team; a player as opposed to a coach.",
       "type": "array",
@@ -22,5 +24,6 @@
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

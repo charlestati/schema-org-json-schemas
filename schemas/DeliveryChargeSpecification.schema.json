@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "DeliveryChargeSpecification" },
     "appliesToDeliveryMethod": {
       "description": "The delivery method(s) to which the delivery charge or payment charge specification applies.",
       "$ref": "DeliveryMethod.schema.json"
@@ -33,5 +35,6 @@
         { "$ref": "Place.schema.json" }
       ]
     }
-  }
+  },
+  "required": ["@type"]
 }

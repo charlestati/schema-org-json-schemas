@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "BroadcastFrequencySpecification" },
     "broadcastFrequencyValue": {
       "description": "The frequency in MHz for a particular broadcast.",
       "anyOf": [
@@ -19,5 +21,6 @@
         { "$ref": "QuantitativeValue.schema.json" }
       ]
     }
-  }
+  },
+  "required": ["@type"]
 }

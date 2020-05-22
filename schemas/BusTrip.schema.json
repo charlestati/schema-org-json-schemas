@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "BusTrip" },
     "arrivalBusStop": {
       "description": "The stop or station from which the bus arrives.",
       "anyOf": [
@@ -34,5 +36,6 @@
         { "$ref": "BusStop.schema.json" }
       ]
     }
-  }
+  },
+  "required": ["@type"]
 }

@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "InteractionCounter" },
     "interactionService": {
       "description": "The WebSite or SoftwareApplication where the interactions took place.",
       "anyOf": [
@@ -27,5 +29,6 @@
       "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.",
       "type": "integer"
     }
-  }
+  },
+  "required": ["@type"]
 }

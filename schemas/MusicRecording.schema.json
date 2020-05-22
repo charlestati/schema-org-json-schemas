@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "MusicRecording" },
     "byArtist": {
       "description": "The artist that performed this album or recording.",
       "anyOf": [
@@ -40,5 +42,6 @@
       "description": "The composition this track is a recording of.",
       "$ref": "MusicComposition.schema.json"
     }
-  }
+  },
+  "required": ["@type"]
 }

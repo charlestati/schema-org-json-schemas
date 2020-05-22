@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "DataFeedItem" },
     "dateCreated": {
       "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
       "anyOf": [
@@ -38,5 +40,6 @@
       "type": "array",
       "items": { "$ref": "Thing.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

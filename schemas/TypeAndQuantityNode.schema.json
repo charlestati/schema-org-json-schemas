@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "TypeAndQuantityNode" },
     "amountOfThisGood": {
       "description": "The quantity of the goods included in the offer.",
       "type": "number"
@@ -36,5 +38,6 @@
       "type": "array",
       "items": { "type": "string" }
     }
-  }
+  },
+  "required": ["@type"]
 }

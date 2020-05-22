@@ -10,5 +10,10 @@
       "description": "A government office—for example, an IRS or DMV office.",
       "$ref": "GovernmentOffice.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "PostOffice" }
+  },
+  "required": ["@type"]
 }

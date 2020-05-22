@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Seat" },
     "seatNumber": {
       "description": "The location of the reserved seat (e.g., 27).",
       "type": "string"
@@ -31,5 +33,6 @@
         { "$ref": "QualitativeValue.schema.json" }
       ]
     }
-  }
+  },
+  "required": ["@type"]
 }

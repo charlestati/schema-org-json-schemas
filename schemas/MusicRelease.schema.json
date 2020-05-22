@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "MusicRelease" },
     "catalogNumber": {
       "description": "The catalog number for the release.",
       "type": "string"
@@ -41,5 +43,6 @@
       "description": "The album this is a release of.",
       "$ref": "MusicAlbum.schema.json"
     }
-  }
+  },
+  "required": ["@type"]
 }

@@ -12,10 +12,13 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "WinAction" },
     "loser": {
       "description": "A sub property of participant. The loser of the action.",
       "type": "array",
       "items": { "$ref": "Person.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

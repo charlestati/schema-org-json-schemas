@@ -18,5 +18,10 @@
       "description": "An ItemList ordered with no explicit order.",
       "const": "ItemListUnordered"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "ItemListOrderType" }
+  },
+  "required": ["@type"]
 }

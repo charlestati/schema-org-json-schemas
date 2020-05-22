@@ -15,5 +15,10 @@
     { "description": "SoundtrackAlbum.", "const": "SoundtrackAlbum" },
     { "description": "SpokenWordAlbum.", "const": "SpokenWordAlbum" },
     { "description": "StudioAlbum.", "const": "StudioAlbum" }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "MusicAlbumProductionType" }
+  },
+  "required": ["@type"]
 }

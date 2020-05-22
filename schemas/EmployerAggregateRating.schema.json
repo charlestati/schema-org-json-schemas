@@ -10,5 +10,10 @@
       "description": "The average rating based on multiple ratings or reviews.",
       "$ref": "AggregateRating.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "EmployerAggregateRating" }
+  },
+  "required": ["@type"]
 }

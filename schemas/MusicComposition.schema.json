@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "MusicComposition" },
     "composer": {
       "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
       "anyOf": [
@@ -58,5 +60,6 @@
       "type": "array",
       "items": { "$ref": "MusicRecording.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

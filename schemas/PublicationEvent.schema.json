@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "PublicationEvent" },
     "free": {
       "description": "A flag to signal that the item, event, or place is accessible for free.",
       "type": "boolean"
@@ -25,5 +27,6 @@
       "type": "array",
       "items": { "$ref": "BroadcastService.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

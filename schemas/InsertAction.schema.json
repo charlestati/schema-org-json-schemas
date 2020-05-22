@@ -12,10 +12,13 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "InsertAction" },
     "toLocation": {
       "description": "A sub property of location. The final location of the object or the agent after the action.",
       "type": "array",
       "items": { "$ref": "Place.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

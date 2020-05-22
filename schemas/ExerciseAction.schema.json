@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "ExerciseAction" },
     "course": {
       "description": "A sub property of location. The course where this action was taken.",
       "type": "array",
@@ -57,5 +59,6 @@
       "type": "array",
       "items": { "$ref": "Place.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

@@ -10,5 +10,10 @@
       "description": "The act of adding at a specific location in an ordered collection.",
       "$ref": "InsertAction.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "AppendAction" }
+  },
+  "required": ["@type"]
 }

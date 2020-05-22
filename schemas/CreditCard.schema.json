@@ -14,5 +14,10 @@
       "description": "A payment method using a credit, debit, store or other card to associate the payment with an account.",
       "$ref": "PaymentCard.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "CreditCard" }
+  },
+  "required": ["@type"]
 }

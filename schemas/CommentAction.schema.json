@@ -12,10 +12,13 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "CommentAction" },
     "resultComment": {
       "description": "A sub property of result. The Comment created or sent as a result of this action.",
       "type": "array",
       "items": { "$ref": "Comment.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

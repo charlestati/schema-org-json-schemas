@@ -4,5 +4,10 @@
   "title": "DateTime",
   "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] (see Chapter 5.4 of ISO 8601).",
   "type": "object",
-  "format": "http://schema.org/DateTime"
+  "format": "http://schema.org/DateTime",
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "DateTime" }
+  },
+  "required": ["@type"]
 }

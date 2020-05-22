@@ -10,5 +10,10 @@
       "description": "A rating is an evaluation on a numeric scale, such as 1 to 5 stars.",
       "$ref": "Rating.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "EndorsementRating" }
+  },
+  "required": ["@type"]
 }

@@ -12,10 +12,13 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "ReviewAction" },
     "resultReview": {
       "description": "A sub property of result. The review that resulted in the performing of the action.",
       "type": "array",
       "items": { "$ref": "Review.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

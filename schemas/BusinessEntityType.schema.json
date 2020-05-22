@@ -10,5 +10,10 @@
       "description": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
       "$ref": "Enumeration.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "BusinessEntityType" }
+  },
+  "required": ["@type"]
 }

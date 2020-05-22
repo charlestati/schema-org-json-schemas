@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Recipe" },
     "cookTime": {
       "description": "The time it takes to actually cook the dish, in ISO 8601 duration format.",
       "type": "string",
@@ -63,5 +65,6 @@
       "type": "array",
       "items": { "$ref": "RestrictedDiet.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

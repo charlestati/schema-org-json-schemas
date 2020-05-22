@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Person" },
     "additionalName": {
       "description": "An additional name for a Person, can be used for a middle name.",
       "type": "array",
@@ -316,5 +318,6 @@
       "type": "array",
       "items": { "$ref": "Organization.schema.json" }
     }
-  }
+  },
+  "required": ["@type"]
 }

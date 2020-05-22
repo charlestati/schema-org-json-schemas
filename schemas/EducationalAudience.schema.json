@@ -12,10 +12,13 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "EducationalAudience" },
     "educationalRole": {
       "description": "An educationalRole of an EducationalAudience.",
       "type": "array",
       "items": { "type": "string" }
     }
-  }
+  },
+  "required": ["@type"]
 }

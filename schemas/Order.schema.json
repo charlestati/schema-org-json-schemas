@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Order" },
     "acceptedOffer": {
       "description": "The offer(s) -- e.g., product, quantity and price combinations -- included in the order.",
       "type": "array",
@@ -132,5 +134,6 @@
         { "$ref": "Person.schema.json" }
       ]
     }
-  }
+  },
+  "required": ["@type"]
 }

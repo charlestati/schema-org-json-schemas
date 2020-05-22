@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "QuantitativeValueDistribution" },
     "duration": {
       "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
       "type": "string",
@@ -34,5 +36,6 @@
       "description": "The 90th percentile value.",
       "type": "number"
     }
-  }
+  },
+  "required": ["@type"]
 }

@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "DeliveryEvent" },
     "accessCode": {
       "description": "Password, PIN, or access code needed for delivery (e.g. from a locker).",
       "type": "string"
@@ -30,5 +32,6 @@
       "description": "Method used for delivery or shipping.",
       "$ref": "DeliveryMethod.schema.json"
     }
-  }
+  },
+  "required": ["@type"]
 }

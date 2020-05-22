@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "FinancialService" },
     "feesAndCommissionsSpecification": {
       "description": "Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.",
       "type": "array",
@@ -19,5 +21,6 @@
         "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
       }
     }
-  }
+  },
+  "required": ["@type"]
 }

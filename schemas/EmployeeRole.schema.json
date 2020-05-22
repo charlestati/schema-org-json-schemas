@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "EmployeeRole" },
     "baseSalary": {
       "description": "The base salary of the job or of an employee in an EmployeeRole.",
       "anyOf": [
@@ -24,5 +26,6 @@
       "description": "The currency (coded using ISO 4217 ) used for the main salary information in this job posting or for this employee.",
       "type": "string"
     }
-  }
+  },
+  "required": ["@type"]
 }

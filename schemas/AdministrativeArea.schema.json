@@ -10,5 +10,10 @@
       "description": "Entities that have a somewhat fixed, physical extension.",
       "$ref": "Place.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "AdministrativeArea" }
+  },
+  "required": ["@type"]
 }

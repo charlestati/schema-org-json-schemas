@@ -10,5 +10,10 @@
       "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
       "$ref": "MedicalOrganization.schema.json"
     }
-  ]
+  ],
+  "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Pharmacy" }
+  },
+  "required": ["@type"]
 }

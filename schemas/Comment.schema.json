@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Comment" },
     "downvoteCount": {
       "description": "The number of downvotes this question, answer or comment has received from the community.",
       "type": "integer"
@@ -24,5 +26,6 @@
       "description": "The number of upvotes this question, answer or comment has received from the community.",
       "type": "integer"
     }
-  }
+  },
+  "required": ["@type"]
 }

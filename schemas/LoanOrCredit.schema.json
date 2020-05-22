@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "LoanOrCredit" },
     "amount": {
       "description": "The amount of money.",
       "anyOf": [{ "type": "number" }, { "$ref": "MonetaryAmount.schema.json" }]
@@ -31,5 +33,6 @@
         "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
       }
     }
-  }
+  },
+  "required": ["@type"]
 }

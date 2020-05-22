@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "DatedMoneySpecification" },
     "amount": {
       "description": "The amount of money.",
       "anyOf": [{ "type": "number" }, { "$ref": "MonetaryAmount.schema.json" }]
@@ -34,5 +36,6 @@
         { "type": "string", "format": "date-time" }
       ]
     }
-  }
+  },
+  "required": ["@type"]
 }

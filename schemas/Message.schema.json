@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Message" },
     "bccRecipient": {
       "description": "A sub property of recipient. The recipient blind copied on a message.",
       "type": "array",
@@ -91,5 +93,6 @@
         ]
       }
     }
-  }
+  },
+  "required": ["@type"]
 }

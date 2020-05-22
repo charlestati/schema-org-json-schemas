@@ -12,6 +12,8 @@
     }
   ],
   "properties": {
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "GeoCircle" },
     "geoMidpoint": {
       "description": "Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.",
       "type": "array",
@@ -28,5 +30,6 @@
         ]
       }
     }
-  }
+  },
+  "required": ["@type"]
 }
