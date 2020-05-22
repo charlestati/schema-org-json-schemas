@@ -20,28 +20,50 @@
     },
     "member": {
       "description": "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "members": {
       "description": "A member of this organization.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "membershipNumber": {
       "description": "A unique identifier for the membership.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "programName": {
       "description": "The program providing the membership.",

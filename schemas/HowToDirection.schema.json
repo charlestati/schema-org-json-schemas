@@ -20,33 +20,63 @@
     "@type": { "const": "HowToDirection" },
     "afterMedia": {
       "description": "A media object representing the circumstances after performing this direction.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "MediaObject.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "MediaObject.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "MediaObject.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "beforeMedia": {
       "description": "A media object representing the circumstances before performing this direction.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "MediaObject.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "MediaObject.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "MediaObject.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "duringMedia": {
       "description": "A media object representing the circumstances while performing this direction.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "MediaObject.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "MediaObject.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "MediaObject.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "performTime": {
       "description": "The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in ISO 8601 duration format.",
@@ -60,17 +90,34 @@
     },
     "supply": {
       "description": "A sub-property of instrument. A supply consumed when performing instructions or a direction.",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "HowToSupply.schema.json" }]
-      }
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string" }, { "$ref": "HowToSupply.schema.json" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "HowToSupply.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "tool": {
       "description": "A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "HowToTool.schema.json" }]
-      }
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string" }, { "$ref": "HowToTool.schema.json" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "HowToTool.schema.json" }]
+          }
+        }
+      ]
     },
     "totalTime": {
       "description": "The total time required to perform instructions or a direction (including time to prepare the supplies), in ISO 8601 duration format.",

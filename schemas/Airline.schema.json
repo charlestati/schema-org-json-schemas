@@ -20,8 +20,10 @@
     },
     "iataCode": {
       "description": "IATA identifier for an airline or airport.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     }
   },
   "required": ["@type"]

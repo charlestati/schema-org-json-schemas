@@ -23,13 +23,23 @@
     },
     "competitor": {
       "description": "A competitor in a sports event.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Person.schema.json" },
-          { "$ref": "SportsTeam.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Person.schema.json" },
+            { "$ref": "SportsTeam.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Person.schema.json" },
+              { "$ref": "SportsTeam.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "homeTeam": {
       "description": "The home team in a sports event.",

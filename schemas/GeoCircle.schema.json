@@ -16,19 +16,32 @@
     "@type": { "const": "GeoCircle" },
     "geoMidpoint": {
       "description": "Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.",
-      "type": "array",
-      "items": { "$ref": "GeoCoordinates.schema.json" }
+      "oneOf": [
+        { "$ref": "GeoCoordinates.schema.json" },
+        { "type": "array", "items": { "$ref": "GeoCoordinates.schema.json" } }
+      ]
     },
     "geoRadius": {
       "description": "Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "number" },
-          { "type": "string", "format": "https://schema.org/Distance" },
-          { "type": "string" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "number" },
+            { "type": "string", "format": "https://schema.org/Distance" },
+            { "type": "string" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "number" },
+              { "type": "string", "format": "https://schema.org/Distance" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
     }
   },
   "required": ["@type"]

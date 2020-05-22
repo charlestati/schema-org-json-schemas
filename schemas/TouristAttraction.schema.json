@@ -16,17 +16,27 @@
     "@type": { "const": "TouristAttraction" },
     "availableLanguage": {
       "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
-      }
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
+          }
+        }
+      ]
     },
     "touristType": {
       "description": "Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc.",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "Audience.schema.json" }]
-      }
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "Audience.schema.json" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "Audience.schema.json" }]
+          }
+        }
+      ]
     }
   },
   "required": ["@type"]

@@ -24,14 +24,25 @@
     },
     "hasMenu": {
       "description": "Either the actual menu as a structured representation, as text, or a URL of the menu.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "type": "string" },
-          { "$ref": "Menu.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "Menu.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "Menu.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "menu": {
       "description": "Either the actual menu as a structured representation, as text, or a URL of the menu.",
@@ -47,8 +58,10 @@
     },
     "starRating": {
       "description": "An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).",
-      "type": "array",
-      "items": { "$ref": "Rating.schema.json" }
+      "oneOf": [
+        { "$ref": "Rating.schema.json" },
+        { "type": "array", "items": { "$ref": "Rating.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

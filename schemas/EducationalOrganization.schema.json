@@ -20,8 +20,10 @@
     "@type": { "const": "EducationalOrganization" },
     "alumni": {
       "description": "Alumni of an organization.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

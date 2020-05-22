@@ -16,13 +16,23 @@
     "@type": { "const": "EndorseAction" },
     "endorsee": {
       "description": "A sub property of participant. The person/organization being supported.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     }
   },
   "required": ["@type"]

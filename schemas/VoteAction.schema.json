@@ -16,8 +16,10 @@
     "@type": { "const": "VoteAction" },
     "candidate": {
       "description": "A sub property of object. The candidate subject of this action.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

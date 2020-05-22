@@ -16,8 +16,10 @@
     "@type": { "const": "ClaimReview" },
     "claimReviewed": {
       "description": "A short summary of the specific claims reviewed in a ClaimReview.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     }
   },
   "required": ["@type"]

@@ -20,8 +20,10 @@
     },
     "language": {
       "description": "A sub property of instrument. The language used on this action.",
-      "type": "array",
-      "items": { "$ref": "Language.schema.json" }
+      "oneOf": [
+        { "$ref": "Language.schema.json" },
+        { "type": "array", "items": { "$ref": "Language.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

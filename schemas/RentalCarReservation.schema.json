@@ -16,23 +16,37 @@
     "@type": { "const": "RentalCarReservation" },
     "dropoffLocation": {
       "description": "Where a rental car can be dropped off.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+      "oneOf": [
+        { "$ref": "Place.schema.json" },
+        { "type": "array", "items": { "$ref": "Place.schema.json" } }
+      ]
     },
     "dropoffTime": {
       "description": "When a rental car can be dropped off.",
-      "type": "array",
-      "items": { "type": "string", "format": "date-time" }
+      "oneOf": [
+        { "type": "string", "format": "date-time" },
+        {
+          "type": "array",
+          "items": { "type": "string", "format": "date-time" }
+        }
+      ]
     },
     "pickupLocation": {
       "description": "Where a taxi will pick up a passenger or a rental car can be picked up.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+      "oneOf": [
+        { "$ref": "Place.schema.json" },
+        { "type": "array", "items": { "$ref": "Place.schema.json" } }
+      ]
     },
     "pickupTime": {
       "description": "When a taxi will pickup a passenger or a rental car can be picked up.",
-      "type": "array",
-      "items": { "type": "string", "format": "date-time" }
+      "oneOf": [
+        { "type": "string", "format": "date-time" },
+        {
+          "type": "array",
+          "items": { "type": "string", "format": "date-time" }
+        }
+      ]
     }
   },
   "required": ["@type"]

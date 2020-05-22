@@ -16,8 +16,10 @@
     "@type": { "const": "OrderAction" },
     "deliveryMethod": {
       "description": "A sub property of instrument. The method of delivery.",
-      "type": "array",
-      "items": { "$ref": "DeliveryMethod.schema.json" }
+      "oneOf": [
+        { "$ref": "DeliveryMethod.schema.json" },
+        { "type": "array", "items": { "$ref": "DeliveryMethod.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

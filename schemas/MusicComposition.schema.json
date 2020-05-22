@@ -27,8 +27,10 @@
     },
     "includedComposition": {
       "description": "Smaller compositions included in this work (e.g. a movement in a symphony).",
-      "type": "array",
-      "items": { "$ref": "MusicComposition.schema.json" }
+      "oneOf": [
+        { "$ref": "MusicComposition.schema.json" },
+        { "type": "array", "items": { "$ref": "MusicComposition.schema.json" } }
+      ]
     },
     "iswcCode": {
       "description": "The International Standard Musical Work Code for the composition.",
@@ -44,8 +46,10 @@
     },
     "musicArrangement": {
       "description": "An arrangement derived from the composition.",
-      "type": "array",
-      "items": { "$ref": "MusicComposition.schema.json" }
+      "oneOf": [
+        { "$ref": "MusicComposition.schema.json" },
+        { "type": "array", "items": { "$ref": "MusicComposition.schema.json" } }
+      ]
     },
     "musicCompositionForm": {
       "description": "The type of composition (e.g. overture, sonata, symphony, etc.).",
@@ -57,8 +61,10 @@
     },
     "recordedAs": {
       "description": "An audio recording of the work.",
-      "type": "array",
-      "items": { "$ref": "MusicRecording.schema.json" }
+      "oneOf": [
+        { "$ref": "MusicRecording.schema.json" },
+        { "type": "array", "items": { "$ref": "MusicRecording.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

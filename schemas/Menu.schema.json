@@ -16,13 +16,17 @@
     "@type": { "const": "Menu" },
     "hasMenuItem": {
       "description": "A food or drink item contained in a menu or menu section.",
-      "type": "array",
-      "items": { "$ref": "MenuItem.schema.json" }
+      "oneOf": [
+        { "$ref": "MenuItem.schema.json" },
+        { "type": "array", "items": { "$ref": "MenuItem.schema.json" } }
+      ]
     },
     "hasMenuSection": {
       "description": "A subgrouping of the menu (by dishes, course, serving time period, etc.).",
-      "type": "array",
-      "items": { "$ref": "MenuSection.schema.json" }
+      "oneOf": [
+        { "$ref": "MenuSection.schema.json" },
+        { "type": "array", "items": { "$ref": "MenuSection.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

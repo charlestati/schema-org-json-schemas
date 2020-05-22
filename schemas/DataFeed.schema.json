@@ -16,14 +16,25 @@
     "@type": { "const": "DataFeed" },
     "dataFeedElement": {
       "description": "An item within in a data feed. Data feeds may have many elements.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string" },
-          { "$ref": "DataFeedItem.schema.json" },
-          { "$ref": "Thing.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "DataFeedItem.schema.json" },
+            { "$ref": "Thing.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "DataFeedItem.schema.json" },
+              { "$ref": "Thing.schema.json" }
+            ]
+          }
+        }
+      ]
     }
   },
   "required": ["@type"]

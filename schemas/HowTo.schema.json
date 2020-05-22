@@ -30,40 +30,80 @@
     },
     "step": {
       "description": "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string" },
-          { "$ref": "CreativeWork.schema.json" },
-          { "$ref": "HowToSection.schema.json" },
-          { "$ref": "HowToStep.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "CreativeWork.schema.json" },
+            { "$ref": "HowToSection.schema.json" },
+            { "$ref": "HowToStep.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "CreativeWork.schema.json" },
+              { "$ref": "HowToSection.schema.json" },
+              { "$ref": "HowToStep.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "steps": {
       "description": "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string" },
-          { "$ref": "CreativeWork.schema.json" },
-          { "$ref": "ItemList.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "CreativeWork.schema.json" },
+            { "$ref": "ItemList.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "CreativeWork.schema.json" },
+              { "$ref": "ItemList.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "supply": {
       "description": "A sub-property of instrument. A supply consumed when performing instructions or a direction.",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "HowToSupply.schema.json" }]
-      }
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string" }, { "$ref": "HowToSupply.schema.json" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "HowToSupply.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "tool": {
       "description": "A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "HowToTool.schema.json" }]
-      }
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string" }, { "$ref": "HowToTool.schema.json" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "HowToTool.schema.json" }]
+          }
+        }
+      ]
     },
     "totalTime": {
       "description": "The total time required to perform instructions or a direction (including time to prepare the supplies), in ISO 8601 duration format.",

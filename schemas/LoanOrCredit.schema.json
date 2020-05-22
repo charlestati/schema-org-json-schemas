@@ -28,10 +28,15 @@
     },
     "requiredCollateral": {
       "description": "Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
-      }
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
+          }
+        }
+      ]
     }
   },
   "required": ["@type"]

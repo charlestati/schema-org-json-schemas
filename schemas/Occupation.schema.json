@@ -16,14 +16,25 @@
     "@type": { "const": "Occupation" },
     "estimatedSalary": {
       "description": "An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "number" },
-          { "$ref": "MonetaryAmount.schema.json" },
-          { "$ref": "MonetaryAmountDistribution.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "number" },
+            { "$ref": "MonetaryAmount.schema.json" },
+            { "$ref": "MonetaryAmountDistribution.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "number" },
+              { "$ref": "MonetaryAmount.schema.json" },
+              { "$ref": "MonetaryAmountDistribution.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "experienceRequirements": {
       "description": "Description of skills and experience needed for the position or Occupation.",
@@ -35,13 +46,17 @@
     },
     "responsibilities": {
       "description": "Responsibilities associated with this role or Occupation.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "skills": {
       "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     }
   },
   "required": ["@type"]

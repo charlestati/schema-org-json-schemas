@@ -32,8 +32,10 @@
     },
     "paymentAccepted": {
       "description": "Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "priceRange": {
       "description": "The price range of the business, for example $$$.",

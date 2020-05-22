@@ -16,8 +16,10 @@
     "@type": { "const": "Action" },
     "actionStatus": {
       "description": "Indicates the current disposition of the Action.",
-      "type": "array",
-      "items": { "$ref": "ActionStatusType.schema.json" }
+      "oneOf": [
+        { "$ref": "ActionStatusType.schema.json" },
+        { "type": "array", "items": { "$ref": "ActionStatusType.schema.json" } }
+      ]
     },
     "agent": {
       "description": "The direct performer or driver of the action (animate or inanimate). e.g. John wrote a book.",
@@ -35,8 +37,10 @@
     },
     "error": {
       "description": "For failed actions, more information on the cause of the failure.",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
+      "oneOf": [
+        { "$ref": "Thing.schema.json" },
+        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+      ]
     },
     "instrument": {
       "description": "The object that helped the agent perform the action. e.g. John wrote a book with a pen.",
@@ -56,13 +60,23 @@
     },
     "participant": {
       "description": "Other co-agents that participated in the action indirectly. e.g. John wrote a book with Steve.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "result": {
       "description": "The result produced in the action. e.g. John wrote a book.",
@@ -77,8 +91,10 @@
     },
     "target": {
       "description": "Indicates a target EntryPoint for an Action.",
-      "type": "array",
-      "items": { "$ref": "EntryPoint.schema.json" }
+      "oneOf": [
+        { "$ref": "EntryPoint.schema.json" },
+        { "type": "array", "items": { "$ref": "EntryPoint.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

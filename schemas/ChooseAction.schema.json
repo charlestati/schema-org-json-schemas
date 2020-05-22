@@ -16,17 +16,27 @@
     "@type": { "const": "ChooseAction" },
     "actionOption": {
       "description": "A sub property of object. The options subject to this action.",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
-      }
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
+          }
+        }
+      ]
     },
     "option": {
       "description": "A sub property of object. The options subject to this action.",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
-      }
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
+          }
+        }
+      ]
     }
   },
   "required": ["@type"]

@@ -24,8 +24,13 @@
     },
     "priceSpecification": {
       "description": "One or more detailed price specifications, indicating the unit price and delivery or payment charges.",
-      "type": "array",
-      "items": { "$ref": "PriceSpecification.schema.json" }
+      "oneOf": [
+        { "$ref": "PriceSpecification.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "PriceSpecification.schema.json" }
+        }
+      ]
     }
   },
   "required": ["@type"]

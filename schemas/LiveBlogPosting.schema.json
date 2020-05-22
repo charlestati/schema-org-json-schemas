@@ -23,8 +23,10 @@
     },
     "liveBlogUpdate": {
       "description": "An update to the LiveBlog.",
-      "type": "array",
-      "items": { "$ref": "BlogPosting.schema.json" }
+      "oneOf": [
+        { "$ref": "BlogPosting.schema.json" },
+        { "type": "array", "items": { "$ref": "BlogPosting.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

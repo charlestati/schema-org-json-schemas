@@ -16,23 +16,37 @@
     "@type": { "const": "SoftwareSourceCode" },
     "codeRepository": {
       "description": "Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).",
-      "type": "array",
-      "items": { "type": "string", "format": "uri" }
+      "oneOf": [
+        { "type": "string", "format": "uri" },
+        { "type": "array", "items": { "type": "string", "format": "uri" } }
+      ]
     },
     "codeSampleType": {
       "description": "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "programmingLanguage": {
       "description": "The computer programming language.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string" },
-          { "$ref": "ComputerLanguage.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "ComputerLanguage.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "ComputerLanguage.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "runtime": {
       "description": "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
@@ -40,8 +54,10 @@
     },
     "runtimePlatform": {
       "description": "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "sampleType": {
       "description": "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.",
@@ -49,8 +65,13 @@
     },
     "targetProduct": {
       "description": "Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.",
-      "type": "array",
-      "items": { "$ref": "SoftwareApplication.schema.json" }
+      "oneOf": [
+        { "$ref": "SoftwareApplication.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "SoftwareApplication.schema.json" }
+        }
+      ]
     }
   },
   "required": ["@type"]

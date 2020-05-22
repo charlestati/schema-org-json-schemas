@@ -16,8 +16,10 @@
     "@type": { "const": "MediaObject" },
     "associatedArticle": {
       "description": "A NewsArticle associated with the Media Object.",
-      "type": "array",
-      "items": { "$ref": "NewsArticle.schema.json" }
+      "oneOf": [
+        { "$ref": "NewsArticle.schema.json" },
+        { "type": "array", "items": { "$ref": "NewsArticle.schema.json" } }
+      ]
     },
     "bitrate": {
       "description": "The bitrate of the media object.",
@@ -66,8 +68,10 @@
     },
     "playerType": {
       "description": "Player type required—for example, Flash or Silverlight.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "productionCompany": {
       "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",

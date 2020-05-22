@@ -16,13 +16,17 @@
     "@type": { "const": "UpdateAction" },
     "collection": {
       "description": "A sub property of object. The collection target of the action.",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
+      "oneOf": [
+        { "$ref": "Thing.schema.json" },
+        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+      ]
     },
     "targetCollection": {
       "description": "A sub property of object. The collection target of the action.",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
+      "oneOf": [
+        { "$ref": "Thing.schema.json" },
+        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

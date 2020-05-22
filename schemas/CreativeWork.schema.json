@@ -20,33 +20,45 @@
     },
     "accessMode": {
       "description": "The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Expected values include: auditory, tactile, textual, visual, colorDependent, chartOnVisual, chemOnVisual, diagramOnVisual, mathOnVisual, musicOnVisual, textOnVisual.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "accessModeSufficient": {
       "description": "A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include:  auditory, tactile, textual, visual.",
-      "type": "array",
-      "items": { "$ref": "ItemList.schema.json" }
+      "oneOf": [
+        { "$ref": "ItemList.schema.json" },
+        { "type": "array", "items": { "$ref": "ItemList.schema.json" } }
+      ]
     },
     "accessibilityAPI": {
       "description": "Indicates that the resource is compatible with the referenced accessibility API (WebSchemas wiki lists possible values).",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "accessibilityControl": {
       "description": "Identifies input methods that are sufficient to fully control the described resource (WebSchemas wiki lists possible values).",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "accessibilityFeature": {
       "description": "Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility (WebSchemas wiki lists possible values).",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "accessibilityHazard": {
       "description": "A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3 (WebSchemas wiki lists possible values).",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "accessibilitySummary": {
       "description": "A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as \"short descriptions are present but long descriptions will be needed for non-visual users\" or \"short descriptions are present and no long descriptions are needed.\"",
@@ -62,8 +74,10 @@
     },
     "alternativeHeadline": {
       "description": "A secondary title of the CreativeWork.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "associatedMedia": {
       "description": "A media object that encodes this CreativeWork. This property is a synonym for encoding.",
@@ -75,14 +89,25 @@
     },
     "audio": {
       "description": "An embedded audio object.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "AudioObject.schema.json" },
-          { "$ref": "Clip.schema.json" },
-          { "$ref": "MusicRecording.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "AudioObject.schema.json" },
+            { "$ref": "Clip.schema.json" },
+            { "$ref": "MusicRecording.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "AudioObject.schema.json" },
+              { "$ref": "Clip.schema.json" },
+              { "$ref": "MusicRecording.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "author": {
       "description": "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
@@ -93,30 +118,51 @@
     },
     "award": {
       "description": "An award won by or for this item.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "awards": {
       "description": "Awards won by or for this item.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "character": {
       "description": "Fictional person connected with a creative work.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "citation": {
       "description": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "CreativeWork.schema.json" }]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "CreativeWork.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "CreativeWork.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "comment": {
       "description": "Comments, typically from users.",
-      "type": "array",
-      "items": { "$ref": "Comment.schema.json" }
+      "oneOf": [
+        { "$ref": "Comment.schema.json" },
+        { "type": "array", "items": { "$ref": "Comment.schema.json" } }
+      ]
     },
     "commentCount": {
       "description": "The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.",
@@ -128,20 +174,35 @@
     },
     "contentRating": {
       "description": "Official rating of a piece of content—for example,'MPAA PG-13'.",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "Rating.schema.json" }]
-      }
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "Rating.schema.json" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "Rating.schema.json" }]
+          }
+        }
+      ]
     },
     "contributor": {
       "description": "A secondary contributor to the CreativeWork or Event.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "copyrightHolder": {
       "description": "The party holding the legal copyright to the CreativeWork.",
@@ -184,8 +245,10 @@
     },
     "discussionUrl": {
       "description": "A link to the page containing the comments of the CreativeWork.",
-      "type": "array",
-      "items": { "type": "string", "format": "uri" }
+      "oneOf": [
+        { "type": "string", "format": "uri" },
+        { "type": "array", "items": { "type": "string", "format": "uri" } }
+      ]
     },
     "editor": {
       "description": "Specifies the Person who edited the CreativeWork.",
@@ -193,8 +256,10 @@
     },
     "educationalAlignment": {
       "description": "An alignment to an established educational framework.\n\nThis property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource teaches or assesses a competency.",
-      "type": "array",
-      "items": { "$ref": "AlignmentObject.schema.json" }
+      "oneOf": [
+        { "$ref": "AlignmentObject.schema.json" },
+        { "type": "array", "items": { "$ref": "AlignmentObject.schema.json" } }
+      ]
     },
     "educationalUse": {
       "description": "The purpose of a work in the context of education; for example, 'assignment', 'group work'.",
@@ -202,8 +267,10 @@
     },
     "encoding": {
       "description": "A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.",
-      "type": "array",
-      "items": { "$ref": "MediaObject.schema.json" }
+      "oneOf": [
+        { "$ref": "MediaObject.schema.json" },
+        { "type": "array", "items": { "$ref": "MediaObject.schema.json" } }
+      ]
     },
     "encodingFormat": {
       "description": "Media type typically expressed using a MIME format (see IANA site and MDN reference) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).\n\nIn cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information.\n\nUnregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.",
@@ -211,13 +278,17 @@
     },
     "encodings": {
       "description": "A media object that encodes this CreativeWork.",
-      "type": "array",
-      "items": { "$ref": "MediaObject.schema.json" }
+      "oneOf": [
+        { "$ref": "MediaObject.schema.json" },
+        { "type": "array", "items": { "$ref": "MediaObject.schema.json" } }
+      ]
     },
     "exampleOfWork": {
       "description": "A creative work that this work is an example/instance/realization/derivation of.",
-      "type": "array",
-      "items": { "$ref": "CreativeWork.schema.json" }
+      "oneOf": [
+        { "$ref": "CreativeWork.schema.json" },
+        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+      ]
     },
     "expires": {
       "description": "Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, or a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.",
@@ -230,13 +301,23 @@
     },
     "funder": {
       "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "genre": {
       "description": "Genre of the creative work, broadcast channel or group.",
@@ -244,8 +325,10 @@
     },
     "hasPart": {
       "description": "Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).",
-      "type": "array",
-      "items": { "$ref": "CreativeWork.schema.json" }
+      "oneOf": [
+        { "$ref": "CreativeWork.schema.json" },
+        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+      ]
     },
     "headline": { "description": "Headline of the article.", "type": "string" },
     "inLanguage": {
@@ -266,25 +349,47 @@
     },
     "isBasedOn": {
       "description": "A resource from which this work is derived or from which it is a modification or adaption.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "CreativeWork.schema.json" },
-          { "$ref": "Product.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "CreativeWork.schema.json" },
+            { "$ref": "Product.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "CreativeWork.schema.json" },
+              { "$ref": "Product.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "isBasedOnUrl": {
       "description": "A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "CreativeWork.schema.json" },
-          { "$ref": "Product.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "CreativeWork.schema.json" },
+            { "$ref": "Product.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "CreativeWork.schema.json" },
+              { "$ref": "Product.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "isFamilyFriendly": {
       "description": "Indicates whether this content is family friendly.",
@@ -307,13 +412,23 @@
     },
     "license": {
       "description": "A license document that applies to this content, typically indicated by URL.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "CreativeWork.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "CreativeWork.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "CreativeWork.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "locationCreated": {
       "description": "The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.",
@@ -321,34 +436,59 @@
     },
     "mainEntity": {
       "description": "Indicates the primary entity described in some page or other CreativeWork.",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
+      "oneOf": [
+        { "$ref": "Thing.schema.json" },
+        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+      ]
     },
     "material": {
       "description": "A material that something is made from, e.g. leather, wool, cotton, paper.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "type": "string" },
-          { "$ref": "Product.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "Product.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "Product.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "mentions": {
       "description": "Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
+      "oneOf": [
+        { "$ref": "Thing.schema.json" },
+        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+      ]
     },
     "offers": {
       "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Demand.schema.json" },
-          { "$ref": "Offer.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Demand.schema.json" },
+            { "$ref": "Offer.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Demand.schema.json" },
+              { "$ref": "Offer.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "position": {
       "description": "The position of an item in a series or sequence of items.",
@@ -370,8 +510,10 @@
     },
     "publication": {
       "description": "A publication event associated with the item.",
-      "type": "array",
-      "items": { "$ref": "PublicationEvent.schema.json" }
+      "oneOf": [
+        { "$ref": "PublicationEvent.schema.json" },
+        { "type": "array", "items": { "$ref": "PublicationEvent.schema.json" } }
+      ]
     },
     "publisher": {
       "description": "The publisher of the creative work.",
@@ -397,20 +539,34 @@
     },
     "review": {
       "description": "A review of the item.",
-      "type": "array",
-      "items": { "$ref": "Review.schema.json" }
+      "oneOf": [
+        { "$ref": "Review.schema.json" },
+        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+      ]
     },
     "reviews": {
       "description": "Review of the item.",
-      "type": "array",
-      "items": { "$ref": "Review.schema.json" }
+      "oneOf": [
+        { "$ref": "Review.schema.json" },
+        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+      ]
     },
     "schemaVersion": {
       "description": "Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as http://schema.org/version/2.0/ if precise indication of schema version was required by some application.",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
-      }
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
     },
     "sourceOrganization": {
       "description": "The Organization on whose behalf the creator was working.",
@@ -426,13 +582,23 @@
     },
     "sponsor": {
       "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "temporal": {
       "description": "The \"temporal\" property can be used in cases where more specific properties\n(e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.",
@@ -455,8 +621,10 @@
     },
     "thumbnailUrl": {
       "description": "A thumbnail image relevant to the Thing.",
-      "type": "array",
-      "items": { "type": "string", "format": "uri" }
+      "oneOf": [
+        { "type": "string", "format": "uri" },
+        { "type": "array", "items": { "type": "string", "format": "uri" } }
+      ]
     },
     "timeRequired": {
       "description": "Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.",
@@ -465,13 +633,23 @@
     },
     "translator": {
       "description": "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "typicalAgeRange": {
       "description": "The typical expected age range, e.g. '7-9', '11-'.",
@@ -483,18 +661,30 @@
     },
     "video": {
       "description": "An embedded video object.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Clip.schema.json" },
-          { "$ref": "VideoObject.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Clip.schema.json" },
+            { "$ref": "VideoObject.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Clip.schema.json" },
+              { "$ref": "VideoObject.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "workExample": {
       "description": "Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.",
-      "type": "array",
-      "items": { "$ref": "CreativeWork.schema.json" }
+      "oneOf": [
+        { "$ref": "CreativeWork.schema.json" },
+        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

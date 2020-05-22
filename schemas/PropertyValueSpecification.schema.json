@@ -40,23 +40,31 @@
     },
     "valueMaxLength": {
       "description": "Specifies the allowed range for number of characters in a literal value.",
-      "type": "array",
-      "items": { "type": "number" }
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
     },
     "valueMinLength": {
       "description": "Specifies the minimum allowed range for number of characters in a literal value.",
-      "type": "array",
-      "items": { "type": "number" }
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
     },
     "valueName": {
       "description": "Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "valuePattern": {
       "description": "Specifies a regular expression for testing literal values according to the HTML spec.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "valueRequired": {
       "description": "Whether the property must be filled in to complete the action.  Default is false.",

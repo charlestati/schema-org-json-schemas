@@ -16,13 +16,23 @@
     "@type": { "const": "Reservation" },
     "bookingAgent": {
       "description": "'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "bookingTime": {
       "description": "The date and time the reservation was booked.",
@@ -31,13 +41,23 @@
     },
     "broker": {
       "description": "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "modifiedTime": {
       "description": "The date and time the reservation was modified.",
@@ -50,8 +70,13 @@
     },
     "programMembershipUsed": {
       "description": "Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.",
-      "type": "array",
-      "items": { "$ref": "ProgramMembership.schema.json" }
+      "oneOf": [
+        { "$ref": "ProgramMembership.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "ProgramMembership.schema.json" }
+        }
+      ]
     },
     "provider": {
       "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
@@ -66,8 +91,10 @@
     },
     "reservationId": {
       "description": "A unique identifier for the reservation.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "reservationStatus": {
       "description": "The current status of the reservation.",
@@ -75,8 +102,10 @@
     },
     "reservedTicket": {
       "description": "A ticket associated with the reservation.",
-      "type": "array",
-      "items": { "$ref": "Ticket.schema.json" }
+      "oneOf": [
+        { "$ref": "Ticket.schema.json" },
+        { "type": "array", "items": { "$ref": "Ticket.schema.json" } }
+      ]
     },
     "totalPrice": {
       "description": "The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n\nUse values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\nUse '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n\n",

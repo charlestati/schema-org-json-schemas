@@ -28,18 +28,24 @@
     },
     "availableOnDevice": {
       "description": "Device required to run the application. Used in cases where a specific make/model is required to run the application.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "countriesNotSupported": {
       "description": "Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "countriesSupported": {
       "description": "Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "device": {
       "description": "Device required to run the application. Used in cases where a specific make/model is required to run the application.",
@@ -52,10 +58,20 @@
     },
     "featureList": {
       "description": "Features or modules provided by this application (and possibly required by other applications).",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
-      }
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
     },
     "fileSize": {
       "description": "Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.",
@@ -72,13 +88,17 @@
     },
     "operatingSystem": {
       "description": "Operating systems supported (Windows 7, OSX 10.6, Android 1.6).",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "permissions": {
       "description": "Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "processorRequirements": {
       "description": "Processor architecture required to run the application (e.g. IA64).",
@@ -90,37 +110,74 @@
     },
     "requirements": {
       "description": "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
-      }
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
     },
     "screenshot": {
       "description": "A link to a screenshot image of the app.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "ImageObject.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "ImageObject.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "ImageObject.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "softwareAddOn": {
       "description": "Additional content for a software application.",
-      "type": "array",
-      "items": { "$ref": "SoftwareApplication.schema.json" }
+      "oneOf": [
+        { "$ref": "SoftwareApplication.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "SoftwareApplication.schema.json" }
+        }
+      ]
     },
     "softwareHelp": {
       "description": "Software application help.",
-      "type": "array",
-      "items": { "$ref": "CreativeWork.schema.json" }
+      "oneOf": [
+        { "$ref": "CreativeWork.schema.json" },
+        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+      ]
     },
     "softwareRequirements": {
       "description": "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
-      }
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
     },
     "softwareVersion": {
       "description": "Version of the software instance.",
@@ -132,8 +189,10 @@
     },
     "supportingData": {
       "description": "Supporting data for a SoftwareApplication.",
-      "type": "array",
-      "items": { "$ref": "DataFeed.schema.json" }
+      "oneOf": [
+        { "$ref": "DataFeed.schema.json" },
+        { "type": "array", "items": { "$ref": "DataFeed.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

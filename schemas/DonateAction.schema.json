@@ -16,15 +16,27 @@
     "@type": { "const": "DonateAction" },
     "recipient": {
       "description": "A sub property of participant. The participant who is at the receiving end of the action.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Audience.schema.json" },
-          { "$ref": "ContactPoint.schema.json" },
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Audience.schema.json" },
+            { "$ref": "ContactPoint.schema.json" },
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Audience.schema.json" },
+              { "$ref": "ContactPoint.schema.json" },
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     }
   },
   "required": ["@type"]

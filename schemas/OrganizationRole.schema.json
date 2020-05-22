@@ -16,8 +16,10 @@
     "@type": { "const": "OrganizationRole" },
     "numberedPosition": {
       "description": "A number associated with a role in an organization, for example, the number on an athlete's jersey.",
-      "type": "array",
-      "items": { "type": "number" }
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
     }
   },
   "required": ["@type"]

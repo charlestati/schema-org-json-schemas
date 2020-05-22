@@ -35,19 +35,32 @@
     },
     "employmentType": {
       "description": "Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "estimatedSalary": {
       "description": "An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "number" },
-          { "$ref": "MonetaryAmount.schema.json" },
-          { "$ref": "MonetaryAmountDistribution.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "number" },
+            { "$ref": "MonetaryAmount.schema.json" },
+            { "$ref": "MonetaryAmountDistribution.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "number" },
+              { "$ref": "MonetaryAmount.schema.json" },
+              { "$ref": "MonetaryAmountDistribution.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "experienceRequirements": {
       "description": "Description of skills and experience needed for the position or Occupation.",
@@ -59,13 +72,17 @@
     },
     "incentiveCompensation": {
       "description": "Description of bonus and commission compensation aspects of the job.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "incentives": {
       "description": "Description of bonus and commission compensation aspects of the job.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "industry": {
       "description": "The industry associated with the job position.",
@@ -73,13 +90,17 @@
     },
     "jobBenefits": {
       "description": "Description of benefits associated with the job.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "jobLocation": {
       "description": "A (typically single) geographic location associated with the job position.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+      "oneOf": [
+        { "$ref": "Place.schema.json" },
+        { "type": "array", "items": { "$ref": "Place.schema.json" } }
+      ]
     },
     "relevantOccupation": {
       "description": "The Occupation for the JobPosting.",
@@ -87,8 +108,10 @@
     },
     "responsibilities": {
       "description": "Responsibilities associated with this role or Occupation.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "salaryCurrency": {
       "description": "The currency (coded using ISO 4217 ) used for the main salary information in this job posting or for this employee.",
@@ -96,13 +119,17 @@
     },
     "skills": {
       "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "specialCommitments": {
       "description": "Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "title": { "description": "The title of the job.", "type": "string" },
     "validThrough": {

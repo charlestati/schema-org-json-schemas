@@ -24,18 +24,24 @@
     },
     "executableLibraryName": {
       "description": "Library file name e.g., mscorlib.dll, system.web.dll.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "programmingModel": {
       "description": "Indicates whether API is managed or unmanaged.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "targetPlatform": {
       "description": "Type of app development: phone, Metro style, desktop, XBox, etc.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     }
   },
   "required": ["@type"]

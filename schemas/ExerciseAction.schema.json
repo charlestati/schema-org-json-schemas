@@ -16,48 +16,72 @@
     "@type": { "const": "ExerciseAction" },
     "course": {
       "description": "A sub property of location. The course where this action was taken.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+      "oneOf": [
+        { "$ref": "Place.schema.json" },
+        { "type": "array", "items": { "$ref": "Place.schema.json" } }
+      ]
     },
     "distance": {
       "description": "The distance travelled, e.g. exercising or travelling.",
-      "type": "array",
-      "items": { "type": "string", "format": "https://schema.org/Distance" }
+      "oneOf": [
+        { "type": "string", "format": "https://schema.org/Distance" },
+        {
+          "type": "array",
+          "items": { "type": "string", "format": "https://schema.org/Distance" }
+        }
+      ]
     },
     "exerciseCourse": {
       "description": "A sub property of location. The course where this action was taken.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+      "oneOf": [
+        { "$ref": "Place.schema.json" },
+        { "type": "array", "items": { "$ref": "Place.schema.json" } }
+      ]
     },
     "fromLocation": {
       "description": "A sub property of location. The original location of the object or the agent before the action.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+      "oneOf": [
+        { "$ref": "Place.schema.json" },
+        { "type": "array", "items": { "$ref": "Place.schema.json" } }
+      ]
     },
     "opponent": {
       "description": "A sub property of participant. The opponent on this action.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "sportsActivityLocation": {
       "description": "A sub property of location. The sports activity location where this action occurred.",
-      "type": "array",
-      "items": { "$ref": "SportsActivityLocation.schema.json" }
+      "oneOf": [
+        { "$ref": "SportsActivityLocation.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "SportsActivityLocation.schema.json" }
+        }
+      ]
     },
     "sportsEvent": {
       "description": "A sub property of location. The sports event where this action occurred.",
-      "type": "array",
-      "items": { "$ref": "SportsEvent.schema.json" }
+      "oneOf": [
+        { "$ref": "SportsEvent.schema.json" },
+        { "type": "array", "items": { "$ref": "SportsEvent.schema.json" } }
+      ]
     },
     "sportsTeam": {
       "description": "A sub property of participant. The sports team that participated on this action.",
-      "type": "array",
-      "items": { "$ref": "SportsTeam.schema.json" }
+      "oneOf": [
+        { "$ref": "SportsTeam.schema.json" },
+        { "type": "array", "items": { "$ref": "SportsTeam.schema.json" } }
+      ]
     },
     "toLocation": {
       "description": "A sub property of location. The final location of the object or the agent after the action.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+      "oneOf": [
+        { "$ref": "Place.schema.json" },
+        { "type": "array", "items": { "$ref": "Place.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

@@ -16,18 +16,24 @@
     "@type": { "const": "GameServer" },
     "game": {
       "description": "Video game which is played on this server.",
-      "type": "array",
-      "items": { "$ref": "VideoGame.schema.json" }
+      "oneOf": [
+        { "$ref": "VideoGame.schema.json" },
+        { "type": "array", "items": { "$ref": "VideoGame.schema.json" } }
+      ]
     },
     "playersOnline": {
       "description": "Number of players on the server.",
-      "type": "array",
-      "items": { "type": "integer" }
+      "oneOf": [
+        { "type": "integer" },
+        { "type": "array", "items": { "type": "integer" } }
+      ]
     },
     "serverStatus": {
       "description": "Status of a game server.",
-      "type": "array",
-      "items": { "$ref": "GameServerStatus.schema.json" }
+      "oneOf": [
+        { "$ref": "GameServerStatus.schema.json" },
+        { "type": "array", "items": { "$ref": "GameServerStatus.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

@@ -35,10 +35,20 @@
     },
     "ticketToken": {
       "description": "Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
-      }
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
     },
     "ticketedSeat": {
       "description": "The seat associated with the ticket.",

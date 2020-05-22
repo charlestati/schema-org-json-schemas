@@ -120,30 +120,36 @@ function buildType(typeLabel) {
  */
 function buildTypes(types, isArray) {
   if (types.length > 1) {
-    if (isArray) {
-      return {
-        type: "array",
-        items: {
-          anyOf: sortBy(
-            types.map((type) => buildType(type["rdfs:label"])),
-            ["type", "format", "$ref"],
-          ),
-        },
-      };
-    }
-    return {
+    const possibleTypes = {
       anyOf: sortBy(
         types.map((type) => buildType(type["rdfs:label"])),
         ["type", "format", "$ref"],
       ),
     };
+    if (isArray) {
+      return {
+        oneOf: [
+          possibleTypes,
+          {
+            type: "array",
+            items: possibleTypes,
+          },
+        ],
+      };
+    }
+    return possibleTypes;
   }
   const typeLabel = types[0]["rdfs:label"];
   const type = buildType(typeLabel);
   return isArray && !typesWithoutMultiplicity.has(typeLabel)
     ? {
-        type: "array",
-        items: type,
+        oneOf: [
+          type,
+          {
+            type: "array",
+            items: type,
+          },
+        ],
       }
     : type;
 }

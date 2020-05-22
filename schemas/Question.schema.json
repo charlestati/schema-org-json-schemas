@@ -31,13 +31,23 @@
     },
     "suggestedAnswer": {
       "description": "An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Answer.schema.json" },
-          { "$ref": "ItemList.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Answer.schema.json" },
+            { "$ref": "ItemList.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Answer.schema.json" },
+              { "$ref": "ItemList.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "upvoteCount": {
       "description": "The number of upvotes this question, answer or comment has received from the community.",

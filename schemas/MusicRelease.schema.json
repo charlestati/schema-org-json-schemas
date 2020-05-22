@@ -32,8 +32,13 @@
     },
     "musicReleaseFormat": {
       "description": "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
-      "type": "array",
-      "items": { "$ref": "MusicReleaseFormatType.schema.json" }
+      "oneOf": [
+        { "$ref": "MusicReleaseFormatType.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "MusicReleaseFormatType.schema.json" }
+        }
+      ]
     },
     "recordLabel": {
       "description": "The label that issued the release.",

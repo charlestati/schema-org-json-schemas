@@ -16,8 +16,10 @@
     "@type": { "const": "AskAction" },
     "question": {
       "description": "A sub property of object. A question.",
-      "type": "array",
-      "items": { "$ref": "Question.schema.json" }
+      "oneOf": [
+        { "$ref": "Question.schema.json" },
+        { "type": "array", "items": { "$ref": "Question.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

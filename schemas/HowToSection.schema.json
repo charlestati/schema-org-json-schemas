@@ -24,14 +24,25 @@
     "@type": { "const": "HowToSection" },
     "steps": {
       "description": "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string" },
-          { "$ref": "CreativeWork.schema.json" },
-          { "$ref": "ItemList.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "CreativeWork.schema.json" },
+            { "$ref": "ItemList.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "CreativeWork.schema.json" },
+              { "$ref": "ItemList.schema.json" }
+            ]
+          }
+        }
+      ]
     }
   },
   "required": ["@type"]

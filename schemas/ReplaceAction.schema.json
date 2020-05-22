@@ -16,13 +16,17 @@
     "@type": { "const": "ReplaceAction" },
     "replacee": {
       "description": "A sub property of object. The object that is being replaced.",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
+      "oneOf": [
+        { "$ref": "Thing.schema.json" },
+        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+      ]
     },
     "replacer": {
       "description": "A sub property of object. The object that replaces.",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
+      "oneOf": [
+        { "$ref": "Thing.schema.json" },
+        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

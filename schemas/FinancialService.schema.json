@@ -16,10 +16,20 @@
     "@type": { "const": "FinancialService" },
     "feesAndCommissionsSpecification": {
       "description": "Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
-      }
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
     }
   },
   "required": ["@type"]

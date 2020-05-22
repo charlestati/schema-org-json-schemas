@@ -30,18 +30,30 @@
     },
     "lodgingUnitDescription": {
       "description": "A full description of the lodging unit.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "lodgingUnitType": {
       "description": "Textual description of the unit type (including suite vs. room, size of bed, etc.).",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string" },
-          { "$ref": "QualitativeValue.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "QualitativeValue.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "QualitativeValue.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "numAdults": {
       "description": "The number of adults staying in the unit.",

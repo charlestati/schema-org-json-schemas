@@ -43,8 +43,10 @@
     },
     "hasBroadcastChannel": {
       "description": "A broadcast channel of a broadcast service.",
-      "type": "array",
-      "items": { "$ref": "BroadcastChannel.schema.json" }
+      "oneOf": [
+        { "$ref": "BroadcastChannel.schema.json" },
+        { "type": "array", "items": { "$ref": "BroadcastChannel.schema.json" } }
+      ]
     },
     "inLanguage": {
       "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
@@ -52,8 +54,10 @@
     },
     "parentService": {
       "description": "A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.",
-      "type": "array",
-      "items": { "$ref": "BroadcastService.schema.json" }
+      "oneOf": [
+        { "$ref": "BroadcastService.schema.json" },
+        { "type": "array", "items": { "$ref": "BroadcastService.schema.json" } }
+      ]
     },
     "videoFormat": {
       "description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",

@@ -30,13 +30,23 @@
     },
     "offers": {
       "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Demand.schema.json" },
-          { "$ref": "Offer.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Demand.schema.json" },
+            { "$ref": "Offer.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Demand.schema.json" },
+              { "$ref": "Offer.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "provider": {
       "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",

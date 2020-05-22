@@ -16,10 +16,15 @@
     "@type": { "const": "ServiceChannel" },
     "availableLanguage": {
       "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
-      }
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
+          }
+        }
+      ]
     },
     "processingTime": {
       "description": "Estimated processing time for the service using this channel.",

@@ -20,8 +20,10 @@
     },
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
@@ -29,23 +31,43 @@
     },
     "attendee": {
       "description": "A person or organization attending the event.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "attendees": {
       "description": "A person attending the event.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "audience": {
       "description": "An intended audience, i.e. a group for whom something was created.",
@@ -60,13 +82,23 @@
     },
     "contributor": {
       "description": "A secondary contributor to the CreativeWork or Event.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
@@ -93,18 +125,30 @@
     },
     "eventStatus": {
       "description": "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.",
-      "type": "array",
-      "items": { "$ref": "EventStatusType.schema.json" }
+      "oneOf": [
+        { "$ref": "EventStatusType.schema.json" },
+        { "type": "array", "items": { "$ref": "EventStatusType.schema.json" } }
+      ]
     },
     "funder": {
       "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "inLanguage": {
       "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
@@ -128,33 +172,63 @@
     },
     "offers": {
       "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Demand.schema.json" },
-          { "$ref": "Offer.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Demand.schema.json" },
+            { "$ref": "Offer.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Demand.schema.json" },
+              { "$ref": "Offer.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "organizer": {
       "description": "An organizer of an Event.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "performer": {
       "description": "A performer at the event—for example, a presenter, musician, musical group or actor.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "performers": {
       "description": "The main performer or performers of the event—for example, a presenter, musician, or actor.",
@@ -165,8 +239,10 @@
     },
     "previousStartDate": {
       "description": "Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.",
-      "type": "array",
-      "items": { "type": "string", "format": "date" }
+      "oneOf": [
+        { "type": "string", "format": "date" },
+        { "type": "array", "items": { "type": "string", "format": "date" } }
+      ]
     },
     "recordedIn": {
       "description": "The CreativeWork that captured all or part of this Event.",
@@ -178,18 +254,30 @@
     },
     "review": {
       "description": "A review of the item.",
-      "type": "array",
-      "items": { "$ref": "Review.schema.json" }
+      "oneOf": [
+        { "$ref": "Review.schema.json" },
+        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+      ]
     },
     "sponsor": {
       "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "startDate": {
       "description": "The start date and time of the item (in ISO 8601 date format).",
@@ -200,28 +288,44 @@
     },
     "subEvent": {
       "description": "An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.",
-      "type": "array",
-      "items": { "$ref": "Event.schema.json" }
+      "oneOf": [
+        { "$ref": "Event.schema.json" },
+        { "type": "array", "items": { "$ref": "Event.schema.json" } }
+      ]
     },
     "subEvents": {
       "description": "Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.",
-      "type": "array",
-      "items": { "$ref": "Event.schema.json" }
+      "oneOf": [
+        { "$ref": "Event.schema.json" },
+        { "type": "array", "items": { "$ref": "Event.schema.json" } }
+      ]
     },
     "superEvent": {
       "description": "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.",
-      "type": "array",
-      "items": { "$ref": "Event.schema.json" }
+      "oneOf": [
+        { "$ref": "Event.schema.json" },
+        { "type": "array", "items": { "$ref": "Event.schema.json" } }
+      ]
     },
     "translator": {
       "description": "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "typicalAgeRange": {
       "description": "The typical expected age range, e.g. '7-9', '11-'.",
@@ -229,13 +333,17 @@
     },
     "workFeatured": {
       "description": "A work featured in some event, e.g. exhibited in an ExhibitionEvent.\n       Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).",
-      "type": "array",
-      "items": { "$ref": "CreativeWork.schema.json" }
+      "oneOf": [
+        { "$ref": "CreativeWork.schema.json" },
+        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+      ]
     },
     "workPerformed": {
       "description": "A work performed in some event, for example a play performed in a TheaterEvent.",
-      "type": "array",
-      "items": { "$ref": "CreativeWork.schema.json" }
+      "oneOf": [
+        { "$ref": "CreativeWork.schema.json" },
+        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

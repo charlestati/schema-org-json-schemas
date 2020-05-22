@@ -16,13 +16,20 @@
     "@type": { "const": "MusicAlbum" },
     "albumProductionType": {
       "description": "Classification of the album by it's type of content: soundtrack, live album, studio album, etc.",
-      "type": "array",
-      "items": { "$ref": "MusicAlbumProductionType.schema.json" }
+      "oneOf": [
+        { "$ref": "MusicAlbumProductionType.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "MusicAlbumProductionType.schema.json" }
+        }
+      ]
     },
     "albumRelease": {
       "description": "A release of this album.",
-      "type": "array",
-      "items": { "$ref": "MusicRelease.schema.json" }
+      "oneOf": [
+        { "$ref": "MusicRelease.schema.json" },
+        { "type": "array", "items": { "$ref": "MusicRelease.schema.json" } }
+      ]
     },
     "albumReleaseType": {
       "description": "The kind of release which this album is: single, EP or album.",

@@ -16,8 +16,10 @@
     "@type": { "const": "Map" },
     "mapType": {
       "description": "Indicates the kind of Map, from the MapCategoryType Enumeration.",
-      "type": "array",
-      "items": { "$ref": "MapCategoryType.schema.json" }
+      "oneOf": [
+        { "$ref": "MapCategoryType.schema.json" },
+        { "type": "array", "items": { "$ref": "MapCategoryType.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

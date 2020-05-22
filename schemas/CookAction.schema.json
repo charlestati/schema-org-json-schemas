@@ -16,23 +16,37 @@
     "@type": { "const": "CookAction" },
     "foodEstablishment": {
       "description": "A sub property of location. The specific food establishment where the action occurred.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "FoodEstablishment.schema.json" },
-          { "$ref": "Place.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "FoodEstablishment.schema.json" },
+            { "$ref": "Place.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "FoodEstablishment.schema.json" },
+              { "$ref": "Place.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "foodEvent": {
       "description": "A sub property of location. The specific food event where the action occurred.",
-      "type": "array",
-      "items": { "$ref": "FoodEvent.schema.json" }
+      "oneOf": [
+        { "$ref": "FoodEvent.schema.json" },
+        { "type": "array", "items": { "$ref": "FoodEvent.schema.json" } }
+      ]
     },
     "recipe": {
       "description": "A sub property of instrument. The recipe/instructions used to perform the action.",
-      "type": "array",
-      "items": { "$ref": "Recipe.schema.json" }
+      "oneOf": [
+        { "$ref": "Recipe.schema.json" },
+        { "type": "array", "items": { "$ref": "Recipe.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

@@ -32,14 +32,25 @@
     },
     "orderedItem": {
       "description": "The item ordered.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "OrderItem.schema.json" },
-          { "$ref": "Product.schema.json" },
-          { "$ref": "Service.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "OrderItem.schema.json" },
+            { "$ref": "Product.schema.json" },
+            { "$ref": "Service.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "OrderItem.schema.json" },
+              { "$ref": "Product.schema.json" },
+              { "$ref": "Service.schema.json" }
+            ]
+          }
+        }
+      ]
     }
   },
   "required": ["@type"]

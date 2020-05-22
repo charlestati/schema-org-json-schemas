@@ -16,13 +16,17 @@
     "@type": { "const": "Airport" },
     "iataCode": {
       "description": "IATA identifier for an airline or airport.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "icaoCode": {
       "description": "ICAO identifier for an airport.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     }
   },
   "required": ["@type"]

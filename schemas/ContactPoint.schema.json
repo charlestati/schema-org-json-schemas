@@ -25,25 +25,39 @@
     },
     "availableLanguage": {
       "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
-      }
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
+          }
+        }
+      ]
     },
     "contactOption": {
       "description": "An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).",
-      "type": "array",
-      "items": { "$ref": "ContactPointOption.schema.json" }
+      "oneOf": [
+        { "$ref": "ContactPointOption.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "ContactPointOption.schema.json" }
+        }
+      ]
     },
     "contactType": {
       "description": "A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "email": {
       "description": "Email address.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "faxNumber": { "description": "The fax number.", "type": "string" },
     "hoursAvailable": {

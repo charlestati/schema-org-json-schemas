@@ -24,13 +24,17 @@
     },
     "arrivalGate": {
       "description": "Identifier of the flight's arrival gate.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "arrivalTerminal": {
       "description": "Identifier of the flight's arrival terminal.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "boardingPolicy": {
       "description": "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
@@ -46,13 +50,17 @@
     },
     "departureGate": {
       "description": "Identifier of the flight's departure gate.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "departureTerminal": {
       "description": "Identifier of the flight's departure terminal.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "estimatedFlightDuration": {
       "description": "The estimated time the flight will take.",
@@ -74,8 +82,10 @@
     },
     "mealService": {
       "description": "Description of the meals that will be provided or available for purchase.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "seller": {
       "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",

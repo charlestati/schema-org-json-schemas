@@ -20,23 +20,37 @@
     },
     "logo": {
       "description": "An associated logo.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "ImageObject.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "ImageObject.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "ImageObject.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "review": {
       "description": "A review of the item.",
-      "type": "array",
-      "items": { "$ref": "Review.schema.json" }
+      "oneOf": [
+        { "$ref": "Review.schema.json" },
+        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+      ]
     },
     "slogan": {
       "description": "A slogan or motto associated with the item.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     }
   },
   "required": ["@type"]

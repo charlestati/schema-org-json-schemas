@@ -20,8 +20,10 @@
     },
     "instructor": {
       "description": "A person assigned to instruct or provide instructional assistance for the CourseInstance.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

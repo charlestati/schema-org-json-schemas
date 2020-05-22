@@ -16,8 +16,10 @@
     "@type": { "const": "Product" },
     "additionalProperty": {
       "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
-      "type": "array",
-      "items": { "$ref": "PropertyValue.schema.json" }
+      "oneOf": [
+        { "$ref": "PropertyValue.schema.json" },
+        { "type": "array", "items": { "$ref": "PropertyValue.schema.json" } }
+      ]
     },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
@@ -29,13 +31,17 @@
     },
     "award": {
       "description": "An award won by or for this item.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "awards": {
       "description": "Awards won by or for this item.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "brand": {
       "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
@@ -46,14 +52,25 @@
     },
     "category": {
       "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "type": "string" },
-          { "$ref": "Thing.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "Thing.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "Thing.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "color": { "description": "The color of the product.", "type": "string" },
     "depth": {
@@ -88,48 +105,87 @@
     },
     "isAccessoryOrSparePartFor": {
       "description": "A pointer to another product (or multiple products) for which this product is an accessory or spare part.",
-      "type": "array",
-      "items": { "$ref": "Product.schema.json" }
+      "oneOf": [
+        { "$ref": "Product.schema.json" },
+        { "type": "array", "items": { "$ref": "Product.schema.json" } }
+      ]
     },
     "isConsumableFor": {
       "description": "A pointer to another product (or multiple products) for which this product is a consumable.",
-      "type": "array",
-      "items": { "$ref": "Product.schema.json" }
+      "oneOf": [
+        { "$ref": "Product.schema.json" },
+        { "type": "array", "items": { "$ref": "Product.schema.json" } }
+      ]
     },
     "isRelatedTo": {
       "description": "A pointer to another, somehow related product (or multiple products).",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Product.schema.json" },
-          { "$ref": "Service.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Product.schema.json" },
+            { "$ref": "Service.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Product.schema.json" },
+              { "$ref": "Service.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "isSimilarTo": {
       "description": "A pointer to another, functionally similar product (or multiple products).",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Product.schema.json" },
-          { "$ref": "Service.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Product.schema.json" },
+            { "$ref": "Service.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Product.schema.json" },
+              { "$ref": "Service.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "itemCondition": {
       "description": "A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.",
-      "type": "array",
-      "items": { "$ref": "OfferItemCondition.schema.json" }
+      "oneOf": [
+        { "$ref": "OfferItemCondition.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "OfferItemCondition.schema.json" }
+        }
+      ]
     },
     "logo": {
       "description": "An associated logo.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "ImageObject.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "ImageObject.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "ImageObject.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "manufacturer": {
       "description": "The manufacturer of the product.",
@@ -137,14 +193,25 @@
     },
     "material": {
       "description": "A material that something is made from, e.g. leather, wool, cotton, paper.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "type": "string" },
-          { "$ref": "Product.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "Product.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "Product.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "model": {
       "description": "The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.",
@@ -156,13 +223,23 @@
     },
     "offers": {
       "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Demand.schema.json" },
-          { "$ref": "Offer.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Demand.schema.json" },
+            { "$ref": "Offer.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Demand.schema.json" },
+              { "$ref": "Offer.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "productID": {
       "description": "The product identifier, such as ISBN. For example: meta itemprop=\"productID\" content=\"isbn:123-456-789\".",
@@ -185,13 +262,17 @@
     },
     "review": {
       "description": "A review of the item.",
-      "type": "array",
-      "items": { "$ref": "Review.schema.json" }
+      "oneOf": [
+        { "$ref": "Review.schema.json" },
+        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+      ]
     },
     "reviews": {
       "description": "Review of the item.",
-      "type": "array",
-      "items": { "$ref": "Review.schema.json" }
+      "oneOf": [
+        { "$ref": "Review.schema.json" },
+        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+      ]
     },
     "sku": {
       "description": "The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.",
@@ -199,8 +280,10 @@
     },
     "slogan": {
       "description": "A slogan or motto associated with the item.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "weight": {
       "description": "The weight of the product or person.",

@@ -112,8 +112,13 @@
     },
     "includesObject": {
       "description": "This links to a node or nodes indicating the exact quantity of the products included in the offer.",
-      "type": "array",
-      "items": { "$ref": "TypeAndQuantityNode.schema.json" }
+      "oneOf": [
+        { "$ref": "TypeAndQuantityNode.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "TypeAndQuantityNode.schema.json" }
+        }
+      ]
     },
     "inventoryLevel": {
       "description": "The current approximate inventory level for the item or items.",
@@ -121,8 +126,13 @@
     },
     "itemCondition": {
       "description": "A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.",
-      "type": "array",
-      "items": { "$ref": "OfferItemCondition.schema.json" }
+      "oneOf": [
+        { "$ref": "OfferItemCondition.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "OfferItemCondition.schema.json" }
+        }
+      ]
     },
     "itemOffered": {
       "description": "An item being offered (or demanded). The transactional nature of the offer or demand is documented using businessFunction, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
@@ -142,8 +152,13 @@
     },
     "priceSpecification": {
       "description": "One or more detailed price specifications, indicating the unit price and delivery or payment charges.",
-      "type": "array",
-      "items": { "$ref": "PriceSpecification.schema.json" }
+      "oneOf": [
+        { "$ref": "PriceSpecification.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "PriceSpecification.schema.json" }
+        }
+      ]
     },
     "seller": {
       "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",

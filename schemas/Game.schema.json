@@ -16,29 +16,49 @@
     "@type": { "const": "Game" },
     "characterAttribute": {
       "description": "A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
+      "oneOf": [
+        { "$ref": "Thing.schema.json" },
+        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+      ]
     },
     "gameItem": {
       "description": "An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
+      "oneOf": [
+        { "$ref": "Thing.schema.json" },
+        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+      ]
     },
     "gameLocation": {
       "description": "Real or fictional location of the game (or part of game).",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "Place.schema.json" },
-          { "$ref": "PostalAddress.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "Place.schema.json" },
+            { "$ref": "PostalAddress.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "Place.schema.json" },
+              { "$ref": "PostalAddress.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "numberOfPlayers": {
       "description": "Indicate how many people can play this game (minimum, maximum, or range).",
-      "type": "array",
-      "items": { "$ref": "QuantitativeValue.schema.json" }
+      "oneOf": [
+        { "$ref": "QuantitativeValue.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "QuantitativeValue.schema.json" }
+        }
+      ]
     },
     "quest": {
       "description": "The task that a player-controlled character, or group of characters may complete in order to gain a reward.",

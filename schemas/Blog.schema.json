@@ -16,8 +16,10 @@
     "@type": { "const": "Blog" },
     "blogPost": {
       "description": "A posting that is part of this blog.",
-      "type": "array",
-      "items": { "$ref": "BlogPosting.schema.json" }
+      "oneOf": [
+        { "$ref": "BlogPosting.schema.json" },
+        { "type": "array", "items": { "$ref": "BlogPosting.schema.json" } }
+      ]
     },
     "blogPosts": {
       "description": "The postings that are part of this blog.",

@@ -37,8 +37,10 @@
     },
     "item": {
       "description": "An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
+      "oneOf": [
+        { "$ref": "Thing.schema.json" },
+        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

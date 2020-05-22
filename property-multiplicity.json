@@ -445,6 +445,7 @@
   "performerIn": true,
   "permissions": true,
   "permitAudience": false,
+  "petsAllowed": false,
   "phase": false,
   "photo": true,
   "physiologicalBenefits": true,

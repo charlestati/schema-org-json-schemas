@@ -16,8 +16,13 @@
     "@type": { "const": "TravelAction" },
     "distance": {
       "description": "The distance travelled, e.g. exercising or travelling.",
-      "type": "array",
-      "items": { "type": "string", "format": "https://schema.org/Distance" }
+      "oneOf": [
+        { "type": "string", "format": "https://schema.org/Distance" },
+        {
+          "type": "array",
+          "items": { "type": "string", "format": "https://schema.org/Distance" }
+        }
+      ]
     }
   },
   "required": ["@type"]

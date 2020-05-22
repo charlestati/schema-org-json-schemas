@@ -20,18 +20,30 @@
     },
     "track": {
       "description": "A music recording (track)—usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "ItemList.schema.json" },
-          { "$ref": "MusicRecording.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "ItemList.schema.json" },
+            { "$ref": "MusicRecording.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "ItemList.schema.json" },
+              { "$ref": "MusicRecording.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "tracks": {
       "description": "A music recording (track)—usually a single song.",
-      "type": "array",
-      "items": { "$ref": "MusicRecording.schema.json" }
+      "oneOf": [
+        { "$ref": "MusicRecording.schema.json" },
+        { "type": "array", "items": { "$ref": "MusicRecording.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

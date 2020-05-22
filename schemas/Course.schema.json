@@ -20,26 +20,49 @@
     },
     "coursePrerequisites": {
       "description": "Requirements for taking the Course. May be completion of another Course or a textual description like \"permission of instructor\". Requirements may be a pre-requisite competency, referenced using AlignmentObject.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string" },
-          { "$ref": "AlignmentObject.schema.json" },
-          { "$ref": "Course.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "AlignmentObject.schema.json" },
+            { "$ref": "Course.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "AlignmentObject.schema.json" },
+              { "$ref": "Course.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "educationalCredentialAwarded": {
       "description": "A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.",
-      "type": "array",
-      "items": {
-        "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
-      }
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
     },
     "hasCourseInstance": {
       "description": "An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.",
-      "type": "array",
-      "items": { "$ref": "CourseInstance.schema.json" }
+      "oneOf": [
+        { "$ref": "CourseInstance.schema.json" },
+        { "type": "array", "items": { "$ref": "CourseInstance.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

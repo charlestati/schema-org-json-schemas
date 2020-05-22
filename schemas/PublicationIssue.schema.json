@@ -16,8 +16,13 @@
     "@type": { "const": "PublicationIssue" },
     "issueNumber": {
       "description": "Identifies the issue of publication; for example, \"iii\" or \"2\".",
-      "type": "array",
-      "items": { "anyOf": [{ "type": "integer" }, { "type": "string" }] }
+      "oneOf": [
+        { "anyOf": [{ "type": "integer" }, { "type": "string" }] },
+        {
+          "type": "array",
+          "items": { "anyOf": [{ "type": "integer" }, { "type": "string" }] }
+        }
+      ]
     },
     "pageEnd": {
       "description": "The page on which the work ends; for example \"138\" or \"xvi\".",
@@ -29,8 +34,10 @@
     },
     "pagination": {
       "description": "Any description of pages that is not separated into pageStart and pageEnd; for example, \"1-6, 9, 55\" or \"10-12, 46-49\".",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     }
   },
   "required": ["@type"]

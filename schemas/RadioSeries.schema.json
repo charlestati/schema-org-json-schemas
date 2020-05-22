@@ -16,18 +16,27 @@
     "@type": { "const": "RadioSeries" },
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "actors": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "containsSeason": {
       "description": "A season that is part of the media series.",
-      "type": "array",
-      "items": { "$ref": "CreativeWorkSeason.schema.json" }
+      "oneOf": [
+        { "$ref": "CreativeWorkSeason.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "CreativeWorkSeason.schema.json" }
+        }
+      ]
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
@@ -35,18 +44,24 @@
     },
     "directors": {
       "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "episode": {
       "description": "An episode of a tv, radio or game media within a series or season.",
-      "type": "array",
-      "items": { "$ref": "Episode.schema.json" }
+      "oneOf": [
+        { "$ref": "Episode.schema.json" },
+        { "type": "array", "items": { "$ref": "Episode.schema.json" } }
+      ]
     },
     "episodes": {
       "description": "An episode of a TV/radio series or season.",
-      "type": "array",
-      "items": { "$ref": "Episode.schema.json" }
+      "oneOf": [
+        { "$ref": "Episode.schema.json" },
+        { "type": "array", "items": { "$ref": "Episode.schema.json" } }
+      ]
     },
     "musicBy": {
       "description": "The composer of the soundtrack.",
@@ -69,18 +84,33 @@
     },
     "season": {
       "description": "A season in a media series.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "CreativeWorkSeason.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "CreativeWorkSeason.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "CreativeWorkSeason.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "seasons": {
       "description": "A season in a media series.",
-      "type": "array",
-      "items": { "$ref": "CreativeWorkSeason.schema.json" }
+      "oneOf": [
+        { "$ref": "CreativeWorkSeason.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "CreativeWorkSeason.schema.json" }
+        }
+      ]
     },
     "trailer": {
       "description": "The trailer of a movie or tv/radio series, season, episode, etc.",

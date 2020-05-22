@@ -24,8 +24,10 @@
     },
     "deliveryStatus": {
       "description": "New entry added as the package passes through each leg of its journey (from shipment to final delivery).",
-      "type": "array",
-      "items": { "$ref": "DeliveryEvent.schema.json" }
+      "oneOf": [
+        { "$ref": "DeliveryEvent.schema.json" },
+        { "type": "array", "items": { "$ref": "DeliveryEvent.schema.json" } }
+      ]
     },
     "expectedArrivalFrom": {
       "description": "The earliest date the package may arrive.",
@@ -47,8 +49,10 @@
     },
     "itemShipped": {
       "description": "Item(s) being shipped.",
-      "type": "array",
-      "items": { "$ref": "Product.schema.json" }
+      "oneOf": [
+        { "$ref": "Product.schema.json" },
+        { "type": "array", "items": { "$ref": "Product.schema.json" } }
+      ]
     },
     "originAddress": {
       "description": "Shipper's address.",

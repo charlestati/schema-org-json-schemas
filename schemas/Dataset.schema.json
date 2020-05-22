@@ -16,8 +16,10 @@
     "@type": { "const": "Dataset" },
     "catalog": {
       "description": "A data catalog which contains this dataset.",
-      "type": "array",
-      "items": { "$ref": "DataCatalog.schema.json" }
+      "oneOf": [
+        { "$ref": "DataCatalog.schema.json" },
+        { "type": "array", "items": { "$ref": "DataCatalog.schema.json" } }
+      ]
     },
     "datasetTimeInterval": {
       "description": "The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).",
@@ -26,18 +28,24 @@
     },
     "distribution": {
       "description": "A downloadable form of this dataset, at a specific location, in a specific format.",
-      "type": "array",
-      "items": { "$ref": "DataDownload.schema.json" }
+      "oneOf": [
+        { "$ref": "DataDownload.schema.json" },
+        { "type": "array", "items": { "$ref": "DataDownload.schema.json" } }
+      ]
     },
     "includedDataCatalog": {
       "description": "A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').",
-      "type": "array",
-      "items": { "$ref": "DataCatalog.schema.json" }
+      "oneOf": [
+        { "$ref": "DataCatalog.schema.json" },
+        { "type": "array", "items": { "$ref": "DataCatalog.schema.json" } }
+      ]
     },
     "includedInDataCatalog": {
       "description": "A data catalog which contains this dataset.",
-      "type": "array",
-      "items": { "$ref": "DataCatalog.schema.json" }
+      "oneOf": [
+        { "$ref": "DataCatalog.schema.json" },
+        { "type": "array", "items": { "$ref": "DataCatalog.schema.json" } }
+      ]
     },
     "issn": {
       "description": "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",

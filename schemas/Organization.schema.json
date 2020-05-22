@@ -24,8 +24,10 @@
     },
     "alumni": {
       "description": "Alumni of an organization.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "areaServed": {
       "description": "The geographic area where a service or offered item is provided.",
@@ -38,13 +40,17 @@
     },
     "award": {
       "description": "An award won by or for this item.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "awards": {
       "description": "Awards won by or for this item.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "brand": {
       "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
@@ -55,18 +61,24 @@
     },
     "contactPoint": {
       "description": "A contact point for a person or organization.",
-      "type": "array",
-      "items": { "$ref": "ContactPoint.schema.json" }
+      "oneOf": [
+        { "$ref": "ContactPoint.schema.json" },
+        { "type": "array", "items": { "$ref": "ContactPoint.schema.json" } }
+      ]
     },
     "contactPoints": {
       "description": "A contact point for a person or organization.",
-      "type": "array",
-      "items": { "$ref": "ContactPoint.schema.json" }
+      "oneOf": [
+        { "$ref": "ContactPoint.schema.json" },
+        { "type": "array", "items": { "$ref": "ContactPoint.schema.json" } }
+      ]
     },
     "department": {
       "description": "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.",
-      "type": "array",
-      "items": { "$ref": "Organization.schema.json" }
+      "oneOf": [
+        { "$ref": "Organization.schema.json" },
+        { "type": "array", "items": { "$ref": "Organization.schema.json" } }
+      ]
     },
     "dissolutionDate": {
       "description": "The date that this organization was dissolved.",
@@ -79,39 +91,53 @@
     },
     "email": {
       "description": "Email address.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "employee": {
       "description": "Someone working for this organization.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "employees": {
       "description": "People working for this organization.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "event": {
       "description": "Upcoming or past event associated with this place, organization, or action.",
-      "type": "array",
-      "items": { "$ref": "Event.schema.json" }
+      "oneOf": [
+        { "$ref": "Event.schema.json" },
+        { "type": "array", "items": { "$ref": "Event.schema.json" } }
+      ]
     },
     "events": {
       "description": "Upcoming or past events associated with this place or organization.",
-      "type": "array",
-      "items": { "$ref": "Event.schema.json" }
+      "oneOf": [
+        { "$ref": "Event.schema.json" },
+        { "type": "array", "items": { "$ref": "Event.schema.json" } }
+      ]
     },
     "faxNumber": { "description": "The fax number.", "type": "string" },
     "founder": {
       "description": "A person who founded this organization.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "founders": {
       "description": "A person who founded this organization.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "foundingDate": {
       "description": "The date that this organization was founded.",
@@ -124,13 +150,23 @@
     },
     "funder": {
       "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "globalLocationNumber": {
       "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
@@ -138,13 +174,17 @@
     },
     "hasOfferCatalog": {
       "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
-      "type": "array",
-      "items": { "$ref": "OfferCatalog.schema.json" }
+      "oneOf": [
+        { "$ref": "OfferCatalog.schema.json" },
+        { "type": "array", "items": { "$ref": "OfferCatalog.schema.json" } }
+      ]
     },
     "hasPOS": {
       "description": "Points-of-Sales operated by the organization or person.",
-      "type": "array",
-      "items": { "$ref": "Place.schema.json" }
+      "oneOf": [
+        { "$ref": "Place.schema.json" },
+        { "type": "array", "items": { "$ref": "Place.schema.json" } }
+      ]
     },
     "interactionStatistic": {
       "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
@@ -160,8 +200,10 @@
     },
     "leiCode": {
       "description": "An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "location": {
       "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
@@ -173,48 +215,90 @@
     },
     "logo": {
       "description": "An associated logo.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "ImageObject.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "ImageObject.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "ImageObject.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "makesOffer": {
       "description": "A pointer to products or services offered by the organization or person.",
-      "type": "array",
-      "items": { "$ref": "Offer.schema.json" }
+      "oneOf": [
+        { "$ref": "Offer.schema.json" },
+        { "type": "array", "items": { "$ref": "Offer.schema.json" } }
+      ]
     },
     "member": {
       "description": "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "memberOf": {
       "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "ProgramMembership.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "ProgramMembership.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "ProgramMembership.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "members": {
       "description": "A member of this organization.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "naics": {
       "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
@@ -226,13 +310,23 @@
     },
     "owns": {
       "description": "Products owned by the organization or person.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "OwnershipInfo.schema.json" },
-          { "$ref": "Product.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "OwnershipInfo.schema.json" },
+            { "$ref": "Product.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "OwnershipInfo.schema.json" },
+              { "$ref": "Product.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "parentOrganization": {
       "description": "The larger organization that this organization is a subOrganization of, if any.",
@@ -247,18 +341,24 @@
     },
     "review": {
       "description": "A review of the item.",
-      "type": "array",
-      "items": { "$ref": "Review.schema.json" }
+      "oneOf": [
+        { "$ref": "Review.schema.json" },
+        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+      ]
     },
     "reviews": {
       "description": "Review of the item.",
-      "type": "array",
-      "items": { "$ref": "Review.schema.json" }
+      "oneOf": [
+        { "$ref": "Review.schema.json" },
+        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+      ]
     },
     "seeks": {
       "description": "A pointer to products or services sought by the organization or person (demand).",
-      "type": "array",
-      "items": { "$ref": "Demand.schema.json" }
+      "oneOf": [
+        { "$ref": "Demand.schema.json" },
+        { "type": "array", "items": { "$ref": "Demand.schema.json" } }
+      ]
     },
     "serviceArea": {
       "description": "The geographic area where the service is provided.",
@@ -270,23 +370,37 @@
     },
     "slogan": {
       "description": "A slogan or motto associated with the item.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "sponsor": {
       "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "subOrganization": {
       "description": "A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.",
-      "type": "array",
-      "items": { "$ref": "Organization.schema.json" }
+      "oneOf": [
+        { "$ref": "Organization.schema.json" },
+        { "type": "array", "items": { "$ref": "Organization.schema.json" } }
+      ]
     },
     "taxID": {
       "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",

@@ -24,8 +24,10 @@
     },
     "publishedOn": {
       "description": "A broadcast service associated with the publication event.",
-      "type": "array",
-      "items": { "$ref": "BroadcastService.schema.json" }
+      "oneOf": [
+        { "$ref": "BroadcastService.schema.json" },
+        { "type": "array", "items": { "$ref": "BroadcastService.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

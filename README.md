@@ -6,6 +6,10 @@
 
 You can find the generated schemas in the [`schemas/` directory](schemas).
 
+To match the JSON-LD approach, properties that accept an array also accept a single value.
+
+## Example
+
 ### Schema.org class for a Book
 
 | Property      | Expected Type  | Description                                        |
@@ -29,29 +33,32 @@ You can find the generated schemas in the [`schemas/` directory](schemas).
   "format": "http://schema.org/Book",
   "allOf": [
     {
-      "$ref": "CreativeWork.schema.json",
-      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc."
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "CreativeWork.schema.json"
     }
   ],
   "properties": {
-    "isbn": { "type": "string", "description": "The ISBN of the book." },
+    "@context": { "const": "https://schema.org" },
+    "@type": { "const": "Book" },
     "bookEdition": {
-      "type": "string",
-      "description": "The edition of the book."
+      "description": "The edition of the book.",
+      "type": "string"
     },
     "bookFormat": {
-      "$ref": "BookFormatType.schema.json",
-      "description": "The format of the book."
+      "description": "The format of the book.",
+      "$ref": "BookFormatType.schema.json"
     },
     "illustrator": {
-      "$ref": "Person.schema.json",
-      "description": "The illustrator of the book."
+      "description": "The illustrator of the book.",
+      "$ref": "Person.schema.json"
     },
+    "isbn": { "description": "The ISBN of the book.", "type": "string" },
     "numberOfPages": {
-      "type": "integer",
-      "description": "The number of pages in the book."
+      "description": "The number of pages in the book.",
+      "type": "integer"
     }
-  }
+  },
+  "required": ["@type"]
 }
 ```
 

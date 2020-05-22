@@ -16,8 +16,10 @@
     "@type": { "const": "SellAction" },
     "buyer": {
       "description": "A sub property of participant. The participant/person/organization that bought the object.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "warrantyPromise": {
       "description": "The warranty promise(s) included in the offer.",

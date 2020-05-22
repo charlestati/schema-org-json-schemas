@@ -16,8 +16,10 @@
     "@type": { "const": "LoseAction" },
     "winner": {
       "description": "A sub property of participant. The winner of the action.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

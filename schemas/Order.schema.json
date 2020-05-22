@@ -16,8 +16,10 @@
     "@type": { "const": "Order" },
     "acceptedOffer": {
       "description": "The offer(s) -- e.g., product, quantity and price combinations -- included in the order.",
-      "type": "array",
-      "items": { "$ref": "Offer.schema.json" }
+      "oneOf": [
+        { "$ref": "Offer.schema.json" },
+        { "type": "array", "items": { "$ref": "Offer.schema.json" } }
+      ]
     },
     "billingAddress": {
       "description": "The billing address for the order.",
@@ -25,13 +27,23 @@
     },
     "broker": {
       "description": "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "confirmationNumber": {
       "description": "A number that confirms the given order or payment has been received.",
@@ -88,14 +100,25 @@
     },
     "orderedItem": {
       "description": "The item ordered.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "OrderItem.schema.json" },
-          { "$ref": "Product.schema.json" },
-          { "$ref": "Service.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "OrderItem.schema.json" },
+            { "$ref": "Product.schema.json" },
+            { "$ref": "Service.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "OrderItem.schema.json" },
+              { "$ref": "Product.schema.json" },
+              { "$ref": "Service.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "partOfInvoice": {
       "description": "The order is being paid as part of the referenced Invoice.",
@@ -119,8 +142,10 @@
     },
     "paymentMethodId": {
       "description": "An identifier for the method of payment used (e.g. the last 4 digits of the credit card).",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "paymentUrl": {
       "description": "The URL for sending a payment.",

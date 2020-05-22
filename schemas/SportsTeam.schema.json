@@ -16,13 +16,17 @@
     "@type": { "const": "SportsTeam" },
     "athlete": {
       "description": "A person that acts as performing member of a sports team; a player as opposed to a coach.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "coach": {
       "description": "A person that acts in a coaching role for a sports team.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

@@ -16,28 +16,41 @@
     "@type": { "const": "VideoGameSeries" },
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "actors": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "characterAttribute": {
       "description": "A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
+      "oneOf": [
+        { "$ref": "Thing.schema.json" },
+        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+      ]
     },
     "cheatCode": {
       "description": "Cheat codes to the game.",
-      "type": "array",
-      "items": { "$ref": "CreativeWork.schema.json" }
+      "oneOf": [
+        { "$ref": "CreativeWork.schema.json" },
+        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+      ]
     },
     "containsSeason": {
       "description": "A season that is part of the media series.",
-      "type": "array",
-      "items": { "$ref": "CreativeWorkSeason.schema.json" }
+      "oneOf": [
+        { "$ref": "CreativeWorkSeason.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "CreativeWorkSeason.schema.json" }
+        }
+      ]
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
@@ -45,34 +58,53 @@
     },
     "directors": {
       "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "episode": {
       "description": "An episode of a tv, radio or game media within a series or season.",
-      "type": "array",
-      "items": { "$ref": "Episode.schema.json" }
+      "oneOf": [
+        { "$ref": "Episode.schema.json" },
+        { "type": "array", "items": { "$ref": "Episode.schema.json" } }
+      ]
     },
     "episodes": {
       "description": "An episode of a TV/radio series or season.",
-      "type": "array",
-      "items": { "$ref": "Episode.schema.json" }
+      "oneOf": [
+        { "$ref": "Episode.schema.json" },
+        { "type": "array", "items": { "$ref": "Episode.schema.json" } }
+      ]
     },
     "gameItem": {
       "description": "An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.",
-      "type": "array",
-      "items": { "$ref": "Thing.schema.json" }
+      "oneOf": [
+        { "$ref": "Thing.schema.json" },
+        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+      ]
     },
     "gameLocation": {
       "description": "Real or fictional location of the game (or part of game).",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "Place.schema.json" },
-          { "$ref": "PostalAddress.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "Place.schema.json" },
+            { "$ref": "PostalAddress.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "Place.schema.json" },
+              { "$ref": "PostalAddress.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "gamePlatform": {
       "description": "The electronic systems used to play video games.",
@@ -95,8 +127,13 @@
     },
     "numberOfPlayers": {
       "description": "Indicate how many people can play this game (minimum, maximum, or range).",
-      "type": "array",
-      "items": { "$ref": "QuantitativeValue.schema.json" }
+      "oneOf": [
+        { "$ref": "QuantitativeValue.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "QuantitativeValue.schema.json" }
+        }
+      ]
     },
     "numberOfSeasons": {
       "description": "The number of seasons in this series.",
@@ -104,8 +141,10 @@
     },
     "playMode": {
       "description": "Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.",
-      "type": "array",
-      "items": { "$ref": "GamePlayMode.schema.json" }
+      "oneOf": [
+        { "$ref": "GamePlayMode.schema.json" },
+        { "type": "array", "items": { "$ref": "GamePlayMode.schema.json" } }
+      ]
     },
     "productionCompany": {
       "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
@@ -117,18 +156,33 @@
     },
     "season": {
       "description": "A season in a media series.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "type": "string", "format": "uri" },
-          { "$ref": "CreativeWorkSeason.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "CreativeWorkSeason.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "CreativeWorkSeason.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "seasons": {
       "description": "A season in a media series.",
-      "type": "array",
-      "items": { "$ref": "CreativeWorkSeason.schema.json" }
+      "oneOf": [
+        { "$ref": "CreativeWorkSeason.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "CreativeWorkSeason.schema.json" }
+        }
+      ]
     },
     "trailer": {
       "description": "The trailer of a movie or tv/radio series, season, episode, etc.",

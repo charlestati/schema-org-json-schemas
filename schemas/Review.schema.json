@@ -20,8 +20,10 @@
     },
     "reviewAspect": {
       "description": "This Review or Rating is relevant to this part or facet of the itemReviewed.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "reviewBody": {
       "description": "The actual body of the review.",

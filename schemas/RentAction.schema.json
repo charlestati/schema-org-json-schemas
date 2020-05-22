@@ -16,18 +16,30 @@
     "@type": { "const": "RentAction" },
     "landlord": {
       "description": "A sub property of participant. The owner of the real estate property.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "Organization.schema.json" },
-          { "$ref": "Person.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "Organization.schema.json" },
+            { "$ref": "Person.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "Organization.schema.json" },
+              { "$ref": "Person.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "realEstateAgent": {
       "description": "A sub property of participant. The real estate agent involved in the action.",
-      "type": "array",
-      "items": { "$ref": "RealEstateAgent.schema.json" }
+      "oneOf": [
+        { "$ref": "RealEstateAgent.schema.json" },
+        { "type": "array", "items": { "$ref": "RealEstateAgent.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

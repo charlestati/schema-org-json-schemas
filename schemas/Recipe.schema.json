@@ -25,8 +25,10 @@
     },
     "ingredients": {
       "description": "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "nutrition": {
       "description": "Nutrition information about the recipe or menu item.",
@@ -42,8 +44,10 @@
     },
     "recipeIngredient": {
       "description": "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "recipeInstructions": {
       "description": "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
@@ -62,8 +66,10 @@
     },
     "suitableForDiet": {
       "description": "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
-      "type": "array",
-      "items": { "$ref": "RestrictedDiet.schema.json" }
+      "oneOf": [
+        { "$ref": "RestrictedDiet.schema.json" },
+        { "type": "array", "items": { "$ref": "RestrictedDiet.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

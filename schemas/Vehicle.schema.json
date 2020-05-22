@@ -48,8 +48,10 @@
     },
     "knownVehicleDamages": {
       "description": "A textual description of known damages, both repaired and unrepaired.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "mileageFromOdometer": {
       "description": "The total distance travelled by the particular vehicle since its initial production, as read from its odometer.\n\nTypical unit code(s): KMT for kilometers, SMI for statute miles",
@@ -103,13 +105,20 @@
     },
     "vehicleConfiguration": {
       "description": "A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.",
-      "type": "array",
-      "items": { "type": "string" }
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "vehicleEngine": {
       "description": "Information about the engine or engines of the vehicle.",
-      "type": "array",
-      "items": { "$ref": "EngineSpecification.schema.json" }
+      "oneOf": [
+        { "$ref": "EngineSpecification.schema.json" },
+        {
+          "type": "array",
+          "items": { "$ref": "EngineSpecification.schema.json" }
+        }
+      ]
     },
     "vehicleIdentificationNumber": {
       "description": "The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.",

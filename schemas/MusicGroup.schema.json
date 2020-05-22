@@ -16,13 +16,17 @@
     "@type": { "const": "MusicGroup" },
     "album": {
       "description": "A music album.",
-      "type": "array",
-      "items": { "$ref": "MusicAlbum.schema.json" }
+      "oneOf": [
+        { "$ref": "MusicAlbum.schema.json" },
+        { "type": "array", "items": { "$ref": "MusicAlbum.schema.json" } }
+      ]
     },
     "albums": {
       "description": "A collection of music albums.",
-      "type": "array",
-      "items": { "$ref": "MusicAlbum.schema.json" }
+      "oneOf": [
+        { "$ref": "MusicAlbum.schema.json" },
+        { "type": "array", "items": { "$ref": "MusicAlbum.schema.json" } }
+      ]
     },
     "genre": {
       "description": "Genre of the creative work, broadcast channel or group.",
@@ -30,23 +34,37 @@
     },
     "musicGroupMember": {
       "description": "A member of a music group—for example, John, Paul, George, or Ringo.",
-      "type": "array",
-      "items": { "$ref": "Person.schema.json" }
+      "oneOf": [
+        { "$ref": "Person.schema.json" },
+        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+      ]
     },
     "track": {
       "description": "A music recording (track)—usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          { "$ref": "ItemList.schema.json" },
-          { "$ref": "MusicRecording.schema.json" }
-        ]
-      }
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "ItemList.schema.json" },
+            { "$ref": "MusicRecording.schema.json" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "ItemList.schema.json" },
+              { "$ref": "MusicRecording.schema.json" }
+            ]
+          }
+        }
+      ]
     },
     "tracks": {
       "description": "A music recording (track)—usually a single song.",
-      "type": "array",
-      "items": { "$ref": "MusicRecording.schema.json" }
+      "oneOf": [
+        { "$ref": "MusicRecording.schema.json" },
+        { "type": "array", "items": { "$ref": "MusicRecording.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]

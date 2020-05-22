@@ -16,8 +16,10 @@
     "@type": { "const": "DataCatalog" },
     "dataset": {
       "description": "A dataset contained in this catalog.",
-      "type": "array",
-      "items": { "$ref": "Dataset.schema.json" }
+      "oneOf": [
+        { "$ref": "Dataset.schema.json" },
+        { "type": "array", "items": { "$ref": "Dataset.schema.json" } }
+      ]
     }
   },
   "required": ["@type"]
