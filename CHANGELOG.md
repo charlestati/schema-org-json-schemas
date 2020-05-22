@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/charlestati/schema-org-json-schema/compare/v1.4.0...v1.4.1) (2020-05-22)
+
+
+### Bug Fixes
+
+* Allowed any `[@type](https://github.com/type)` value on the root schema ([e24049d](https://github.com/charlestati/schema-org-json-schema/commit/e24049d24a7bd3b639876aa7f9a9da997ce29114))
+
 # [1.4.0](https://github.com/charlestati/schema-org-json-schema/compare/v1.3.0...v1.4.0) (2020-05-22)
 
 
