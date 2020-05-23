@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",
-      "$ref": "CivicStructure.schema.json"
+      "$ref": "http://schema.org/CivicStructure"
     }
   ]
 }

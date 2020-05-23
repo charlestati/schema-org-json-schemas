@@ -8,22 +8,22 @@
   "allOf": [
     {
       "description": "Represents the collection of all sports organizations, including sports teams, governing bodies, and sports associations.",
-      "$ref": "SportsOrganization.schema.json"
+      "$ref": "http://schema.org/SportsOrganization"
     }
   ],
   "properties": {
     "athlete": {
       "description": "A person that acts as performing member of a sports team; a player as opposed to a coach.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "coach": {
       "description": "A person that acts in a coaching role for a sports team.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     }
   }

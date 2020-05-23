@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A geographical region, typically under the jurisdiction of a particular government.",
-      "$ref": "AdministrativeArea.schema.json"
+      "$ref": "http://schema.org/AdministrativeArea"
     }
   ]
 }

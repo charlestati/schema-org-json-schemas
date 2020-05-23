@@ -8,17 +8,17 @@
   "allOf": [
     {
       "description": "A trip or journey. An itinerary of visits to one or more places.",
-      "$ref": "Trip.schema.json"
+      "$ref": "http://schema.org/Trip"
     }
   ],
   "properties": {
     "aircraft": {
       "description": "The kind of aircraft (e.g., \"Boeing 747\").",
-      "anyOf": [{ "type": "string" }, { "$ref": "Vehicle.schema.json" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Vehicle" }]
     },
     "arrivalAirport": {
       "description": "The airport where the flight terminates.",
-      "$ref": "Airport.schema.json"
+      "$ref": "http://schema.org/Airport"
     },
     "arrivalGate": {
       "description": "Identifier of the flight's arrival gate.",
@@ -36,15 +36,15 @@
     },
     "boardingPolicy": {
       "description": "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
-      "$ref": "BoardingPolicyType.schema.json"
+      "$ref": "http://schema.org/BoardingPolicyType"
     },
     "carrier": {
       "description": "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "departureAirport": {
       "description": "The airport where the flight originates.",
-      "$ref": "Airport.schema.json"
+      "$ref": "http://schema.org/Airport"
     },
     "departureGate": {
       "description": "Identifier of the flight's departure gate.",
@@ -88,8 +88,8 @@
     "seller": {
       "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "webCheckinTime": {

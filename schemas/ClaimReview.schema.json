@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A review of an item - for example, of a restaurant, movie, or store.",
-      "$ref": "Review.schema.json"
+      "$ref": "http://schema.org/Review"
     }
   ],
   "properties": {

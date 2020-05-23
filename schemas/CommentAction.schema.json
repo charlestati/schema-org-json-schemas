@@ -8,15 +8,15 @@
   "allOf": [
     {
       "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",
-      "$ref": "CommunicateAction.schema.json"
+      "$ref": "http://schema.org/CommunicateAction"
     }
   ],
   "properties": {
     "resultComment": {
       "description": "A sub property of result. The Comment created or sent as a result of this action.",
       "oneOf": [
-        { "$ref": "Comment.schema.json" },
-        { "type": "array", "items": { "$ref": "Comment.schema.json" } }
+        { "$ref": "http://schema.org/Comment" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Comment" } }
       ]
     }
   }

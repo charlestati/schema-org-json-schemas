@@ -8,13 +8,13 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
     "defaultValue": {
       "description": "The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.",
-      "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Thing" }]
     },
     "maxValue": {
       "description": "The upper value of some characteristic or property.",

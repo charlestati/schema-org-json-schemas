@@ -8,23 +8,23 @@
   "allOf": [
     {
       "description": "The act of interacting with another person or organization.",
-      "$ref": "InteractAction.schema.json"
+      "$ref": "http://schema.org/InteractAction"
     }
   ],
   "properties": {
     "about": {
       "description": "The subject matter of the content.",
-      "$ref": "Thing.schema.json"
+      "$ref": "http://schema.org/Thing"
     },
     "inLanguage": {
       "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
-      "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Language" }]
     },
     "language": {
       "description": "A sub property of instrument. The language used on this action.",
       "oneOf": [
-        { "$ref": "Language.schema.json" },
-        { "type": "array", "items": { "$ref": "Language.schema.json" } }
+        { "$ref": "http://schema.org/Language" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Language" } }
       ]
     },
     "recipient": {
@@ -32,20 +32,20 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Audience.schema.json" },
-            { "$ref": "ContactPoint.schema.json" },
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Audience" },
+            { "$ref": "http://schema.org/ContactPoint" },
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Audience.schema.json" },
-              { "$ref": "ContactPoint.schema.json" },
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Audience" },
+              { "$ref": "http://schema.org/ContactPoint" },
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }

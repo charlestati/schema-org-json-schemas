@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
@@ -22,8 +22,8 @@
         {
           "anyOf": [
             { "type": "string" },
-            { "$ref": "AlignmentObject.schema.json" },
-            { "$ref": "Course.schema.json" }
+            { "$ref": "http://schema.org/AlignmentObject" },
+            { "$ref": "http://schema.org/Course" }
           ]
         },
         {
@@ -31,8 +31,8 @@
           "items": {
             "anyOf": [
               { "type": "string" },
-              { "$ref": "AlignmentObject.schema.json" },
-              { "$ref": "Course.schema.json" }
+              { "$ref": "http://schema.org/AlignmentObject" },
+              { "$ref": "http://schema.org/Course" }
             ]
           }
         }
@@ -58,8 +58,11 @@
     "hasCourseInstance": {
       "description": "An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.",
       "oneOf": [
-        { "$ref": "CourseInstance.schema.json" },
-        { "type": "array", "items": { "$ref": "CourseInstance.schema.json" } }
+        { "$ref": "http://schema.org/CourseInstance" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/CourseInstance" }
+        }
       ]
     }
   }

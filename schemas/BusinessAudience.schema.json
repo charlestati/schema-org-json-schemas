@@ -8,21 +8,21 @@
   "allOf": [
     {
       "description": "Intended audience for an item, i.e. the group for whom the item was created.",
-      "$ref": "Audience.schema.json"
+      "$ref": "http://schema.org/Audience"
     }
   ],
   "properties": {
     "numberOfEmployees": {
       "description": "The number of employees in an organization e.g. business.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     },
     "yearlyRevenue": {
       "description": "The size of the business in annual revenue.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     },
     "yearsInOperation": {
       "description": "The age of the business.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     }
   }
 }

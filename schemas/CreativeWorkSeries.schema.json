@@ -8,11 +8,11 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     },
     {
       "description": "A Series in schema.org is a group of related items, typically but not necessarily of the same kind. See also CreativeWorkSeries, EventSeries.",
-      "$ref": "Series.schema.json"
+      "$ref": "http://schema.org/Series"
     }
   ],
   "properties": {

@@ -8,19 +8,19 @@
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",
-      "$ref": "CivicStructure.schema.json"
+      "$ref": "http://schema.org/CivicStructure"
     },
     {
       "description": "An organization such as a school, NGO, corporation, club, etc.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     }
   ],
   "properties": {
     "alumni": {
       "description": "Alumni of an organization.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     }
   }

@@ -8,11 +8,11 @@
   "allOf": [
     {
       "description": "A financial product for the loaning of an amount of money under agreed terms and charges.",
-      "$ref": "LoanOrCredit.schema.json"
+      "$ref": "http://schema.org/LoanOrCredit"
     },
     {
       "description": "A payment method using a credit, debit, store or other card to associate the payment with an account.",
-      "$ref": "PaymentCard.schema.json"
+      "$ref": "http://schema.org/PaymentCard"
     }
   ]
 }

@@ -8,13 +8,16 @@
   "allOf": [
     {
       "description": "A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.",
-      "$ref": "FinancialProduct.schema.json"
+      "$ref": "http://schema.org/FinancialProduct"
     }
   ],
   "properties": {
     "amount": {
       "description": "The amount of money.",
-      "anyOf": [{ "type": "number" }, { "$ref": "MonetaryAmount.schema.json" }]
+      "anyOf": [
+        { "type": "number" },
+        { "$ref": "http://schema.org/MonetaryAmount" }
+      ]
     },
     "currency": {
       "description": "The currency in which the monetary amount is expressed.\n\nUse standard formats: ISO 4217 currency format e.g. \"USD\"; Ticker symbol for cryptocurrencies e.g. \"BTC\"; well known names for Local Exchange Tradings Systems (LETS) and other currency types e.g. \"Ithaca HOUR\".",
@@ -22,16 +25,21 @@
     },
     "loanTerm": {
       "description": "The duration of the loan or credit agreement.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     },
     "requiredCollateral": {
       "description": "Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)",
       "oneOf": [
-        { "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }] },
+        {
+          "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Thing" }]
+        },
         {
           "type": "array",
           "items": {
-            "anyOf": [{ "type": "string" }, { "$ref": "Thing.schema.json" }]
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "http://schema.org/Thing" }
+            ]
           }
         }
       ]

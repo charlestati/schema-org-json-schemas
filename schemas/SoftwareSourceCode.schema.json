@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
@@ -32,7 +32,7 @@
         {
           "anyOf": [
             { "type": "string" },
-            { "$ref": "ComputerLanguage.schema.json" }
+            { "$ref": "http://schema.org/ComputerLanguage" }
           ]
         },
         {
@@ -40,7 +40,7 @@
           "items": {
             "anyOf": [
               { "type": "string" },
-              { "$ref": "ComputerLanguage.schema.json" }
+              { "$ref": "http://schema.org/ComputerLanguage" }
             ]
           }
         }
@@ -64,10 +64,10 @@
     "targetProduct": {
       "description": "Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.",
       "oneOf": [
-        { "$ref": "SoftwareApplication.schema.json" },
+        { "$ref": "http://schema.org/SoftwareApplication" },
         {
           "type": "array",
-          "items": { "$ref": "SoftwareApplication.schema.json" }
+          "items": { "$ref": "http://schema.org/SoftwareApplication" }
         }
       ]
     }

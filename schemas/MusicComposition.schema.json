@@ -8,26 +8,29 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
     "composer": {
       "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "firstPerformance": {
       "description": "The date and place the work was first performed.",
-      "$ref": "Event.schema.json"
+      "$ref": "http://schema.org/Event"
     },
     "includedComposition": {
       "description": "Smaller compositions included in this work (e.g. a movement in a symphony).",
       "oneOf": [
-        { "$ref": "MusicComposition.schema.json" },
-        { "type": "array", "items": { "$ref": "MusicComposition.schema.json" } }
+        { "$ref": "http://schema.org/MusicComposition" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/MusicComposition" }
+        }
       ]
     },
     "iswcCode": {
@@ -36,17 +39,20 @@
     },
     "lyricist": {
       "description": "The person who wrote the words.",
-      "$ref": "Person.schema.json"
+      "$ref": "http://schema.org/Person"
     },
     "lyrics": {
       "description": "The words in the song.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     },
     "musicArrangement": {
       "description": "An arrangement derived from the composition.",
       "oneOf": [
-        { "$ref": "MusicComposition.schema.json" },
-        { "type": "array", "items": { "$ref": "MusicComposition.schema.json" } }
+        { "$ref": "http://schema.org/MusicComposition" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/MusicComposition" }
+        }
       ]
     },
     "musicCompositionForm": {
@@ -60,8 +66,11 @@
     "recordedAs": {
       "description": "An audio recording of the work.",
       "oneOf": [
-        { "$ref": "MusicRecording.schema.json" },
-        { "type": "array", "items": { "$ref": "MusicRecording.schema.json" } }
+        { "$ref": "http://schema.org/MusicRecording" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/MusicRecording" }
+        }
       ]
     }
   }

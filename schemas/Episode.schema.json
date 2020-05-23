@@ -8,33 +8,33 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "actors": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-      "$ref": "Person.schema.json"
+      "$ref": "http://schema.org/Person"
     },
     "directors": {
       "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "episodeNumber": {
@@ -44,25 +44,25 @@
     "musicBy": {
       "description": "The composer of the soundtrack.",
       "anyOf": [
-        { "$ref": "MusicGroup.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/MusicGroup" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "partOfSeason": {
       "description": "The season to which this episode belongs.",
-      "$ref": "CreativeWorkSeason.schema.json"
+      "$ref": "http://schema.org/CreativeWorkSeason"
     },
     "partOfSeries": {
       "description": "The series to which this episode or season belongs.",
-      "$ref": "CreativeWorkSeries.schema.json"
+      "$ref": "http://schema.org/CreativeWorkSeries"
     },
     "productionCompany": {
       "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "trailer": {
       "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
-      "$ref": "VideoObject.schema.json"
+      "$ref": "http://schema.org/VideoObject"
     }
   }
 }

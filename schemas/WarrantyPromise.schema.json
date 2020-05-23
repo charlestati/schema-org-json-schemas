@@ -8,17 +8,17 @@
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "StructuredValue.schema.json"
+      "$ref": "http://schema.org/StructuredValue"
     }
   ],
   "properties": {
     "durationOfWarranty": {
       "description": "The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     },
     "warrantyScope": {
       "description": "The scope of the warranty promise.",
-      "$ref": "WarrantyScope.schema.json"
+      "$ref": "http://schema.org/WarrantyScope"
     }
   }
 }

@@ -8,15 +8,18 @@
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "StructuredValue.schema.json"
+      "$ref": "http://schema.org/StructuredValue"
     }
   ],
   "properties": {
     "additionalProperty": {
       "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
       "oneOf": [
-        { "$ref": "PropertyValue.schema.json" },
-        { "type": "array", "items": { "$ref": "PropertyValue.schema.json" } }
+        { "$ref": "http://schema.org/PropertyValue" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/PropertyValue" }
+        }
       ]
     },
     "maxValue": {
@@ -44,7 +47,7 @@
         { "type": "boolean" },
         { "type": "number" },
         { "type": "string" },
-        { "$ref": "StructuredValue.schema.json" }
+        { "$ref": "http://schema.org/StructuredValue" }
       ]
     },
     "valueReference": {
@@ -52,22 +55,22 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Enumeration.schema.json" },
-            { "$ref": "PropertyValue.schema.json" },
-            { "$ref": "QualitativeValue.schema.json" },
-            { "$ref": "QuantitativeValue.schema.json" },
-            { "$ref": "StructuredValue.schema.json" }
+            { "$ref": "http://schema.org/Enumeration" },
+            { "$ref": "http://schema.org/PropertyValue" },
+            { "$ref": "http://schema.org/QualitativeValue" },
+            { "$ref": "http://schema.org/QuantitativeValue" },
+            { "$ref": "http://schema.org/StructuredValue" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Enumeration.schema.json" },
-              { "$ref": "PropertyValue.schema.json" },
-              { "$ref": "QualitativeValue.schema.json" },
-              { "$ref": "QuantitativeValue.schema.json" },
-              { "$ref": "StructuredValue.schema.json" }
+              { "$ref": "http://schema.org/Enumeration" },
+              { "$ref": "http://schema.org/PropertyValue" },
+              { "$ref": "http://schema.org/QualitativeValue" },
+              { "$ref": "http://schema.org/QuantitativeValue" },
+              { "$ref": "http://schema.org/StructuredValue" }
             ]
           }
         }

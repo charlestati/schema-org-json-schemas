@@ -8,22 +8,22 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
     "characterAttribute": {
       "description": "A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).",
       "oneOf": [
-        { "$ref": "Thing.schema.json" },
-        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+        { "$ref": "http://schema.org/Thing" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Thing" } }
       ]
     },
     "gameItem": {
       "description": "An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.",
       "oneOf": [
-        { "$ref": "Thing.schema.json" },
-        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+        { "$ref": "http://schema.org/Thing" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Thing" } }
       ]
     },
     "gameLocation": {
@@ -32,8 +32,8 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "Place.schema.json" },
-            { "$ref": "PostalAddress.schema.json" }
+            { "$ref": "http://schema.org/Place" },
+            { "$ref": "http://schema.org/PostalAddress" }
           ]
         },
         {
@@ -41,8 +41,8 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "Place.schema.json" },
-              { "$ref": "PostalAddress.schema.json" }
+              { "$ref": "http://schema.org/Place" },
+              { "$ref": "http://schema.org/PostalAddress" }
             ]
           }
         }
@@ -51,16 +51,16 @@
     "numberOfPlayers": {
       "description": "Indicate how many people can play this game (minimum, maximum, or range).",
       "oneOf": [
-        { "$ref": "QuantitativeValue.schema.json" },
+        { "$ref": "http://schema.org/QuantitativeValue" },
         {
           "type": "array",
-          "items": { "$ref": "QuantitativeValue.schema.json" }
+          "items": { "$ref": "http://schema.org/QuantitativeValue" }
         }
       ]
     },
     "quest": {
       "description": "The task that a player-controlled character, or group of characters may complete in order to gain a reward.",
-      "$ref": "Thing.schema.json"
+      "$ref": "http://schema.org/Thing"
     }
   }
 }

@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "Financial services business.",
-      "$ref": "FinancialService.schema.json"
+      "$ref": "http://schema.org/FinancialService"
     }
   ]
 }

@@ -8,15 +8,15 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
     "dataset": {
       "description": "A dataset contained in this catalog.",
       "oneOf": [
-        { "$ref": "Dataset.schema.json" },
-        { "type": "array", "items": { "$ref": "Dataset.schema.json" } }
+        { "$ref": "http://schema.org/Dataset" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Dataset" } }
       ]
     }
   }

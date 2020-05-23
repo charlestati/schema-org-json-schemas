@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A performance group, such as a band, an orchestra, or a circus.",
-      "$ref": "PerformingGroup.schema.json"
+      "$ref": "http://schema.org/PerformingGroup"
     }
   ]
 }

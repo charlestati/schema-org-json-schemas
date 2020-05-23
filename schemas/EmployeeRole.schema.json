@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A subclass of Role used to describe roles within organizations.",
-      "$ref": "OrganizationRole.schema.json"
+      "$ref": "http://schema.org/OrganizationRole"
     }
   ],
   "properties": {
@@ -16,8 +16,8 @@
       "description": "The base salary of the job or of an employee in an EmployeeRole.",
       "anyOf": [
         { "type": "number" },
-        { "$ref": "MonetaryAmount.schema.json" },
-        { "$ref": "PriceSpecification.schema.json" }
+        { "$ref": "http://schema.org/MonetaryAmount" },
+        { "$ref": "http://schema.org/PriceSpecification" }
       ]
     },
     "salaryCurrency": {

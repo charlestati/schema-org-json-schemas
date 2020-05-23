@@ -8,19 +8,19 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
     "authenticator": {
       "description": "The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "expectsAcceptanceOf": {
       "description": "An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.",
       "oneOf": [
-        { "$ref": "Offer.schema.json" },
-        { "type": "array", "items": { "$ref": "Offer.schema.json" } }
+        { "$ref": "http://schema.org/Offer" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Offer" } }
       ]
     }
   }

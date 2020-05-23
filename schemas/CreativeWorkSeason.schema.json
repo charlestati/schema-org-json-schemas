@@ -8,20 +8,20 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-      "$ref": "Person.schema.json"
+      "$ref": "http://schema.org/Person"
     },
     "endDate": {
       "description": "The end date and time of the item (in ISO 8601 date format).",
@@ -33,15 +33,15 @@
     "episode": {
       "description": "An episode of a tv, radio or game media within a series or season.",
       "oneOf": [
-        { "$ref": "Episode.schema.json" },
-        { "type": "array", "items": { "$ref": "Episode.schema.json" } }
+        { "$ref": "http://schema.org/Episode" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Episode" } }
       ]
     },
     "episodes": {
       "description": "An episode of a TV/radio series or season.",
       "oneOf": [
-        { "$ref": "Episode.schema.json" },
-        { "type": "array", "items": { "$ref": "Episode.schema.json" } }
+        { "$ref": "http://schema.org/Episode" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Episode" } }
       ]
     },
     "numberOfEpisodes": {
@@ -50,11 +50,11 @@
     },
     "partOfSeries": {
       "description": "The series to which this episode or season belongs.",
-      "$ref": "CreativeWorkSeries.schema.json"
+      "$ref": "http://schema.org/CreativeWorkSeries"
     },
     "productionCompany": {
       "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "seasonNumber": {
       "description": "Position of the season within an ordered group of seasons.",
@@ -69,7 +69,7 @@
     },
     "trailer": {
       "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
-      "$ref": "VideoObject.schema.json"
+      "$ref": "http://schema.org/VideoObject"
     }
   }
 }

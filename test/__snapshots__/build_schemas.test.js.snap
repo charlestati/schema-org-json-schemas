@@ -6,7 +6,7 @@ Object {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "allOf": Array [
     Object {
-      "$ref": "Thing.schema.json",
+      "$ref": "http://schema.org/Thing",
       "description": "The most generic type of item.",
     },
   ],
@@ -33,7 +33,7 @@ Object {
           "type": "string",
         },
         Object {
-          "$ref": "PostalAddress.schema.json",
+          "$ref": "http://schema.org/PostalAddress",
         },
       ],
       "description": "Physical address of the item.",
@@ -42,11 +42,11 @@ Object {
       "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
       "oneOf": Array [
         Object {
-          "$ref": "Organization.schema.json",
+          "$ref": "http://schema.org/Organization",
         },
         Object {
           "items": Object {
-            "$ref": "Organization.schema.json",
+            "$ref": "http://schema.org/Organization",
           },
           "type": "array",
         },
@@ -58,10 +58,10 @@ Object {
         Object {
           "anyOf": Array [
             Object {
-              "$ref": "EducationalOrganization.schema.json",
+              "$ref": "http://schema.org/EducationalOrganization",
             },
             Object {
-              "$ref": "Organization.schema.json",
+              "$ref": "http://schema.org/Organization",
             },
           ],
         },
@@ -69,10 +69,10 @@ Object {
           "items": Object {
             "anyOf": Array [
               Object {
-                "$ref": "EducationalOrganization.schema.json",
+                "$ref": "http://schema.org/EducationalOrganization",
               },
               Object {
-                "$ref": "Organization.schema.json",
+                "$ref": "http://schema.org/Organization",
               },
             ],
           },
@@ -114,16 +114,16 @@ Object {
       "type": "string",
     },
     "birthPlace": Object {
-      "$ref": "Place.schema.json",
+      "$ref": "http://schema.org/Place",
       "description": "The place where the person was born.",
     },
     "brand": Object {
       "anyOf": Array [
         Object {
-          "$ref": "Brand.schema.json",
+          "$ref": "http://schema.org/Brand",
         },
         Object {
-          "$ref": "Organization.schema.json",
+          "$ref": "http://schema.org/Organization",
         },
       ],
       "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
@@ -132,11 +132,11 @@ Object {
       "description": "A child of the person.",
       "oneOf": Array [
         Object {
-          "$ref": "Person.schema.json",
+          "$ref": "http://schema.org/Person",
         },
         Object {
           "items": Object {
-            "$ref": "Person.schema.json",
+            "$ref": "http://schema.org/Person",
           },
           "type": "array",
         },
@@ -152,7 +152,7 @@ Object {
               "type": "string",
             },
             Object {
-              "$ref": "Person.schema.json",
+              "$ref": "http://schema.org/Person",
             },
           ],
         },
@@ -164,7 +164,7 @@ Object {
                 "type": "string",
               },
               Object {
-                "$ref": "Person.schema.json",
+                "$ref": "http://schema.org/Person",
               },
             ],
           },
@@ -176,11 +176,11 @@ Object {
       "description": "A colleague of the person.",
       "oneOf": Array [
         Object {
-          "$ref": "Person.schema.json",
+          "$ref": "http://schema.org/Person",
         },
         Object {
           "items": Object {
-            "$ref": "Person.schema.json",
+            "$ref": "http://schema.org/Person",
           },
           "type": "array",
         },
@@ -190,11 +190,11 @@ Object {
       "description": "A contact point for a person or organization.",
       "oneOf": Array [
         Object {
-          "$ref": "ContactPoint.schema.json",
+          "$ref": "http://schema.org/ContactPoint",
         },
         Object {
           "items": Object {
-            "$ref": "ContactPoint.schema.json",
+            "$ref": "http://schema.org/ContactPoint",
           },
           "type": "array",
         },
@@ -204,11 +204,11 @@ Object {
       "description": "A contact point for a person or organization.",
       "oneOf": Array [
         Object {
-          "$ref": "ContactPoint.schema.json",
+          "$ref": "http://schema.org/ContactPoint",
         },
         Object {
           "items": Object {
-            "$ref": "ContactPoint.schema.json",
+            "$ref": "http://schema.org/ContactPoint",
           },
           "type": "array",
         },
@@ -220,7 +220,7 @@ Object {
       "type": "string",
     },
     "deathPlace": Object {
-      "$ref": "Place.schema.json",
+      "$ref": "http://schema.org/Place",
       "description": "The place where the person died.",
     },
     "duns": Object {
@@ -253,11 +253,11 @@ Object {
       "description": "The most generic uni-directional social relation.",
       "oneOf": Array [
         Object {
-          "$ref": "Person.schema.json",
+          "$ref": "http://schema.org/Person",
         },
         Object {
           "items": Object {
-            "$ref": "Person.schema.json",
+            "$ref": "http://schema.org/Person",
           },
           "type": "array",
         },
@@ -269,10 +269,10 @@ Object {
         Object {
           "anyOf": Array [
             Object {
-              "$ref": "Organization.schema.json",
+              "$ref": "http://schema.org/Organization",
             },
             Object {
-              "$ref": "Person.schema.json",
+              "$ref": "http://schema.org/Person",
             },
           ],
         },
@@ -280,10 +280,10 @@ Object {
           "items": Object {
             "anyOf": Array [
               Object {
-                "$ref": "Organization.schema.json",
+                "$ref": "http://schema.org/Organization",
               },
               Object {
-                "$ref": "Person.schema.json",
+                "$ref": "http://schema.org/Person",
               },
             ],
           },
@@ -310,18 +310,18 @@ Object {
       "type": "string",
     },
     "hasOccupation": Object {
-      "$ref": "Occupation.schema.json",
+      "$ref": "http://schema.org/Occupation",
       "description": "The Person's occupation. For past professions, use Role for expressing dates.",
     },
     "hasOfferCatalog": Object {
       "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
       "oneOf": Array [
         Object {
-          "$ref": "OfferCatalog.schema.json",
+          "$ref": "http://schema.org/OfferCatalog",
         },
         Object {
           "items": Object {
-            "$ref": "OfferCatalog.schema.json",
+            "$ref": "http://schema.org/OfferCatalog",
           },
           "type": "array",
         },
@@ -331,11 +331,11 @@ Object {
       "description": "Points-of-Sales operated by the organization or person.",
       "oneOf": Array [
         Object {
-          "$ref": "Place.schema.json",
+          "$ref": "http://schema.org/Place",
         },
         Object {
           "items": Object {
-            "$ref": "Place.schema.json",
+            "$ref": "http://schema.org/Place",
           },
           "type": "array",
         },
@@ -348,7 +348,7 @@ Object {
           "type": "string",
         },
         Object {
-          "$ref": "QuantitativeValue.schema.json",
+          "$ref": "http://schema.org/QuantitativeValue",
         },
       ],
       "description": "The height of the item.",
@@ -359,10 +359,10 @@ Object {
         Object {
           "anyOf": Array [
             Object {
-              "$ref": "ContactPoint.schema.json",
+              "$ref": "http://schema.org/ContactPoint",
             },
             Object {
-              "$ref": "Place.schema.json",
+              "$ref": "http://schema.org/Place",
             },
           ],
         },
@@ -370,10 +370,10 @@ Object {
           "items": Object {
             "anyOf": Array [
               Object {
-                "$ref": "ContactPoint.schema.json",
+                "$ref": "http://schema.org/ContactPoint",
               },
               Object {
-                "$ref": "Place.schema.json",
+                "$ref": "http://schema.org/Place",
               },
             ],
           },
@@ -410,7 +410,7 @@ Object {
       ],
     },
     "interactionStatistic": Object {
-      "$ref": "InteractionCounter.schema.json",
+      "$ref": "http://schema.org/InteractionCounter",
       "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
     },
     "isicV4": Object {
@@ -418,18 +418,18 @@ Object {
       "type": "string",
     },
     "knows": Object {
-      "$ref": "Person.schema.json",
+      "$ref": "http://schema.org/Person",
       "description": "The most generic bi-directional social/work relation.",
     },
     "makesOffer": Object {
       "description": "A pointer to products or services offered by the organization or person.",
       "oneOf": Array [
         Object {
-          "$ref": "Offer.schema.json",
+          "$ref": "http://schema.org/Offer",
         },
         Object {
           "items": Object {
-            "$ref": "Offer.schema.json",
+            "$ref": "http://schema.org/Offer",
           },
           "type": "array",
         },
@@ -441,10 +441,10 @@ Object {
         Object {
           "anyOf": Array [
             Object {
-              "$ref": "Organization.schema.json",
+              "$ref": "http://schema.org/Organization",
             },
             Object {
-              "$ref": "ProgramMembership.schema.json",
+              "$ref": "http://schema.org/ProgramMembership",
             },
           ],
         },
@@ -452,10 +452,10 @@ Object {
           "items": Object {
             "anyOf": Array [
               Object {
-                "$ref": "Organization.schema.json",
+                "$ref": "http://schema.org/Organization",
               },
               Object {
-                "$ref": "ProgramMembership.schema.json",
+                "$ref": "http://schema.org/ProgramMembership",
               },
             ],
           },
@@ -471,11 +471,11 @@ Object {
       "description": "Nationality of the person.",
       "oneOf": Array [
         Object {
-          "$ref": "Country.schema.json",
+          "$ref": "http://schema.org/Country",
         },
         Object {
           "items": Object {
-            "$ref": "Country.schema.json",
+            "$ref": "http://schema.org/Country",
           },
           "type": "array",
         },
@@ -484,10 +484,10 @@ Object {
     "netWorth": Object {
       "anyOf": Array [
         Object {
-          "$ref": "MonetaryAmount.schema.json",
+          "$ref": "http://schema.org/MonetaryAmount",
         },
         Object {
-          "$ref": "PriceSpecification.schema.json",
+          "$ref": "http://schema.org/PriceSpecification",
         },
       ],
       "description": "The total financial value of the person as calculated by subtracting assets from liabilities.",
@@ -498,10 +498,10 @@ Object {
         Object {
           "anyOf": Array [
             Object {
-              "$ref": "OwnershipInfo.schema.json",
+              "$ref": "http://schema.org/OwnershipInfo",
             },
             Object {
-              "$ref": "Product.schema.json",
+              "$ref": "http://schema.org/Product",
             },
           ],
         },
@@ -509,10 +509,10 @@ Object {
           "items": Object {
             "anyOf": Array [
               Object {
-                "$ref": "OwnershipInfo.schema.json",
+                "$ref": "http://schema.org/OwnershipInfo",
               },
               Object {
-                "$ref": "Product.schema.json",
+                "$ref": "http://schema.org/Product",
               },
             ],
           },
@@ -524,11 +524,11 @@ Object {
       "description": "A parent of this person.",
       "oneOf": Array [
         Object {
-          "$ref": "Person.schema.json",
+          "$ref": "http://schema.org/Person",
         },
         Object {
           "items": Object {
-            "$ref": "Person.schema.json",
+            "$ref": "http://schema.org/Person",
           },
           "type": "array",
         },
@@ -538,11 +538,11 @@ Object {
       "description": "A parents of the person.",
       "oneOf": Array [
         Object {
-          "$ref": "Person.schema.json",
+          "$ref": "http://schema.org/Person",
         },
         Object {
           "items": Object {
-            "$ref": "Person.schema.json",
+            "$ref": "http://schema.org/Person",
           },
           "type": "array",
         },
@@ -552,11 +552,11 @@ Object {
       "description": "Event that this person is a performer or participant in.",
       "oneOf": Array [
         Object {
-          "$ref": "Event.schema.json",
+          "$ref": "http://schema.org/Event",
         },
         Object {
           "items": Object {
-            "$ref": "Event.schema.json",
+            "$ref": "http://schema.org/Event",
           },
           "type": "array",
         },
@@ -569,7 +569,7 @@ Object {
           "type": "string",
         },
         Object {
-          "$ref": "CreativeWork.schema.json",
+          "$ref": "http://schema.org/CreativeWork",
         },
       ],
       "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.
@@ -577,18 +577,18 @@ Object {
 While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
     },
     "relatedTo": Object {
-      "$ref": "Person.schema.json",
+      "$ref": "http://schema.org/Person",
       "description": "The most generic familial relation.",
     },
     "seeks": Object {
       "description": "A pointer to products or services sought by the organization or person (demand).",
       "oneOf": Array [
         Object {
-          "$ref": "Demand.schema.json",
+          "$ref": "http://schema.org/Demand",
         },
         Object {
           "items": Object {
-            "$ref": "Demand.schema.json",
+            "$ref": "http://schema.org/Demand",
           },
           "type": "array",
         },
@@ -598,11 +598,11 @@ While such policies are most typically expressed in natural language, sometimes 
       "description": "A sibling of the person.",
       "oneOf": Array [
         Object {
-          "$ref": "Person.schema.json",
+          "$ref": "http://schema.org/Person",
         },
         Object {
           "items": Object {
-            "$ref": "Person.schema.json",
+            "$ref": "http://schema.org/Person",
           },
           "type": "array",
         },
@@ -612,11 +612,11 @@ While such policies are most typically expressed in natural language, sometimes 
       "description": "A sibling of the person.",
       "oneOf": Array [
         Object {
-          "$ref": "Person.schema.json",
+          "$ref": "http://schema.org/Person",
         },
         Object {
           "items": Object {
-            "$ref": "Person.schema.json",
+            "$ref": "http://schema.org/Person",
           },
           "type": "array",
         },
@@ -628,10 +628,10 @@ While such policies are most typically expressed in natural language, sometimes 
         Object {
           "anyOf": Array [
             Object {
-              "$ref": "Organization.schema.json",
+              "$ref": "http://schema.org/Organization",
             },
             Object {
-              "$ref": "Person.schema.json",
+              "$ref": "http://schema.org/Person",
             },
           ],
         },
@@ -639,10 +639,10 @@ While such policies are most typically expressed in natural language, sometimes 
           "items": Object {
             "anyOf": Array [
               Object {
-                "$ref": "Organization.schema.json",
+                "$ref": "http://schema.org/Organization",
               },
               Object {
-                "$ref": "Person.schema.json",
+                "$ref": "http://schema.org/Person",
               },
             ],
           },
@@ -651,7 +651,7 @@ While such policies are most typically expressed in natural language, sometimes 
       ],
     },
     "spouse": Object {
-      "$ref": "Person.schema.json",
+      "$ref": "http://schema.org/Person",
       "description": "The person's spouse.",
     },
     "taxID": Object {
@@ -667,7 +667,7 @@ While such policies are most typically expressed in natural language, sometimes 
       "type": "string",
     },
     "weight": Object {
-      "$ref": "QuantitativeValue.schema.json",
+      "$ref": "http://schema.org/QuantitativeValue",
       "description": "The weight of the product or person.",
     },
     "workLocation": Object {
@@ -676,10 +676,10 @@ While such policies are most typically expressed in natural language, sometimes 
         Object {
           "anyOf": Array [
             Object {
-              "$ref": "ContactPoint.schema.json",
+              "$ref": "http://schema.org/ContactPoint",
             },
             Object {
-              "$ref": "Place.schema.json",
+              "$ref": "http://schema.org/Place",
             },
           ],
         },
@@ -687,10 +687,10 @@ While such policies are most typically expressed in natural language, sometimes 
           "items": Object {
             "anyOf": Array [
               Object {
-                "$ref": "ContactPoint.schema.json",
+                "$ref": "http://schema.org/ContactPoint",
               },
               Object {
-                "$ref": "Place.schema.json",
+                "$ref": "http://schema.org/Place",
               },
             ],
           },
@@ -702,11 +702,11 @@ While such policies are most typically expressed in natural language, sometimes 
       "description": "Organizations that the person works for.",
       "oneOf": Array [
         Object {
-          "$ref": "Organization.schema.json",
+          "$ref": "http://schema.org/Organization",
         },
         Object {
           "items": Object {
-            "$ref": "Organization.schema.json",
+            "$ref": "http://schema.org/Organization",
           },
           "type": "array",
         },

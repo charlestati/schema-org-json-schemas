@@ -8,11 +8,11 @@
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",
-      "$ref": "CivicStructure.schema.json"
+      "$ref": "http://schema.org/CivicStructure"
     },
     {
       "description": "A lodging business, such as a motel, hotel, or inn.",
-      "$ref": "LodgingBusiness.schema.json"
+      "$ref": "http://schema.org/LodgingBusiness"
     }
   ]
 }

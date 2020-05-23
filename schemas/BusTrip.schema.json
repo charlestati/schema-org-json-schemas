@@ -8,15 +8,15 @@
   "allOf": [
     {
       "description": "A trip or journey. An itinerary of visits to one or more places.",
-      "$ref": "Trip.schema.json"
+      "$ref": "http://schema.org/Trip"
     }
   ],
   "properties": {
     "arrivalBusStop": {
       "description": "The stop or station from which the bus arrives.",
       "anyOf": [
-        { "$ref": "BusStation.schema.json" },
-        { "$ref": "BusStop.schema.json" }
+        { "$ref": "http://schema.org/BusStation" },
+        { "$ref": "http://schema.org/BusStop" }
       ]
     },
     "busName": {
@@ -30,8 +30,8 @@
     "departureBusStop": {
       "description": "The stop or station from which the bus departs.",
       "anyOf": [
-        { "$ref": "BusStation.schema.json" },
-        { "$ref": "BusStop.schema.json" }
+        { "$ref": "http://schema.org/BusStation" },
+        { "$ref": "http://schema.org/BusStop" }
       ]
     }
   }

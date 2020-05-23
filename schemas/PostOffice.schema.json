@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A government office—for example, an IRS or DMV office.",
-      "$ref": "GovernmentOffice.schema.json"
+      "$ref": "http://schema.org/GovernmentOffice"
     }
   ]
 }

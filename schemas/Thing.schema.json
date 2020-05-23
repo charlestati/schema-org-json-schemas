@@ -41,7 +41,7 @@
       "anyOf": [
         { "type": "string", "format": "uri" },
         { "type": "string" },
-        { "$ref": "PropertyValue.schema.json" }
+        { "$ref": "http://schema.org/PropertyValue" }
       ]
     },
     "image": {
@@ -50,7 +50,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "ImageObject.schema.json" }
+            { "$ref": "http://schema.org/ImageObject" }
           ]
         },
         {
@@ -58,7 +58,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "ImageObject.schema.json" }
+              { "$ref": "http://schema.org/ImageObject" }
             ]
           }
         }
@@ -70,7 +70,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "CreativeWork.schema.json" }
+            { "$ref": "http://schema.org/CreativeWork" }
           ]
         },
         {
@@ -78,7 +78,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "CreativeWork.schema.json" }
+              { "$ref": "http://schema.org/CreativeWork" }
             ]
           }
         }
@@ -88,8 +88,8 @@
     "potentialAction": {
       "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
       "oneOf": [
-        { "$ref": "Action.schema.json" },
-        { "type": "array", "items": { "$ref": "Action.schema.json" } }
+        { "$ref": "http://schema.org/Action" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Action" } }
       ]
     },
     "sameAs": {
@@ -104,16 +104,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "CreativeWork.schema.json" },
-            { "$ref": "Event.schema.json" }
+            { "$ref": "http://schema.org/CreativeWork" },
+            { "$ref": "http://schema.org/Event" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "CreativeWork.schema.json" },
-              { "$ref": "Event.schema.json" }
+              { "$ref": "http://schema.org/CreativeWork" },
+              { "$ref": "http://schema.org/Event" }
             ]
           }
         }

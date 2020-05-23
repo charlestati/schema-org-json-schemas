@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "Instructions that explain how to achieve a result by performing a sequence of steps.",
-      "$ref": "HowTo.schema.json"
+      "$ref": "http://schema.org/HowTo"
     }
   ],
   "properties": {
@@ -30,7 +30,7 @@
     },
     "nutrition": {
       "description": "Nutrition information about the recipe or menu item.",
-      "$ref": "NutritionInformation.schema.json"
+      "$ref": "http://schema.org/NutritionInformation"
     },
     "recipeCategory": {
       "description": "The category of the recipe—for example, appetizer, entree, etc.",
@@ -51,22 +51,25 @@
       "description": "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "CreativeWork.schema.json" },
-        { "$ref": "ItemList.schema.json" }
+        { "$ref": "http://schema.org/CreativeWork" },
+        { "$ref": "http://schema.org/ItemList" }
       ]
     },
     "recipeYield": {
       "description": "The quantity produced by the recipe (for example, number of people served, number of servings, etc).",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     },
     "suitableForDiet": {
       "description": "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
       "oneOf": [
-        { "$ref": "RestrictedDiet.schema.json" },
-        { "type": "array", "items": { "$ref": "RestrictedDiet.schema.json" } }
+        { "$ref": "http://schema.org/RestrictedDiet" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/RestrictedDiet" }
+        }
       ]
     }
   }

@@ -8,13 +8,13 @@
   "allOf": [
     {
       "description": "Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.",
-      "$ref": "Product.schema.json"
+      "$ref": "http://schema.org/Product"
     }
   ],
   "properties": {
     "inventoryLevel": {
       "description": "The current approximate inventory level for the item or items.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     }
   }
 }

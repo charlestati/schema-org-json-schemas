@@ -8,44 +8,47 @@
   "allOf": [
     {
       "description": "The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.",
-      "$ref": "Game.schema.json"
+      "$ref": "http://schema.org/Game"
     },
     {
       "description": "A software application.",
-      "$ref": "SoftwareApplication.schema.json"
+      "$ref": "http://schema.org/SoftwareApplication"
     }
   ],
   "properties": {
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "actors": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "cheatCode": {
       "description": "Cheat codes to the game.",
       "oneOf": [
-        { "$ref": "CreativeWork.schema.json" },
-        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+        { "$ref": "http://schema.org/CreativeWork" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/CreativeWork" }
+        }
       ]
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-      "$ref": "Person.schema.json"
+      "$ref": "http://schema.org/Person"
     },
     "directors": {
       "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "gamePlatform": {
@@ -53,37 +56,43 @@
       "anyOf": [
         { "type": "string", "format": "uri" },
         { "type": "string" },
-        { "$ref": "Thing.schema.json" }
+        { "$ref": "http://schema.org/Thing" }
       ]
     },
     "gameServer": {
       "description": "The server on which  it is possible to play the game.",
-      "$ref": "GameServer.schema.json"
+      "$ref": "http://schema.org/GameServer"
     },
     "gameTip": {
       "description": "Links to tips, tactics, etc.",
       "oneOf": [
-        { "$ref": "CreativeWork.schema.json" },
-        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+        { "$ref": "http://schema.org/CreativeWork" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/CreativeWork" }
+        }
       ]
     },
     "musicBy": {
       "description": "The composer of the soundtrack.",
       "anyOf": [
-        { "$ref": "MusicGroup.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/MusicGroup" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "playMode": {
       "description": "Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.",
       "oneOf": [
-        { "$ref": "GamePlayMode.schema.json" },
-        { "type": "array", "items": { "$ref": "GamePlayMode.schema.json" } }
+        { "$ref": "http://schema.org/GamePlayMode" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/GamePlayMode" }
+        }
       ]
     },
     "trailer": {
       "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
-      "$ref": "VideoObject.schema.json"
+      "$ref": "http://schema.org/VideoObject"
     }
   }
 }

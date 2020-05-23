@@ -93,21 +93,22 @@ function buildParents(parentsIDs, allSchemaClasses) {
   );
   return sortBy(parents, ["rdfs:label"]).map((parent) => ({
     description: htmlToPlainText(parent["rdfs:comment"]),
-    $ref: `${parent["rdfs:label"]}${schemaSuffix}`,
+    $ref: parent["@id"],
   }));
 }
 
 /**
- * Build a JSON Schema type from a Schema.org type label
+ * Build a JSON Schema type from a Schema.org type
  *
- * @param typeLabel {string} - The Schema.org type label
+ * @param type {object} - The Schema.org type in JSON-LD format
  * @returns {object} - The corresponding type in JSON Schema format
  */
-function buildType(typeLabel) {
+function buildType(type) {
+  const typeLabel = type["rdfs:label"];
   return hasHardcodedSchema(typeLabel)
     ? hardcodedSchemas[`${typeLabel}`]
     : {
-        $ref: `${typeLabel}${schemaSuffix}`,
+        $ref: type["@id"],
       };
 }
 
@@ -122,7 +123,7 @@ function buildTypes(types, isArray) {
   if (types.length > 1) {
     const possibleTypes = {
       anyOf: sortBy(
-        types.map((type) => buildType(type["rdfs:label"])),
+        types.map((type) => buildType(type)),
         ["type", "format", "$ref"],
       ),
     };
@@ -140,7 +141,7 @@ function buildTypes(types, isArray) {
     return possibleTypes;
   }
   const typeLabel = types[0]["rdfs:label"];
-  const type = buildType(typeLabel);
+  const type = buildType(types[0]);
   return isArray && !typesWithoutMultiplicity.has(typeLabel)
     ? {
         oneOf: [

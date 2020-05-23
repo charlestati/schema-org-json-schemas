@@ -8,18 +8,26 @@
   "allOf": [
     {
       "description": "Entities that have a somewhat fixed, physical extension.",
-      "$ref": "Place.schema.json"
+      "$ref": "http://schema.org/Place"
     }
   ],
   "properties": {
     "availableLanguage": {
       "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
       "oneOf": [
-        { "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }] },
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "http://schema.org/Language" }
+          ]
+        },
         {
           "type": "array",
           "items": {
-            "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "http://schema.org/Language" }
+            ]
           }
         }
       ]
@@ -27,11 +35,19 @@
     "touristType": {
       "description": "Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc.",
       "oneOf": [
-        { "anyOf": [{ "type": "string" }, { "$ref": "Audience.schema.json" }] },
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "http://schema.org/Audience" }
+          ]
+        },
         {
           "type": "array",
           "items": {
-            "anyOf": [{ "type": "string" }, { "$ref": "Audience.schema.json" }]
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "http://schema.org/Audience" }
+            ]
           }
         }
       ]

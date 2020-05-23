@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",
-      "$ref": "ReactAction.schema.json"
+      "$ref": "http://schema.org/ReactAction"
     }
   ]
 }

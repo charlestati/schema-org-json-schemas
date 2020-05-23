@@ -8,18 +8,26 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
     "availableLanguage": {
       "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
       "oneOf": [
-        { "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }] },
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "http://schema.org/Language" }
+          ]
+        },
         {
           "type": "array",
           "items": {
-            "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "http://schema.org/Language" }
+            ]
           }
         }
       ]
@@ -31,23 +39,23 @@
     },
     "providesService": {
       "description": "The service provided by this channel.",
-      "$ref": "Service.schema.json"
+      "$ref": "http://schema.org/Service"
     },
     "serviceLocation": {
       "description": "The location (e.g. civic structure, local business, etc.) where a person can go to access the service.",
-      "$ref": "Place.schema.json"
+      "$ref": "http://schema.org/Place"
     },
     "servicePhone": {
       "description": "The phone number to use to access the service.",
-      "$ref": "ContactPoint.schema.json"
+      "$ref": "http://schema.org/ContactPoint"
     },
     "servicePostalAddress": {
       "description": "The address for accessing the service by mail.",
-      "$ref": "PostalAddress.schema.json"
+      "$ref": "http://schema.org/PostalAddress"
     },
     "serviceSmsNumber": {
       "description": "The number to access the service by text message.",
-      "$ref": "ContactPoint.schema.json"
+      "$ref": "http://schema.org/ContactPoint"
     },
     "serviceUrl": {
       "description": "The website to access the service.",

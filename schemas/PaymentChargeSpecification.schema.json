@@ -8,17 +8,17 @@
   "allOf": [
     {
       "description": "A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use MonetaryAmount to describe independent amounts of money such as a salary, credit card limits, etc.",
-      "$ref": "PriceSpecification.schema.json"
+      "$ref": "http://schema.org/PriceSpecification"
     }
   ],
   "properties": {
     "appliesToDeliveryMethod": {
       "description": "The delivery method(s) to which the delivery charge or payment charge specification applies.",
-      "$ref": "DeliveryMethod.schema.json"
+      "$ref": "http://schema.org/DeliveryMethod"
     },
     "appliesToPaymentMethod": {
       "description": "The payment method(s) to which the payment charge specification applies.",
-      "$ref": "PaymentMethod.schema.json"
+      "$ref": "http://schema.org/PaymentMethod"
     }
   }
 }

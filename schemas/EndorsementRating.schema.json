@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A rating is an evaluation on a numeric scale, such as 1 to 5 stars.",
-      "$ref": "Rating.schema.json"
+      "$ref": "http://schema.org/Rating"
     }
   ]
 }

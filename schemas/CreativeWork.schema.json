@@ -8,13 +8,13 @@
   "allOf": [
     {
       "description": "The most generic type of item.",
-      "$ref": "Thing.schema.json"
+      "$ref": "http://schema.org/Thing"
     }
   ],
   "properties": {
     "about": {
       "description": "The subject matter of the content.",
-      "$ref": "Thing.schema.json"
+      "$ref": "http://schema.org/Thing"
     },
     "accessMode": {
       "description": "The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Expected values include: auditory, tactile, textual, visual, colorDependent, chartOnVisual, chemOnVisual, diagramOnVisual, mathOnVisual, musicOnVisual, textOnVisual.",
@@ -26,8 +26,8 @@
     "accessModeSufficient": {
       "description": "A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include:  auditory, tactile, textual, visual.",
       "oneOf": [
-        { "$ref": "ItemList.schema.json" },
-        { "type": "array", "items": { "$ref": "ItemList.schema.json" } }
+        { "$ref": "http://schema.org/ItemList" },
+        { "type": "array", "items": { "$ref": "http://schema.org/ItemList" } }
       ]
     },
     "accessibilityAPI": {
@@ -64,11 +64,11 @@
     },
     "accountablePerson": {
       "description": "Specifies the Person that is legally accountable for the CreativeWork.",
-      "$ref": "Person.schema.json"
+      "$ref": "http://schema.org/Person"
     },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
-      "$ref": "AggregateRating.schema.json"
+      "$ref": "http://schema.org/AggregateRating"
     },
     "alternativeHeadline": {
       "description": "A secondary title of the CreativeWork.",
@@ -79,29 +79,29 @@
     },
     "associatedMedia": {
       "description": "A media object that encodes this CreativeWork. This property is a synonym for encoding.",
-      "$ref": "MediaObject.schema.json"
+      "$ref": "http://schema.org/MediaObject"
     },
     "audience": {
       "description": "An intended audience, i.e. a group for whom something was created.",
-      "$ref": "Audience.schema.json"
+      "$ref": "http://schema.org/Audience"
     },
     "audio": {
       "description": "An embedded audio object.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "AudioObject.schema.json" },
-            { "$ref": "Clip.schema.json" },
-            { "$ref": "MusicRecording.schema.json" }
+            { "$ref": "http://schema.org/AudioObject" },
+            { "$ref": "http://schema.org/Clip" },
+            { "$ref": "http://schema.org/MusicRecording" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "AudioObject.schema.json" },
-              { "$ref": "Clip.schema.json" },
-              { "$ref": "MusicRecording.schema.json" }
+              { "$ref": "http://schema.org/AudioObject" },
+              { "$ref": "http://schema.org/Clip" },
+              { "$ref": "http://schema.org/MusicRecording" }
             ]
           }
         }
@@ -110,8 +110,8 @@
     "author": {
       "description": "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "award": {
@@ -131,8 +131,8 @@
     "character": {
       "description": "Fictional person connected with a creative work.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "citation": {
@@ -141,7 +141,7 @@
         {
           "anyOf": [
             { "type": "string" },
-            { "$ref": "CreativeWork.schema.json" }
+            { "$ref": "http://schema.org/CreativeWork" }
           ]
         },
         {
@@ -149,7 +149,7 @@
           "items": {
             "anyOf": [
               { "type": "string" },
-              { "$ref": "CreativeWork.schema.json" }
+              { "$ref": "http://schema.org/CreativeWork" }
             ]
           }
         }
@@ -158,8 +158,8 @@
     "comment": {
       "description": "Comments, typically from users.",
       "oneOf": [
-        { "$ref": "Comment.schema.json" },
-        { "type": "array", "items": { "$ref": "Comment.schema.json" } }
+        { "$ref": "http://schema.org/Comment" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Comment" } }
       ]
     },
     "commentCount": {
@@ -168,16 +168,24 @@
     },
     "contentLocation": {
       "description": "The location depicted or described in the content. For example, the location in a photograph or painting.",
-      "$ref": "Place.schema.json"
+      "$ref": "http://schema.org/Place"
     },
     "contentRating": {
       "description": "Official rating of a piece of content—for example,'MPAA PG-13'.",
       "oneOf": [
-        { "anyOf": [{ "type": "string" }, { "$ref": "Rating.schema.json" }] },
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "http://schema.org/Rating" }
+          ]
+        },
         {
           "type": "array",
           "items": {
-            "anyOf": [{ "type": "string" }, { "$ref": "Rating.schema.json" }]
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "http://schema.org/Rating" }
+            ]
           }
         }
       ]
@@ -187,16 +195,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -205,8 +213,8 @@
     "copyrightHolder": {
       "description": "The party holding the legal copyright to the CreativeWork.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "copyrightYear": {
@@ -216,8 +224,8 @@
     "creator": {
       "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "dateCreated": {
@@ -250,13 +258,16 @@
     },
     "editor": {
       "description": "Specifies the Person who edited the CreativeWork.",
-      "$ref": "Person.schema.json"
+      "$ref": "http://schema.org/Person"
     },
     "educationalAlignment": {
       "description": "An alignment to an established educational framework.\n\nThis property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource teaches or assesses a competency.",
       "oneOf": [
-        { "$ref": "AlignmentObject.schema.json" },
-        { "type": "array", "items": { "$ref": "AlignmentObject.schema.json" } }
+        { "$ref": "http://schema.org/AlignmentObject" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/AlignmentObject" }
+        }
       ]
     },
     "educationalUse": {
@@ -266,8 +277,11 @@
     "encoding": {
       "description": "A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.",
       "oneOf": [
-        { "$ref": "MediaObject.schema.json" },
-        { "type": "array", "items": { "$ref": "MediaObject.schema.json" } }
+        { "$ref": "http://schema.org/MediaObject" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/MediaObject" }
+        }
       ]
     },
     "encodingFormat": {
@@ -277,15 +291,21 @@
     "encodings": {
       "description": "A media object that encodes this CreativeWork.",
       "oneOf": [
-        { "$ref": "MediaObject.schema.json" },
-        { "type": "array", "items": { "$ref": "MediaObject.schema.json" } }
+        { "$ref": "http://schema.org/MediaObject" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/MediaObject" }
+        }
       ]
     },
     "exampleOfWork": {
       "description": "A creative work that this work is an example/instance/realization/derivation of.",
       "oneOf": [
-        { "$ref": "CreativeWork.schema.json" },
-        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+        { "$ref": "http://schema.org/CreativeWork" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/CreativeWork" }
+        }
       ]
     },
     "expires": {
@@ -302,16 +322,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -324,18 +344,21 @@
     "hasPart": {
       "description": "Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).",
       "oneOf": [
-        { "$ref": "CreativeWork.schema.json" },
-        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+        { "$ref": "http://schema.org/CreativeWork" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/CreativeWork" }
+        }
       ]
     },
     "headline": { "description": "Headline of the article.", "type": "string" },
     "inLanguage": {
       "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
-      "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Language" }]
     },
     "interactionStatistic": {
       "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
-      "$ref": "InteractionCounter.schema.json"
+      "$ref": "http://schema.org/InteractionCounter"
     },
     "interactivityType": {
       "description": "The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.",
@@ -351,8 +374,8 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "CreativeWork.schema.json" },
-            { "$ref": "Product.schema.json" }
+            { "$ref": "http://schema.org/CreativeWork" },
+            { "$ref": "http://schema.org/Product" }
           ]
         },
         {
@@ -360,8 +383,8 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "CreativeWork.schema.json" },
-              { "$ref": "Product.schema.json" }
+              { "$ref": "http://schema.org/CreativeWork" },
+              { "$ref": "http://schema.org/Product" }
             ]
           }
         }
@@ -373,8 +396,8 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "CreativeWork.schema.json" },
-            { "$ref": "Product.schema.json" }
+            { "$ref": "http://schema.org/CreativeWork" },
+            { "$ref": "http://schema.org/Product" }
           ]
         },
         {
@@ -382,8 +405,8 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "CreativeWork.schema.json" },
-              { "$ref": "Product.schema.json" }
+              { "$ref": "http://schema.org/CreativeWork" },
+              { "$ref": "http://schema.org/Product" }
             ]
           }
         }
@@ -397,7 +420,7 @@
       "description": "Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.",
       "anyOf": [
         { "type": "string", "format": "uri" },
-        { "$ref": "CreativeWork.schema.json" }
+        { "$ref": "http://schema.org/CreativeWork" }
       ]
     },
     "keywords": {
@@ -414,7 +437,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "CreativeWork.schema.json" }
+            { "$ref": "http://schema.org/CreativeWork" }
           ]
         },
         {
@@ -422,7 +445,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "CreativeWork.schema.json" }
+              { "$ref": "http://schema.org/CreativeWork" }
             ]
           }
         }
@@ -430,13 +453,13 @@
     },
     "locationCreated": {
       "description": "The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.",
-      "$ref": "Place.schema.json"
+      "$ref": "http://schema.org/Place"
     },
     "mainEntity": {
       "description": "Indicates the primary entity described in some page or other CreativeWork.",
       "oneOf": [
-        { "$ref": "Thing.schema.json" },
-        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+        { "$ref": "http://schema.org/Thing" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Thing" } }
       ]
     },
     "material": {
@@ -446,7 +469,7 @@
           "anyOf": [
             { "type": "string", "format": "uri" },
             { "type": "string" },
-            { "$ref": "Product.schema.json" }
+            { "$ref": "http://schema.org/Product" }
           ]
         },
         {
@@ -455,7 +478,7 @@
             "anyOf": [
               { "type": "string", "format": "uri" },
               { "type": "string" },
-              { "$ref": "Product.schema.json" }
+              { "$ref": "http://schema.org/Product" }
             ]
           }
         }
@@ -464,8 +487,8 @@
     "mentions": {
       "description": "Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.",
       "oneOf": [
-        { "$ref": "Thing.schema.json" },
-        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+        { "$ref": "http://schema.org/Thing" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Thing" } }
       ]
     },
     "offers": {
@@ -473,16 +496,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Demand.schema.json" },
-            { "$ref": "Offer.schema.json" }
+            { "$ref": "http://schema.org/Demand" },
+            { "$ref": "http://schema.org/Offer" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Demand.schema.json" },
-              { "$ref": "Offer.schema.json" }
+              { "$ref": "http://schema.org/Demand" },
+              { "$ref": "http://schema.org/Offer" }
             ]
           }
         }
@@ -495,58 +518,61 @@
     "producer": {
       "description": "The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "provider": {
       "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "publication": {
       "description": "A publication event associated with the item.",
       "oneOf": [
-        { "$ref": "PublicationEvent.schema.json" },
-        { "type": "array", "items": { "$ref": "PublicationEvent.schema.json" } }
+        { "$ref": "http://schema.org/PublicationEvent" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/PublicationEvent" }
+        }
       ]
     },
     "publisher": {
       "description": "The publisher of the creative work.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "publishingPrinciples": {
       "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.\n\nWhile such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
       "anyOf": [
         { "type": "string", "format": "uri" },
-        { "$ref": "CreativeWork.schema.json" }
+        { "$ref": "http://schema.org/CreativeWork" }
       ]
     },
     "recordedAt": {
       "description": "The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.",
-      "$ref": "Event.schema.json"
+      "$ref": "http://schema.org/Event"
     },
     "releasedEvent": {
       "description": "The place and time the release was issued, expressed as a PublicationEvent.",
-      "$ref": "PublicationEvent.schema.json"
+      "$ref": "http://schema.org/PublicationEvent"
     },
     "review": {
       "description": "A review of the item.",
       "oneOf": [
-        { "$ref": "Review.schema.json" },
-        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+        { "$ref": "http://schema.org/Review" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
       ]
     },
     "reviews": {
       "description": "Review of the item.",
       "oneOf": [
-        { "$ref": "Review.schema.json" },
-        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+        { "$ref": "http://schema.org/Review" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
       ]
     },
     "schemaVersion": {
@@ -568,31 +594,31 @@
     },
     "sourceOrganization": {
       "description": "The Organization on whose behalf the creator was working.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "spatial": {
       "description": "The \"spatial\" property can be used in cases when more specific properties\n(e.g. locationCreated, spatialCoverage, contentLocation) are not known to be appropriate.",
-      "$ref": "Place.schema.json"
+      "$ref": "http://schema.org/Place"
     },
     "spatialCoverage": {
       "description": "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of\n      contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates\n      areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.",
-      "$ref": "Place.schema.json"
+      "$ref": "http://schema.org/Place"
     },
     "sponsor": {
       "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -634,16 +660,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -662,16 +688,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Clip.schema.json" },
-            { "$ref": "VideoObject.schema.json" }
+            { "$ref": "http://schema.org/Clip" },
+            { "$ref": "http://schema.org/VideoObject" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Clip.schema.json" },
-              { "$ref": "VideoObject.schema.json" }
+              { "$ref": "http://schema.org/Clip" },
+              { "$ref": "http://schema.org/VideoObject" }
             ]
           }
         }
@@ -680,8 +706,11 @@
     "workExample": {
       "description": "Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.",
       "oneOf": [
-        { "$ref": "CreativeWork.schema.json" },
-        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+        { "$ref": "http://schema.org/CreativeWork" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/CreativeWork" }
+        }
       ]
     }
   }

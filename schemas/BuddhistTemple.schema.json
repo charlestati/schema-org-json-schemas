@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "Place of worship, such as a church, synagogue, or mosque.",
-      "$ref": "PlaceOfWorship.schema.json"
+      "$ref": "http://schema.org/PlaceOfWorship"
     }
   ]
 }

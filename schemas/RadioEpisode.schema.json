@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A media episode (e.g. TV, radio, video game) which can be part of a series or season.",
-      "$ref": "Episode.schema.json"
+      "$ref": "http://schema.org/Episode"
     }
   ]
 }

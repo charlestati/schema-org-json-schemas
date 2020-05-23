@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "Car repair, sales, or parts.",
-      "$ref": "AutomotiveBusiness.schema.json"
+      "$ref": "http://schema.org/AutomotiveBusiness"
     }
   ]
 }

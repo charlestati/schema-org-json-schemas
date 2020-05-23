@@ -8,15 +8,15 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
     "author": {
       "description": "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "bestRating": {

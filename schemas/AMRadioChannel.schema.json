@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A unique instance of a radio BroadcastService on a CableOrSatelliteService lineup.",
-      "$ref": "RadioChannel.schema.json"
+      "$ref": "http://schema.org/RadioChannel"
     }
   ]
 }

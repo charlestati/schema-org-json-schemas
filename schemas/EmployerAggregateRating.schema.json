@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The average rating based on multiple ratings or reviews.",
-      "$ref": "AggregateRating.schema.json"
+      "$ref": "http://schema.org/AggregateRating"
     }
   ]
 }

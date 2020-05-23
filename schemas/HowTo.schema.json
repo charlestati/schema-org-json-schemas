@@ -8,13 +8,16 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
     "estimatedCost": {
       "description": "The estimated cost of the supply or supplies consumed when performing instructions.",
-      "anyOf": [{ "type": "string" }, { "$ref": "MonetaryAmount.schema.json" }]
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "http://schema.org/MonetaryAmount" }
+      ]
     },
     "performTime": {
       "description": "The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in ISO 8601 duration format.",
@@ -32,9 +35,9 @@
         {
           "anyOf": [
             { "type": "string" },
-            { "$ref": "CreativeWork.schema.json" },
-            { "$ref": "HowToSection.schema.json" },
-            { "$ref": "HowToStep.schema.json" }
+            { "$ref": "http://schema.org/CreativeWork" },
+            { "$ref": "http://schema.org/HowToSection" },
+            { "$ref": "http://schema.org/HowToStep" }
           ]
         },
         {
@@ -42,9 +45,9 @@
           "items": {
             "anyOf": [
               { "type": "string" },
-              { "$ref": "CreativeWork.schema.json" },
-              { "$ref": "HowToSection.schema.json" },
-              { "$ref": "HowToStep.schema.json" }
+              { "$ref": "http://schema.org/CreativeWork" },
+              { "$ref": "http://schema.org/HowToSection" },
+              { "$ref": "http://schema.org/HowToStep" }
             ]
           }
         }
@@ -56,8 +59,8 @@
         {
           "anyOf": [
             { "type": "string" },
-            { "$ref": "CreativeWork.schema.json" },
-            { "$ref": "ItemList.schema.json" }
+            { "$ref": "http://schema.org/CreativeWork" },
+            { "$ref": "http://schema.org/ItemList" }
           ]
         },
         {
@@ -65,8 +68,8 @@
           "items": {
             "anyOf": [
               { "type": "string" },
-              { "$ref": "CreativeWork.schema.json" },
-              { "$ref": "ItemList.schema.json" }
+              { "$ref": "http://schema.org/CreativeWork" },
+              { "$ref": "http://schema.org/ItemList" }
             ]
           }
         }
@@ -76,14 +79,17 @@
       "description": "A sub-property of instrument. A supply consumed when performing instructions or a direction.",
       "oneOf": [
         {
-          "anyOf": [{ "type": "string" }, { "$ref": "HowToSupply.schema.json" }]
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "http://schema.org/HowToSupply" }
+          ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
               { "type": "string" },
-              { "$ref": "HowToSupply.schema.json" }
+              { "$ref": "http://schema.org/HowToSupply" }
             ]
           }
         }
@@ -93,12 +99,18 @@
       "description": "A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.",
       "oneOf": [
         {
-          "anyOf": [{ "type": "string" }, { "$ref": "HowToTool.schema.json" }]
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "http://schema.org/HowToTool" }
+          ]
         },
         {
           "type": "array",
           "items": {
-            "anyOf": [{ "type": "string" }, { "$ref": "HowToTool.schema.json" }]
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "http://schema.org/HowToTool" }
+            ]
           }
         }
       ]
@@ -112,7 +124,7 @@
       "description": "The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     }
   }

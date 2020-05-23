@@ -8,13 +8,13 @@
   "allOf": [
     {
       "description": "A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.",
-      "$ref": "PublicationEvent.schema.json"
+      "$ref": "http://schema.org/PublicationEvent"
     }
   ],
   "properties": {
     "broadcastOfEvent": {
       "description": "The event being broadcast such as a sporting event or awards ceremony.",
-      "$ref": "Event.schema.json"
+      "$ref": "http://schema.org/Event"
     },
     "isLiveBroadcast": {
       "description": "True is the broadcast is of a live event.",

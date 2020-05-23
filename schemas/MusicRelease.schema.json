@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A collection of music tracks in playlist form.",
-      "$ref": "MusicPlaylist.schema.json"
+      "$ref": "http://schema.org/MusicPlaylist"
     }
   ],
   "properties": {
@@ -19,8 +19,8 @@
     "creditedTo": {
       "description": "The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to \"Stefani Germanotta Band\", but by Lady Gaga.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "duration": {
@@ -31,20 +31,20 @@
     "musicReleaseFormat": {
       "description": "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
       "oneOf": [
-        { "$ref": "MusicReleaseFormatType.schema.json" },
+        { "$ref": "http://schema.org/MusicReleaseFormatType" },
         {
           "type": "array",
-          "items": { "$ref": "MusicReleaseFormatType.schema.json" }
+          "items": { "$ref": "http://schema.org/MusicReleaseFormatType" }
         }
       ]
     },
     "recordLabel": {
       "description": "The label that issued the release.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "releaseOf": {
       "description": "The album this is a release of.",
-      "$ref": "MusicAlbum.schema.json"
+      "$ref": "http://schema.org/MusicAlbum"
     }
   }
 }

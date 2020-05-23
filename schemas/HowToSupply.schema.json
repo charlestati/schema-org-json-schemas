@@ -8,13 +8,16 @@
   "allOf": [
     {
       "description": "An item used as either a tool or supply when performing the instructions for how to to achieve a result.",
-      "$ref": "HowToItem.schema.json"
+      "$ref": "http://schema.org/HowToItem"
     }
   ],
   "properties": {
     "estimatedCost": {
       "description": "The estimated cost of the supply or supplies consumed when performing instructions.",
-      "anyOf": [{ "type": "string" }, { "$ref": "MonetaryAmount.schema.json" }]
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "http://schema.org/MonetaryAmount" }
+      ]
     }
   }
 }

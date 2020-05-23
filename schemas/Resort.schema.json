@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A lodging business, such as a motel, hotel, or inn.",
-      "$ref": "LodgingBusiness.schema.json"
+      "$ref": "http://schema.org/LodgingBusiness"
     }
   ]
 }

@@ -8,15 +8,18 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
     "catalog": {
       "description": "A data catalog which contains this dataset.",
       "oneOf": [
-        { "$ref": "DataCatalog.schema.json" },
-        { "type": "array", "items": { "$ref": "DataCatalog.schema.json" } }
+        { "$ref": "http://schema.org/DataCatalog" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/DataCatalog" }
+        }
       ]
     },
     "datasetTimeInterval": {
@@ -27,22 +30,31 @@
     "distribution": {
       "description": "A downloadable form of this dataset, at a specific location, in a specific format.",
       "oneOf": [
-        { "$ref": "DataDownload.schema.json" },
-        { "type": "array", "items": { "$ref": "DataDownload.schema.json" } }
+        { "$ref": "http://schema.org/DataDownload" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/DataDownload" }
+        }
       ]
     },
     "includedDataCatalog": {
       "description": "A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').",
       "oneOf": [
-        { "$ref": "DataCatalog.schema.json" },
-        { "type": "array", "items": { "$ref": "DataCatalog.schema.json" } }
+        { "$ref": "http://schema.org/DataCatalog" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/DataCatalog" }
+        }
       ]
     },
     "includedInDataCatalog": {
       "description": "A data catalog which contains this dataset.",
       "oneOf": [
-        { "$ref": "DataCatalog.schema.json" },
-        { "type": "array", "items": { "$ref": "DataCatalog.schema.json" } }
+        { "$ref": "http://schema.org/DataCatalog" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/DataCatalog" }
+        }
       ]
     },
     "issn": {

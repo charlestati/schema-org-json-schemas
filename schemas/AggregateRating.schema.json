@@ -8,13 +8,13 @@
   "allOf": [
     {
       "description": "A rating is an evaluation on a numeric scale, such as 1 to 5 stars.",
-      "$ref": "Rating.schema.json"
+      "$ref": "http://schema.org/Rating"
     }
   ],
   "properties": {
     "itemReviewed": {
       "description": "The item that is being reviewed/rated.",
-      "$ref": "Thing.schema.json"
+      "$ref": "http://schema.org/Thing"
     },
     "ratingCount": {
       "description": "The count of total number of ratings.",

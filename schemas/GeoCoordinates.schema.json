@@ -8,17 +8,20 @@
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "StructuredValue.schema.json"
+      "$ref": "http://schema.org/StructuredValue"
     }
   ],
   "properties": {
     "address": {
       "description": "Physical address of the item.",
-      "anyOf": [{ "type": "string" }, { "$ref": "PostalAddress.schema.json" }]
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "http://schema.org/PostalAddress" }
+      ]
     },
     "addressCountry": {
       "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-      "anyOf": [{ "type": "string" }, { "$ref": "Country.schema.json" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Country" }]
     },
     "elevation": {
       "description": "The elevation of a location (WGS 84). Values may be of the form 'NUMBER UNITOFMEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",

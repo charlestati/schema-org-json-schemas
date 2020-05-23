@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The act of an agent relocating to a place.\n\nRelated actions:\n\n\nTransferAction: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.\n\n",
-      "$ref": "MoveAction.schema.json"
+      "$ref": "http://schema.org/MoveAction"
     }
   ],
   "properties": {

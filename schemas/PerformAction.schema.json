@@ -8,17 +8,17 @@
   "allOf": [
     {
       "description": "The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.\n\nRelated actions:\n\n\nListenAction: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\nWatchAction: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.\n\n",
-      "$ref": "PlayAction.schema.json"
+      "$ref": "http://schema.org/PlayAction"
     }
   ],
   "properties": {
     "entertainmentBusiness": {
       "description": "A sub property of location. The entertainment business where the action occurred.",
       "oneOf": [
-        { "$ref": "EntertainmentBusiness.schema.json" },
+        { "$ref": "http://schema.org/EntertainmentBusiness" },
         {
           "type": "array",
-          "items": { "$ref": "EntertainmentBusiness.schema.json" }
+          "items": { "$ref": "http://schema.org/EntertainmentBusiness" }
         }
       ]
     }

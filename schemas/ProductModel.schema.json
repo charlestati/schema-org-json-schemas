@@ -8,29 +8,38 @@
   "allOf": [
     {
       "description": "Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.",
-      "$ref": "Product.schema.json"
+      "$ref": "http://schema.org/Product"
     }
   ],
   "properties": {
     "isVariantOf": {
       "description": "A pointer to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive.",
       "oneOf": [
-        { "$ref": "ProductModel.schema.json" },
-        { "type": "array", "items": { "$ref": "ProductModel.schema.json" } }
+        { "$ref": "http://schema.org/ProductModel" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/ProductModel" }
+        }
       ]
     },
     "predecessorOf": {
       "description": "A pointer from a previous, often discontinued variant of the product to its newer variant.",
       "oneOf": [
-        { "$ref": "ProductModel.schema.json" },
-        { "type": "array", "items": { "$ref": "ProductModel.schema.json" } }
+        { "$ref": "http://schema.org/ProductModel" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/ProductModel" }
+        }
       ]
     },
     "successorOf": {
       "description": "A pointer from a newer variant of a product  to its previous, often discontinued predecessor.",
       "oneOf": [
-        { "$ref": "ProductModel.schema.json" },
-        { "type": "array", "items": { "$ref": "ProductModel.schema.json" } }
+        { "$ref": "http://schema.org/ProductModel" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/ProductModel" }
+        }
       ]
     }
   }

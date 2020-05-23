@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A single message from a sender to one or more organizations or people.",
-      "$ref": "Message.schema.json"
+      "$ref": "http://schema.org/Message"
     }
   ]
 }

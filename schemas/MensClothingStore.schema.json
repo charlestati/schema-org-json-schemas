@@ -6,6 +6,6 @@
   "type": "object",
   "format": "http://schema.org/MensClothingStore",
   "allOf": [
-    { "description": "A retail good store.", "$ref": "Store.schema.json" }
+    { "description": "A retail good store.", "$ref": "http://schema.org/Store" }
   ]
 }

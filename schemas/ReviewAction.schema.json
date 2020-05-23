@@ -8,15 +8,15 @@
   "allOf": [
     {
       "description": "The act of forming one's opinion, reaction or sentiment.",
-      "$ref": "AssessAction.schema.json"
+      "$ref": "http://schema.org/AssessAction"
     }
   ],
   "properties": {
     "resultReview": {
       "description": "A sub property of result. The review that resulted in the performing of the action.",
       "oneOf": [
-        { "$ref": "Review.schema.json" },
-        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+        { "$ref": "http://schema.org/Review" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
       ]
     }
   }

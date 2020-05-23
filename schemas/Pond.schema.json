@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A body of water, such as a sea, ocean, or lake.",
-      "$ref": "BodyOfWater.schema.json"
+      "$ref": "http://schema.org/BodyOfWater"
     }
   ]
 }

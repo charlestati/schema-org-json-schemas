@@ -8,21 +8,21 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
     "issuedBy": {
       "description": "The organization issuing the ticket or permit.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "issuedThrough": {
       "description": "The service through with the permit was granted.",
-      "$ref": "Service.schema.json"
+      "$ref": "http://schema.org/Service"
     },
     "permitAudience": {
       "description": "The target audience for this permit.",
-      "$ref": "Audience.schema.json"
+      "$ref": "http://schema.org/Audience"
     },
     "validFor": {
       "description": "The duration of validity of a permit or similar thing.",
@@ -38,7 +38,7 @@
     },
     "validIn": {
       "description": "The geographic area where a permit or similar thing is valid.",
-      "$ref": "AdministrativeArea.schema.json"
+      "$ref": "http://schema.org/AdministrativeArea"
     },
     "validUntil": {
       "description": "The date when the item is no longer valid.",

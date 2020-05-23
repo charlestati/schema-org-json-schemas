@@ -8,33 +8,33 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
     "acceptedPaymentMethod": {
       "description": "The payment method(s) accepted by seller for this offer.",
       "anyOf": [
-        { "$ref": "LoanOrCredit.schema.json" },
-        { "$ref": "PaymentMethod.schema.json" }
+        { "$ref": "http://schema.org/LoanOrCredit" },
+        { "$ref": "http://schema.org/PaymentMethod" }
       ]
     },
     "advanceBookingRequirement": {
       "description": "The amount of time that is required between accepting the offer and the actual usage of the resource or service.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     },
     "areaServed": {
       "description": "The geographic area where a service or offered item is provided.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "AdministrativeArea.schema.json" },
-        { "$ref": "GeoShape.schema.json" },
-        { "$ref": "Place.schema.json" }
+        { "$ref": "http://schema.org/AdministrativeArea" },
+        { "$ref": "http://schema.org/GeoShape" },
+        { "$ref": "http://schema.org/Place" }
       ]
     },
     "availability": {
       "description": "The availability of this item—for example In stock, Out of stock, Pre-order, etc.",
-      "$ref": "ItemAvailability.schema.json"
+      "$ref": "http://schema.org/ItemAvailability"
     },
     "availabilityEnds": {
       "description": "The end of the availability of the product or service included in the offer.",
@@ -54,43 +54,43 @@
     },
     "availableAtOrFrom": {
       "description": "The place(s) from which the offer can be obtained (e.g. store locations).",
-      "$ref": "Place.schema.json"
+      "$ref": "http://schema.org/Place"
     },
     "availableDeliveryMethod": {
       "description": "The delivery method(s) available for this offer.",
-      "$ref": "DeliveryMethod.schema.json"
+      "$ref": "http://schema.org/DeliveryMethod"
     },
     "businessFunction": {
       "description": "The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.",
-      "$ref": "BusinessFunction.schema.json"
+      "$ref": "http://schema.org/BusinessFunction"
     },
     "deliveryLeadTime": {
       "description": "The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     },
     "eligibleCustomerType": {
       "description": "The type(s) of customers for which the given offer is valid.",
-      "$ref": "BusinessEntityType.schema.json"
+      "$ref": "http://schema.org/BusinessEntityType"
     },
     "eligibleDuration": {
       "description": "The duration for which the given offer is valid.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     },
     "eligibleQuantity": {
       "description": "The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     },
     "eligibleRegion": {
       "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also ineligibleRegion.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "GeoShape.schema.json" },
-        { "$ref": "Place.schema.json" }
+        { "$ref": "http://schema.org/GeoShape" },
+        { "$ref": "http://schema.org/Place" }
       ]
     },
     "eligibleTransactionVolume": {
       "description": "The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.",
-      "$ref": "PriceSpecification.schema.json"
+      "$ref": "http://schema.org/PriceSpecification"
     },
     "gtin12": {
       "description": "The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See GS1 GTIN Summary for more details.",
@@ -111,37 +111,37 @@
     "includesObject": {
       "description": "This links to a node or nodes indicating the exact quantity of the products included in the offer.",
       "oneOf": [
-        { "$ref": "TypeAndQuantityNode.schema.json" },
+        { "$ref": "http://schema.org/TypeAndQuantityNode" },
         {
           "type": "array",
-          "items": { "$ref": "TypeAndQuantityNode.schema.json" }
+          "items": { "$ref": "http://schema.org/TypeAndQuantityNode" }
         }
       ]
     },
     "inventoryLevel": {
       "description": "The current approximate inventory level for the item or items.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     },
     "itemCondition": {
       "description": "A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.",
       "oneOf": [
-        { "$ref": "OfferItemCondition.schema.json" },
+        { "$ref": "http://schema.org/OfferItemCondition" },
         {
           "type": "array",
-          "items": { "$ref": "OfferItemCondition.schema.json" }
+          "items": { "$ref": "http://schema.org/OfferItemCondition" }
         }
       ]
     },
     "itemOffered": {
       "description": "An item being offered (or demanded). The transactional nature of the offer or demand is documented using businessFunction, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
       "anyOf": [
-        { "$ref": "AggregateOffer.schema.json" },
-        { "$ref": "CreativeWork.schema.json" },
-        { "$ref": "Event.schema.json" },
-        { "$ref": "MenuItem.schema.json" },
-        { "$ref": "Product.schema.json" },
-        { "$ref": "Service.schema.json" },
-        { "$ref": "Trip.schema.json" }
+        { "$ref": "http://schema.org/AggregateOffer" },
+        { "$ref": "http://schema.org/CreativeWork" },
+        { "$ref": "http://schema.org/Event" },
+        { "$ref": "http://schema.org/MenuItem" },
+        { "$ref": "http://schema.org/Product" },
+        { "$ref": "http://schema.org/Service" },
+        { "$ref": "http://schema.org/Trip" }
       ]
     },
     "mpn": {
@@ -151,18 +151,18 @@
     "priceSpecification": {
       "description": "One or more detailed price specifications, indicating the unit price and delivery or payment charges.",
       "oneOf": [
-        { "$ref": "PriceSpecification.schema.json" },
+        { "$ref": "http://schema.org/PriceSpecification" },
         {
           "type": "array",
-          "items": { "$ref": "PriceSpecification.schema.json" }
+          "items": { "$ref": "http://schema.org/PriceSpecification" }
         }
       ]
     },
     "seller": {
       "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "serialNumber": {
@@ -189,7 +189,7 @@
     },
     "warranty": {
       "description": "The warranty promise(s) included in the offer.",
-      "$ref": "WarrantyPromise.schema.json"
+      "$ref": "http://schema.org/WarrantyPromise"
     }
   }
 }

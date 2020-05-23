@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
@@ -35,7 +35,7 @@
           "anyOf": [
             { "type": "string", "format": "uri" },
             { "type": "string" },
-            { "$ref": "Thing.schema.json" }
+            { "$ref": "http://schema.org/Thing" }
           ]
         },
         {
@@ -44,7 +44,7 @@
             "anyOf": [
               { "type": "string", "format": "uri" },
               { "type": "string" },
-              { "$ref": "Thing.schema.json" }
+              { "$ref": "http://schema.org/Thing" }
             ]
           }
         }
@@ -54,22 +54,22 @@
       "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also ineligibleRegion.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "GeoShape.schema.json" },
-        { "$ref": "Place.schema.json" }
+        { "$ref": "http://schema.org/GeoShape" },
+        { "$ref": "http://schema.org/Place" }
       ]
     },
     "expectsAcceptanceOf": {
       "description": "An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.",
       "oneOf": [
-        { "$ref": "Offer.schema.json" },
-        { "type": "array", "items": { "$ref": "Offer.schema.json" } }
+        { "$ref": "http://schema.org/Offer" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Offer" } }
       ]
     },
     "requiresSubscription": {
       "description": "Indicates if use of the media require a subscription  (either paid or free). Allowed values are true or false (note that an earlier version had 'yes', 'no').",
       "anyOf": [
         { "type": "boolean" },
-        { "$ref": "MediaSubscription.schema.json" }
+        { "$ref": "http://schema.org/MediaSubscription" }
       ]
     }
   }

@@ -8,22 +8,25 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
     "hasMenuItem": {
       "description": "A food or drink item contained in a menu or menu section.",
       "oneOf": [
-        { "$ref": "MenuItem.schema.json" },
-        { "type": "array", "items": { "$ref": "MenuItem.schema.json" } }
+        { "$ref": "http://schema.org/MenuItem" },
+        { "type": "array", "items": { "$ref": "http://schema.org/MenuItem" } }
       ]
     },
     "hasMenuSection": {
       "description": "A subgrouping of the menu (by dishes, course, serving time period, etc.).",
       "oneOf": [
-        { "$ref": "MenuSection.schema.json" },
-        { "type": "array", "items": { "$ref": "MenuSection.schema.json" } }
+        { "$ref": "http://schema.org/MenuSection" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/MenuSection" }
+        }
       ]
     }
   }

@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
@@ -44,7 +44,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "SpeakableSpecification.schema.json" }
+            { "$ref": "http://schema.org/SpeakableSpecification" }
           ]
         },
         {
@@ -52,7 +52,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "SpeakableSpecification.schema.json" }
+              { "$ref": "http://schema.org/SpeakableSpecification" }
             ]
           }
         }

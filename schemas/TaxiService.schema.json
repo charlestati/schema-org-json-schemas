@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
-      "$ref": "Service.schema.json"
+      "$ref": "http://schema.org/Service"
     }
   ]
 }

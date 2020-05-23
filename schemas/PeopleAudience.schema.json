@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "Intended audience for an item, i.e. the group for whom the item was created.",
-      "$ref": "Audience.schema.json"
+      "$ref": "http://schema.org/Audience"
     }
   ],
   "properties": {

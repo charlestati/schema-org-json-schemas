@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "StructuredValue.schema.json"
+      "$ref": "http://schema.org/StructuredValue"
     }
   ],
   "properties": {
@@ -18,13 +18,13 @@
     },
     "businessFunction": {
       "description": "The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.",
-      "$ref": "BusinessFunction.schema.json"
+      "$ref": "http://schema.org/BusinessFunction"
     },
     "typeOfGood": {
       "description": "The product that this structured value is referring to.",
       "anyOf": [
-        { "$ref": "Product.schema.json" },
-        { "$ref": "Service.schema.json" }
+        { "$ref": "http://schema.org/Product" },
+        { "$ref": "http://schema.org/Service" }
       ]
     },
     "unitCode": {

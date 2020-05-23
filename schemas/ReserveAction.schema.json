@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The act of planning the execution of an event/task/action/reservation/plan to a future date.",
-      "$ref": "PlanAction.schema.json"
+      "$ref": "http://schema.org/PlanAction"
     }
   ]
 }

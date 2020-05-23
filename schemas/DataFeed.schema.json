@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A body of structured information describing some topic(s) of interest.",
-      "$ref": "Dataset.schema.json"
+      "$ref": "http://schema.org/Dataset"
     }
   ],
   "properties": {
@@ -18,8 +18,8 @@
         {
           "anyOf": [
             { "type": "string" },
-            { "$ref": "DataFeedItem.schema.json" },
-            { "$ref": "Thing.schema.json" }
+            { "$ref": "http://schema.org/DataFeedItem" },
+            { "$ref": "http://schema.org/Thing" }
           ]
         },
         {
@@ -27,8 +27,8 @@
           "items": {
             "anyOf": [
               { "type": "string" },
-              { "$ref": "DataFeedItem.schema.json" },
-              { "$ref": "Thing.schema.json" }
+              { "$ref": "http://schema.org/DataFeedItem" },
+              { "$ref": "http://schema.org/Thing" }
             ]
           }
         }

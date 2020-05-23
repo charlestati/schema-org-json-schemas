@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "Web page type: Collection page.",
-      "$ref": "CollectionPage.schema.json"
+      "$ref": "http://schema.org/CollectionPage"
     }
   ]
 }

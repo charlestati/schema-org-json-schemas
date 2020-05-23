@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A media season e.g. tv, radio, video game etc.",
-      "$ref": "CreativeWorkSeason.schema.json"
+      "$ref": "http://schema.org/CreativeWorkSeason"
     }
   ]
 }

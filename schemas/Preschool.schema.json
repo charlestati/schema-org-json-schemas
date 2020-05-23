@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "An educational organization.",
-      "$ref": "EducationalOrganization.schema.json"
+      "$ref": "http://schema.org/EducationalOrganization"
     }
   ]
 }

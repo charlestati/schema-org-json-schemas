@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The act of adding at a specific location in an ordered collection.",
-      "$ref": "InsertAction.schema.json"
+      "$ref": "http://schema.org/InsertAction"
     }
   ]
 }

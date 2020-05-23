@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "An accommodation is a place that can accommodate human beings, e.g. a hotel room, a camping pitch, or a meeting room. Many accommodations are for overnight stays, but this is not a mandatory requirement.\nFor more specific types of accommodations not defined in schema.org, one can use additionalType with external vocabularies.\n\nSee also the dedicated document on the use of schema.org for marking up hotels and other forms of accommodations.",
-      "$ref": "Accommodation.schema.json"
+      "$ref": "http://schema.org/Accommodation"
     }
   ],
   "properties": {
@@ -16,20 +16,20 @@
       "description": "The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.\n      If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "BedDetails.schema.json" },
-        { "$ref": "BedType.schema.json" }
+        { "$ref": "http://schema.org/BedDetails" },
+        { "$ref": "http://schema.org/BedType" }
       ]
     },
     "numberOfRooms": {
       "description": "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
       "anyOf": [
         { "type": "number" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     },
     "occupancy": {
       "description": "The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).\nTypical unit code(s): C62 for person",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     }
   }
 }

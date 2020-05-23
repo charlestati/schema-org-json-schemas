@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",
-      "$ref": "TransferAction.schema.json"
+      "$ref": "http://schema.org/TransferAction"
     }
   ],
   "properties": {
@@ -17,16 +17,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }

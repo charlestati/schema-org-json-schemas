@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "An electronic file or document.",
-      "$ref": "DigitalDocument.schema.json"
+      "$ref": "http://schema.org/DigitalDocument"
     }
   ]
 }

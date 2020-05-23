@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The act of interacting with another person or organization.",
-      "$ref": "InteractAction.schema.json"
+      "$ref": "http://schema.org/InteractAction"
     }
   ],
   "properties": {
@@ -17,16 +17,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }

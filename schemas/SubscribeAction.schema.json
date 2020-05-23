@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The act of interacting with another person or organization.",
-      "$ref": "InteractAction.schema.json"
+      "$ref": "http://schema.org/InteractAction"
     }
   ]
 }

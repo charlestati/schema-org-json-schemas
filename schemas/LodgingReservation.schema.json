@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use Offer.",
-      "$ref": "Reservation.schema.json"
+      "$ref": "http://schema.org/Reservation"
     }
   ],
   "properties": {
@@ -39,7 +39,7 @@
         {
           "anyOf": [
             { "type": "string" },
-            { "$ref": "QualitativeValue.schema.json" }
+            { "$ref": "http://schema.org/QualitativeValue" }
           ]
         },
         {
@@ -47,7 +47,7 @@
           "items": {
             "anyOf": [
               { "type": "string" },
-              { "$ref": "QualitativeValue.schema.json" }
+              { "$ref": "http://schema.org/QualitativeValue" }
             ]
           }
         }
@@ -57,14 +57,14 @@
       "description": "The number of adults staying in the unit.",
       "anyOf": [
         { "type": "integer" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     },
     "numChildren": {
       "description": "The number of children staying in the unit.",
       "anyOf": [
         { "type": "integer" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     }
   }

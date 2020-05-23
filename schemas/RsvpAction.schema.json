@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The act of notifying someone of information pertinent to them, with no expectation of a response.",
-      "$ref": "InformAction.schema.json"
+      "$ref": "http://schema.org/InformAction"
     }
   ],
   "properties": {
@@ -22,13 +22,13 @@
     "comment": {
       "description": "Comments, typically from users.",
       "oneOf": [
-        { "$ref": "Comment.schema.json" },
-        { "type": "array", "items": { "$ref": "Comment.schema.json" } }
+        { "$ref": "http://schema.org/Comment" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Comment" } }
       ]
     },
     "rsvpResponse": {
       "description": "The response (yes, no, maybe) to the RSVP.",
-      "$ref": "RsvpResponseType.schema.json"
+      "$ref": "http://schema.org/RsvpResponseType"
     }
   }
 }

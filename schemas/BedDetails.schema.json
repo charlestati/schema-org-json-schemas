@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
@@ -18,7 +18,7 @@
     },
     "typeOfBed": {
       "description": "The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.",
-      "anyOf": [{ "type": "string" }, { "$ref": "BedType.schema.json" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/BedType" }]
     }
   }
 }

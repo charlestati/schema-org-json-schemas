@@ -8,36 +8,39 @@
   "allOf": [
     {
       "description": "A collection of music tracks in playlist form.",
-      "$ref": "MusicPlaylist.schema.json"
+      "$ref": "http://schema.org/MusicPlaylist"
     }
   ],
   "properties": {
     "albumProductionType": {
       "description": "Classification of the album by it's type of content: soundtrack, live album, studio album, etc.",
       "oneOf": [
-        { "$ref": "MusicAlbumProductionType.schema.json" },
+        { "$ref": "http://schema.org/MusicAlbumProductionType" },
         {
           "type": "array",
-          "items": { "$ref": "MusicAlbumProductionType.schema.json" }
+          "items": { "$ref": "http://schema.org/MusicAlbumProductionType" }
         }
       ]
     },
     "albumRelease": {
       "description": "A release of this album.",
       "oneOf": [
-        { "$ref": "MusicRelease.schema.json" },
-        { "type": "array", "items": { "$ref": "MusicRelease.schema.json" } }
+        { "$ref": "http://schema.org/MusicRelease" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/MusicRelease" }
+        }
       ]
     },
     "albumReleaseType": {
       "description": "The kind of release which this album is: single, EP or album.",
-      "$ref": "MusicAlbumReleaseType.schema.json"
+      "$ref": "http://schema.org/MusicAlbumReleaseType"
     },
     "byArtist": {
       "description": "The artist that performed this album or recording.",
       "anyOf": [
-        { "$ref": "MusicGroup.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/MusicGroup" },
+        { "$ref": "http://schema.org/Person" }
       ]
     }
   }

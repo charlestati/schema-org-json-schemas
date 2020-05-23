@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The most generic type of item.",
-      "$ref": "Thing.schema.json"
+      "$ref": "http://schema.org/Thing"
     }
   ]
 }

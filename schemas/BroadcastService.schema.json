@@ -8,17 +8,17 @@
   "allOf": [
     {
       "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
-      "$ref": "Service.schema.json"
+      "$ref": "http://schema.org/Service"
     }
   ],
   "properties": {
     "area": {
       "description": "The area within which users can expect to reach the broadcast service.",
-      "$ref": "Place.schema.json"
+      "$ref": "http://schema.org/Place"
     },
     "broadcastAffiliateOf": {
       "description": "The media network(s) whose content is broadcast on this station.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "broadcastDisplayName": {
       "description": "The name displayed in the channel guide. For many US affiliates, it is the network name.",
@@ -28,7 +28,7 @@
       "description": "The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. \"87 FM\".",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "BroadcastFrequencySpecification.schema.json" }
+        { "$ref": "http://schema.org/BroadcastFrequencySpecification" }
       ]
     },
     "broadcastTimezone": {
@@ -37,24 +37,30 @@
     },
     "broadcaster": {
       "description": "The organization owning or operating the broadcast service.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "hasBroadcastChannel": {
       "description": "A broadcast channel of a broadcast service.",
       "oneOf": [
-        { "$ref": "BroadcastChannel.schema.json" },
-        { "type": "array", "items": { "$ref": "BroadcastChannel.schema.json" } }
+        { "$ref": "http://schema.org/BroadcastChannel" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/BroadcastChannel" }
+        }
       ]
     },
     "inLanguage": {
       "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
-      "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Language" }]
     },
     "parentService": {
       "description": "A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.",
       "oneOf": [
-        { "$ref": "BroadcastService.schema.json" },
-        { "type": "array", "items": { "$ref": "BroadcastService.schema.json" } }
+        { "$ref": "http://schema.org/BroadcastService" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/BroadcastService" }
+        }
       ]
     },
     "videoFormat": {

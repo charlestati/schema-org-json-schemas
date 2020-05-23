@@ -8,25 +8,25 @@
   "allOf": [
     {
       "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\n\nSee also blog post and Actions overview document.",
-      "$ref": "Action.schema.json"
+      "$ref": "http://schema.org/Action"
     }
   ],
   "properties": {
     "actionAccessibilityRequirement": {
       "description": "A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.",
       "oneOf": [
-        { "$ref": "ActionAccessSpecification.schema.json" },
+        { "$ref": "http://schema.org/ActionAccessSpecification" },
         {
           "type": "array",
-          "items": { "$ref": "ActionAccessSpecification.schema.json" }
+          "items": { "$ref": "http://schema.org/ActionAccessSpecification" }
         }
       ]
     },
     "expectsAcceptanceOf": {
       "description": "An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.",
       "oneOf": [
-        { "$ref": "Offer.schema.json" },
-        { "type": "array", "items": { "$ref": "Offer.schema.json" } }
+        { "$ref": "http://schema.org/Offer" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Offer" } }
       ]
     }
   }

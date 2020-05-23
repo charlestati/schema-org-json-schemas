@@ -8,15 +8,15 @@
   "allOf": [
     {
       "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",
-      "$ref": "Event.schema.json"
+      "$ref": "http://schema.org/Event"
     }
   ],
   "properties": {
     "awayTeam": {
       "description": "The away team in a sports event.",
       "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "SportsTeam.schema.json" }
+        { "$ref": "http://schema.org/Person" },
+        { "$ref": "http://schema.org/SportsTeam" }
       ]
     },
     "competitor": {
@@ -24,16 +24,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Person.schema.json" },
-            { "$ref": "SportsTeam.schema.json" }
+            { "$ref": "http://schema.org/Person" },
+            { "$ref": "http://schema.org/SportsTeam" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Person.schema.json" },
-              { "$ref": "SportsTeam.schema.json" }
+              { "$ref": "http://schema.org/Person" },
+              { "$ref": "http://schema.org/SportsTeam" }
             ]
           }
         }
@@ -42,8 +42,8 @@
     "homeTeam": {
       "description": "The home team in a sports event.",
       "anyOf": [
-        { "$ref": "Person.schema.json" },
-        { "$ref": "SportsTeam.schema.json" }
+        { "$ref": "http://schema.org/Person" },
+        { "$ref": "http://schema.org/SportsTeam" }
       ]
     }
   }

@@ -8,23 +8,26 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
     "carrier": {
       "description": "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "deliveryAddress": {
       "description": "Destination address.",
-      "$ref": "PostalAddress.schema.json"
+      "$ref": "http://schema.org/PostalAddress"
     },
     "deliveryStatus": {
       "description": "New entry added as the package passes through each leg of its journey (from shipment to final delivery).",
       "oneOf": [
-        { "$ref": "DeliveryEvent.schema.json" },
-        { "type": "array", "items": { "$ref": "DeliveryEvent.schema.json" } }
+        { "$ref": "http://schema.org/DeliveryEvent" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/DeliveryEvent" }
+        }
       ]
     },
     "expectedArrivalFrom": {
@@ -43,28 +46,28 @@
     },
     "hasDeliveryMethod": {
       "description": "Method used for delivery or shipping.",
-      "$ref": "DeliveryMethod.schema.json"
+      "$ref": "http://schema.org/DeliveryMethod"
     },
     "itemShipped": {
       "description": "Item(s) being shipped.",
       "oneOf": [
-        { "$ref": "Product.schema.json" },
-        { "type": "array", "items": { "$ref": "Product.schema.json" } }
+        { "$ref": "http://schema.org/Product" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Product" } }
       ]
     },
     "originAddress": {
       "description": "Shipper's address.",
-      "$ref": "PostalAddress.schema.json"
+      "$ref": "http://schema.org/PostalAddress"
     },
     "partOfOrder": {
       "description": "The overall order the items in this delivery were included in.",
-      "$ref": "Order.schema.json"
+      "$ref": "http://schema.org/Order"
     },
     "provider": {
       "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "trackingNumber": {

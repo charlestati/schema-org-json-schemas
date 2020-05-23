@@ -8,15 +8,15 @@
   "allOf": [
     {
       "description": "The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.",
-      "$ref": "AchieveAction.schema.json"
+      "$ref": "http://schema.org/AchieveAction"
     }
   ],
   "properties": {
     "winner": {
       "description": "A sub property of participant. The winner of the action.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     }
   }

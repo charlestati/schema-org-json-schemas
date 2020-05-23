@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "An list item, e.g. a step in a checklist or how-to description.",
-      "$ref": "ListItem.schema.json"
+      "$ref": "http://schema.org/ListItem"
     }
   ],
   "properties": {
@@ -17,7 +17,7 @@
       "anyOf": [
         { "type": "number" },
         { "type": "string" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     }
   }

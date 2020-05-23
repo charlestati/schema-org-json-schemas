@@ -8,15 +8,15 @@
   "allOf": [
     {
       "description": "The act of interacting with another person or organization.",
-      "$ref": "InteractAction.schema.json"
+      "$ref": "http://schema.org/InteractAction"
     }
   ],
   "properties": {
     "event": {
       "description": "Upcoming or past event associated with this place, organization, or action.",
       "oneOf": [
-        { "$ref": "Event.schema.json" },
-        { "type": "array", "items": { "$ref": "Event.schema.json" } }
+        { "$ref": "http://schema.org/Event" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
       ]
     }
   }

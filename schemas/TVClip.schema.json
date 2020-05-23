@@ -8,13 +8,13 @@
   "allOf": [
     {
       "description": "A short TV or radio program or a segment/part of a program.",
-      "$ref": "Clip.schema.json"
+      "$ref": "http://schema.org/Clip"
     }
   ],
   "properties": {
     "partOfTVSeries": {
       "description": "The TV series to which this episode or season belongs.",
-      "$ref": "TVSeries.schema.json"
+      "$ref": "http://schema.org/TVSeries"
     }
   }
 }

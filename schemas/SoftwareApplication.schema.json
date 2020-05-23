@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
@@ -129,7 +129,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "ImageObject.schema.json" }
+            { "$ref": "http://schema.org/ImageObject" }
           ]
         },
         {
@@ -137,7 +137,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "ImageObject.schema.json" }
+              { "$ref": "http://schema.org/ImageObject" }
             ]
           }
         }
@@ -146,18 +146,21 @@
     "softwareAddOn": {
       "description": "Additional content for a software application.",
       "oneOf": [
-        { "$ref": "SoftwareApplication.schema.json" },
+        { "$ref": "http://schema.org/SoftwareApplication" },
         {
           "type": "array",
-          "items": { "$ref": "SoftwareApplication.schema.json" }
+          "items": { "$ref": "http://schema.org/SoftwareApplication" }
         }
       ]
     },
     "softwareHelp": {
       "description": "Software application help.",
       "oneOf": [
-        { "$ref": "CreativeWork.schema.json" },
-        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+        { "$ref": "http://schema.org/CreativeWork" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/CreativeWork" }
+        }
       ]
     },
     "softwareRequirements": {
@@ -188,8 +191,8 @@
     "supportingData": {
       "description": "Supporting data for a SoftwareApplication.",
       "oneOf": [
-        { "$ref": "DataFeed.schema.json" },
-        { "type": "array", "items": { "$ref": "DataFeed.schema.json" } }
+        { "$ref": "http://schema.org/DataFeed" },
+        { "type": "array", "items": { "$ref": "http://schema.org/DataFeed" } }
       ]
     }
   }

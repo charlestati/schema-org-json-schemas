@@ -8,15 +8,18 @@
   "allOf": [
     {
       "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",
-      "$ref": "TransferAction.schema.json"
+      "$ref": "http://schema.org/TransferAction"
     }
   ],
   "properties": {
     "deliveryMethod": {
       "description": "A sub property of instrument. The method of delivery.",
       "oneOf": [
-        { "$ref": "DeliveryMethod.schema.json" },
-        { "type": "array", "items": { "$ref": "DeliveryMethod.schema.json" } }
+        { "$ref": "http://schema.org/DeliveryMethod" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/DeliveryMethod" }
+        }
       ]
     },
     "recipient": {
@@ -24,20 +27,20 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Audience.schema.json" },
-            { "$ref": "ContactPoint.schema.json" },
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Audience" },
+            { "$ref": "http://schema.org/ContactPoint" },
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Audience.schema.json" },
-              { "$ref": "ContactPoint.schema.json" },
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Audience" },
+              { "$ref": "http://schema.org/ContactPoint" },
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }

@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The act of manipulating/administering/supervising/controlling one or more objects.",
-      "$ref": "OrganizeAction.schema.json"
+      "$ref": "http://schema.org/OrganizeAction"
     }
   ],
   "properties": {

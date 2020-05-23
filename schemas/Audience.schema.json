@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
@@ -18,7 +18,7 @@
     },
     "geographicArea": {
       "description": "The geographic area associated with the audience.",
-      "$ref": "AdministrativeArea.schema.json"
+      "$ref": "http://schema.org/AdministrativeArea"
     }
   }
 }

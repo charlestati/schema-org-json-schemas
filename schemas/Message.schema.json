@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
@@ -17,18 +17,18 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "ContactPoint.schema.json" },
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/ContactPoint" },
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "ContactPoint.schema.json" },
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/ContactPoint" },
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -39,18 +39,18 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "ContactPoint.schema.json" },
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/ContactPoint" },
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "ContactPoint.schema.json" },
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/ContactPoint" },
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -76,8 +76,11 @@
     "messageAttachment": {
       "description": "A CreativeWork attached to the message.",
       "oneOf": [
-        { "$ref": "CreativeWork.schema.json" },
-        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+        { "$ref": "http://schema.org/CreativeWork" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/CreativeWork" }
+        }
       ]
     },
     "recipient": {
@@ -85,20 +88,20 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Audience.schema.json" },
-            { "$ref": "ContactPoint.schema.json" },
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Audience" },
+            { "$ref": "http://schema.org/ContactPoint" },
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Audience.schema.json" },
-              { "$ref": "ContactPoint.schema.json" },
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Audience" },
+              { "$ref": "http://schema.org/ContactPoint" },
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -109,18 +112,18 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Audience.schema.json" },
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Audience" },
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Audience.schema.json" },
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Audience" },
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -131,20 +134,20 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Audience.schema.json" },
-            { "$ref": "ContactPoint.schema.json" },
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Audience" },
+            { "$ref": "http://schema.org/ContactPoint" },
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Audience.schema.json" },
-              { "$ref": "ContactPoint.schema.json" },
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Audience" },
+              { "$ref": "http://schema.org/ContactPoint" },
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }

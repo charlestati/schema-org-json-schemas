@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A statistical distribution of values.",
-      "$ref": "QuantitativeValueDistribution.schema.json"
+      "$ref": "http://schema.org/QuantitativeValueDistribution"
     }
   ],
   "properties": {

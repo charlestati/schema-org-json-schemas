@@ -8,32 +8,35 @@
   "allOf": [
     {
       "description": "The most generic type of item.",
-      "$ref": "Thing.schema.json"
+      "$ref": "http://schema.org/Thing"
     }
   ],
   "properties": {
     "address": {
       "description": "Physical address of the item.",
-      "anyOf": [{ "type": "string" }, { "$ref": "PostalAddress.schema.json" }]
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "http://schema.org/PostalAddress" }
+      ]
     },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
-      "$ref": "AggregateRating.schema.json"
+      "$ref": "http://schema.org/AggregateRating"
     },
     "alumni": {
       "description": "Alumni of an organization.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "areaServed": {
       "description": "The geographic area where a service or offered item is provided.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "AdministrativeArea.schema.json" },
-        { "$ref": "GeoShape.schema.json" },
-        { "$ref": "Place.schema.json" }
+        { "$ref": "http://schema.org/AdministrativeArea" },
+        { "$ref": "http://schema.org/GeoShape" },
+        { "$ref": "http://schema.org/Place" }
       ]
     },
     "award": {
@@ -53,29 +56,38 @@
     "brand": {
       "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
       "anyOf": [
-        { "$ref": "Brand.schema.json" },
-        { "$ref": "Organization.schema.json" }
+        { "$ref": "http://schema.org/Brand" },
+        { "$ref": "http://schema.org/Organization" }
       ]
     },
     "contactPoint": {
       "description": "A contact point for a person or organization.",
       "oneOf": [
-        { "$ref": "ContactPoint.schema.json" },
-        { "type": "array", "items": { "$ref": "ContactPoint.schema.json" } }
+        { "$ref": "http://schema.org/ContactPoint" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/ContactPoint" }
+        }
       ]
     },
     "contactPoints": {
       "description": "A contact point for a person or organization.",
       "oneOf": [
-        { "$ref": "ContactPoint.schema.json" },
-        { "type": "array", "items": { "$ref": "ContactPoint.schema.json" } }
+        { "$ref": "http://schema.org/ContactPoint" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/ContactPoint" }
+        }
       ]
     },
     "department": {
       "description": "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.",
       "oneOf": [
-        { "$ref": "Organization.schema.json" },
-        { "type": "array", "items": { "$ref": "Organization.schema.json" } }
+        { "$ref": "http://schema.org/Organization" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/Organization" }
+        }
       ]
     },
     "dissolutionDate": {
@@ -97,44 +109,44 @@
     "employee": {
       "description": "Someone working for this organization.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "employees": {
       "description": "People working for this organization.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "event": {
       "description": "Upcoming or past event associated with this place, organization, or action.",
       "oneOf": [
-        { "$ref": "Event.schema.json" },
-        { "type": "array", "items": { "$ref": "Event.schema.json" } }
+        { "$ref": "http://schema.org/Event" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
       ]
     },
     "events": {
       "description": "Upcoming or past events associated with this place or organization.",
       "oneOf": [
-        { "$ref": "Event.schema.json" },
-        { "type": "array", "items": { "$ref": "Event.schema.json" } }
+        { "$ref": "http://schema.org/Event" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
       ]
     },
     "faxNumber": { "description": "The fax number.", "type": "string" },
     "founder": {
       "description": "A person who founded this organization.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "founders": {
       "description": "A person who founded this organization.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "foundingDate": {
@@ -144,23 +156,23 @@
     },
     "foundingLocation": {
       "description": "The place where the Organization was founded.",
-      "$ref": "Place.schema.json"
+      "$ref": "http://schema.org/Place"
     },
     "funder": {
       "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -173,20 +185,23 @@
     "hasOfferCatalog": {
       "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
       "oneOf": [
-        { "$ref": "OfferCatalog.schema.json" },
-        { "type": "array", "items": { "$ref": "OfferCatalog.schema.json" } }
+        { "$ref": "http://schema.org/OfferCatalog" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/OfferCatalog" }
+        }
       ]
     },
     "hasPOS": {
       "description": "Points-of-Sales operated by the organization or person.",
       "oneOf": [
-        { "$ref": "Place.schema.json" },
-        { "type": "array", "items": { "$ref": "Place.schema.json" } }
+        { "$ref": "http://schema.org/Place" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
       ]
     },
     "interactionStatistic": {
       "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
-      "$ref": "InteractionCounter.schema.json"
+      "$ref": "http://schema.org/InteractionCounter"
     },
     "isicV4": {
       "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
@@ -207,8 +222,8 @@
       "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "Place.schema.json" },
-        { "$ref": "PostalAddress.schema.json" }
+        { "$ref": "http://schema.org/Place" },
+        { "$ref": "http://schema.org/PostalAddress" }
       ]
     },
     "logo": {
@@ -217,7 +232,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "ImageObject.schema.json" }
+            { "$ref": "http://schema.org/ImageObject" }
           ]
         },
         {
@@ -225,7 +240,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "ImageObject.schema.json" }
+              { "$ref": "http://schema.org/ImageObject" }
             ]
           }
         }
@@ -234,8 +249,8 @@
     "makesOffer": {
       "description": "A pointer to products or services offered by the organization or person.",
       "oneOf": [
-        { "$ref": "Offer.schema.json" },
-        { "type": "array", "items": { "$ref": "Offer.schema.json" } }
+        { "$ref": "http://schema.org/Offer" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Offer" } }
       ]
     },
     "member": {
@@ -243,16 +258,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -263,16 +278,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "ProgramMembership.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/ProgramMembership" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "ProgramMembership.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/ProgramMembership" }
             ]
           }
         }
@@ -283,16 +298,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -304,23 +319,23 @@
     },
     "numberOfEmployees": {
       "description": "The number of employees in an organization e.g. business.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     },
     "owns": {
       "description": "Products owned by the organization or person.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "OwnershipInfo.schema.json" },
-            { "$ref": "Product.schema.json" }
+            { "$ref": "http://schema.org/OwnershipInfo" },
+            { "$ref": "http://schema.org/Product" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "OwnershipInfo.schema.json" },
-              { "$ref": "Product.schema.json" }
+              { "$ref": "http://schema.org/OwnershipInfo" },
+              { "$ref": "http://schema.org/Product" }
             ]
           }
         }
@@ -328,42 +343,42 @@
     },
     "parentOrganization": {
       "description": "The larger organization that this organization is a subOrganization of, if any.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "publishingPrinciples": {
       "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.\n\nWhile such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
       "anyOf": [
         { "type": "string", "format": "uri" },
-        { "$ref": "CreativeWork.schema.json" }
+        { "$ref": "http://schema.org/CreativeWork" }
       ]
     },
     "review": {
       "description": "A review of the item.",
       "oneOf": [
-        { "$ref": "Review.schema.json" },
-        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+        { "$ref": "http://schema.org/Review" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
       ]
     },
     "reviews": {
       "description": "Review of the item.",
       "oneOf": [
-        { "$ref": "Review.schema.json" },
-        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+        { "$ref": "http://schema.org/Review" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
       ]
     },
     "seeks": {
       "description": "A pointer to products or services sought by the organization or person (demand).",
       "oneOf": [
-        { "$ref": "Demand.schema.json" },
-        { "type": "array", "items": { "$ref": "Demand.schema.json" } }
+        { "$ref": "http://schema.org/Demand" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Demand" } }
       ]
     },
     "serviceArea": {
       "description": "The geographic area where the service is provided.",
       "anyOf": [
-        { "$ref": "AdministrativeArea.schema.json" },
-        { "$ref": "GeoShape.schema.json" },
-        { "$ref": "Place.schema.json" }
+        { "$ref": "http://schema.org/AdministrativeArea" },
+        { "$ref": "http://schema.org/GeoShape" },
+        { "$ref": "http://schema.org/Place" }
       ]
     },
     "slogan": {
@@ -378,16 +393,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -396,8 +411,11 @@
     "subOrganization": {
       "description": "A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.",
       "oneOf": [
-        { "$ref": "Organization.schema.json" },
-        { "type": "array", "items": { "$ref": "Organization.schema.json" } }
+        { "$ref": "http://schema.org/Organization" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/Organization" }
+        }
       ]
     },
     "taxID": {

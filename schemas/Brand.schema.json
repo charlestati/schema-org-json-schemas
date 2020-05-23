@@ -8,13 +8,13 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
-      "$ref": "AggregateRating.schema.json"
+      "$ref": "http://schema.org/AggregateRating"
     },
     "logo": {
       "description": "An associated logo.",
@@ -22,7 +22,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "ImageObject.schema.json" }
+            { "$ref": "http://schema.org/ImageObject" }
           ]
         },
         {
@@ -30,7 +30,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "ImageObject.schema.json" }
+              { "$ref": "http://schema.org/ImageObject" }
             ]
           }
         }
@@ -39,8 +39,8 @@
     "review": {
       "description": "A review of the item.",
       "oneOf": [
-        { "$ref": "Review.schema.json" },
-        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+        { "$ref": "http://schema.org/Review" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
       ]
     },
     "slogan": {

@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.",
-      "$ref": "TechArticle.schema.json"
+      "$ref": "http://schema.org/TechArticle"
     }
   ],
   "properties": {

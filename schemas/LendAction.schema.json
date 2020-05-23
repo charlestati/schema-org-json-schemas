@@ -8,15 +8,15 @@
   "allOf": [
     {
       "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",
-      "$ref": "TransferAction.schema.json"
+      "$ref": "http://schema.org/TransferAction"
     }
   ],
   "properties": {
     "borrower": {
       "description": "A sub property of participant. The person that borrows the object being lent.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     }
   }

@@ -8,11 +8,11 @@
   "allOf": [
     {
       "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",
-      "$ref": "LocalBusiness.schema.json"
+      "$ref": "http://schema.org/LocalBusiness"
     },
     {
       "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
-      "$ref": "MedicalOrganization.schema.json"
+      "$ref": "http://schema.org/MedicalOrganization"
     }
   ]
 }

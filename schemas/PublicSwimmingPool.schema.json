@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A sports location, such as a playing field.",
-      "$ref": "SportsActivityLocation.schema.json"
+      "$ref": "http://schema.org/SportsActivityLocation"
     }
   ]
 }

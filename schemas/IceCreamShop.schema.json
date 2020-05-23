@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A food-related business.",
-      "$ref": "FoodEstablishment.schema.json"
+      "$ref": "http://schema.org/FoodEstablishment"
     }
   ]
 }

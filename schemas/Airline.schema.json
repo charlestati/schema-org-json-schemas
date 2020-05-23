@@ -8,13 +8,13 @@
   "allOf": [
     {
       "description": "An organization such as a school, NGO, corporation, club, etc.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     }
   ],
   "properties": {
     "boardingPolicy": {
       "description": "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
-      "$ref": "BoardingPolicyType.schema.json"
+      "$ref": "http://schema.org/BoardingPolicyType"
     },
     "iataCode": {
       "description": "IATA identifier for an airline or airport.",

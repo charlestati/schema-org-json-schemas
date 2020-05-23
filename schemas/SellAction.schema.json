@@ -8,20 +8,20 @@
   "allOf": [
     {
       "description": "The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.",
-      "$ref": "TradeAction.schema.json"
+      "$ref": "http://schema.org/TradeAction"
     }
   ],
   "properties": {
     "buyer": {
       "description": "A sub property of participant. The participant/person/organization that bought the object.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "warrantyPromise": {
       "description": "The warranty promise(s) included in the offer.",
-      "$ref": "WarrantyPromise.schema.json"
+      "$ref": "http://schema.org/WarrantyPromise"
     }
   }
 }

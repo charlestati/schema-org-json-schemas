@@ -8,20 +8,23 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
     "blogPost": {
       "description": "A posting that is part of this blog.",
       "oneOf": [
-        { "$ref": "BlogPosting.schema.json" },
-        { "type": "array", "items": { "$ref": "BlogPosting.schema.json" } }
+        { "$ref": "http://schema.org/BlogPosting" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/BlogPosting" }
+        }
       ]
     },
     "blogPosts": {
       "description": "The postings that are part of this blog.",
-      "$ref": "BlogPosting.schema.json"
+      "$ref": "http://schema.org/BlogPosting"
     },
     "issn": {
       "description": "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",

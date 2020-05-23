@@ -8,40 +8,40 @@
   "allOf": [
     {
       "description": "The most generic type of item.",
-      "$ref": "Thing.schema.json"
+      "$ref": "http://schema.org/Thing"
     }
   ],
   "properties": {
     "about": {
       "description": "The subject matter of the content.",
-      "$ref": "Thing.schema.json"
+      "$ref": "http://schema.org/Thing"
     },
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
-      "$ref": "AggregateRating.schema.json"
+      "$ref": "http://schema.org/AggregateRating"
     },
     "attendee": {
       "description": "A person or organization attending the event.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -52,16 +52,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -69,13 +69,13 @@
     },
     "audience": {
       "description": "An intended audience, i.e. a group for whom something was created.",
-      "$ref": "Audience.schema.json"
+      "$ref": "http://schema.org/Audience"
     },
     "composer": {
       "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "contributor": {
@@ -83,16 +83,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -100,7 +100,7 @@
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-      "$ref": "Person.schema.json"
+      "$ref": "http://schema.org/Person"
     },
     "doorTime": {
       "description": "The time admission will commence.",
@@ -124,8 +124,11 @@
     "eventStatus": {
       "description": "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.",
       "oneOf": [
-        { "$ref": "EventStatusType.schema.json" },
-        { "type": "array", "items": { "$ref": "EventStatusType.schema.json" } }
+        { "$ref": "http://schema.org/EventStatusType" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/EventStatusType" }
+        }
       ]
     },
     "funder": {
@@ -133,16 +136,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -150,7 +153,7 @@
     },
     "inLanguage": {
       "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
-      "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Language" }]
     },
     "isAccessibleForFree": {
       "description": "A flag to signal that the item, event, or place is accessible for free.",
@@ -160,8 +163,8 @@
       "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "Place.schema.json" },
-        { "$ref": "PostalAddress.schema.json" }
+        { "$ref": "http://schema.org/Place" },
+        { "$ref": "http://schema.org/PostalAddress" }
       ]
     },
     "maximumAttendeeCapacity": {
@@ -173,16 +176,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Demand.schema.json" },
-            { "$ref": "Offer.schema.json" }
+            { "$ref": "http://schema.org/Demand" },
+            { "$ref": "http://schema.org/Offer" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Demand.schema.json" },
-              { "$ref": "Offer.schema.json" }
+              { "$ref": "http://schema.org/Demand" },
+              { "$ref": "http://schema.org/Offer" }
             ]
           }
         }
@@ -193,16 +196,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -213,16 +216,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -231,8 +234,8 @@
     "performers": {
       "description": "The main performer or performers of the event—for example, a presenter, musician, or actor.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "previousStartDate": {
@@ -244,7 +247,7 @@
     },
     "recordedIn": {
       "description": "The CreativeWork that captured all or part of this Event.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     },
     "remainingAttendeeCapacity": {
       "description": "The number of attendee places for an event that remain unallocated.",
@@ -253,8 +256,8 @@
     "review": {
       "description": "A review of the item.",
       "oneOf": [
-        { "$ref": "Review.schema.json" },
-        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+        { "$ref": "http://schema.org/Review" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
       ]
     },
     "sponsor": {
@@ -262,16 +265,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -287,22 +290,22 @@
     "subEvent": {
       "description": "An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.",
       "oneOf": [
-        { "$ref": "Event.schema.json" },
-        { "type": "array", "items": { "$ref": "Event.schema.json" } }
+        { "$ref": "http://schema.org/Event" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
       ]
     },
     "subEvents": {
       "description": "Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.",
       "oneOf": [
-        { "$ref": "Event.schema.json" },
-        { "type": "array", "items": { "$ref": "Event.schema.json" } }
+        { "$ref": "http://schema.org/Event" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
       ]
     },
     "superEvent": {
       "description": "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.",
       "oneOf": [
-        { "$ref": "Event.schema.json" },
-        { "type": "array", "items": { "$ref": "Event.schema.json" } }
+        { "$ref": "http://schema.org/Event" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
       ]
     },
     "translator": {
@@ -310,16 +313,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -332,15 +335,21 @@
     "workFeatured": {
       "description": "A work featured in some event, e.g. exhibited in an ExhibitionEvent.\n       Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).",
       "oneOf": [
-        { "$ref": "CreativeWork.schema.json" },
-        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+        { "$ref": "http://schema.org/CreativeWork" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/CreativeWork" }
+        }
       ]
     },
     "workPerformed": {
       "description": "A work performed in some event, for example a play performed in a TheaterEvent.",
       "oneOf": [
-        { "$ref": "CreativeWork.schema.json" },
-        { "type": "array", "items": { "$ref": "CreativeWork.schema.json" } }
+        { "$ref": "http://schema.org/CreativeWork" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/CreativeWork" }
+        }
       ]
     }
   }

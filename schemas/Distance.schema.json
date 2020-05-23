@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "Quantities such as distance, time, mass, weight, etc. Particular instances of say Mass are entities like '3 Kg' or '4 milligrams'.",
-      "$ref": "Quantity.schema.json"
+      "$ref": "http://schema.org/Quantity"
     }
   ]
 }

@@ -8,15 +8,15 @@
   "allOf": [
     {
       "description": "The act of editing by adding an object to a collection.",
-      "$ref": "AddAction.schema.json"
+      "$ref": "http://schema.org/AddAction"
     }
   ],
   "properties": {
     "toLocation": {
       "description": "A sub property of location. The final location of the object or the agent after the action.",
       "oneOf": [
-        { "$ref": "Place.schema.json" },
-        { "type": "array", "items": { "$ref": "Place.schema.json" } }
+        { "$ref": "http://schema.org/Place" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
       ]
     }
   }

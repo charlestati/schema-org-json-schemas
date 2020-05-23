@@ -8,19 +8,19 @@
   "allOf": [
     {
       "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",
-      "$ref": "CreateAction.schema.json"
+      "$ref": "http://schema.org/CreateAction"
     }
   ],
   "properties": {
     "inLanguage": {
       "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
-      "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Language" }]
     },
     "language": {
       "description": "A sub property of instrument. The language used on this action.",
       "oneOf": [
-        { "$ref": "Language.schema.json" },
-        { "type": "array", "items": { "$ref": "Language.schema.json" } }
+        { "$ref": "http://schema.org/Language" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Language" } }
       ]
     }
   }

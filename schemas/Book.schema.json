@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
@@ -18,11 +18,11 @@
     },
     "bookFormat": {
       "description": "The format of the book.",
-      "$ref": "BookFormatType.schema.json"
+      "$ref": "http://schema.org/BookFormatType"
     },
     "illustrator": {
       "description": "The illustrator of the book.",
-      "$ref": "Person.schema.json"
+      "$ref": "http://schema.org/Person"
     },
     "isbn": { "description": "The ISBN of the book.", "type": "string" },
     "numberOfPages": {

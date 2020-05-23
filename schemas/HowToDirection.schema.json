@@ -8,11 +8,11 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     },
     {
       "description": "An list item, e.g. a step in a checklist or how-to description.",
-      "$ref": "ListItem.schema.json"
+      "$ref": "http://schema.org/ListItem"
     }
   ],
   "properties": {
@@ -22,7 +22,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "MediaObject.schema.json" }
+            { "$ref": "http://schema.org/MediaObject" }
           ]
         },
         {
@@ -30,7 +30,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "MediaObject.schema.json" }
+              { "$ref": "http://schema.org/MediaObject" }
             ]
           }
         }
@@ -42,7 +42,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "MediaObject.schema.json" }
+            { "$ref": "http://schema.org/MediaObject" }
           ]
         },
         {
@@ -50,7 +50,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "MediaObject.schema.json" }
+              { "$ref": "http://schema.org/MediaObject" }
             ]
           }
         }
@@ -62,7 +62,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "MediaObject.schema.json" }
+            { "$ref": "http://schema.org/MediaObject" }
           ]
         },
         {
@@ -70,7 +70,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "MediaObject.schema.json" }
+              { "$ref": "http://schema.org/MediaObject" }
             ]
           }
         }
@@ -90,14 +90,17 @@
       "description": "A sub-property of instrument. A supply consumed when performing instructions or a direction.",
       "oneOf": [
         {
-          "anyOf": [{ "type": "string" }, { "$ref": "HowToSupply.schema.json" }]
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "http://schema.org/HowToSupply" }
+          ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
               { "type": "string" },
-              { "$ref": "HowToSupply.schema.json" }
+              { "$ref": "http://schema.org/HowToSupply" }
             ]
           }
         }
@@ -107,12 +110,18 @@
       "description": "A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.",
       "oneOf": [
         {
-          "anyOf": [{ "type": "string" }, { "$ref": "HowToTool.schema.json" }]
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "http://schema.org/HowToTool" }
+          ]
         },
         {
           "type": "array",
           "items": {
-            "anyOf": [{ "type": "string" }, { "$ref": "HowToTool.schema.json" }]
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "http://schema.org/HowToTool" }
+            ]
           }
         }
       ]

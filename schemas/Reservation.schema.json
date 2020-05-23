@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
@@ -17,16 +17,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -42,16 +42,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -69,23 +69,23 @@
     "programMembershipUsed": {
       "description": "Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.",
       "oneOf": [
-        { "$ref": "ProgramMembership.schema.json" },
+        { "$ref": "http://schema.org/ProgramMembership" },
         {
           "type": "array",
-          "items": { "$ref": "ProgramMembership.schema.json" }
+          "items": { "$ref": "http://schema.org/ProgramMembership" }
         }
       ]
     },
     "provider": {
       "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "reservationFor": {
       "description": "The thing -- flight, event, restaurant,etc. being reserved.",
-      "$ref": "Thing.schema.json"
+      "$ref": "http://schema.org/Thing"
     },
     "reservationId": {
       "description": "A unique identifier for the reservation.",
@@ -96,13 +96,13 @@
     },
     "reservationStatus": {
       "description": "The current status of the reservation.",
-      "$ref": "ReservationStatusType.schema.json"
+      "$ref": "http://schema.org/ReservationStatusType"
     },
     "reservedTicket": {
       "description": "A ticket associated with the reservation.",
       "oneOf": [
-        { "$ref": "Ticket.schema.json" },
-        { "type": "array", "items": { "$ref": "Ticket.schema.json" } }
+        { "$ref": "http://schema.org/Ticket" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Ticket" } }
       ]
     },
     "totalPrice": {
@@ -110,14 +110,14 @@
       "anyOf": [
         { "type": "number" },
         { "type": "string" },
-        { "$ref": "PriceSpecification.schema.json" }
+        { "$ref": "http://schema.org/PriceSpecification" }
       ]
     },
     "underName": {
       "description": "The person or organization the reservation or ticket is for.",
       "anyOf": [
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     }
   }

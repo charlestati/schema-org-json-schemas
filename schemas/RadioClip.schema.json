@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A short TV or radio program or a segment/part of a program.",
-      "$ref": "Clip.schema.json"
+      "$ref": "http://schema.org/Clip"
     }
   ]
 }

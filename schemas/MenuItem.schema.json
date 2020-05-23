@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
@@ -17,16 +17,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "MenuItem.schema.json" },
-            { "$ref": "MenuSection.schema.json" }
+            { "$ref": "http://schema.org/MenuItem" },
+            { "$ref": "http://schema.org/MenuSection" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "MenuItem.schema.json" },
-              { "$ref": "MenuSection.schema.json" }
+              { "$ref": "http://schema.org/MenuItem" },
+              { "$ref": "http://schema.org/MenuSection" }
             ]
           }
         }
@@ -34,23 +34,23 @@
     },
     "nutrition": {
       "description": "Nutrition information about the recipe or menu item.",
-      "$ref": "NutritionInformation.schema.json"
+      "$ref": "http://schema.org/NutritionInformation"
     },
     "offers": {
       "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Demand.schema.json" },
-            { "$ref": "Offer.schema.json" }
+            { "$ref": "http://schema.org/Demand" },
+            { "$ref": "http://schema.org/Offer" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Demand.schema.json" },
-              { "$ref": "Offer.schema.json" }
+              { "$ref": "http://schema.org/Demand" },
+              { "$ref": "http://schema.org/Offer" }
             ]
           }
         }
@@ -59,8 +59,11 @@
     "suitableForDiet": {
       "description": "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
       "oneOf": [
-        { "$ref": "RestrictedDiet.schema.json" },
-        { "type": "array", "items": { "$ref": "RestrictedDiet.schema.json" } }
+        { "$ref": "http://schema.org/RestrictedDiet" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/RestrictedDiet" }
+        }
       ]
     }
   }

@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",
-      "$ref": "LocalBusiness.schema.json"
+      "$ref": "http://schema.org/LocalBusiness"
     }
   ],
   "properties": {
@@ -27,7 +27,7 @@
           "anyOf": [
             { "type": "string", "format": "uri" },
             { "type": "string" },
-            { "$ref": "Menu.schema.json" }
+            { "$ref": "http://schema.org/Menu" }
           ]
         },
         {
@@ -36,7 +36,7 @@
             "anyOf": [
               { "type": "string", "format": "uri" },
               { "type": "string" },
-              { "$ref": "Menu.schema.json" }
+              { "$ref": "http://schema.org/Menu" }
             ]
           }
         }
@@ -47,7 +47,7 @@
       "anyOf": [
         { "type": "string", "format": "uri" },
         { "type": "string" },
-        { "$ref": "Menu.schema.json" }
+        { "$ref": "http://schema.org/Menu" }
       ]
     },
     "servesCuisine": {
@@ -57,8 +57,8 @@
     "starRating": {
       "description": "An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).",
       "oneOf": [
-        { "$ref": "Rating.schema.json" },
-        { "type": "array", "items": { "$ref": "Rating.schema.json" } }
+        { "$ref": "http://schema.org/Rating" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Rating" } }
       ]
     }
   }

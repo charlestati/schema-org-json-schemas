@@ -8,15 +8,15 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
     "byArtist": {
       "description": "The artist that performed this album or recording.",
       "anyOf": [
-        { "$ref": "MusicGroup.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/MusicGroup" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "duration": {
@@ -26,11 +26,11 @@
     },
     "inAlbum": {
       "description": "The album to which this recording belongs.",
-      "$ref": "MusicAlbum.schema.json"
+      "$ref": "http://schema.org/MusicAlbum"
     },
     "inPlaylist": {
       "description": "The playlist to which this recording belongs.",
-      "$ref": "MusicPlaylist.schema.json"
+      "$ref": "http://schema.org/MusicPlaylist"
     },
     "isrcCode": {
       "description": "The International Standard Recording Code for the recording.",
@@ -38,7 +38,7 @@
     },
     "recordingOf": {
       "description": "The composition this track is a recording of.",
-      "$ref": "MusicComposition.schema.json"
+      "$ref": "http://schema.org/MusicComposition"
     }
   }
 }

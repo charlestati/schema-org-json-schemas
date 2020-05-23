@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
@@ -21,16 +21,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "ItemList.schema.json" },
-            { "$ref": "MusicRecording.schema.json" }
+            { "$ref": "http://schema.org/ItemList" },
+            { "$ref": "http://schema.org/MusicRecording" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "ItemList.schema.json" },
-              { "$ref": "MusicRecording.schema.json" }
+              { "$ref": "http://schema.org/ItemList" },
+              { "$ref": "http://schema.org/MusicRecording" }
             ]
           }
         }
@@ -39,8 +39,11 @@
     "tracks": {
       "description": "A music recording (track)—usually a single song.",
       "oneOf": [
-        { "$ref": "MusicRecording.schema.json" },
-        { "type": "array", "items": { "$ref": "MusicRecording.schema.json" } }
+        { "$ref": "http://schema.org/MusicRecording" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/MusicRecording" }
+        }
       ]
     }
   }

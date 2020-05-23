@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "An agent controls a device or application.",
-      "$ref": "ControlAction.schema.json"
+      "$ref": "http://schema.org/ControlAction"
     }
   ]
 }

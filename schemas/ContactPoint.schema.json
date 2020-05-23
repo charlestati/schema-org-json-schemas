@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "StructuredValue.schema.json"
+      "$ref": "http://schema.org/StructuredValue"
     }
   ],
   "properties": {
@@ -16,19 +16,27 @@
       "description": "The geographic area where a service or offered item is provided.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "AdministrativeArea.schema.json" },
-        { "$ref": "GeoShape.schema.json" },
-        { "$ref": "Place.schema.json" }
+        { "$ref": "http://schema.org/AdministrativeArea" },
+        { "$ref": "http://schema.org/GeoShape" },
+        { "$ref": "http://schema.org/Place" }
       ]
     },
     "availableLanguage": {
       "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
       "oneOf": [
-        { "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }] },
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "http://schema.org/Language" }
+          ]
+        },
         {
           "type": "array",
           "items": {
-            "anyOf": [{ "type": "string" }, { "$ref": "Language.schema.json" }]
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "http://schema.org/Language" }
+            ]
           }
         }
       ]
@@ -36,10 +44,10 @@
     "contactOption": {
       "description": "An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).",
       "oneOf": [
-        { "$ref": "ContactPointOption.schema.json" },
+        { "$ref": "http://schema.org/ContactPointOption" },
         {
           "type": "array",
-          "items": { "$ref": "ContactPointOption.schema.json" }
+          "items": { "$ref": "http://schema.org/ContactPointOption" }
         }
       ]
     },
@@ -60,18 +68,18 @@
     "faxNumber": { "description": "The fax number.", "type": "string" },
     "hoursAvailable": {
       "description": "The hours during which this service or contact is available.",
-      "$ref": "OpeningHoursSpecification.schema.json"
+      "$ref": "http://schema.org/OpeningHoursSpecification"
     },
     "productSupported": {
       "description": "The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. \"iPhone\") or a general category of products or services (e.g. \"smartphones\").",
-      "anyOf": [{ "type": "string" }, { "$ref": "Product.schema.json" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Product" }]
     },
     "serviceArea": {
       "description": "The geographic area where the service is provided.",
       "anyOf": [
-        { "$ref": "AdministrativeArea.schema.json" },
-        { "$ref": "GeoShape.schema.json" },
-        { "$ref": "Place.schema.json" }
+        { "$ref": "http://schema.org/AdministrativeArea" },
+        { "$ref": "http://schema.org/GeoShape" },
+        { "$ref": "http://schema.org/Place" }
       ]
     },
     "telephone": { "description": "The telephone number.", "type": "string" }

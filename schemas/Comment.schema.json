@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
@@ -18,7 +18,7 @@
     },
     "parentItem": {
       "description": "The parent of a question, answer or item in general.",
-      "$ref": "Question.schema.json"
+      "$ref": "http://schema.org/Question"
     },
     "upvoteCount": {
       "description": "The number of upvotes this question, answer or comment has received from the community.",

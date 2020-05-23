@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
@@ -18,7 +18,7 @@
         {
           "anyOf": [
             { "type": "string" },
-            { "$ref": "BreadcrumbList.schema.json" }
+            { "$ref": "http://schema.org/BreadcrumbList" }
           ]
         },
         {
@@ -26,7 +26,7 @@
           "items": {
             "anyOf": [
               { "type": "string" },
-              { "$ref": "BreadcrumbList.schema.json" }
+              { "$ref": "http://schema.org/BreadcrumbList" }
             ]
           }
         }
@@ -39,11 +39,11 @@
     },
     "mainContentOfPage": {
       "description": "Indicates if this web page element is the main subject of the page.",
-      "$ref": "WebPageElement.schema.json"
+      "$ref": "http://schema.org/WebPageElement"
     },
     "primaryImageOfPage": {
       "description": "Indicates the main image on the page.",
-      "$ref": "ImageObject.schema.json"
+      "$ref": "http://schema.org/ImageObject"
     },
     "relatedLink": {
       "description": "A link related to this web page, for example to other related web pages.",
@@ -57,16 +57,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Organization.schema.json" },
-            { "$ref": "Person.schema.json" }
+            { "$ref": "http://schema.org/Organization" },
+            { "$ref": "http://schema.org/Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Organization.schema.json" },
-              { "$ref": "Person.schema.json" }
+              { "$ref": "http://schema.org/Organization" },
+              { "$ref": "http://schema.org/Person" }
             ]
           }
         }
@@ -90,7 +90,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "SpeakableSpecification.schema.json" }
+            { "$ref": "http://schema.org/SpeakableSpecification" }
           ]
         },
         {
@@ -98,7 +98,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "SpeakableSpecification.schema.json" }
+              { "$ref": "http://schema.org/SpeakableSpecification" }
             ]
           }
         }
@@ -107,8 +107,8 @@
     "specialty": {
       "description": "One of the domain specialities to which this web page's content applies.",
       "oneOf": [
-        { "$ref": "Specialty.schema.json" },
-        { "type": "array", "items": { "$ref": "Specialty.schema.json" } }
+        { "$ref": "http://schema.org/Specialty" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Specialty" } }
       ]
     }
   }

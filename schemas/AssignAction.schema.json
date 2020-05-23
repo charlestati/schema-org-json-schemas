@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The act of organizing tasks/objects/events by associating resources to it.",
-      "$ref": "AllocateAction.schema.json"
+      "$ref": "http://schema.org/AllocateAction"
     }
   ]
 }

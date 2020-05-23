@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use MonetaryAmount to describe independent amounts of money such as a salary, credit card limits, etc.",
-      "$ref": "PriceSpecification.schema.json"
+      "$ref": "http://schema.org/PriceSpecification"
     }
   ],
   "properties": {
@@ -25,7 +25,7 @@
     },
     "referenceQuantity": {
       "description": "The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     },
     "unitCode": {
       "description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",

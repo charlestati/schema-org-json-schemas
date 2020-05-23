@@ -8,15 +8,18 @@
   "allOf": [
     {
       "description": "The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.",
-      "$ref": "GeoShape.schema.json"
+      "$ref": "http://schema.org/GeoShape"
     }
   ],
   "properties": {
     "geoMidpoint": {
       "description": "Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.",
       "oneOf": [
-        { "$ref": "GeoCoordinates.schema.json" },
-        { "type": "array", "items": { "$ref": "GeoCoordinates.schema.json" } }
+        { "$ref": "http://schema.org/GeoCoordinates" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/GeoCoordinates" }
+        }
       ]
     },
     "geoRadius": {

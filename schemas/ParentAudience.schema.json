@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A set of characteristics belonging to people, e.g. who compose an item's target audience.",
-      "$ref": "PeopleAudience.schema.json"
+      "$ref": "http://schema.org/PeopleAudience"
     }
   ],
   "properties": {

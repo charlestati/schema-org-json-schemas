@@ -8,22 +8,22 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
     "grantee": {
       "description": "The person, organization, contact point, or audience that has been granted this permission.",
       "anyOf": [
-        { "$ref": "Audience.schema.json" },
-        { "$ref": "ContactPoint.schema.json" },
-        { "$ref": "Organization.schema.json" },
-        { "$ref": "Person.schema.json" }
+        { "$ref": "http://schema.org/Audience" },
+        { "$ref": "http://schema.org/ContactPoint" },
+        { "$ref": "http://schema.org/Organization" },
+        { "$ref": "http://schema.org/Person" }
       ]
     },
     "permissionType": {
       "description": "The type of permission granted the person, organization, or audience.",
-      "$ref": "DigitalDocumentPermissionType.schema.json"
+      "$ref": "http://schema.org/DigitalDocumentPermissionType"
     }
   }
 }

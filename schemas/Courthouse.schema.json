@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A government building.",
-      "$ref": "GovernmentBuilding.schema.json"
+      "$ref": "http://schema.org/GovernmentBuilding"
     }
   ]
 }

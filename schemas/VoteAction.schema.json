@@ -8,15 +8,15 @@
   "allOf": [
     {
       "description": "The act of expressing a preference from a set of options or a large or unbounded set of choices/options.",
-      "$ref": "ChooseAction.schema.json"
+      "$ref": "http://schema.org/ChooseAction"
     }
   ],
   "properties": {
     "candidate": {
       "description": "A sub property of object. The candidate subject of this action.",
       "oneOf": [
-        { "$ref": "Person.schema.json" },
-        { "type": "array", "items": { "$ref": "Person.schema.json" } }
+        { "$ref": "http://schema.org/Person" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
       ]
     }
   }

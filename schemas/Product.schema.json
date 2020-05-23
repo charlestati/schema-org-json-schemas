@@ -8,24 +8,27 @@
   "allOf": [
     {
       "description": "The most generic type of item.",
-      "$ref": "Thing.schema.json"
+      "$ref": "http://schema.org/Thing"
     }
   ],
   "properties": {
     "additionalProperty": {
       "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
       "oneOf": [
-        { "$ref": "PropertyValue.schema.json" },
-        { "type": "array", "items": { "$ref": "PropertyValue.schema.json" } }
+        { "$ref": "http://schema.org/PropertyValue" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/PropertyValue" }
+        }
       ]
     },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
-      "$ref": "AggregateRating.schema.json"
+      "$ref": "http://schema.org/AggregateRating"
     },
     "audience": {
       "description": "An intended audience, i.e. a group for whom something was created.",
-      "$ref": "Audience.schema.json"
+      "$ref": "http://schema.org/Audience"
     },
     "award": {
       "description": "An award won by or for this item.",
@@ -44,8 +47,8 @@
     "brand": {
       "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
       "anyOf": [
-        { "$ref": "Brand.schema.json" },
-        { "$ref": "Organization.schema.json" }
+        { "$ref": "http://schema.org/Brand" },
+        { "$ref": "http://schema.org/Organization" }
       ]
     },
     "category": {
@@ -55,7 +58,7 @@
           "anyOf": [
             { "type": "string", "format": "uri" },
             { "type": "string" },
-            { "$ref": "Thing.schema.json" }
+            { "$ref": "http://schema.org/Thing" }
           ]
         },
         {
@@ -64,7 +67,7 @@
             "anyOf": [
               { "type": "string", "format": "uri" },
               { "type": "string" },
-              { "$ref": "Thing.schema.json" }
+              { "$ref": "http://schema.org/Thing" }
             ]
           }
         }
@@ -75,7 +78,7 @@
       "description": "The depth of the item.",
       "anyOf": [
         { "type": "string", "format": "https://schema.org/Distance" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     },
     "gtin12": {
@@ -98,21 +101,21 @@
       "description": "The height of the item.",
       "anyOf": [
         { "type": "string", "format": "https://schema.org/Distance" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     },
     "isAccessoryOrSparePartFor": {
       "description": "A pointer to another product (or multiple products) for which this product is an accessory or spare part.",
       "oneOf": [
-        { "$ref": "Product.schema.json" },
-        { "type": "array", "items": { "$ref": "Product.schema.json" } }
+        { "$ref": "http://schema.org/Product" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Product" } }
       ]
     },
     "isConsumableFor": {
       "description": "A pointer to another product (or multiple products) for which this product is a consumable.",
       "oneOf": [
-        { "$ref": "Product.schema.json" },
-        { "type": "array", "items": { "$ref": "Product.schema.json" } }
+        { "$ref": "http://schema.org/Product" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Product" } }
       ]
     },
     "isRelatedTo": {
@@ -120,16 +123,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Product.schema.json" },
-            { "$ref": "Service.schema.json" }
+            { "$ref": "http://schema.org/Product" },
+            { "$ref": "http://schema.org/Service" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Product.schema.json" },
-              { "$ref": "Service.schema.json" }
+              { "$ref": "http://schema.org/Product" },
+              { "$ref": "http://schema.org/Service" }
             ]
           }
         }
@@ -140,16 +143,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Product.schema.json" },
-            { "$ref": "Service.schema.json" }
+            { "$ref": "http://schema.org/Product" },
+            { "$ref": "http://schema.org/Service" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Product.schema.json" },
-              { "$ref": "Service.schema.json" }
+              { "$ref": "http://schema.org/Product" },
+              { "$ref": "http://schema.org/Service" }
             ]
           }
         }
@@ -158,10 +161,10 @@
     "itemCondition": {
       "description": "A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.",
       "oneOf": [
-        { "$ref": "OfferItemCondition.schema.json" },
+        { "$ref": "http://schema.org/OfferItemCondition" },
         {
           "type": "array",
-          "items": { "$ref": "OfferItemCondition.schema.json" }
+          "items": { "$ref": "http://schema.org/OfferItemCondition" }
         }
       ]
     },
@@ -171,7 +174,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "ImageObject.schema.json" }
+            { "$ref": "http://schema.org/ImageObject" }
           ]
         },
         {
@@ -179,7 +182,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "ImageObject.schema.json" }
+              { "$ref": "http://schema.org/ImageObject" }
             ]
           }
         }
@@ -187,7 +190,7 @@
     },
     "manufacturer": {
       "description": "The manufacturer of the product.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "material": {
       "description": "A material that something is made from, e.g. leather, wool, cotton, paper.",
@@ -196,7 +199,7 @@
           "anyOf": [
             { "type": "string", "format": "uri" },
             { "type": "string" },
-            { "$ref": "Product.schema.json" }
+            { "$ref": "http://schema.org/Product" }
           ]
         },
         {
@@ -205,7 +208,7 @@
             "anyOf": [
               { "type": "string", "format": "uri" },
               { "type": "string" },
-              { "$ref": "Product.schema.json" }
+              { "$ref": "http://schema.org/Product" }
             ]
           }
         }
@@ -213,7 +216,10 @@
     },
     "model": {
       "description": "The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.",
-      "anyOf": [{ "type": "string" }, { "$ref": "ProductModel.schema.json" }]
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "http://schema.org/ProductModel" }
+      ]
     },
     "mpn": {
       "description": "The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.",
@@ -224,16 +230,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "Demand.schema.json" },
-            { "$ref": "Offer.schema.json" }
+            { "$ref": "http://schema.org/Demand" },
+            { "$ref": "http://schema.org/Offer" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "Demand.schema.json" },
-              { "$ref": "Offer.schema.json" }
+              { "$ref": "http://schema.org/Demand" },
+              { "$ref": "http://schema.org/Offer" }
             ]
           }
         }
@@ -261,15 +267,15 @@
     "review": {
       "description": "A review of the item.",
       "oneOf": [
-        { "$ref": "Review.schema.json" },
-        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+        { "$ref": "http://schema.org/Review" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
       ]
     },
     "reviews": {
       "description": "Review of the item.",
       "oneOf": [
-        { "$ref": "Review.schema.json" },
-        { "type": "array", "items": { "$ref": "Review.schema.json" } }
+        { "$ref": "http://schema.org/Review" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
       ]
     },
     "sku": {
@@ -285,13 +291,13 @@
     },
     "weight": {
       "description": "The weight of the product or person.",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     },
     "width": {
       "description": "The width of the item.",
       "anyOf": [
         { "type": "string", "format": "https://schema.org/Distance" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     }
   }

@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
@@ -20,7 +20,7 @@
       "description": "The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. \"87 FM\".",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "BroadcastFrequencySpecification.schema.json" }
+        { "$ref": "http://schema.org/BroadcastFrequencySpecification" }
       ]
     },
     "broadcastServiceTier": {
@@ -33,11 +33,11 @@
     },
     "inBroadcastLineup": {
       "description": "The CableOrSatelliteService offering the channel.",
-      "$ref": "CableOrSatelliteService.schema.json"
+      "$ref": "http://schema.org/CableOrSatelliteService"
     },
     "providesBroadcastService": {
       "description": "The BroadcastService offered on this channel.",
-      "$ref": "BroadcastService.schema.json"
+      "$ref": "http://schema.org/BroadcastService"
     }
   }
 }

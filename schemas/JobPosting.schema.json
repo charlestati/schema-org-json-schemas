@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "Intangible.schema.json"
+      "$ref": "http://schema.org/Intangible"
     }
   ],
   "properties": {
@@ -16,8 +16,8 @@
       "description": "The base salary of the job or of an employee in an EmployeeRole.",
       "anyOf": [
         { "type": "number" },
-        { "$ref": "MonetaryAmount.schema.json" },
-        { "$ref": "PriceSpecification.schema.json" }
+        { "$ref": "http://schema.org/MonetaryAmount" },
+        { "$ref": "http://schema.org/PriceSpecification" }
       ]
     },
     "benefits": {
@@ -44,8 +44,8 @@
         {
           "anyOf": [
             { "type": "number" },
-            { "$ref": "MonetaryAmount.schema.json" },
-            { "$ref": "MonetaryAmountDistribution.schema.json" }
+            { "$ref": "http://schema.org/MonetaryAmount" },
+            { "$ref": "http://schema.org/MonetaryAmountDistribution" }
           ]
         },
         {
@@ -53,8 +53,8 @@
           "items": {
             "anyOf": [
               { "type": "number" },
-              { "$ref": "MonetaryAmount.schema.json" },
-              { "$ref": "MonetaryAmountDistribution.schema.json" }
+              { "$ref": "http://schema.org/MonetaryAmount" },
+              { "$ref": "http://schema.org/MonetaryAmountDistribution" }
             ]
           }
         }
@@ -66,7 +66,7 @@
     },
     "hiringOrganization": {
       "description": "Organization offering the job position.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "incentiveCompensation": {
       "description": "Description of bonus and commission compensation aspects of the job.",
@@ -96,13 +96,13 @@
     "jobLocation": {
       "description": "A (typically single) geographic location associated with the job position.",
       "oneOf": [
-        { "$ref": "Place.schema.json" },
-        { "type": "array", "items": { "$ref": "Place.schema.json" } }
+        { "$ref": "http://schema.org/Place" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
       ]
     },
     "relevantOccupation": {
       "description": "The Occupation for the JobPosting.",
-      "$ref": "Occupation.schema.json"
+      "$ref": "http://schema.org/Occupation"
     },
     "responsibilities": {
       "description": "Responsibilities associated with this role or Occupation.",

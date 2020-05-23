@@ -6,7 +6,7 @@
   "type": "object",
   "format": "http://schema.org/LiveBlogPosting",
   "allOf": [
-    { "description": "A blog post.", "$ref": "BlogPosting.schema.json" }
+    { "description": "A blog post.", "$ref": "http://schema.org/BlogPosting" }
   ],
   "properties": {
     "coverageEndTime": {
@@ -22,8 +22,11 @@
     "liveBlogUpdate": {
       "description": "An update to the LiveBlog.",
       "oneOf": [
-        { "$ref": "BlogPosting.schema.json" },
-        { "type": "array", "items": { "$ref": "BlogPosting.schema.json" } }
+        { "$ref": "http://schema.org/BlogPosting" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/BlogPosting" }
+        }
       ]
     }
   }

@@ -8,29 +8,29 @@
   "allOf": [
     {
       "description": "Entities that have a somewhat fixed, physical extension.",
-      "$ref": "Place.schema.json"
+      "$ref": "http://schema.org/Place"
     }
   ],
   "properties": {
     "amenityFeature": {
       "description": "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
       "oneOf": [
-        { "$ref": "LocationFeatureSpecification.schema.json" },
+        { "$ref": "http://schema.org/LocationFeatureSpecification" },
         {
           "type": "array",
-          "items": { "$ref": "LocationFeatureSpecification.schema.json" }
+          "items": { "$ref": "http://schema.org/LocationFeatureSpecification" }
         }
       ]
     },
     "floorSize": {
       "description": "The size of the accommodation, e.g. in square meter or squarefoot.\nTypical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard",
-      "$ref": "QuantitativeValue.schema.json"
+      "$ref": "http://schema.org/QuantitativeValue"
     },
     "numberOfRooms": {
       "description": "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
       "anyOf": [
         { "type": "number" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     },
     "permittedUsage": {

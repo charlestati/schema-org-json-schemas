@@ -8,15 +8,18 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
     "associatedArticle": {
       "description": "A NewsArticle associated with the Media Object.",
       "oneOf": [
-        { "$ref": "NewsArticle.schema.json" },
-        { "type": "array", "items": { "$ref": "NewsArticle.schema.json" } }
+        { "$ref": "http://schema.org/NewsArticle" },
+        {
+          "type": "array",
+          "items": { "$ref": "http://schema.org/NewsArticle" }
+        }
       ]
     },
     "bitrate": {
@@ -44,7 +47,7 @@
     },
     "encodesCreativeWork": {
       "description": "The CreativeWork encoded by this media object.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     },
     "encodingFormat": {
       "description": "Media type typically expressed using a MIME format (see IANA site and MDN reference) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).\n\nIn cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information.\n\nUnregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.",
@@ -61,7 +64,7 @@
       "description": "The height of the item.",
       "anyOf": [
         { "type": "string", "format": "https://schema.org/Distance" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     },
     "playerType": {
@@ -73,17 +76,17 @@
     },
     "productionCompany": {
       "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
-      "$ref": "Organization.schema.json"
+      "$ref": "http://schema.org/Organization"
     },
     "regionsAllowed": {
       "description": "The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in ISO 3166 format.",
-      "$ref": "Place.schema.json"
+      "$ref": "http://schema.org/Place"
     },
     "requiresSubscription": {
       "description": "Indicates if use of the media require a subscription  (either paid or free). Allowed values are true or false (note that an earlier version had 'yes', 'no').",
       "anyOf": [
         { "type": "boolean" },
-        { "$ref": "MediaSubscription.schema.json" }
+        { "$ref": "http://schema.org/MediaSubscription" }
       ]
     },
     "startTime": {
@@ -102,7 +105,7 @@
       "description": "The width of the item.",
       "anyOf": [
         { "type": "string", "format": "https://schema.org/Distance" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     }
   }

@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The act of applying an object to its intended purpose.",
-      "$ref": "UseAction.schema.json"
+      "$ref": "http://schema.org/UseAction"
     }
   ]
 }

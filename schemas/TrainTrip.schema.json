@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "A trip or journey. An itinerary of visits to one or more places.",
-      "$ref": "Trip.schema.json"
+      "$ref": "http://schema.org/Trip"
     }
   ],
   "properties": {
@@ -18,7 +18,7 @@
     },
     "arrivalStation": {
       "description": "The station where the train trip ends.",
-      "$ref": "TrainStation.schema.json"
+      "$ref": "http://schema.org/TrainStation"
     },
     "departurePlatform": {
       "description": "The platform from which the train departs.",
@@ -26,7 +26,7 @@
     },
     "departureStation": {
       "description": "The station from which the train departs.",
-      "$ref": "TrainStation.schema.json"
+      "$ref": "http://schema.org/TrainStation"
     },
     "trainName": {
       "description": "The name of the train (e.g. The Orient Express).",

@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "http://schema.org/CreativeWork"
     }
   ],
   "properties": {
@@ -45,14 +45,14 @@
       "description": "The depth of the item.",
       "anyOf": [
         { "type": "string", "format": "https://schema.org/Distance" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     },
     "height": {
       "description": "The height of the item.",
       "anyOf": [
         { "type": "string", "format": "https://schema.org/Distance" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     },
     "surface": {
@@ -76,7 +76,7 @@
       "description": "The width of the item.",
       "anyOf": [
         { "type": "string", "format": "https://schema.org/Distance" },
-        { "$ref": "QuantitativeValue.schema.json" }
+        { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     }
   }

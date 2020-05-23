@@ -8,11 +8,11 @@
   "allOf": [
     {
       "description": "Health and beauty.",
-      "$ref": "HealthAndBeautyBusiness.schema.json"
+      "$ref": "http://schema.org/HealthAndBeautyBusiness"
     },
     {
       "description": "A sports location, such as a playing field.",
-      "$ref": "SportsActivityLocation.schema.json"
+      "$ref": "http://schema.org/SportsActivityLocation"
     }
   ]
 }

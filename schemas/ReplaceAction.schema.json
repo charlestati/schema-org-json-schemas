@@ -8,22 +8,22 @@
   "allOf": [
     {
       "description": "The act of managing by changing/editing the state of the object.",
-      "$ref": "UpdateAction.schema.json"
+      "$ref": "http://schema.org/UpdateAction"
     }
   ],
   "properties": {
     "replacee": {
       "description": "A sub property of object. The object that is being replaced.",
       "oneOf": [
-        { "$ref": "Thing.schema.json" },
-        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+        { "$ref": "http://schema.org/Thing" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Thing" } }
       ]
     },
     "replacer": {
       "description": "A sub property of object. The object that replaces.",
       "oneOf": [
-        { "$ref": "Thing.schema.json" },
-        { "type": "array", "items": { "$ref": "Thing.schema.json" } }
+        { "$ref": "http://schema.org/Thing" },
+        { "type": "array", "items": { "$ref": "http://schema.org/Thing" } }
       ]
     }
   }

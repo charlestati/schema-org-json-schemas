@@ -8,7 +8,7 @@
   "allOf": [
     {
       "description": "The place where a person lives.",
-      "$ref": "Residence.schema.json"
+      "$ref": "http://schema.org/Residence"
     }
   ]
 }

@@ -8,20 +8,20 @@
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "StructuredValue.schema.json"
+      "$ref": "http://schema.org/StructuredValue"
     }
   ],
   "properties": {
     "interactionService": {
       "description": "The WebSite or SoftwareApplication where the interactions took place.",
       "anyOf": [
-        { "$ref": "SoftwareApplication.schema.json" },
-        { "$ref": "WebSite.schema.json" }
+        { "$ref": "http://schema.org/SoftwareApplication" },
+        { "$ref": "http://schema.org/WebSite" }
       ]
     },
     "interactionType": {
       "description": "The Action representing the type of interaction. For up votes, +1s, etc. use LikeAction. For down votes use DislikeAction. Otherwise, use the most specific Action.",
-      "$ref": "Action.schema.json"
+      "$ref": "http://schema.org/Action"
     },
     "userInteractionCount": {
       "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.",
