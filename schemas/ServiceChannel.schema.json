@@ -34,7 +34,7 @@
     "processingTime": {
       "description": "Estimated processing time for the service using this channel.",
       "type": "string",
-      "format": "https://schema.org/Duration"
+      "$comment": "https://schema.org/Duration"
     },
     "providesService": {
       "description": "The service provided by this channel.",

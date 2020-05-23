@@ -43,14 +43,14 @@
     "depth": {
       "description": "The depth of the item.",
       "anyOf": [
-        { "type": "string", "format": "https://schema.org/Distance" },
+        { "type": "string", "$comment": "https://schema.org/Distance" },
         { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     },
     "height": {
       "description": "The height of the item.",
       "anyOf": [
-        { "type": "string", "format": "https://schema.org/Distance" },
+        { "type": "string", "$comment": "https://schema.org/Distance" },
         { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     },
@@ -74,7 +74,7 @@
     "width": {
       "description": "The width of the item.",
       "anyOf": [
-        { "type": "string", "format": "https://schema.org/Distance" },
+        { "type": "string", "$comment": "https://schema.org/Distance" },
         { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     }

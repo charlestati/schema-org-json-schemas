@@ -27,8 +27,8 @@
         {
           "anyOf": [
             { "type": "number" },
-            { "type": "string", "format": "https://schema.org/Distance" },
-            { "type": "string" }
+            { "type": "string" },
+            { "type": "string", "$comment": "https://schema.org/Distance" }
           ]
         },
         {
@@ -36,8 +36,8 @@
           "items": {
             "anyOf": [
               { "type": "number" },
-              { "type": "string", "format": "https://schema.org/Distance" },
-              { "type": "string" }
+              { "type": "string" },
+              { "type": "string", "$comment": "https://schema.org/Distance" }
             ]
           }
         }

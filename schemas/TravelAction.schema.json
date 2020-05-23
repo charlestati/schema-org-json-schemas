@@ -14,10 +14,13 @@
     "distance": {
       "description": "The distance travelled, e.g. exercising or travelling.",
       "oneOf": [
-        { "type": "string", "format": "https://schema.org/Distance" },
+        { "type": "string", "$comment": "https://schema.org/Distance" },
         {
           "type": "array",
-          "items": { "type": "string", "format": "https://schema.org/Distance" }
+          "items": {
+            "type": "string",
+            "$comment": "https://schema.org/Distance"
+          }
         }
       ]
     }

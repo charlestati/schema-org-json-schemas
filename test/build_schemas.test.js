@@ -86,6 +86,19 @@ it("should build the JSON Schema of FoodEstablishment", async () => {
   expect(schema).toMatchSnapshot();
 });
 
+it("should build the JSON Schema of Event", async () => {
+  const schemaClass = schemaClasses.find(
+    (schema) => schema["@id"] === "http://schema.org/Event",
+  );
+  const schema = buildSchema(
+    schemaClass,
+    schemaClasses,
+    properties,
+    enumValues,
+  );
+  expect(schema).toMatchSnapshot();
+});
+
 it("should build valid JSON Schemas", () => {
   const schemas = schemaClasses.map((schemaClass) => {
     return buildSchema(schemaClass, schemaClasses, properties, enumValues);

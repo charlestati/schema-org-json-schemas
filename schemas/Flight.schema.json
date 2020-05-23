@@ -62,15 +62,15 @@
     "estimatedFlightDuration": {
       "description": "The estimated time the flight will take.",
       "anyOf": [
-        { "type": "string", "format": "https://schema.org/Duration" },
-        { "type": "string" }
+        { "type": "string" },
+        { "type": "string", "$comment": "https://schema.org/Duration" }
       ]
     },
     "flightDistance": {
       "description": "The distance of the flight.",
       "anyOf": [
-        { "type": "string", "format": "https://schema.org/Distance" },
-        { "type": "string" }
+        { "type": "string" },
+        { "type": "string", "$comment": "https://schema.org/Distance" }
       ]
     },
     "flightNumber": {

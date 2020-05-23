@@ -1,5 +1,531 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should build the JSON Schema of Event 1`] = `
+Object {
+  "$id": "http://schema.org/Event",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "allOf": Array [
+    Object {
+      "$ref": "http://schema.org/Thing",
+      "description": "The most generic type of item.",
+    },
+  ],
+  "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",
+  "properties": Object {
+    "about": Object {
+      "$ref": "http://schema.org/Thing",
+      "description": "The subject matter of the content.",
+    },
+    "actor": Object {
+      "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Person",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Person",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "aggregateRating": Object {
+      "$ref": "http://schema.org/AggregateRating",
+      "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+    },
+    "attendee": Object {
+      "description": "A person or organization attending the event.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/Organization",
+            },
+            Object {
+              "$ref": "http://schema.org/Person",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/Organization",
+              },
+              Object {
+                "$ref": "http://schema.org/Person",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "attendees": Object {
+      "description": "A person attending the event.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/Organization",
+            },
+            Object {
+              "$ref": "http://schema.org/Person",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/Organization",
+              },
+              Object {
+                "$ref": "http://schema.org/Person",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "audience": Object {
+      "$ref": "http://schema.org/Audience",
+      "description": "An intended audience, i.e. a group for whom something was created.",
+    },
+    "composer": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "http://schema.org/Organization",
+        },
+        Object {
+          "$ref": "http://schema.org/Person",
+        },
+      ],
+      "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
+    },
+    "contributor": Object {
+      "description": "A secondary contributor to the CreativeWork or Event.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/Organization",
+            },
+            Object {
+              "$ref": "http://schema.org/Person",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/Organization",
+              },
+              Object {
+                "$ref": "http://schema.org/Person",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "director": Object {
+      "$ref": "http://schema.org/Person",
+      "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+    },
+    "doorTime": Object {
+      "anyOf": Array [
+        Object {
+          "format": "date-time",
+          "type": "string",
+        },
+        Object {
+          "format": "time",
+          "type": "string",
+        },
+      ],
+      "description": "The time admission will commence.",
+    },
+    "duration": Object {
+      "$comment": "https://schema.org/Duration",
+      "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+      "type": "string",
+    },
+    "endDate": Object {
+      "anyOf": Array [
+        Object {
+          "format": "date",
+          "type": "string",
+        },
+        Object {
+          "format": "date-time",
+          "type": "string",
+        },
+      ],
+      "description": "The end date and time of the item (in ISO 8601 date format).",
+    },
+    "eventStatus": Object {
+      "description": "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/EventStatusType",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/EventStatusType",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "funder": Object {
+      "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/Organization",
+            },
+            Object {
+              "$ref": "http://schema.org/Person",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/Organization",
+              },
+              Object {
+                "$ref": "http://schema.org/Person",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "inLanguage": Object {
+      "anyOf": Array [
+        Object {
+          "type": "string",
+        },
+        Object {
+          "$ref": "http://schema.org/Language",
+        },
+      ],
+      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
+    },
+    "isAccessibleForFree": Object {
+      "description": "A flag to signal that the item, event, or place is accessible for free.",
+      "type": "boolean",
+    },
+    "location": Object {
+      "anyOf": Array [
+        Object {
+          "type": "string",
+        },
+        Object {
+          "$ref": "http://schema.org/Place",
+        },
+        Object {
+          "$ref": "http://schema.org/PostalAddress",
+        },
+      ],
+      "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+    },
+    "maximumAttendeeCapacity": Object {
+      "description": "The total number of individuals that may attend an event or venue.",
+      "type": "integer",
+    },
+    "offers": Object {
+      "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/Demand",
+            },
+            Object {
+              "$ref": "http://schema.org/Offer",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/Demand",
+              },
+              Object {
+                "$ref": "http://schema.org/Offer",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "organizer": Object {
+      "description": "An organizer of an Event.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/Organization",
+            },
+            Object {
+              "$ref": "http://schema.org/Person",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/Organization",
+              },
+              Object {
+                "$ref": "http://schema.org/Person",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "performer": Object {
+      "description": "A performer at the event—for example, a presenter, musician, musical group or actor.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/Organization",
+            },
+            Object {
+              "$ref": "http://schema.org/Person",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/Organization",
+              },
+              Object {
+                "$ref": "http://schema.org/Person",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "performers": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "http://schema.org/Organization",
+        },
+        Object {
+          "$ref": "http://schema.org/Person",
+        },
+      ],
+      "description": "The main performer or performers of the event—for example, a presenter, musician, or actor.",
+    },
+    "previousStartDate": Object {
+      "description": "Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.",
+      "oneOf": Array [
+        Object {
+          "format": "date",
+          "type": "string",
+        },
+        Object {
+          "items": Object {
+            "format": "date",
+            "type": "string",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "recordedIn": Object {
+      "$ref": "http://schema.org/CreativeWork",
+      "description": "The CreativeWork that captured all or part of this Event.",
+    },
+    "remainingAttendeeCapacity": Object {
+      "description": "The number of attendee places for an event that remain unallocated.",
+      "type": "integer",
+    },
+    "review": Object {
+      "description": "A review of the item.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Review",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Review",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "sponsor": Object {
+      "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/Organization",
+            },
+            Object {
+              "$ref": "http://schema.org/Person",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/Organization",
+              },
+              Object {
+                "$ref": "http://schema.org/Person",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "startDate": Object {
+      "anyOf": Array [
+        Object {
+          "format": "date",
+          "type": "string",
+        },
+        Object {
+          "format": "date-time",
+          "type": "string",
+        },
+      ],
+      "description": "The start date and time of the item (in ISO 8601 date format).",
+    },
+    "subEvent": Object {
+      "description": "An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Event",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Event",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "subEvents": Object {
+      "description": "Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Event",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Event",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "superEvent": Object {
+      "description": "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Event",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Event",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "translator": Object {
+      "description": "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/Organization",
+            },
+            Object {
+              "$ref": "http://schema.org/Person",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/Organization",
+              },
+              Object {
+                "$ref": "http://schema.org/Person",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "typicalAgeRange": Object {
+      "description": "The typical expected age range, e.g. '7-9', '11-'.",
+      "type": "string",
+    },
+    "workFeatured": Object {
+      "description": "A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+       Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/CreativeWork",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/CreativeWork",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "workPerformed": Object {
+      "description": "A work performed in some event, for example a play performed in a TheaterEvent.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/CreativeWork",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/CreativeWork",
+          },
+          "type": "array",
+        },
+      ],
+    },
+  },
+  "title": "Event",
+  "type": "object",
+}
+`;
+
 exports[`should build the JSON Schema of FoodEstablishment 1`] = `
 Object {
   "$id": "http://schema.org/FoodEstablishment",
@@ -102,6 +628,749 @@ Object {
     },
   },
   "title": "FoodEstablishment",
+  "type": "object",
+}
+`;
+
+exports[`should build the JSON Schema of Person 1`] = `
+Object {
+  "$id": "http://schema.org/Person",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "allOf": Array [
+    Object {
+      "$ref": "http://schema.org/Thing",
+      "description": "The most generic type of item.",
+    },
+  ],
+  "description": "A person (alive, dead, undead, or fictional).",
+  "properties": Object {
+    "additionalName": Object {
+      "description": "An additional name for a Person, can be used for a middle name.",
+      "oneOf": Array [
+        Object {
+          "type": "string",
+        },
+        Object {
+          "items": Object {
+            "type": "string",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "address": Object {
+      "anyOf": Array [
+        Object {
+          "type": "string",
+        },
+        Object {
+          "$ref": "http://schema.org/PostalAddress",
+        },
+      ],
+      "description": "Physical address of the item.",
+    },
+    "affiliation": Object {
+      "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Organization",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Organization",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "alumniOf": Object {
+      "description": "An organization that the person is an alumni of.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/EducationalOrganization",
+            },
+            Object {
+              "$ref": "http://schema.org/Organization",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/EducationalOrganization",
+              },
+              Object {
+                "$ref": "http://schema.org/Organization",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "award": Object {
+      "description": "An award won by or for this item.",
+      "oneOf": Array [
+        Object {
+          "type": "string",
+        },
+        Object {
+          "items": Object {
+            "type": "string",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "awards": Object {
+      "description": "Awards won by or for this item.",
+      "oneOf": Array [
+        Object {
+          "type": "string",
+        },
+        Object {
+          "items": Object {
+            "type": "string",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "birthDate": Object {
+      "description": "Date of birth.",
+      "format": "date",
+      "type": "string",
+    },
+    "birthPlace": Object {
+      "$ref": "http://schema.org/Place",
+      "description": "The place where the person was born.",
+    },
+    "brand": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "http://schema.org/Brand",
+        },
+        Object {
+          "$ref": "http://schema.org/Organization",
+        },
+      ],
+      "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+    },
+    "children": Object {
+      "description": "A child of the person.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Person",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Person",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "colleague": Object {
+      "description": "A colleague of the person.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "format": "uri",
+              "type": "string",
+            },
+            Object {
+              "$ref": "http://schema.org/Person",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "format": "uri",
+                "type": "string",
+              },
+              Object {
+                "$ref": "http://schema.org/Person",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "colleagues": Object {
+      "description": "A colleague of the person.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Person",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Person",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "contactPoint": Object {
+      "description": "A contact point for a person or organization.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/ContactPoint",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/ContactPoint",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "contactPoints": Object {
+      "description": "A contact point for a person or organization.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/ContactPoint",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/ContactPoint",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "deathDate": Object {
+      "description": "Date of death.",
+      "format": "date",
+      "type": "string",
+    },
+    "deathPlace": Object {
+      "$ref": "http://schema.org/Place",
+      "description": "The place where the person died.",
+    },
+    "duns": Object {
+      "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+      "type": "string",
+    },
+    "email": Object {
+      "description": "Email address.",
+      "oneOf": Array [
+        Object {
+          "type": "string",
+        },
+        Object {
+          "items": Object {
+            "type": "string",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "familyName": Object {
+      "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
+      "type": "string",
+    },
+    "faxNumber": Object {
+      "description": "The fax number.",
+      "type": "string",
+    },
+    "follows": Object {
+      "description": "The most generic uni-directional social relation.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Person",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Person",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "funder": Object {
+      "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/Organization",
+            },
+            Object {
+              "$ref": "http://schema.org/Person",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/Organization",
+              },
+              Object {
+                "$ref": "http://schema.org/Person",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "givenName": Object {
+      "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
+      "oneOf": Array [
+        Object {
+          "type": "string",
+        },
+        Object {
+          "items": Object {
+            "type": "string",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "globalLocationNumber": Object {
+      "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "type": "string",
+    },
+    "hasOccupation": Object {
+      "$ref": "http://schema.org/Occupation",
+      "description": "The Person's occupation. For past professions, use Role for expressing dates.",
+    },
+    "hasOfferCatalog": Object {
+      "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/OfferCatalog",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/OfferCatalog",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "hasPOS": Object {
+      "description": "Points-of-Sales operated by the organization or person.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Place",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Place",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "height": Object {
+      "anyOf": Array [
+        Object {
+          "$comment": "https://schema.org/Distance",
+          "type": "string",
+        },
+        Object {
+          "$ref": "http://schema.org/QuantitativeValue",
+        },
+      ],
+      "description": "The height of the item.",
+    },
+    "homeLocation": Object {
+      "description": "A contact location for a person's residence.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/ContactPoint",
+            },
+            Object {
+              "$ref": "http://schema.org/Place",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/ContactPoint",
+              },
+              Object {
+                "$ref": "http://schema.org/Place",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "honorificPrefix": Object {
+      "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
+      "oneOf": Array [
+        Object {
+          "type": "string",
+        },
+        Object {
+          "items": Object {
+            "type": "string",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "honorificSuffix": Object {
+      "description": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.",
+      "oneOf": Array [
+        Object {
+          "type": "string",
+        },
+        Object {
+          "items": Object {
+            "type": "string",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "interactionStatistic": Object {
+      "$ref": "http://schema.org/InteractionCounter",
+      "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
+    },
+    "isicV4": Object {
+      "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+      "type": "string",
+    },
+    "knows": Object {
+      "$ref": "http://schema.org/Person",
+      "description": "The most generic bi-directional social/work relation.",
+    },
+    "makesOffer": Object {
+      "description": "A pointer to products or services offered by the organization or person.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Offer",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Offer",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "memberOf": Object {
+      "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/Organization",
+            },
+            Object {
+              "$ref": "http://schema.org/ProgramMembership",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/Organization",
+              },
+              Object {
+                "$ref": "http://schema.org/ProgramMembership",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "naics": Object {
+      "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
+      "type": "string",
+    },
+    "nationality": Object {
+      "description": "Nationality of the person.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Country",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Country",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "netWorth": Object {
+      "anyOf": Array [
+        Object {
+          "$ref": "http://schema.org/MonetaryAmount",
+        },
+        Object {
+          "$ref": "http://schema.org/PriceSpecification",
+        },
+      ],
+      "description": "The total financial value of the person as calculated by subtracting assets from liabilities.",
+    },
+    "owns": Object {
+      "description": "Products owned by the organization or person.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/OwnershipInfo",
+            },
+            Object {
+              "$ref": "http://schema.org/Product",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/OwnershipInfo",
+              },
+              Object {
+                "$ref": "http://schema.org/Product",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "parent": Object {
+      "description": "A parent of this person.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Person",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Person",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "parents": Object {
+      "description": "A parents of the person.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Person",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Person",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "performerIn": Object {
+      "description": "Event that this person is a performer or participant in.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Event",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Event",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "publishingPrinciples": Object {
+      "anyOf": Array [
+        Object {
+          "format": "uri",
+          "type": "string",
+        },
+        Object {
+          "$ref": "http://schema.org/CreativeWork",
+        },
+      ],
+      "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.
+
+While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
+    },
+    "relatedTo": Object {
+      "$ref": "http://schema.org/Person",
+      "description": "The most generic familial relation.",
+    },
+    "seeks": Object {
+      "description": "A pointer to products or services sought by the organization or person (demand).",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Demand",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Demand",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "sibling": Object {
+      "description": "A sibling of the person.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Person",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Person",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "siblings": Object {
+      "description": "A sibling of the person.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Person",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Person",
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "sponsor": Object {
+      "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/Organization",
+            },
+            Object {
+              "$ref": "http://schema.org/Person",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/Organization",
+              },
+              Object {
+                "$ref": "http://schema.org/Person",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "spouse": Object {
+      "$ref": "http://schema.org/Person",
+      "description": "The person's spouse.",
+    },
+    "taxID": Object {
+      "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+      "type": "string",
+    },
+    "telephone": Object {
+      "description": "The telephone number.",
+      "type": "string",
+    },
+    "vatID": Object {
+      "description": "The Value-added Tax ID of the organization or person.",
+      "type": "string",
+    },
+    "weight": Object {
+      "$ref": "http://schema.org/QuantitativeValue",
+      "description": "The weight of the product or person.",
+    },
+    "workLocation": Object {
+      "description": "A contact location for a person's place of work.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "$ref": "http://schema.org/ContactPoint",
+            },
+            Object {
+              "$ref": "http://schema.org/Place",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "http://schema.org/ContactPoint",
+              },
+              Object {
+                "$ref": "http://schema.org/Place",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "worksFor": Object {
+      "description": "Organizations that the person works for.",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Organization",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Organization",
+          },
+          "type": "array",
+        },
+      ],
+    },
+  },
+  "title": "Person",
+  "type": "object",
+}
+`;
+
+exports[`should build the JSON Schema of SpeakableSpecification 1`] = `
+Object {
+  "$id": "http://schema.org/SpeakableSpecification",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "allOf": Array [
+    Object {
+      "$ref": "http://schema.org/Intangible",
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+    },
+  ],
+  "description": "A SpeakableSpecification indicates (typically via xpath or cssSelector) sections of a document that are highlighted as particularly speakable. Instances of this type are expected to be used primarily as values of the speakable property.",
+  "properties": Object {
+    "cssSelector": Object {
+      "description": "A CSS selector, e.g. of a SpeakableSpecification or WebPageElement. In the latter case, multiple matches within a page can constitute a single conceptual \\"Web page element\\".",
+      "type": "string",
+    },
+    "xpath": Object {
+      "description": "An XPath, e.g. of a SpeakableSpecification or WebPageElement. In the latter case, multiple matches within a page can constitute a single conceptual \\"Web page element\\".",
+      "type": "string",
+    },
+  },
+  "title": "SpeakableSpecification",
   "type": "object",
 }
 `;

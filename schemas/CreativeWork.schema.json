@@ -652,7 +652,7 @@
     "timeRequired": {
       "description": "Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.",
       "type": "string",
-      "format": "https://schema.org/Duration"
+      "$comment": "https://schema.org/Duration"
     },
     "translator": {
       "description": "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",

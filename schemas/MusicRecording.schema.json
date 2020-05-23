@@ -21,7 +21,7 @@
     "duration": {
       "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
       "type": "string",
-      "format": "https://schema.org/Duration"
+      "$comment": "https://schema.org/Duration"
     },
     "inAlbum": {
       "description": "The album to which this recording belongs.",

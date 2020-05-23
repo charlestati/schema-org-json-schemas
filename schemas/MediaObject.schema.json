@@ -37,7 +37,7 @@
     "duration": {
       "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
       "type": "string",
-      "format": "https://schema.org/Duration"
+      "$comment": "https://schema.org/Duration"
     },
     "embedUrl": {
       "description": "A URL pointing to a player for a specific video. In general, this is the information in the src element of an embed tag and should not be the same as the content of the loc tag.",
@@ -62,7 +62,7 @@
     "height": {
       "description": "The height of the item.",
       "anyOf": [
-        { "type": "string", "format": "https://schema.org/Distance" },
+        { "type": "string", "$comment": "https://schema.org/Distance" },
         { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     },
@@ -103,7 +103,7 @@
     "width": {
       "description": "The width of the item.",
       "anyOf": [
-        { "type": "string", "format": "https://schema.org/Distance" },
+        { "type": "string", "$comment": "https://schema.org/Distance" },
         { "$ref": "http://schema.org/QuantitativeValue" }
       ]
     }
