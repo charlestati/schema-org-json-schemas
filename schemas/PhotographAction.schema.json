@@ -4,7 +4,6 @@
   "title": "PhotographAction",
   "description": "The act of capturing still images of objects using a camera.",
   "type": "object",
-  "format": "http://schema.org/PhotographAction",
   "allOf": [
     {
       "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",

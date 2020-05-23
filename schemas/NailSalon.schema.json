@@ -4,7 +4,6 @@
   "title": "NailSalon",
   "description": "A nail salon.",
   "type": "object",
-  "format": "http://schema.org/NailSalon",
   "allOf": [
     {
       "description": "Health and beauty.",

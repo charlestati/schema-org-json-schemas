@@ -4,7 +4,6 @@
   "title": "FireStation",
   "description": "A fire station. With firemen.",
   "type": "object",
-  "format": "http://schema.org/FireStation",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

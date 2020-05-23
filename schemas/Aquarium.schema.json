@@ -4,7 +4,6 @@
   "title": "Aquarium",
   "description": "Aquarium.",
   "type": "object",
-  "format": "http://schema.org/Aquarium",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

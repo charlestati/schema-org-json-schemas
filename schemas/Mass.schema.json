@@ -4,7 +4,6 @@
   "title": "Mass",
   "description": "Properties that take Mass as values are of the form '<Number> <Mass unit of measure>'. E.g., '7 kg'.",
   "type": "object",
-  "format": "http://schema.org/Mass",
   "allOf": [
     {
       "description": "Quantities such as distance, time, mass, weight, etc. Particular instances of say Mass are entities like '3 Kg' or '4 milligrams'.",

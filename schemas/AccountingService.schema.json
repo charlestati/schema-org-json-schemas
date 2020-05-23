@@ -4,7 +4,6 @@
   "title": "AccountingService",
   "description": "Accountancy business.\n\nAs a LocalBusiness it can be described as a provider of one or more Service(s).",
   "type": "object",
-  "format": "http://schema.org/AccountingService",
   "allOf": [
     {
       "description": "Financial services business.",

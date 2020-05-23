@@ -4,7 +4,6 @@
   "title": "ActionAccessSpecification",
   "description": "A set of requirements that a must be fulfilled in order to perform an Action.",
   "type": "object",
-  "format": "http://schema.org/ActionAccessSpecification",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

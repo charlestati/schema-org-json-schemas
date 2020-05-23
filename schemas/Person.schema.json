@@ -4,7 +4,6 @@
   "title": "Person",
   "description": "A person (alive, dead, undead, or fictional).",
   "type": "object",
-  "format": "http://schema.org/Person",
   "allOf": [
     {
       "description": "The most generic type of item.",

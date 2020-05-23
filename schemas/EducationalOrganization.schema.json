@@ -4,7 +4,6 @@
   "title": "EducationalOrganization",
   "description": "An educational organization.",
   "type": "object",
-  "format": "http://schema.org/EducationalOrganization",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

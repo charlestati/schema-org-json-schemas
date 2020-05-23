@@ -4,7 +4,6 @@
   "title": "UnRegisterAction",
   "description": "The act of un-registering from a service.\n\nRelated actions:\n\n\nRegisterAction: antonym of UnRegisterAction.\nLeaveAction: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you werer previously registered, rather than leaving a team/group of people.\n\n",
   "type": "object",
-  "format": "http://schema.org/UnRegisterAction",
   "allOf": [
     {
       "description": "The act of interacting with another person or organization.",

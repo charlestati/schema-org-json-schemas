@@ -4,7 +4,6 @@
   "title": "Casino",
   "description": "A casino.",
   "type": "object",
-  "format": "http://schema.org/Casino",
   "allOf": [
     {
       "description": "A business providing entertainment.",

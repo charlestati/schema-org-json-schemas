@@ -4,7 +4,6 @@
   "title": "Airport",
   "description": "An airport.",
   "type": "object",
-  "format": "http://schema.org/Airport",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

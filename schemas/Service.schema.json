@@ -4,7 +4,6 @@
   "title": "Service",
   "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
   "type": "object",
-  "format": "http://schema.org/Service",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

@@ -4,7 +4,6 @@
   "title": "ScholarlyArticle",
   "description": "A scholarly article.",
   "type": "object",
-  "format": "http://schema.org/ScholarlyArticle",
   "allOf": [
     {
       "description": "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\n\nSee also blog post.",

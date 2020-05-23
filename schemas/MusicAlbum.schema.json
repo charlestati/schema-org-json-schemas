@@ -4,7 +4,6 @@
   "title": "MusicAlbum",
   "description": "A collection of music tracks.",
   "type": "object",
-  "format": "http://schema.org/MusicAlbum",
   "allOf": [
     {
       "description": "A collection of music tracks in playlist form.",

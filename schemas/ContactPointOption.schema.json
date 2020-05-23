@@ -4,7 +4,6 @@
   "title": "ContactPointOption",
   "description": "Enumerated options related to a ContactPoint.",
   "type": "object",
-  "format": "http://schema.org/ContactPointOption",
   "oneOf": [
     {
       "description": "Uses devices to support users with hearing impairments.",

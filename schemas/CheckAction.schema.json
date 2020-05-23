@@ -4,7 +4,6 @@
   "title": "CheckAction",
   "description": "An agent inspects, determines, investigates, inquires, or examines an object's accuracy, quality, condition, or state.",
   "type": "object",
-  "format": "http://schema.org/CheckAction",
   "allOf": [
     {
       "description": "The act of finding an object.\n\nRelated actions:\n\n\nSearchAction: FindAction is generally lead by a SearchAction, but not necessarily.\n\n",

@@ -4,7 +4,6 @@
   "title": "MusicPlaylist",
   "description": "A collection of music tracks in playlist form.",
   "type": "object",
-  "format": "http://schema.org/MusicPlaylist",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",

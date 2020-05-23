@@ -4,7 +4,6 @@
   "title": "MovieTheater",
   "description": "A movie theater.",
   "type": "object",
-  "format": "http://schema.org/MovieTheater",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

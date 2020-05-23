@@ -4,7 +4,6 @@
   "title": "DiscoverAction",
   "description": "The act of discovering/finding an object.",
   "type": "object",
-  "format": "http://schema.org/DiscoverAction",
   "allOf": [
     {
       "description": "The act of finding an object.\n\nRelated actions:\n\n\nSearchAction: FindAction is generally lead by a SearchAction, but not necessarily.\n\n",

@@ -4,7 +4,6 @@
   "title": "ReplaceAction",
   "description": "The act of editing a recipient by replacing an old object with a new object.",
   "type": "object",
-  "format": "http://schema.org/ReplaceAction",
   "allOf": [
     {
       "description": "The act of managing by changing/editing the state of the object.",

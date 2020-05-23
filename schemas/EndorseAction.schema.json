@@ -4,7 +4,6 @@
   "title": "EndorseAction",
   "description": "An agent approves/certifies/likes/supports/sanction an object.",
   "type": "object",
-  "format": "http://schema.org/EndorseAction",
   "allOf": [
     {
       "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",

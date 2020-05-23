@@ -4,7 +4,6 @@
   "title": "PostOffice",
   "description": "A post office.",
   "type": "object",
-  "format": "http://schema.org/PostOffice",
   "allOf": [
     {
       "description": "A government office—for example, an IRS or DMV office.",

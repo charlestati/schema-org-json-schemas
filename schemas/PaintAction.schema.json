@@ -4,7 +4,6 @@
   "title": "PaintAction",
   "description": "The act of producing a painting, typically with paint and canvas as instruments.",
   "type": "object",
-  "format": "http://schema.org/PaintAction",
   "allOf": [
     {
       "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",

@@ -4,7 +4,6 @@
   "title": "AutoRepair",
   "description": "Car repair business.",
   "type": "object",
-  "format": "http://schema.org/AutoRepair",
   "allOf": [
     {
       "description": "Car repair, sales, or parts.",

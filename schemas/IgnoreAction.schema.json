@@ -4,7 +4,6 @@
   "title": "IgnoreAction",
   "description": "The act of intentionally disregarding the object. An agent ignores an object.",
   "type": "object",
-  "format": "http://schema.org/IgnoreAction",
   "allOf": [
     {
       "description": "The act of forming one's opinion, reaction or sentiment.",

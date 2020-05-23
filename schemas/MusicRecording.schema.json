@@ -4,7 +4,6 @@
   "title": "MusicRecording",
   "description": "A music recording (track), usually a single song.",
   "type": "object",
-  "format": "http://schema.org/MusicRecording",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",

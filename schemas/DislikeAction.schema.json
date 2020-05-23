@@ -4,7 +4,6 @@
   "title": "DislikeAction",
   "description": "The act of expressing a negative sentiment about the object. An agent dislikes an object (a proposition, topic or theme) with participants.",
   "type": "object",
-  "format": "http://schema.org/DislikeAction",
   "allOf": [
     {
       "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",

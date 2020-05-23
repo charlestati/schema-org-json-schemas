@@ -4,7 +4,6 @@
   "title": "RVPark",
   "description": "A place offering space for \"Recreational Vehicles\", Caravans, mobile homes and the like.",
   "type": "object",
-  "format": "http://schema.org/RVPark",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

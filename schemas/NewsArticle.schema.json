@@ -4,7 +4,6 @@
   "title": "NewsArticle",
   "description": "A NewsArticle is an article whose content reports news, or provides background context and supporting materials for understanding the news.\n\nA more detailed overview of schema.org News markup is also available.",
   "type": "object",
-  "format": "http://schema.org/NewsArticle",
   "allOf": [
     {
       "description": "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\n\nSee also blog post.",

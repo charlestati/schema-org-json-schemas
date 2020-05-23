@@ -4,7 +4,6 @@
   "title": "CreditCard",
   "description": "A card payment method of a particular brand or name.  Used to mark up a particular payment method and/or the financial product/service that supplies the card account.\n\nCommonly used values:\n\n\nhttp://purl.org/goodrelations/v1#AmericanExpress\nhttp://purl.org/goodrelations/v1#DinersClub\nhttp://purl.org/goodrelations/v1#Discover\nhttp://purl.org/goodrelations/v1#JCB\nhttp://purl.org/goodrelations/v1#MasterCard\nhttp://purl.org/goodrelations/v1#VISA\n\n",
   "type": "object",
-  "format": "http://schema.org/CreditCard",
   "allOf": [
     {
       "description": "A financial product for the loaning of an amount of money under agreed terms and charges.",

@@ -4,7 +4,6 @@
   "title": "DepartmentStore",
   "description": "A department store.",
   "type": "object",
-  "format": "http://schema.org/DepartmentStore",
   "allOf": [
     { "description": "A retail good store.", "$ref": "http://schema.org/Store" }
   ]

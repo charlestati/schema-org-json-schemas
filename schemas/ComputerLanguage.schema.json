@@ -4,7 +4,6 @@
   "title": "ComputerLanguage",
   "description": "This type covers computer programming languages such as Scheme and Lisp, as well as other language-like computer representations. Natural languages are best represented with the Language type.",
   "type": "object",
-  "format": "http://schema.org/ComputerLanguage",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

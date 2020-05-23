@@ -20,18 +20,7 @@
       { "type": "string", "enum": ["Yes", "No"] }
     ]
   },
-  "occupationalCategory": {
-    "anyOf": [
-      {
-        "type": "string",
-        "format": "https://www.ilo.org/public/english/bureau/stat/isco/isco08/"
-      },
-      {
-        "type": "string",
-        "format": "https://www.onetcenter.org/taxonomy.html"
-      },
-      { "type": "string" }
-    ]
-  },
-  "repetitions": { "type": "integer", "minimum": 1 }
+  "cssSelector": { "type": "string" },
+  "repetitions": { "type": "integer", "minimum": 1 },
+  "xpath": { "type": "string" }
 }

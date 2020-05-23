@@ -4,7 +4,6 @@
   "title": "DeleteAction",
   "description": "The act of editing a recipient by removing one of its objects.",
   "type": "object",
-  "format": "http://schema.org/DeleteAction",
   "allOf": [
     {
       "description": "The act of managing by changing/editing the state of the object.",

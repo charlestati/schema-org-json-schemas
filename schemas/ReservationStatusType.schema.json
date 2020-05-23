@@ -4,7 +4,6 @@
   "title": "ReservationStatusType",
   "description": "Enumerated status values for Reservation.",
   "type": "object",
-  "format": "http://schema.org/ReservationStatusType",
   "oneOf": [
     {
       "description": "The status for a previously confirmed reservation that is now cancelled.",

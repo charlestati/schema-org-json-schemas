@@ -4,7 +4,6 @@
   "title": "Hotel",
   "description": "A hotel is an establishment that provides lodging paid on a short-term basis (Source: Wikipedia, the free encyclopedia, see http://en.wikipedia.org/wiki/Hotel).\n\nSee also the dedicated document on the use of schema.org for marking up hotels and other forms of accommodations.",
   "type": "object",
-  "format": "http://schema.org/Hotel",
   "allOf": [
     {
       "description": "A lodging business, such as a motel, hotel, or inn.",

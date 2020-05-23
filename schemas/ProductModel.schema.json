@@ -4,7 +4,6 @@
   "title": "ProductModel",
   "description": "A datasheet or vendor specification of a product (in the sense of a prototypical description).",
   "type": "object",
-  "format": "http://schema.org/ProductModel",
   "allOf": [
     {
       "description": "Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.",

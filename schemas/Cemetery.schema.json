@@ -4,7 +4,6 @@
   "title": "Cemetery",
   "description": "A graveyard.",
   "type": "object",
-  "format": "http://schema.org/Cemetery",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

@@ -4,7 +4,6 @@
   "title": "NightClub",
   "description": "A nightclub or discotheque.",
   "type": "object",
-  "format": "http://schema.org/NightClub",
   "allOf": [
     {
       "description": "A business providing entertainment.",

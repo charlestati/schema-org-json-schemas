@@ -4,7 +4,6 @@
   "title": "DanceGroup",
   "description": "A dance group—for example, the Alvin Ailey Dance Theater or Riverdance.",
   "type": "object",
-  "format": "http://schema.org/DanceGroup",
   "allOf": [
     {
       "description": "A performance group, such as a band, an orchestra, or a circus.",

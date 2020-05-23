@@ -4,7 +4,6 @@
   "title": "AutomatedTeller",
   "description": "ATM/cash machine.",
   "type": "object",
-  "format": "http://schema.org/AutomatedTeller",
   "allOf": [
     {
       "description": "Financial services business.",

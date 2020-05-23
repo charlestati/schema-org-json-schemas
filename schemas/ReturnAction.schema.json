@@ -4,7 +4,6 @@
   "title": "ReturnAction",
   "description": "The act of returning to the origin that which was previously received (concrete objects) or taken (ownership).",
   "type": "object",
-  "format": "http://schema.org/ReturnAction",
   "allOf": [
     {
       "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",

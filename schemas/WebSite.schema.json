@@ -4,7 +4,6 @@
   "title": "WebSite",
   "description": "A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.",
   "type": "object",
-  "format": "http://schema.org/WebSite",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",

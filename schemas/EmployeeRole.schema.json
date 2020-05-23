@@ -4,7 +4,6 @@
   "title": "EmployeeRole",
   "description": "A subclass of OrganizationRole used to describe employee relationships.",
   "type": "object",
-  "format": "http://schema.org/EmployeeRole",
   "allOf": [
     {
       "description": "A subclass of Role used to describe roles within organizations.",

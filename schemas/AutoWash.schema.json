@@ -4,7 +4,6 @@
   "title": "AutoWash",
   "description": "A car wash business.",
   "type": "object",
-  "format": "http://schema.org/AutoWash",
   "allOf": [
     {
       "description": "Car repair, sales, or parts.",

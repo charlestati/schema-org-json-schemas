@@ -4,6 +4,5 @@
   "title": "CatholicChurch",
   "description": "A Catholic church.",
   "type": "object",
-  "format": "http://schema.org/CatholicChurch",
   "allOf": [{ "description": "A church.", "$ref": "http://schema.org/Church" }]
 }

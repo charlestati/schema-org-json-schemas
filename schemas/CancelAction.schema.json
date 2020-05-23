@@ -4,7 +4,6 @@
   "title": "CancelAction",
   "description": "The act of asserting that a future event/action is no longer going to happen.\n\nRelated actions:\n\n\nConfirmAction: The antonym of CancelAction.\n\n",
   "type": "object",
-  "format": "http://schema.org/CancelAction",
   "allOf": [
     {
       "description": "The act of planning the execution of an event/task/action/reservation/plan to a future date.",

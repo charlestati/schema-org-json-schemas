@@ -4,7 +4,6 @@
   "title": "ReactAction",
   "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",
   "type": "object",
-  "format": "http://schema.org/ReactAction",
   "allOf": [
     {
       "description": "The act of forming one's opinion, reaction or sentiment.",

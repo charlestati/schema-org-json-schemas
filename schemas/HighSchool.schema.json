@@ -4,7 +4,6 @@
   "title": "HighSchool",
   "description": "A high school.",
   "type": "object",
-  "format": "http://schema.org/HighSchool",
   "allOf": [
     {
       "description": "An educational organization.",

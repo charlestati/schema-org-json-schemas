@@ -4,7 +4,6 @@
   "title": "HealthClub",
   "description": "A health club.",
   "type": "object",
-  "format": "http://schema.org/HealthClub",
   "allOf": [
     {
       "description": "Health and beauty.",

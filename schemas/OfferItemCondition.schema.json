@@ -4,7 +4,6 @@
   "title": "OfferItemCondition",
   "description": "A list of possible conditions for the item.",
   "type": "object",
-  "format": "http://schema.org/OfferItemCondition",
   "oneOf": [
     {
       "description": "Indicates that the item is damaged.",

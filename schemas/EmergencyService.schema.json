@@ -4,7 +4,6 @@
   "title": "EmergencyService",
   "description": "An emergency service, such as a fire station or ER.",
   "type": "object",
-  "format": "http://schema.org/EmergencyService",
   "allOf": [
     {
       "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",

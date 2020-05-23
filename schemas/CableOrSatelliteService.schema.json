@@ -4,7 +4,6 @@
   "title": "CableOrSatelliteService",
   "description": "A service which provides access to media programming like TV or radio. Access may be via cable or satellite.",
   "type": "object",
-  "format": "http://schema.org/CableOrSatelliteService",
   "allOf": [
     {
       "description": "A service provided by an organization, e.g. delivery service, print services, etc.",

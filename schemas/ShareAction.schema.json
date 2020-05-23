@@ -4,7 +4,6 @@
   "title": "ShareAction",
   "description": "The act of distributing content to people for their amusement or edification.",
   "type": "object",
-  "format": "http://schema.org/ShareAction",
   "allOf": [
     {
       "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",

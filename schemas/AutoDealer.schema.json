@@ -4,7 +4,6 @@
   "title": "AutoDealer",
   "description": "An car dealership.",
   "type": "object",
-  "format": "http://schema.org/AutoDealer",
   "allOf": [
     {
       "description": "Car repair, sales, or parts.",

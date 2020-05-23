@@ -4,7 +4,6 @@
   "title": "HowTo",
   "description": "Instructions that explain how to achieve a result by performing a sequence of steps.",
   "type": "object",
-  "format": "http://schema.org/HowTo",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",

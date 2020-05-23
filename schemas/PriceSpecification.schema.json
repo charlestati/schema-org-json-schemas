@@ -4,7 +4,6 @@
   "title": "PriceSpecification",
   "description": "A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use MonetaryAmount to describe independent amounts of money such as a salary, credit card limits, etc.",
   "type": "object",
-  "format": "http://schema.org/PriceSpecification",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",

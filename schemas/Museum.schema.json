@@ -4,7 +4,6 @@
   "title": "Museum",
   "description": "A museum.",
   "type": "object",
-  "format": "http://schema.org/Museum",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

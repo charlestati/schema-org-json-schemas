@@ -4,7 +4,6 @@
   "title": "Corporation",
   "description": "Organization: A business corporation.",
   "type": "object",
-  "format": "http://schema.org/Corporation",
   "allOf": [
     {
       "description": "An organization such as a school, NGO, corporation, club, etc.",

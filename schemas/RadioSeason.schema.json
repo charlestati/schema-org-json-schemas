@@ -4,7 +4,6 @@
   "title": "RadioSeason",
   "description": "Season dedicated to radio broadcast and associated online delivery.",
   "type": "object",
-  "format": "http://schema.org/RadioSeason",
   "allOf": [
     {
       "description": "A media season e.g. tv, radio, video game etc.",

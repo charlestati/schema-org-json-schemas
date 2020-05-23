@@ -4,7 +4,6 @@
   "title": "QuantitativeValue",
   "description": "A point value or interval for product characteristics and other purposes.",
   "type": "object",
-  "format": "http://schema.org/QuantitativeValue",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",

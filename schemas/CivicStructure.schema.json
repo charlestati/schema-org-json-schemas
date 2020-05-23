@@ -4,7 +4,6 @@
   "title": "CivicStructure",
   "description": "A public structure, such as a town hall or concert hall.",
   "type": "object",
-  "format": "http://schema.org/CivicStructure",
   "allOf": [
     {
       "description": "Entities that have a somewhat fixed, physical extension.",

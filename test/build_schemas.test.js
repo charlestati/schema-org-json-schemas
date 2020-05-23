@@ -47,9 +47,35 @@ beforeEach(() => {
   );
 });
 
-it("should build the JSON Schema of a Person", async () => {
+it("should build the JSON Schema of Person", async () => {
   const schemaClass = schemaClasses.find(
     (schema) => schema["@id"] === "http://schema.org/Person",
+  );
+  const schema = buildSchema(
+    schemaClass,
+    schemaClasses,
+    properties,
+    enumValues,
+  );
+  expect(schema).toMatchSnapshot();
+});
+
+it("should build the JSON Schema of SpeakableSpecification", async () => {
+  const schemaClass = schemaClasses.find(
+    (schema) => schema["@id"] === "http://schema.org/SpeakableSpecification",
+  );
+  const schema = buildSchema(
+    schemaClass,
+    schemaClasses,
+    properties,
+    enumValues,
+  );
+  expect(schema).toMatchSnapshot();
+});
+
+it("should build the JSON Schema of FoodEstablishment", async () => {
+  const schemaClass = schemaClasses.find(
+    (schema) => schema["@id"] === "http://schema.org/FoodEstablishment",
   );
   const schema = buildSchema(
     schemaClass,

@@ -4,7 +4,6 @@
   "title": "UserTweets",
   "description": "UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use Action-based vocabulary, alongside types such as Comment.",
   "type": "object",
-  "format": "http://schema.org/UserTweets",
   "allOf": [
     {
       "description": "UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use Action-based vocabulary, alongside types such as Comment.",

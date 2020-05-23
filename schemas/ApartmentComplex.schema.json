@@ -4,7 +4,6 @@
   "title": "ApartmentComplex",
   "description": "Residence type: Apartment complex.",
   "type": "object",
-  "format": "http://schema.org/ApartmentComplex",
   "allOf": [
     {
       "description": "The place where a person lives.",

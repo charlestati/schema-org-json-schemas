@@ -4,7 +4,6 @@
   "title": "CurrencyConversionService",
   "description": "A service to convert funds from one currency to another currency.",
   "type": "object",
-  "format": "http://schema.org/CurrencyConversionService",
   "allOf": [
     {
       "description": "A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.",

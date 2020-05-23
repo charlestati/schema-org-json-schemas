@@ -4,7 +4,6 @@
   "title": "StructuredValue",
   "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
   "type": "object",
-  "format": "http://schema.org/StructuredValue",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

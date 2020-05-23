@@ -4,7 +4,6 @@
   "title": "LikeAction",
   "description": "The act of expressing a positive sentiment about the object. An agent likes an object (a proposition, topic or theme) with participants.",
   "type": "object",
-  "format": "http://schema.org/LikeAction",
   "allOf": [
     {
       "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",

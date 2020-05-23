@@ -4,7 +4,6 @@
   "title": "WebApplication",
   "description": "Web applications.",
   "type": "object",
-  "format": "http://schema.org/WebApplication",
   "allOf": [
     {
       "description": "A software application.",

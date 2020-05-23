@@ -4,7 +4,6 @@
   "title": "WriteAction",
   "description": "The act of authoring written creative content.",
   "type": "object",
-  "format": "http://schema.org/WriteAction",
   "allOf": [
     {
       "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",

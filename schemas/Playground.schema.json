@@ -4,7 +4,6 @@
   "title": "Playground",
   "description": "A playground.",
   "type": "object",
-  "format": "http://schema.org/Playground",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

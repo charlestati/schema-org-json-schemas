@@ -4,7 +4,6 @@
   "title": "AdultEntertainment",
   "description": "An adult entertainment establishment.",
   "type": "object",
-  "format": "http://schema.org/AdultEntertainment",
   "allOf": [
     {
       "description": "A business providing entertainment.",

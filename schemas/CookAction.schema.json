@@ -4,7 +4,6 @@
   "title": "CookAction",
   "description": "The act of producing/preparing food.",
   "type": "object",
-  "format": "http://schema.org/CookAction",
   "allOf": [
     {
       "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",

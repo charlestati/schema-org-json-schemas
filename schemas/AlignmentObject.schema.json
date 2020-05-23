@@ -4,7 +4,6 @@
   "title": "AlignmentObject",
   "description": "An intangible item that describes an alignment between a learning resource and a node in an educational framework.\n\nShould not be used where the nature of the alignment can be described using a simple property, for example to express that a resource teaches or assesses a competency.",
   "type": "object",
-  "format": "http://schema.org/AlignmentObject",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

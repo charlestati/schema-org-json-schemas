@@ -4,7 +4,6 @@
   "title": "VideoGallery",
   "description": "Web page type: Video gallery page.",
   "type": "object",
-  "format": "http://schema.org/VideoGallery",
   "allOf": [
     {
       "description": "Web page type: Media gallery page. A mixed-media page that can contains media such as images, videos, and other multimedia.",

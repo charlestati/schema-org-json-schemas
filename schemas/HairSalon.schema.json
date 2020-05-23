@@ -4,7 +4,6 @@
   "title": "HairSalon",
   "description": "A hair salon.",
   "type": "object",
-  "format": "http://schema.org/HairSalon",
   "allOf": [
     {
       "description": "Health and beauty.",

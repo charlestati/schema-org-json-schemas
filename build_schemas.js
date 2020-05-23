@@ -17,7 +17,7 @@
 const path = require("path");
 const fs = require("fs-extra");
 const axios = require("axios");
-const { castArray, has, get, set, sortBy } = require("lodash");
+const { castArray, has, set, sortBy } = require("lodash");
 const cheerio = require("cheerio");
 const prettier = require("prettier");
 const chalk = require("chalk");
@@ -48,13 +48,13 @@ async function fetch(uri) {
 }
 
 /**
- * Check if a type has a hardcoded schema
+ * Check if a label has a hardcoded schema
  *
- * @param typeLabel {string} - The type to check
- * @returns {boolean} - True if the type has a hardcoded schema
+ * @param label {string} - The label to check
+ * @returns {boolean} - True if the label has a hardcoded schema
  */
-function hasHardcodedSchema(typeLabel) {
-  return Object.prototype.hasOwnProperty.call(hardcodedSchemas, typeLabel);
+function hasHardcodedSchema(label) {
+  return Object.prototype.hasOwnProperty.call(hardcodedSchemas, label);
 }
 
 /**
@@ -183,6 +183,13 @@ function buildProperties(properties, allSchemaClasses) {
   return properties.reduce((accumulator, property) => {
     const propertyLabel = property["rdfs:label"];
     const propertyDescription = htmlToPlainText(property["rdfs:comment"]);
+    if (hasHardcodedSchema(propertyLabel)) {
+      set(accumulator, [propertyLabel], {
+        description: propertyDescription,
+        ...hardcodedSchemas[`${propertyLabel}`],
+      });
+      return accumulator;
+    }
     const types = allSchemaClasses.filter((_schemaClass) =>
       castArray(property["http://schema.org/rangeIncludes"]).some(
         (possibleType) => possibleType["@id"] === _schemaClass["@id"],
@@ -193,24 +200,20 @@ function buildProperties(properties, allSchemaClasses) {
       if (hasHardcodedMultiplicity(propertyLabel)) {
         isArray = propertyMultiplicity[`${propertyLabel}`];
       } else {
-        isArray = !htmlToPlainText(propertyDescription).startsWith("The ");
+        isArray = !propertyDescription.startsWith("The ");
         inferredMultiplicity.add(propertyLabel);
       }
       set(accumulator, [propertyLabel], {
         description: propertyDescription,
         ...buildTypes(types, isArray),
       });
+    } else if (hasHardcodedSchema(propertyLabel)) {
+      set(accumulator, [propertyLabel], {
+        description: propertyDescription,
+        ...hardcodedSchemas[`${propertyLabel}`],
+      });
     } else {
-      const format = get(
-        castArray(property["http://schema.org/rangeIncludes"]),
-        [0, "@id"],
-      );
-      if (format) {
-        set(accumulator, [propertyLabel], {
-          description: htmlToPlainText(propertyDescription),
-          format,
-        });
-      }
+      console.error(chalk.red(`Unknown type for property ${propertyLabel}`));
     }
     return accumulator;
   }, {});
@@ -235,7 +238,6 @@ function buildSchema(schemaClass, allSchemaClasses, allProperties, enumValues) {
     title,
     description,
     type: "object",
-    format: id,
   };
   if (has(schemaClass, "rdfs:subClassOf")) {
     const parentsIDs = castArray(schemaClass["rdfs:subClassOf"]).map(
@@ -248,7 +250,7 @@ function buildSchema(schemaClass, allSchemaClasses, allProperties, enumValues) {
       if (enumMembers.length > 0) {
         schema.oneOf = sortBy(enumMembers, ["rdfs:label"]).map(
           (enumMember) => ({
-            description: enumMember["rdfs:comment"],
+            description: htmlToPlainText(enumMember["rdfs:comment"]),
             const: enumMember["rdfs:label"],
           }),
         );

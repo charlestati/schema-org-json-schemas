@@ -4,7 +4,6 @@
   "title": "Clip",
   "description": "A short TV or radio program or a segment/part of a program.",
   "type": "object",
-  "format": "http://schema.org/Clip",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",

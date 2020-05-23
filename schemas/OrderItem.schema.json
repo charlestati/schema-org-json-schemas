@@ -4,7 +4,6 @@
   "title": "OrderItem",
   "description": "An order item is a line of an order. It includes the quantity and shipping details of a bought offer.",
   "type": "object",
-  "format": "http://schema.org/OrderItem",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

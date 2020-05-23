@@ -4,7 +4,6 @@
   "title": "AskAction",
   "description": "The act of posing a question / favor to someone.\n\nRelated actions:\n\n\nReplyAction: Appears generally as a response to AskAction.\n\n",
   "type": "object",
-  "format": "http://schema.org/AskAction",
   "allOf": [
     {
       "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",

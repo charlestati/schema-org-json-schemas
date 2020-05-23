@@ -4,7 +4,6 @@
   "title": "EventVenue",
   "description": "An event venue.",
   "type": "object",
-  "format": "http://schema.org/EventVenue",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

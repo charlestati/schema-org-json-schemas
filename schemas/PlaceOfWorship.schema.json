@@ -4,7 +4,6 @@
   "title": "PlaceOfWorship",
   "description": "Place of worship, such as a church, synagogue, or mosque.",
   "type": "object",
-  "format": "http://schema.org/PlaceOfWorship",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

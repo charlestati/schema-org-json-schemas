@@ -4,7 +4,6 @@
   "title": "MusicGroup",
   "description": "A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.",
   "type": "object",
-  "format": "http://schema.org/MusicGroup",
   "allOf": [
     {
       "description": "A performance group, such as a band, an orchestra, or a circus.",

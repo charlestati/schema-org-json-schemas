@@ -4,7 +4,6 @@
   "title": "ReviewAction",
   "description": "The act of producing a balanced opinion about the object for an audience. An agent reviews an object with participants resulting in a review.",
   "type": "object",
-  "format": "http://schema.org/ReviewAction",
   "allOf": [
     {
       "description": "The act of forming one's opinion, reaction or sentiment.",

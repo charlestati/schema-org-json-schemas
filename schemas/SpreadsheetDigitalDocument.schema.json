@@ -4,7 +4,6 @@
   "title": "SpreadsheetDigitalDocument",
   "description": "A spreadsheet file.",
   "type": "object",
-  "format": "http://schema.org/SpreadsheetDigitalDocument",
   "allOf": [
     {
       "description": "An electronic file or document.",

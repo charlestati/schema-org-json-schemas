@@ -4,7 +4,6 @@
   "title": "TravelAction",
   "description": "The act of traveling from an fromLocation to a destination by a specified mode of transport, optionally with participants.",
   "type": "object",
-  "format": "http://schema.org/TravelAction",
   "allOf": [
     {
       "description": "The act of an agent relocating to a place.\n\nRelated actions:\n\n\nTransferAction: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.\n\n",

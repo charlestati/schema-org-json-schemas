@@ -4,7 +4,6 @@
   "title": "NGO",
   "description": "Organization: Non-governmental Organization.",
   "type": "object",
-  "format": "http://schema.org/NGO",
   "allOf": [
     {
       "description": "An organization such as a school, NGO, corporation, club, etc.",

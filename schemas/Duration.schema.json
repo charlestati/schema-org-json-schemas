@@ -4,7 +4,6 @@
   "title": "Duration",
   "description": "Quantity: Duration (use ISO 8601 duration format).",
   "type": "object",
-  "format": "http://schema.org/Duration",
   "allOf": [
     {
       "description": "Quantities such as distance, time, mass, weight, etc. Particular instances of say Mass are entities like '3 Kg' or '4 milligrams'.",

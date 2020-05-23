@@ -4,7 +4,6 @@
   "title": "DefenceEstablishment",
   "description": "A defence establishment, such as an army or navy base.",
   "type": "object",
-  "format": "http://schema.org/DefenceEstablishment",
   "allOf": [
     {
       "description": "A government building.",

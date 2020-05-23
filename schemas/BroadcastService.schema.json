@@ -4,7 +4,6 @@
   "title": "BroadcastService",
   "description": "A delivery service through which content is provided via broadcast over the air or online.",
   "type": "object",
-  "format": "http://schema.org/BroadcastService",
   "allOf": [
     {
       "description": "A service provided by an organization, e.g. delivery service, print services, etc.",

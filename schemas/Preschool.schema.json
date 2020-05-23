@@ -4,7 +4,6 @@
   "title": "Preschool",
   "description": "A preschool.",
   "type": "object",
-  "format": "http://schema.org/Preschool",
   "allOf": [
     {
       "description": "An educational organization.",

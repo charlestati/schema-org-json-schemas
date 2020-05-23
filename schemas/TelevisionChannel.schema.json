@@ -4,7 +4,6 @@
   "title": "TelevisionChannel",
   "description": "A unique instance of a television BroadcastService on a CableOrSatelliteService lineup.",
   "type": "object",
-  "format": "http://schema.org/TelevisionChannel",
   "allOf": [
     {
       "description": "A unique instance of a BroadcastService on a CableOrSatelliteService lineup.",

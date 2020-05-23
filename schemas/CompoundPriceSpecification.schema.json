@@ -4,7 +4,6 @@
   "title": "CompoundPriceSpecification",
   "description": "A compound price specification is one that bundles multiple prices that all apply in combination for different dimensions of consumption. Use the name property of the attached unit price specification for indicating the dimension of a price component (e.g. \"electricity\" or \"final cleaning\").",
   "type": "object",
-  "format": "http://schema.org/CompoundPriceSpecification",
   "allOf": [
     {
       "description": "A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use MonetaryAmount to describe independent amounts of money such as a salary, credit card limits, etc.",

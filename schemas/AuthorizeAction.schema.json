@@ -4,7 +4,6 @@
   "title": "AuthorizeAction",
   "description": "The act of granting permission to an object.",
   "type": "object",
-  "format": "http://schema.org/AuthorizeAction",
   "allOf": [
     {
       "description": "The act of organizing tasks/objects/events by associating resources to it.",

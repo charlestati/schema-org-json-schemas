@@ -4,7 +4,6 @@
   "title": "VideoGame",
   "description": "A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.",
   "type": "object",
-  "format": "http://schema.org/VideoGame",
   "allOf": [
     {
       "description": "The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.",

@@ -4,7 +4,6 @@
   "title": "GatedResidenceCommunity",
   "description": "Residence type: Gated community.",
   "type": "object",
-  "format": "http://schema.org/GatedResidenceCommunity",
   "allOf": [
     {
       "description": "The place where a person lives.",

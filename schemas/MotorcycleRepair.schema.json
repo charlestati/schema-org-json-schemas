@@ -4,7 +4,6 @@
   "title": "MotorcycleRepair",
   "description": "A motorcycle repair shop.",
   "type": "object",
-  "format": "http://schema.org/MotorcycleRepair",
   "allOf": [
     {
       "description": "Car repair, sales, or parts.",

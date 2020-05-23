@@ -4,7 +4,6 @@
   "title": "SeaBodyOfWater",
   "description": "A sea (for example, the Caspian sea).",
   "type": "object",
-  "format": "http://schema.org/SeaBodyOfWater",
   "allOf": [
     {
       "description": "A body of water, such as a sea, ocean, or lake.",

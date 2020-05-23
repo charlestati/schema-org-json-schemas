@@ -4,7 +4,6 @@
   "title": "EmployerAggregateRating",
   "description": "An aggregate rating of an Organization related to its role as an employer.",
   "type": "object",
-  "format": "http://schema.org/EmployerAggregateRating",
   "allOf": [
     {
       "description": "The average rating based on multiple ratings or reviews.",

@@ -4,7 +4,6 @@
   "title": "QuantitativeValueDistribution",
   "description": "A statistical distribution of values.",
   "type": "object",
-  "format": "http://schema.org/QuantitativeValueDistribution",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",

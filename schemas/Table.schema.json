@@ -4,7 +4,6 @@
   "title": "Table",
   "description": "A table on a Web page.",
   "type": "object",
-  "format": "http://schema.org/Table",
   "allOf": [
     {
       "description": "A web page element, like a table or an image.",

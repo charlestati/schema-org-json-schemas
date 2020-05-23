@@ -4,7 +4,6 @@
   "title": "TennisComplex",
   "description": "A tennis complex.",
   "type": "object",
-  "format": "http://schema.org/TennisComplex",
   "allOf": [
     {
       "description": "A sports location, such as a playing field.",

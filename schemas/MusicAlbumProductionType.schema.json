@@ -4,7 +4,6 @@
   "title": "MusicAlbumProductionType",
   "description": "Classification of the album by it's type of content: soundtrack, live album, studio album, etc.",
   "type": "object",
-  "format": "http://schema.org/MusicAlbumProductionType",
   "oneOf": [
     { "description": "CompilationAlbum.", "const": "CompilationAlbum" },
     { "description": "DJMixAlbum.", "const": "DJMixAlbum" },

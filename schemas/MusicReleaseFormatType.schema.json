@@ -4,7 +4,6 @@
   "title": "MusicReleaseFormatType",
   "description": "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
   "type": "object",
-  "format": "http://schema.org/MusicReleaseFormatType",
   "oneOf": [
     { "description": "CDFormat.", "const": "CDFormat" },
     { "description": "CassetteFormat.", "const": "CassetteFormat" },

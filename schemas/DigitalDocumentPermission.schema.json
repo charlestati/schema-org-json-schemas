@@ -4,7 +4,6 @@
   "title": "DigitalDocumentPermission",
   "description": "A permission for a particular person or group to access a particular file.",
   "type": "object",
-  "format": "http://schema.org/DigitalDocumentPermission",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

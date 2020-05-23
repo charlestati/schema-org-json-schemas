@@ -4,7 +4,6 @@
   "title": "GameServerStatus",
   "description": "Status of a game server.",
   "type": "object",
-  "format": "http://schema.org/GameServerStatus",
   "oneOf": [
     {
       "description": "Game server status: OfflinePermanently. Server is offline and not available.",

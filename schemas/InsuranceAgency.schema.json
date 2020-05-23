@@ -4,7 +4,6 @@
   "title": "InsuranceAgency",
   "description": "An Insurance agency.",
   "type": "object",
-  "format": "http://schema.org/InsuranceAgency",
   "allOf": [
     {
       "description": "Financial services business.",

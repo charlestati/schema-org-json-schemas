@@ -4,7 +4,6 @@
   "title": "Review",
   "description": "A review of an item - for example, of a restaurant, movie, or store.",
   "type": "object",
-  "format": "http://schema.org/Review",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",

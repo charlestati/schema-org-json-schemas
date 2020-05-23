@@ -4,7 +4,6 @@
   "title": "Residence",
   "description": "The place where a person lives.",
   "type": "object",
-  "format": "http://schema.org/Residence",
   "allOf": [
     {
       "description": "Entities that have a somewhat fixed, physical extension.",

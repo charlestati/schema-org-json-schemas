@@ -4,7 +4,6 @@
   "title": "CourseInstance",
   "description": "An instance of a Course which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students.",
   "type": "object",
-  "format": "http://schema.org/CourseInstance",
   "allOf": [
     {
       "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",

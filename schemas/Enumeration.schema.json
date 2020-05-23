@@ -4,7 +4,6 @@
   "title": "Enumeration",
   "description": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
   "type": "object",
-  "format": "http://schema.org/Enumeration",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

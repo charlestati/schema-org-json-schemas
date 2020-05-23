@@ -4,7 +4,6 @@
   "title": "StadiumOrArena",
   "description": "A stadium.",
   "type": "object",
-  "format": "http://schema.org/StadiumOrArena",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

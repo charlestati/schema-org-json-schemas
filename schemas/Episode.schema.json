@@ -4,7 +4,6 @@
   "title": "Episode",
   "description": "A media episode (e.g. TV, radio, video game) which can be part of a series or season.",
   "type": "object",
-  "format": "http://schema.org/Episode",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",

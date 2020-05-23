@@ -4,7 +4,6 @@
   "title": "ComedyClub",
   "description": "A comedy club.",
   "type": "object",
-  "format": "http://schema.org/ComedyClub",
   "allOf": [
     {
       "description": "A business providing entertainment.",

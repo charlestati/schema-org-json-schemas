@@ -4,7 +4,6 @@
   "title": "Winery",
   "description": "A winery.",
   "type": "object",
-  "format": "http://schema.org/Winery",
   "allOf": [
     {
       "description": "A food-related business.",

@@ -4,7 +4,6 @@
   "title": "BankOrCreditUnion",
   "description": "Bank or credit union.",
   "type": "object",
-  "format": "http://schema.org/BankOrCreditUnion",
   "allOf": [
     {
       "description": "Financial services business.",

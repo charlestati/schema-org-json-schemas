@@ -4,7 +4,6 @@
   "title": "ItemAvailability",
   "description": "A list of possible product availability options.",
   "type": "object",
-  "format": "http://schema.org/ItemAvailability",
   "oneOf": [
     {
       "description": "Indicates that the item has been discontinued.",

@@ -4,7 +4,6 @@
   "title": "Physician",
   "description": "A doctor's office.",
   "type": "object",
-  "format": "http://schema.org/Physician",
   "allOf": [
     {
       "description": "A medical organization (physical or not), such as hospital, institution or clinic.",

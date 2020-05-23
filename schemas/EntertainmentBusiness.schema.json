@@ -4,7 +4,6 @@
   "title": "EntertainmentBusiness",
   "description": "A business providing entertainment.",
   "type": "object",
-  "format": "http://schema.org/EntertainmentBusiness",
   "allOf": [
     {
       "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",

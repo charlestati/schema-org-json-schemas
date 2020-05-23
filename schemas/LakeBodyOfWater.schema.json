@@ -4,7 +4,6 @@
   "title": "LakeBodyOfWater",
   "description": "A lake (for example, Lake Pontrachain).",
   "type": "object",
-  "format": "http://schema.org/LakeBodyOfWater",
   "allOf": [
     {
       "description": "A body of water, such as a sea, ocean, or lake.",

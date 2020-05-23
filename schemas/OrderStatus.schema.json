@@ -4,7 +4,6 @@
   "title": "OrderStatus",
   "description": "Enumerated status values for Order.",
   "type": "object",
-  "format": "http://schema.org/OrderStatus",
   "oneOf": [
     {
       "description": "OrderStatus representing cancellation of an order.",

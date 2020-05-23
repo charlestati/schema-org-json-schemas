@@ -4,7 +4,6 @@
   "title": "SportsTeam",
   "description": "Organization: Sports team.",
   "type": "object",
-  "format": "http://schema.org/SportsTeam",
   "allOf": [
     {
       "description": "Represents the collection of all sports organizations, including sports teams, governing bodies, and sports associations.",

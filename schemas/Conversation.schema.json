@@ -4,7 +4,6 @@
   "title": "Conversation",
   "description": "One or more messages between organizations or people on a particular topic. Individual messages can be linked to the conversation with isPartOf or hasPart properties.",
   "type": "object",
-  "format": "http://schema.org/Conversation",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",

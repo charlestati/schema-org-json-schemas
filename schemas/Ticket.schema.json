@@ -4,7 +4,6 @@
   "title": "Ticket",
   "description": "Used to describe a ticket to an event, a flight, a bus ride, etc.",
   "type": "object",
-  "format": "http://schema.org/Ticket",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

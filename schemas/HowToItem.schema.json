@@ -4,7 +4,6 @@
   "title": "HowToItem",
   "description": "An item used as either a tool or supply when performing the instructions for how to to achieve a result.",
   "type": "object",
-  "format": "http://schema.org/HowToItem",
   "allOf": [
     {
       "description": "An list item, e.g. a step in a checklist or how-to description.",

@@ -4,7 +4,6 @@
   "title": "APIReference",
   "description": "Reference documentation for application programming interfaces (APIs).",
   "type": "object",
-  "format": "http://schema.org/APIReference",
   "allOf": [
     {
       "description": "A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.",

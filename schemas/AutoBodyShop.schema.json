@@ -4,7 +4,6 @@
   "title": "AutoBodyShop",
   "description": "Auto body shop.",
   "type": "object",
-  "format": "http://schema.org/AutoBodyShop",
   "allOf": [
     {
       "description": "Car repair, sales, or parts.",

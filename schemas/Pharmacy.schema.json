@@ -4,7 +4,6 @@
   "title": "Pharmacy",
   "description": "A pharmacy or drugstore.",
   "type": "object",
-  "format": "http://schema.org/Pharmacy",
   "allOf": [
     {
       "description": "A medical organization (physical or not), such as hospital, institution or clinic.",

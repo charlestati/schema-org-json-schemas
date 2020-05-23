@@ -4,7 +4,6 @@
   "title": "Bridge",
   "description": "A bridge.",
   "type": "object",
-  "format": "http://schema.org/Bridge",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

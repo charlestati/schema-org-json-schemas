@@ -4,7 +4,6 @@
   "title": "MusicRelease",
   "description": "A MusicRelease is a specific release of a music album.",
   "type": "object",
-  "format": "http://schema.org/MusicRelease",
   "allOf": [
     {
       "description": "A collection of music tracks in playlist form.",

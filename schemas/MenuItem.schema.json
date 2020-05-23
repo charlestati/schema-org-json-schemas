@@ -4,7 +4,6 @@
   "title": "MenuItem",
   "description": "A food or drink item listed in a menu or menu section.",
   "type": "object",
-  "format": "http://schema.org/MenuItem",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

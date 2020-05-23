@@ -4,7 +4,6 @@
   "title": "Crematorium",
   "description": "A crematorium.",
   "type": "object",
-  "format": "http://schema.org/Crematorium",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

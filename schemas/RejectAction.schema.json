@@ -4,7 +4,6 @@
   "title": "RejectAction",
   "description": "The act of rejecting to/adopting an object.\n\nRelated actions:\n\n\nAcceptAction: The antonym of RejectAction.\n\n",
   "type": "object",
-  "format": "http://schema.org/RejectAction",
   "allOf": [
     {
       "description": "The act of organizing tasks/objects/events by associating resources to it.",

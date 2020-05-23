@@ -4,7 +4,6 @@
   "title": "ItemListOrderType",
   "description": "Enumerated for values for itemListOrder for indicating how an ordered ItemList is organized.",
   "type": "object",
-  "format": "http://schema.org/ItemListOrderType",
   "oneOf": [
     {
       "description": "An ItemList ordered with lower values listed first.",

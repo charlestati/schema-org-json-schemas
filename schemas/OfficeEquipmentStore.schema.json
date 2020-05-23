@@ -4,7 +4,6 @@
   "title": "OfficeEquipmentStore",
   "description": "An office equipment store.",
   "type": "object",
-  "format": "http://schema.org/OfficeEquipmentStore",
   "allOf": [
     { "description": "A retail good store.", "$ref": "http://schema.org/Store" }
   ]

@@ -4,7 +4,6 @@
   "title": "EducationalAudience",
   "description": "An EducationalAudience.",
   "type": "object",
-  "format": "http://schema.org/EducationalAudience",
   "allOf": [
     {
       "description": "Intended audience for an item, i.e. the group for whom the item was created.",

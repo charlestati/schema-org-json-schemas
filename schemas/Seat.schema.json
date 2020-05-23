@@ -4,7 +4,6 @@
   "title": "Seat",
   "description": "Used to describe a seat, such as a reserved seat in an event reservation.",
   "type": "object",
-  "format": "http://schema.org/Seat",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

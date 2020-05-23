@@ -4,7 +4,6 @@
   "title": "CommentAction",
   "description": "The act of generating a comment about a subject.",
   "type": "object",
-  "format": "http://schema.org/CommentAction",
   "allOf": [
     {
       "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",

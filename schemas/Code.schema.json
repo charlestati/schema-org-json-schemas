@@ -4,7 +4,6 @@
   "title": "Code",
   "description": "Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.",
   "type": "object",
-  "format": "http://schema.org/Code",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",

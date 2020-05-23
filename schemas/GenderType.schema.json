@@ -4,7 +4,6 @@
   "title": "GenderType",
   "description": "An enumeration of genders.",
   "type": "object",
-  "format": "http://schema.org/GenderType",
   "oneOf": [
     { "description": "The female gender.", "const": "Female" },
     { "description": "The male gender.", "const": "Male" }

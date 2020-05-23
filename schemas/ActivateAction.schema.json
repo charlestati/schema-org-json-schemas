@@ -4,7 +4,6 @@
   "title": "ActivateAction",
   "description": "The act of starting or activating a device or application (e.g. starting a timer or turning on a flashlight).",
   "type": "object",
-  "format": "http://schema.org/ActivateAction",
   "allOf": [
     {
       "description": "An agent controls a device or application.",

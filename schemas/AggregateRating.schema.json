@@ -4,7 +4,6 @@
   "title": "AggregateRating",
   "description": "The average rating based on multiple ratings or reviews.",
   "type": "object",
-  "format": "http://schema.org/AggregateRating",
   "allOf": [
     {
       "description": "A rating is an evaluation on a numeric scale, such as 1 to 5 stars.",

@@ -1,5 +1,111 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should build the JSON Schema of FoodEstablishment 1`] = `
+Object {
+  "$id": "http://schema.org/FoodEstablishment",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "allOf": Array [
+    Object {
+      "$ref": "http://schema.org/LocalBusiness",
+      "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",
+    },
+  ],
+  "description": "A food-related business.",
+  "properties": Object {
+    "acceptsReservations": Object {
+      "anyOf": Array [
+        Object {
+          "type": "boolean",
+        },
+        Object {
+          "format": "uri",
+          "type": "string",
+        },
+        Object {
+          "enum": Array [
+            "Yes",
+            "No",
+          ],
+          "type": "string",
+        },
+      ],
+      "description": "Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings Yes or No.",
+    },
+    "hasMenu": Object {
+      "description": "Either the actual menu as a structured representation, as text, or a URL of the menu.",
+      "oneOf": Array [
+        Object {
+          "anyOf": Array [
+            Object {
+              "format": "uri",
+              "type": "string",
+            },
+            Object {
+              "type": "string",
+            },
+            Object {
+              "$ref": "http://schema.org/Menu",
+            },
+          ],
+        },
+        Object {
+          "items": Object {
+            "anyOf": Array [
+              Object {
+                "format": "uri",
+                "type": "string",
+              },
+              Object {
+                "type": "string",
+              },
+              Object {
+                "$ref": "http://schema.org/Menu",
+              },
+            ],
+          },
+          "type": "array",
+        },
+      ],
+    },
+    "menu": Object {
+      "anyOf": Array [
+        Object {
+          "format": "uri",
+          "type": "string",
+        },
+        Object {
+          "type": "string",
+        },
+        Object {
+          "$ref": "http://schema.org/Menu",
+        },
+      ],
+      "description": "Either the actual menu as a structured representation, as text, or a URL of the menu.",
+    },
+    "servesCuisine": Object {
+      "description": "The cuisine of the restaurant.",
+      "type": "string",
+    },
+    "starRating": Object {
+      "description": "An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).",
+      "oneOf": Array [
+        Object {
+          "$ref": "http://schema.org/Rating",
+        },
+        Object {
+          "items": Object {
+            "$ref": "http://schema.org/Rating",
+          },
+          "type": "array",
+        },
+      ],
+    },
+  },
+  "title": "FoodEstablishment",
+  "type": "object",
+}
+`;
+
 exports[`should build the JSON Schema of a Person 1`] = `
 Object {
   "$id": "http://schema.org/Person",
@@ -714,6 +820,33 @@ While such policies are most typically expressed in natural language, sometimes 
     },
   },
   "title": "Person",
+  "type": "object",
+}
+`;
+
+exports[`should build the JSON Schema of a SpeakableSpecification 1`] = `
+Object {
+  "$id": "http://schema.org/SpeakableSpecification",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "allOf": Array [
+    Object {
+      "$ref": "http://schema.org/Intangible",
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+    },
+  ],
+  "description": "A SpeakableSpecification indicates (typically via xpath or cssSelector) sections of a document that are highlighted as particularly speakable. Instances of this type are expected to be used primarily as values of the speakable property.",
+  "format": "http://schema.org/SpeakableSpecification",
+  "properties": Object {
+    "cssSelector": Object {
+      "description": "A CSS selector, e.g. of a SpeakableSpecification or WebPageElement. In the latter case, multiple matches within a page can constitute a single conceptual \\"Web page element\\".",
+      "type": "string",
+    },
+    "xpath": Object {
+      "description": "An XPath, e.g. of a SpeakableSpecification or WebPageElement. In the latter case, multiple matches within a page can constitute a single conceptual \\"Web page element\\".",
+      "type": "string",
+    },
+  },
+  "title": "SpeakableSpecification",
   "type": "object",
 }
 `;

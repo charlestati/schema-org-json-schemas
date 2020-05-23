@@ -4,7 +4,6 @@
   "title": "LiveBlogPosting",
   "description": "A blog post intended to provide a rolling textual coverage of an ongoing event through continuous updates.",
   "type": "object",
-  "format": "http://schema.org/LiveBlogPosting",
   "allOf": [
     { "description": "A blog post.", "$ref": "http://schema.org/BlogPosting" }
   ],

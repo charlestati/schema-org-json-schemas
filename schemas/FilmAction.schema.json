@@ -4,7 +4,6 @@
   "title": "FilmAction",
   "description": "The act of capturing sound and moving images on film, video, or digitally.",
   "type": "object",
-  "format": "http://schema.org/FilmAction",
   "allOf": [
     {
       "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",

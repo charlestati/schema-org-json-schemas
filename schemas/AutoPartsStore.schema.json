@@ -4,7 +4,6 @@
   "title": "AutoPartsStore",
   "description": "An auto parts store.",
   "type": "object",
-  "format": "http://schema.org/AutoPartsStore",
   "allOf": [
     {
       "description": "Car repair, sales, or parts.",

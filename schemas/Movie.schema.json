@@ -4,7 +4,6 @@
   "title": "Movie",
   "description": "A movie.",
   "type": "object",
-  "format": "http://schema.org/Movie",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",

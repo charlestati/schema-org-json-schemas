@@ -4,7 +4,6 @@
   "title": "SubwayStation",
   "description": "A subway station.",
   "type": "object",
-  "format": "http://schema.org/SubwayStation",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

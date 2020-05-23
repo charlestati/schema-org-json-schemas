@@ -4,7 +4,6 @@
   "title": "MediaSubscription",
   "description": "A subscription which allows a user to access media including audio, video, books, etc.",
   "type": "object",
-  "format": "http://schema.org/MediaSubscription",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

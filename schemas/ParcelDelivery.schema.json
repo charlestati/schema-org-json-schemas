@@ -4,7 +4,6 @@
   "title": "ParcelDelivery",
   "description": "The delivery of a parcel either via the postal service or a commercial service.",
   "type": "object",
-  "format": "http://schema.org/ParcelDelivery",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

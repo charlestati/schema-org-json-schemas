@@ -4,7 +4,6 @@
   "title": "ListItem",
   "description": "An list item, e.g. a step in a checklist or how-to description.",
   "type": "object",
-  "format": "http://schema.org/ListItem",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

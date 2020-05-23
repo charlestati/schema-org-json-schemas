@@ -4,7 +4,6 @@
   "title": "PublicationEvent",
   "description": "A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.",
   "type": "object",
-  "format": "http://schema.org/PublicationEvent",
   "allOf": [
     {
       "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",

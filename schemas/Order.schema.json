@@ -4,7 +4,6 @@
   "title": "Order",
   "description": "An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.",
   "type": "object",
-  "format": "http://schema.org/Order",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

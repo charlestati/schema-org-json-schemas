@@ -4,7 +4,6 @@
   "title": "MapCategoryType",
   "description": "An enumeration of several kinds of Map.",
   "type": "object",
-  "format": "http://schema.org/MapCategoryType",
   "oneOf": [
     { "description": "A parking map.", "const": "ParkingMap" },
     { "description": "A seating map.", "const": "SeatingMap" },

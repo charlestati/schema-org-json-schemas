@@ -4,7 +4,6 @@
   "title": "TakeAction",
   "description": "The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.\n\nRelated actions:\n\n\nGiveAction: The reciprocal of TakeAction.\nReceiveAction: Unlike ReceiveAction, TakeAction implies that ownership has been transfered.\n\n",
   "type": "object",
-  "format": "http://schema.org/TakeAction",
   "allOf": [
     {
       "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",

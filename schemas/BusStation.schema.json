@@ -4,7 +4,6 @@
   "title": "BusStation",
   "description": "A bus station.",
   "type": "object",
-  "format": "http://schema.org/BusStation",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

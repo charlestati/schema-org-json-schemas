@@ -4,7 +4,6 @@
   "title": "AutoRental",
   "description": "A car rental business.",
   "type": "object",
-  "format": "http://schema.org/AutoRental",
   "allOf": [
     {
       "description": "Car repair, sales, or parts.",

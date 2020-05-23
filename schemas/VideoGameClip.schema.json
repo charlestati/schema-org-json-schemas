@@ -4,7 +4,6 @@
   "title": "VideoGameClip",
   "description": "A short segment/part of a video game.",
   "type": "object",
-  "format": "http://schema.org/VideoGameClip",
   "allOf": [
     {
       "description": "A short TV or radio program or a segment/part of a program.",

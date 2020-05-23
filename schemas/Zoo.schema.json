@@ -4,7 +4,6 @@
   "title": "Zoo",
   "description": "A zoo.",
   "type": "object",
-  "format": "http://schema.org/Zoo",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

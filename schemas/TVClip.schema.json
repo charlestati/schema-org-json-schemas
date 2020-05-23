@@ -4,7 +4,6 @@
   "title": "TVClip",
   "description": "A short TV program or a segment/part of a TV program.",
   "type": "object",
-  "format": "http://schema.org/TVClip",
   "allOf": [
     {
       "description": "A short TV or radio program or a segment/part of a program.",

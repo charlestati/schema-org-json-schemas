@@ -4,7 +4,6 @@
   "title": "DiscussionForumPosting",
   "description": "A posting to a discussion forum.",
   "type": "object",
-  "format": "http://schema.org/DiscussionForumPosting",
   "allOf": [
     {
       "description": "A post to a social media platform, including blog posts, tweets, Facebook posts, etc.",

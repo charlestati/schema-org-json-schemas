@@ -4,7 +4,6 @@
   "title": "EatAction",
   "description": "The act of swallowing solid objects.",
   "type": "object",
-  "format": "http://schema.org/EatAction",
   "allOf": [
     {
       "description": "The act of ingesting information/resources/food.",

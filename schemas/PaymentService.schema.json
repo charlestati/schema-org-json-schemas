@@ -4,7 +4,6 @@
   "title": "PaymentService",
   "description": "A Service to transfer funds from a person or organization to a beneficiary person or organization.",
   "type": "object",
-  "format": "http://schema.org/PaymentService",
   "allOf": [
     {
       "description": "A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.",

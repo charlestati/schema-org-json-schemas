@@ -4,7 +4,6 @@
   "title": "RsvpAction",
   "description": "The act of notifying an event organizer as to whether you expect to attend the event.",
   "type": "object",
-  "format": "http://schema.org/RsvpAction",
   "allOf": [
     {
       "description": "The act of notifying someone of information pertinent to them, with no expectation of a response.",

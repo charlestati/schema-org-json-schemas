@@ -4,7 +4,6 @@
   "title": "Invoice",
   "description": "A statement of the money due for goods or services; a bill.",
   "type": "object",
-  "format": "http://schema.org/Invoice",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

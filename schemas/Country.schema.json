@@ -4,7 +4,6 @@
   "title": "Country",
   "description": "A country.",
   "type": "object",
-  "format": "http://schema.org/Country",
   "allOf": [
     {
       "description": "A geographical region, typically under the jurisdiction of a particular government.",

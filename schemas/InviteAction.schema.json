@@ -4,7 +4,6 @@
   "title": "InviteAction",
   "description": "The act of asking someone to attend an event. Reciprocal of RsvpAction.",
   "type": "object",
-  "format": "http://schema.org/InviteAction",
   "allOf": [
     {
       "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",

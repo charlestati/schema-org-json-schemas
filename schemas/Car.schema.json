@@ -4,7 +4,6 @@
   "title": "Car",
   "description": "A car is a wheeled, self-powered motor vehicle used for transportation.",
   "type": "object",
-  "format": "http://schema.org/Car",
   "allOf": [
     {
       "description": "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.",

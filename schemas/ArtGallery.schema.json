@@ -4,7 +4,6 @@
   "title": "ArtGallery",
   "description": "An art gallery.",
   "type": "object",
-  "format": "http://schema.org/ArtGallery",
   "allOf": [
     {
       "description": "A business providing entertainment.",

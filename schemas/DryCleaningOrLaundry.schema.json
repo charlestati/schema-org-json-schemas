@@ -4,7 +4,6 @@
   "title": "DryCleaningOrLaundry",
   "description": "A dry-cleaning business.",
   "type": "object",
-  "format": "http://schema.org/DryCleaningOrLaundry",
   "allOf": [
     {
       "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",

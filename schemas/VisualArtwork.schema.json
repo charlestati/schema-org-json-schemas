@@ -4,7 +4,6 @@
   "title": "VisualArtwork",
   "description": "A work of art that is primarily visual in character.",
   "type": "object",
-  "format": "http://schema.org/VisualArtwork",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",

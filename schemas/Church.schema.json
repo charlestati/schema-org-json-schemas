@@ -4,7 +4,6 @@
   "title": "Church",
   "description": "A church.",
   "type": "object",
-  "format": "http://schema.org/Church",
   "allOf": [
     {
       "description": "Place of worship, such as a church, synagogue, or mosque.",

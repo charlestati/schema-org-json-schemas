@@ -4,7 +4,6 @@
   "title": "SingleFamilyResidence",
   "description": "Residence type: Single-family home.",
   "type": "object",
-  "format": "http://schema.org/SingleFamilyResidence",
   "allOf": [
     {
       "description": "A house is a building or structure that has the ability to be occupied for habitation by humans or other creatures (Source: Wikipedia, the free encyclopedia, see http://en.wikipedia.org/wiki/House).",

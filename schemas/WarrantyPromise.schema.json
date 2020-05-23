@@ -4,7 +4,6 @@
   "title": "WarrantyPromise",
   "description": "A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.",
   "type": "object",
-  "format": "http://schema.org/WarrantyPromise",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",

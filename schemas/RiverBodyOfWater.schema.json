@@ -4,7 +4,6 @@
   "title": "RiverBodyOfWater",
   "description": "A river (for example, the broad majestic Shannon).",
   "type": "object",
-  "format": "http://schema.org/RiverBodyOfWater",
   "allOf": [
     {
       "description": "A body of water, such as a sea, ocean, or lake.",

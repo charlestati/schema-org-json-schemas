@@ -4,7 +4,6 @@
   "title": "ExerciseGym",
   "description": "A gym.",
   "type": "object",
-  "format": "http://schema.org/ExerciseGym",
   "allOf": [
     {
       "description": "A sports location, such as a playing field.",

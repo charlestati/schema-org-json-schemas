@@ -4,7 +4,6 @@
   "title": "ResumeAction",
   "description": "The act of resuming a device or application which was formerly paused (e.g. resume music playback or resume a timer).",
   "type": "object",
-  "format": "http://schema.org/ResumeAction",
   "allOf": [
     {
       "description": "An agent controls a device or application.",

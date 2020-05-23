@@ -4,7 +4,6 @@
   "title": "HinduTemple",
   "description": "A Hindu temple.",
   "type": "object",
-  "format": "http://schema.org/HinduTemple",
   "allOf": [
     {
       "description": "Place of worship, such as a church, synagogue, or mosque.",

@@ -4,7 +4,6 @@
   "title": "MotorcycleDealer",
   "description": "A motorcycle dealer.",
   "type": "object",
-  "format": "http://schema.org/MotorcycleDealer",
   "allOf": [
     {
       "description": "Car repair, sales, or parts.",

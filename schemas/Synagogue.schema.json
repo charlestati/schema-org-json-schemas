@@ -4,7 +4,6 @@
   "title": "Synagogue",
   "description": "A synagogue.",
   "type": "object",
-  "format": "http://schema.org/Synagogue",
   "allOf": [
     {
       "description": "Place of worship, such as a church, synagogue, or mosque.",

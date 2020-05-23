@@ -4,7 +4,6 @@
   "title": "BroadcastChannel",
   "description": "A unique instance of a BroadcastService on a CableOrSatelliteService lineup.",
   "type": "object",
-  "format": "http://schema.org/BroadcastChannel",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

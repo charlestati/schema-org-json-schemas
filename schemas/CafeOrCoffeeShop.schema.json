@@ -4,7 +4,6 @@
   "title": "CafeOrCoffeeShop",
   "description": "A cafe or coffee shop.",
   "type": "object",
-  "format": "http://schema.org/CafeOrCoffeeShop",
   "allOf": [
     {
       "description": "A food-related business.",

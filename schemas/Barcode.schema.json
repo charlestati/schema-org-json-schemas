@@ -4,7 +4,6 @@
   "title": "Barcode",
   "description": "An image of a visual machine-readable code such as a barcode or QR code.",
   "type": "object",
-  "format": "http://schema.org/Barcode",
   "allOf": [
     { "description": "An image file.", "$ref": "http://schema.org/ImageObject" }
   ]

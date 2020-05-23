@@ -4,7 +4,6 @@
   "title": "HowToStep",
   "description": "A step in the instructions for how to achieve a result. It is an ordered list with HowToDirection and/or HowToTip items.",
   "type": "object",
-  "format": "http://schema.org/HowToStep",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",

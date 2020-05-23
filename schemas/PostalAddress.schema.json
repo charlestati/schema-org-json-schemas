@@ -4,7 +4,6 @@
   "title": "PostalAddress",
   "description": "The mailing address.",
   "type": "object",
-  "format": "http://schema.org/PostalAddress",
   "allOf": [
     {
       "description": "A contact point—for example, a Customer Complaints department.",

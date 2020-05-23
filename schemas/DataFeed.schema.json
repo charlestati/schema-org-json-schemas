@@ -4,7 +4,6 @@
   "title": "DataFeed",
   "description": "A single feed providing structured information about one or more entities or topics.",
   "type": "object",
-  "format": "http://schema.org/DataFeed",
   "allOf": [
     {
       "description": "A body of structured information describing some topic(s) of interest.",

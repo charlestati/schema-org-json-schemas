@@ -4,7 +4,6 @@
   "title": "PaymentStatusType",
   "description": "A specific payment status. For example, PaymentDue, PaymentComplete, etc.",
   "type": "object",
-  "format": "http://schema.org/PaymentStatusType",
   "oneOf": [
     {
       "description": "An automatic payment system is in place and will be used.",

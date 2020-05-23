@@ -4,7 +4,6 @@
   "title": "AdministrativeArea",
   "description": "A geographical region, typically under the jurisdiction of a particular government.",
   "type": "object",
-  "format": "http://schema.org/AdministrativeArea",
   "allOf": [
     {
       "description": "Entities that have a somewhat fixed, physical extension.",

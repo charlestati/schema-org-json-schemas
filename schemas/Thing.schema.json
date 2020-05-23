@@ -4,7 +4,6 @@
   "title": "Thing",
   "description": "The most generic type of item.",
   "type": "object",
-  "format": "http://schema.org/Thing",
   "properties": {
     "@context": { "type": "string" },
     "@type": { "type": "string" },

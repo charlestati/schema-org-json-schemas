@@ -4,7 +4,6 @@
   "title": "DatedMoneySpecification",
   "description": "A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee's salary over a specific period of time. Note: This type has been superseded by MonetaryAmount use of that type is recommended",
   "type": "object",
-  "format": "http://schema.org/DatedMoneySpecification",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",

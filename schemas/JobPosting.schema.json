@@ -4,7 +4,6 @@
   "title": "JobPosting",
   "description": "A listing that describes a job opening in a certain organization.",
   "type": "object",
-  "format": "http://schema.org/JobPosting",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

@@ -4,7 +4,6 @@
   "title": "TextDigitalDocument",
   "description": "A file composed primarily of text.",
   "type": "object",
-  "format": "http://schema.org/TextDigitalDocument",
   "allOf": [
     {
       "description": "An electronic file or document.",

@@ -4,7 +4,6 @@
   "title": "ApplyAction",
   "description": "The act of registering to an organization/service without the guarantee to receive it.\n\nRelated actions:\n\n\nRegisterAction: Unlike RegisterAction, ApplyAction has no guarantees that the application will be accepted.\n\n",
   "type": "object",
-  "format": "http://schema.org/ApplyAction",
   "allOf": [
     {
       "description": "The act of manipulating/administering/supervising/controlling one or more objects.",

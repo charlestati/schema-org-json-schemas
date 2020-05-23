@@ -4,7 +4,6 @@
   "title": "ViewAction",
   "description": "The act of consuming static visual content.",
   "type": "object",
-  "format": "http://schema.org/ViewAction",
   "allOf": [
     {
       "description": "The act of ingesting information/resources/food.",

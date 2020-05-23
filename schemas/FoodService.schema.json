@@ -4,7 +4,6 @@
   "title": "FoodService",
   "description": "A food service, like breakfast, lunch, or dinner.",
   "type": "object",
-  "format": "http://schema.org/FoodService",
   "allOf": [
     {
       "description": "A service provided by an organization, e.g. delivery service, print services, etc.",

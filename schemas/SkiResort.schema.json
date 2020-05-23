@@ -4,7 +4,6 @@
   "title": "SkiResort",
   "description": "A ski resort.",
   "type": "object",
-  "format": "http://schema.org/SkiResort",
   "allOf": [
     {
       "description": "A sports location, such as a playing field.",

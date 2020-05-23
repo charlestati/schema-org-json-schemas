@@ -4,7 +4,6 @@
   "title": "TheaterGroup",
   "description": "A theater group or company, for example, the Royal Shakespeare Company or Druid Theatre.",
   "type": "object",
-  "format": "http://schema.org/TheaterGroup",
   "allOf": [
     {
       "description": "A performance group, such as a band, an orchestra, or a circus.",

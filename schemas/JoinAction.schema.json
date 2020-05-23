@@ -4,7 +4,6 @@
   "title": "JoinAction",
   "description": "An agent joins an event/group with participants/friends at a location.\n\nRelated actions:\n\n\nRegisterAction: Unlike RegisterAction, JoinAction refers to joining a group/team of people.\nSubscribeAction: Unlike SubscribeAction, JoinAction does not imply that you'll be receiving updates.\nFollowAction: Unlike FollowAction, JoinAction does not imply that you'll be polling for updates.\n\n",
   "type": "object",
-  "format": "http://schema.org/JoinAction",
   "allOf": [
     {
       "description": "The act of interacting with another person or organization.",

@@ -4,7 +4,6 @@
   "title": "MusicVenue",
   "description": "A music venue.",
   "type": "object",
-  "format": "http://schema.org/MusicVenue",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

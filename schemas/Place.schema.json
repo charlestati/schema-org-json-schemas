@@ -4,7 +4,6 @@
   "title": "Place",
   "description": "Entities that have a somewhat fixed, physical extension.",
   "type": "object",
-  "format": "http://schema.org/Place",
   "allOf": [
     {
       "description": "The most generic type of item.",

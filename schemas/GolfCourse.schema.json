@@ -4,7 +4,6 @@
   "title": "GolfCourse",
   "description": "A golf course.",
   "type": "object",
-  "format": "http://schema.org/GolfCourse",
   "allOf": [
     {
       "description": "A sports location, such as a playing field.",

@@ -4,7 +4,6 @@
   "title": "Beach",
   "description": "Beach.",
   "type": "object",
-  "format": "http://schema.org/Beach",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

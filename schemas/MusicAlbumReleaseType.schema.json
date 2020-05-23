@@ -4,7 +4,6 @@
   "title": "MusicAlbumReleaseType",
   "description": "The kind of release which this album is: single, EP or album.",
   "type": "object",
-  "format": "http://schema.org/MusicAlbumReleaseType",
   "oneOf": [
     { "description": "AlbumRelease.", "const": "AlbumRelease" },
     { "description": "BroadcastRelease.", "const": "BroadcastRelease" },

@@ -4,7 +4,6 @@
   "title": "ActionStatusType",
   "description": "The status of an Action.",
   "type": "object",
-  "format": "http://schema.org/ActionStatusType",
   "oneOf": [
     {
       "description": "An in-progress action (e.g, while watching the movie, or driving to a location).",

@@ -4,7 +4,6 @@
   "title": "ParkingFacility",
   "description": "A parking lot or other parking facility.",
   "type": "object",
-  "format": "http://schema.org/ParkingFacility",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

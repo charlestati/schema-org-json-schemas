@@ -4,7 +4,6 @@
   "title": "BusTrip",
   "description": "A trip on a commercial bus line.",
   "type": "object",
-  "format": "http://schema.org/BusTrip",
   "allOf": [
     {
       "description": "A trip or journey. An itinerary of visits to one or more places.",

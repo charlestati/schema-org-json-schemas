@@ -4,14 +4,13 @@
   "title": "EventStatusType",
   "description": "EventStatusType is an enumeration type whose instances represent several states that an Event may be in.",
   "type": "object",
-  "format": "http://schema.org/EventStatusType",
   "oneOf": [
     {
       "description": "The event has been cancelled. If the event has multiple startDate values, all are assumed to be cancelled. Either startDate or previousStartDate may be used to specify the event's cancelled date(s).",
       "const": "EventCancelled"
     },
     {
-      "description": "Indicates that the event was changed to allow online participation. See <a class=\"localLink\" href=\"http://schema.org/eventAttendanceMode\">eventAttendanceMode</a> for specifics of whether it is now fully or partially online.",
+      "description": "Indicates that the event was changed to allow online participation. See eventAttendanceMode for specifics of whether it is now fully or partially online.",
       "const": "EventMovedOnline"
     },
     {

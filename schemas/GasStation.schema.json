@@ -4,7 +4,6 @@
   "title": "GasStation",
   "description": "A gas station.",
   "type": "object",
-  "format": "http://schema.org/GasStation",
   "allOf": [
     {
       "description": "Car repair, sales, or parts.",

@@ -4,7 +4,6 @@
   "title": "ChooseAction",
   "description": "The act of expressing a preference from a set of options or a large or unbounded set of choices/options.",
   "type": "object",
-  "format": "http://schema.org/ChooseAction",
   "allOf": [
     {
       "description": "The act of forming one's opinion, reaction or sentiment.",

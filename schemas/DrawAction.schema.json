@@ -4,7 +4,6 @@
   "title": "DrawAction",
   "description": "The act of producing a visual/graphical representation of an object, typically with a pen/pencil and paper as instruments.",
   "type": "object",
-  "format": "http://schema.org/DrawAction",
   "allOf": [
     {
       "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",

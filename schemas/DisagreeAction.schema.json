@@ -4,7 +4,6 @@
   "title": "DisagreeAction",
   "description": "The act of expressing a difference of opinion with the object. An agent disagrees to/about an object (a proposition, topic or theme) with participants.",
   "type": "object",
-  "format": "http://schema.org/DisagreeAction",
   "allOf": [
     {
       "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",

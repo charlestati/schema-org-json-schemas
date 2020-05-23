@@ -4,7 +4,6 @@
   "title": "Series",
   "description": "A Series in schema.org is a group of related items, typically but not necessarily of the same kind. See also CreativeWorkSeries, EventSeries.",
   "type": "object",
-  "format": "http://schema.org/Series",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

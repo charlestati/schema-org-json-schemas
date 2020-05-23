@@ -4,7 +4,6 @@
   "title": "Reservoir",
   "description": "A reservoir of water, typically an artificially created lake, like the Lake Kariba reservoir.",
   "type": "object",
-  "format": "http://schema.org/Reservoir",
   "allOf": [
     {
       "description": "A body of water, such as a sea, ocean, or lake.",

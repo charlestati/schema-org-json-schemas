@@ -4,7 +4,6 @@
   "title": "TaxiService",
   "description": "A service for a vehicle for hire with a driver for local travel. Fares are usually calculated based on distance traveled.",
   "type": "object",
-  "format": "http://schema.org/TaxiService",
   "allOf": [
     {
       "description": "A service provided by an organization, e.g. delivery service, print services, etc.",

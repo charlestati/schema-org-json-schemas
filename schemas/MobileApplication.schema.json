@@ -4,7 +4,6 @@
   "title": "MobileApplication",
   "description": "A software application designed specifically to work well on a mobile device such as a telephone.",
   "type": "object",
-  "format": "http://schema.org/MobileApplication",
   "allOf": [
     {
       "description": "A software application.",

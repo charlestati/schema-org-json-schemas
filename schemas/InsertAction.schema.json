@@ -4,7 +4,6 @@
   "title": "InsertAction",
   "description": "The act of adding at a specific location in an ordered collection.",
   "type": "object",
-  "format": "http://schema.org/InsertAction",
   "allOf": [
     {
       "description": "The act of editing by adding an object to a collection.",

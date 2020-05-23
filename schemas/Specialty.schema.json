@@ -3,6 +3,5 @@
   "$id": "http://schema.org/Specialty",
   "title": "Specialty",
   "description": "Any branch of a field in which people typically develop specific expertise, usually after significant study, time, and effort.",
-  "type": "object",
-  "format": "http://schema.org/Specialty"
+  "type": "object"
 }

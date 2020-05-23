@@ -4,7 +4,6 @@
   "title": "Rating",
   "description": "A rating is an evaluation on a numeric scale, such as 1 to 5 stars.",
   "type": "object",
-  "format": "http://schema.org/Rating",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

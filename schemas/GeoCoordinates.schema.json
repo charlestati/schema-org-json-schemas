@@ -4,7 +4,6 @@
   "title": "GeoCoordinates",
   "description": "The geographic coordinates of a place or event.",
   "type": "object",
-  "format": "http://schema.org/GeoCoordinates",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",

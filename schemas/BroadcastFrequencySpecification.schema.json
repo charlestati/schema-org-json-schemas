@@ -4,7 +4,6 @@
   "title": "BroadcastFrequencySpecification",
   "description": "The frequency in MHz and the modulation used for a particular BroadcastService.",
   "type": "object",
-  "format": "http://schema.org/BroadcastFrequencySpecification",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

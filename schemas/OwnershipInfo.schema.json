@@ -4,7 +4,6 @@
   "title": "OwnershipInfo",
   "description": "A structured value providing information about when a certain organization or person owned a certain product.",
   "type": "object",
-  "format": "http://schema.org/OwnershipInfo",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",

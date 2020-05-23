@@ -4,7 +4,6 @@
   "title": "PropertyValueSpecification",
   "description": "A Property value specification.",
   "type": "object",
-  "format": "http://schema.org/PropertyValueSpecification",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

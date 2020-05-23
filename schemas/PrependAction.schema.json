@@ -4,7 +4,6 @@
   "title": "PrependAction",
   "description": "The act of inserting at the beginning if an ordered collection.",
   "type": "object",
-  "format": "http://schema.org/PrependAction",
   "allOf": [
     {
       "description": "The act of adding at a specific location in an ordered collection.",

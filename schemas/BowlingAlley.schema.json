@@ -4,7 +4,6 @@
   "title": "BowlingAlley",
   "description": "A bowling alley.",
   "type": "object",
-  "format": "http://schema.org/BowlingAlley",
   "allOf": [
     {
       "description": "A sports location, such as a playing field.",

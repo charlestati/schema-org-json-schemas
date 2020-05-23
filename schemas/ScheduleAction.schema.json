@@ -4,7 +4,6 @@
   "title": "ScheduleAction",
   "description": "Scheduling future actions, events, or tasks.\n\nRelated actions:\n\n\nReserveAction: Unlike ReserveAction, ScheduleAction allocates future actions (e.g. an event, a task, etc) towards a time slot / spatial allocation.\n\n",
   "type": "object",
-  "format": "http://schema.org/ScheduleAction",
   "allOf": [
     {
       "description": "The act of planning the execution of an event/task/action/reservation/plan to a future date.",

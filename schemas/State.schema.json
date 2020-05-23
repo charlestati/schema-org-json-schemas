@@ -4,7 +4,6 @@
   "title": "State",
   "description": "A state or province of a country.",
   "type": "object",
-  "format": "http://schema.org/State",
   "allOf": [
     {
       "description": "A geographical region, typically under the jurisdiction of a particular government.",

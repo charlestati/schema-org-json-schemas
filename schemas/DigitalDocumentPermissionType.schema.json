@@ -4,7 +4,6 @@
   "title": "DigitalDocumentPermissionType",
   "description": "A type of permission which can be granted for accessing a digital document.",
   "type": "object",
-  "format": "http://schema.org/DigitalDocumentPermissionType",
   "oneOf": [
     {
       "description": "Permission to add comments to the document.",

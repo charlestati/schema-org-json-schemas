@@ -4,7 +4,6 @@
   "title": "CollegeOrUniversity",
   "description": "A college, university, or other third-level educational institution.",
   "type": "object",
-  "format": "http://schema.org/CollegeOrUniversity",
   "allOf": [
     {
       "description": "An educational organization.",

@@ -4,7 +4,6 @@
   "title": "InteractionCounter",
   "description": "A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.",
   "type": "object",
-  "format": "http://schema.org/InteractionCounter",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",

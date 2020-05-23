@@ -4,7 +4,6 @@
   "title": "Waterfall",
   "description": "A waterfall, like Niagara.",
   "type": "object",
-  "format": "http://schema.org/Waterfall",
   "allOf": [
     {
       "description": "A body of water, such as a sea, ocean, or lake.",

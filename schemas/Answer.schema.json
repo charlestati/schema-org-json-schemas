@@ -4,7 +4,6 @@
   "title": "Answer",
   "description": "An answer offered to a question; perhaps correct, perhaps opinionated or wrong.",
   "type": "object",
-  "format": "http://schema.org/Answer",
   "allOf": [
     {
       "description": "A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the text property, and its topic via about, properties shared with all CreativeWorks.",

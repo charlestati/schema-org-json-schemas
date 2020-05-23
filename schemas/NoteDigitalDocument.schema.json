@@ -4,7 +4,6 @@
   "title": "NoteDigitalDocument",
   "description": "A file containing a note, primarily for the author.",
   "type": "object",
-  "format": "http://schema.org/NoteDigitalDocument",
   "allOf": [
     {
       "description": "An electronic file or document.",

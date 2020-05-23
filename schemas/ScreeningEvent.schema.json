@@ -4,7 +4,6 @@
   "title": "ScreeningEvent",
   "description": "A screening of a movie or other video.",
   "type": "object",
-  "format": "http://schema.org/ScreeningEvent",
   "allOf": [
     {
       "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",

@@ -4,7 +4,6 @@
   "title": "OnDemandEvent",
   "description": "A publication event e.g. catch-up TV or radio podcast, during which a program is available on-demand.",
   "type": "object",
-  "format": "http://schema.org/OnDemandEvent",
   "allOf": [
     {
       "description": "A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.",

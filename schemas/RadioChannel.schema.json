@@ -4,7 +4,6 @@
   "title": "RadioChannel",
   "description": "A unique instance of a radio BroadcastService on a CableOrSatelliteService lineup.",
   "type": "object",
-  "format": "http://schema.org/RadioChannel",
   "allOf": [
     {
       "description": "A unique instance of a BroadcastService on a CableOrSatelliteService lineup.",

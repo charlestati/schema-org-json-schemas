@@ -4,7 +4,6 @@
   "title": "AssignAction",
   "description": "The act of allocating an action/event/task to some destination (someone or something).",
   "type": "object",
-  "format": "http://schema.org/AssignAction",
   "allOf": [
     {
       "description": "The act of organizing tasks/objects/events by associating resources to it.",

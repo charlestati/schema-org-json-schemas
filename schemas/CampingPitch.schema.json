@@ -4,7 +4,6 @@
   "title": "CampingPitch",
   "description": "A CampingPitch is an individual place for overnight stay in the outdoors, typically being part of a larger camping site, or Campground.\n\nIn British English a campsite, or campground, is an area, usually divided into a number of pitches, where people can camp overnight using tents or camper vans or caravans; this British English use of the word is synonymous with the American English expression campground. In American English the term campsite generally means an area where an individual, family, group, or military unit can pitch a tent or park a camper; a campground may contain many campsites.\n(Source: Wikipedia see https://en.wikipedia.org/wiki/Campsite).\n\nSee also the dedicated document on the use of schema.org for marking up hotels and other forms of accommodations.",
   "type": "object",
-  "format": "http://schema.org/CampingPitch",
   "allOf": [
     {
       "description": "An accommodation is a place that can accommodate human beings, e.g. a hotel room, a camping pitch, or a meeting room. Many accommodations are for overnight stays, but this is not a mandatory requirement.\nFor more specific types of accommodations not defined in schema.org, one can use additionalType with external vocabularies.\n\nSee also the dedicated document on the use of schema.org for marking up hotels and other forms of accommodations.",

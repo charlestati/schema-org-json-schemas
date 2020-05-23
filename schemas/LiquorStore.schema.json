@@ -4,7 +4,6 @@
   "title": "LiquorStore",
   "description": "A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits.",
   "type": "object",
-  "format": "http://schema.org/LiquorStore",
   "allOf": [
     { "description": "A retail good store.", "$ref": "http://schema.org/Store" }
   ]

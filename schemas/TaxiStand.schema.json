@@ -4,7 +4,6 @@
   "title": "TaxiStand",
   "description": "A taxi stand.",
   "type": "object",
-  "format": "http://schema.org/TaxiStand",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

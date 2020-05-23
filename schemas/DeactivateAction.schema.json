@@ -4,7 +4,6 @@
   "title": "DeactivateAction",
   "description": "The act of stopping or deactivating a device or application (e.g. stopping a timer or turning off a flashlight).",
   "type": "object",
-  "format": "http://schema.org/DeactivateAction",
   "allOf": [
     {
       "description": "An agent controls a device or application.",

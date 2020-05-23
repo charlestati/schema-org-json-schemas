@@ -4,7 +4,6 @@
   "title": "Hospital",
   "description": "A hospital.",
   "type": "object",
-  "format": "http://schema.org/Hospital",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",

@@ -4,7 +4,6 @@
   "title": "TipAction",
   "description": "The act of giving money voluntarily to a beneficiary in recognition of services rendered.",
   "type": "object",
-  "format": "http://schema.org/TipAction",
   "allOf": [
     {
       "description": "The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.",

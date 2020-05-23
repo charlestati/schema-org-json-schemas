@@ -4,7 +4,6 @@
   "title": "LandmarksOrHistoricalBuildings",
   "description": "An historical landmark or building.",
   "type": "object",
-  "format": "http://schema.org/LandmarksOrHistoricalBuildings",
   "allOf": [
     {
       "description": "Entities that have a somewhat fixed, physical extension.",

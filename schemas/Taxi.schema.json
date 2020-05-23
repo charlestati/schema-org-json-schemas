@@ -4,7 +4,6 @@
   "title": "Taxi",
   "description": "A taxi.",
   "type": "object",
-  "format": "http://schema.org/Taxi",
   "allOf": [
     {
       "description": "A service provided by an organization, e.g. delivery service, print services, etc.",

@@ -3,6 +3,5 @@
   "$id": "http://schema.org/DataType",
   "title": "DataType",
   "description": "The basic data types such as Integers, Strings, etc.",
-  "type": "object",
-  "format": "http://schema.org/DataType"
+  "type": "object"
 }

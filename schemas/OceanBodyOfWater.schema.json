@@ -4,7 +4,6 @@
   "title": "OceanBodyOfWater",
   "description": "An ocean (for example, the Pacific).",
   "type": "object",
-  "format": "http://schema.org/OceanBodyOfWater",
   "allOf": [
     {
       "description": "A body of water, such as a sea, ocean, or lake.",

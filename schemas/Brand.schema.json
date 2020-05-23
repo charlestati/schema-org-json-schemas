@@ -4,7 +4,6 @@
   "title": "Brand",
   "description": "A brand is a name used by an organization or business person for labeling a product, product group, or similar.",
   "type": "object",
-  "format": "http://schema.org/Brand",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",

@@ -4,7 +4,6 @@
   "title": "EmailMessage",
   "description": "An email message.",
   "type": "object",
-  "format": "http://schema.org/EmailMessage",
   "allOf": [
     {
       "description": "A single message from a sender to one or more organizations or people.",

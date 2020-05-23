@@ -4,7 +4,6 @@
   "title": "CityHall",
   "description": "A city hall.",
   "type": "object",
-  "format": "http://schema.org/CityHall",
   "allOf": [
     {
       "description": "A government building.",

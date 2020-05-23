@@ -4,7 +4,6 @@
   "title": "BefriendAction",
   "description": "The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.\n\nRelated actions:\n\n\nFollowAction: Unlike FollowAction, BefriendAction implies that the connection is reciprocal.\n\n",
   "type": "object",
-  "format": "http://schema.org/BefriendAction",
   "allOf": [
     {
       "description": "The act of interacting with another person or organization.",

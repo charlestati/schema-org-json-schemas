@@ -4,7 +4,6 @@
   "title": "RsvpResponseType",
   "description": "RsvpResponseType is an enumeration type whose instances represent responding to an RSVP request.",
   "type": "object",
-  "format": "http://schema.org/RsvpResponseType",
   "oneOf": [
     {
       "description": "The invitee may or may not attend.",

@@ -4,7 +4,6 @@
   "title": "SpeakableSpecification",
   "description": "A SpeakableSpecification indicates (typically via xpath or cssSelector) sections of a document that are highlighted as particularly speakable. Instances of this type are expected to be used primarily as values of the speakable property.",
   "type": "object",
-  "format": "http://schema.org/SpeakableSpecification",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
@@ -14,11 +13,11 @@
   "properties": {
     "cssSelector": {
       "description": "A CSS selector, e.g. of a SpeakableSpecification or WebPageElement. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
-      "format": "http://schema.org/CssSelectorType"
+      "type": "string"
     },
     "xpath": {
       "description": "An XPath, e.g. of a SpeakableSpecification or WebPageElement. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
-      "format": "http://schema.org/XPathType"
+      "type": "string"
     }
   }
 }

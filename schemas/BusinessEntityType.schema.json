@@ -3,6 +3,5 @@
   "$id": "http://schema.org/BusinessEntityType",
   "title": "BusinessEntityType",
   "description": "A business entity type is a conceptual entity representing the legal form, the size, the main line of business, the position in the value chain, or any combination thereof, of an organization or business person.\n\nCommonly used values:\n\n\nhttp://purl.org/goodrelations/v1#Business\nhttp://purl.org/goodrelations/v1#Enduser\nhttp://purl.org/goodrelations/v1#PublicInstitution\nhttp://purl.org/goodrelations/v1#Reseller\n\n",
-  "type": "object",
-  "format": "http://schema.org/BusinessEntityType"
+  "type": "object"
 }

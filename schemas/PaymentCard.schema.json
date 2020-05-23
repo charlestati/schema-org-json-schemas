@@ -4,7 +4,6 @@
   "title": "PaymentCard",
   "description": "A payment method using a credit, debit, store or other card to associate the payment with an account.",
   "type": "object",
-  "format": "http://schema.org/PaymentCard",
   "allOf": [
     {
       "description": "A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.",

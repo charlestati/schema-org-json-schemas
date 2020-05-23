@@ -4,7 +4,6 @@
   "title": "MonetaryAmountDistribution",
   "description": "A statistical distribution of monetary amounts.",
   "type": "object",
-  "format": "http://schema.org/MonetaryAmountDistribution",
   "allOf": [
     {
       "description": "A statistical distribution of values.",

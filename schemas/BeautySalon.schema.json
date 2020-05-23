@@ -4,7 +4,6 @@
   "title": "BeautySalon",
   "description": "Beauty salon.",
   "type": "object",
-  "format": "http://schema.org/BeautySalon",
   "allOf": [
     {
       "description": "Health and beauty.",
