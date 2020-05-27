@@ -3,7 +3,7 @@
   "$id": "http://schema.org/PaymentStatusType",
   "title": "PaymentStatusType",
   "description": "A specific payment status. For example, PaymentDue, PaymentComplete, etc.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     {
       "description": "An automatic payment system is in place and will be used.",

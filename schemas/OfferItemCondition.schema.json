@@ -3,7 +3,7 @@
   "$id": "http://schema.org/OfferItemCondition",
   "title": "OfferItemCondition",
   "description": "A list of possible conditions for the item.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     {
       "description": "Indicates that the item is damaged.",

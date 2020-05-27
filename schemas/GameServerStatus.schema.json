@@ -3,7 +3,7 @@
   "$id": "http://schema.org/GameServerStatus",
   "title": "GameServerStatus",
   "description": "Status of a game server.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     {
       "description": "Game server status: OfflinePermanently. Server is offline and not available.",

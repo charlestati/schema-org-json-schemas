@@ -3,7 +3,7 @@
   "$id": "http://schema.org/RsvpResponseType",
   "title": "RsvpResponseType",
   "description": "RsvpResponseType is an enumeration type whose instances represent responding to an RSVP request.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     {
       "description": "The invitee may or may not attend.",

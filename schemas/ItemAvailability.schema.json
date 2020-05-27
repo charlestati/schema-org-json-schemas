@@ -3,7 +3,7 @@
   "$id": "http://schema.org/ItemAvailability",
   "title": "ItemAvailability",
   "description": "A list of possible product availability options.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     {
       "description": "Indicates that the item has been discontinued.",

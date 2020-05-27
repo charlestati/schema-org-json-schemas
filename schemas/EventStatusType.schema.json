@@ -3,7 +3,7 @@
   "$id": "http://schema.org/EventStatusType",
   "title": "EventStatusType",
   "description": "EventStatusType is an enumeration type whose instances represent several states that an Event may be in.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     {
       "description": "The event has been cancelled. If the event has multiple startDate values, all are assumed to be cancelled. Either startDate or previousStartDate may be used to specify the event's cancelled date(s).",

@@ -117,5 +117,10 @@ it("should fetch data and write to file", async () => {
   fs.ensureDir.mockImplementation(() => Promise.resolve());
   await main();
   expect(axios.get).toHaveBeenCalled();
-  expect(fs.writeFileSync).toHaveBeenCalledTimes(schemaClasses.length);
+  expect(fs.writeFileSync).toHaveBeenCalledTimes(
+    schemaClasses.filter(
+      (schemaClass) =>
+        !castArray(schemaClass["@type"]).includes("http://schema.org/DataType"),
+    ).length,
+  );
 });

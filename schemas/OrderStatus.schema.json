@@ -3,7 +3,7 @@
   "$id": "http://schema.org/OrderStatus",
   "title": "OrderStatus",
   "description": "Enumerated status values for Order.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     {
       "description": "OrderStatus representing cancellation of an order.",

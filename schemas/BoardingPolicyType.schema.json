@@ -3,7 +3,7 @@
   "$id": "http://schema.org/BoardingPolicyType",
   "title": "BoardingPolicyType",
   "description": "A type of boarding policy used by an airline.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     {
       "description": "The airline boards by groups based on check-in time, priority, etc.",

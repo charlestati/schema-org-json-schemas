@@ -3,7 +3,7 @@
   "$id": "http://schema.org/MapCategoryType",
   "title": "MapCategoryType",
   "description": "An enumeration of several kinds of Map.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     { "description": "A parking map.", "const": "ParkingMap" },
     { "description": "A seating map.", "const": "SeatingMap" },

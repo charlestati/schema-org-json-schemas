@@ -3,7 +3,7 @@
   "$id": "http://schema.org/GenderType",
   "title": "GenderType",
   "description": "An enumeration of genders.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     { "description": "The female gender.", "const": "Female" },
     { "description": "The male gender.", "const": "Male" }

@@ -3,7 +3,7 @@
   "$id": "http://schema.org/GamePlayMode",
   "title": "GamePlayMode",
   "description": "Indicates whether this game is multi-player, co-op or single-player.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     {
       "description": "Play mode: CoOp. Co-operative games, where you play on the same team with friends.",

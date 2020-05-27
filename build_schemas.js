@@ -248,6 +248,7 @@ function buildSchema(schemaClass, allSchemaClasses, allProperties, enumValues) {
         (enumValue) => enumValue["@type"] === id,
       );
       if (enumMembers.length > 0) {
+        schema.type = "string";
         schema.oneOf = sortBy(enumMembers, ["rdfs:label"]).map(
           (enumMember) => ({
             description: htmlToPlainText(enumMember["rdfs:comment"]),
@@ -305,19 +306,24 @@ async function main() {
     ),
   );
   await fs.ensureDir(schemasDir);
-  schemaClasses.forEach((schemaClass) => {
-    const schema = buildSchema(
-      schemaClass,
-      schemaClasses,
-      properties,
-      enumValues,
-    );
-    const filename = `${schema.title}${schemaSuffix}`;
-    fs.writeFileSync(
-      path.join(schemasDir, filename),
-      prettier.format(JSON.stringify(schema), { parser: "json" }),
-    );
-  });
+  schemaClasses
+    .filter(
+      (schemaClass) =>
+        !castArray(schemaClass["@type"]).includes("http://schema.org/DataType"),
+    )
+    .forEach((schemaClass) => {
+      const schema = buildSchema(
+        schemaClass,
+        schemaClasses,
+        properties,
+        enumValues,
+      );
+      const filename = `${schema.title}${schemaSuffix}`;
+      fs.writeFileSync(
+        path.join(schemasDir, filename),
+        prettier.format(JSON.stringify(schema), { parser: "json" }),
+      );
+    });
   return schemaClasses.length;
 }
 

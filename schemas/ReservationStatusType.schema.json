@@ -3,7 +3,7 @@
   "$id": "http://schema.org/ReservationStatusType",
   "title": "ReservationStatusType",
   "description": "Enumerated status values for Reservation.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     {
       "description": "The status for a previously confirmed reservation that is now cancelled.",

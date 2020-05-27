@@ -3,7 +3,7 @@
   "$id": "http://schema.org/DigitalDocumentPermissionType",
   "title": "DigitalDocumentPermissionType",
   "description": "A type of permission which can be granted for accessing a digital document.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     {
       "description": "Permission to add comments to the document.",

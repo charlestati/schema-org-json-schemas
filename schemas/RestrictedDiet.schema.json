@@ -3,7 +3,7 @@
   "$id": "http://schema.org/RestrictedDiet",
   "title": "RestrictedDiet",
   "description": "A diet restricted to certain foods or preparations for cultural, religious, health or lifestyle reasons.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     {
       "description": "A diet appropriate for people with diabetes.",

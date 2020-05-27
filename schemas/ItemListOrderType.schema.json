@@ -3,7 +3,7 @@
   "$id": "http://schema.org/ItemListOrderType",
   "title": "ItemListOrderType",
   "description": "Enumerated for values for itemListOrder for indicating how an ordered ItemList is organized.",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     {
       "description": "An ItemList ordered with lower values listed first.",

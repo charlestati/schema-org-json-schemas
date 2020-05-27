@@ -3,7 +3,7 @@
   "$id": "http://schema.org/MusicReleaseFormatType",
   "title": "MusicReleaseFormatType",
   "description": "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
-  "type": "object",
+  "type": "string",
   "oneOf": [
     { "description": "CDFormat.", "const": "CDFormat" },
     { "description": "CassetteFormat.", "const": "CassetteFormat" },
