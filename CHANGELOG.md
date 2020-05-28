@@ -1,3 +1,14 @@
+## [1.4.2](https://github.com/charlestati/schema-org-json-schema/compare/v1.4.1...v1.4.2) (2020-05-28)
+
+
+### Bug Fixes
+
+* Changed enum type to string ([ccfd786](https://github.com/charlestati/schema-org-json-schema/commit/ccfd7867a8f0a96f421a90bfd617be8735463a02))
+* Removed custom `format` for compatibility with validators ([804d529](https://github.com/charlestati/schema-org-json-schema/commit/804d52988c59583ea5a0208a0ccfa22b31c01f43))
+* Removed custom `format` in hardcoded schemas ([a130ffc](https://github.com/charlestati/schema-org-json-schema/commit/a130ffcce9e85373dea613894f00d76d0dfaa9e1))
+* Removed obsolete snapshots ([8f0bfcf](https://github.com/charlestati/schema-org-json-schema/commit/8f0bfcfd97846122e56b38e3815f915696e9da11))
+* Use the correct ID in `$ref` ([9f4aa4f](https://github.com/charlestati/schema-org-json-schema/commit/9f4aa4feafda1370cd94ae4c2a70a86f1eb23fcb))
+
 ## [1.4.1](https://github.com/charlestati/schema-org-json-schema/compare/v1.4.0...v1.4.1) (2020-05-22)
 
 
