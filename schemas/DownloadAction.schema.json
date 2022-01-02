@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/DownloadAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DownloadAction",
   "title": "DownloadAction",
   "description": "The act of downloading an object.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",
-      "$ref": "http://schema.org/TransferAction"
+      "$ref": "schema:TransferAction"
     }
   ]
 }

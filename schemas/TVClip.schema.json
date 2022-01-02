@@ -1,19 +1,19 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/TVClip",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:TVClip",
   "title": "TVClip",
   "description": "A short TV program or a segment/part of a TV program.",
   "type": "object",
   "allOf": [
     {
       "description": "A short TV or radio program or a segment/part of a program.",
-      "$ref": "http://schema.org/Clip"
+      "$ref": "schema:Clip"
     }
   ],
   "properties": {
     "partOfTVSeries": {
       "description": "The TV series to which this episode or season belongs.",
-      "$ref": "http://schema.org/TVSeries"
+      "$ref": "schema:TVSeries"
     }
   }
 }

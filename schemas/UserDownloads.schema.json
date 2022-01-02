@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/UserDownloads",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:UserDownloads",
   "title": "UserDownloads",
-  "description": "UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use Action-based vocabulary, alongside types such as Comment.",
+  "description": "UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].",
   "type": "object",
   "allOf": [
     {
-      "description": "UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use Action-based vocabulary, alongside types such as Comment.",
-      "$ref": "http://schema.org/UserInteraction"
+      "description": "UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].",
+      "$ref": "schema:UserInteraction"
     }
   ]
 }

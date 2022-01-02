@@ -1,26 +1,49 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/InteractionCounter",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:InteractionCounter",
   "title": "InteractionCounter",
   "description": "A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.",
   "type": "object",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "http://schema.org/StructuredValue"
+      "$ref": "schema:StructuredValue"
     }
   ],
   "properties": {
+    "endTime": {
+      "description": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "time" }
+      ]
+    },
     "interactionService": {
       "description": "The WebSite or SoftwareApplication where the interactions took place.",
       "anyOf": [
-        { "$ref": "http://schema.org/SoftwareApplication" },
-        { "$ref": "http://schema.org/WebSite" }
+        { "$ref": "schema:SoftwareApplication" },
+        { "$ref": "schema:WebSite" }
       ]
     },
     "interactionType": {
-      "description": "The Action representing the type of interaction. For up votes, +1s, etc. use LikeAction. For down votes use DislikeAction. Otherwise, use the most specific Action.",
-      "$ref": "http://schema.org/Action"
+      "description": "The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.",
+      "$ref": "schema:Action"
+    },
+    "location": {
+      "description": "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "schema:Place" },
+        { "$ref": "schema:PostalAddress" },
+        { "$ref": "schema:VirtualLocation" }
+      ]
+    },
+    "startTime": {
+      "description": "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+      "anyOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "format": "time" }
+      ]
     },
     "userInteractionCount": {
       "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.",

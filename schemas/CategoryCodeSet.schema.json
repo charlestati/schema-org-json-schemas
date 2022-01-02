@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:CategoryCodeSet",
+  "title": "CategoryCodeSet",
+  "description": "A set of Category Code values.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.",
+      "$ref": "schema:DefinedTermSet"
+    }
+  ],
+  "properties": {
+    "hasCategoryCode": {
+      "description": "A Category code contained in this code set.",
+      "oneOf": [
+        { "$ref": "schema:CategoryCode" },
+        { "type": "array", "items": { "$ref": "schema:CategoryCode" } }
+      ]
+    }
+  }
+}

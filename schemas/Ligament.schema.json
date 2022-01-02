@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Ligament",
+  "title": "Ligament",
+  "description": "A short band of tough, flexible, fibrous connective tissue that functions to connect multiple bones, cartilages, and structurally support joints.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.",
+      "$ref": "schema:AnatomicalStructure"
+    }
+  ]
+}

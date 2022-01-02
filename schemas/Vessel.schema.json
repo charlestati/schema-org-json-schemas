@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Vessel",
+  "title": "Vessel",
+  "description": "A component of the human body circulatory system comprised of an intricate network of hollow tubes that transport blood throughout the entire body.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.",
+      "$ref": "schema:AnatomicalStructure"
+    }
+  ]
+}

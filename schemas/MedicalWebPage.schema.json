@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalWebPage",
+  "title": "MedicalWebPage",
+  "description": "A web page that provides medical information.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as breadcrumb may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.",
+      "$ref": "schema:WebPage"
+    }
+  ],
+  "properties": {
+    "aspect": {
+      "description": "An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "medicalAudience": {
+      "description": "Medical audience for page.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "schema:MedicalAudience" },
+            { "$ref": "schema:MedicalAudienceType" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:MedicalAudience" },
+              { "$ref": "schema:MedicalAudienceType" }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

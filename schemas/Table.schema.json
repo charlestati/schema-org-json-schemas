@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Table",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Table",
   "title": "Table",
   "description": "A table on a Web page.",
   "type": "object",
   "allOf": [
     {
       "description": "A web page element, like a table or an image.",
-      "$ref": "http://schema.org/WebPageElement"
+      "$ref": "schema:WebPageElement"
     }
   ]
 }

@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/TaxiService",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:TaxiService",
   "title": "TaxiService",
   "description": "A service for a vehicle for hire with a driver for local travel. Fares are usually calculated based on distance traveled.",
   "type": "object",
   "allOf": [
     {
       "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
-      "$ref": "http://schema.org/Service"
+      "$ref": "schema:Service"
     }
   ]
 }

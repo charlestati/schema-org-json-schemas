@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ApprovedIndication",
+  "title": "ApprovedIndication",
+  "description": "An indication for a medical therapy that has been formally specified or approved by a regulatory body that regulates use of the therapy; for example, the US FDA approves indications for most drugs in the US.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A condition or factor that indicates use of a medical therapy, including signs, symptoms, risk factors, anatomical states, etc.",
+      "$ref": "schema:MedicalIndication"
+    }
+  ]
+}

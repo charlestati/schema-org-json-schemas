@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MathSolver",
+  "title": "MathSolver",
+  "description": "A math solver which is capable of solving a subset of mathematical problems.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "schema:CreativeWork"
+    }
+  ],
+  "properties": {
+    "mathExpression": {
+      "description": "A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.",
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string" }, { "$ref": "schema:SolveMathAction" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "schema:SolveMathAction" }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

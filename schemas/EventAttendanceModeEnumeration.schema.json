@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:EventAttendanceModeEnumeration",
+  "title": "EventAttendanceModeEnumeration",
+  "description": "An EventAttendanceModeEnumeration value is one of potentially several modes of organising an event, relating to whether it is online or offline.",
+  "type": "string",
+  "oneOf": [
+    {
+      "description": "MixedEventAttendanceMode - an event that is conducted as a combination of both offline and online modes.",
+      "const": "MixedEventAttendanceMode"
+    },
+    {
+      "description": "OfflineEventAttendanceMode - an event that is primarily conducted offline. ",
+      "const": "OfflineEventAttendanceMode"
+    },
+    {
+      "description": "OnlineEventAttendanceMode - an event that is primarily conducted online. ",
+      "const": "OnlineEventAttendanceMode"
+    }
+  ]
+}

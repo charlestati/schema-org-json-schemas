@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalRiskFactor",
+  "title": "MedicalRiskFactor",
+  "description": "A risk factor is anything that increases a person's likelihood of developing or contracting a disease, medical condition, or complication.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic type of entity related to health and the practice of medicine.",
+      "$ref": "schema:MedicalEntity"
+    }
+  ],
+  "properties": {
+    "increasesRiskOf": {
+      "description": "The condition, complication, etc. influenced by this factor.",
+      "$ref": "schema:MedicalEntity"
+    }
+  }
+}

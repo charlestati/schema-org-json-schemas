@@ -1,35 +1,32 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/MusicRecording",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MusicRecording",
   "title": "MusicRecording",
   "description": "A music recording (track), usually a single song.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     }
   ],
   "properties": {
     "byArtist": {
       "description": "The artist that performed this album or recording.",
-      "anyOf": [
-        { "$ref": "http://schema.org/MusicGroup" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:MusicGroup" }, { "$ref": "schema:Person" }]
     },
     "duration": {
-      "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+      "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
       "type": "string",
       "$comment": "https://schema.org/Duration"
     },
     "inAlbum": {
       "description": "The album to which this recording belongs.",
-      "$ref": "http://schema.org/MusicAlbum"
+      "$ref": "schema:MusicAlbum"
     },
     "inPlaylist": {
       "description": "The playlist to which this recording belongs.",
-      "$ref": "http://schema.org/MusicPlaylist"
+      "$ref": "schema:MusicPlaylist"
     },
     "isrcCode": {
       "description": "The International Standard Recording Code for the recording.",
@@ -37,7 +34,7 @@
     },
     "recordingOf": {
       "description": "The composition this track is a recording of.",
-      "$ref": "http://schema.org/MusicComposition"
+      "$ref": "schema:MusicComposition"
     }
   }
 }

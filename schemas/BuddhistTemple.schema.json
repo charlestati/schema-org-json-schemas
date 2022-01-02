@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/BuddhistTemple",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BuddhistTemple",
   "title": "BuddhistTemple",
   "description": "A Buddhist temple.",
   "type": "object",
   "allOf": [
     {
       "description": "Place of worship, such as a church, synagogue, or mosque.",
-      "$ref": "http://schema.org/PlaceOfWorship"
+      "$ref": "schema:PlaceOfWorship"
     }
   ]
 }

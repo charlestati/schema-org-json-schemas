@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ReturnMethodEnumeration",
+  "title": "ReturnMethodEnumeration",
+  "description": "Enumerates several types of product return methods.",
+  "type": "string",
+  "oneOf": [
+    {
+      "description": "Specifies that product returns must be made at a kiosk.",
+      "const": "ReturnAtKiosk"
+    },
+    {
+      "description": "Specifies that product returns must to be done by mail.",
+      "const": "ReturnByMail"
+    },
+    {
+      "description": "Specifies that product returns must be made in a store.",
+      "const": "ReturnInStore"
+    }
+  ]
+}

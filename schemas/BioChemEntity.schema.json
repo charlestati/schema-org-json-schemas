@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BioChemEntity",
+  "title": "BioChemEntity",
+  "description": "Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.",
+  "type": "object",
+  "allOf": [
+    { "description": "The most generic type of item.", "$ref": "schema:Thing" }
+  ],
+  "properties": {
+    "associatedDisease": {
+      "description": "Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "schema:MedicalCondition" },
+            { "$ref": "schema:PropertyValue" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "schema:MedicalCondition" },
+              { "$ref": "schema:PropertyValue" }
+            ]
+          }
+        }
+      ]
+    },
+    "bioChemInteraction": {
+      "description": "A BioChemEntity that is known to interact with this item.",
+      "oneOf": [
+        { "$ref": "schema:BioChemEntity" },
+        { "type": "array", "items": { "$ref": "schema:BioChemEntity" } }
+      ]
+    },
+    "bioChemSimilarity": {
+      "description": "A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.",
+      "oneOf": [
+        { "$ref": "schema:BioChemEntity" },
+        { "type": "array", "items": { "$ref": "schema:BioChemEntity" } }
+      ]
+    },
+    "biologicalRole": {
+      "description": "A role played by the BioChemEntity within a biological context.",
+      "oneOf": [
+        { "$ref": "schema:DefinedTerm" },
+        { "type": "array", "items": { "$ref": "schema:DefinedTerm" } }
+      ]
+    },
+    "hasBioChemEntityPart": {
+      "description": "Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. ",
+      "oneOf": [
+        { "$ref": "schema:BioChemEntity" },
+        { "type": "array", "items": { "$ref": "schema:BioChemEntity" } }
+      ]
+    },
+    "hasMolecularFunction": {
+      "description": "Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "schema:DefinedTerm" },
+            { "$ref": "schema:PropertyValue" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "schema:DefinedTerm" },
+              { "$ref": "schema:PropertyValue" }
+            ]
+          }
+        }
+      ]
+    },
+    "hasRepresentation": {
+      "description": "A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "schema:PropertyValue" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "schema:PropertyValue" }
+            ]
+          }
+        }
+      ]
+    },
+    "isEncodedByBioChemEntity": {
+      "description": "Another BioChemEntity encoding by this one.",
+      "oneOf": [
+        { "$ref": "schema:Gene" },
+        { "type": "array", "items": { "$ref": "schema:Gene" } }
+      ]
+    },
+    "isInvolvedInBiologicalProcess": {
+      "description": "Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "schema:DefinedTerm" },
+            { "$ref": "schema:PropertyValue" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "schema:DefinedTerm" },
+              { "$ref": "schema:PropertyValue" }
+            ]
+          }
+        }
+      ]
+    },
+    "isLocatedInSubcellularLocation": {
+      "description": "Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "schema:DefinedTerm" },
+            { "$ref": "schema:PropertyValue" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "schema:DefinedTerm" },
+              { "$ref": "schema:PropertyValue" }
+            ]
+          }
+        }
+      ]
+    },
+    "isPartOfBioChemEntity": {
+      "description": "Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. ",
+      "oneOf": [
+        { "$ref": "schema:BioChemEntity" },
+        { "type": "array", "items": { "$ref": "schema:BioChemEntity" } }
+      ]
+    },
+    "taxonomicRange": {
+      "description": "The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.",
+      "anyOf": [
+        { "type": "string", "format": "uri" },
+        { "type": "string" },
+        { "$ref": "schema:DefinedTerm" },
+        { "$ref": "schema:Taxon" }
+      ]
+    }
+  }
+}

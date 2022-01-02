@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MoneyTransfer",
+  "title": "MoneyTransfer",
+  "description": "The act of transferring money from one place to another place. This may occur electronically or physically.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",
+      "$ref": "schema:TransferAction"
+    }
+  ],
+  "properties": {
+    "amount": {
+      "description": "The amount of money.",
+      "anyOf": [{ "type": "number" }, { "$ref": "schema:MonetaryAmount" }]
+    },
+    "beneficiaryBank": {
+      "description": "A bank or bank’s branch, financial institution or international financial institution operating the beneficiary’s bank account or releasing funds for the beneficiary.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "schema:BankOrCreditUnion" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "schema:BankOrCreditUnion" }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

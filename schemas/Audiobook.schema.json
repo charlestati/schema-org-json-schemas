@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Audiobook",
+  "title": "Audiobook",
+  "description": "An audiobook.",
+  "type": "object",
+  "allOf": [
+    { "description": "An audio file.", "$ref": "schema:AudioObject" },
+    { "description": "A book.", "$ref": "schema:Book" }
+  ],
+  "properties": {
+    "duration": {
+      "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
+      "type": "string",
+      "$comment": "https://schema.org/Duration"
+    },
+    "readBy": {
+      "description": "A person who reads (performs) the audiobook.",
+      "oneOf": [
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
+      ]
+    }
+  }
+}

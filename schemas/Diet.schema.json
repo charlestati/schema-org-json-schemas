@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Diet",
+  "title": "Diet",
+  "description": "A strategy of regulating the intake of food to achieve or maintain a specific health-related goal.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "schema:CreativeWork"
+    },
+    {
+      "description": "A process of care involving exercise, changes to diet, fitness routines, and other lifestyle changes aimed at improving a health condition.",
+      "$ref": "schema:LifestyleModification"
+    }
+  ],
+  "properties": {
+    "dietFeatures": {
+      "description": "Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.",
+      "type": "string"
+    },
+    "endorsers": {
+      "description": "People or organizations that endorse the plan.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
+            ]
+          }
+        }
+      ]
+    },
+    "expertConsiderations": {
+      "description": "Medical expert advice related to the plan.",
+      "type": "string"
+    },
+    "physiologicalBenefits": {
+      "description": "Specific physiologic benefits associated to the plan.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "risks": {
+      "description": "Specific physiologic risks associated to the diet plan.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    }
+  }
+}

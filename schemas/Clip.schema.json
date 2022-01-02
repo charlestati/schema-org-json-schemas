@@ -1,28 +1,28 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Clip",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Clip",
   "title": "Clip",
   "description": "A short TV or radio program or a segment/part of a program.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     }
   ],
   "properties": {
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "actors": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "clipNumber": {
@@ -31,33 +31,38 @@
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-      "$ref": "http://schema.org/Person"
+      "$ref": "schema:Person"
     },
     "directors": {
       "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
+    },
+    "endOffset": {
+      "description": "The end time of the clip expressed as the number of seconds from the beginning of the work.",
+      "anyOf": [{ "type": "number" }, { "$ref": "schema:HyperTocEntry" }]
     },
     "musicBy": {
       "description": "The composer of the soundtrack.",
-      "anyOf": [
-        { "$ref": "http://schema.org/MusicGroup" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:MusicGroup" }, { "$ref": "schema:Person" }]
     },
     "partOfEpisode": {
       "description": "The episode to which this clip belongs.",
-      "$ref": "http://schema.org/Episode"
+      "$ref": "schema:Episode"
     },
     "partOfSeason": {
       "description": "The season to which this episode belongs.",
-      "$ref": "http://schema.org/CreativeWorkSeason"
+      "$ref": "schema:CreativeWorkSeason"
     },
     "partOfSeries": {
       "description": "The series to which this episode or season belongs.",
-      "$ref": "http://schema.org/CreativeWorkSeries"
+      "$ref": "schema:CreativeWorkSeries"
+    },
+    "startOffset": {
+      "description": "The start time of the clip expressed as the number of seconds from the beginning of the work.",
+      "anyOf": [{ "type": "number" }, { "$ref": "schema:HyperTocEntry" }]
     }
   }
 }

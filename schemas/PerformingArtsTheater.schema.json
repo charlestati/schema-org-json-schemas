@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/PerformingArtsTheater",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PerformingArtsTheater",
   "title": "PerformingArtsTheater",
   "description": "A theater or other performing art center.",
   "type": "object",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",
-      "$ref": "http://schema.org/CivicStructure"
+      "$ref": "schema:CivicStructure"
     }
   ]
 }

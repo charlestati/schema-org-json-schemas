@@ -1,13 +1,32 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/DataDownload",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DataDownload",
   "title": "DataDownload",
   "description": "A dataset in downloadable form.",
   "type": "object",
   "allOf": [
     {
       "description": "A media object, such as an image, video, or audio object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's).",
-      "$ref": "http://schema.org/MediaObject"
+      "$ref": "schema:MediaObject"
     }
-  ]
+  ],
+  "properties": {
+    "measurementTechnique": {
+      "description": "A technique or technology used in a [[Dataset]] (or [[DataDownload]], [[DataCatalog]]),\ncorresponding to the method used for measuring the corresponding variable(s) (described using [[variableMeasured]]). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.\n\nFor example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\".\n\nIf the [[variableMeasured]] is \"depression rating\", the [[measurementTechnique]] could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\".\n\nIf there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]].\n      ",
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
+    }
+  }
 }

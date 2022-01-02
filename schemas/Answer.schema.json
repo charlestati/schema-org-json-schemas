@@ -1,13 +1,35 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Answer",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Answer",
   "title": "Answer",
   "description": "An answer offered to a question; perhaps correct, perhaps opinionated or wrong.",
   "type": "object",
   "allOf": [
     {
-      "description": "A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the text property, and its topic via about, properties shared with all CreativeWorks.",
-      "$ref": "http://schema.org/Comment"
+      "description": "A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.",
+      "$ref": "schema:Comment"
     }
-  ]
+  ],
+  "properties": {
+    "answerExplanation": {
+      "description": "A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. ",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "schema:Comment" },
+            { "$ref": "schema:WebContent" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:Comment" },
+              { "$ref": "schema:WebContent" }
+            ]
+          }
+        }
+      ]
+    }
+  }
 }

@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/RegisterAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:RegisterAction",
   "title": "RegisterAction",
-  "description": "The act of registering to be a user of a service, product or web page.\n\nRelated actions:\n\n\nJoinAction: Unlike JoinAction, RegisterAction implies you are registering to be a user of a service, not a group/team of people.\n[FollowAction]]: Unlike FollowAction, RegisterAction doesn't imply that the agent is expecting to poll for updates from the object.\nSubscribeAction: Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object.\n\n",
+  "description": "The act of registering to be a user of a service, product or web page.\\n\\nRelated actions:\\n\\n* [[JoinAction]]: Unlike JoinAction, RegisterAction implies you are registering to be a user of a service, *not* a group/team of people.\\n* [FollowAction]]: Unlike FollowAction, RegisterAction doesn't imply that the agent is expecting to poll for updates from the object.\\n* [[SubscribeAction]]: Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of interacting with another person or organization.",
-      "$ref": "http://schema.org/InteractAction"
+      "$ref": "schema:InteractAction"
     }
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:RadioBroadcastService",
+  "title": "RadioBroadcastService",
+  "description": "A delivery service through which radio content is provided via broadcast over the air or online.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A delivery service through which content is provided via broadcast over the air or online.",
+      "$ref": "schema:BroadcastService"
+    }
+  ]
+}

@@ -1,28 +1,28 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/TransferAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:TransferAction",
   "title": "TransferAction",
   "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",
   "type": "object",
   "allOf": [
     {
-      "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\n\nSee also blog post and Actions overview document.",
-      "$ref": "http://schema.org/Action"
+      "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\\n\\nSee also [blog post](http://blog.schema.org/2014/04/announcing-schemaorg-actions.html) and [Actions overview document](https://schema.org/docs/actions.html).",
+      "$ref": "schema:Action"
     }
   ],
   "properties": {
     "fromLocation": {
       "description": "A sub property of location. The original location of the object or the agent before the action.",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        { "$ref": "schema:Place" },
+        { "type": "array", "items": { "$ref": "schema:Place" } }
       ]
     },
     "toLocation": {
       "description": "A sub property of location. The final location of the object or the agent after the action.",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        { "$ref": "schema:Place" },
+        { "type": "array", "items": { "$ref": "schema:Place" } }
       ]
     }
   }

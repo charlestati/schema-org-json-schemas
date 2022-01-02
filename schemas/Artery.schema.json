@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Artery",
+  "title": "Artery",
+  "description": "A type of blood vessel that specifically carries blood away from the heart.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A component of the human body circulatory system comprised of an intricate network of hollow tubes that transport blood throughout the entire body.",
+      "$ref": "schema:Vessel"
+    }
+  ],
+  "properties": {
+    "arterialBranch": {
+      "description": "The branches that comprise the arterial structure.",
+      "$ref": "schema:AnatomicalStructure"
+    },
+    "supplyTo": {
+      "description": "The area to which the artery supplies blood.",
+      "$ref": "schema:AnatomicalStructure"
+    }
+  }
+}

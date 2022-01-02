@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ReturnLabelSourceEnumeration",
+  "title": "ReturnLabelSourceEnumeration",
+  "description": "Enumerates several types of return labels for product returns.",
+  "type": "string",
+  "oneOf": [
+    {
+      "description": "Indicated that creating a return label is the responsibility of the customer.",
+      "const": "ReturnLabelCustomerResponsibility"
+    },
+    {
+      "description": "Indicated that a return label must be downloaded and printed by the customer.",
+      "const": "ReturnLabelDownloadAndPrint"
+    },
+    {
+      "description": "Specifies that a return label will be provided by the seller in the shipping box.",
+      "const": "ReturnLabelInBox"
+    }
+  ]
+}

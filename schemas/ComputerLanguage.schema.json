@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ComputerLanguage",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ComputerLanguage",
   "title": "ComputerLanguage",
-  "description": "This type covers computer programming languages such as Scheme and Lisp, as well as other language-like computer representations. Natural languages are best represented with the Language type.",
+  "description": "This type covers computer programming languages such as Scheme and Lisp, as well as other language-like computer representations. Natural languages are best represented with the [[Language]] type.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ]
 }

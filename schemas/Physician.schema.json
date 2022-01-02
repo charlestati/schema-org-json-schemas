@@ -1,13 +1,55 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Physician",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Physician",
   "title": "Physician",
   "description": "A doctor's office.",
   "type": "object",
   "allOf": [
     {
+      "description": "A particular physical or virtual business of an organization for medical purposes. Examples of MedicalBusiness include differents business run by health professionals.",
+      "$ref": "schema:MedicalBusiness"
+    },
+    {
       "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
-      "$ref": "http://schema.org/MedicalOrganization"
+      "$ref": "schema:MedicalOrganization"
     }
-  ]
+  ],
+  "properties": {
+    "availableService": {
+      "description": "A medical service available from this provider.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "schema:MedicalProcedure" },
+            { "$ref": "schema:MedicalTest" },
+            { "$ref": "schema:MedicalTherapy" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:MedicalProcedure" },
+              { "$ref": "schema:MedicalTest" },
+              { "$ref": "schema:MedicalTherapy" }
+            ]
+          }
+        }
+      ]
+    },
+    "hospitalAffiliation": {
+      "description": "A hospital with which the physician or office is affiliated.",
+      "oneOf": [
+        { "$ref": "schema:Hospital" },
+        { "type": "array", "items": { "$ref": "schema:Hospital" } }
+      ]
+    },
+    "medicalSpecialty": {
+      "description": "A medical specialty of the provider.",
+      "oneOf": [
+        { "$ref": "schema:MedicalSpecialty" },
+        { "type": "array", "items": { "$ref": "schema:MedicalSpecialty" } }
+      ]
+    }
+  }
 }

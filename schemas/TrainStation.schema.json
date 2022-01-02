@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/TrainStation",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:TrainStation",
   "title": "TrainStation",
   "description": "A train station.",
   "type": "object",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",
-      "$ref": "http://schema.org/CivicStructure"
+      "$ref": "schema:CivicStructure"
     }
   ]
 }

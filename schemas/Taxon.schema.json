@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Taxon",
+  "title": "Taxon",
+  "description": "A set of organisms asserted to represent a natural cohesive biological unit.",
+  "type": "object",
+  "allOf": [
+    { "description": "The most generic type of item.", "$ref": "schema:Thing" }
+  ],
+  "properties": {
+    "childTaxon": {
+      "description": "Closest child taxa of the taxon in question.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "schema:Taxon" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "schema:Taxon" }
+            ]
+          }
+        }
+      ]
+    },
+    "hasDefinedTerm": {
+      "description": "A Defined Term contained in this term set.",
+      "oneOf": [
+        { "$ref": "schema:DefinedTerm" },
+        { "type": "array", "items": { "$ref": "schema:DefinedTerm" } }
+      ]
+    },
+    "parentTaxon": {
+      "description": "Closest parent taxon of the taxon in question.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "schema:Taxon" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "schema:Taxon" }
+            ]
+          }
+        }
+      ]
+    },
+    "taxonRank": {
+      "description": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).",
+      "anyOf": [
+        { "type": "string", "format": "uri" },
+        { "type": "string" },
+        { "$ref": "schema:PropertyValue" }
+      ]
+    }
+  }
+}

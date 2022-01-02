@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:CDCPMDRecord",
+  "title": "CDCPMDRecord",
+  "description": "A CDCPMDRecord is a data structure representing a record in a CDC tabular data format\n      used for hospital data reporting. See [documentation](/docs/cdc-covid.html) for details, and the linked CDC materials for authoritative\n      definitions used as the source here.\n      ",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "$ref": "schema:StructuredValue"
+    }
+  ],
+  "properties": {
+    "cvdCollectionDate": {
+      "description": "collectiondate - Date for which patient counts are reported.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "date-time" },
+            { "type": "string" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "date-time" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
+    },
+    "cvdFacilityCounty": {
+      "description": "Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "cvdFacilityId": {
+      "description": "Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "cvdNumBeds": {
+      "description": "numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "cvdNumBedsOcc": {
+      "description": "numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "cvdNumC19Died": {
+      "description": "numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "cvdNumC19HOPats": {
+      "description": "numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "cvdNumC19HospPats": {
+      "description": "numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "cvdNumC19MechVentPats": {
+      "description": "numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "cvdNumC19OFMechVentPats": {
+      "description": "numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "cvdNumC19OverflowPats": {
+      "description": "numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "cvdNumICUBeds": {
+      "description": "numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "cvdNumICUBedsOcc": {
+      "description": "numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "cvdNumTotBeds": {
+      "description": "numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "cvdNumVent": {
+      "description": "numvent - MECHANICAL VENTILATORS: Total number of ventilators available.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "cvdNumVentUse": {
+      "description": "numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "datePosted": {
+      "description": "Publication date of an online listing.",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
+    }
+  }
+}

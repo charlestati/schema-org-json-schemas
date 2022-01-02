@@ -1,13 +1,32 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/SportsOrganization",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:SportsOrganization",
   "title": "SportsOrganization",
   "description": "Represents the collection of all sports organizations, including sports teams, governing bodies, and sports associations.",
   "type": "object",
   "allOf": [
     {
       "description": "An organization such as a school, NGO, corporation, club, etc.",
-      "$ref": "http://schema.org/Organization"
+      "$ref": "schema:Organization"
     }
-  ]
+  ],
+  "properties": {
+    "sport": {
+      "description": "A type of sport (e.g. Baseball).",
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
+    }
+  }
 }

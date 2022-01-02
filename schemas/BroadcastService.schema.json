@@ -1,23 +1,23 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/BroadcastService",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BroadcastService",
   "title": "BroadcastService",
   "description": "A delivery service through which content is provided via broadcast over the air or online.",
   "type": "object",
   "allOf": [
     {
       "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
-      "$ref": "http://schema.org/Service"
+      "$ref": "schema:Service"
     }
   ],
   "properties": {
     "area": {
       "description": "The area within which users can expect to reach the broadcast service.",
-      "$ref": "http://schema.org/Place"
+      "$ref": "schema:Place"
     },
     "broadcastAffiliateOf": {
       "description": "The media network(s) whose content is broadcast on this station.",
-      "$ref": "http://schema.org/Organization"
+      "$ref": "schema:Organization"
     },
     "broadcastDisplayName": {
       "description": "The name displayed in the channel guide. For many US affiliates, it is the network name.",
@@ -27,39 +27,40 @@
       "description": "The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. \"87 FM\".",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "http://schema.org/BroadcastFrequencySpecification" }
+        { "$ref": "schema:BroadcastFrequencySpecification" }
       ]
     },
     "broadcastTimezone": {
-      "description": "The timezone in ISO 8601 format for which the service bases its broadcasts",
+      "description": "The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts",
       "type": "string"
     },
     "broadcaster": {
       "description": "The organization owning or operating the broadcast service.",
-      "$ref": "http://schema.org/Organization"
+      "$ref": "schema:Organization"
+    },
+    "callSign": {
+      "description": "A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "hasBroadcastChannel": {
       "description": "A broadcast channel of a broadcast service.",
       "oneOf": [
-        { "$ref": "http://schema.org/BroadcastChannel" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/BroadcastChannel" }
-        }
+        { "$ref": "schema:BroadcastChannel" },
+        { "type": "array", "items": { "$ref": "schema:BroadcastChannel" } }
       ]
     },
     "inLanguage": {
-      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
-      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Language" }]
+      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }]
     },
     "parentService": {
       "description": "A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.",
       "oneOf": [
-        { "$ref": "http://schema.org/BroadcastService" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/BroadcastService" }
-        }
+        { "$ref": "schema:BroadcastService" },
+        { "type": "array", "items": { "$ref": "schema:BroadcastService" } }
       ]
     },
     "videoFormat": {

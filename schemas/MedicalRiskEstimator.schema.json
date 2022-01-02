@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalRiskEstimator",
+  "title": "MedicalRiskEstimator",
+  "description": "Any rule set or interactive tool for estimating the risk of developing a complication or condition.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic type of entity related to health and the practice of medicine.",
+      "$ref": "schema:MedicalEntity"
+    }
+  ],
+  "properties": {
+    "estimatesRiskOf": {
+      "description": "The condition, complication, or symptom whose risk is being estimated.",
+      "$ref": "schema:MedicalEntity"
+    },
+    "includedRiskFactor": {
+      "description": "A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition.",
+      "oneOf": [
+        { "$ref": "schema:MedicalRiskFactor" },
+        { "type": "array", "items": { "$ref": "schema:MedicalRiskFactor" } }
+      ]
+    }
+  }
+}

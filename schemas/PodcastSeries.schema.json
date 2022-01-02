@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PodcastSeries",
+  "title": "PodcastSeries",
+  "description": "A podcast is an episodic series of digital audio or video files which a user can download and listen to.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind. CreativeWorkSeries are usually organized into some order, often chronological. Unlike [[ItemList]] which is a general purpose data structure for lists of things, the emphasis with CreativeWorkSeries is on published materials (written e.g. books and periodicals, or media such as tv, radio and games).\\n\\nSpecific subtypes are available for describing [[TVSeries]], [[RadioSeries]], [[MovieSeries]], [[BookSeries]], [[Periodical]] and [[VideoGameSeries]]. In each case, the [[hasPart]] / [[isPartOf]] properties can be used to relate the CreativeWorkSeries to its parts. The general CreativeWorkSeries type serves largely just to organize these more specific and practical subtypes.\\n\\nIt is common for properties applicable to an item from the series to be usefully applied to the containing group. Schema.org attempts to anticipate some of these cases, but publishers should be free to apply properties of the series parts to the series as a whole wherever they seem appropriate.\n\t  ",
+      "$ref": "schema:CreativeWorkSeries"
+    }
+  ],
+  "properties": {
+    "actor": {
+      "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+      "oneOf": [
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
+      ]
+    },
+    "webFeed": {
+      "description": "The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.",
+      "anyOf": [
+        { "type": "string", "format": "uri" },
+        { "$ref": "schema:DataFeed" }
+      ]
+    }
+  }
+}

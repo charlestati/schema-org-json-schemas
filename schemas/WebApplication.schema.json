@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/WebApplication",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:WebApplication",
   "title": "WebApplication",
   "description": "Web applications.",
   "type": "object",
   "allOf": [
     {
       "description": "A software application.",
-      "$ref": "http://schema.org/SoftwareApplication"
+      "$ref": "schema:SoftwareApplication"
     }
   ],
   "properties": {

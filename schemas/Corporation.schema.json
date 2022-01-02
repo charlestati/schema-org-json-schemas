@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Corporation",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Corporation",
   "title": "Corporation",
   "description": "Organization: A business corporation.",
   "type": "object",
   "allOf": [
     {
       "description": "An organization such as a school, NGO, corporation, club, etc.",
-      "$ref": "http://schema.org/Organization"
+      "$ref": "schema:Organization"
     }
   ],
   "properties": {

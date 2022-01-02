@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PhysicalTherapy",
+  "title": "PhysicalTherapy",
+  "description": "A process of progressive physical care and rehabilitation aimed at improving a health condition.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any medical intervention designed to prevent, treat, and cure human diseases and medical conditions, including both curative and palliative therapies. Medical therapies are typically processes of care relying upon pharmacotherapy, behavioral therapy, supportive therapy (with fluid or nutrition for example), or detoxification (e.g. hemodialysis) aimed at improving or preventing a health condition.",
+      "$ref": "schema:MedicalTherapy"
+    }
+  ]
+}

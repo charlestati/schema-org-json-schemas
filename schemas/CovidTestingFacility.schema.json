@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:CovidTestingFacility",
+  "title": "CovidTestingFacility",
+  "description": "A CovidTestingFacility is a [[MedicalClinic]] where testing for the COVID-19 Coronavirus\n      disease is available. If the facility is being made available from an established [[Pharmacy]], [[Hotel]], or other\n      non-medical organization, multiple types can be listed. This makes it easier to re-use existing schema.org information\n      about that place e.g. contact info, address, opening hours. Note that in an emergency, such information may not always be reliable.\n      ",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well.",
+      "$ref": "schema:MedicalClinic"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:SizeSystemEnumeration",
+  "title": "SizeSystemEnumeration",
+  "description": "Enumerates common size systems for different categories of products, for example \"EN-13402\" or \"UK\" for wearables or \"Imperial\" for screws.",
+  "type": "string",
+  "oneOf": [
+    { "description": "Imperial size system.", "const": "SizeSystemImperial" },
+    { "description": "Metric size system.", "const": "SizeSystemMetric" }
+  ]
+}

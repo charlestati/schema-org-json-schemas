@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:LegislationObject",
+  "title": "LegislationObject",
+  "description": "A specific object or file containing a Legislation. Note that the same Legislation can be published in multiple files. For example, a digitally signed PDF, a plain PDF and an HTML version.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article).",
+      "$ref": "schema:Legislation"
+    },
+    {
+      "description": "A media object, such as an image, video, or audio object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's).",
+      "$ref": "schema:MediaObject"
+    }
+  ],
+  "properties": {
+    "legislationLegalValue": {
+      "description": "The legal value of this legislation file. The same legislation can be written in multiple files with different legal values. Typically a digitally signed PDF have a \"stronger\" legal value than the HTML file of the same act.",
+      "$ref": "schema:LegalValueLevel"
+    }
+  }
+}

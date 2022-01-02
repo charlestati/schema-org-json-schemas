@@ -1,52 +1,36 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/TouristAttraction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:TouristAttraction",
   "title": "TouristAttraction",
-  "description": "A tourist attraction.  In principle any Thing can be a TouristAttraction, from a Mountain and LandmarksOrHistoricalBuildings to a LocalBusiness.  This Type can be used on its own to describe a general TouristAttraction, or be used as an additionalType to add tourist attraction properties to any other type.  (See examples below)",
+  "description": "A tourist attraction.  In principle any Thing can be a [[TouristAttraction]], from a [[Mountain]] and [[LandmarksOrHistoricalBuildings]] to a [[LocalBusiness]].  This Type can be used on its own to describe a general [[TouristAttraction]], or be used as an [[additionalType]] to add tourist attraction properties to any other type.  (See examples below)",
   "type": "object",
   "allOf": [
     {
       "description": "Entities that have a somewhat fixed, physical extension.",
-      "$ref": "http://schema.org/Place"
+      "$ref": "schema:Place"
     }
   ],
   "properties": {
     "availableLanguage": {
-      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]",
       "oneOf": [
-        {
-          "anyOf": [
-            { "type": "string" },
-            { "$ref": "http://schema.org/Language" }
-          ]
-        },
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }] },
         {
           "type": "array",
           "items": {
-            "anyOf": [
-              { "type": "string" },
-              { "$ref": "http://schema.org/Language" }
-            ]
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }]
           }
         }
       ]
     },
     "touristType": {
-      "description": "Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc.",
+      "description": "Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. ",
       "oneOf": [
-        {
-          "anyOf": [
-            { "type": "string" },
-            { "$ref": "http://schema.org/Audience" }
-          ]
-        },
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:Audience" }] },
         {
           "type": "array",
           "items": {
-            "anyOf": [
-              { "type": "string" },
-              { "$ref": "http://schema.org/Audience" }
-            ]
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:Audience" }]
           }
         }
       ]

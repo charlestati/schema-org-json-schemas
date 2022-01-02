@@ -1,46 +1,38 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/LodgingBusiness",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:LodgingBusiness",
   "title": "LodgingBusiness",
   "description": "A lodging business, such as a motel, hotel, or inn.",
   "type": "object",
   "allOf": [
     {
       "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",
-      "$ref": "http://schema.org/LocalBusiness"
+      "$ref": "schema:LocalBusiness"
     }
   ],
   "properties": {
     "amenityFeature": {
       "description": "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
       "oneOf": [
-        { "$ref": "http://schema.org/LocationFeatureSpecification" },
+        { "$ref": "schema:LocationFeatureSpecification" },
         {
           "type": "array",
-          "items": { "$ref": "http://schema.org/LocationFeatureSpecification" }
+          "items": { "$ref": "schema:LocationFeatureSpecification" }
         }
       ]
     },
     "audience": {
       "description": "An intended audience, i.e. a group for whom something was created.",
-      "$ref": "http://schema.org/Audience"
+      "$ref": "schema:Audience"
     },
     "availableLanguage": {
-      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]",
       "oneOf": [
-        {
-          "anyOf": [
-            { "type": "string" },
-            { "$ref": "http://schema.org/Language" }
-          ]
-        },
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }] },
         {
           "type": "array",
           "items": {
-            "anyOf": [
-              { "type": "string" },
-              { "$ref": "http://schema.org/Language" }
-            ]
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }]
           }
         }
       ]
@@ -61,10 +53,7 @@
     },
     "numberOfRooms": {
       "description": "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
-      "anyOf": [
-        { "type": "number" },
-        { "$ref": "http://schema.org/QuantitativeValue" }
-      ]
+      "anyOf": [{ "type": "number" }, { "$ref": "schema:QuantitativeValue" }]
     },
     "petsAllowed": {
       "description": "Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.",
@@ -73,8 +62,8 @@
     "starRating": {
       "description": "An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).",
       "oneOf": [
-        { "$ref": "http://schema.org/Rating" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Rating" } }
+        { "$ref": "schema:Rating" },
+        { "type": "array", "items": { "$ref": "schema:Rating" } }
       ]
     }
   }

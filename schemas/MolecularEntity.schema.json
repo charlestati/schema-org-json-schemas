@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MolecularEntity",
+  "title": "MolecularEntity",
+  "description": "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.",
+      "$ref": "schema:BioChemEntity"
+    }
+  ],
+  "properties": {
+    "chemicalRole": {
+      "description": "A role played by the BioChemEntity within a chemical context.",
+      "oneOf": [
+        { "$ref": "schema:DefinedTerm" },
+        { "type": "array", "items": { "$ref": "schema:DefinedTerm" } }
+      ]
+    },
+    "inChI": {
+      "description": "Non-proprietary identifier for molecular entity that can be used in printed and electronic data sources thus enabling easier linking of diverse data compilations.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "inChIKey": {
+      "description": "InChIKey is a hashed version of the full InChI (using the SHA-256 algorithm).",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "iupacName": {
+      "description": "Systematic method of naming chemical compounds as recommended by the International Union of Pure and Applied Chemistry (IUPAC).",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "molecularFormula": {
+      "description": "The empirical formula is the simplest whole number ratio of all the atoms in a molecule.",
+      "type": "string"
+    },
+    "molecularWeight": {
+      "description": "This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '<Number> <unit>', for example '12 amu' or as '<QuantitativeValue>.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "schema:QuantitativeValue" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "schema:QuantitativeValue" }
+            ]
+          }
+        }
+      ]
+    },
+    "monoisotopicMolecularWeight": {
+      "description": "The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units the form '<Number> <unit>', for example '770.230488 g/mol' or as '<QuantitativeValue>.",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:QuantitativeValue" }]
+    },
+    "potentialUse": {
+      "description": "Intended use of the BioChemEntity by humans.",
+      "oneOf": [
+        { "$ref": "schema:DefinedTerm" },
+        { "type": "array", "items": { "$ref": "schema:DefinedTerm" } }
+      ]
+    },
+    "smiles": {
+      "description": "A specification in form of a line notation for describing the structure of chemical species using short ASCII strings.  Double bond stereochemistry \\ indicators may need to be escaped in the string in formats where the backslash is an escape character.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    }
+  }
+}

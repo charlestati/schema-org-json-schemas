@@ -1,6 +1,6 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/GamePlayMode",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:GamePlayMode",
   "title": "GamePlayMode",
   "description": "Indicates whether this game is multi-player, co-op or single-player.",
   "type": "string",

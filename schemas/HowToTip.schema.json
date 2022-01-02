@@ -1,17 +1,17 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/HowToTip",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:HowToTip",
   "title": "HowToTip",
   "description": "An explanation in the instructions for how to achieve a result. It provides supplementary information about a technique, supply, author's preference, etc. It can explain what could be done, or what should not be done, but doesn't specify what should be done (see HowToDirection).",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     },
     {
       "description": "An list item, e.g. a step in a checklist or how-to description.",
-      "$ref": "http://schema.org/ListItem"
+      "$ref": "schema:ListItem"
     }
   ]
 }

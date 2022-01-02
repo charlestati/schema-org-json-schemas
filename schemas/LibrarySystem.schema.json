@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:LibrarySystem",
+  "title": "LibrarySystem",
+  "description": "A [[LibrarySystem]] is a collaborative system amongst several libraries.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "An organization such as a school, NGO, corporation, club, etc.",
+      "$ref": "schema:Organization"
+    }
+  ]
+}

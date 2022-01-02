@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/EmployerAggregateRating",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:EmployerAggregateRating",
   "title": "EmployerAggregateRating",
   "description": "An aggregate rating of an Organization related to its role as an employer.",
   "type": "object",
   "allOf": [
     {
       "description": "The average rating based on multiple ratings or reviews.",
-      "$ref": "http://schema.org/AggregateRating"
+      "$ref": "schema:AggregateRating"
     }
   ]
 }

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BoatTrip",
+  "title": "BoatTrip",
+  "description": "A trip on a commercial ferry line.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A trip or journey. An itinerary of visits to one or more places.",
+      "$ref": "schema:Trip"
+    }
+  ],
+  "properties": {
+    "arrivalBoatTerminal": {
+      "description": "The terminal or port from which the boat arrives.",
+      "$ref": "schema:BoatTerminal"
+    },
+    "departureBoatTerminal": {
+      "description": "The terminal or port from which the boat departs.",
+      "$ref": "schema:BoatTerminal"
+    }
+  }
+}

@@ -1,21 +1,25 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/AudioObject",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:AudioObject",
   "title": "AudioObject",
   "description": "An audio file.",
   "type": "object",
   "allOf": [
     {
       "description": "A media object, such as an image, video, or audio object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's).",
-      "$ref": "http://schema.org/MediaObject"
+      "$ref": "schema:MediaObject"
     }
   ],
   "properties": {
     "caption": {
-      "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.",
-      "anyOf": [
+      "description": "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:MediaObject" }]
+    },
+    "embeddedTextCaption": {
+      "description": "Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.",
+      "oneOf": [
         { "type": "string" },
-        { "$ref": "http://schema.org/MediaObject" }
+        { "type": "array", "items": { "type": "string" } }
       ]
     },
     "transcript": {

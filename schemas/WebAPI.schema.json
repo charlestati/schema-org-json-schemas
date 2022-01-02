@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:WebAPI",
+  "title": "WebAPI",
+  "description": "An application programming interface accessible over Web/Internet technologies.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
+      "$ref": "schema:Service"
+    }
+  ],
+  "properties": {
+    "documentation": {
+      "description": "Further documentation describing the Web API in more detail.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "schema:CreativeWork" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "schema:CreativeWork" }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

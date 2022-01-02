@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DiagnosticProcedure",
+  "title": "DiagnosticProcedure",
+  "description": "A medical procedure intended primarily for diagnostic, as opposed to therapeutic, purposes.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.",
+      "$ref": "schema:MedicalProcedure"
+    }
+  ]
+}

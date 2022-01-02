@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DrugLegalStatus",
+  "title": "DrugLegalStatus",
+  "description": "The legal availability status of a medical drug.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
+      "$ref": "schema:MedicalIntangible"
+    }
+  ],
+  "properties": {
+    "applicableLocation": {
+      "description": "The location in which the status applies.",
+      "$ref": "schema:AdministrativeArea"
+    }
+  }
+}

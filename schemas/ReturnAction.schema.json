@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ReturnAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ReturnAction",
   "title": "ReturnAction",
   "description": "The act of returning to the origin that which was previously received (concrete objects) or taken (ownership).",
   "type": "object",
   "allOf": [
     {
       "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",
-      "$ref": "http://schema.org/TransferAction"
+      "$ref": "schema:TransferAction"
     }
   ],
   "properties": {
@@ -16,20 +16,20 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Audience" },
-            { "$ref": "http://schema.org/ContactPoint" },
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Audience" },
+            { "$ref": "schema:ContactPoint" },
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Audience" },
-              { "$ref": "http://schema.org/ContactPoint" },
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Audience" },
+              { "$ref": "schema:ContactPoint" },
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }

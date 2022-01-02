@@ -1,22 +1,19 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/BusTrip",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BusTrip",
   "title": "BusTrip",
   "description": "A trip on a commercial bus line.",
   "type": "object",
   "allOf": [
     {
       "description": "A trip or journey. An itinerary of visits to one or more places.",
-      "$ref": "http://schema.org/Trip"
+      "$ref": "schema:Trip"
     }
   ],
   "properties": {
     "arrivalBusStop": {
       "description": "The stop or station from which the bus arrives.",
-      "anyOf": [
-        { "$ref": "http://schema.org/BusStation" },
-        { "$ref": "http://schema.org/BusStop" }
-      ]
+      "anyOf": [{ "$ref": "schema:BusStation" }, { "$ref": "schema:BusStop" }]
     },
     "busName": {
       "description": "The name of the bus (e.g. Bolt Express).",
@@ -28,10 +25,7 @@
     },
     "departureBusStop": {
       "description": "The stop or station from which the bus departs.",
-      "anyOf": [
-        { "$ref": "http://schema.org/BusStation" },
-        { "$ref": "http://schema.org/BusStop" }
-      ]
+      "anyOf": [{ "$ref": "schema:BusStation" }, { "$ref": "schema:BusStop" }]
     }
   }
 }

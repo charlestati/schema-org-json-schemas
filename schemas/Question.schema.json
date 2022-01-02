@@ -1,54 +1,47 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Question",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Question",
   "title": "Question",
   "description": "A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.",
   "type": "object",
   "allOf": [
     {
-      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "description": "A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.",
+      "$ref": "schema:Comment"
     }
   ],
   "properties": {
     "acceptedAnswer": {
       "description": "The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Answer" },
-        { "$ref": "http://schema.org/ItemList" }
-      ]
+      "anyOf": [{ "$ref": "schema:Answer" }, { "$ref": "schema:ItemList" }]
     },
     "answerCount": {
       "description": "The number of answers this question has received.",
       "type": "integer"
     },
-    "downvoteCount": {
-      "description": "The number of downvotes this question, answer or comment has received from the community.",
-      "type": "integer"
+    "eduQuestionType": {
+      "description": "For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: \"Multiple choice\", \"Open ended\", \"Flashcard\".",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
     },
     "suggestedAnswer": {
       "description": "An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.",
       "oneOf": [
         {
-          "anyOf": [
-            { "$ref": "http://schema.org/Answer" },
-            { "$ref": "http://schema.org/ItemList" }
-          ]
+          "anyOf": [{ "$ref": "schema:Answer" }, { "$ref": "schema:ItemList" }]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Answer" },
-              { "$ref": "http://schema.org/ItemList" }
+              { "$ref": "schema:Answer" },
+              { "$ref": "schema:ItemList" }
             ]
           }
         }
       ]
-    },
-    "upvoteCount": {
-      "description": "The number of upvotes this question, answer or comment has received from the community.",
-      "type": "integer"
     }
   }
 }

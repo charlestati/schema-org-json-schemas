@@ -1,21 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/HowToSection",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:HowToSection",
   "title": "HowToSection",
   "description": "A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe).",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     },
     {
       "description": "A list of items of any sort—for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.",
-      "$ref": "http://schema.org/ItemList"
+      "$ref": "schema:ItemList"
     },
     {
       "description": "An list item, e.g. a step in a checklist or how-to description.",
-      "$ref": "http://schema.org/ListItem"
+      "$ref": "schema:ListItem"
     }
   ],
   "properties": {
@@ -25,8 +25,8 @@
         {
           "anyOf": [
             { "type": "string" },
-            { "$ref": "http://schema.org/CreativeWork" },
-            { "$ref": "http://schema.org/ItemList" }
+            { "$ref": "schema:CreativeWork" },
+            { "$ref": "schema:ItemList" }
           ]
         },
         {
@@ -34,8 +34,8 @@
           "items": {
             "anyOf": [
               { "type": "string" },
-              { "$ref": "http://schema.org/CreativeWork" },
-              { "$ref": "http://schema.org/ItemList" }
+              { "$ref": "schema:CreativeWork" },
+              { "$ref": "schema:ItemList" }
             ]
           }
         }

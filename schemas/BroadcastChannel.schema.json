@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/BroadcastChannel",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BroadcastChannel",
   "title": "BroadcastChannel",
   "description": "A unique instance of a BroadcastService on a CableOrSatelliteService lineup.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
@@ -19,7 +19,7 @@
       "description": "The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. \"87 FM\".",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "http://schema.org/BroadcastFrequencySpecification" }
+        { "$ref": "schema:BroadcastFrequencySpecification" }
       ]
     },
     "broadcastServiceTier": {
@@ -32,11 +32,11 @@
     },
     "inBroadcastLineup": {
       "description": "The CableOrSatelliteService offering the channel.",
-      "$ref": "http://schema.org/CableOrSatelliteService"
+      "$ref": "schema:CableOrSatelliteService"
     },
     "providesBroadcastService": {
       "description": "The BroadcastService offered on this channel.",
-      "$ref": "http://schema.org/BroadcastService"
+      "$ref": "schema:BroadcastService"
     }
   }
 }

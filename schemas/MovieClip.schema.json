@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/MovieClip",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MovieClip",
   "title": "MovieClip",
   "description": "A short segment/part of a movie.",
   "type": "object",
   "allOf": [
     {
       "description": "A short TV or radio program or a segment/part of a program.",
-      "$ref": "http://schema.org/Clip"
+      "$ref": "schema:Clip"
     }
   ]
 }

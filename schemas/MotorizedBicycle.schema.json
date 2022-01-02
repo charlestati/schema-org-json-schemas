@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MotorizedBicycle",
+  "title": "MotorizedBicycle",
+  "description": "A motorized bicycle is a bicycle with an attached motor used to power the vehicle, or to assist with pedaling.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.",
+      "$ref": "schema:Vehicle"
+    }
+  ]
+}

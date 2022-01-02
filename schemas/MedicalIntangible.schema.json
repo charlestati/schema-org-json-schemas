@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalIntangible",
+  "title": "MedicalIntangible",
+  "description": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic type of entity related to health and the practice of medicine.",
+      "$ref": "schema:MedicalEntity"
+    }
+  ]
+}

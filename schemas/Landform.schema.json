@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Landform",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Landform",
   "title": "Landform",
   "description": "A landform or physical feature.  Landform elements include mountains, plains, lakes, rivers, seascape and oceanic waterbody interface features such as bays, peninsulas, seas and so forth, including sub-aqueous terrain features such as submersed mountain ranges, volcanoes, and the great ocean basins.",
   "type": "object",
   "allOf": [
     {
       "description": "Entities that have a somewhat fixed, physical extension.",
-      "$ref": "http://schema.org/Place"
+      "$ref": "schema:Place"
     }
   ]
 }

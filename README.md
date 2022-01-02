@@ -25,40 +25,40 @@ To match the JSON-LD approach, properties that accept an array also accept a sin
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Book",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Book",
   "title": "Book",
   "description": "A book.",
   "type": "object",
-  "format": "http://schema.org/Book",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "CreativeWork.schema.json"
+      "$ref": "schema:CreativeWork"
     }
   ],
   "properties": {
-    "@context": { "const": "https://schema.org" },
-    "@type": { "const": "Book" },
+    "abridged": {
+      "description": "Indicates whether the book is an abridged edition.",
+      "type": "boolean"
+    },
     "bookEdition": {
       "description": "The edition of the book.",
       "type": "string"
     },
     "bookFormat": {
       "description": "The format of the book.",
-      "$ref": "BookFormatType.schema.json"
+      "$ref": "schema:BookFormatType"
     },
     "illustrator": {
       "description": "The illustrator of the book.",
-      "$ref": "Person.schema.json"
+      "$ref": "schema:Person"
     },
     "isbn": { "description": "The ISBN of the book.", "type": "string" },
     "numberOfPages": {
       "description": "The number of pages in the book.",
       "type": "integer"
     }
-  },
-  "required": ["@type"]
+  }
 }
 ```
 

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PriceTypeEnumeration",
+  "title": "PriceTypeEnumeration",
+  "description": "Enumerates different price types, for example list price, invoice price, and sale price.",
+  "type": "string",
+  "oneOf": [
+    {
+      "description": "Represents the invoice price of an offered product.",
+      "const": "InvoicePrice"
+    },
+    {
+      "description": "Represents the list price (the price a product is actually advertised for) of an offered product.",
+      "const": "ListPrice"
+    },
+    {
+      "description": "Represents the manufacturer suggested retail price (\"MSRP\") of an offered product.",
+      "const": "MSRP"
+    },
+    {
+      "description": "Represents the minimum advertised price (\"MAP\") (as dictated by the manufacturer) of an offered product.",
+      "const": "MinimumAdvertisedPrice"
+    },
+    {
+      "description": "Represents the suggested retail price (\"SRP\") of an offered product.",
+      "const": "SRP"
+    },
+    {
+      "description": "Represents a sale price (usually active for a limited period) of an offered product.",
+      "const": "SalePrice"
+    }
+  ]
+}

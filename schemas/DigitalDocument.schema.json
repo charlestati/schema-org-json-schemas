@@ -1,23 +1,23 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/DigitalDocument",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DigitalDocument",
   "title": "DigitalDocument",
   "description": "An electronic file or document.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     }
   ],
   "properties": {
     "hasDigitalDocumentPermission": {
       "description": "A permission related to the access to this document (e.g. permission to read or write an electronic document). For a public document, specify a grantee with an Audience with audienceType equal to \"public\".",
       "oneOf": [
-        { "$ref": "http://schema.org/DigitalDocumentPermission" },
+        { "$ref": "schema:DigitalDocumentPermission" },
         {
           "type": "array",
-          "items": { "$ref": "http://schema.org/DigitalDocumentPermission" }
+          "items": { "$ref": "schema:DigitalDocumentPermission" }
         }
       ]
     }

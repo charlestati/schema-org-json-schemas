@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Comment",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Comment",
   "title": "Comment",
-  "description": "A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the text property, and its topic via about, properties shared with all CreativeWorks.",
+  "description": "A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     }
   ],
   "properties": {
@@ -17,7 +17,7 @@
     },
     "parentItem": {
       "description": "The parent of a question, answer or item in general.",
-      "$ref": "http://schema.org/Question"
+      "$ref": "schema:Comment"
     },
     "upvoteCount": {
       "description": "The number of upvotes this question, answer or comment has received from the community.",

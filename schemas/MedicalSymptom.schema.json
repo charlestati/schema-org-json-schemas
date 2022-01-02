@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalSymptom",
+  "title": "MedicalSymptom",
+  "description": "Any complaint sensed and expressed by the patient (therefore defined as subjective)  like stomachache, lower-back pain, or fatigue.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any feature associated or not with a medical condition. In medicine a symptom is generally subjective while a sign is objective.",
+      "$ref": "schema:MedicalSignOrSymptom"
+    }
+  ]
+}

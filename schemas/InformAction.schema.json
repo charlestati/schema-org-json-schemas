@@ -1,21 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/InformAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:InformAction",
   "title": "InformAction",
   "description": "The act of notifying someone of information pertinent to them, with no expectation of a response.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",
-      "$ref": "http://schema.org/CommunicateAction"
+      "$ref": "schema:CommunicateAction"
     }
   ],
   "properties": {
     "event": {
       "description": "Upcoming or past event associated with this place, organization, or action.",
       "oneOf": [
-        { "$ref": "http://schema.org/Event" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
+        { "$ref": "schema:Event" },
+        { "type": "array", "items": { "$ref": "schema:Event" } }
       ]
     }
   }

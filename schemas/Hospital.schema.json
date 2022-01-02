@@ -1,21 +1,72 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Hospital",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Hospital",
   "title": "Hospital",
   "description": "A hospital.",
   "type": "object",
   "allOf": [
     {
       "description": "A public structure, such as a town hall or concert hall.",
-      "$ref": "http://schema.org/CivicStructure"
+      "$ref": "schema:CivicStructure"
     },
     {
       "description": "An emergency service, such as a fire station or ER.",
-      "$ref": "http://schema.org/EmergencyService"
+      "$ref": "schema:EmergencyService"
     },
     {
       "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
-      "$ref": "http://schema.org/MedicalOrganization"
+      "$ref": "schema:MedicalOrganization"
     }
-  ]
+  ],
+  "properties": {
+    "availableService": {
+      "description": "A medical service available from this provider.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "schema:MedicalProcedure" },
+            { "$ref": "schema:MedicalTest" },
+            { "$ref": "schema:MedicalTherapy" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:MedicalProcedure" },
+              { "$ref": "schema:MedicalTest" },
+              { "$ref": "schema:MedicalTherapy" }
+            ]
+          }
+        }
+      ]
+    },
+    "healthcareReportingData": {
+      "description": "Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "schema:CDCPMDRecord" },
+            { "$ref": "schema:Dataset" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:CDCPMDRecord" },
+              { "$ref": "schema:Dataset" }
+            ]
+          }
+        }
+      ]
+    },
+    "medicalSpecialty": {
+      "description": "A medical specialty of the provider.",
+      "oneOf": [
+        { "$ref": "schema:MedicalSpecialty" },
+        { "type": "array", "items": { "$ref": "schema:MedicalSpecialty" } }
+      ]
+    }
+  }
 }

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:SeekToAction",
+  "title": "SeekToAction",
+  "description": "This is the [[Action]] of navigating to a specific [[startOffset]] timestamp within a [[VideoObject]], typically represented with a URL template structure.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\\n\\nSee also [blog post](http://blog.schema.org/2014/04/announcing-schemaorg-actions.html) and [Actions overview document](https://schema.org/docs/actions.html).",
+      "$ref": "schema:Action"
+    }
+  ],
+  "properties": {
+    "startOffset": {
+      "description": "The start time of the clip expressed as the number of seconds from the beginning of the work.",
+      "anyOf": [{ "type": "number" }, { "$ref": "schema:HyperTocEntry" }]
+    }
+  }
+}

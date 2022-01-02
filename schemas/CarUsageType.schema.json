@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:CarUsageType",
+  "title": "CarUsageType",
+  "description": "A value indicating a special usage of a car, e.g. commercial rental, driving school, or as a taxi.",
+  "type": "string",
+  "oneOf": [
+    {
+      "description": "Indicates the usage of the vehicle for driving school.",
+      "const": "DrivingSchoolVehicleUsage"
+    },
+    {
+      "description": "Indicates the usage of the vehicle as a rental car.",
+      "const": "RentalVehicleUsage"
+    },
+    {
+      "description": "Indicates the usage of the car as a taxi.",
+      "const": "TaxiVehicleUsage"
+    }
+  ]
+}

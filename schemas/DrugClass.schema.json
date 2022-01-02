@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DrugClass",
+  "title": "DrugClass",
+  "description": "A class of medical drugs, e.g., statins. Classes can represent general pharmacological class, common mechanisms of action, common physiological effects, etc.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic type of entity related to health and the practice of medicine.",
+      "$ref": "schema:MedicalEntity"
+    }
+  ],
+  "properties": {
+    "drug": {
+      "description": "Specifying a drug or medicine used in a medication procedure.",
+      "oneOf": [
+        { "$ref": "schema:Drug" },
+        { "type": "array", "items": { "$ref": "schema:Drug" } }
+      ]
+    }
+  }
+}

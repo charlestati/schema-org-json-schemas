@@ -1,13 +1,17 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/SkiResort",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:SkiResort",
   "title": "SkiResort",
   "description": "A ski resort.",
   "type": "object",
   "allOf": [
     {
+      "description": "A resort is a place used for relaxation or recreation, attracting visitors for holidays or vacations. Resorts are places, towns or sometimes commercial establishment operated by a single company (Source: Wikipedia, the free encyclopedia, see http://en.wikipedia.org/wiki/Resort).\n\nSee also the dedicated document on the use of schema.org for marking up hotels and other forms of accommodations.\n    ",
+      "$ref": "schema:Resort"
+    },
+    {
       "description": "A sports location, such as a playing field.",
-      "$ref": "http://schema.org/SportsActivityLocation"
+      "$ref": "schema:SportsActivityLocation"
     }
   ]
 }

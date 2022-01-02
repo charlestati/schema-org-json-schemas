@@ -1,46 +1,43 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Event",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Event",
   "title": "Event",
-  "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",
+  "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.",
   "type": "object",
   "allOf": [
-    {
-      "description": "The most generic type of item.",
-      "$ref": "http://schema.org/Thing"
-    }
+    { "description": "The most generic type of item.", "$ref": "schema:Thing" }
   ],
   "properties": {
     "about": {
       "description": "The subject matter of the content.",
-      "$ref": "http://schema.org/Thing"
+      "$ref": "schema:Thing"
     },
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
-      "$ref": "http://schema.org/AggregateRating"
+      "$ref": "schema:AggregateRating"
     },
     "attendee": {
       "description": "A person or organization attending the event.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
@@ -51,16 +48,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
@@ -68,30 +65,27 @@
     },
     "audience": {
       "description": "An intended audience, i.e. a group for whom something was created.",
-      "$ref": "http://schema.org/Audience"
+      "$ref": "schema:Audience"
     },
     "composer": {
       "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Organization" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:Organization" }, { "$ref": "schema:Person" }]
     },
     "contributor": {
       "description": "A secondary contributor to the CreativeWork or Event.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
@@ -99,7 +93,7 @@
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-      "$ref": "http://schema.org/Person"
+      "$ref": "schema:Person"
     },
     "doorTime": {
       "description": "The time admission will commence.",
@@ -109,25 +103,33 @@
       ]
     },
     "duration": {
-      "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+      "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
       "type": "string",
       "$comment": "https://schema.org/Duration"
     },
     "endDate": {
-      "description": "The end date and time of the item (in ISO 8601 date format).",
+      "description": "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
       "anyOf": [
         { "type": "string", "format": "date" },
         { "type": "string", "format": "date-time" }
       ]
     },
+    "eventAttendanceMode": {
+      "description": "The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.",
+      "$ref": "schema:EventAttendanceModeEnumeration"
+    },
+    "eventSchedule": {
+      "description": "Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of\n      repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly\n      gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that\n      is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated\n      [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months\n      or seasons.",
+      "oneOf": [
+        { "$ref": "schema:Schedule" },
+        { "type": "array", "items": { "$ref": "schema:Schedule" } }
+      ]
+    },
     "eventStatus": {
       "description": "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.",
       "oneOf": [
-        { "$ref": "http://schema.org/EventStatusType" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/EventStatusType" }
-        }
+        { "$ref": "schema:EventStatusType" },
+        { "type": "array", "items": { "$ref": "schema:EventStatusType" } }
       ]
     },
     "funder": {
@@ -135,57 +137,58 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
       ]
     },
     "inLanguage": {
-      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
-      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Language" }]
+      "description": "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }]
     },
     "isAccessibleForFree": {
       "description": "A flag to signal that the item, event, or place is accessible for free.",
       "type": "boolean"
     },
     "location": {
-      "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "description": "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "http://schema.org/Place" },
-        { "$ref": "http://schema.org/PostalAddress" }
+        { "$ref": "schema:Place" },
+        { "$ref": "schema:PostalAddress" },
+        { "$ref": "schema:VirtualLocation" }
       ]
     },
     "maximumAttendeeCapacity": {
       "description": "The total number of individuals that may attend an event or venue.",
       "type": "integer"
     },
+    "maximumPhysicalAttendeeCapacity": {
+      "description": "The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). ",
+      "type": "integer"
+    },
+    "maximumVirtualAttendeeCapacity": {
+      "description": "The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). ",
+      "type": "integer"
+    },
     "offers": {
-      "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
+      "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
       "oneOf": [
-        {
-          "anyOf": [
-            { "$ref": "http://schema.org/Demand" },
-            { "$ref": "http://schema.org/Offer" }
-          ]
-        },
+        { "anyOf": [{ "$ref": "schema:Demand" }, { "$ref": "schema:Offer" }] },
         {
           "type": "array",
           "items": {
-            "anyOf": [
-              { "$ref": "http://schema.org/Demand" },
-              { "$ref": "http://schema.org/Offer" }
-            ]
+            "anyOf": [{ "$ref": "schema:Demand" }, { "$ref": "schema:Offer" }]
           }
         }
       ]
@@ -195,16 +198,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
@@ -215,16 +218,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
@@ -232,10 +235,7 @@
     },
     "performers": {
       "description": "The main performer or performers of the event—for example, a presenter, musician, or actor.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Organization" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:Organization" }, { "$ref": "schema:Person" }]
     },
     "previousStartDate": {
       "description": "Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.",
@@ -246,7 +246,7 @@
     },
     "recordedIn": {
       "description": "The CreativeWork that captured all or part of this Event.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     },
     "remainingAttendeeCapacity": {
       "description": "The number of attendee places for an event that remain unallocated.",
@@ -255,8 +255,8 @@
     "review": {
       "description": "A review of the item.",
       "oneOf": [
-        { "$ref": "http://schema.org/Review" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
+        { "$ref": "schema:Review" },
+        { "type": "array", "items": { "$ref": "schema:Review" } }
       ]
     },
     "sponsor": {
@@ -264,23 +264,23 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
       ]
     },
     "startDate": {
-      "description": "The start date and time of the item (in ISO 8601 date format).",
+      "description": "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
       "anyOf": [
         { "type": "string", "format": "date" },
         { "type": "string", "format": "date-time" }
@@ -289,22 +289,22 @@
     "subEvent": {
       "description": "An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.",
       "oneOf": [
-        { "$ref": "http://schema.org/Event" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
+        { "$ref": "schema:Event" },
+        { "type": "array", "items": { "$ref": "schema:Event" } }
       ]
     },
     "subEvents": {
       "description": "Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.",
       "oneOf": [
-        { "$ref": "http://schema.org/Event" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
+        { "$ref": "schema:Event" },
+        { "type": "array", "items": { "$ref": "schema:Event" } }
       ]
     },
     "superEvent": {
       "description": "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.",
       "oneOf": [
-        { "$ref": "http://schema.org/Event" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
+        { "$ref": "schema:Event" },
+        { "type": "array", "items": { "$ref": "schema:Event" } }
       ]
     },
     "translator": {
@@ -312,16 +312,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
@@ -334,21 +334,15 @@
     "workFeatured": {
       "description": "A work featured in some event, e.g. exhibited in an ExhibitionEvent.\n       Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).",
       "oneOf": [
-        { "$ref": "http://schema.org/CreativeWork" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/CreativeWork" }
-        }
+        { "$ref": "schema:CreativeWork" },
+        { "type": "array", "items": { "$ref": "schema:CreativeWork" } }
       ]
     },
     "workPerformed": {
       "description": "A work performed in some event, for example a play performed in a TheaterEvent.",
       "oneOf": [
-        { "$ref": "http://schema.org/CreativeWork" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/CreativeWork" }
-        }
+        { "$ref": "schema:CreativeWork" },
+        { "type": "array", "items": { "$ref": "schema:CreativeWork" } }
       ]
     }
   }

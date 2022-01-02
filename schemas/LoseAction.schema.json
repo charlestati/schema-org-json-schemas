@@ -1,21 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/LoseAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:LoseAction",
   "title": "LoseAction",
   "description": "The act of being defeated in a competitive activity.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.",
-      "$ref": "http://schema.org/AchieveAction"
+      "$ref": "schema:AchieveAction"
     }
   ],
   "properties": {
     "winner": {
       "description": "A sub property of participant. The winner of the action.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     }
   }

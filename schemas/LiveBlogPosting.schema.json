@@ -1,12 +1,10 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/LiveBlogPosting",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:LiveBlogPosting",
   "title": "LiveBlogPosting",
-  "description": "A blog post intended to provide a rolling textual coverage of an ongoing event through continuous updates.",
+  "description": "A [[LiveBlogPosting]] is a [[BlogPosting]] intended to provide a rolling textual coverage of an ongoing event through continuous updates.",
   "type": "object",
-  "allOf": [
-    { "description": "A blog post.", "$ref": "http://schema.org/BlogPosting" }
-  ],
+  "allOf": [{ "description": "A blog post.", "$ref": "schema:BlogPosting" }],
   "properties": {
     "coverageEndTime": {
       "description": "The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.",
@@ -21,11 +19,8 @@
     "liveBlogUpdate": {
       "description": "An update to the LiveBlog.",
       "oneOf": [
-        { "$ref": "http://schema.org/BlogPosting" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/BlogPosting" }
-        }
+        { "$ref": "schema:BlogPosting" },
+        { "type": "array", "items": { "$ref": "schema:BlogPosting" } }
       ]
     }
   }

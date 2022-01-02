@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/PaintAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PaintAction",
   "title": "PaintAction",
   "description": "The act of producing a painting, typically with paint and canvas as instruments.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",
-      "$ref": "http://schema.org/CreateAction"
+      "$ref": "schema:CreateAction"
     }
   ]
 }

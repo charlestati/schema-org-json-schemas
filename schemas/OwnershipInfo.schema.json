@@ -1,22 +1,19 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/OwnershipInfo",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:OwnershipInfo",
   "title": "OwnershipInfo",
   "description": "A structured value providing information about when a certain organization or person owned a certain product.",
   "type": "object",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "http://schema.org/StructuredValue"
+      "$ref": "schema:StructuredValue"
     }
   ],
   "properties": {
     "acquiredFrom": {
       "description": "The organization or person from which the product was acquired.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Organization" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:Organization" }, { "$ref": "schema:Person" }]
     },
     "ownedFrom": {
       "description": "The date and time of obtaining the product.",
@@ -30,10 +27,7 @@
     },
     "typeOfGood": {
       "description": "The product that this structured value is referring to.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Product" },
-        { "$ref": "http://schema.org/Service" }
-      ]
+      "anyOf": [{ "$ref": "schema:Product" }, { "$ref": "schema:Service" }]
     }
   }
 }

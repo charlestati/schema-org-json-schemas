@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Property",
+  "title": "Property",
+  "description": "A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "schema:Intangible"
+    }
+  ],
+  "properties": {
+    "domainIncludes": {
+      "description": "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
+      "oneOf": [
+        { "$ref": "schema:Class" },
+        { "type": "array", "items": { "$ref": "schema:Class" } }
+      ]
+    },
+    "inverseOf": {
+      "description": "Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.",
+      "oneOf": [
+        { "$ref": "schema:Property" },
+        { "type": "array", "items": { "$ref": "schema:Property" } }
+      ]
+    },
+    "rangeIncludes": {
+      "description": "Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.",
+      "oneOf": [
+        { "$ref": "schema:Class" },
+        { "type": "array", "items": { "$ref": "schema:Class" } }
+      ]
+    },
+    "supersededBy": {
+      "description": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "schema:Class" },
+            { "$ref": "schema:Enumeration" },
+            { "$ref": "schema:Property" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:Class" },
+              { "$ref": "schema:Enumeration" },
+              { "$ref": "schema:Property" }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

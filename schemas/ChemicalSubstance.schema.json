@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ChemicalSubstance",
+  "title": "ChemicalSubstance",
+  "description": "A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: [ChEBI:59999](https://www.ebi.ac.uk/chebi/searchId.do?chebiId=59999)).",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.",
+      "$ref": "schema:BioChemEntity"
+    }
+  ],
+  "properties": {
+    "chemicalComposition": {
+      "description": "The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.",
+      "type": "string"
+    },
+    "chemicalRole": {
+      "description": "A role played by the BioChemEntity within a chemical context.",
+      "oneOf": [
+        { "$ref": "schema:DefinedTerm" },
+        { "type": "array", "items": { "$ref": "schema:DefinedTerm" } }
+      ]
+    },
+    "potentialUse": {
+      "description": "Intended use of the BioChemEntity by humans.",
+      "oneOf": [
+        { "$ref": "schema:DefinedTerm" },
+        { "type": "array", "items": { "$ref": "schema:DefinedTerm" } }
+      ]
+    }
+  }
+}

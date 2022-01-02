@@ -1,40 +1,45 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Episode",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Episode",
   "title": "Episode",
   "description": "A media episode (e.g. TV, radio, video game) which can be part of a series or season.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     }
   ],
   "properties": {
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "actors": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-      "$ref": "http://schema.org/Person"
+      "$ref": "schema:Person"
     },
     "directors": {
       "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
+    },
+    "duration": {
+      "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
+      "type": "string",
+      "$comment": "https://schema.org/Duration"
     },
     "episodeNumber": {
       "description": "Position of the episode within an ordered group of episodes.",
@@ -42,26 +47,23 @@
     },
     "musicBy": {
       "description": "The composer of the soundtrack.",
-      "anyOf": [
-        { "$ref": "http://schema.org/MusicGroup" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:MusicGroup" }, { "$ref": "schema:Person" }]
     },
     "partOfSeason": {
       "description": "The season to which this episode belongs.",
-      "$ref": "http://schema.org/CreativeWorkSeason"
+      "$ref": "schema:CreativeWorkSeason"
     },
     "partOfSeries": {
       "description": "The series to which this episode or season belongs.",
-      "$ref": "http://schema.org/CreativeWorkSeries"
+      "$ref": "schema:CreativeWorkSeries"
     },
     "productionCompany": {
       "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
-      "$ref": "http://schema.org/Organization"
+      "$ref": "schema:Organization"
     },
     "trailer": {
       "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
-      "$ref": "http://schema.org/VideoObject"
+      "$ref": "schema:VideoObject"
     }
   }
 }

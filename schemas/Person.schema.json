@@ -1,14 +1,11 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Person",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Person",
   "title": "Person",
   "description": "A person (alive, dead, undead, or fictional).",
   "type": "object",
   "allOf": [
-    {
-      "description": "The most generic type of item.",
-      "$ref": "http://schema.org/Thing"
-    }
+    { "description": "The most generic type of item.", "$ref": "schema:Thing" }
   ],
   "properties": {
     "additionalName": {
@@ -20,19 +17,13 @@
     },
     "address": {
       "description": "Physical address of the item.",
-      "anyOf": [
-        { "type": "string" },
-        { "$ref": "http://schema.org/PostalAddress" }
-      ]
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:PostalAddress" }]
     },
     "affiliation": {
       "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
       "oneOf": [
-        { "$ref": "http://schema.org/Organization" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/Organization" }
-        }
+        { "$ref": "schema:Organization" },
+        { "type": "array", "items": { "$ref": "schema:Organization" } }
       ]
     },
     "alumniOf": {
@@ -40,16 +31,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/EducationalOrganization" },
-            { "$ref": "http://schema.org/Organization" }
+            { "$ref": "schema:EducationalOrganization" },
+            { "$ref": "schema:Organization" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/EducationalOrganization" },
-              { "$ref": "http://schema.org/Organization" }
+              { "$ref": "schema:EducationalOrganization" },
+              { "$ref": "schema:Organization" }
             ]
           }
         }
@@ -76,20 +67,24 @@
     },
     "birthPlace": {
       "description": "The place where the person was born.",
-      "$ref": "http://schema.org/Place"
+      "$ref": "schema:Place"
     },
     "brand": {
       "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Brand" },
-        { "$ref": "http://schema.org/Organization" }
+      "anyOf": [{ "$ref": "schema:Brand" }, { "$ref": "schema:Organization" }]
+    },
+    "callSign": {
+      "description": "A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
       ]
     },
     "children": {
       "description": "A child of the person.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "colleague": {
@@ -98,7 +93,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Person" }
           ]
         },
         {
@@ -106,7 +101,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Person" }
             ]
           }
         }
@@ -115,28 +110,22 @@
     "colleagues": {
       "description": "A colleague of the person.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "contactPoint": {
       "description": "A contact point for a person or organization.",
       "oneOf": [
-        { "$ref": "http://schema.org/ContactPoint" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/ContactPoint" }
-        }
+        { "$ref": "schema:ContactPoint" },
+        { "type": "array", "items": { "$ref": "schema:ContactPoint" } }
       ]
     },
     "contactPoints": {
       "description": "A contact point for a person or organization.",
       "oneOf": [
-        { "$ref": "http://schema.org/ContactPoint" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/ContactPoint" }
-        }
+        { "$ref": "schema:ContactPoint" },
+        { "type": "array", "items": { "$ref": "schema:ContactPoint" } }
       ]
     },
     "deathDate": {
@@ -146,7 +135,7 @@
     },
     "deathPlace": {
       "description": "The place where the person died.",
-      "$ref": "http://schema.org/Place"
+      "$ref": "schema:Place"
     },
     "duns": {
       "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
@@ -160,15 +149,15 @@
       ]
     },
     "familyName": {
-      "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
+      "description": "Family name. In the U.S., the last name of a Person.",
       "type": "string"
     },
     "faxNumber": { "description": "The fax number.", "type": "string" },
     "follows": {
       "description": "The most generic uni-directional social relation.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "funder": {
@@ -176,58 +165,69 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
       ]
     },
+    "gender": {
+      "description": "Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of \"Mixed\".",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:GenderType" }]
+    },
     "givenName": {
-      "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
+      "description": "Given name. In the U.S., the first name of a Person.",
       "oneOf": [
         { "type": "string" },
         { "type": "array", "items": { "type": "string" } }
       ]
     },
     "globalLocationNumber": {
-      "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "description": "The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
       "type": "string"
+    },
+    "hasCredential": {
+      "description": "A credential awarded to the Person or Organization.",
+      "oneOf": [
+        { "$ref": "schema:EducationalOccupationalCredential" },
+        {
+          "type": "array",
+          "items": { "$ref": "schema:EducationalOccupationalCredential" }
+        }
+      ]
     },
     "hasOccupation": {
       "description": "The Person's occupation. For past professions, use Role for expressing dates.",
-      "$ref": "http://schema.org/Occupation"
+      "$ref": "schema:Occupation"
     },
     "hasOfferCatalog": {
       "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
       "oneOf": [
-        { "$ref": "http://schema.org/OfferCatalog" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/OfferCatalog" }
-        }
+        { "$ref": "schema:OfferCatalog" },
+        { "type": "array", "items": { "$ref": "schema:OfferCatalog" } }
       ]
     },
     "hasPOS": {
       "description": "Points-of-Sales operated by the organization or person.",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        { "$ref": "schema:Place" },
+        { "type": "array", "items": { "$ref": "schema:Place" } }
       ]
     },
     "height": {
       "description": "The height of the item.",
       "anyOf": [
         { "type": "string", "$comment": "https://schema.org/Distance" },
-        { "$ref": "http://schema.org/QuantitativeValue" }
+        { "$ref": "schema:QuantitativeValue" }
       ]
     },
     "homeLocation": {
@@ -235,16 +235,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/ContactPoint" },
-            { "$ref": "http://schema.org/Place" }
+            { "$ref": "schema:ContactPoint" },
+            { "$ref": "schema:Place" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/ContactPoint" },
-              { "$ref": "http://schema.org/Place" }
+              { "$ref": "schema:ContactPoint" },
+              { "$ref": "schema:Place" }
             ]
           }
         }
@@ -258,7 +258,7 @@
       ]
     },
     "honorificSuffix": {
-      "description": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.",
+      "description": "An honorific suffix following a Person's name such as M.D. /PhD/MSCSW.",
       "oneOf": [
         { "type": "string" },
         { "type": "array", "items": { "type": "string" } }
@@ -266,21 +266,59 @@
     },
     "interactionStatistic": {
       "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
-      "$ref": "http://schema.org/InteractionCounter"
+      "$ref": "schema:InteractionCounter"
     },
     "isicV4": {
       "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
       "type": "string"
     },
+    "jobTitle": {
+      "description": "The job title of the person (for example, Financial Manager).",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:DefinedTerm" }]
+    },
     "knows": {
       "description": "The most generic bi-directional social/work relation.",
-      "$ref": "http://schema.org/Person"
+      "$ref": "schema:Person"
+    },
+    "knowsAbout": {
+      "description": "Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "schema:Thing" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "schema:Thing" }
+            ]
+          }
+        }
+      ]
+    },
+    "knowsLanguage": {
+      "description": "Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).",
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }]
+          }
+        }
+      ]
     },
     "makesOffer": {
       "description": "A pointer to products or services offered by the organization or person.",
       "oneOf": [
-        { "$ref": "http://schema.org/Offer" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Offer" } }
+        { "$ref": "schema:Offer" },
+        { "type": "array", "items": { "$ref": "schema:Offer" } }
       ]
     },
     "memberOf": {
@@ -288,16 +326,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/ProgramMembership" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:ProgramMembership" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/ProgramMembership" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:ProgramMembership" }
             ]
           }
         }
@@ -310,15 +348,15 @@
     "nationality": {
       "description": "Nationality of the person.",
       "oneOf": [
-        { "$ref": "http://schema.org/Country" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Country" } }
+        { "$ref": "schema:Country" },
+        { "type": "array", "items": { "$ref": "schema:Country" } }
       ]
     },
     "netWorth": {
       "description": "The total financial value of the person as calculated by subtracting assets from liabilities.",
       "anyOf": [
-        { "$ref": "http://schema.org/MonetaryAmount" },
-        { "$ref": "http://schema.org/PriceSpecification" }
+        { "$ref": "schema:MonetaryAmount" },
+        { "$ref": "schema:PriceSpecification" }
       ]
     },
     "owns": {
@@ -326,16 +364,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/OwnershipInfo" },
-            { "$ref": "http://schema.org/Product" }
+            { "$ref": "schema:OwnershipInfo" },
+            { "$ref": "schema:Product" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/OwnershipInfo" },
-              { "$ref": "http://schema.org/Product" }
+              { "$ref": "schema:OwnershipInfo" },
+              { "$ref": "schema:Product" }
             ]
           }
         }
@@ -344,54 +382,54 @@
     "parent": {
       "description": "A parent of this person.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "parents": {
       "description": "A parents of the person.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "performerIn": {
       "description": "Event that this person is a performer or participant in.",
       "oneOf": [
-        { "$ref": "http://schema.org/Event" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
+        { "$ref": "schema:Event" },
+        { "type": "array", "items": { "$ref": "schema:Event" } }
       ]
     },
     "publishingPrinciples": {
-      "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.\n\nWhile such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
+      "description": "The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].\n\nWhile such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.\n",
       "anyOf": [
         { "type": "string", "format": "uri" },
-        { "$ref": "http://schema.org/CreativeWork" }
+        { "$ref": "schema:CreativeWork" }
       ]
     },
     "relatedTo": {
       "description": "The most generic familial relation.",
-      "$ref": "http://schema.org/Person"
+      "$ref": "schema:Person"
     },
     "seeks": {
       "description": "A pointer to products or services sought by the organization or person (demand).",
       "oneOf": [
-        { "$ref": "http://schema.org/Demand" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Demand" } }
+        { "$ref": "schema:Demand" },
+        { "type": "array", "items": { "$ref": "schema:Demand" } }
       ]
     },
     "sibling": {
       "description": "A sibling of the person.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "siblings": {
       "description": "A sibling of the person.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "sponsor": {
@@ -399,16 +437,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
@@ -416,7 +454,7 @@
     },
     "spouse": {
       "description": "The person's spouse.",
-      "$ref": "http://schema.org/Person"
+      "$ref": "schema:Person"
     },
     "taxID": {
       "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
@@ -429,23 +467,23 @@
     },
     "weight": {
       "description": "The weight of the product or person.",
-      "$ref": "http://schema.org/QuantitativeValue"
+      "$ref": "schema:QuantitativeValue"
     },
     "workLocation": {
       "description": "A contact location for a person's place of work.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/ContactPoint" },
-            { "$ref": "http://schema.org/Place" }
+            { "$ref": "schema:ContactPoint" },
+            { "$ref": "schema:Place" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/ContactPoint" },
-              { "$ref": "http://schema.org/Place" }
+              { "$ref": "schema:ContactPoint" },
+              { "$ref": "schema:Place" }
             ]
           }
         }
@@ -454,11 +492,8 @@
     "worksFor": {
       "description": "Organizations that the person works for.",
       "oneOf": [
-        { "$ref": "http://schema.org/Organization" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/Organization" }
-        }
+        { "$ref": "schema:Organization" },
+        { "type": "array", "items": { "$ref": "schema:Organization" } }
       ]
     }
   }

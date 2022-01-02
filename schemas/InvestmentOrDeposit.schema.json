@@ -1,22 +1,19 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/InvestmentOrDeposit",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:InvestmentOrDeposit",
   "title": "InvestmentOrDeposit",
   "description": "A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.",
   "type": "object",
   "allOf": [
     {
       "description": "A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.",
-      "$ref": "http://schema.org/FinancialProduct"
+      "$ref": "schema:FinancialProduct"
     }
   ],
   "properties": {
     "amount": {
       "description": "The amount of money.",
-      "anyOf": [
-        { "type": "number" },
-        { "$ref": "http://schema.org/MonetaryAmount" }
-      ]
+      "anyOf": [{ "type": "number" }, { "$ref": "schema:MonetaryAmount" }]
     }
   }
 }

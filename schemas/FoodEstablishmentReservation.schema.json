@@ -1,18 +1,18 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/FoodEstablishmentReservation",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:FoodEstablishmentReservation",
   "title": "FoodEstablishmentReservation",
-  "description": "A reservation to dine at a food-related business.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.",
+  "description": "A reservation to dine at a food-related business.\\n\\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.",
   "type": "object",
   "allOf": [
     {
-      "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use Offer.",
-      "$ref": "http://schema.org/Reservation"
+      "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \\n\\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].",
+      "$ref": "schema:Reservation"
     }
   ],
   "properties": {
     "endTime": {
-      "description": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+      "description": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
       "anyOf": [
         { "type": "string", "format": "date-time" },
         { "type": "string", "format": "time" }
@@ -24,7 +24,7 @@
         {
           "anyOf": [
             { "type": "integer" },
-            { "$ref": "http://schema.org/QuantitativeValue" }
+            { "$ref": "schema:QuantitativeValue" }
           ]
         },
         {
@@ -32,14 +32,14 @@
           "items": {
             "anyOf": [
               { "type": "integer" },
-              { "$ref": "http://schema.org/QuantitativeValue" }
+              { "$ref": "schema:QuantitativeValue" }
             ]
           }
         }
       ]
     },
     "startTime": {
-      "description": "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+      "description": "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
       "anyOf": [
         { "type": "string", "format": "date-time" },
         { "type": "string", "format": "time" }

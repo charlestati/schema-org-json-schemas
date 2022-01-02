@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Class",
+  "title": "Class",
+  "description": "A class, also often called a 'Type'; equivalent to rdfs:Class.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "schema:Intangible"
+    }
+  ],
+  "properties": {
+    "supersededBy": {
+      "description": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "schema:Class" },
+            { "$ref": "schema:Enumeration" },
+            { "$ref": "schema:Property" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:Class" },
+              { "$ref": "schema:Enumeration" },
+              { "$ref": "schema:Property" }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Recommendation",
+  "title": "Recommendation",
+  "description": "[[Recommendation]] is a type of [[Review]] that suggests or proposes something as the best option or best course of action. Recommendations may be for products or services, or other concrete things, as in the case of a ranked list or product guide. A [[Guide]] may list multiple recommendations for different categories. For example, in a [[Guide]] about which TVs to buy, the author may have several [[Recommendation]]s.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A review of an item - for example, of a restaurant, movie, or store.",
+      "$ref": "schema:Review"
+    }
+  ],
+  "properties": {
+    "category": {
+      "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "schema:PhysicalActivityCategory" },
+            { "$ref": "schema:Thing" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "schema:PhysicalActivityCategory" },
+              { "$ref": "schema:Thing" }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

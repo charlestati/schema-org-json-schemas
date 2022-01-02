@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/State",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:State",
   "title": "State",
   "description": "A state or province of a country.",
   "type": "object",
   "allOf": [
     {
       "description": "A geographical region, typically under the jurisdiction of a particular government.",
-      "$ref": "http://schema.org/AdministrativeArea"
+      "$ref": "schema:AdministrativeArea"
     }
   ]
 }

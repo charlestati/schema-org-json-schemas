@@ -1,21 +1,28 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ExerciseAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ExerciseAction",
   "title": "ExerciseAction",
   "description": "The act of participating in exertive activity for the purposes of improving health and fitness.",
   "type": "object",
   "allOf": [
     {
-      "description": "The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.\n\nRelated actions:\n\n\nListenAction: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\nWatchAction: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.\n\n",
-      "$ref": "http://schema.org/PlayAction"
+      "description": "The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.\\n\\nRelated actions:\\n\\n* [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\\n* [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.",
+      "$ref": "schema:PlayAction"
     }
   ],
   "properties": {
     "course": {
       "description": "A sub property of location. The course where this action was taken.",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        { "$ref": "schema:Place" },
+        { "type": "array", "items": { "$ref": "schema:Place" } }
+      ]
+    },
+    "diet": {
+      "description": "A sub property of instrument. The diet used in this action.",
+      "oneOf": [
+        { "$ref": "schema:Diet" },
+        { "type": "array", "items": { "$ref": "schema:Diet" } }
       ]
     },
     "distance": {
@@ -34,56 +41,74 @@
     "exerciseCourse": {
       "description": "A sub property of location. The course where this action was taken.",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        { "$ref": "schema:Place" },
+        { "type": "array", "items": { "$ref": "schema:Place" } }
+      ]
+    },
+    "exercisePlan": {
+      "description": "A sub property of instrument. The exercise plan used on this action.",
+      "oneOf": [
+        { "$ref": "schema:ExercisePlan" },
+        { "type": "array", "items": { "$ref": "schema:ExercisePlan" } }
+      ]
+    },
+    "exerciseRelatedDiet": {
+      "description": "A sub property of instrument. The diet used in this action.",
+      "oneOf": [
+        { "$ref": "schema:Diet" },
+        { "type": "array", "items": { "$ref": "schema:Diet" } }
+      ]
+    },
+    "exerciseType": {
+      "description": "Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
       ]
     },
     "fromLocation": {
       "description": "A sub property of location. The original location of the object or the agent before the action.",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        { "$ref": "schema:Place" },
+        { "type": "array", "items": { "$ref": "schema:Place" } }
       ]
     },
     "opponent": {
       "description": "A sub property of participant. The opponent on this action.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "sportsActivityLocation": {
       "description": "A sub property of location. The sports activity location where this action occurred.",
       "oneOf": [
-        { "$ref": "http://schema.org/SportsActivityLocation" },
+        { "$ref": "schema:SportsActivityLocation" },
         {
           "type": "array",
-          "items": { "$ref": "http://schema.org/SportsActivityLocation" }
+          "items": { "$ref": "schema:SportsActivityLocation" }
         }
       ]
     },
     "sportsEvent": {
       "description": "A sub property of location. The sports event where this action occurred.",
       "oneOf": [
-        { "$ref": "http://schema.org/SportsEvent" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/SportsEvent" }
-        }
+        { "$ref": "schema:SportsEvent" },
+        { "type": "array", "items": { "$ref": "schema:SportsEvent" } }
       ]
     },
     "sportsTeam": {
       "description": "A sub property of participant. The sports team that participated on this action.",
       "oneOf": [
-        { "$ref": "http://schema.org/SportsTeam" },
-        { "type": "array", "items": { "$ref": "http://schema.org/SportsTeam" } }
+        { "$ref": "schema:SportsTeam" },
+        { "type": "array", "items": { "$ref": "schema:SportsTeam" } }
       ]
     },
     "toLocation": {
       "description": "A sub property of location. The final location of the object or the agent after the action.",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        { "$ref": "schema:Place" },
+        { "type": "array", "items": { "$ref": "schema:Place" } }
       ]
     }
   }

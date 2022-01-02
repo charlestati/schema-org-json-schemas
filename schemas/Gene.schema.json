@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Gene",
+  "title": "Gene",
+  "description": "A discrete unit of inheritance which affects one or more biological traits (Source: [https://en.wikipedia.org/wiki/Gene](https://en.wikipedia.org/wiki/Gene)). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype).",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.",
+      "$ref": "schema:BioChemEntity"
+    }
+  ],
+  "properties": {
+    "alternativeOf": {
+      "description": "Another gene which is a variation of this one.",
+      "oneOf": [
+        { "$ref": "schema:Gene" },
+        { "type": "array", "items": { "$ref": "schema:Gene" } }
+      ]
+    },
+    "encodesBioChemEntity": {
+      "description": "Another BioChemEntity encoded by this one. ",
+      "oneOf": [
+        { "$ref": "schema:BioChemEntity" },
+        { "type": "array", "items": { "$ref": "schema:BioChemEntity" } }
+      ]
+    },
+    "expressedIn": {
+      "description": "Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "schema:AnatomicalStructure" },
+            { "$ref": "schema:AnatomicalSystem" },
+            { "$ref": "schema:BioChemEntity" },
+            { "$ref": "schema:DefinedTerm" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:AnatomicalStructure" },
+              { "$ref": "schema:AnatomicalSystem" },
+              { "$ref": "schema:BioChemEntity" },
+              { "$ref": "schema:DefinedTerm" }
+            ]
+          }
+        }
+      ]
+    },
+    "hasBioPolymerSequence": {
+      "description": "A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    }
+  }
+}

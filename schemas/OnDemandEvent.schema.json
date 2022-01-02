@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/OnDemandEvent",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:OnDemandEvent",
   "title": "OnDemandEvent",
   "description": "A publication event e.g. catch-up TV or radio podcast, during which a program is available on-demand.",
   "type": "object",
   "allOf": [
     {
       "description": "A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.",
-      "$ref": "http://schema.org/PublicationEvent"
+      "$ref": "schema:PublicationEvent"
     }
   ]
 }

@@ -1,23 +1,23 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/WarrantyPromise",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:WarrantyPromise",
   "title": "WarrantyPromise",
   "description": "A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.",
   "type": "object",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "http://schema.org/StructuredValue"
+      "$ref": "schema:StructuredValue"
     }
   ],
   "properties": {
     "durationOfWarranty": {
       "description": "The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.",
-      "$ref": "http://schema.org/QuantitativeValue"
+      "$ref": "schema:QuantitativeValue"
     },
     "warrantyScope": {
       "description": "The scope of the warranty promise.",
-      "$ref": "http://schema.org/WarrantyScope"
+      "$ref": "schema:WarrantyScope"
     }
   }
 }

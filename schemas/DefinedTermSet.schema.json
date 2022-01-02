@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DefinedTermSet",
+  "title": "DefinedTermSet",
+  "description": "A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "schema:CreativeWork"
+    }
+  ],
+  "properties": {
+    "hasDefinedTerm": {
+      "description": "A Defined Term contained in this term set.",
+      "oneOf": [
+        { "$ref": "schema:DefinedTerm" },
+        { "type": "array", "items": { "$ref": "schema:DefinedTerm" } }
+      ]
+    }
+  }
+}

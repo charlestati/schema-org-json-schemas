@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalProcedure",
+  "title": "MedicalProcedure",
+  "description": "A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic type of entity related to health and the practice of medicine.",
+      "$ref": "schema:MedicalEntity"
+    }
+  ],
+  "properties": {
+    "bodyLocation": {
+      "description": "Location in the body of the anatomical structure.",
+      "type": "string"
+    },
+    "followup": {
+      "description": "Typical or recommended followup care after the procedure is performed.",
+      "type": "string"
+    },
+    "howPerformed": {
+      "description": "How the procedure is performed.",
+      "type": "string"
+    },
+    "preparation": {
+      "description": "Typical preparation that a patient must undergo before having the procedure performed.",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:MedicalEntity" }]
+    },
+    "procedureType": {
+      "description": "The type of procedure, for example Surgical, Noninvasive, or Percutaneous.",
+      "$ref": "schema:MedicalProcedureType"
+    },
+    "status": {
+      "description": "The status of the study (enumerated).",
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "schema:EventStatusType" },
+        { "$ref": "schema:MedicalStudyStatus" }
+      ]
+    }
+  }
+}

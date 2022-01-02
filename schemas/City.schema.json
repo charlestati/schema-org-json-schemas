@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/City",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:City",
   "title": "City",
   "description": "A city or town.",
   "type": "object",
   "allOf": [
     {
       "description": "A geographical region, typically under the jurisdiction of a particular government.",
-      "$ref": "http://schema.org/AdministrativeArea"
+      "$ref": "schema:AdministrativeArea"
     }
   ]
 }

@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ElementarySchool",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ElementarySchool",
   "title": "ElementarySchool",
   "description": "An elementary school.",
   "type": "object",
   "allOf": [
     {
       "description": "An educational organization.",
-      "$ref": "http://schema.org/EducationalOrganization"
+      "$ref": "schema:EducationalOrganization"
     }
   ]
 }

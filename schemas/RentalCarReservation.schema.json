@@ -1,21 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/RentalCarReservation",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:RentalCarReservation",
   "title": "RentalCarReservation",
-  "description": "A reservation for a rental car.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.",
+  "description": "A reservation for a rental car.\\n\\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.",
   "type": "object",
   "allOf": [
     {
-      "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use Offer.",
-      "$ref": "http://schema.org/Reservation"
+      "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \\n\\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].",
+      "$ref": "schema:Reservation"
     }
   ],
   "properties": {
     "dropoffLocation": {
       "description": "Where a rental car can be dropped off.",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        { "$ref": "schema:Place" },
+        { "type": "array", "items": { "$ref": "schema:Place" } }
       ]
     },
     "dropoffTime": {
@@ -31,8 +31,8 @@
     "pickupLocation": {
       "description": "Where a taxi will pick up a passenger or a rental car can be picked up.",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        { "$ref": "schema:Place" },
+        { "type": "array", "items": { "$ref": "schema:Place" } }
       ]
     },
     "pickupTime": {

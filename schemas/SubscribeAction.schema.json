@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/SubscribeAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:SubscribeAction",
   "title": "SubscribeAction",
-  "description": "The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed to.\n\nRelated actions:\n\n\nFollowAction: Unlike FollowAction, SubscribeAction implies that the subscriber acts as a passive agent being constantly/actively pushed for updates.\nRegisterAction: Unlike RegisterAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.\nJoinAction: Unlike JoinAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.\n\n",
+  "description": "The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed to.\\n\\nRelated actions:\\n\\n* [[FollowAction]]: Unlike FollowAction, SubscribeAction implies that the subscriber acts as a passive agent being constantly/actively pushed for updates.\\n* [[RegisterAction]]: Unlike RegisterAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.\\n* [[JoinAction]]: Unlike JoinAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of interacting with another person or organization.",
-      "$ref": "http://schema.org/InteractAction"
+      "$ref": "schema:InteractAction"
     }
   ]
 }

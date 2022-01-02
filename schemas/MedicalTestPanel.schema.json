@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalTestPanel",
+  "title": "MedicalTestPanel",
+  "description": "Any collection of tests commonly ordered together.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any medical test, typically performed for diagnostic purposes.",
+      "$ref": "schema:MedicalTest"
+    }
+  ],
+  "properties": {
+    "subTest": {
+      "description": "A component test of the panel.",
+      "oneOf": [
+        { "$ref": "schema:MedicalTest" },
+        { "type": "array", "items": { "$ref": "schema:MedicalTest" } }
+      ]
+    }
+  }
+}

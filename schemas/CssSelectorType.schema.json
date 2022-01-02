@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:CssSelectorType",
+  "title": "CssSelectorType",
+  "description": "Text representing a CSS selector.",
+  "type": "object",
+  "allOf": [{ "description": "Data type: Text.", "$ref": "schema:Text" }]
+}

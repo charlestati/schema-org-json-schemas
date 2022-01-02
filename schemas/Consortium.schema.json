@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Consortium",
+  "title": "Consortium",
+  "description": "A Consortium is a membership [[Organization]] whose members are typically Organizations.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "An organization such as a school, NGO, corporation, club, etc.",
+      "$ref": "schema:Organization"
+    }
+  ]
+}

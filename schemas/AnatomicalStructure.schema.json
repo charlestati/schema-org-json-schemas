@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:AnatomicalStructure",
+  "title": "AnatomicalStructure",
+  "description": "Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic type of entity related to health and the practice of medicine.",
+      "$ref": "schema:MedicalEntity"
+    }
+  ],
+  "properties": {
+    "associatedPathophysiology": {
+      "description": "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
+      "type": "string"
+    },
+    "bodyLocation": {
+      "description": "Location in the body of the anatomical structure.",
+      "type": "string"
+    },
+    "connectedTo": {
+      "description": "Other anatomical structures to which this structure is connected.",
+      "oneOf": [
+        { "$ref": "schema:AnatomicalStructure" },
+        { "type": "array", "items": { "$ref": "schema:AnatomicalStructure" } }
+      ]
+    },
+    "diagram": {
+      "description": "An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.",
+      "oneOf": [
+        { "$ref": "schema:ImageObject" },
+        { "type": "array", "items": { "$ref": "schema:ImageObject" } }
+      ]
+    },
+    "partOfSystem": {
+      "description": "The anatomical or organ system that this structure is part of.",
+      "$ref": "schema:AnatomicalSystem"
+    },
+    "relatedCondition": {
+      "description": "A medical condition associated with this anatomy.",
+      "oneOf": [
+        { "$ref": "schema:MedicalCondition" },
+        { "type": "array", "items": { "$ref": "schema:MedicalCondition" } }
+      ]
+    },
+    "relatedTherapy": {
+      "description": "A medical therapy related to this anatomy.",
+      "oneOf": [
+        { "$ref": "schema:MedicalTherapy" },
+        { "type": "array", "items": { "$ref": "schema:MedicalTherapy" } }
+      ]
+    },
+    "subStructure": {
+      "description": "Component (sub-)structure(s) that comprise this anatomical structure.",
+      "oneOf": [
+        { "$ref": "schema:AnatomicalStructure" },
+        { "type": "array", "items": { "$ref": "schema:AnatomicalStructure" } }
+      ]
+    }
+  }
+}

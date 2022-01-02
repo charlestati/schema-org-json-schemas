@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Joint",
+  "title": "Joint",
+  "description": "The anatomical location at which two or more bones make contact.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.",
+      "$ref": "schema:AnatomicalStructure"
+    }
+  ],
+  "properties": {
+    "biomechnicalClass": {
+      "description": "The biomechanical properties of the bone.",
+      "type": "string"
+    },
+    "functionalClass": {
+      "description": "The degree of mobility the joint allows.",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:MedicalEntity" }]
+    },
+    "structuralClass": {
+      "description": "The name given to how bone physically connects to each other.",
+      "type": "string"
+    }
+  }
+}

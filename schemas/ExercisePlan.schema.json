@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ExercisePlan",
+  "title": "ExercisePlan",
+  "description": "Fitness-related activity designed for a specific health-related purpose, including defined exercise routines as well as activity prescribed by a clinician.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "$ref": "schema:CreativeWork"
+    },
+    {
+      "description": "Any bodily activity that enhances or maintains physical fitness and overall health and wellness. Includes activity that is part of daily living and routine, structured exercise, and exercise prescribed as part of a medical treatment or recovery plan.",
+      "$ref": "schema:PhysicalActivity"
+    }
+  ],
+  "properties": {
+    "activityDuration": {
+      "description": "Length of time to engage in the activity.",
+      "anyOf": [
+        { "type": "string", "$comment": "https://schema.org/Duration" },
+        { "$ref": "schema:QuantitativeValue" }
+      ]
+    },
+    "activityFrequency": {
+      "description": "How often one should engage in the activity.",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:QuantitativeValue" }]
+    },
+    "additionalVariable": {
+      "description": "Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "exerciseType": {
+      "description": "Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "intensity": {
+      "description": "Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:QuantitativeValue" }]
+    },
+    "repetitions": {
+      "description": "Number of times one should repeat the activity.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "restPeriods": {
+      "description": "How often one should break from the activity.",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:QuantitativeValue" }]
+    },
+    "workload": {
+      "description": "Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.",
+      "anyOf": [
+        { "type": "string", "$comment": "https://schema.org/Energy" },
+        { "$ref": "schema:QuantitativeValue" }
+      ]
+    }
+  }
+}

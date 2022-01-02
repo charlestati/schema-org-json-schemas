@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MerchantReturnEnumeration",
+  "title": "MerchantReturnEnumeration",
+  "description": "Enumerates several kinds of product return policies.",
+  "type": "string",
+  "oneOf": [
+    {
+      "description": "Specifies that there is a finite window for product returns.",
+      "const": "MerchantReturnFiniteReturnWindow"
+    },
+    {
+      "description": "Specifies that product returns are not permitted.",
+      "const": "MerchantReturnNotPermitted"
+    },
+    {
+      "description": "Specifies that there is an unlimited window for product returns.",
+      "const": "MerchantReturnUnlimitedWindow"
+    },
+    {
+      "description": "Specifies that a product return policy is not provided.",
+      "const": "MerchantReturnUnspecified"
+    }
+  ]
+}

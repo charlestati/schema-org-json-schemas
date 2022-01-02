@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/MediaGallery",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MediaGallery",
   "title": "MediaGallery",
   "description": "Web page type: Media gallery page. A mixed-media page that can contains media such as images, videos, and other multimedia.",
   "type": "object",
   "allOf": [
     {
       "description": "Web page type: Collection page.",
-      "$ref": "http://schema.org/CollectionPage"
+      "$ref": "schema:CollectionPage"
     }
   ]
 }

@@ -1,21 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ReplyAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ReplyAction",
   "title": "ReplyAction",
-  "description": "The act of responding to a question/message asked/sent by the object. Related to AskAction\n\nRelated actions:\n\n\nAskAction: Appears generally as an origin of a ReplyAction.\n\n",
+  "description": "The act of responding to a question/message asked/sent by the object. Related to [[AskAction]]\\n\\nRelated actions:\\n\\n* [[AskAction]]: Appears generally as an origin of a ReplyAction.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",
-      "$ref": "http://schema.org/CommunicateAction"
+      "$ref": "schema:CommunicateAction"
     }
   ],
   "properties": {
     "resultComment": {
       "description": "A sub property of result. The Comment created or sent as a result of this action.",
       "oneOf": [
-        { "$ref": "http://schema.org/Comment" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Comment" } }
+        { "$ref": "schema:Comment" },
+        { "type": "array", "items": { "$ref": "schema:Comment" } }
       ]
     }
   }

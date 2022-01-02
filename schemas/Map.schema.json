@@ -1,24 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Map",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Map",
   "title": "Map",
   "description": "A map.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     }
   ],
   "properties": {
     "mapType": {
       "description": "Indicates the kind of Map, from the MapCategoryType Enumeration.",
       "oneOf": [
-        { "$ref": "http://schema.org/MapCategoryType" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/MapCategoryType" }
-        }
+        { "$ref": "schema:MapCategoryType" },
+        { "type": "array", "items": { "$ref": "schema:MapCategoryType" } }
       ]
     }
   }

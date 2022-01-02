@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:OfferShippingDetails",
+  "title": "OfferShippingDetails",
+  "description": "OfferShippingDetails represents information about shipping destinations.\n\nMultiple of these entities can be used to represent different shipping rates for different destinations:\n\nOne entity for Alaska/Hawaii. A different one for continental US.A different one for all France.\n\nMultiple of these entities can be used to represent different shipping costs and delivery times.\n\nTwo entities that are identical but differ in rate and time:\n\ne.g. Cheaper and slower: $5 in 5-7days\nor Fast and expensive: $15 in 1-2 days.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "$ref": "schema:StructuredValue"
+    }
+  ],
+  "properties": {
+    "deliveryTime": {
+      "description": "The total delay between the receipt of the order and the goods reaching the final customer.",
+      "$ref": "schema:ShippingDeliveryTime"
+    },
+    "doesNotShip": {
+      "description": "Indicates when shipping to a particular [[shippingDestination]] is not available.",
+      "type": "boolean"
+    },
+    "shippingDestination": {
+      "description": "indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.",
+      "oneOf": [
+        { "$ref": "schema:DefinedRegion" },
+        { "type": "array", "items": { "$ref": "schema:DefinedRegion" } }
+      ]
+    },
+    "shippingLabel": {
+      "description": "Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "shippingRate": {
+      "description": "The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.",
+      "$ref": "schema:MonetaryAmount"
+    },
+    "shippingSettingsLink": {
+      "description": "Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.",
+      "oneOf": [
+        { "type": "string", "format": "uri" },
+        { "type": "array", "items": { "type": "string", "format": "uri" } }
+      ]
+    },
+    "transitTimeLabel": {
+      "description": "Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    }
+  }
+}

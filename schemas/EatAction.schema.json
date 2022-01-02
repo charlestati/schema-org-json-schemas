@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/EatAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:EatAction",
   "title": "EatAction",
   "description": "The act of swallowing solid objects.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of ingesting information/resources/food.",
-      "$ref": "http://schema.org/ConsumeAction"
+      "$ref": "schema:ConsumeAction"
     }
   ]
 }

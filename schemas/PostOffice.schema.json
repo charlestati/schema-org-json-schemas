@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/PostOffice",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PostOffice",
   "title": "PostOffice",
   "description": "A post office.",
   "type": "object",
   "allOf": [
     {
       "description": "A government office—for example, an IRS or DMV office.",
-      "$ref": "http://schema.org/GovernmentOffice"
+      "$ref": "schema:GovernmentOffice"
     }
   ]
 }

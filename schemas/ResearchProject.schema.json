@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ResearchProject",
+  "title": "ResearchProject",
+  "description": "A Research project.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "An enterprise (potentially individual but typically collaborative), planned to achieve a particular aim.\nUse properties from [[Organization]], [[subOrganization]]/[[parentOrganization]] to indicate project sub-structures. \n   ",
+      "$ref": "schema:Project"
+    }
+  ]
+}

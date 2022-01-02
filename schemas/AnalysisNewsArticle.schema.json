@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:AnalysisNewsArticle",
+  "title": "AnalysisNewsArticle",
+  "description": "An AnalysisNewsArticle is a [[NewsArticle]] that, while based on factual reporting, incorporates the expertise of the author/producer, offering interpretations and conclusions.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A NewsArticle is an article whose content reports news, or provides background context and supporting materials for understanding the news.\n\nA more detailed overview of [schema.org News markup](/docs/news.html) is also available.\n",
+      "$ref": "schema:NewsArticle"
+    }
+  ]
+}

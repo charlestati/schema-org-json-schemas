@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/DriveWheelConfigurationValue",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DriveWheelConfigurationValue",
   "title": "DriveWheelConfigurationValue",
   "description": "A value indicating which roadwheels will receive torque.",
   "type": "object",
   "allOf": [
     {
       "description": "A predefined value for a product characteristic, e.g. the power cord plug type 'US' or the garment sizes 'S', 'M', 'L', and 'XL'.",
-      "$ref": "http://schema.org/QualitativeValue"
+      "$ref": "schema:QualitativeValue"
     }
   ]
 }

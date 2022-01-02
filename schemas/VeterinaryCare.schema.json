@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:VeterinaryCare",
+  "title": "VeterinaryCare",
+  "description": "A vet's office.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
+      "$ref": "schema:MedicalOrganization"
+    }
+  ]
+}

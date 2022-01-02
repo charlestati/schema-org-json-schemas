@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Researcher",
+  "title": "Researcher",
+  "description": "Researchers.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Intended audience for an item, i.e. the group for whom the item was created.",
+      "$ref": "schema:Audience"
+    }
+  ]
+}

@@ -1,13 +1,17 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Pharmacy",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Pharmacy",
   "title": "Pharmacy",
   "description": "A pharmacy or drugstore.",
   "type": "object",
   "allOf": [
     {
+      "description": "A particular physical or virtual business of an organization for medical purposes. Examples of MedicalBusiness include differents business run by health professionals.",
+      "$ref": "schema:MedicalBusiness"
+    },
+    {
       "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
-      "$ref": "http://schema.org/MedicalOrganization"
+      "$ref": "schema:MedicalOrganization"
     }
   ]
 }

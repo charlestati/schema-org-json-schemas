@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:WearableSizeGroupEnumeration",
+  "title": "WearableSizeGroupEnumeration",
+  "description": "Enumerates common size groups (also known as \"size types\") for wearable products.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Enumerates common size groups for various product categories.",
+      "$ref": "schema:SizeGroupEnumeration"
+    }
+  ]
+}

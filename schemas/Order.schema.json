@@ -1,42 +1,42 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Order",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Order",
   "title": "Order",
   "description": "An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
     "acceptedOffer": {
       "description": "The offer(s) -- e.g., product, quantity and price combinations -- included in the order.",
       "oneOf": [
-        { "$ref": "http://schema.org/Offer" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Offer" } }
+        { "$ref": "schema:Offer" },
+        { "type": "array", "items": { "$ref": "schema:Offer" } }
       ]
     },
     "billingAddress": {
       "description": "The billing address for the order.",
-      "$ref": "http://schema.org/PostalAddress"
+      "$ref": "schema:PostalAddress"
     },
     "broker": {
       "description": "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
@@ -48,10 +48,7 @@
     },
     "customer": {
       "description": "Party placing the order or paying the invoice.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Organization" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:Organization" }, { "$ref": "schema:Person" }]
     },
     "discount": {
       "description": "Any discount applied (to an Order).",
@@ -62,7 +59,7 @@
       "type": "string"
     },
     "discountCurrency": {
-      "description": "The currency of the discount.\n\nUse standard formats: ISO 4217 currency format e.g. \"USD\"; Ticker symbol for cryptocurrencies e.g. \"BTC\"; well known names for Local Exchange Tradings Systems (LETS) and other currency types e.g. \"Ithaca HOUR\".",
+      "description": "The currency of the discount.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
       "type": "string"
     },
     "isGift": {
@@ -71,10 +68,7 @@
     },
     "merchant": {
       "description": "'merchant' is an out-dated term for 'seller'.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Organization" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:Organization" }, { "$ref": "schema:Person" }]
     },
     "orderDate": {
       "description": "Date order was placed.",
@@ -85,7 +79,7 @@
     },
     "orderDelivery": {
       "description": "The delivery of the parcel related to this order or order item.",
-      "$ref": "http://schema.org/ParcelDelivery"
+      "$ref": "schema:ParcelDelivery"
     },
     "orderNumber": {
       "description": "The identifier of the transaction.",
@@ -93,25 +87,25 @@
     },
     "orderStatus": {
       "description": "The current status of the order.",
-      "$ref": "http://schema.org/OrderStatus"
+      "$ref": "schema:OrderStatus"
     },
     "orderedItem": {
       "description": "The item ordered.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/OrderItem" },
-            { "$ref": "http://schema.org/Product" },
-            { "$ref": "http://schema.org/Service" }
+            { "$ref": "schema:OrderItem" },
+            { "$ref": "schema:Product" },
+            { "$ref": "schema:Service" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/OrderItem" },
-              { "$ref": "http://schema.org/Product" },
-              { "$ref": "http://schema.org/Service" }
+              { "$ref": "schema:OrderItem" },
+              { "$ref": "schema:Product" },
+              { "$ref": "schema:Service" }
             ]
           }
         }
@@ -119,7 +113,7 @@
     },
     "partOfInvoice": {
       "description": "The order is being paid as part of the referenced Invoice.",
-      "$ref": "http://schema.org/Invoice"
+      "$ref": "schema:Invoice"
     },
     "paymentDue": {
       "description": "The date that payment is due.",
@@ -135,7 +129,7 @@
     },
     "paymentMethod": {
       "description": "The name of the credit card or other method of payment for the order.",
-      "$ref": "http://schema.org/PaymentMethod"
+      "$ref": "schema:PaymentMethod"
     },
     "paymentMethodId": {
       "description": "An identifier for the method of payment used (e.g. the last 4 digits of the credit card).",
@@ -151,10 +145,7 @@
     },
     "seller": {
       "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Organization" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:Organization" }, { "$ref": "schema:Person" }]
     }
   }
 }

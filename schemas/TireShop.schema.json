@@ -1,10 +1,8 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/TireShop",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:TireShop",
   "title": "TireShop",
   "description": "A tire shop.",
   "type": "object",
-  "allOf": [
-    { "description": "A retail good store.", "$ref": "http://schema.org/Store" }
-  ]
+  "allOf": [{ "description": "A retail good store.", "$ref": "schema:Store" }]
 }

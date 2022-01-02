@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DefinedRegion",
+  "title": "DefinedRegion",
+  "description": "A DefinedRegion is a geographic area defined by potentially arbitrary (rather than political, administrative or natural geographical) criteria. Properties are provided for defining a region by reference to sets of postal codes.\n\nExamples: a delivery destination when shopping. Region where regional pricing is configured.\n\nRequirement 1:\nCountry: US\nStates: \"NY\", \"CA\"\n\nRequirement 2:\nCountry: US\nPostalCode Set: { [94000-94585], [97000, 97999], [13000, 13599]}\n{ [12345, 12345], [78945, 78945], }\nRegion = state, canton, prefecture, autonomous community...\n",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "$ref": "schema:StructuredValue"
+    }
+  ],
+  "properties": {
+    "addressCountry": {
+      "description": "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:Country" }]
+    },
+    "addressRegion": {
+      "description": "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) ",
+      "type": "string"
+    },
+    "postalCode": {
+      "description": "The postal code. For example, 94043.",
+      "type": "string"
+    },
+    "postalCodePrefix": {
+      "description": "A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "postalCodeRange": {
+      "description": "A defined range of postal codes.",
+      "oneOf": [
+        { "$ref": "schema:PostalCodeRangeSpecification" },
+        {
+          "type": "array",
+          "items": { "$ref": "schema:PostalCodeRangeSpecification" }
+        }
+      ]
+    }
+  }
+}

@@ -1,25 +1,25 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/PlayAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PlayAction",
   "title": "PlayAction",
-  "description": "The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.\n\nRelated actions:\n\n\nListenAction: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\nWatchAction: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.\n\n",
+  "description": "The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.\\n\\nRelated actions:\\n\\n* [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\\n* [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.",
   "type": "object",
   "allOf": [
     {
-      "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\n\nSee also blog post and Actions overview document.",
-      "$ref": "http://schema.org/Action"
+      "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\\n\\nSee also [blog post](http://blog.schema.org/2014/04/announcing-schemaorg-actions.html) and [Actions overview document](https://schema.org/docs/actions.html).",
+      "$ref": "schema:Action"
     }
   ],
   "properties": {
     "audience": {
       "description": "An intended audience, i.e. a group for whom something was created.",
-      "$ref": "http://schema.org/Audience"
+      "$ref": "schema:Audience"
     },
     "event": {
       "description": "Upcoming or past event associated with this place, organization, or action.",
       "oneOf": [
-        { "$ref": "http://schema.org/Event" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
+        { "$ref": "schema:Event" },
+        { "type": "array", "items": { "$ref": "schema:Event" } }
       ]
     }
   }

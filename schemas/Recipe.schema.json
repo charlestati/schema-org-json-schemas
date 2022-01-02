@@ -1,18 +1,18 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Recipe",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Recipe",
   "title": "Recipe",
-  "description": "A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via suitableForDiet. The keywords property can also be used to add more detail.",
+  "description": "A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.",
   "type": "object",
   "allOf": [
     {
       "description": "Instructions that explain how to achieve a result by performing a sequence of steps.",
-      "$ref": "http://schema.org/HowTo"
+      "$ref": "schema:HowTo"
     }
   ],
   "properties": {
     "cookTime": {
-      "description": "The time it takes to actually cook the dish, in ISO 8601 duration format.",
+      "description": "The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
       "type": "string",
       "$comment": "https://schema.org/Duration"
     },
@@ -29,7 +29,7 @@
     },
     "nutrition": {
       "description": "Nutrition information about the recipe or menu item.",
-      "$ref": "http://schema.org/NutritionInformation"
+      "$ref": "schema:NutritionInformation"
     },
     "recipeCategory": {
       "description": "The category of the recipe—for example, appetizer, entree, etc.",
@@ -50,25 +50,19 @@
       "description": "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "http://schema.org/CreativeWork" },
-        { "$ref": "http://schema.org/ItemList" }
+        { "$ref": "schema:CreativeWork" },
+        { "$ref": "schema:ItemList" }
       ]
     },
     "recipeYield": {
       "description": "The quantity produced by the recipe (for example, number of people served, number of servings, etc).",
-      "anyOf": [
-        { "type": "string" },
-        { "$ref": "http://schema.org/QuantitativeValue" }
-      ]
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:QuantitativeValue" }]
     },
     "suitableForDiet": {
       "description": "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
       "oneOf": [
-        { "$ref": "http://schema.org/RestrictedDiet" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/RestrictedDiet" }
-        }
+        { "$ref": "schema:RestrictedDiet" },
+        { "type": "array", "items": { "$ref": "schema:RestrictedDiet" } }
       ]
     }
   }

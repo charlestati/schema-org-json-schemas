@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:RefundTypeEnumeration",
+  "title": "RefundTypeEnumeration",
+  "description": "Enumerates several kinds of product return refund types.",
+  "type": "string",
+  "oneOf": [
+    {
+      "description": "Specifies that a refund can be done as an exchange for the same product.",
+      "const": "ExchangeRefund"
+    },
+    {
+      "description": "Specifies that a refund can be done in the full amount the customer paid for the product",
+      "const": "FullRefund"
+    },
+    {
+      "description": "Specifies that the customer receives a store credit as refund when returning a product",
+      "const": "StoreCreditRefund"
+    }
+  ]
+}

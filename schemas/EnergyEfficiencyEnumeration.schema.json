@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:EnergyEfficiencyEnumeration",
+  "title": "EnergyEfficiencyEnumeration",
+  "description": "Enumerates energy efficiency levels (also known as \"classes\" or \"ratings\") and certifications that are part of several international energy efficiency standards.",
+  "type": "object"
+}

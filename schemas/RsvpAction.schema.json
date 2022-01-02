@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/RsvpAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:RsvpAction",
   "title": "RsvpAction",
   "description": "The act of notifying an event organizer as to whether you expect to attend the event.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of notifying someone of information pertinent to them, with no expectation of a response.",
-      "$ref": "http://schema.org/InformAction"
+      "$ref": "schema:InformAction"
     }
   ],
   "properties": {
@@ -21,13 +21,13 @@
     "comment": {
       "description": "Comments, typically from users.",
       "oneOf": [
-        { "$ref": "http://schema.org/Comment" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Comment" } }
+        { "$ref": "schema:Comment" },
+        { "type": "array", "items": { "$ref": "schema:Comment" } }
       ]
     },
     "rsvpResponse": {
       "description": "The response (yes, no, maybe) to the RSVP.",
-      "$ref": "http://schema.org/RsvpResponseType"
+      "$ref": "schema:RsvpResponseType"
     }
   }
 }

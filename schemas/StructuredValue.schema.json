@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/StructuredValue",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:StructuredValue",
   "title": "StructuredValue",
   "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ]
 }

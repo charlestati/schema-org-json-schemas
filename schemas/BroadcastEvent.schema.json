@@ -1,23 +1,35 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/BroadcastEvent",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BroadcastEvent",
   "title": "BroadcastEvent",
   "description": "An over the air or online broadcast event.",
   "type": "object",
   "allOf": [
     {
       "description": "A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.",
-      "$ref": "http://schema.org/PublicationEvent"
+      "$ref": "schema:PublicationEvent"
     }
   ],
   "properties": {
     "broadcastOfEvent": {
       "description": "The event being broadcast such as a sporting event or awards ceremony.",
-      "$ref": "http://schema.org/Event"
+      "$ref": "schema:Event"
     },
     "isLiveBroadcast": {
-      "description": "True is the broadcast is of a live event.",
+      "description": "True if the broadcast is of a live event.",
       "type": "boolean"
+    },
+    "subtitleLanguage": {
+      "description": "Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).",
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }]
+          }
+        }
+      ]
     },
     "videoFormat": {
       "description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",

@@ -1,22 +1,22 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/SpeakableSpecification",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:SpeakableSpecification",
   "title": "SpeakableSpecification",
-  "description": "A SpeakableSpecification indicates (typically via xpath or cssSelector) sections of a document that are highlighted as particularly speakable. Instances of this type are expected to be used primarily as values of the speakable property.",
+  "description": "A SpeakableSpecification indicates (typically via [[xpath]] or [[cssSelector]]) sections of a document that are highlighted as particularly [[speakable]]. Instances of this type are expected to be used primarily as values of the [[speakable]] property.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
     "cssSelector": {
-      "description": "A CSS selector, e.g. of a SpeakableSpecification or WebPageElement. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
+      "description": "A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
       "type": "string"
     },
     "xpath": {
-      "description": "An XPath, e.g. of a SpeakableSpecification or WebPageElement. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
+      "description": "An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
       "type": "string"
     }
   }

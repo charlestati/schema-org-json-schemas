@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/FollowAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:FollowAction",
   "title": "FollowAction",
-  "description": "The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates polled from.\n\nRelated actions:\n\n\nBefriendAction: Unlike BefriendAction, FollowAction implies that the connection is not necessarily reciprocal.\nSubscribeAction: Unlike SubscribeAction, FollowAction implies that the follower acts as an active agent constantly/actively polling for updates.\nRegisterAction: Unlike RegisterAction, FollowAction implies that the agent is interested in continuing receiving updates from the object.\nJoinAction: Unlike JoinAction, FollowAction implies that the agent is interested in getting updates from the object.\nTrackAction: Unlike TrackAction, FollowAction refers to the polling of updates of all aspects of animate objects rather than the location of inanimate objects (e.g. you track a package, but you don't follow it).\n\n",
+  "description": "The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates polled from.\\n\\nRelated actions:\\n\\n* [[BefriendAction]]: Unlike BefriendAction, FollowAction implies that the connection is *not* necessarily reciprocal.\\n* [[SubscribeAction]]: Unlike SubscribeAction, FollowAction implies that the follower acts as an active agent constantly/actively polling for updates.\\n* [[RegisterAction]]: Unlike RegisterAction, FollowAction implies that the agent is interested in continuing receiving updates from the object.\\n* [[JoinAction]]: Unlike JoinAction, FollowAction implies that the agent is interested in getting updates from the object.\\n* [[TrackAction]]: Unlike TrackAction, FollowAction refers to the polling of updates of all aspects of animate objects rather than the location of inanimate objects (e.g. you track a package, but you don't follow it).",
   "type": "object",
   "allOf": [
     {
       "description": "The act of interacting with another person or organization.",
-      "$ref": "http://schema.org/InteractAction"
+      "$ref": "schema:InteractAction"
     }
   ],
   "properties": {
@@ -16,16 +16,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }

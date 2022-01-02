@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Optician",
+  "title": "Optician",
+  "description": "A store that sells reading glasses and similar devices for improving vision.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A particular physical or virtual business of an organization for medical purposes. Examples of MedicalBusiness include differents business run by health professionals.",
+      "$ref": "schema:MedicalBusiness"
+    }
+  ]
+}

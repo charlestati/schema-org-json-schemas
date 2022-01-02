@@ -1,18 +1,18 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/FoodEstablishment",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:FoodEstablishment",
   "title": "FoodEstablishment",
   "description": "A food-related business.",
   "type": "object",
   "allOf": [
     {
       "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",
-      "$ref": "http://schema.org/LocalBusiness"
+      "$ref": "schema:LocalBusiness"
     }
   ],
   "properties": {
     "acceptsReservations": {
-      "description": "Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings Yes or No.",
+      "description": "Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.",
       "anyOf": [
         { "type": "boolean" },
         { "type": "string", "format": "uri" },
@@ -26,7 +26,7 @@
           "anyOf": [
             { "type": "string", "format": "uri" },
             { "type": "string" },
-            { "$ref": "http://schema.org/Menu" }
+            { "$ref": "schema:Menu" }
           ]
         },
         {
@@ -35,7 +35,7 @@
             "anyOf": [
               { "type": "string", "format": "uri" },
               { "type": "string" },
-              { "$ref": "http://schema.org/Menu" }
+              { "$ref": "schema:Menu" }
             ]
           }
         }
@@ -46,7 +46,7 @@
       "anyOf": [
         { "type": "string", "format": "uri" },
         { "type": "string" },
-        { "$ref": "http://schema.org/Menu" }
+        { "$ref": "schema:Menu" }
       ]
     },
     "servesCuisine": {
@@ -56,8 +56,8 @@
     "starRating": {
       "description": "An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).",
       "oneOf": [
-        { "$ref": "http://schema.org/Rating" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Rating" } }
+        { "$ref": "schema:Rating" },
+        { "type": "array", "items": { "$ref": "schema:Rating" } }
       ]
     }
   }

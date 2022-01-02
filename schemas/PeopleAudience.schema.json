@@ -1,16 +1,20 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/PeopleAudience",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PeopleAudience",
   "title": "PeopleAudience",
   "description": "A set of characteristics belonging to people, e.g. who compose an item's target audience.",
   "type": "object",
   "allOf": [
     {
       "description": "Intended audience for an item, i.e. the group for whom the item was created.",
-      "$ref": "http://schema.org/Audience"
+      "$ref": "schema:Audience"
     }
   ],
   "properties": {
+    "healthCondition": {
+      "description": "Specifying the health condition(s) of a patient, medical study, or other target audience.",
+      "$ref": "schema:MedicalCondition"
+    },
     "requiredGender": {
       "description": "Audiences defined by a person's gender.",
       "type": "string"
@@ -23,16 +27,27 @@
       "description": "Audiences defined by a person's minimum age.",
       "type": "integer"
     },
+    "suggestedAge": {
+      "description": "The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.",
+      "$ref": "schema:QuantitativeValue"
+    },
     "suggestedGender": {
-      "description": "The gender of the person or audience.",
-      "type": "string"
+      "description": "The suggested gender of the intended person or audience, for example \"male\", \"female\", or \"unisex\".",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:GenderType" }]
     },
     "suggestedMaxAge": {
-      "description": "Maximal age recommended for viewing content.",
+      "description": "Maximum recommended age in years for the audience or user.",
       "type": "number"
     },
+    "suggestedMeasurement": {
+      "description": "A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.",
+      "oneOf": [
+        { "$ref": "schema:QuantitativeValue" },
+        { "type": "array", "items": { "$ref": "schema:QuantitativeValue" } }
+      ]
+    },
     "suggestedMinAge": {
-      "description": "Minimal age recommended for viewing content.",
+      "description": "Minimum recommended age in years for the audience or user.",
       "type": "number"
     }
   }

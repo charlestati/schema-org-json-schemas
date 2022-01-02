@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/BedDetails",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BedDetails",
   "title": "BedDetails",
-  "description": "An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also BedType (under development).",
+  "description": "An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also [[BedType]] (under development).",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
@@ -17,7 +17,7 @@
     },
     "typeOfBed": {
       "description": "The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.",
-      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/BedType" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:BedType" }]
     }
   }
 }

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Nerve",
+  "title": "Nerve",
+  "description": "A common pathway for the electrochemical nerve impulses that are transmitted along each of the axons.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.",
+      "$ref": "schema:AnatomicalStructure"
+    }
+  ],
+  "properties": {
+    "branch": {
+      "description": "The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].",
+      "$ref": "schema:AnatomicalStructure"
+    },
+    "nerveMotor": {
+      "description": "The neurological pathway extension that involves muscle control.",
+      "$ref": "schema:Muscle"
+    },
+    "sensoryUnit": {
+      "description": "The neurological pathway extension that inputs and sends information to the brain or spinal cord.",
+      "anyOf": [
+        { "$ref": "schema:AnatomicalStructure" },
+        { "$ref": "schema:SuperficialAnatomy" }
+      ]
+    },
+    "sourcedFrom": {
+      "description": "The neurological pathway that originates the neurons.",
+      "$ref": "schema:BrainStructure"
+    }
+  }
+}

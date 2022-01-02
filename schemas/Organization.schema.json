@@ -1,41 +1,55 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Organization",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Organization",
   "title": "Organization",
   "description": "An organization such as a school, NGO, corporation, club, etc.",
   "type": "object",
   "allOf": [
-    {
-      "description": "The most generic type of item.",
-      "$ref": "http://schema.org/Thing"
-    }
+    { "description": "The most generic type of item.", "$ref": "schema:Thing" }
   ],
   "properties": {
+    "actionableFeedbackPolicy": {
+      "description": "For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "schema:CreativeWork" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "schema:CreativeWork" }
+            ]
+          }
+        }
+      ]
+    },
     "address": {
       "description": "Physical address of the item.",
-      "anyOf": [
-        { "type": "string" },
-        { "$ref": "http://schema.org/PostalAddress" }
-      ]
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:PostalAddress" }]
     },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
-      "$ref": "http://schema.org/AggregateRating"
+      "$ref": "schema:AggregateRating"
     },
     "alumni": {
       "description": "Alumni of an organization.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "areaServed": {
       "description": "The geographic area where a service or offered item is provided.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "http://schema.org/AdministrativeArea" },
-        { "$ref": "http://schema.org/GeoShape" },
-        { "$ref": "http://schema.org/Place" }
+        { "$ref": "schema:AdministrativeArea" },
+        { "$ref": "schema:GeoShape" },
+        { "$ref": "schema:Place" }
       ]
     },
     "award": {
@@ -54,45 +68,93 @@
     },
     "brand": {
       "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Brand" },
-        { "$ref": "http://schema.org/Organization" }
-      ]
+      "anyOf": [{ "$ref": "schema:Brand" }, { "$ref": "schema:Organization" }]
     },
     "contactPoint": {
       "description": "A contact point for a person or organization.",
       "oneOf": [
-        { "$ref": "http://schema.org/ContactPoint" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/ContactPoint" }
-        }
+        { "$ref": "schema:ContactPoint" },
+        { "type": "array", "items": { "$ref": "schema:ContactPoint" } }
       ]
     },
     "contactPoints": {
       "description": "A contact point for a person or organization.",
       "oneOf": [
-        { "$ref": "http://schema.org/ContactPoint" },
+        { "$ref": "schema:ContactPoint" },
+        { "type": "array", "items": { "$ref": "schema:ContactPoint" } }
+      ]
+    },
+    "correctionsPolicy": {
+      "description": "For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "schema:CreativeWork" }
+          ]
+        },
         {
           "type": "array",
-          "items": { "$ref": "http://schema.org/ContactPoint" }
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "schema:CreativeWork" }
+            ]
+          }
         }
       ]
     },
     "department": {
       "description": "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.",
       "oneOf": [
-        { "$ref": "http://schema.org/Organization" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/Organization" }
-        }
+        { "$ref": "schema:Organization" },
+        { "type": "array", "items": { "$ref": "schema:Organization" } }
       ]
     },
     "dissolutionDate": {
       "description": "The date that this organization was dissolved.",
       "type": "string",
       "format": "date"
+    },
+    "diversityPolicy": {
+      "description": "Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "schema:CreativeWork" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "schema:CreativeWork" }
+            ]
+          }
+        }
+      ]
+    },
+    "diversityStaffingReport": {
+      "description": "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "schema:Article" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "schema:Article" }
+            ]
+          }
+        }
+      ]
     },
     "duns": {
       "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
@@ -108,44 +170,64 @@
     "employee": {
       "description": "Someone working for this organization.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "employees": {
       "description": "People working for this organization.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
+      ]
+    },
+    "ethicsPolicy": {
+      "description": "Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "schema:CreativeWork" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "schema:CreativeWork" }
+            ]
+          }
+        }
       ]
     },
     "event": {
       "description": "Upcoming or past event associated with this place, organization, or action.",
       "oneOf": [
-        { "$ref": "http://schema.org/Event" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
+        { "$ref": "schema:Event" },
+        { "type": "array", "items": { "$ref": "schema:Event" } }
       ]
     },
     "events": {
       "description": "Upcoming or past events associated with this place or organization.",
       "oneOf": [
-        { "$ref": "http://schema.org/Event" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
+        { "$ref": "schema:Event" },
+        { "type": "array", "items": { "$ref": "schema:Event" } }
       ]
     },
     "faxNumber": { "description": "The fax number.", "type": "string" },
     "founder": {
       "description": "A person who founded this organization.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "founders": {
       "description": "A person who founded this organization.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "foundingDate": {
@@ -155,56 +237,104 @@
     },
     "foundingLocation": {
       "description": "The place where the Organization was founded.",
-      "$ref": "http://schema.org/Place"
+      "$ref": "schema:Place"
     },
     "funder": {
       "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
       ]
     },
     "globalLocationNumber": {
-      "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "description": "The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
       "type": "string"
+    },
+    "hasCredential": {
+      "description": "A credential awarded to the Person or Organization.",
+      "oneOf": [
+        { "$ref": "schema:EducationalOccupationalCredential" },
+        {
+          "type": "array",
+          "items": { "$ref": "schema:EducationalOccupationalCredential" }
+        }
+      ]
+    },
+    "hasMerchantReturnPolicy": {
+      "description": "Specifies a MerchantReturnPolicy that may be applicable.",
+      "oneOf": [
+        { "$ref": "schema:MerchantReturnPolicy" },
+        { "type": "array", "items": { "$ref": "schema:MerchantReturnPolicy" } }
+      ]
     },
     "hasOfferCatalog": {
       "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
       "oneOf": [
-        { "$ref": "http://schema.org/OfferCatalog" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/OfferCatalog" }
-        }
+        { "$ref": "schema:OfferCatalog" },
+        { "type": "array", "items": { "$ref": "schema:OfferCatalog" } }
       ]
     },
     "hasPOS": {
       "description": "Points-of-Sales operated by the organization or person.",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        { "$ref": "schema:Place" },
+        { "type": "array", "items": { "$ref": "schema:Place" } }
       ]
     },
     "interactionStatistic": {
       "description": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
-      "$ref": "http://schema.org/InteractionCounter"
+      "$ref": "schema:InteractionCounter"
     },
     "isicV4": {
       "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
       "type": "string"
+    },
+    "knowsAbout": {
+      "description": "Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "schema:Thing" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "schema:Thing" }
+            ]
+          }
+        }
+      ]
+    },
+    "knowsLanguage": {
+      "description": "Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).",
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }]
+          }
+        }
+      ]
     },
     "legalName": {
       "description": "The official name of the organization, e.g. the registered company name.",
@@ -218,11 +348,12 @@
       ]
     },
     "location": {
-      "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "description": "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "http://schema.org/Place" },
-        { "$ref": "http://schema.org/PostalAddress" }
+        { "$ref": "schema:Place" },
+        { "$ref": "schema:PostalAddress" },
+        { "$ref": "schema:VirtualLocation" }
       ]
     },
     "logo": {
@@ -231,7 +362,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "http://schema.org/ImageObject" }
+            { "$ref": "schema:ImageObject" }
           ]
         },
         {
@@ -239,7 +370,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "http://schema.org/ImageObject" }
+              { "$ref": "schema:ImageObject" }
             ]
           }
         }
@@ -248,8 +379,8 @@
     "makesOffer": {
       "description": "A pointer to products or services offered by the organization or person.",
       "oneOf": [
-        { "$ref": "http://schema.org/Offer" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Offer" } }
+        { "$ref": "schema:Offer" },
+        { "type": "array", "items": { "$ref": "schema:Offer" } }
       ]
     },
     "member": {
@@ -257,16 +388,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
@@ -277,16 +408,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/ProgramMembership" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:ProgramMembership" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/ProgramMembership" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:ProgramMembership" }
             ]
           }
         }
@@ -297,16 +428,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
@@ -316,68 +447,99 @@
       "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
       "type": "string"
     },
+    "nonprofitStatus": {
+      "description": "nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.",
+      "oneOf": [
+        { "$ref": "schema:NonprofitType" },
+        { "type": "array", "items": { "$ref": "schema:NonprofitType" } }
+      ]
+    },
     "numberOfEmployees": {
       "description": "The number of employees in an organization e.g. business.",
-      "$ref": "http://schema.org/QuantitativeValue"
+      "$ref": "schema:QuantitativeValue"
     },
-    "owns": {
-      "description": "Products owned by the organization or person.",
+    "ownershipFundingInfo": {
+      "description": "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/OwnershipInfo" },
-            { "$ref": "http://schema.org/Product" }
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "schema:AboutPage" },
+            { "$ref": "schema:CreativeWork" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/OwnershipInfo" },
-              { "$ref": "http://schema.org/Product" }
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "schema:AboutPage" },
+              { "$ref": "schema:CreativeWork" }
+            ]
+          }
+        }
+      ]
+    },
+    "owns": {
+      "description": "Products owned by the organization or person.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "schema:OwnershipInfo" },
+            { "$ref": "schema:Product" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:OwnershipInfo" },
+              { "$ref": "schema:Product" }
             ]
           }
         }
       ]
     },
     "parentOrganization": {
-      "description": "The larger organization that this organization is a subOrganization of, if any.",
-      "$ref": "http://schema.org/Organization"
+      "description": "The larger organization that this organization is a [[subOrganization]] of, if any.",
+      "$ref": "schema:Organization"
     },
     "publishingPrinciples": {
-      "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.\n\nWhile such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
+      "description": "The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].\n\nWhile such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.\n",
       "anyOf": [
         { "type": "string", "format": "uri" },
-        { "$ref": "http://schema.org/CreativeWork" }
+        { "$ref": "schema:CreativeWork" }
       ]
     },
     "review": {
       "description": "A review of the item.",
       "oneOf": [
-        { "$ref": "http://schema.org/Review" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
+        { "$ref": "schema:Review" },
+        { "type": "array", "items": { "$ref": "schema:Review" } }
       ]
     },
     "reviews": {
       "description": "Review of the item.",
       "oneOf": [
-        { "$ref": "http://schema.org/Review" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
+        { "$ref": "schema:Review" },
+        { "type": "array", "items": { "$ref": "schema:Review" } }
       ]
     },
     "seeks": {
       "description": "A pointer to products or services sought by the organization or person (demand).",
       "oneOf": [
-        { "$ref": "http://schema.org/Demand" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Demand" } }
+        { "$ref": "schema:Demand" },
+        { "type": "array", "items": { "$ref": "schema:Demand" } }
       ]
     },
     "serviceArea": {
       "description": "The geographic area where the service is provided.",
       "anyOf": [
-        { "$ref": "http://schema.org/AdministrativeArea" },
-        { "$ref": "http://schema.org/GeoShape" },
-        { "$ref": "http://schema.org/Place" }
+        { "$ref": "schema:AdministrativeArea" },
+        { "$ref": "schema:GeoShape" },
+        { "$ref": "schema:Place" }
       ]
     },
     "slogan": {
@@ -392,16 +554,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
@@ -410,11 +572,8 @@
     "subOrganization": {
       "description": "A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.",
       "oneOf": [
-        { "$ref": "http://schema.org/Organization" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/Organization" }
-        }
+        { "$ref": "schema:Organization" },
+        { "type": "array", "items": { "$ref": "schema:Organization" } }
       ]
     },
     "taxID": {
@@ -422,6 +581,26 @@
       "type": "string"
     },
     "telephone": { "description": "The telephone number.", "type": "string" },
+    "unnamedSourcesPolicy": {
+      "description": "For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "schema:CreativeWork" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "schema:CreativeWork" }
+            ]
+          }
+        }
+      ]
+    },
     "vatID": {
       "description": "The Value-added Tax ID of the organization or person.",
       "type": "string"

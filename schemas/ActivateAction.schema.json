@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ActivateAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ActivateAction",
   "title": "ActivateAction",
   "description": "The act of starting or activating a device or application (e.g. starting a timer or turning on a flashlight).",
   "type": "object",
   "allOf": [
     {
       "description": "An agent controls a device or application.",
-      "$ref": "http://schema.org/ControlAction"
+      "$ref": "schema:ControlAction"
     }
   ]
 }

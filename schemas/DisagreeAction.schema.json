@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/DisagreeAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DisagreeAction",
   "title": "DisagreeAction",
   "description": "The act of expressing a difference of opinion with the object. An agent disagrees to/about an object (a proposition, topic or theme) with participants.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",
-      "$ref": "http://schema.org/ReactAction"
+      "$ref": "schema:ReactAction"
     }
   ]
 }

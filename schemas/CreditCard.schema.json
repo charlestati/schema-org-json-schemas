@@ -1,17 +1,17 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/CreditCard",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:CreditCard",
   "title": "CreditCard",
-  "description": "A card payment method of a particular brand or name.  Used to mark up a particular payment method and/or the financial product/service that supplies the card account.\n\nCommonly used values:\n\n\nhttp://purl.org/goodrelations/v1#AmericanExpress\nhttp://purl.org/goodrelations/v1#DinersClub\nhttp://purl.org/goodrelations/v1#Discover\nhttp://purl.org/goodrelations/v1#JCB\nhttp://purl.org/goodrelations/v1#MasterCard\nhttp://purl.org/goodrelations/v1#VISA\n\n",
+  "description": "A card payment method of a particular brand or name.  Used to mark up a particular payment method and/or the financial product/service that supplies the card account.\\n\\nCommonly used values:\\n\\n* http://purl.org/goodrelations/v1#AmericanExpress\\n* http://purl.org/goodrelations/v1#DinersClub\\n* http://purl.org/goodrelations/v1#Discover\\n* http://purl.org/goodrelations/v1#JCB\\n* http://purl.org/goodrelations/v1#MasterCard\\n* http://purl.org/goodrelations/v1#VISA\n       ",
   "type": "object",
   "allOf": [
     {
-      "description": "A financial product for the loaning of an amount of money under agreed terms and charges.",
-      "$ref": "http://schema.org/LoanOrCredit"
+      "description": "A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.",
+      "$ref": "schema:LoanOrCredit"
     },
     {
       "description": "A payment method using a credit, debit, store or other card to associate the payment with an account.",
-      "$ref": "http://schema.org/PaymentCard"
+      "$ref": "schema:PaymentCard"
     }
   ]
 }

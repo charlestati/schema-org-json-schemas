@@ -1,24 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/EntryPoint",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:EntryPoint",
   "title": "EntryPoint",
   "description": "An entry point, within some Web-based protocol.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
     "actionApplication": {
       "description": "An application that can complete the request.",
       "oneOf": [
-        { "$ref": "http://schema.org/SoftwareApplication" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/SoftwareApplication" }
-        }
+        { "$ref": "schema:SoftwareApplication" },
+        { "type": "array", "items": { "$ref": "schema:SoftwareApplication" } }
       ]
     },
     "actionPlatform": {
@@ -28,11 +25,8 @@
     "application": {
       "description": "An application that can complete the request.",
       "oneOf": [
-        { "$ref": "http://schema.org/SoftwareApplication" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/SoftwareApplication" }
-        }
+        { "$ref": "schema:SoftwareApplication" },
+        { "type": "array", "items": { "$ref": "schema:SoftwareApplication" } }
       ]
     },
     "contentType": {

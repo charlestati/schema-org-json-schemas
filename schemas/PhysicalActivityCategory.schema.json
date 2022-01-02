@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PhysicalActivityCategory",
+  "title": "PhysicalActivityCategory",
+  "description": "Categories of physical activity, organized by physiologic classification.",
+  "type": "string",
+  "oneOf": [
+    {
+      "description": "Physical activity of relatively low intensity that depends primarily on the aerobic energy-generating process; during activity, the aerobic metabolism uses oxygen to adequately meet energy demands during exercise.",
+      "const": "AerobicActivity"
+    },
+    {
+      "description": "Physical activity that is of high-intensity which utilizes the anaerobic metabolism of the body.",
+      "const": "AnaerobicActivity"
+    },
+    {
+      "description": "Physical activity that is engaged to help maintain posture and balance.",
+      "const": "Balance"
+    },
+    {
+      "description": "Physical activity that is engaged in to improve joint and muscle flexibility.",
+      "const": "Flexibility"
+    },
+    {
+      "description": "Any physical activity engaged in for recreational purposes. Examples may include ballroom dancing, roller skating, canoeing, fishing, etc.",
+      "const": "LeisureTimeActivity"
+    },
+    {
+      "description": "Any physical activity engaged in for job-related purposes. Examples may include waiting tables, maid service, carrying a mailbag, picking fruits or vegetables, construction work, etc.",
+      "const": "OccupationalActivity"
+    },
+    {
+      "description": "Physical activity that is engaged in to improve muscle and bone strength. Also referred to as resistance training.",
+      "const": "StrengthTraining"
+    }
+  ]
+}

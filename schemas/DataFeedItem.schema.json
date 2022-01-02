@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/DataFeedItem",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DataFeedItem",
   "title": "DataFeedItem",
   "description": "A single item within a larger data feed.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
@@ -35,8 +35,8 @@
     "item": {
       "description": "An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.",
       "oneOf": [
-        { "$ref": "http://schema.org/Thing" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Thing" } }
+        { "$ref": "schema:Thing" },
+        { "type": "array", "items": { "$ref": "schema:Thing" } }
       ]
     }
   }

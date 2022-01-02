@@ -1,19 +1,88 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Review",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Review",
   "title": "Review",
   "description": "A review of an item - for example, of a restaurant, movie, or store.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     }
   ],
   "properties": {
+    "associatedClaimReview": {
+      "description": "An associated [[ClaimReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].",
+      "oneOf": [
+        { "$ref": "schema:Review" },
+        { "type": "array", "items": { "$ref": "schema:Review" } }
+      ]
+    },
+    "associatedMediaReview": {
+      "description": "An associated [[MediaReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].",
+      "oneOf": [
+        { "$ref": "schema:Review" },
+        { "type": "array", "items": { "$ref": "schema:Review" } }
+      ]
+    },
+    "associatedReview": {
+      "description": "An associated [[Review]].",
+      "oneOf": [
+        { "$ref": "schema:Review" },
+        { "type": "array", "items": { "$ref": "schema:Review" } }
+      ]
+    },
     "itemReviewed": {
       "description": "The item that is being reviewed/rated.",
-      "$ref": "http://schema.org/Thing"
+      "$ref": "schema:Thing"
+    },
+    "negativeNotes": {
+      "description": "Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "schema:ItemList" },
+            { "$ref": "schema:ListItem" },
+            { "$ref": "schema:WebContent" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "schema:ItemList" },
+              { "$ref": "schema:ListItem" },
+              { "$ref": "schema:WebContent" }
+            ]
+          }
+        }
+      ]
+    },
+    "positiveNotes": {
+      "description": "Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "schema:ItemList" },
+            { "$ref": "schema:ListItem" },
+            { "$ref": "schema:WebContent" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "schema:ItemList" },
+              { "$ref": "schema:ListItem" },
+              { "$ref": "schema:WebContent" }
+            ]
+          }
+        }
+      ]
     },
     "reviewAspect": {
       "description": "This Review or Rating is relevant to this part or facet of the itemReviewed.",
@@ -27,8 +96,8 @@
       "type": "string"
     },
     "reviewRating": {
-      "description": "The rating given in this review. Note that reviews can themselves be rated. The reviewRating applies to rating given by the review. The aggregateRating property applies to the review itself, as a creative work.",
-      "$ref": "http://schema.org/Rating"
+      "description": "The rating given in this review. Note that reviews can themselves be rated. The ```reviewRating``` applies to rating given by the review. The [[aggregateRating]] property applies to the review itself, as a creative work.",
+      "$ref": "schema:Rating"
     }
   }
 }

@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/NutritionInformation",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:NutritionInformation",
   "title": "NutritionInformation",
   "description": "Nutritional information about the recipe.",
   "type": "object",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "http://schema.org/StructuredValue"
+      "$ref": "schema:StructuredValue"
     }
   ],
   "properties": {

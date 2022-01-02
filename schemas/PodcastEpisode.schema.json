@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PodcastEpisode",
+  "title": "PodcastEpisode",
+  "description": "A single episode of a podcast series.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A media episode (e.g. TV, radio, video game) which can be part of a series or season.",
+      "$ref": "schema:Episode"
+    }
+  ]
+}

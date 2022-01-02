@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:TouristTrip",
+  "title": "TouristTrip",
+  "description": "A tourist trip. A created itinerary of visits to one or more places of interest ([[TouristAttraction]]/[[TouristDestination]]) often linked by a similar theme, geographic area, or interest to a particular [[touristType]]. The [UNWTO](http://www2.unwto.org/) defines tourism trip as the Trip taken by visitors.\n  (See examples below).",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A trip or journey. An itinerary of visits to one or more places.",
+      "$ref": "schema:Trip"
+    }
+  ],
+  "properties": {
+    "touristType": {
+      "description": "Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. ",
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:Audience" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:Audience" }]
+          }
+        }
+      ]
+    }
+  }
+}

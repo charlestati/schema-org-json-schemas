@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Synagogue",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Synagogue",
   "title": "Synagogue",
   "description": "A synagogue.",
   "type": "object",
   "allOf": [
     {
       "description": "Place of worship, such as a church, synagogue, or mosque.",
-      "$ref": "http://schema.org/PlaceOfWorship"
+      "$ref": "schema:PlaceOfWorship"
     }
   ]
 }

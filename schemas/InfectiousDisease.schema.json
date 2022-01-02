@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:InfectiousDisease",
+  "title": "InfectiousDisease",
+  "description": "An infectious disease is a clinically evident human disease resulting from the presence of pathogenic microbial agents, like pathogenic viruses, pathogenic bacteria, fungi, protozoa, multicellular parasites, and prions. To be considered an infectious disease, such pathogens are known to be able to cause this disease.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.",
+      "$ref": "schema:MedicalCondition"
+    }
+  ],
+  "properties": {
+    "infectiousAgent": {
+      "description": "The actual infectious agent, such as a specific bacterium.",
+      "type": "string"
+    },
+    "infectiousAgentClass": {
+      "description": "The class of infectious agent (bacteria, prion, etc.) that causes the disease.",
+      "$ref": "schema:InfectiousAgentClass"
+    },
+    "transmissionMethod": {
+      "description": "How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    }
+  }
+}

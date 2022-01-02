@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Invoice",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Invoice",
   "title": "Invoice",
   "description": "A statement of the money due for goods or services; a bill.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
@@ -25,16 +25,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }
@@ -47,7 +47,8 @@
           "anyOf": [
             { "type": "string", "format": "uri" },
             { "type": "string" },
-            { "$ref": "http://schema.org/Thing" }
+            { "$ref": "schema:PhysicalActivityCategory" },
+            { "$ref": "schema:Thing" }
           ]
         },
         {
@@ -56,7 +57,8 @@
             "anyOf": [
               { "type": "string", "format": "uri" },
               { "type": "string" },
-              { "$ref": "http://schema.org/Thing" }
+              { "$ref": "schema:PhysicalActivityCategory" },
+              { "$ref": "schema:Thing" }
             ]
           }
         }
@@ -68,16 +70,13 @@
     },
     "customer": {
       "description": "Party placing the order or paying the invoice.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Organization" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:Organization" }, { "$ref": "schema:Person" }]
     },
     "minimumPaymentDue": {
       "description": "The minimum payment required at this time.",
       "anyOf": [
-        { "$ref": "http://schema.org/MonetaryAmount" },
-        { "$ref": "http://schema.org/PriceSpecification" }
+        { "$ref": "schema:MonetaryAmount" },
+        { "$ref": "schema:PriceSpecification" }
       ]
     },
     "paymentDue": {
@@ -94,7 +93,7 @@
     },
     "paymentMethod": {
       "description": "The name of the credit card or other method of payment for the order.",
-      "$ref": "http://schema.org/PaymentMethod"
+      "$ref": "schema:PaymentMethod"
     },
     "paymentMethodId": {
       "description": "An identifier for the method of payment used (e.g. the last 4 digits of the credit card).",
@@ -105,21 +104,15 @@
     },
     "paymentStatus": {
       "description": "The status of payment; whether the invoice has been paid or not.",
-      "anyOf": [
-        { "type": "string" },
-        { "$ref": "http://schema.org/PaymentStatusType" }
-      ]
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:PaymentStatusType" }]
     },
     "provider": {
       "description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Organization" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:Organization" }, { "$ref": "schema:Person" }]
     },
     "referencesOrder": {
       "description": "The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.",
-      "$ref": "http://schema.org/Order"
+      "$ref": "schema:Order"
     },
     "scheduledPaymentDate": {
       "description": "The date the invoice is scheduled to be paid.",
@@ -129,8 +122,8 @@
     "totalPaymentDue": {
       "description": "The total amount due.",
       "anyOf": [
-        { "$ref": "http://schema.org/MonetaryAmount" },
-        { "$ref": "http://schema.org/PriceSpecification" }
+        { "$ref": "schema:MonetaryAmount" },
+        { "$ref": "schema:PriceSpecification" }
       ]
     }
   }

@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/MenuItem",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MenuItem",
   "title": "MenuItem",
   "description": "A food or drink item listed in a menu or menu section.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
@@ -16,16 +16,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/MenuItem" },
-            { "$ref": "http://schema.org/MenuSection" }
+            { "$ref": "schema:MenuItem" },
+            { "$ref": "schema:MenuSection" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/MenuItem" },
-              { "$ref": "http://schema.org/MenuSection" }
+              { "$ref": "schema:MenuItem" },
+              { "$ref": "schema:MenuSection" }
             ]
           }
         }
@@ -33,24 +33,16 @@
     },
     "nutrition": {
       "description": "Nutrition information about the recipe or menu item.",
-      "$ref": "http://schema.org/NutritionInformation"
+      "$ref": "schema:NutritionInformation"
     },
     "offers": {
-      "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
+      "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
       "oneOf": [
-        {
-          "anyOf": [
-            { "$ref": "http://schema.org/Demand" },
-            { "$ref": "http://schema.org/Offer" }
-          ]
-        },
+        { "anyOf": [{ "$ref": "schema:Demand" }, { "$ref": "schema:Offer" }] },
         {
           "type": "array",
           "items": {
-            "anyOf": [
-              { "$ref": "http://schema.org/Demand" },
-              { "$ref": "http://schema.org/Offer" }
-            ]
+            "anyOf": [{ "$ref": "schema:Demand" }, { "$ref": "schema:Offer" }]
           }
         }
       ]
@@ -58,11 +50,8 @@
     "suitableForDiet": {
       "description": "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
       "oneOf": [
-        { "$ref": "http://schema.org/RestrictedDiet" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/RestrictedDiet" }
-        }
+        { "$ref": "schema:RestrictedDiet" },
+        { "type": "array", "items": { "$ref": "schema:RestrictedDiet" } }
       ]
     }
   }

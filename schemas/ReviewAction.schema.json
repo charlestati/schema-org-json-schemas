@@ -1,21 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ReviewAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ReviewAction",
   "title": "ReviewAction",
   "description": "The act of producing a balanced opinion about the object for an audience. An agent reviews an object with participants resulting in a review.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of forming one's opinion, reaction or sentiment.",
-      "$ref": "http://schema.org/AssessAction"
+      "$ref": "schema:AssessAction"
     }
   ],
   "properties": {
     "resultReview": {
       "description": "A sub property of result. The review that resulted in the performing of the action.",
       "oneOf": [
-        { "$ref": "http://schema.org/Review" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
+        { "$ref": "schema:Review" },
+        { "type": "array", "items": { "$ref": "schema:Review" } }
       ]
     }
   }

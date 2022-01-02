@@ -1,24 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/OrderAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:OrderAction",
   "title": "OrderAction",
   "description": "An agent orders an object/product/service to be delivered/sent.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.",
-      "$ref": "http://schema.org/TradeAction"
+      "$ref": "schema:TradeAction"
     }
   ],
   "properties": {
     "deliveryMethod": {
       "description": "A sub property of instrument. The method of delivery.",
       "oneOf": [
-        { "$ref": "http://schema.org/DeliveryMethod" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/DeliveryMethod" }
-        }
+        { "$ref": "schema:DeliveryMethod" },
+        { "type": "array", "items": { "$ref": "schema:DeliveryMethod" } }
       ]
     }
   }

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:CoverArt",
+  "title": "CoverArt",
+  "description": "The artwork on the outer surface of a CreativeWork.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A work of art that is primarily visual in character.",
+      "$ref": "schema:VisualArtwork"
+    }
+  ]
+}

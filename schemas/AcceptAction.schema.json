@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/AcceptAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:AcceptAction",
   "title": "AcceptAction",
-  "description": "The act of committing to/adopting an object.\n\nRelated actions:\n\n\nRejectAction: The antonym of AcceptAction.\n\n",
+  "description": "The act of committing to/adopting an object.\\n\\nRelated actions:\\n\\n* [[RejectAction]]: The antonym of AcceptAction.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of organizing tasks/objects/events by associating resources to it.",
-      "$ref": "http://schema.org/AllocateAction"
+      "$ref": "schema:AllocateAction"
     }
   ]
 }

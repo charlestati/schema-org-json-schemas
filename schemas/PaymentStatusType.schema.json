@@ -1,29 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/PaymentStatusType",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PaymentStatusType",
   "title": "PaymentStatusType",
   "description": "A specific payment status. For example, PaymentDue, PaymentComplete, etc.",
-  "type": "string",
-  "oneOf": [
+  "type": "object",
+  "allOf": [
     {
-      "description": "An automatic payment system is in place and will be used.",
-      "const": "PaymentAutomaticallyApplied"
-    },
-    {
-      "description": "The payment has been received and processed.",
-      "const": "PaymentComplete"
-    },
-    {
-      "description": "The payee received the payment, but it was declined for some reason.",
-      "const": "PaymentDeclined"
-    },
-    {
-      "description": "The payment is due, but still within an acceptable time to be received.",
-      "const": "PaymentDue"
-    },
-    {
-      "description": "The payment is due and considered late.",
-      "const": "PaymentPastDue"
+      "description": "Lists or enumerations dealing with status types.",
+      "$ref": "schema:StatusEnumeration"
     }
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Project",
+  "title": "Project",
+  "description": "An enterprise (potentially individual but typically collaborative), planned to achieve a particular aim.\nUse properties from [[Organization]], [[subOrganization]]/[[parentOrganization]] to indicate project sub-structures. \n   ",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "An organization such as a school, NGO, corporation, club, etc.",
+      "$ref": "schema:Organization"
+    }
+  ]
+}

@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/DefenceEstablishment",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DefenceEstablishment",
   "title": "DefenceEstablishment",
   "description": "A defence establishment, such as an army or navy base.",
   "type": "object",
   "allOf": [
     {
       "description": "A government building.",
-      "$ref": "http://schema.org/GovernmentBuilding"
+      "$ref": "schema:GovernmentBuilding"
     }
   ]
 }

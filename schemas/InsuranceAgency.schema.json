@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/InsuranceAgency",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:InsuranceAgency",
   "title": "InsuranceAgency",
   "description": "An Insurance agency.",
   "type": "object",
   "allOf": [
     {
       "description": "Financial services business.",
-      "$ref": "http://schema.org/FinancialService"
+      "$ref": "schema:FinancialService"
     }
   ]
 }

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PhysicalActivity",
+  "title": "PhysicalActivity",
+  "description": "Any bodily activity that enhances or maintains physical fitness and overall health and wellness. Includes activity that is part of daily living and routine, structured exercise, and exercise prescribed as part of a medical treatment or recovery plan.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A process of care involving exercise, changes to diet, fitness routines, and other lifestyle changes aimed at improving a health condition.",
+      "$ref": "schema:LifestyleModification"
+    }
+  ],
+  "properties": {
+    "associatedAnatomy": {
+      "description": "The anatomy of the underlying organ system or structures associated with this entity.",
+      "anyOf": [
+        { "$ref": "schema:AnatomicalStructure" },
+        { "$ref": "schema:AnatomicalSystem" },
+        { "$ref": "schema:SuperficialAnatomy" }
+      ]
+    },
+    "category": {
+      "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "schema:PhysicalActivityCategory" },
+            { "$ref": "schema:Thing" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "schema:PhysicalActivityCategory" },
+              { "$ref": "schema:Thing" }
+            ]
+          }
+        }
+      ]
+    },
+    "epidemiology": {
+      "description": "The characteristics of associated patients, such as age, gender, race etc.",
+      "type": "string"
+    },
+    "pathophysiology": {
+      "description": "Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    }
+  }
+}

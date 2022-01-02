@@ -1,13 +1,31 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/EducationEvent",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:EducationEvent",
   "title": "EducationEvent",
   "description": "Event type: Education event.",
   "type": "object",
   "allOf": [
     {
-      "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",
-      "$ref": "http://schema.org/Event"
+      "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.",
+      "$ref": "schema:Event"
     }
-  ]
+  ],
+  "properties": {
+    "assesses": {
+      "description": "The item being described is intended to assess the competency or learning outcome defined by the referenced term.",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:DefinedTerm" }]
+    },
+    "educationalLevel": {
+      "description": "The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.",
+      "anyOf": [
+        { "type": "string", "format": "uri" },
+        { "type": "string" },
+        { "$ref": "schema:DefinedTerm" }
+      ]
+    },
+    "teaches": {
+      "description": "The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:DefinedTerm" }]
+    }
+  }
 }

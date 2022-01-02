@@ -1,17 +1,44 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/PaymentCard",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PaymentCard",
   "title": "PaymentCard",
   "description": "A payment method using a credit, debit, store or other card to associate the payment with an account.",
   "type": "object",
   "allOf": [
     {
       "description": "A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.",
-      "$ref": "http://schema.org/FinancialProduct"
+      "$ref": "schema:FinancialProduct"
     },
     {
-      "description": "A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.\n\nCommonly used values:\n\n\nhttp://purl.org/goodrelations/v1#ByBankTransferInAdvance\nhttp://purl.org/goodrelations/v1#ByInvoice\nhttp://purl.org/goodrelations/v1#Cash\nhttp://purl.org/goodrelations/v1#CheckInAdvance\nhttp://purl.org/goodrelations/v1#COD\nhttp://purl.org/goodrelations/v1#DirectDebit\nhttp://purl.org/goodrelations/v1#GoogleCheckout\nhttp://purl.org/goodrelations/v1#PayPal\nhttp://purl.org/goodrelations/v1#PaySwarm\n\n",
-      "$ref": "http://schema.org/PaymentMethod"
+      "description": "A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.\\n\\nCommonly used values:\\n\\n* http://purl.org/goodrelations/v1#ByBankTransferInAdvance\\n* http://purl.org/goodrelations/v1#ByInvoice\\n* http://purl.org/goodrelations/v1#Cash\\n* http://purl.org/goodrelations/v1#CheckInAdvance\\n* http://purl.org/goodrelations/v1#COD\\n* http://purl.org/goodrelations/v1#DirectDebit\\n* http://purl.org/goodrelations/v1#GoogleCheckout\\n* http://purl.org/goodrelations/v1#PayPal\\n* http://purl.org/goodrelations/v1#PaySwarm\n        ",
+      "$ref": "schema:PaymentMethod"
     }
-  ]
+  ],
+  "properties": {
+    "cashBack": {
+      "description": "A cardholder benefit that pays the cardholder a small percentage of their net expenditures.",
+      "oneOf": [
+        { "anyOf": [{ "type": "boolean" }, { "type": "number" }] },
+        {
+          "type": "array",
+          "items": { "anyOf": [{ "type": "boolean" }, { "type": "number" }] }
+        }
+      ]
+    },
+    "contactlessPayment": {
+      "description": "A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.",
+      "type": "boolean"
+    },
+    "floorLimit": {
+      "description": "A floor limit is the amount of money above which credit card transactions must be authorized.",
+      "oneOf": [
+        { "$ref": "schema:MonetaryAmount" },
+        { "type": "array", "items": { "$ref": "schema:MonetaryAmount" } }
+      ]
+    },
+    "monthlyMinimumRepaymentAmount": {
+      "description": "The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.",
+      "anyOf": [{ "type": "number" }, { "$ref": "schema:MonetaryAmount" }]
+    }
+  }
 }

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DiagnosticLab",
+  "title": "DiagnosticLab",
+  "description": "A medical laboratory that offers on-site or off-site diagnostic services.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
+      "$ref": "schema:MedicalOrganization"
+    }
+  ],
+  "properties": {
+    "availableTest": {
+      "description": "A diagnostic test or procedure offered by this lab.",
+      "oneOf": [
+        { "$ref": "schema:MedicalTest" },
+        { "type": "array", "items": { "$ref": "schema:MedicalTest" } }
+      ]
+    }
+  }
+}

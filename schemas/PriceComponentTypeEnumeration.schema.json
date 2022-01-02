@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PriceComponentTypeEnumeration",
+  "title": "PriceComponentTypeEnumeration",
+  "description": "Enumerates different price components that together make up the total price for an offered product.",
+  "type": "string",
+  "oneOf": [
+    {
+      "description": "Represents the activation fee part of the total price for an offered product, for example a cellphone contract.",
+      "const": "ActivationFee"
+    },
+    {
+      "description": "Represents the cleaning fee part of the total price for an offered product, for example a vacation rental.",
+      "const": "CleaningFee"
+    },
+    {
+      "description": "Represents the distance fee (e.g., price per km or mile) part of the total price for an offered product, for example a car rental.",
+      "const": "DistanceFee"
+    },
+    {
+      "description": "Represents the downpayment (up-front payment) price component of the total price for an offered product that has additional installment payments.",
+      "const": "Downpayment"
+    },
+    {
+      "description": "Represents the installment pricing component of the total price for an offered product.",
+      "const": "Installment"
+    },
+    {
+      "description": "Represents the subscription pricing component of the total price for an offered product.",
+      "const": "Subscription"
+    }
+  ]
+}

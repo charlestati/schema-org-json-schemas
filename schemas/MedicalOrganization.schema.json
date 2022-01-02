@@ -1,13 +1,33 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/MedicalOrganization",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalOrganization",
   "title": "MedicalOrganization",
   "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
   "type": "object",
   "allOf": [
     {
       "description": "An organization such as a school, NGO, corporation, club, etc.",
-      "$ref": "http://schema.org/Organization"
+      "$ref": "schema:Organization"
     }
-  ]
+  ],
+  "properties": {
+    "healthPlanNetworkId": {
+      "description": "Name or unique ID of network. (Networks are often reused across different insurance plans).",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "isAcceptingNewPatients": {
+      "description": "Whether the provider is accepting new patients.",
+      "type": "boolean"
+    },
+    "medicalSpecialty": {
+      "description": "A medical specialty of the provider.",
+      "oneOf": [
+        { "$ref": "schema:MedicalSpecialty" },
+        { "type": "array", "items": { "$ref": "schema:MedicalSpecialty" } }
+      ]
+    }
+  }
 }

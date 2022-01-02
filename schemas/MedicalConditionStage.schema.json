@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalConditionStage",
+  "title": "MedicalConditionStage",
+  "description": "A stage of a medical condition, such as 'Stage IIIa'.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
+      "$ref": "schema:MedicalIntangible"
+    }
+  ],
+  "properties": {
+    "stageAsNumber": {
+      "description": "The stage represented as a number, e.g. 3.",
+      "type": "number"
+    },
+    "subStageSuffix": {
+      "description": "The substage, e.g. 'a' for Stage IIIa.",
+      "type": "string"
+    }
+  }
+}

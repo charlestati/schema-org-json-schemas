@@ -1,22 +1,33 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/JobPosting",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:JobPosting",
   "title": "JobPosting",
   "description": "A listing that describes a job opening in a certain organization.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
+    "applicantLocationRequirements": {
+      "description": "The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.",
+      "$ref": "schema:AdministrativeArea"
+    },
+    "applicationContact": {
+      "description": "Contact details for further information relevant to this job posting.",
+      "oneOf": [
+        { "$ref": "schema:ContactPoint" },
+        { "type": "array", "items": { "$ref": "schema:ContactPoint" } }
+      ]
+    },
     "baseSalary": {
       "description": "The base salary of the job or of an employee in an EmployeeRole.",
       "anyOf": [
         { "type": "number" },
-        { "$ref": "http://schema.org/MonetaryAmount" },
-        { "$ref": "http://schema.org/PriceSpecification" }
+        { "$ref": "schema:MonetaryAmount" },
+        { "$ref": "schema:PriceSpecification" }
       ]
     },
     "benefits": {
@@ -30,11 +41,40 @@
         { "type": "string", "format": "date-time" }
       ]
     },
+    "directApply": {
+      "description": "Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.",
+      "type": "boolean"
+    },
+    "educationRequirements": {
+      "description": "Educational background needed for the position or Occupation.",
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "schema:EducationalOccupationalCredential" }
+      ]
+    },
+    "eligibilityToWorkRequirement": {
+      "description": "The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.",
+      "type": "string"
+    },
+    "employerOverview": {
+      "description": "A description of the employer, career opportunities and work environment for this position.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
     "employmentType": {
       "description": "Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).",
       "oneOf": [
         { "type": "string" },
         { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "employmentUnit": {
+      "description": "Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.",
+      "oneOf": [
+        { "$ref": "schema:Organization" },
+        { "type": "array", "items": { "$ref": "schema:Organization" } }
       ]
     },
     "estimatedSalary": {
@@ -43,8 +83,8 @@
         {
           "anyOf": [
             { "type": "number" },
-            { "$ref": "http://schema.org/MonetaryAmount" },
-            { "$ref": "http://schema.org/MonetaryAmountDistribution" }
+            { "$ref": "schema:MonetaryAmount" },
+            { "$ref": "schema:MonetaryAmountDistribution" }
           ]
         },
         {
@@ -52,20 +92,27 @@
           "items": {
             "anyOf": [
               { "type": "number" },
-              { "$ref": "http://schema.org/MonetaryAmount" },
-              { "$ref": "http://schema.org/MonetaryAmountDistribution" }
+              { "$ref": "schema:MonetaryAmount" },
+              { "$ref": "schema:MonetaryAmountDistribution" }
             ]
           }
         }
       ]
     },
+    "experienceInPlaceOfEducation": {
+      "description": "Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.",
+      "type": "boolean"
+    },
     "experienceRequirements": {
       "description": "Description of skills and experience needed for the position or Occupation.",
-      "type": "string"
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "schema:OccupationalExperienceRequirements" }
+      ]
     },
     "hiringOrganization": {
       "description": "Organization offering the job position.",
-      "$ref": "http://schema.org/Organization"
+      "$ref": "schema:Organization"
     },
     "incentiveCompensation": {
       "description": "Description of bonus and commission compensation aspects of the job.",
@@ -83,7 +130,7 @@
     },
     "industry": {
       "description": "The industry associated with the job position.",
-      "type": "string"
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:DefinedTerm" }]
     },
     "jobBenefits": {
       "description": "Description of benefits associated with the job.",
@@ -92,16 +139,85 @@
         { "type": "array", "items": { "type": "string" } }
       ]
     },
+    "jobImmediateStart": {
+      "description": "An indicator as to whether a position is available for an immediate start.",
+      "type": "boolean"
+    },
     "jobLocation": {
       "description": "A (typically single) geographic location associated with the job position.",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        { "$ref": "schema:Place" },
+        { "type": "array", "items": { "$ref": "schema:Place" } }
+      ]
+    },
+    "jobLocationType": {
+      "description": "A description of the job location (e.g TELECOMMUTE for telecommute jobs).",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "jobStartDate": {
+      "description": "The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.",
+      "anyOf": [{ "type": "string", "format": "date" }, { "type": "string" }]
+    },
+    "occupationalCategory": {
+      "description": "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:CategoryCode" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:CategoryCode" }]
+          }
+        }
+      ]
+    },
+    "physicalRequirement": {
+      "description": "A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "schema:DefinedTerm" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "schema:DefinedTerm" }
+            ]
+          }
+        }
+      ]
+    },
+    "qualifications": {
+      "description": "Specific qualifications required for this role or Occupation.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "schema:EducationalOccupationalCredential" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "schema:EducationalOccupationalCredential" }
+            ]
+          }
+        }
       ]
     },
     "relevantOccupation": {
       "description": "The Occupation for the JobPosting.",
-      "$ref": "http://schema.org/Occupation"
+      "$ref": "schema:Occupation"
     },
     "responsibilities": {
       "description": "Responsibilities associated with this role or Occupation.",
@@ -111,14 +227,58 @@
       ]
     },
     "salaryCurrency": {
-      "description": "The currency (coded using ISO 4217 ) used for the main salary information in this job posting or for this employee.",
+      "description": "The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.",
       "type": "string"
+    },
+    "securityClearanceRequirement": {
+      "description": "A description of any security clearance requirements of the job.",
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
+    },
+    "sensoryRequirement": {
+      "description": "A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "schema:DefinedTerm" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "schema:DefinedTerm" }
+            ]
+          }
+        }
+      ]
     },
     "skills": {
       "description": "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.",
       "oneOf": [
-        { "type": "string" },
-        { "type": "array", "items": { "type": "string" } }
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:DefinedTerm" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:DefinedTerm" }]
+          }
+        }
       ]
     },
     "specialCommitments": {
@@ -129,6 +289,10 @@
       ]
     },
     "title": { "description": "The title of the job.", "type": "string" },
+    "totalJobOpenings": {
+      "description": "The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.",
+      "type": "integer"
+    },
     "validThrough": {
       "description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
       "anyOf": [

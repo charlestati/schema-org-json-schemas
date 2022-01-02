@@ -1,19 +1,19 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/PropertyValueSpecification",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PropertyValueSpecification",
   "title": "PropertyValueSpecification",
   "description": "A Property value specification.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
     "defaultValue": {
       "description": "The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.",
-      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Thing" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:Thing" }]
     },
     "maxValue": {
       "description": "The upper value of some characteristic or property.",

@@ -1,37 +1,34 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/GeoCoordinates",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:GeoCoordinates",
   "title": "GeoCoordinates",
   "description": "The geographic coordinates of a place or event.",
   "type": "object",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "http://schema.org/StructuredValue"
+      "$ref": "schema:StructuredValue"
     }
   ],
   "properties": {
     "address": {
       "description": "Physical address of the item.",
-      "anyOf": [
-        { "type": "string" },
-        { "$ref": "http://schema.org/PostalAddress" }
-      ]
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:PostalAddress" }]
     },
     "addressCountry": {
-      "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Country" }]
+      "description": "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:Country" }]
     },
     "elevation": {
-      "description": "The elevation of a location (WGS 84). Values may be of the form 'NUMBER UNITOFMEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",
+      "description": "The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",
       "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "latitude": {
-      "description": "The latitude of a location. For example 37.42242 (WGS 84).",
+      "description": "The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).",
       "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "longitude": {
-      "description": "The longitude of a location. For example -122.08585 (WGS 84).",
+      "description": "The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).",
       "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "postalCode": {

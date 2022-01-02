@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:WearableMeasurementTypeEnumeration",
+  "title": "WearableMeasurementTypeEnumeration",
+  "description": "Enumerates common types of measurement for wearables products.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Enumeration of common measurement types (or dimensions), for example \"chest\" for a person, \"inseam\" for pants, \"gauge\" for screws, or \"wheel\" for bicycles.",
+      "$ref": "schema:MeasurementTypeEnumeration"
+    }
+  ]
+}

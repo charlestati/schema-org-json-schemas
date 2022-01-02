@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ComicCoverArt",
+  "title": "ComicCoverArt",
+  "description": "The artwork on the cover of a comic.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The term \"story\" is any indivisible, re-printable\n    \tunit of a comic, including the interior stories, covers, and backmatter. Most\n    \tcomics have at least two stories: a cover (ComicCoverArt) and an interior story.",
+      "$ref": "schema:ComicStory"
+    },
+    {
+      "description": "The artwork on the outer surface of a CreativeWork.",
+      "$ref": "schema:CoverArt"
+    }
+  ]
+}

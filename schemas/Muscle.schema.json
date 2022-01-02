@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Muscle",
+  "title": "Muscle",
+  "description": "A muscle is an anatomical structure consisting of a contractile form of tissue that animals use to effect movement.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.",
+      "$ref": "schema:AnatomicalStructure"
+    }
+  ],
+  "properties": {
+    "antagonist": {
+      "description": "The muscle whose action counteracts the specified muscle.",
+      "$ref": "schema:Muscle"
+    },
+    "bloodSupply": {
+      "description": "The blood vessel that carries blood from the heart to the muscle.",
+      "$ref": "schema:Vessel"
+    },
+    "insertion": {
+      "description": "The place of attachment of a muscle, or what the muscle moves.",
+      "$ref": "schema:AnatomicalStructure"
+    },
+    "muscleAction": {
+      "description": "The movement the muscle generates.",
+      "type": "string"
+    },
+    "nerve": {
+      "description": "The underlying innervation associated with the muscle.",
+      "$ref": "schema:Nerve"
+    }
+  }
+}

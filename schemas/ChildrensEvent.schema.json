@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ChildrensEvent",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ChildrensEvent",
   "title": "ChildrensEvent",
   "description": "Event type: Children's event.",
   "type": "object",
   "allOf": [
     {
-      "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",
-      "$ref": "http://schema.org/Event"
+      "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.",
+      "$ref": "schema:Event"
     }
   ]
 }

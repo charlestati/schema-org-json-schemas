@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/BorrowAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BorrowAction",
   "title": "BorrowAction",
-  "description": "The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.\n\nRelated actions:\n\n\nLendAction: Reciprocal of BorrowAction.\n\n",
+  "description": "The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.\\n\\nRelated actions:\\n\\n* [[LendAction]]: Reciprocal of BorrowAction.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",
-      "$ref": "http://schema.org/TransferAction"
+      "$ref": "schema:TransferAction"
     }
   ],
   "properties": {
@@ -16,16 +16,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }

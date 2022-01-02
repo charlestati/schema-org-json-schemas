@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ActionAccessSpecification",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ActionAccessSpecification",
   "title": "ActionAccessSpecification",
   "description": "A set of requirements that a must be fulfilled in order to perform an Action.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
@@ -34,7 +34,8 @@
           "anyOf": [
             { "type": "string", "format": "uri" },
             { "type": "string" },
-            { "$ref": "http://schema.org/Thing" }
+            { "$ref": "schema:PhysicalActivityCategory" },
+            { "$ref": "schema:Thing" }
           ]
         },
         {
@@ -43,33 +44,39 @@
             "anyOf": [
               { "type": "string", "format": "uri" },
               { "type": "string" },
-              { "$ref": "http://schema.org/Thing" }
+              { "$ref": "schema:PhysicalActivityCategory" },
+              { "$ref": "schema:Thing" }
             ]
           }
         }
       ]
     },
     "eligibleRegion": {
-      "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also ineligibleRegion.",
+      "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\\n\\nSee also [[ineligibleRegion]].\n    ",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "http://schema.org/GeoShape" },
-        { "$ref": "http://schema.org/Place" }
+        { "$ref": "schema:GeoShape" },
+        { "$ref": "schema:Place" }
       ]
     },
     "expectsAcceptanceOf": {
       "description": "An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.",
       "oneOf": [
-        { "$ref": "http://schema.org/Offer" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Offer" } }
+        { "$ref": "schema:Offer" },
+        { "type": "array", "items": { "$ref": "schema:Offer" } }
+      ]
+    },
+    "ineligibleRegion": {
+      "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\\n\\nSee also [[eligibleRegion]].\n      ",
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "schema:GeoShape" },
+        { "$ref": "schema:Place" }
       ]
     },
     "requiresSubscription": {
-      "description": "Indicates if use of the media require a subscription  (either paid or free). Allowed values are true or false (note that an earlier version had 'yes', 'no').",
-      "anyOf": [
-        { "type": "boolean" },
-        { "$ref": "http://schema.org/MediaSubscription" }
-      ]
+      "description": "Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').",
+      "anyOf": [{ "type": "boolean" }, { "$ref": "schema:MediaSubscription" }]
     }
   }
 }

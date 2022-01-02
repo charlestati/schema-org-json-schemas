@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Mass",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Mass",
   "title": "Mass",
   "description": "Properties that take Mass as values are of the form '<Number> <Mass unit of measure>'. E.g., '7 kg'.",
   "type": "object",
   "allOf": [
     {
       "description": "Quantities such as distance, time, mass, weight, etc. Particular instances of say Mass are entities like '3 Kg' or '4 milligrams'.",
-      "$ref": "http://schema.org/Quantity"
+      "$ref": "schema:Quantity"
     }
   ]
 }

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ArchiveOrganization",
+  "title": "ArchiveOrganization",
+  "description": "",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",
+      "$ref": "schema:LocalBusiness"
+    }
+  ],
+  "properties": {
+    "[object Object]": {
+      "description": "",
+      "oneOf": [
+        { "$ref": "schema:ArchiveComponent" },
+        { "type": "array", "items": { "$ref": "schema:ArchiveComponent" } }
+      ]
+    }
+  }
+}

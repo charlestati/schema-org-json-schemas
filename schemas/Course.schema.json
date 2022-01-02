@@ -1,28 +1,32 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Course",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Course",
   "title": "Course",
   "description": "A description of an educational course which may be offered as distinct instances at which take place at different times or take place at different locations, or be offered through different media or modes of study. An educational course is a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
+    },
+    {
+      "description": "The LearningResource type can be used to indicate [[CreativeWork]]s (whether physical or digital) that have a particular and explicit orientation towards learning, education, skill acquisition, and other educational purposes.\n\n[[LearningResource]] is expected to be used as an addition to a primary type such as [[Book]], [[VideoObject]], [[Product]] etc.\n\n[[EducationEvent]] serves a similar purpose for event-like things (e.g. a [[Trip]]). A [[LearningResource]] may be created as a result of an [[EducationEvent]], for example by recording one.",
+      "$ref": "schema:LearningResource"
     }
   ],
   "properties": {
     "courseCode": {
-      "description": "The identifier for the Course used by the course provider (e.g. CS101 or 6.001).",
+      "description": "The identifier for the [[Course]] used by the course [[provider]] (e.g. CS101 or 6.001).",
       "type": "string"
     },
     "coursePrerequisites": {
-      "description": "Requirements for taking the Course. May be completion of another Course or a textual description like \"permission of instructor\". Requirements may be a pre-requisite competency, referenced using AlignmentObject.",
+      "description": "Requirements for taking the Course. May be completion of another [[Course]] or a textual description like \"permission of instructor\". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].",
       "oneOf": [
         {
           "anyOf": [
             { "type": "string" },
-            { "$ref": "http://schema.org/AlignmentObject" },
-            { "$ref": "http://schema.org/Course" }
+            { "$ref": "schema:AlignmentObject" },
+            { "$ref": "schema:Course" }
           ]
         },
         {
@@ -30,8 +34,8 @@
           "items": {
             "anyOf": [
               { "type": "string" },
-              { "$ref": "http://schema.org/AlignmentObject" },
-              { "$ref": "http://schema.org/Course" }
+              { "$ref": "schema:AlignmentObject" },
+              { "$ref": "schema:Course" }
             ]
           }
         }
@@ -41,14 +45,19 @@
       "description": "A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.",
       "oneOf": [
         {
-          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "schema:EducationalOccupationalCredential" }
+          ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "type": "string" }
+              { "type": "string" },
+              { "$ref": "schema:EducationalOccupationalCredential" }
             ]
           }
         }
@@ -57,10 +66,33 @@
     "hasCourseInstance": {
       "description": "An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.",
       "oneOf": [
-        { "$ref": "http://schema.org/CourseInstance" },
+        { "$ref": "schema:CourseInstance" },
+        { "type": "array", "items": { "$ref": "schema:CourseInstance" } }
+      ]
+    },
+    "numberOfCredits": {
+      "description": "The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.",
+      "anyOf": [{ "type": "integer" }, { "$ref": "schema:StructuredValue" }]
+    },
+    "occupationalCredentialAwarded": {
+      "description": "A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "type": "string" },
+            { "$ref": "schema:EducationalOccupationalCredential" }
+          ]
+        },
         {
           "type": "array",
-          "items": { "$ref": "http://schema.org/CourseInstance" }
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" },
+              { "$ref": "schema:EducationalOccupationalCredential" }
+            ]
+          }
         }
       ]
     }

@@ -1,23 +1,43 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/CompoundPriceSpecification",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:CompoundPriceSpecification",
   "title": "CompoundPriceSpecification",
   "description": "A compound price specification is one that bundles multiple prices that all apply in combination for different dimensions of consumption. Use the name property of the attached unit price specification for indicating the dimension of a price component (e.g. \"electricity\" or \"final cleaning\").",
   "type": "object",
   "allOf": [
     {
-      "description": "A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use MonetaryAmount to describe independent amounts of money such as a salary, credit card limits, etc.",
-      "$ref": "http://schema.org/PriceSpecification"
+      "description": "A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use [[MonetaryAmount]] to describe independent amounts of money such as a salary, credit card limits, etc.",
+      "$ref": "schema:PriceSpecification"
     }
   ],
   "properties": {
     "priceComponent": {
-      "description": "This property links to all UnitPriceSpecification nodes that apply in parallel for the CompoundPriceSpecification node.",
+      "description": "This property links to all [[UnitPriceSpecification]] nodes that apply in parallel for the [[CompoundPriceSpecification]] node.",
       "oneOf": [
-        { "$ref": "http://schema.org/UnitPriceSpecification" },
+        { "$ref": "schema:UnitPriceSpecification" },
         {
           "type": "array",
-          "items": { "$ref": "http://schema.org/UnitPriceSpecification" }
+          "items": { "$ref": "schema:UnitPriceSpecification" }
+        }
+      ]
+    },
+    "priceType": {
+      "description": "Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "schema:PriceTypeEnumeration" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "schema:PriceTypeEnumeration" }
+            ]
+          }
         }
       ]
     }

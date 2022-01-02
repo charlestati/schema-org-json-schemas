@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/HowToItem",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:HowToItem",
   "title": "HowToItem",
   "description": "An item used as either a tool or supply when performing the instructions for how to to achieve a result.",
   "type": "object",
   "allOf": [
     {
       "description": "An list item, e.g. a step in a checklist or how-to description.",
-      "$ref": "http://schema.org/ListItem"
+      "$ref": "schema:ListItem"
     }
   ],
   "properties": {
@@ -16,7 +16,7 @@
       "anyOf": [
         { "type": "number" },
         { "type": "string" },
-        { "$ref": "http://schema.org/QuantitativeValue" }
+        { "$ref": "schema:QuantitativeValue" }
       ]
     }
   }

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:XPathType",
+  "title": "XPathType",
+  "description": "Text representing an XPath (typically but not necessarily version 1.0).",
+  "type": "object",
+  "allOf": [{ "description": "Data type: Text.", "$ref": "schema:Text" }]
+}

@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/MobileApplication",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MobileApplication",
   "title": "MobileApplication",
   "description": "A software application designed specifically to work well on a mobile device such as a telephone.",
   "type": "object",
   "allOf": [
     {
       "description": "A software application.",
-      "$ref": "http://schema.org/SoftwareApplication"
+      "$ref": "schema:SoftwareApplication"
     }
   ],
   "properties": {

@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/FastFoodRestaurant",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:FastFoodRestaurant",
   "title": "FastFoodRestaurant",
   "description": "A fast-food restaurant.",
   "type": "object",
   "allOf": [
     {
       "description": "A food-related business.",
-      "$ref": "http://schema.org/FoodEstablishment"
+      "$ref": "schema:FoodEstablishment"
     }
   ]
 }

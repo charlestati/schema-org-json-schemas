@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:LymphaticVessel",
+  "title": "LymphaticVessel",
+  "description": "A type of blood vessel that specifically carries lymph fluid unidirectionally toward the heart.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A component of the human body circulatory system comprised of an intricate network of hollow tubes that transport blood throughout the entire body.",
+      "$ref": "schema:Vessel"
+    }
+  ],
+  "properties": {
+    "originatesFrom": {
+      "description": "The vasculature the lymphatic structure originates, or afferents, from.",
+      "$ref": "schema:Vessel"
+    },
+    "regionDrained": {
+      "description": "The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.",
+      "anyOf": [
+        { "$ref": "schema:AnatomicalStructure" },
+        { "$ref": "schema:AnatomicalSystem" }
+      ]
+    },
+    "runsTo": {
+      "description": "The vasculature the lymphatic structure runs, or efferents, to.",
+      "$ref": "schema:Vessel"
+    }
+  }
+}

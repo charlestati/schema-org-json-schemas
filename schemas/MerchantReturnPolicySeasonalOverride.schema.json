@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MerchantReturnPolicySeasonalOverride",
+  "title": "MerchantReturnPolicySeasonalOverride",
+  "description": "A seasonal override of a return policy, for example used for holidays.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "schema:Intangible"
+    }
+  ],
+  "properties": {
+    "endDate": {
+      "description": "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
+    },
+    "merchantReturnDays": {
+      "description": "Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "integer" },
+            { "type": "string", "format": "date" },
+            { "type": "string", "format": "date-time" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "integer" },
+              { "type": "string", "format": "date" },
+              { "type": "string", "format": "date-time" }
+            ]
+          }
+        }
+      ]
+    },
+    "returnPolicyCategory": {
+      "description": "Specifies an applicable return policy (from an enumeration).",
+      "oneOf": [
+        { "$ref": "schema:MerchantReturnEnumeration" },
+        {
+          "type": "array",
+          "items": { "$ref": "schema:MerchantReturnEnumeration" }
+        }
+      ]
+    },
+    "startDate": {
+      "description": "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
+    }
+  }
+}

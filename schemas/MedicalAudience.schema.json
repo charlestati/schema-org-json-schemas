@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalAudience",
+  "title": "MedicalAudience",
+  "description": "Target audiences for medical web pages.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Intended audience for an item, i.e. the group for whom the item was created.",
+      "$ref": "schema:Audience"
+    },
+    {
+      "description": "A set of characteristics belonging to people, e.g. who compose an item's target audience.",
+      "$ref": "schema:PeopleAudience"
+    }
+  ]
+}

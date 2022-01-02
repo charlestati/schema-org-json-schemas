@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:VitalSign",
+  "title": "VitalSign",
+  "description": "Vital signs are measures of various physiological functions in order to assess the most basic body functions.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any physical manifestation of a person's medical condition discoverable by objective diagnostic tests or physical examination.",
+      "$ref": "schema:MedicalSign"
+    }
+  ]
+}

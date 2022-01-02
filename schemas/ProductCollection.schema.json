@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ProductCollection",
+  "title": "ProductCollection",
+  "description": "A set of products (either [[ProductGroup]]s or specific variants) that are listed together e.g. in an [[Offer]].",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A collection of items e.g. creative works or products.",
+      "$ref": "schema:Collection"
+    },
+    {
+      "description": "Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.",
+      "$ref": "schema:Product"
+    }
+  ],
+  "properties": {
+    "includesObject": {
+      "description": "This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].",
+      "oneOf": [
+        { "$ref": "schema:TypeAndQuantityNode" },
+        { "type": "array", "items": { "$ref": "schema:TypeAndQuantityNode" } }
+      ]
+    }
+  }
+}

@@ -1,64 +1,90 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Movie",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Movie",
   "title": "Movie",
   "description": "A movie.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     }
   ],
   "properties": {
     "actor": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "actors": {
       "description": "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "countryOfOrigin": {
-      "description": "The country of the principal offices of the production company or individual responsible for the movie or program.",
-      "$ref": "http://schema.org/Country"
+      "description": "The country of origin of something, including products as well as creative  works such as movie and TV content.\n\nIn the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.\n\nIn the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.",
+      "$ref": "schema:Country"
     },
     "director": {
       "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-      "$ref": "http://schema.org/Person"
+      "$ref": "schema:Person"
     },
     "directors": {
       "description": "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "duration": {
-      "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+      "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
       "type": "string",
       "$comment": "https://schema.org/Duration"
     },
     "musicBy": {
       "description": "The composer of the soundtrack.",
-      "anyOf": [
-        { "$ref": "http://schema.org/MusicGroup" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:MusicGroup" }, { "$ref": "schema:Person" }]
     },
     "productionCompany": {
       "description": "The production company or studio responsible for the item e.g. series, video game, episode etc.",
-      "$ref": "http://schema.org/Organization"
+      "$ref": "schema:Organization"
+    },
+    "subtitleLanguage": {
+      "description": "Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).",
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }]
+          }
+        }
+      ]
+    },
+    "titleEIDR": {
+      "description": "An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.\n\nFor example, the motion picture known as \"Ghostbusters\" has a titleEIDR of  \"10.5240/7EC7-228A-510A-053E-CBB8-J\". This title (or work) may have several variants, which EIDR calls \"edits\". See [[editEIDR]].\n\nSince schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.\n",
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
     },
     "trailer": {
       "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
-      "$ref": "http://schema.org/VideoObject"
+      "$ref": "schema:VideoObject"
     }
   }
 }

@@ -1,28 +1,28 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ListItem",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ListItem",
   "title": "ListItem",
   "description": "An list item, e.g. a step in a checklist or how-to description.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
     "item": {
       "description": "An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.",
       "oneOf": [
-        { "$ref": "http://schema.org/Thing" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Thing" } }
+        { "$ref": "schema:Thing" },
+        { "type": "array", "items": { "$ref": "schema:Thing" } }
       ]
     },
     "nextItem": {
       "description": "A link to the ListItem that follows the current one.",
       "oneOf": [
-        { "$ref": "http://schema.org/ListItem" },
-        { "type": "array", "items": { "$ref": "http://schema.org/ListItem" } }
+        { "$ref": "schema:ListItem" },
+        { "type": "array", "items": { "$ref": "schema:ListItem" } }
       ]
     },
     "position": {
@@ -32,8 +32,8 @@
     "previousItem": {
       "description": "A link to the ListItem that preceeds the current one.",
       "oneOf": [
-        { "$ref": "http://schema.org/ListItem" },
-        { "type": "array", "items": { "$ref": "http://schema.org/ListItem" } }
+        { "$ref": "schema:ListItem" },
+        { "type": "array", "items": { "$ref": "schema:ListItem" } }
       ]
     }
   }

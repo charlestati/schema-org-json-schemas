@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:OccupationalExperienceRequirements",
+  "title": "OccupationalExperienceRequirements",
+  "description": "Indicates employment-related experience requirements, e.g. [[monthsOfExperience]].",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "schema:Intangible"
+    }
+  ],
+  "properties": {
+    "monthsOfExperience": {
+      "description": "Indicates the minimal number of months of experience required for a position.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    }
+  }
+}

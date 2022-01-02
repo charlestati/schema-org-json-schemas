@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalCondition",
+  "title": "MedicalCondition",
+  "description": "Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic type of entity related to health and the practice of medicine.",
+      "$ref": "schema:MedicalEntity"
+    }
+  ],
+  "properties": {
+    "associatedAnatomy": {
+      "description": "The anatomy of the underlying organ system or structures associated with this entity.",
+      "anyOf": [
+        { "$ref": "schema:AnatomicalStructure" },
+        { "$ref": "schema:AnatomicalSystem" },
+        { "$ref": "schema:SuperficialAnatomy" }
+      ]
+    },
+    "differentialDiagnosis": {
+      "description": "One of a set of differential diagnoses for the condition. Specifically, a closely-related or competing diagnosis typically considered later in the cognitive process whereby this medical condition is distinguished from others most likely responsible for a similar collection of signs and symptoms to reach the most parsimonious diagnosis or diagnoses in a patient.",
+      "oneOf": [
+        { "$ref": "schema:DDxElement" },
+        { "type": "array", "items": { "$ref": "schema:DDxElement" } }
+      ]
+    },
+    "drug": {
+      "description": "Specifying a drug or medicine used in a medication procedure.",
+      "oneOf": [
+        { "$ref": "schema:Drug" },
+        { "type": "array", "items": { "$ref": "schema:Drug" } }
+      ]
+    },
+    "epidemiology": {
+      "description": "The characteristics of associated patients, such as age, gender, race etc.",
+      "type": "string"
+    },
+    "expectedPrognosis": {
+      "description": "The likely outcome in either the short term or long term of the medical condition.",
+      "type": "string"
+    },
+    "naturalProgression": {
+      "description": "The expected progression of the condition if it is not treated and allowed to progress naturally.",
+      "type": "string"
+    },
+    "pathophysiology": {
+      "description": "Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "possibleComplication": {
+      "description": "A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "possibleTreatment": {
+      "description": "A possible treatment to address this condition, sign or symptom.",
+      "oneOf": [
+        { "$ref": "schema:MedicalTherapy" },
+        { "type": "array", "items": { "$ref": "schema:MedicalTherapy" } }
+      ]
+    },
+    "primaryPrevention": {
+      "description": "A preventative therapy used to prevent an initial occurrence of the medical condition, such as vaccination.",
+      "oneOf": [
+        { "$ref": "schema:MedicalTherapy" },
+        { "type": "array", "items": { "$ref": "schema:MedicalTherapy" } }
+      ]
+    },
+    "riskFactor": {
+      "description": "A modifiable or non-modifiable factor that increases the risk of a patient contracting this condition, e.g. age,  coexisting condition.",
+      "oneOf": [
+        { "$ref": "schema:MedicalRiskFactor" },
+        { "type": "array", "items": { "$ref": "schema:MedicalRiskFactor" } }
+      ]
+    },
+    "secondaryPrevention": {
+      "description": "A preventative therapy used to prevent reoccurrence of the medical condition after an initial episode of the condition.",
+      "oneOf": [
+        { "$ref": "schema:MedicalTherapy" },
+        { "type": "array", "items": { "$ref": "schema:MedicalTherapy" } }
+      ]
+    },
+    "signOrSymptom": {
+      "description": "A sign or symptom of this condition. Signs are objective or physically observable manifestations of the medical condition while symptoms are the subjective experience of the medical condition.",
+      "oneOf": [
+        { "$ref": "schema:MedicalSignOrSymptom" },
+        { "type": "array", "items": { "$ref": "schema:MedicalSignOrSymptom" } }
+      ]
+    },
+    "stage": {
+      "description": "The stage of the condition, if applicable.",
+      "$ref": "schema:MedicalConditionStage"
+    },
+    "status": {
+      "description": "The status of the study (enumerated).",
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "schema:EventStatusType" },
+        { "$ref": "schema:MedicalStudyStatus" }
+      ]
+    },
+    "typicalTest": {
+      "description": "A medical test typically performed given this condition.",
+      "oneOf": [
+        { "$ref": "schema:MedicalTest" },
+        { "type": "array", "items": { "$ref": "schema:MedicalTest" } }
+      ]
+    }
+  }
+}

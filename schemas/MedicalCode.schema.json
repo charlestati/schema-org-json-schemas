@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalCode",
+  "title": "MedicalCode",
+  "description": "A code for a medical entity.",
+  "type": "object",
+  "allOf": [
+    { "description": "A Category Code.", "$ref": "schema:CategoryCode" },
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
+      "$ref": "schema:MedicalIntangible"
+    }
+  ],
+  "properties": {
+    "codeValue": {
+      "description": "A short textual code that uniquely identifies the value.",
+      "type": "string"
+    },
+    "codingSystem": {
+      "description": "The coding system, e.g. 'ICD-10'.",
+      "type": "string"
+    }
+  }
+}

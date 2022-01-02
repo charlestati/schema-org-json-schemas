@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalSpecialty",
+  "title": "MedicalSpecialty",
+  "description": "Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Enumerations related to health and the practice of medicine: A concept that is used to attribute a quality to another concept, as a qualifier, a collection of items or a listing of all of the elements of a set in medicine practice.",
+      "$ref": "schema:MedicalEnumeration"
+    },
+    {
+      "description": "Any branch of a field in which people typically develop specific expertise, usually after significant study, time, and effort.",
+      "$ref": "schema:Specialty"
+    }
+  ]
+}

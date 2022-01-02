@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/DataFeed",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DataFeed",
   "title": "DataFeed",
   "description": "A single feed providing structured information about one or more entities or topics.",
   "type": "object",
   "allOf": [
     {
       "description": "A body of structured information describing some topic(s) of interest.",
-      "$ref": "http://schema.org/Dataset"
+      "$ref": "schema:Dataset"
     }
   ],
   "properties": {
@@ -17,8 +17,8 @@
         {
           "anyOf": [
             { "type": "string" },
-            { "$ref": "http://schema.org/DataFeedItem" },
-            { "$ref": "http://schema.org/Thing" }
+            { "$ref": "schema:DataFeedItem" },
+            { "$ref": "schema:Thing" }
           ]
         },
         {
@@ -26,8 +26,8 @@
           "items": {
             "anyOf": [
               { "type": "string" },
-              { "$ref": "http://schema.org/DataFeedItem" },
-              { "$ref": "http://schema.org/Thing" }
+              { "$ref": "schema:DataFeedItem" },
+              { "$ref": "schema:Thing" }
             ]
           }
         }

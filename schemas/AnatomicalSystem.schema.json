@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:AnatomicalSystem",
+  "title": "AnatomicalSystem",
+  "description": "An anatomical system is a group of anatomical structures that work together to perform a certain task. Anatomical systems, such as organ systems, are one organizing principle of anatomy, and can includes circulatory, digestive, endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive, respiratory, skeletal, urinary, vestibular, and other systems.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic type of entity related to health and the practice of medicine.",
+      "$ref": "schema:MedicalEntity"
+    }
+  ],
+  "properties": {
+    "associatedPathophysiology": {
+      "description": "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
+      "type": "string"
+    },
+    "comprisedOf": {
+      "description": "Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.",
+      "anyOf": [
+        { "$ref": "schema:AnatomicalStructure" },
+        { "$ref": "schema:AnatomicalSystem" }
+      ]
+    },
+    "relatedCondition": {
+      "description": "A medical condition associated with this anatomy.",
+      "oneOf": [
+        { "$ref": "schema:MedicalCondition" },
+        { "type": "array", "items": { "$ref": "schema:MedicalCondition" } }
+      ]
+    },
+    "relatedStructure": {
+      "description": "Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.",
+      "oneOf": [
+        { "$ref": "schema:AnatomicalStructure" },
+        { "type": "array", "items": { "$ref": "schema:AnatomicalStructure" } }
+      ]
+    },
+    "relatedTherapy": {
+      "description": "A medical therapy related to this anatomy.",
+      "oneOf": [
+        { "$ref": "schema:MedicalTherapy" },
+        { "type": "array", "items": { "$ref": "schema:MedicalTherapy" } }
+      ]
+    }
+  }
+}

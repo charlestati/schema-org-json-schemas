@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/MovingCompany",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MovingCompany",
   "title": "MovingCompany",
   "description": "A moving company.",
   "type": "object",
   "allOf": [
     {
-      "description": "A construction business.\n\nA HomeAndConstructionBusiness is a LocalBusiness that provides services around homes and buildings.\n\nAs a LocalBusiness it can be described as a provider of one or more Service(s).",
-      "$ref": "http://schema.org/HomeAndConstructionBusiness"
+      "description": "A construction business.\\n\\nA HomeAndConstructionBusiness is a [[LocalBusiness]] that provides services around homes and buildings.\\n\\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\\(s).",
+      "$ref": "schema:HomeAndConstructionBusiness"
     }
   ]
 }

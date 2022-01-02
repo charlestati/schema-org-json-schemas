@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ExchangeRateSpecification",
+  "title": "ExchangeRateSpecification",
+  "description": "A structured value representing exchange rate.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "$ref": "schema:StructuredValue"
+    }
+  ],
+  "properties": {
+    "currency": {
+      "description": "The currency in which the monetary amount is expressed.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
+      "type": "string"
+    },
+    "currentExchangeRate": {
+      "description": "The current price of a currency.",
+      "$ref": "schema:UnitPriceSpecification"
+    },
+    "exchangeRateSpread": {
+      "description": "The difference between the price at which a broker or other intermediary buys and sells foreign currency.",
+      "anyOf": [{ "type": "number" }, { "$ref": "schema:MonetaryAmount" }]
+    }
+  }
+}

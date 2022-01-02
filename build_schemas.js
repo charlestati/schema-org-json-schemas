@@ -25,8 +25,9 @@ const HttpStatus = require("http-status-codes");
 const hardcodedSchemas = require("./hardcoded-schemas.json");
 const propertyMultiplicity = require("./property-multiplicity.json");
 
-const schemaOrgSchemasUrl = "https://schema.org/version/latest/schema.jsonld";
-const schemaOrgDraftVersion = "http://json-schema.org/draft-07/schema#";
+const schemaOrgSchemasUrl =
+  "https://schema.org/version/latest/schemaorg-current-https.jsonld";
+const schemaOrgDraftVersion = "https://json-schema.org/draft/2020-12/schema";
 const schemasDir = path.join(__dirname, "schemas");
 const schemaSuffix = ".schema.json";
 const typesWithoutMultiplicity = new Set(["Boolean"]);
@@ -37,7 +38,7 @@ const rootSchema = "Thing";
  * Perform a GET request
  *
  * @param uri {string} - The URI to fetch from
- * @returns {string} - The fetched data
+ * @returns {Promise<string>} - The fetched data
  */
 async function fetch(uri) {
   const response = await axios.get(uri);
@@ -165,8 +166,8 @@ function buildTypes(types, isArray) {
 function getProperties(id, allProperties) {
   return allProperties.filter(
     (property) =>
-      has(property, "http://schema.org/domainIncludes") &&
-      castArray(property["http://schema.org/domainIncludes"]).some(
+      has(property, "schema:domainIncludes") &&
+      castArray(property["schema:domainIncludes"]).some(
         (parent) => parent["@id"] === id,
       ),
   );
@@ -191,7 +192,7 @@ function buildProperties(properties, allSchemaClasses) {
       return accumulator;
     }
     const types = allSchemaClasses.filter((_schemaClass) =>
-      castArray(property["http://schema.org/rangeIncludes"]).some(
+      castArray(property["schema:rangeIncludes"]).some(
         (possibleType) => possibleType["@id"] === _schemaClass["@id"],
       ),
     );
@@ -230,7 +231,11 @@ function buildProperties(properties, allSchemaClasses) {
  */
 function buildSchema(schemaClass, allSchemaClasses, allProperties, enumValues) {
   const id = schemaClass["@id"];
-  const title = schemaClass["rdfs:label"];
+  const title =
+    schemaClass["rdfs:label"] &&
+    typeof schemaClass["rdfs:label"].valueOf() === "string"
+      ? schemaClass["rdfs:label"]
+      : schemaClass["rdfs:label"]["@value"];
   const description = htmlToPlainText(schemaClass["rdfs:comment"]);
   const schema = {
     $schema: schemaOrgDraftVersion,
@@ -243,7 +248,7 @@ function buildSchema(schemaClass, allSchemaClasses, allProperties, enumValues) {
     const parentsIDs = castArray(schemaClass["rdfs:subClassOf"]).map(
       (parent) => parent["@id"],
     );
-    if (parentsIDs.includes("http://schema.org/Enumeration")) {
+    if (parentsIDs.includes("schema:Enumeration")) {
       const enumMembers = enumValues.filter(
         (enumValue) => enumValue["@type"] === id,
       );
@@ -278,9 +283,9 @@ function buildSchema(schemaClass, allSchemaClasses, allProperties, enumValues) {
     sortBy(propertiesToBuild, ["rdfs:label"]),
     allSchemaClasses,
   );
-  Object.entries(properties).forEach(([propertyLabel, property]) => {
+  for (const [propertyLabel, property] of Object.entries(properties)) {
     set(schema, ["properties", propertyLabel], property);
-  });
+  }
   return schema;
 }
 
@@ -300,47 +305,38 @@ async function main() {
   );
   const enumValues = graph.filter((vocabulary) =>
     castArray(vocabulary["@type"]).some(
-      (type) =>
-        type.startsWith("http://schema.org/") &&
-        type !== "http://schema.org/DataType",
+      (type) => type.startsWith("schema:") && type !== "schema:DataType",
     ),
   );
   await fs.ensureDir(schemasDir);
-  schemaClasses
-    .filter(
-      (schemaClass) =>
-        !castArray(schemaClass["@type"]).includes("http://schema.org/DataType"),
-    )
-    .forEach((schemaClass) => {
-      const schema = buildSchema(
-        schemaClass,
-        schemaClasses,
-        properties,
-        enumValues,
-      );
-      const filename = `${schema.title}${schemaSuffix}`;
-      fs.writeFileSync(
-        path.join(schemasDir, filename),
-        prettier.format(JSON.stringify(schema), { parser: "json" }),
-      );
-    });
+  for (const schemaClass of schemaClasses.filter(
+    (schema) => !castArray(schema["@type"]).includes("schema:DataType"),
+  )) {
+    const schema = buildSchema(
+      schemaClass,
+      schemaClasses,
+      properties,
+      enumValues,
+    );
+    const filename = `${schema.title}${schemaSuffix}`;
+    fs.writeFileSync(
+      path.join(schemasDir, filename),
+      prettier.format(JSON.stringify(schema), { parser: "json" }),
+    );
+  }
   return schemaClasses.length;
 }
 
-/* eslint-disable promise/prefer-await-to-then */
+/* eslint-disable promise/prefer-await-to-callbacks, promise/prefer-await-to-then */
 
 if (require.main === module) {
   main()
     .then((schemasCount) => {
-      Array.from(inferredMultiplicity)
-        .sort()
-        .forEach((propertyName) => {
-          console.warn(
-            chalk.yellow(
-              `Multiplicity of property ${propertyName} was inferred`,
-            ),
-          );
-        });
+      for (const propertyName of Array.from(inferredMultiplicity).sort()) {
+        console.warn(
+          chalk.yellow(`Multiplicity of property ${propertyName} was inferred`),
+        );
+      }
       console.log(
         chalk.green(
           `Built ${schemasCount} schema${schemasCount > 1 ? "s" : ""}`,
@@ -352,5 +348,7 @@ if (require.main === module) {
       process.exitCode = 1;
     });
 }
+
+/* eslint-enable promise/prefer-await-to-callbacks, promise/prefer-await-to-then */
 
 module.exports = { main, buildSchema };

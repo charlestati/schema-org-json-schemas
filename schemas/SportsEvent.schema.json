@@ -1,38 +1,35 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/SportsEvent",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:SportsEvent",
   "title": "SportsEvent",
   "description": "Event type: Sports event.",
   "type": "object",
   "allOf": [
     {
-      "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",
-      "$ref": "http://schema.org/Event"
+      "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.",
+      "$ref": "schema:Event"
     }
   ],
   "properties": {
     "awayTeam": {
       "description": "The away team in a sports event.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "$ref": "http://schema.org/SportsTeam" }
-      ]
+      "anyOf": [{ "$ref": "schema:Person" }, { "$ref": "schema:SportsTeam" }]
     },
     "competitor": {
       "description": "A competitor in a sports event.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Person" },
-            { "$ref": "http://schema.org/SportsTeam" }
+            { "$ref": "schema:Person" },
+            { "$ref": "schema:SportsTeam" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Person" },
-              { "$ref": "http://schema.org/SportsTeam" }
+              { "$ref": "schema:Person" },
+              { "$ref": "schema:SportsTeam" }
             ]
           }
         }
@@ -40,9 +37,23 @@
     },
     "homeTeam": {
       "description": "The home team in a sports event.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "$ref": "http://schema.org/SportsTeam" }
+      "anyOf": [{ "$ref": "schema:Person" }, { "$ref": "schema:SportsTeam" }]
+    },
+    "sport": {
+      "description": "A type of sport (e.g. Baseball).",
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" }
+            ]
+          }
+        }
       ]
     }
   }

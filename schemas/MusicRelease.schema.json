@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/MusicRelease",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MusicRelease",
   "title": "MusicRelease",
   "description": "A MusicRelease is a specific release of a music album.",
   "type": "object",
   "allOf": [
     {
       "description": "A collection of music tracks in playlist form.",
-      "$ref": "http://schema.org/MusicPlaylist"
+      "$ref": "schema:MusicPlaylist"
     }
   ],
   "properties": {
@@ -17,33 +17,30 @@
     },
     "creditedTo": {
       "description": "The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to \"Stefani Germanotta Band\", but by Lady Gaga.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Organization" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:Organization" }, { "$ref": "schema:Person" }]
     },
     "duration": {
-      "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+      "description": "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
       "type": "string",
       "$comment": "https://schema.org/Duration"
     },
     "musicReleaseFormat": {
       "description": "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
       "oneOf": [
-        { "$ref": "http://schema.org/MusicReleaseFormatType" },
+        { "$ref": "schema:MusicReleaseFormatType" },
         {
           "type": "array",
-          "items": { "$ref": "http://schema.org/MusicReleaseFormatType" }
+          "items": { "$ref": "schema:MusicReleaseFormatType" }
         }
       ]
     },
     "recordLabel": {
       "description": "The label that issued the release.",
-      "$ref": "http://schema.org/Organization"
+      "$ref": "schema:Organization"
     },
     "releaseOf": {
       "description": "The album this is a release of.",
-      "$ref": "http://schema.org/MusicAlbum"
+      "$ref": "schema:MusicAlbum"
     }
   }
 }

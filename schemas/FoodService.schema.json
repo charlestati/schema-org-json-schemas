@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/FoodService",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:FoodService",
   "title": "FoodService",
   "description": "A food service, like breakfast, lunch, or dinner.",
   "type": "object",
   "allOf": [
     {
       "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
-      "$ref": "http://schema.org/Service"
+      "$ref": "schema:Service"
     }
   ]
 }

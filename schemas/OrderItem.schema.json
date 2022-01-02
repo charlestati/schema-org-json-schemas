@@ -1,19 +1,19 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/OrderItem",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:OrderItem",
   "title": "OrderItem",
   "description": "An order item is a line of an order. It includes the quantity and shipping details of a bought offer.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
     "orderDelivery": {
       "description": "The delivery of the parcel related to this order or order item.",
-      "$ref": "http://schema.org/ParcelDelivery"
+      "$ref": "schema:ParcelDelivery"
     },
     "orderItemNumber": {
       "description": "The identifier of the order item.",
@@ -21,7 +21,7 @@
     },
     "orderItemStatus": {
       "description": "The current status of the order item.",
-      "$ref": "http://schema.org/OrderStatus"
+      "$ref": "schema:OrderStatus"
     },
     "orderQuantity": {
       "description": "The number of the item ordered. If the property is not set, assume the quantity is one.",
@@ -32,18 +32,18 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/OrderItem" },
-            { "$ref": "http://schema.org/Product" },
-            { "$ref": "http://schema.org/Service" }
+            { "$ref": "schema:OrderItem" },
+            { "$ref": "schema:Product" },
+            { "$ref": "schema:Service" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/OrderItem" },
-              { "$ref": "http://schema.org/Product" },
-              { "$ref": "http://schema.org/Service" }
+              { "$ref": "schema:OrderItem" },
+              { "$ref": "schema:Product" },
+              { "$ref": "schema:Service" }
             ]
           }
         }

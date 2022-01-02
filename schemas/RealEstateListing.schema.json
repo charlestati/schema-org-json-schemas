@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:RealEstateListing",
+  "title": "RealEstateListing",
+  "description": "A [[RealEstateListing]] is a listing that describes one or more real-estate [[Offer]]s (whose [[businessFunction]] is typically to lease out, or to sell).\n  The [[RealEstateListing]] type itself represents the overall listing, as manifested in some [[WebPage]].\n  ",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as breadcrumb may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.",
+      "$ref": "schema:WebPage"
+    }
+  ],
+  "properties": {
+    "datePosted": {
+      "description": "Publication date of an online listing.",
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
+    },
+    "leaseLength": {
+      "description": "Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "$comment": "https://schema.org/Duration" },
+            { "$ref": "schema:QuantitativeValue" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "$comment": "https://schema.org/Duration" },
+              { "$ref": "schema:QuantitativeValue" }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

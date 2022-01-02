@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/CurrencyConversionService",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:CurrencyConversionService",
   "title": "CurrencyConversionService",
   "description": "A service to convert funds from one currency to another currency.",
   "type": "object",
   "allOf": [
     {
       "description": "A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.",
-      "$ref": "http://schema.org/FinancialProduct"
+      "$ref": "schema:FinancialProduct"
     }
   ]
 }

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalTest",
+  "title": "MedicalTest",
+  "description": "Any medical test, typically performed for diagnostic purposes.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic type of entity related to health and the practice of medicine.",
+      "$ref": "schema:MedicalEntity"
+    }
+  ],
+  "properties": {
+    "affectedBy": {
+      "description": "Drugs that affect the test's results.",
+      "oneOf": [
+        { "$ref": "schema:Drug" },
+        { "type": "array", "items": { "$ref": "schema:Drug" } }
+      ]
+    },
+    "normalRange": {
+      "description": "Range of acceptable values for a typical patient, when applicable.",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:MedicalEnumeration" }]
+    },
+    "signDetected": {
+      "description": "A sign detected by the test.",
+      "oneOf": [
+        { "$ref": "schema:MedicalSign" },
+        { "type": "array", "items": { "$ref": "schema:MedicalSign" } }
+      ]
+    },
+    "usedToDiagnose": {
+      "description": "A condition the test is used to diagnose.",
+      "oneOf": [
+        { "$ref": "schema:MedicalCondition" },
+        { "type": "array", "items": { "$ref": "schema:MedicalCondition" } }
+      ]
+    },
+    "usesDevice": {
+      "description": "Device used to perform the test.",
+      "oneOf": [
+        { "$ref": "schema:MedicalDevice" },
+        { "type": "array", "items": { "$ref": "schema:MedicalDevice" } }
+      ]
+    }
+  }
+}

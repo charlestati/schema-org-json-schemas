@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/CheckAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:CheckAction",
   "title": "CheckAction",
   "description": "An agent inspects, determines, investigates, inquires, or examines an object's accuracy, quality, condition, or state.",
   "type": "object",
   "allOf": [
     {
-      "description": "The act of finding an object.\n\nRelated actions:\n\n\nSearchAction: FindAction is generally lead by a SearchAction, but not necessarily.\n\n",
-      "$ref": "http://schema.org/FindAction"
+      "description": "The act of finding an object.\\n\\nRelated actions:\\n\\n* [[SearchAction]]: FindAction is generally lead by a SearchAction, but not necessarily.",
+      "$ref": "schema:FindAction"
     }
   ]
 }

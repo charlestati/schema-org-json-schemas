@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:UKNonprofitType",
+  "title": "UKNonprofitType",
+  "description": "UKNonprofitType: Non-profit organization type originating from the United Kingdom.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "NonprofitType enumerates several kinds of official non-profit types of which a non-profit organization can be.",
+      "$ref": "schema:NonprofitType"
+    }
+  ]
+}

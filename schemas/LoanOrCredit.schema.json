@@ -1,44 +1,63 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/LoanOrCredit",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:LoanOrCredit",
   "title": "LoanOrCredit",
-  "description": "A financial product for the loaning of an amount of money under agreed terms and charges.",
+  "description": "A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.",
   "type": "object",
   "allOf": [
     {
       "description": "A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.",
-      "$ref": "http://schema.org/FinancialProduct"
+      "$ref": "schema:FinancialProduct"
     }
   ],
   "properties": {
     "amount": {
       "description": "The amount of money.",
-      "anyOf": [
-        { "type": "number" },
-        { "$ref": "http://schema.org/MonetaryAmount" }
-      ]
+      "anyOf": [{ "type": "number" }, { "$ref": "schema:MonetaryAmount" }]
     },
     "currency": {
-      "description": "The currency in which the monetary amount is expressed.\n\nUse standard formats: ISO 4217 currency format e.g. \"USD\"; Ticker symbol for cryptocurrencies e.g. \"BTC\"; well known names for Local Exchange Tradings Systems (LETS) and other currency types e.g. \"Ithaca HOUR\".",
+      "description": "The currency in which the monetary amount is expressed.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
       "type": "string"
+    },
+    "gracePeriod": {
+      "description": "The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.",
+      "type": "string",
+      "$comment": "https://schema.org/Duration"
+    },
+    "loanRepaymentForm": {
+      "description": "A form of paying back money previously borrowed from a lender. Repayment usually takes the form of periodic payments that normally include part principal plus interest in each payment.",
+      "oneOf": [
+        { "$ref": "schema:RepaymentSpecification" },
+        {
+          "type": "array",
+          "items": { "$ref": "schema:RepaymentSpecification" }
+        }
+      ]
     },
     "loanTerm": {
       "description": "The duration of the loan or credit agreement.",
-      "$ref": "http://schema.org/QuantitativeValue"
+      "$ref": "schema:QuantitativeValue"
+    },
+    "loanType": {
+      "description": "The type of a loan or credit.",
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+    },
+    "recourseLoan": {
+      "description": "The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.",
+      "type": "boolean"
+    },
+    "renegotiableLoan": {
+      "description": "Whether the terms for payment of interest can be renegotiated during the life of the loan.",
+      "type": "boolean"
     },
     "requiredCollateral": {
       "description": "Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)",
       "oneOf": [
-        {
-          "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Thing" }]
-        },
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:Thing" }] },
         {
           "type": "array",
           "items": {
-            "anyOf": [
-              { "type": "string" },
-              { "$ref": "http://schema.org/Thing" }
-            ]
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:Thing" }]
           }
         }
       ]

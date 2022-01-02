@@ -1,6 +1,6 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/BookFormatType",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BookFormatType",
   "title": "BookFormatType",
   "description": "The publication format of the book.",
   "type": "string",
@@ -10,6 +10,10 @@
       "const": "AudiobookFormat"
     },
     { "description": "Book format: Ebook.", "const": "EBook" },
+    {
+      "description": "Book format: GraphicNovel. May represent a bound collection of ComicIssue instances.",
+      "const": "GraphicNovel"
+    },
     { "description": "Book format: Hardcover.", "const": "Hardcover" },
     { "description": "Book format: Paperback.", "const": "Paperback" }
   ]

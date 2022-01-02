@@ -1,19 +1,19 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/LocationFeatureSpecification",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:LocationFeatureSpecification",
   "title": "LocationFeatureSpecification",
   "description": "Specifies a location feature by providing a structured value representing a feature of an accommodation as a property-value pair of varying degrees of formality.",
   "type": "object",
   "allOf": [
     {
-      "description": "A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.\n\nAlways use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.",
-      "$ref": "http://schema.org/PropertyValue"
+      "description": "A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.\\n\\n Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.\n    ",
+      "$ref": "schema:PropertyValue"
     }
   ],
   "properties": {
     "hoursAvailable": {
       "description": "The hours during which this service or contact is available.",
-      "$ref": "http://schema.org/OpeningHoursSpecification"
+      "$ref": "schema:OpeningHoursSpecification"
     },
     "validFrom": {
       "description": "The date when the item becomes valid.",

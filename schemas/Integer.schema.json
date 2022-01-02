@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Integer",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Integer",
   "title": "Integer",
   "description": "Data type: Integer.",
   "type": "object",
   "allOf": [
     {
-      "description": "Data type: Number.\n\nUsage guidelines:\n\n\nUse values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\nUse '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n\n",
-      "$ref": "http://schema.org/Number"
+      "description": "Data type: Number.\\n\\nUsage guidelines:\\n\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
+      "$ref": "schema:Number"
     }
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Motorcycle",
+  "title": "Motorcycle",
+  "description": "A motorcycle or motorbike is a single-track, two-wheeled motor vehicle.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.",
+      "$ref": "schema:Vehicle"
+    }
+  ]
+}

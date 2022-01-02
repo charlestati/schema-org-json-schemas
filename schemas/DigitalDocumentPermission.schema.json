@@ -1,28 +1,28 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/DigitalDocumentPermission",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DigitalDocumentPermission",
   "title": "DigitalDocumentPermission",
   "description": "A permission for a particular person or group to access a particular file.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
     "grantee": {
       "description": "The person, organization, contact point, or audience that has been granted this permission.",
       "anyOf": [
-        { "$ref": "http://schema.org/Audience" },
-        { "$ref": "http://schema.org/ContactPoint" },
-        { "$ref": "http://schema.org/Organization" },
-        { "$ref": "http://schema.org/Person" }
+        { "$ref": "schema:Audience" },
+        { "$ref": "schema:ContactPoint" },
+        { "$ref": "schema:Organization" },
+        { "$ref": "schema:Person" }
       ]
     },
     "permissionType": {
       "description": "The type of permission granted the person, organization, or audience.",
-      "$ref": "http://schema.org/DigitalDocumentPermissionType"
+      "$ref": "schema:DigitalDocumentPermissionType"
     }
   }
 }

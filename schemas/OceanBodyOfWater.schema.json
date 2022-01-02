@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/OceanBodyOfWater",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:OceanBodyOfWater",
   "title": "OceanBodyOfWater",
   "description": "An ocean (for example, the Pacific).",
   "type": "object",
   "allOf": [
     {
       "description": "A body of water, such as a sea, ocean, or lake.",
-      "$ref": "http://schema.org/BodyOfWater"
+      "$ref": "schema:BodyOfWater"
     }
   ]
 }

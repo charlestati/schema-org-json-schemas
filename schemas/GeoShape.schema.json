@@ -1,26 +1,23 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/GeoShape",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:GeoShape",
   "title": "GeoShape",
   "description": "The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.",
   "type": "object",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "http://schema.org/StructuredValue"
+      "$ref": "schema:StructuredValue"
     }
   ],
   "properties": {
     "address": {
       "description": "Physical address of the item.",
-      "anyOf": [
-        { "type": "string" },
-        { "$ref": "http://schema.org/PostalAddress" }
-      ]
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:PostalAddress" }]
     },
     "addressCountry": {
-      "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Country" }]
+      "description": "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:Country" }]
     },
     "box": {
       "description": "A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.",
@@ -37,7 +34,7 @@
       ]
     },
     "elevation": {
-      "description": "The elevation of a location (WGS 84). Values may be of the form 'NUMBER UNITOFMEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",
+      "description": "The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",
       "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "line": {

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Vein",
+  "title": "Vein",
+  "description": "A type of blood vessel that specifically carries blood to the heart.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A component of the human body circulatory system comprised of an intricate network of hollow tubes that transport blood throughout the entire body.",
+      "$ref": "schema:Vessel"
+    }
+  ],
+  "properties": {
+    "drainsTo": {
+      "description": "The vasculature that the vein drains into.",
+      "$ref": "schema:Vessel"
+    },
+    "regionDrained": {
+      "description": "The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.",
+      "anyOf": [
+        { "$ref": "schema:AnatomicalStructure" },
+        { "$ref": "schema:AnatomicalSystem" }
+      ]
+    },
+    "tributary": {
+      "description": "The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.",
+      "$ref": "schema:AnatomicalStructure"
+    }
+  }
+}

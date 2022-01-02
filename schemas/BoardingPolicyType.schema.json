@@ -1,6 +1,6 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/BoardingPolicyType",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BoardingPolicyType",
   "title": "BoardingPolicyType",
   "description": "A type of boarding policy used by an airline.",
   "type": "string",

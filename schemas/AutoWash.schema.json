@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/AutoWash",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:AutoWash",
   "title": "AutoWash",
   "description": "A car wash business.",
   "type": "object",
   "allOf": [
     {
       "description": "Car repair, sales, or parts.",
-      "$ref": "http://schema.org/AutomotiveBusiness"
+      "$ref": "schema:AutomotiveBusiness"
     }
   ]
 }

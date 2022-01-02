@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/AddAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:AddAction",
   "title": "AddAction",
   "description": "The act of editing by adding an object to a collection.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of managing by changing/editing the state of the object.",
-      "$ref": "http://schema.org/UpdateAction"
+      "$ref": "schema:UpdateAction"
     }
   ]
 }

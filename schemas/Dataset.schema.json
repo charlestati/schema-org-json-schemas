@@ -1,24 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Dataset",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Dataset",
   "title": "Dataset",
   "description": "A body of structured information describing some topic(s) of interest.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     }
   ],
   "properties": {
     "catalog": {
       "description": "A data catalog which contains this dataset.",
       "oneOf": [
-        { "$ref": "http://schema.org/DataCatalog" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/DataCatalog" }
-        }
+        { "$ref": "schema:DataCatalog" },
+        { "type": "array", "items": { "$ref": "schema:DataCatalog" } }
       ]
     },
     "datasetTimeInterval": {
@@ -29,36 +26,48 @@
     "distribution": {
       "description": "A downloadable form of this dataset, at a specific location, in a specific format.",
       "oneOf": [
-        { "$ref": "http://schema.org/DataDownload" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/DataDownload" }
-        }
+        { "$ref": "schema:DataDownload" },
+        { "type": "array", "items": { "$ref": "schema:DataDownload" } }
       ]
     },
     "includedDataCatalog": {
       "description": "A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').",
       "oneOf": [
-        { "$ref": "http://schema.org/DataCatalog" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/DataCatalog" }
-        }
+        { "$ref": "schema:DataCatalog" },
+        { "type": "array", "items": { "$ref": "schema:DataCatalog" } }
       ]
     },
     "includedInDataCatalog": {
       "description": "A data catalog which contains this dataset.",
       "oneOf": [
-        { "$ref": "http://schema.org/DataCatalog" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/DataCatalog" }
-        }
+        { "$ref": "schema:DataCatalog" },
+        { "type": "array", "items": { "$ref": "schema:DataCatalog" } }
       ]
     },
     "issn": {
       "description": "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
       "type": "string"
+    },
+    "measurementTechnique": {
+      "description": "A technique or technology used in a [[Dataset]] (or [[DataDownload]], [[DataCatalog]]),\ncorresponding to the method used for measuring the corresponding variable(s) (described using [[variableMeasured]]). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.\n\nFor example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\".\n\nIf the [[variableMeasured]] is \"depression rating\", the [[measurementTechnique]] could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\".\n\nIf there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]].\n      ",
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "type": "string" }
+            ]
+          }
+        }
+      ]
+    },
+    "variableMeasured": {
+      "description": "The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:PropertyValue" }]
     }
   }
 }

@@ -1,32 +1,24 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ServiceChannel",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ServiceChannel",
   "title": "ServiceChannel",
   "description": "A means for accessing a service, e.g. a government office location, web site, or phone number.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
     "availableLanguage": {
-      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]",
       "oneOf": [
-        {
-          "anyOf": [
-            { "type": "string" },
-            { "$ref": "http://schema.org/Language" }
-          ]
-        },
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }] },
         {
           "type": "array",
           "items": {
-            "anyOf": [
-              { "type": "string" },
-              { "$ref": "http://schema.org/Language" }
-            ]
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }]
           }
         }
       ]
@@ -38,23 +30,23 @@
     },
     "providesService": {
       "description": "The service provided by this channel.",
-      "$ref": "http://schema.org/Service"
+      "$ref": "schema:Service"
     },
     "serviceLocation": {
       "description": "The location (e.g. civic structure, local business, etc.) where a person can go to access the service.",
-      "$ref": "http://schema.org/Place"
+      "$ref": "schema:Place"
     },
     "servicePhone": {
       "description": "The phone number to use to access the service.",
-      "$ref": "http://schema.org/ContactPoint"
+      "$ref": "schema:ContactPoint"
     },
     "servicePostalAddress": {
       "description": "The address for accessing the service by mail.",
-      "$ref": "http://schema.org/PostalAddress"
+      "$ref": "schema:PostalAddress"
     },
     "serviceSmsNumber": {
       "description": "The number to access the service by text message.",
-      "$ref": "http://schema.org/ContactPoint"
+      "$ref": "schema:ContactPoint"
     },
     "serviceUrl": {
       "description": "The website to access the service.",

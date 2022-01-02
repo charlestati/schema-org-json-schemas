@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DietarySupplement",
+  "title": "DietarySupplement",
+  "description": "A product taken by mouth that contains a dietary ingredient intended to supplement the diet. Dietary ingredients may include vitamins, minerals, herbs or other botanicals, amino acids, and substances such as enzymes, organ tissues, glandulars and metabolites.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.",
+      "$ref": "schema:Substance"
+    }
+  ],
+  "properties": {
+    "activeIngredient": {
+      "description": "An active ingredient, typically chemical compounds and/or biologic substances.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "isProprietary": {
+      "description": "True if this item's name is a proprietary/brand name (vs. generic name).",
+      "type": "boolean"
+    },
+    "legalStatus": {
+      "description": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "schema:DrugLegalStatus" },
+        { "$ref": "schema:MedicalEnumeration" }
+      ]
+    },
+    "manufacturer": {
+      "description": "The manufacturer of the product.",
+      "$ref": "schema:Organization"
+    },
+    "maximumIntake": {
+      "description": "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
+      "$ref": "schema:MaximumDoseSchedule"
+    },
+    "mechanismOfAction": {
+      "description": "The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.",
+      "type": "string"
+    },
+    "nonProprietaryName": {
+      "description": "The generic name of this drug or supplement.",
+      "type": "string"
+    },
+    "proprietaryName": {
+      "description": "Proprietary name given to the diet plan, typically by its originator or creator.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "recommendedIntake": {
+      "description": "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
+      "oneOf": [
+        { "$ref": "schema:RecommendedDoseSchedule" },
+        {
+          "type": "array",
+          "items": { "$ref": "schema:RecommendedDoseSchedule" }
+        }
+      ]
+    },
+    "safetyConsideration": {
+      "description": "Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.",
+      "type": "string"
+    },
+    "targetPopulation": {
+      "description": "Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    }
+  }
+}

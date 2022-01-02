@@ -1,17 +1,17 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/HowToDirection",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:HowToDirection",
   "title": "HowToDirection",
   "description": "A direction indicating a single action to do in the instructions for how to achieve a result.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     },
     {
       "description": "An list item, e.g. a step in a checklist or how-to description.",
-      "$ref": "http://schema.org/ListItem"
+      "$ref": "schema:ListItem"
     }
   ],
   "properties": {
@@ -21,7 +21,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "http://schema.org/MediaObject" }
+            { "$ref": "schema:MediaObject" }
           ]
         },
         {
@@ -29,7 +29,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "http://schema.org/MediaObject" }
+              { "$ref": "schema:MediaObject" }
             ]
           }
         }
@@ -41,7 +41,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "http://schema.org/MediaObject" }
+            { "$ref": "schema:MediaObject" }
           ]
         },
         {
@@ -49,7 +49,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "http://schema.org/MediaObject" }
+              { "$ref": "schema:MediaObject" }
             ]
           }
         }
@@ -61,7 +61,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "http://schema.org/MediaObject" }
+            { "$ref": "schema:MediaObject" }
           ]
         },
         {
@@ -69,38 +69,30 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "http://schema.org/MediaObject" }
+              { "$ref": "schema:MediaObject" }
             ]
           }
         }
       ]
     },
     "performTime": {
-      "description": "The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in ISO 8601 duration format.",
+      "description": "The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
       "type": "string",
       "$comment": "https://schema.org/Duration"
     },
     "prepTime": {
-      "description": "The length of time it takes to prepare the items to be used in instructions or a direction, in ISO 8601 duration format.",
+      "description": "The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
       "type": "string",
       "$comment": "https://schema.org/Duration"
     },
     "supply": {
       "description": "A sub-property of instrument. A supply consumed when performing instructions or a direction.",
       "oneOf": [
-        {
-          "anyOf": [
-            { "type": "string" },
-            { "$ref": "http://schema.org/HowToSupply" }
-          ]
-        },
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:HowToSupply" }] },
         {
           "type": "array",
           "items": {
-            "anyOf": [
-              { "type": "string" },
-              { "$ref": "http://schema.org/HowToSupply" }
-            ]
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:HowToSupply" }]
           }
         }
       ]
@@ -108,25 +100,17 @@
     "tool": {
       "description": "A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.",
       "oneOf": [
-        {
-          "anyOf": [
-            { "type": "string" },
-            { "$ref": "http://schema.org/HowToTool" }
-          ]
-        },
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:HowToTool" }] },
         {
           "type": "array",
           "items": {
-            "anyOf": [
-              { "type": "string" },
-              { "$ref": "http://schema.org/HowToTool" }
-            ]
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:HowToTool" }]
           }
         }
       ]
     },
     "totalTime": {
-      "description": "The total time required to perform instructions or a direction (including time to prepare the supplies), in ISO 8601 duration format.",
+      "description": "The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
       "type": "string",
       "$comment": "https://schema.org/Duration"
     }

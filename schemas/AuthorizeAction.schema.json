@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/AuthorizeAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:AuthorizeAction",
   "title": "AuthorizeAction",
   "description": "The act of granting permission to an object.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of organizing tasks/objects/events by associating resources to it.",
-      "$ref": "http://schema.org/AllocateAction"
+      "$ref": "schema:AllocateAction"
     }
   ],
   "properties": {
@@ -16,20 +16,20 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/Audience" },
-            { "$ref": "http://schema.org/ContactPoint" },
-            { "$ref": "http://schema.org/Organization" },
-            { "$ref": "http://schema.org/Person" }
+            { "$ref": "schema:Audience" },
+            { "$ref": "schema:ContactPoint" },
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Audience" },
-              { "$ref": "http://schema.org/ContactPoint" },
-              { "$ref": "http://schema.org/Organization" },
-              { "$ref": "http://schema.org/Person" }
+              { "$ref": "schema:Audience" },
+              { "$ref": "schema:ContactPoint" },
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
             ]
           }
         }

@@ -1,49 +1,40 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Place",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Place",
   "title": "Place",
   "description": "Entities that have a somewhat fixed, physical extension.",
   "type": "object",
   "allOf": [
-    {
-      "description": "The most generic type of item.",
-      "$ref": "http://schema.org/Thing"
-    }
+    { "description": "The most generic type of item.", "$ref": "schema:Thing" }
   ],
   "properties": {
     "additionalProperty": {
-      "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
+      "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\\n\\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.\n",
       "oneOf": [
-        { "$ref": "http://schema.org/PropertyValue" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/PropertyValue" }
-        }
+        { "$ref": "schema:PropertyValue" },
+        { "type": "array", "items": { "$ref": "schema:PropertyValue" } }
       ]
     },
     "address": {
       "description": "Physical address of the item.",
-      "anyOf": [
-        { "type": "string" },
-        { "$ref": "http://schema.org/PostalAddress" }
-      ]
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:PostalAddress" }]
     },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
-      "$ref": "http://schema.org/AggregateRating"
+      "$ref": "schema:AggregateRating"
     },
     "amenityFeature": {
       "description": "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
       "oneOf": [
-        { "$ref": "http://schema.org/LocationFeatureSpecification" },
+        { "$ref": "schema:LocationFeatureSpecification" },
         {
           "type": "array",
-          "items": { "$ref": "http://schema.org/LocationFeatureSpecification" }
+          "items": { "$ref": "schema:LocationFeatureSpecification" }
         }
       ]
     },
     "branchCode": {
-      "description": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.",
+      "description": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\\n\\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.\n      ",
       "oneOf": [
         { "type": "string" },
         { "type": "array", "items": { "type": "string" } }
@@ -51,111 +42,245 @@
     },
     "containedIn": {
       "description": "The basic containment relation between a place and one that contains it.",
-      "$ref": "http://schema.org/Place"
+      "$ref": "schema:Place"
     },
     "containedInPlace": {
       "description": "The basic containment relation between a place and one that contains it.",
-      "$ref": "http://schema.org/Place"
+      "$ref": "schema:Place"
     },
     "containsPlace": {
       "description": "The basic containment relation between a place and another that it contains.",
-      "$ref": "http://schema.org/Place"
+      "$ref": "schema:Place"
     },
     "event": {
       "description": "Upcoming or past event associated with this place, organization, or action.",
       "oneOf": [
-        { "$ref": "http://schema.org/Event" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
+        { "$ref": "schema:Event" },
+        { "type": "array", "items": { "$ref": "schema:Event" } }
       ]
     },
     "events": {
       "description": "Upcoming or past events associated with this place or organization.",
       "oneOf": [
-        { "$ref": "http://schema.org/Event" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Event" } }
+        { "$ref": "schema:Event" },
+        { "type": "array", "items": { "$ref": "schema:Event" } }
       ]
     },
     "faxNumber": { "description": "The fax number.", "type": "string" },
     "geo": {
       "description": "The geo coordinates of the place.",
       "anyOf": [
-        { "$ref": "http://schema.org/GeoCoordinates" },
-        { "$ref": "http://schema.org/GeoShape" }
+        { "$ref": "schema:GeoCoordinates" },
+        { "$ref": "schema:GeoShape" }
       ]
     },
     "geoContains": {
-      "description": "Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. \"a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a\". As defined in DE-9IM.",
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. \"a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a\". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        {
+          "anyOf": [
+            { "$ref": "schema:GeospatialGeometry" },
+            { "$ref": "schema:Place" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:GeospatialGeometry" },
+              { "$ref": "schema:Place" }
+            ]
+          }
+        }
       ]
     },
     "geoCoveredBy": {
-      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in DE-9IM.",
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        {
+          "anyOf": [
+            { "$ref": "schema:GeospatialGeometry" },
+            { "$ref": "schema:Place" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:GeospatialGeometry" },
+              { "$ref": "schema:Place" }
+            ]
+          }
+        }
       ]
     },
     "geoCovers": {
-      "description": "Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. \"Every point of b is a point of (the interior or boundary of) a\". As defined in DE-9IM.",
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. \"Every point of b is a point of (the interior or boundary of) a\". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        {
+          "anyOf": [
+            { "$ref": "schema:GeospatialGeometry" },
+            { "$ref": "schema:Place" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:GeospatialGeometry" },
+              { "$ref": "schema:Place" }
+            ]
+          }
+        }
       ]
     },
     "geoCrosses": {
-      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in DE-9IM.",
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        {
+          "anyOf": [
+            { "$ref": "schema:GeospatialGeometry" },
+            { "$ref": "schema:Place" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:GeospatialGeometry" },
+              { "$ref": "schema:Place" }
+            ]
+          }
+        }
       ]
     },
     "geoDisjoint": {
-      "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in DE-9IM)",
+      "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        {
+          "anyOf": [
+            { "$ref": "schema:GeospatialGeometry" },
+            { "$ref": "schema:Place" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:GeospatialGeometry" },
+              { "$ref": "schema:Place" }
+            ]
+          }
+        }
       ]
     },
     "geoEquals": {
-      "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in DE-9IM. \"Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other\" (a symmetric relationship)",
+      "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). \"Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other\" (a symmetric relationship)",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        {
+          "anyOf": [
+            { "$ref": "schema:GeospatialGeometry" },
+            { "$ref": "schema:Place" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:GeospatialGeometry" },
+              { "$ref": "schema:Place" }
+            ]
+          }
+        }
       ]
     },
     "geoIntersects": {
-      "description": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in DE-9IM.",
+      "description": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        {
+          "anyOf": [
+            { "$ref": "schema:GeospatialGeometry" },
+            { "$ref": "schema:Place" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:GeospatialGeometry" },
+              { "$ref": "schema:Place" }
+            ]
+          }
+        }
       ]
     },
     "geoOverlaps": {
-      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in DE-9IM.",
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        {
+          "anyOf": [
+            { "$ref": "schema:GeospatialGeometry" },
+            { "$ref": "schema:Place" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:GeospatialGeometry" },
+              { "$ref": "schema:Place" }
+            ]
+          }
+        }
       ]
     },
     "geoTouches": {
-      "description": "Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.\" (a symmetric relationship, as defined in DE-9IM )",
+      "description": "Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.\" (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        {
+          "anyOf": [
+            { "$ref": "schema:GeospatialGeometry" },
+            { "$ref": "schema:Place" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:GeospatialGeometry" },
+              { "$ref": "schema:Place" }
+            ]
+          }
+        }
       ]
     },
     "geoWithin": {
-      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in DE-9IM.",
+      "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        {
+          "anyOf": [
+            { "$ref": "schema:GeospatialGeometry" },
+            { "$ref": "schema:Place" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:GeospatialGeometry" },
+              { "$ref": "schema:Place" }
+            ]
+          }
+        }
       ]
     },
     "globalLocationNumber": {
-      "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "description": "The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
       "type": "string"
+    },
+    "hasDriveThroughService": {
+      "description": "Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.",
+      "type": "boolean"
     },
     "hasMap": {
       "description": "A URL to a map of the place.",
@@ -163,7 +288,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "http://schema.org/Map" }
+            { "$ref": "schema:Map" }
           ]
         },
         {
@@ -171,7 +296,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "http://schema.org/Map" }
+              { "$ref": "schema:Map" }
             ]
           }
         }
@@ -186,7 +311,7 @@
       "type": "string"
     },
     "latitude": {
-      "description": "The latitude of a location. For example 37.42242 (WGS 84).",
+      "description": "The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).",
       "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "logo": {
@@ -195,7 +320,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "http://schema.org/ImageObject" }
+            { "$ref": "schema:ImageObject" }
           ]
         },
         {
@@ -203,14 +328,14 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "http://schema.org/ImageObject" }
+              { "$ref": "schema:ImageObject" }
             ]
           }
         }
       ]
     },
     "longitude": {
-      "description": "The longitude of a location. For example -122.08585 (WGS 84).",
+      "description": "The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).",
       "anyOf": [{ "type": "number" }, { "type": "string" }]
     },
     "map": {
@@ -233,23 +358,23 @@
     },
     "openingHoursSpecification": {
       "description": "The opening hours of a certain place.",
-      "$ref": "http://schema.org/OpeningHoursSpecification"
+      "$ref": "schema:OpeningHoursSpecification"
     },
     "photo": {
       "description": "A photograph of this place.",
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/ImageObject" },
-            { "$ref": "http://schema.org/Photograph" }
+            { "$ref": "schema:ImageObject" },
+            { "$ref": "schema:Photograph" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/ImageObject" },
-              { "$ref": "http://schema.org/Photograph" }
+              { "$ref": "schema:ImageObject" },
+              { "$ref": "schema:Photograph" }
             ]
           }
         }
@@ -260,37 +385,37 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/ImageObject" },
-            { "$ref": "http://schema.org/Photograph" }
+            { "$ref": "schema:ImageObject" },
+            { "$ref": "schema:Photograph" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/ImageObject" },
-              { "$ref": "http://schema.org/Photograph" }
+              { "$ref": "schema:ImageObject" },
+              { "$ref": "schema:Photograph" }
             ]
           }
         }
       ]
     },
     "publicAccess": {
-      "description": "A flag to signal that the Place is open to public visitors.  If this property is omitted there is no assumed default boolean value",
+      "description": "A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value",
       "type": "boolean"
     },
     "review": {
       "description": "A review of the item.",
       "oneOf": [
-        { "$ref": "http://schema.org/Review" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
+        { "$ref": "schema:Review" },
+        { "type": "array", "items": { "$ref": "schema:Review" } }
       ]
     },
     "reviews": {
       "description": "Review of the item.",
       "oneOf": [
-        { "$ref": "http://schema.org/Review" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
+        { "$ref": "schema:Review" },
+        { "type": "array", "items": { "$ref": "schema:Review" } }
       ]
     },
     "slogan": {
@@ -305,9 +430,16 @@
       "type": "boolean"
     },
     "specialOpeningHoursSpecification": {
-      "description": "The special opening hours of a certain place.\n\nUse this to explicitly override general opening hours brought in scope by openingHoursSpecification or openingHours.",
-      "$ref": "http://schema.org/OpeningHoursSpecification"
+      "description": "The special opening hours of a certain place.\\n\\nUse this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].\n      ",
+      "$ref": "schema:OpeningHoursSpecification"
     },
-    "telephone": { "description": "The telephone number.", "type": "string" }
+    "telephone": { "description": "The telephone number.", "type": "string" },
+    "tourBookingPage": {
+      "description": "A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.",
+      "oneOf": [
+        { "type": "string", "format": "uri" },
+        { "type": "array", "items": { "type": "string", "format": "uri" } }
+      ]
+    }
   }
 }

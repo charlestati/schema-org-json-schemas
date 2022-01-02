@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/FilmAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:FilmAction",
   "title": "FilmAction",
   "description": "The act of capturing sound and moving images on film, video, or digitally.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",
-      "$ref": "http://schema.org/CreateAction"
+      "$ref": "schema:CreateAction"
     }
   ]
 }

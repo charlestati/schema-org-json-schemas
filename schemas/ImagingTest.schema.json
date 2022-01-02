@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ImagingTest",
+  "title": "ImagingTest",
+  "description": "Any medical imaging modality typically used for diagnostic purposes.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any medical test, typically performed for diagnostic purposes.",
+      "$ref": "schema:MedicalTest"
+    }
+  ],
+  "properties": {
+    "imagingTechnique": {
+      "description": "Imaging technique used.",
+      "oneOf": [
+        { "$ref": "schema:MedicalImagingTechnique" },
+        {
+          "type": "array",
+          "items": { "$ref": "schema:MedicalImagingTechnique" }
+        }
+      ]
+    }
+  }
+}

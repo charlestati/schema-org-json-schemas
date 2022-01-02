@@ -1,24 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/PerformAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PerformAction",
   "title": "PerformAction",
   "description": "The act of participating in performance arts.",
   "type": "object",
   "allOf": [
     {
-      "description": "The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.\n\nRelated actions:\n\n\nListenAction: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\nWatchAction: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.\n\n",
-      "$ref": "http://schema.org/PlayAction"
+      "description": "The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.\\n\\nRelated actions:\\n\\n* [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\\n* [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.",
+      "$ref": "schema:PlayAction"
     }
   ],
   "properties": {
     "entertainmentBusiness": {
       "description": "A sub property of location. The entertainment business where the action occurred.",
       "oneOf": [
-        { "$ref": "http://schema.org/EntertainmentBusiness" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/EntertainmentBusiness" }
-        }
+        { "$ref": "schema:EntertainmentBusiness" },
+        { "type": "array", "items": { "$ref": "schema:EntertainmentBusiness" } }
       ]
     }
   }

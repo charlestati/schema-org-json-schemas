@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalRiskScore",
+  "title": "MedicalRiskScore",
+  "description": "A simple system that adds up the number of risk factors to yield a score that is associated with prognosis, e.g. CHAD score, TIMI risk score.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any rule set or interactive tool for estimating the risk of developing a complication or condition.",
+      "$ref": "schema:MedicalRiskEstimator"
+    }
+  ],
+  "properties": {
+    "algorithm": {
+      "description": "The algorithm or rules to follow to compute the score.",
+      "type": "string"
+    }
+  }
+}

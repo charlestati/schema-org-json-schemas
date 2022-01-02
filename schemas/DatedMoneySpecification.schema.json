@@ -1,36 +1,33 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/DatedMoneySpecification",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DatedMoneySpecification",
   "title": "DatedMoneySpecification",
-  "description": "A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee's salary over a specific period of time. Note: This type has been superseded by MonetaryAmount use of that type is recommended",
+  "description": "A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee's salary over a specific period of time. __Note:__ This type has been superseded by [[MonetaryAmount]] use of that type is recommended",
   "type": "object",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "http://schema.org/StructuredValue"
+      "$ref": "schema:StructuredValue"
     }
   ],
   "properties": {
     "amount": {
       "description": "The amount of money.",
-      "anyOf": [
-        { "type": "number" },
-        { "$ref": "http://schema.org/MonetaryAmount" }
-      ]
+      "anyOf": [{ "type": "number" }, { "$ref": "schema:MonetaryAmount" }]
     },
     "currency": {
-      "description": "The currency in which the monetary amount is expressed.\n\nUse standard formats: ISO 4217 currency format e.g. \"USD\"; Ticker symbol for cryptocurrencies e.g. \"BTC\"; well known names for Local Exchange Tradings Systems (LETS) and other currency types e.g. \"Ithaca HOUR\".",
+      "description": "The currency in which the monetary amount is expressed.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
       "type": "string"
     },
     "endDate": {
-      "description": "The end date and time of the item (in ISO 8601 date format).",
+      "description": "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
       "anyOf": [
         { "type": "string", "format": "date" },
         { "type": "string", "format": "date-time" }
       ]
     },
     "startDate": {
-      "description": "The start date and time of the item (in ISO 8601 date format).",
+      "description": "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
       "anyOf": [
         { "type": "string", "format": "date" },
         { "type": "string", "format": "date-time" }

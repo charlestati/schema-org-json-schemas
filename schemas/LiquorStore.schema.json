@@ -1,10 +1,8 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/LiquorStore",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:LiquorStore",
   "title": "LiquorStore",
   "description": "A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits.",
   "type": "object",
-  "allOf": [
-    { "description": "A retail good store.", "$ref": "http://schema.org/Store" }
-  ]
+  "allOf": [{ "description": "A retail good store.", "$ref": "schema:Store" }]
 }

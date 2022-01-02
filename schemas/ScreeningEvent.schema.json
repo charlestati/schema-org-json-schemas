@@ -1,23 +1,35 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ScreeningEvent",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ScreeningEvent",
   "title": "ScreeningEvent",
   "description": "A screening of a movie or other video.",
   "type": "object",
   "allOf": [
     {
-      "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",
-      "$ref": "http://schema.org/Event"
+      "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.",
+      "$ref": "schema:Event"
     }
   ],
   "properties": {
+    "subtitleLanguage": {
+      "description": "Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).",
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }]
+          }
+        }
+      ]
+    },
     "videoFormat": {
       "description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
       "type": "string"
     },
     "workPresented": {
       "description": "The movie presented during this event.",
-      "$ref": "http://schema.org/Movie"
+      "$ref": "schema:Movie"
     }
   }
 }

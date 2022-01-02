@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Audience",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Audience",
   "title": "Audience",
   "description": "Intended audience for an item, i.e. the group for whom the item was created.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
@@ -17,7 +17,7 @@
     },
     "geographicArea": {
       "description": "The geographic area associated with the audience.",
-      "$ref": "http://schema.org/AdministrativeArea"
+      "$ref": "schema:AdministrativeArea"
     }
   }
 }

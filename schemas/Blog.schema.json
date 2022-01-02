@@ -1,29 +1,29 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Blog",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Blog",
   "title": "Blog",
-  "description": "A blog.",
+  "description": "A [blog](https://en.wikipedia.org/wiki/Blog), sometimes known as a \"weblog\". Note that the individual posts ([[BlogPosting]]s) in a [[Blog]] are often colloqually referred to by the same term.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     }
   ],
   "properties": {
     "blogPost": {
       "description": "A posting that is part of this blog.",
       "oneOf": [
-        { "$ref": "http://schema.org/BlogPosting" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/BlogPosting" }
-        }
+        { "$ref": "schema:BlogPosting" },
+        { "type": "array", "items": { "$ref": "schema:BlogPosting" } }
       ]
     },
     "blogPosts": {
-      "description": "The postings that are part of this blog.",
-      "$ref": "http://schema.org/BlogPosting"
+      "description": "Indicates a post that is part of a [[Blog]]. Note that historically, what we term a \"Blog\" was once known as a \"weblog\", and that what we term a \"BlogPosting\" is now often colloquially referred to as a \"blog\".",
+      "oneOf": [
+        { "$ref": "schema:BlogPosting" },
+        { "type": "array", "items": { "$ref": "schema:BlogPosting" } }
+      ]
     },
     "issn": {
       "description": "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",

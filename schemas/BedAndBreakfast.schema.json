@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/BedAndBreakfast",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BedAndBreakfast",
   "title": "BedAndBreakfast",
-  "description": "Bed and breakfast.\n\nSee also the dedicated document on the use of schema.org for marking up hotels and other forms of accommodations.",
+  "description": "Bed and breakfast.\n\nSee also the dedicated document on the use of schema.org for marking up hotels and other forms of accommodations.\n",
   "type": "object",
   "allOf": [
     {
       "description": "A lodging business, such as a motel, hotel, or inn.",
-      "$ref": "http://schema.org/LodgingBusiness"
+      "$ref": "schema:LodgingBusiness"
     }
   ]
 }

@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:StatusEnumeration",
+  "title": "StatusEnumeration",
+  "description": "Lists or enumerations dealing with status types.",
+  "type": "object"
+}

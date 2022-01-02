@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MortgageLoan",
+  "title": "MortgageLoan",
+  "description": "A loan in which property or real estate is used as collateral. (A loan securitized against some real estate).",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.",
+      "$ref": "schema:LoanOrCredit"
+    }
+  ],
+  "properties": {
+    "domiciledMortgage": {
+      "description": "Whether borrower is a resident of the jurisdiction where the property is located.",
+      "type": "boolean"
+    },
+    "loanMortgageMandateAmount": {
+      "description": "Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.",
+      "oneOf": [
+        { "$ref": "schema:MonetaryAmount" },
+        { "type": "array", "items": { "$ref": "schema:MonetaryAmount" } }
+      ]
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/MusicAlbumProductionType",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MusicAlbumProductionType",
   "title": "MusicAlbumProductionType",
   "description": "Classification of the album by it's type of content: soundtrack, live album, studio album, etc.",
   "type": "string",

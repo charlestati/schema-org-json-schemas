@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/RadioSeason",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:RadioSeason",
   "title": "RadioSeason",
   "description": "Season dedicated to radio broadcast and associated online delivery.",
   "type": "object",
   "allOf": [
     {
       "description": "A media season e.g. tv, radio, video game etc.",
-      "$ref": "http://schema.org/CreativeWorkSeason"
+      "$ref": "schema:CreativeWorkSeason"
     }
   ]
 }

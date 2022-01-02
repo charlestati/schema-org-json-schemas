@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/AppendAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:AppendAction",
   "title": "AppendAction",
   "description": "The act of inserting at the end if an ordered collection.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of adding at a specific location in an ordered collection.",
-      "$ref": "http://schema.org/InsertAction"
+      "$ref": "schema:InsertAction"
     }
   ]
 }

@@ -1,19 +1,39 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/GovernmentService",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:GovernmentService",
   "title": "GovernmentService",
   "description": "A service provided by a government organization, e.g. food stamps, veterans benefits, etc.",
   "type": "object",
   "allOf": [
     {
       "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
-      "$ref": "http://schema.org/Service"
+      "$ref": "schema:Service"
     }
   ],
   "properties": {
+    "jurisdiction": {
+      "description": "Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "schema:AdministrativeArea" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "schema:AdministrativeArea" }
+            ]
+          }
+        }
+      ]
+    },
     "serviceOperator": {
       "description": "The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.",
-      "$ref": "http://schema.org/Organization"
+      "$ref": "schema:Organization"
     }
   }
 }

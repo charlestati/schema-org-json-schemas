@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:SchoolDistrict",
+  "title": "SchoolDistrict",
+  "description": "A School District is an administrative area for the administration of schools.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A geographical region, typically under the jurisdiction of a particular government.",
+      "$ref": "schema:AdministrativeArea"
+    }
+  ]
+}

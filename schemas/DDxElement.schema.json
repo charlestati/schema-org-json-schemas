@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DDxElement",
+  "title": "DDxElement",
+  "description": "An alternative, closely-related condition typically considered later in the differential diagnosis process along with the signs that are used to distinguish it.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
+      "$ref": "schema:MedicalIntangible"
+    }
+  ],
+  "properties": {
+    "diagnosis": {
+      "description": "One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.",
+      "oneOf": [
+        { "$ref": "schema:MedicalCondition" },
+        { "type": "array", "items": { "$ref": "schema:MedicalCondition" } }
+      ]
+    },
+    "distinguishingSign": {
+      "description": "One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.",
+      "oneOf": [
+        { "$ref": "schema:MedicalSignOrSymptom" },
+        { "type": "array", "items": { "$ref": "schema:MedicalSignOrSymptom" } }
+      ]
+    }
+  }
+}

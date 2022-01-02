@@ -17,11 +17,11 @@
 const fs = require("fs-extra");
 const { castArray } = require("lodash");
 const axios = require("axios");
-const Ajv = require("ajv");
+const Ajv2020 = require("ajv/dist/2020");
 const HttpStatus = require("http-status-codes");
 const { main, buildSchema } = require("../build_schemas");
 
-const schemaOrgSchemas = require("./schema.json");
+const schemaOrgSchemas = require("./schemaorg-current-https.json");
 
 jest.mock("axios");
 jest.mock("fs-extra");
@@ -30,97 +30,97 @@ let schemaClasses;
 let properties;
 let enumValues;
 
-beforeEach(() => {
-  const graph = schemaOrgSchemas["@graph"];
-  schemaClasses = graph.filter((vocabulary) =>
-    castArray(vocabulary["@type"]).includes("rdfs:Class"),
-  );
-  properties = graph.filter((vocabulary) =>
-    castArray(vocabulary["@type"]).includes("rdf:Property"),
-  );
-  enumValues = graph.filter((vocabulary) =>
-    castArray(vocabulary["@type"]).some(
-      (type) =>
-        type.startsWith("http://schema.org/") &&
-        type !== "http://schema.org/DataType",
-    ),
-  );
-});
-
-it("should build the JSON Schema of Person", async () => {
-  const schemaClass = schemaClasses.find(
-    (schema) => schema["@id"] === "http://schema.org/Person",
-  );
-  const schema = buildSchema(
-    schemaClass,
-    schemaClasses,
-    properties,
-    enumValues,
-  );
-  expect(schema).toMatchSnapshot();
-});
-
-it("should build the JSON Schema of SpeakableSpecification", async () => {
-  const schemaClass = schemaClasses.find(
-    (schema) => schema["@id"] === "http://schema.org/SpeakableSpecification",
-  );
-  const schema = buildSchema(
-    schemaClass,
-    schemaClasses,
-    properties,
-    enumValues,
-  );
-  expect(schema).toMatchSnapshot();
-});
-
-it("should build the JSON Schema of FoodEstablishment", async () => {
-  const schemaClass = schemaClasses.find(
-    (schema) => schema["@id"] === "http://schema.org/FoodEstablishment",
-  );
-  const schema = buildSchema(
-    schemaClass,
-    schemaClasses,
-    properties,
-    enumValues,
-  );
-  expect(schema).toMatchSnapshot();
-});
-
-it("should build the JSON Schema of Event", async () => {
-  const schemaClass = schemaClasses.find(
-    (schema) => schema["@id"] === "http://schema.org/Event",
-  );
-  const schema = buildSchema(
-    schemaClass,
-    schemaClasses,
-    properties,
-    enumValues,
-  );
-  expect(schema).toMatchSnapshot();
-});
-
-it("should build valid JSON Schemas", () => {
-  const schemas = schemaClasses.map((schemaClass) => {
-    return buildSchema(schemaClass, schemaClasses, properties, enumValues);
+describe("Build schemas", () => {
+  beforeEach(() => {
+    const graph = schemaOrgSchemas["@graph"];
+    schemaClasses = graph.filter((vocabulary) =>
+      castArray(vocabulary["@type"]).includes("rdfs:Class"),
+    );
+    properties = graph.filter((vocabulary) =>
+      castArray(vocabulary["@type"]).includes("rdf:Property"),
+    );
+    enumValues = graph.filter((vocabulary) =>
+      castArray(vocabulary["@type"]).some(
+        (type) => type.startsWith("schema:") && type !== "schema:DataType",
+      ),
+    );
   });
-  expect(() => {
-    // eslint-disable-next-line no-new
-    new Ajv({ schemas });
-  }).not.toThrow();
-});
 
-it("should fetch data and write to file", async () => {
-  axios.get.mockResolvedValue({
-    status: HttpStatus.OK,
-    data: schemaOrgSchemas,
+  it("should build the JSON Schema of Person", async () => {
+    const schemaClass = schemaClasses.find(
+      (schema) => schema["@id"] === "schema:Person",
+    );
+    const schema = buildSchema(
+      schemaClass,
+      schemaClasses,
+      properties,
+      enumValues,
+    );
+    expect(schema).toMatchSnapshot();
   });
-  fs.ensureDir.mockImplementation(() => Promise.resolve());
-  await main();
-  expect(axios.get).toHaveBeenCalled();
-  expect(fs.writeFileSync).toHaveBeenCalledTimes(
-    schemaClasses.filter(
-      (schemaClass) =>
-        !castArray(schemaClass["@type"]).includes("http://schema.org/DataType"),
-    ).length,
-  );
+
+  it("should build the JSON Schema of SpeakableSpecification", async () => {
+    const schemaClass = schemaClasses.find(
+      (schema) => schema["@id"] === "schema:SpeakableSpecification",
+    );
+    const schema = buildSchema(
+      schemaClass,
+      schemaClasses,
+      properties,
+      enumValues,
+    );
+    expect(schema).toMatchSnapshot();
+  });
+
+  it("should build the JSON Schema of FoodEstablishment", async () => {
+    const schemaClass = schemaClasses.find(
+      (schema) => schema["@id"] === "schema:FoodEstablishment",
+    );
+    const schema = buildSchema(
+      schemaClass,
+      schemaClasses,
+      properties,
+      enumValues,
+    );
+    expect(schema).toMatchSnapshot();
+  });
+
+  it("should build the JSON Schema of Event", async () => {
+    const schemaClass = schemaClasses.find(
+      (schema) => schema["@id"] === "schema:Event",
+    );
+    const schema = buildSchema(
+      schemaClass,
+      schemaClasses,
+      properties,
+      enumValues,
+    );
+    expect(schema).toMatchSnapshot();
+  });
+
+  it("should build valid JSON Schemas", () => {
+    const schemas = schemaClasses.map((schemaClass) => {
+      return buildSchema(schemaClass, schemaClasses, properties, enumValues);
+    });
+    expect(() => {
+      // eslint-disable-next-line no-new
+      new Ajv2020({ schemas });
+    }).not.toThrow();
+  });
+
+  it("should fetch data and write to file", async () => {
+    axios.get.mockResolvedValue({
+      status: HttpStatus.OK,
+      data: schemaOrgSchemas,
+    });
+    fs.ensureDir.mockImplementation(() => Promise.resolve());
+    await main();
+    expect(axios.get).toHaveBeenCalled();
+    expect(fs.writeFileSync).toHaveBeenCalledTimes(
+      schemaClasses.filter(
+        (schemaClass) =>
+          !castArray(schemaClass["@type"]).includes("schema:DataType"),
+      ).length,
+    );
+  });
 });

@@ -1,26 +1,39 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/SellAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:SellAction",
   "title": "SellAction",
   "description": "The act of taking money from a buyer in exchange for goods or services rendered. An agent sells an object, product, or service to a buyer for a price. Reciprocal of BuyAction.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.",
-      "$ref": "http://schema.org/TradeAction"
+      "$ref": "schema:TradeAction"
     }
   ],
   "properties": {
     "buyer": {
       "description": "A sub property of participant. The participant/person/organization that bought the object.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        {
+          "anyOf": [
+            { "$ref": "schema:Organization" },
+            { "$ref": "schema:Person" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:Organization" },
+              { "$ref": "schema:Person" }
+            ]
+          }
+        }
       ]
     },
     "warrantyPromise": {
       "description": "The warranty promise(s) included in the offer.",
-      "$ref": "http://schema.org/WarrantyPromise"
+      "$ref": "schema:WarrantyPromise"
     }
   }
 }

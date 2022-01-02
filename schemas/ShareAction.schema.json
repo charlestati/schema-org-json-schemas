@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ShareAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ShareAction",
   "title": "ShareAction",
   "description": "The act of distributing content to people for their amusement or edification.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",
-      "$ref": "http://schema.org/CommunicateAction"
+      "$ref": "schema:CommunicateAction"
     }
   ]
 }

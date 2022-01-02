@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/AccountingService",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:AccountingService",
   "title": "AccountingService",
-  "description": "Accountancy business.\n\nAs a LocalBusiness it can be described as a provider of one or more Service(s).",
+  "description": "Accountancy business.\\n\\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\\(s).\n      ",
   "type": "object",
   "allOf": [
     {
       "description": "Financial services business.",
-      "$ref": "http://schema.org/FinancialService"
+      "$ref": "schema:FinancialService"
     }
   ]
 }

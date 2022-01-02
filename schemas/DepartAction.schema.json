@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/DepartAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DepartAction",
   "title": "DepartAction",
   "description": "The act of  departing from a place. An agent departs from an fromLocation for a destination, optionally with participants.",
   "type": "object",
   "allOf": [
     {
-      "description": "The act of an agent relocating to a place.\n\nRelated actions:\n\n\nTransferAction: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.\n\n",
-      "$ref": "http://schema.org/MoveAction"
+      "description": "The act of an agent relocating to a place.\\n\\nRelated actions:\\n\\n* [[TransferAction]]: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.",
+      "$ref": "schema:MoveAction"
     }
   ]
 }

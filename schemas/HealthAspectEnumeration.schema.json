@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:HealthAspectEnumeration",
+  "title": "HealthAspectEnumeration",
+  "description": "HealthAspectEnumeration enumerates several aspects of health content online, each of which might be described using [[hasHealthAspect]] and [[HealthTopicContent]].",
+  "type": "string",
+  "oneOf": [
+    {
+      "description": "Content about the allergy-related aspects of a health topic.",
+      "const": "AllergiesHealthAspect"
+    },
+    {
+      "description": "Content about the benefits and advantages of usage or utilization of topic.",
+      "const": "BenefitsHealthAspect"
+    },
+    {
+      "description": "Information about the causes and main actions that gave rise to the topic.",
+      "const": "CausesHealthAspect"
+    },
+    {
+      "description": "Content about contagion mechanisms and contagiousness information over the topic.",
+      "const": "ContagiousnessHealthAspect"
+    },
+    {
+      "description": "Content about the effectiveness-related aspects of a health topic.",
+      "const": "EffectivenessHealthAspect"
+    },
+    {
+      "description": "Content that discusses practical and policy aspects for getting access to specific kinds of healthcare (e.g. distribution mechanisms for vaccines).",
+      "const": "GettingAccessHealthAspect"
+    },
+    {
+      "description": "Content that discusses and explains how a particular health-related topic works, e.g. in terms of mechanisms and underlying science.",
+      "const": "HowItWorksHealthAspect"
+    },
+    {
+      "description": "Information about how or where to find a topic. Also may contain location data that can be used for where to look for help if the topic is observed.",
+      "const": "HowOrWhereHealthAspect"
+    },
+    {
+      "description": "Content discussing ingredients-related aspects of a health topic.",
+      "const": "IngredientsHealthAspect"
+    },
+    {
+      "description": "Information about coping or life related to the topic.",
+      "const": "LivingWithHealthAspect"
+    },
+    {
+      "description": "Related topics may be treated by a Topic.",
+      "const": "MayTreatHealthAspect"
+    },
+    {
+      "description": "Content about common misconceptions and myths that are related to a topic.",
+      "const": "MisconceptionsHealthAspect"
+    },
+    {
+      "description": "Overview of the content. Contains a summarized view of the topic with the most relevant information for an introduction.",
+      "const": "OverviewHealthAspect"
+    },
+    {
+      "description": "Content about the real life experience of patients or people that have lived a similar experience about the topic. May be forums, topics, Q-and-A and related material.",
+      "const": "PatientExperienceHealthAspect"
+    },
+    {
+      "description": "Content discussing pregnancy-related aspects of a health topic.",
+      "const": "PregnancyHealthAspect"
+    },
+    {
+      "description": "Information about actions or measures that can be taken to avoid getting the topic or reaching a critical situation related to the topic.",
+      "const": "PreventionHealthAspect"
+    },
+    {
+      "description": "Typical progression and happenings of life course of the topic.",
+      "const": "PrognosisHealthAspect"
+    },
+    {
+      "description": "Other prominent or relevant topics tied to the main topic.",
+      "const": "RelatedTopicsHealthAspect"
+    },
+    {
+      "description": "Information about the risk factors and possible complications that may follow a topic.",
+      "const": "RisksOrComplicationsHealthAspect"
+    },
+    {
+      "description": "Content about the safety-related aspects of a health topic.",
+      "const": "SafetyHealthAspect"
+    },
+    {
+      "description": "Content about how to screen or further filter a topic.",
+      "const": "ScreeningHealthAspect"
+    },
+    {
+      "description": "Information about questions that may be asked, when to see a professional, measures before seeing a doctor or content about the first consultation.",
+      "const": "SeeDoctorHealthAspect"
+    },
+    {
+      "description": "Self care actions or measures that can be taken to sooth, health or avoid a topic. This may be carried at home and can be carried/managed by the person itself.",
+      "const": "SelfCareHealthAspect"
+    },
+    {
+      "description": "Side effects that can be observed from the usage of the topic.",
+      "const": "SideEffectsHealthAspect"
+    },
+    {
+      "description": "Stages that can be observed from a topic.",
+      "const": "StagesHealthAspect"
+    },
+    {
+      "description": "Symptoms or related symptoms of a Topic.",
+      "const": "SymptomsHealthAspect"
+    },
+    {
+      "description": "Treatments or related therapies for a Topic.",
+      "const": "TreatmentsHealthAspect"
+    },
+    {
+      "description": "Categorization and other types related to a topic.",
+      "const": "TypesHealthAspect"
+    },
+    {
+      "description": "Content about how, when, frequency and dosage of a topic.",
+      "const": "UsageOrScheduleHealthAspect"
+    }
+  ]
+}

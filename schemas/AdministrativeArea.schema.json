@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/AdministrativeArea",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:AdministrativeArea",
   "title": "AdministrativeArea",
   "description": "A geographical region, typically under the jurisdiction of a particular government.",
   "type": "object",
   "allOf": [
     {
       "description": "Entities that have a somewhat fixed, physical extension.",
-      "$ref": "http://schema.org/Place"
+      "$ref": "schema:Place"
     }
   ]
 }

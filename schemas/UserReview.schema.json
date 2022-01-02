@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:UserReview",
+  "title": "UserReview",
+  "description": "A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in contrast with [[CriticReview]].",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A review of an item - for example, of a restaurant, movie, or store.",
+      "$ref": "schema:Review"
+    }
+  ]
+}

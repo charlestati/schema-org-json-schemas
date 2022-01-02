@@ -1,25 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/GameServerStatus",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:GameServerStatus",
   "title": "GameServerStatus",
   "description": "Status of a game server.",
-  "type": "string",
-  "oneOf": [
+  "type": "object",
+  "allOf": [
     {
-      "description": "Game server status: OfflinePermanently. Server is offline and not available.",
-      "const": "OfflinePermanently"
-    },
-    {
-      "description": "Game server status: OfflineTemporarily. Server is offline now but it can be online soon.",
-      "const": "OfflineTemporarily"
-    },
-    {
-      "description": "Game server status: Online. Server is available.",
-      "const": "Online"
-    },
-    {
-      "description": "Game server status: OnlineFull. Server is online but unavailable. The maximum number of players has reached.",
-      "const": "OnlineFull"
+      "description": "Lists or enumerations dealing with status types.",
+      "$ref": "schema:StatusEnumeration"
     }
   ]
 }

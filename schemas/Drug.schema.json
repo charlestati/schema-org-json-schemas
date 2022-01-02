@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Drug",
+  "title": "Drug",
+  "description": "A chemical or biologic substance, used as a medical therapy, that has a physiological effect on an organism. Here the term drug is used interchangeably with the term medicine although clinical knowledge make a clear difference between them.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.",
+      "$ref": "schema:Substance"
+    }
+  ],
+  "properties": {
+    "activeIngredient": {
+      "description": "An active ingredient, typically chemical compounds and/or biologic substances.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "administrationRoute": {
+      "description": "A route by which this drug may be administered, e.g. 'oral'.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "alcoholWarning": {
+      "description": "Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.",
+      "type": "string"
+    },
+    "availableStrength": {
+      "description": "An available dosage strength for the drug.",
+      "oneOf": [
+        { "$ref": "schema:DrugStrength" },
+        { "type": "array", "items": { "$ref": "schema:DrugStrength" } }
+      ]
+    },
+    "breastfeedingWarning": {
+      "description": "Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.",
+      "type": "string"
+    },
+    "clincalPharmacology": {
+      "description": "Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).",
+      "type": "string"
+    },
+    "clinicalPharmacology": {
+      "description": "Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "dosageForm": {
+      "description": "A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "doseSchedule": {
+      "description": "A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.",
+      "oneOf": [
+        { "$ref": "schema:DoseSchedule" },
+        { "type": "array", "items": { "$ref": "schema:DoseSchedule" } }
+      ]
+    },
+    "drugClass": {
+      "description": "The class of drug this belongs to (e.g., statins).",
+      "$ref": "schema:DrugClass"
+    },
+    "drugUnit": {
+      "description": "The unit in which the drug is measured, e.g. '5 mg tablet'.",
+      "type": "string"
+    },
+    "foodWarning": {
+      "description": "Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.",
+      "type": "string"
+    },
+    "includedInHealthInsurancePlan": {
+      "description": "The insurance plans that cover this drug.",
+      "$ref": "schema:HealthInsurancePlan"
+    },
+    "interactingDrug": {
+      "description": "Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.",
+      "oneOf": [
+        { "$ref": "schema:Drug" },
+        { "type": "array", "items": { "$ref": "schema:Drug" } }
+      ]
+    },
+    "isAvailableGenerically": {
+      "description": "True if the drug is available in a generic form (regardless of name).",
+      "type": "boolean"
+    },
+    "isProprietary": {
+      "description": "True if this item's name is a proprietary/brand name (vs. generic name).",
+      "type": "boolean"
+    },
+    "labelDetails": {
+      "description": "Link to the drug's label details.",
+      "type": "string",
+      "format": "uri"
+    },
+    "legalStatus": {
+      "description": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "schema:DrugLegalStatus" },
+        { "$ref": "schema:MedicalEnumeration" }
+      ]
+    },
+    "manufacturer": {
+      "description": "The manufacturer of the product.",
+      "$ref": "schema:Organization"
+    },
+    "maximumIntake": {
+      "description": "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
+      "$ref": "schema:MaximumDoseSchedule"
+    },
+    "mechanismOfAction": {
+      "description": "The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.",
+      "type": "string"
+    },
+    "nonProprietaryName": {
+      "description": "The generic name of this drug or supplement.",
+      "type": "string"
+    },
+    "overdosage": {
+      "description": "Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.",
+      "type": "string"
+    },
+    "pregnancyCategory": {
+      "description": "Pregnancy category of this drug.",
+      "$ref": "schema:DrugPregnancyCategory"
+    },
+    "pregnancyWarning": {
+      "description": "Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.",
+      "type": "string"
+    },
+    "prescribingInfo": {
+      "description": "Link to prescribing information for the drug.",
+      "type": "string",
+      "format": "uri"
+    },
+    "prescriptionStatus": {
+      "description": "Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.",
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "schema:DrugPrescriptionStatus" }
+      ]
+    },
+    "proprietaryName": {
+      "description": "Proprietary name given to the diet plan, typically by its originator or creator.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "relatedDrug": {
+      "description": "Any other drug related to this one, for example commonly-prescribed alternatives.",
+      "oneOf": [
+        { "$ref": "schema:Drug" },
+        { "type": "array", "items": { "$ref": "schema:Drug" } }
+      ]
+    },
+    "rxcui": {
+      "description": "The RxCUI drug identifier from RXNORM.",
+      "type": "string"
+    },
+    "warning": {
+      "description": "Any FDA or other warnings about the drug (text or URL).",
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+    }
+  }
+}

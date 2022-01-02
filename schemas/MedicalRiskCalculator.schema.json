@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalRiskCalculator",
+  "title": "MedicalRiskCalculator",
+  "description": "A complex mathematical calculation requiring an online calculator, used to assess prognosis. Note: use the url property of Thing to record any URLs for online calculators.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any rule set or interactive tool for estimating the risk of developing a complication or condition.",
+      "$ref": "schema:MedicalRiskEstimator"
+    }
+  ]
+}

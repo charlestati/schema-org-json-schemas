@@ -1,28 +1,28 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Game",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Game",
   "title": "Game",
   "description": "The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     }
   ],
   "properties": {
     "characterAttribute": {
       "description": "A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).",
       "oneOf": [
-        { "$ref": "http://schema.org/Thing" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Thing" } }
+        { "$ref": "schema:Thing" },
+        { "type": "array", "items": { "$ref": "schema:Thing" } }
       ]
     },
     "gameItem": {
       "description": "An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.",
       "oneOf": [
-        { "$ref": "http://schema.org/Thing" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Thing" } }
+        { "$ref": "schema:Thing" },
+        { "type": "array", "items": { "$ref": "schema:Thing" } }
       ]
     },
     "gameLocation": {
@@ -31,8 +31,8 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "http://schema.org/Place" },
-            { "$ref": "http://schema.org/PostalAddress" }
+            { "$ref": "schema:Place" },
+            { "$ref": "schema:PostalAddress" }
           ]
         },
         {
@@ -40,8 +40,8 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "http://schema.org/Place" },
-              { "$ref": "http://schema.org/PostalAddress" }
+              { "$ref": "schema:Place" },
+              { "$ref": "schema:PostalAddress" }
             ]
           }
         }
@@ -50,16 +50,13 @@
     "numberOfPlayers": {
       "description": "Indicate how many people can play this game (minimum, maximum, or range).",
       "oneOf": [
-        { "$ref": "http://schema.org/QuantitativeValue" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/QuantitativeValue" }
-        }
+        { "$ref": "schema:QuantitativeValue" },
+        { "type": "array", "items": { "$ref": "schema:QuantitativeValue" } }
       ]
     },
     "quest": {
       "description": "The task that a player-controlled character, or group of characters may complete in order to gain a reward.",
-      "$ref": "http://schema.org/Thing"
+      "$ref": "schema:Thing"
     }
   }
 }

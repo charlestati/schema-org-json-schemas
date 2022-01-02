@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/RadioEpisode",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:RadioEpisode",
   "title": "RadioEpisode",
   "description": "A radio episode which can be part of a series or season.",
   "type": "object",
   "allOf": [
     {
       "description": "A media episode (e.g. TV, radio, video game) which can be part of a series or season.",
-      "$ref": "http://schema.org/Episode"
+      "$ref": "schema:Episode"
     }
   ]
 }

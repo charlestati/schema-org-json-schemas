@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/TypeAndQuantityNode",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:TypeAndQuantityNode",
   "title": "TypeAndQuantityNode",
   "description": "A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.",
   "type": "object",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "http://schema.org/StructuredValue"
+      "$ref": "schema:StructuredValue"
     }
   ],
   "properties": {
@@ -17,14 +17,11 @@
     },
     "businessFunction": {
       "description": "The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.",
-      "$ref": "http://schema.org/BusinessFunction"
+      "$ref": "schema:BusinessFunction"
     },
     "typeOfGood": {
       "description": "The product that this structured value is referring to.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Product" },
-        { "$ref": "http://schema.org/Service" }
-      ]
+      "anyOf": [{ "$ref": "schema:Product" }, { "$ref": "schema:Service" }]
     },
     "unitCode": {
       "description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",

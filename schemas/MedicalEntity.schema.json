@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalEntity",
+  "title": "MedicalEntity",
+  "description": "The most generic type of entity related to health and the practice of medicine.",
+  "type": "object",
+  "allOf": [
+    { "description": "The most generic type of item.", "$ref": "schema:Thing" }
+  ],
+  "properties": {
+    "code": {
+      "description": "A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.",
+      "oneOf": [
+        { "$ref": "schema:MedicalCode" },
+        { "type": "array", "items": { "$ref": "schema:MedicalCode" } }
+      ]
+    },
+    "guideline": {
+      "description": "A medical guideline related to this entity.",
+      "oneOf": [
+        { "$ref": "schema:MedicalGuideline" },
+        { "type": "array", "items": { "$ref": "schema:MedicalGuideline" } }
+      ]
+    },
+    "legalStatus": {
+      "description": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "schema:DrugLegalStatus" },
+        { "$ref": "schema:MedicalEnumeration" }
+      ]
+    },
+    "medicineSystem": {
+      "description": "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
+      "$ref": "schema:MedicineSystem"
+    },
+    "recognizingAuthority": {
+      "description": "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
+      "oneOf": [
+        { "$ref": "schema:Organization" },
+        { "type": "array", "items": { "$ref": "schema:Organization" } }
+      ]
+    },
+    "relevantSpecialty": {
+      "description": "If applicable, a medical specialty in which this entity is relevant.",
+      "oneOf": [
+        { "$ref": "schema:MedicalSpecialty" },
+        { "type": "array", "items": { "$ref": "schema:MedicalSpecialty" } }
+      ]
+    },
+    "study": {
+      "description": "A medical study or trial related to this entity.",
+      "oneOf": [
+        { "$ref": "schema:MedicalStudy" },
+        { "type": "array", "items": { "$ref": "schema:MedicalStudy" } }
+      ]
+    }
+  }
+}

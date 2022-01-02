@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:HealthInsurancePlan",
+  "title": "HealthInsurancePlan",
+  "description": "A US-style health insurance plan, including PPOs, EPOs, and HMOs. ",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "schema:Intangible"
+    }
+  ],
+  "properties": {
+    "benefitsSummaryUrl": {
+      "description": "The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.",
+      "type": "string",
+      "format": "uri"
+    },
+    "contactPoint": {
+      "description": "A contact point for a person or organization.",
+      "oneOf": [
+        { "$ref": "schema:ContactPoint" },
+        { "type": "array", "items": { "$ref": "schema:ContactPoint" } }
+      ]
+    },
+    "healthPlanDrugOption": {
+      "description": "TODO.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "healthPlanDrugTier": {
+      "description": "The tier(s) of drugs offered by this formulary or insurance plan.",
+      "type": "string"
+    },
+    "healthPlanId": {
+      "description": "The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)",
+      "type": "string"
+    },
+    "healthPlanMarketingUrl": {
+      "description": "The URL that goes directly to the plan brochure for the specific standard plan or plan variation.",
+      "type": "string",
+      "format": "uri"
+    },
+    "includesHealthPlanFormulary": {
+      "description": "Formularies covered by this plan.",
+      "oneOf": [
+        { "$ref": "schema:HealthPlanFormulary" },
+        { "type": "array", "items": { "$ref": "schema:HealthPlanFormulary" } }
+      ]
+    },
+    "includesHealthPlanNetwork": {
+      "description": "Networks covered by this plan.",
+      "oneOf": [
+        { "$ref": "schema:HealthPlanNetwork" },
+        { "type": "array", "items": { "$ref": "schema:HealthPlanNetwork" } }
+      ]
+    },
+    "usesHealthPlanIdStandard": {
+      "description": "The standard for interpreting thePlan ID. The preferred is \"HIOS\". See the Centers for Medicare & Medicaid Services for more details.",
+      "anyOf": [{ "type": "string", "format": "uri" }, { "type": "string" }]
+    }
+  }
+}

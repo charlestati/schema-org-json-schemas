@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:RepaymentSpecification",
+  "title": "RepaymentSpecification",
+  "description": "A structured value representing repayment.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "$ref": "schema:StructuredValue"
+    }
+  ],
+  "properties": {
+    "downPayment": {
+      "description": "a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.",
+      "oneOf": [
+        {
+          "anyOf": [{ "type": "number" }, { "$ref": "schema:MonetaryAmount" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "number" }, { "$ref": "schema:MonetaryAmount" }]
+          }
+        }
+      ]
+    },
+    "earlyPrepaymentPenalty": {
+      "description": "The amount to be paid as a penalty in the event of early payment of the loan.",
+      "$ref": "schema:MonetaryAmount"
+    },
+    "loanPaymentAmount": {
+      "description": "The amount of money to pay in a single payment.",
+      "$ref": "schema:MonetaryAmount"
+    },
+    "loanPaymentFrequency": {
+      "description": "Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "numberOfLoanPayments": {
+      "description": "The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.",
+      "type": "number"
+    }
+  }
+}

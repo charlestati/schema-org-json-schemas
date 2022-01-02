@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DoseSchedule",
+  "title": "DoseSchedule",
+  "description": "A specific dosing schedule for a drug or supplement.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
+      "$ref": "schema:MedicalIntangible"
+    }
+  ],
+  "properties": {
+    "doseUnit": {
+      "description": "The unit of the dose, e.g. 'mg'.",
+      "type": "string"
+    },
+    "doseValue": {
+      "description": "The value of the dose, e.g. 500.",
+      "anyOf": [{ "type": "number" }, { "$ref": "schema:QualitativeValue" }]
+    },
+    "frequency": {
+      "description": "How often the dose is taken, e.g. 'daily'.",
+      "type": "string"
+    },
+    "targetPopulation": {
+      "description": "Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    }
+  }
+}

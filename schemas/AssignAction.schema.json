@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/AssignAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:AssignAction",
   "title": "AssignAction",
   "description": "The act of allocating an action/event/task to some destination (someone or something).",
   "type": "object",
   "allOf": [
     {
       "description": "The act of organizing tasks/objects/events by associating resources to it.",
-      "$ref": "http://schema.org/AllocateAction"
+      "$ref": "schema:AllocateAction"
     }
   ]
 }

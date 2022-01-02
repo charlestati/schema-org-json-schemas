@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalClinic",
+  "title": "MedicalClinic",
+  "description": "A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A particular physical or virtual business of an organization for medical purposes. Examples of MedicalBusiness include differents business run by health professionals.",
+      "$ref": "schema:MedicalBusiness"
+    },
+    {
+      "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
+      "$ref": "schema:MedicalOrganization"
+    }
+  ],
+  "properties": {
+    "availableService": {
+      "description": "A medical service available from this provider.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "$ref": "schema:MedicalProcedure" },
+            { "$ref": "schema:MedicalTest" },
+            { "$ref": "schema:MedicalTherapy" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:MedicalProcedure" },
+              { "$ref": "schema:MedicalTest" },
+              { "$ref": "schema:MedicalTherapy" }
+            ]
+          }
+        }
+      ]
+    },
+    "medicalSpecialty": {
+      "description": "A medical specialty of the provider.",
+      "oneOf": [
+        { "$ref": "schema:MedicalSpecialty" },
+        { "type": "array", "items": { "$ref": "schema:MedicalSpecialty" } }
+      ]
+    }
+  }
+}

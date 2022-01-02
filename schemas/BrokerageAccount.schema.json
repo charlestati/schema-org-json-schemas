@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BrokerageAccount",
+  "title": "BrokerageAccount",
+  "description": "An account that allows an investor to deposit funds and place investment orders with a licensed broker or brokerage firm.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.",
+      "$ref": "schema:InvestmentOrDeposit"
+    }
+  ]
+}

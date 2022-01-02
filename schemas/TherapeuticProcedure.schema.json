@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:TherapeuticProcedure",
+  "title": "TherapeuticProcedure",
+  "description": "A medical procedure intended primarily for therapeutic purposes, aimed at improving a health condition.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.",
+      "$ref": "schema:MedicalProcedure"
+    }
+  ],
+  "properties": {
+    "adverseOutcome": {
+      "description": "A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.",
+      "oneOf": [
+        { "$ref": "schema:MedicalEntity" },
+        { "type": "array", "items": { "$ref": "schema:MedicalEntity" } }
+      ]
+    },
+    "doseSchedule": {
+      "description": "A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.",
+      "oneOf": [
+        { "$ref": "schema:DoseSchedule" },
+        { "type": "array", "items": { "$ref": "schema:DoseSchedule" } }
+      ]
+    },
+    "drug": {
+      "description": "Specifying a drug or medicine used in a medication procedure.",
+      "oneOf": [
+        { "$ref": "schema:Drug" },
+        { "type": "array", "items": { "$ref": "schema:Drug" } }
+      ]
+    }
+  }
+}

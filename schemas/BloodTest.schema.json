@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BloodTest",
+  "title": "BloodTest",
+  "description": "A medical test performed on a sample of a patient's blood.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any medical test, typically performed for diagnostic purposes.",
+      "$ref": "schema:MedicalTest"
+    }
+  ]
+}

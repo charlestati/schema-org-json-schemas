@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ContactPoint",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ContactPoint",
   "title": "ContactPoint",
   "description": "A contact point—for example, a Customer Complaints department.",
   "type": "object",
   "allOf": [
     {
       "description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "$ref": "http://schema.org/StructuredValue"
+      "$ref": "schema:StructuredValue"
     }
   ],
   "properties": {
@@ -15,27 +15,19 @@
       "description": "The geographic area where a service or offered item is provided.",
       "anyOf": [
         { "type": "string" },
-        { "$ref": "http://schema.org/AdministrativeArea" },
-        { "$ref": "http://schema.org/GeoShape" },
-        { "$ref": "http://schema.org/Place" }
+        { "$ref": "schema:AdministrativeArea" },
+        { "$ref": "schema:GeoShape" },
+        { "$ref": "schema:Place" }
       ]
     },
     "availableLanguage": {
-      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage",
+      "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]",
       "oneOf": [
-        {
-          "anyOf": [
-            { "type": "string" },
-            { "$ref": "http://schema.org/Language" }
-          ]
-        },
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }] },
         {
           "type": "array",
           "items": {
-            "anyOf": [
-              { "type": "string" },
-              { "$ref": "http://schema.org/Language" }
-            ]
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:Language" }]
           }
         }
       ]
@@ -43,11 +35,8 @@
     "contactOption": {
       "description": "An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).",
       "oneOf": [
-        { "$ref": "http://schema.org/ContactPointOption" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/ContactPointOption" }
-        }
+        { "$ref": "schema:ContactPointOption" },
+        { "type": "array", "items": { "$ref": "schema:ContactPointOption" } }
       ]
     },
     "contactType": {
@@ -67,18 +56,18 @@
     "faxNumber": { "description": "The fax number.", "type": "string" },
     "hoursAvailable": {
       "description": "The hours during which this service or contact is available.",
-      "$ref": "http://schema.org/OpeningHoursSpecification"
+      "$ref": "schema:OpeningHoursSpecification"
     },
     "productSupported": {
       "description": "The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. \"iPhone\") or a general category of products or services (e.g. \"smartphones\").",
-      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Product" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:Product" }]
     },
     "serviceArea": {
       "description": "The geographic area where the service is provided.",
       "anyOf": [
-        { "$ref": "http://schema.org/AdministrativeArea" },
-        { "$ref": "http://schema.org/GeoShape" },
-        { "$ref": "http://schema.org/Place" }
+        { "$ref": "schema:AdministrativeArea" },
+        { "$ref": "schema:GeoShape" },
+        { "$ref": "schema:Place" }
       ]
     },
     "telephone": { "description": "The telephone number.", "type": "string" }

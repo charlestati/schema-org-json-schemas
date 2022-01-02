@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ReturnFeesEnumeration",
+  "title": "ReturnFeesEnumeration",
+  "description": "Enumerates several kinds of policies for product return fees.",
+  "type": "string",
+  "oneOf": [
+    {
+      "description": "Specifies that product returns are free of charge for the customer.",
+      "const": "FreeReturn"
+    },
+    {
+      "description": "Specifies that the customer must pay the original shipping costs when returning a product.",
+      "const": "OriginalShippingFees"
+    },
+    {
+      "description": "Specifies that the customer must pay a restocking fee when returning a product",
+      "const": "RestockingFees"
+    },
+    {
+      "description": "Specifies that product returns must be paid for, and are the responsibility of, the customer.",
+      "const": "ReturnFeesCustomerResponsibility"
+    },
+    {
+      "description": "Specifies that the customer must pay the return shipping costs when returning a product",
+      "const": "ReturnShippingFees"
+    }
+  ]
+}

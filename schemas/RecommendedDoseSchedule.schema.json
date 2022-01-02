@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:RecommendedDoseSchedule",
+  "title": "RecommendedDoseSchedule",
+  "description": "A recommended dosing schedule for a drug or supplement as prescribed or recommended by an authority or by the drug/supplement's manufacturer. Capture the recommending authority in the recognizingAuthority property of MedicalEntity.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A specific dosing schedule for a drug or supplement.",
+      "$ref": "schema:DoseSchedule"
+    }
+  ]
+}

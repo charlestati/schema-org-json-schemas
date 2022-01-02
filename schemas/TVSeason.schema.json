@@ -1,27 +1,27 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/TVSeason",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:TVSeason",
   "title": "TVSeason",
   "description": "Season dedicated to TV broadcast and associated online delivery.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     },
     {
       "description": "A media season e.g. tv, radio, video game etc.",
-      "$ref": "http://schema.org/CreativeWorkSeason"
+      "$ref": "schema:CreativeWorkSeason"
     }
   ],
   "properties": {
     "countryOfOrigin": {
-      "description": "The country of the principal offices of the production company or individual responsible for the movie or program.",
-      "$ref": "http://schema.org/Country"
+      "description": "The country of origin of something, including products as well as creative  works such as movie and TV content.\n\nIn the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.\n\nIn the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.",
+      "$ref": "schema:Country"
     },
     "partOfTVSeries": {
       "description": "The TV series to which this episode or season belongs.",
-      "$ref": "http://schema.org/TVSeries"
+      "$ref": "schema:TVSeries"
     }
   }
 }

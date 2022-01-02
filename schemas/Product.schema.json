@@ -1,33 +1,27 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Product",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Product",
   "title": "Product",
   "description": "Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.",
   "type": "object",
   "allOf": [
-    {
-      "description": "The most generic type of item.",
-      "$ref": "http://schema.org/Thing"
-    }
+    { "description": "The most generic type of item.", "$ref": "schema:Thing" }
   ],
   "properties": {
     "additionalProperty": {
-      "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
+      "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\\n\\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.\n",
       "oneOf": [
-        { "$ref": "http://schema.org/PropertyValue" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/PropertyValue" }
-        }
+        { "$ref": "schema:PropertyValue" },
+        { "type": "array", "items": { "$ref": "schema:PropertyValue" } }
       ]
     },
     "aggregateRating": {
       "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
-      "$ref": "http://schema.org/AggregateRating"
+      "$ref": "schema:AggregateRating"
     },
     "audience": {
       "description": "An intended audience, i.e. a group for whom something was created.",
-      "$ref": "http://schema.org/Audience"
+      "$ref": "schema:Audience"
     },
     "award": {
       "description": "An award won by or for this item.",
@@ -45,10 +39,7 @@
     },
     "brand": {
       "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Brand" },
-        { "$ref": "http://schema.org/Organization" }
-      ]
+      "anyOf": [{ "$ref": "schema:Brand" }, { "$ref": "schema:Organization" }]
     },
     "category": {
       "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
@@ -57,7 +48,8 @@
           "anyOf": [
             { "type": "string", "format": "uri" },
             { "type": "string" },
-            { "$ref": "http://schema.org/Thing" }
+            { "$ref": "schema:PhysicalActivityCategory" },
+            { "$ref": "schema:Thing" }
           ]
         },
         {
@@ -66,72 +58,120 @@
             "anyOf": [
               { "type": "string", "format": "uri" },
               { "type": "string" },
-              { "$ref": "http://schema.org/Thing" }
+              { "$ref": "schema:PhysicalActivityCategory" },
+              { "$ref": "schema:Thing" }
             ]
           }
         }
       ]
     },
     "color": { "description": "The color of the product.", "type": "string" },
+    "countryOfAssembly": {
+      "description": "The place where the product was assembled.",
+      "type": "string"
+    },
+    "countryOfLastProcessing": {
+      "description": "The place where the item (typically [[Product]]) was last processed and tested before importation.",
+      "type": "string"
+    },
+    "countryOfOrigin": {
+      "description": "The country of origin of something, including products as well as creative  works such as movie and TV content.\n\nIn the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.\n\nIn the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.",
+      "$ref": "schema:Country"
+    },
     "depth": {
       "description": "The depth of the item.",
       "anyOf": [
         { "type": "string", "$comment": "https://schema.org/Distance" },
-        { "$ref": "http://schema.org/QuantitativeValue" }
+        { "$ref": "schema:QuantitativeValue" }
+      ]
+    },
+    "gtin": {
+      "description": "A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a \"GS1 Digital Link\" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.\n   ",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
       ]
     },
     "gtin12": {
-      "description": "The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See GS1 GTIN Summary for more details.",
+      "description": "The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.",
       "type": "string"
     },
     "gtin13": {
-      "description": "The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See GS1 GTIN Summary for more details.",
+      "description": "The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.",
       "type": "string"
     },
     "gtin14": {
-      "description": "The GTIN-14 code of the product, or the product to which the offer refers. See GS1 GTIN Summary for more details.",
+      "description": "The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.",
       "type": "string"
     },
     "gtin8": {
-      "description": "The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See GS1 GTIN Summary for more details.",
+      "description": "The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.",
       "type": "string"
+    },
+    "hasEnergyConsumptionDetails": {
+      "description": "Defines the energy efficiency Category (also known as \"class\" or \"rating\") for a product according to an international energy efficiency standard.",
+      "oneOf": [
+        { "$ref": "schema:EnergyConsumptionDetails" },
+        {
+          "type": "array",
+          "items": { "$ref": "schema:EnergyConsumptionDetails" }
+        }
+      ]
+    },
+    "hasMeasurement": {
+      "description": "A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.",
+      "oneOf": [
+        { "$ref": "schema:QuantitativeValue" },
+        { "type": "array", "items": { "$ref": "schema:QuantitativeValue" } }
+      ]
+    },
+    "hasMerchantReturnPolicy": {
+      "description": "Specifies a MerchantReturnPolicy that may be applicable.",
+      "oneOf": [
+        { "$ref": "schema:MerchantReturnPolicy" },
+        { "type": "array", "items": { "$ref": "schema:MerchantReturnPolicy" } }
+      ]
     },
     "height": {
       "description": "The height of the item.",
       "anyOf": [
         { "type": "string", "$comment": "https://schema.org/Distance" },
-        { "$ref": "http://schema.org/QuantitativeValue" }
+        { "$ref": "schema:QuantitativeValue" }
+      ]
+    },
+    "inProductGroupWithID": {
+      "description": "Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. ",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
       ]
     },
     "isAccessoryOrSparePartFor": {
       "description": "A pointer to another product (or multiple products) for which this product is an accessory or spare part.",
       "oneOf": [
-        { "$ref": "http://schema.org/Product" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Product" } }
+        { "$ref": "schema:Product" },
+        { "type": "array", "items": { "$ref": "schema:Product" } }
       ]
     },
     "isConsumableFor": {
       "description": "A pointer to another product (or multiple products) for which this product is a consumable.",
       "oneOf": [
-        { "$ref": "http://schema.org/Product" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Product" } }
+        { "$ref": "schema:Product" },
+        { "type": "array", "items": { "$ref": "schema:Product" } }
       ]
     },
     "isRelatedTo": {
       "description": "A pointer to another, somehow related product (or multiple products).",
       "oneOf": [
         {
-          "anyOf": [
-            { "$ref": "http://schema.org/Product" },
-            { "$ref": "http://schema.org/Service" }
-          ]
+          "anyOf": [{ "$ref": "schema:Product" }, { "$ref": "schema:Service" }]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Product" },
-              { "$ref": "http://schema.org/Service" }
+              { "$ref": "schema:Product" },
+              { "$ref": "schema:Service" }
             ]
           }
         }
@@ -141,30 +181,44 @@
       "description": "A pointer to another, functionally similar product (or multiple products).",
       "oneOf": [
         {
+          "anyOf": [{ "$ref": "schema:Product" }, { "$ref": "schema:Service" }]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "schema:Product" },
+              { "$ref": "schema:Service" }
+            ]
+          }
+        }
+      ]
+    },
+    "isVariantOf": {
+      "description": "Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.",
+      "oneOf": [
+        {
           "anyOf": [
-            { "$ref": "http://schema.org/Product" },
-            { "$ref": "http://schema.org/Service" }
+            { "$ref": "schema:ProductGroup" },
+            { "$ref": "schema:ProductModel" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/Product" },
-              { "$ref": "http://schema.org/Service" }
+              { "$ref": "schema:ProductGroup" },
+              { "$ref": "schema:ProductModel" }
             ]
           }
         }
       ]
     },
     "itemCondition": {
-      "description": "A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.",
+      "description": "A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.",
       "oneOf": [
-        { "$ref": "http://schema.org/OfferItemCondition" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/OfferItemCondition" }
-        }
+        { "$ref": "schema:OfferItemCondition" },
+        { "type": "array", "items": { "$ref": "schema:OfferItemCondition" } }
       ]
     },
     "logo": {
@@ -173,7 +227,7 @@
         {
           "anyOf": [
             { "type": "string", "format": "uri" },
-            { "$ref": "http://schema.org/ImageObject" }
+            { "$ref": "schema:ImageObject" }
           ]
         },
         {
@@ -181,7 +235,7 @@
           "items": {
             "anyOf": [
               { "type": "string", "format": "uri" },
-              { "$ref": "http://schema.org/ImageObject" }
+              { "$ref": "schema:ImageObject" }
             ]
           }
         }
@@ -189,7 +243,7 @@
     },
     "manufacturer": {
       "description": "The manufacturer of the product.",
-      "$ref": "http://schema.org/Organization"
+      "$ref": "schema:Organization"
     },
     "material": {
       "description": "A material that something is made from, e.g. leather, wool, cotton, paper.",
@@ -198,7 +252,7 @@
           "anyOf": [
             { "type": "string", "format": "uri" },
             { "type": "string" },
-            { "$ref": "http://schema.org/Product" }
+            { "$ref": "schema:Product" }
           ]
         },
         {
@@ -207,7 +261,7 @@
             "anyOf": [
               { "type": "string", "format": "uri" },
               { "type": "string" },
-              { "$ref": "http://schema.org/Product" }
+              { "$ref": "schema:Product" }
             ]
           }
         }
@@ -215,37 +269,45 @@
     },
     "model": {
       "description": "The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.",
-      "anyOf": [
-        { "type": "string" },
-        { "$ref": "http://schema.org/ProductModel" }
-      ]
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:ProductModel" }]
     },
     "mpn": {
       "description": "The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.",
       "type": "string"
     },
-    "offers": {
-      "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
+    "nsn": {
+      "description": "Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. ",
       "oneOf": [
-        {
-          "anyOf": [
-            { "$ref": "http://schema.org/Demand" },
-            { "$ref": "http://schema.org/Offer" }
-          ]
-        },
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "offers": {
+      "description": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
+      "oneOf": [
+        { "anyOf": [{ "$ref": "schema:Demand" }, { "$ref": "schema:Offer" }] },
         {
           "type": "array",
           "items": {
-            "anyOf": [
-              { "$ref": "http://schema.org/Demand" },
-              { "$ref": "http://schema.org/Offer" }
-            ]
+            "anyOf": [{ "$ref": "schema:Demand" }, { "$ref": "schema:Offer" }]
+          }
+        }
+      ]
+    },
+    "pattern": {
+      "description": "A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.",
+      "oneOf": [
+        { "anyOf": [{ "type": "string" }, { "$ref": "schema:DefinedTerm" }] },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "type": "string" }, { "$ref": "schema:DefinedTerm" }]
           }
         }
       ]
     },
     "productID": {
-      "description": "The product identifier, such as ISBN. For example: meta itemprop=\"productID\" content=\"isbn:123-456-789\".",
+      "description": "The product identifier, such as ISBN. For example: ``` meta itemprop=\"productID\" content=\"isbn:123-456-789\" ```.",
       "type": "string"
     },
     "productionDate": {
@@ -266,15 +328,39 @@
     "review": {
       "description": "A review of the item.",
       "oneOf": [
-        { "$ref": "http://schema.org/Review" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
+        { "$ref": "schema:Review" },
+        { "type": "array", "items": { "$ref": "schema:Review" } }
       ]
     },
     "reviews": {
       "description": "Review of the item.",
       "oneOf": [
-        { "$ref": "http://schema.org/Review" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Review" } }
+        { "$ref": "schema:Review" },
+        { "type": "array", "items": { "$ref": "schema:Review" } }
+      ]
+    },
+    "size": {
+      "description": "A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. ",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string" },
+            { "$ref": "schema:DefinedTerm" },
+            { "$ref": "schema:QuantitativeValue" },
+            { "$ref": "schema:SizeSpecification" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "$ref": "schema:DefinedTerm" },
+              { "$ref": "schema:QuantitativeValue" },
+              { "$ref": "schema:SizeSpecification" }
+            ]
+          }
+        }
       ]
     },
     "sku": {
@@ -290,13 +376,13 @@
     },
     "weight": {
       "description": "The weight of the product or person.",
-      "$ref": "http://schema.org/QuantitativeValue"
+      "$ref": "schema:QuantitativeValue"
     },
     "width": {
       "description": "The width of the item.",
       "anyOf": [
         { "type": "string", "$comment": "https://schema.org/Distance" },
-        { "$ref": "http://schema.org/QuantitativeValue" }
+        { "$ref": "schema:QuantitativeValue" }
       ]
     }
   }

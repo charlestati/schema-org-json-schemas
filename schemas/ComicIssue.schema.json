@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ComicIssue",
+  "title": "ComicIssue",
+  "description": "Individual comic issues are serially published as\n    \tpart of a larger series. For the sake of consistency, even one-shot issues\n    \tbelong to a series comprised of a single issue. All comic issues can be\n    \tuniquely identified by: the combination of the name and volume number of the\n    \tseries to which the issue belongs; the issue number; and the variant\n    \tdescription of the issue (if any).",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A part of a successively published publication such as a periodical or publication volume, often numbered, usually containing a grouping of works such as articles.\\n\\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html).",
+      "$ref": "schema:PublicationIssue"
+    }
+  ],
+  "properties": {
+    "artist": {
+      "description": "The primary artist for a work\n    \tin a medium other than pencils or digital line art--for example, if the\n    \tprimary artwork is done in watercolors or digital paints.",
+      "$ref": "schema:Person"
+    },
+    "colorist": {
+      "description": "The individual who adds color to inked drawings.",
+      "$ref": "schema:Person"
+    },
+    "inker": {
+      "description": "The individual who traces over the pencil drawings in ink after pencils are complete.",
+      "$ref": "schema:Person"
+    },
+    "letterer": {
+      "description": "The individual who adds lettering, including speech balloons and sound effects, to artwork.",
+      "$ref": "schema:Person"
+    },
+    "penciler": {
+      "description": "The individual who draws the primary narrative artwork.",
+      "$ref": "schema:Person"
+    },
+    "variantCover": {
+      "description": "A description of the variant cover\n    \tfor the issue, if the issue is a variant printing. For example, \"Bryan Hitch\n    \tVariant Cover\" or \"2nd Printing Variant\".",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    }
+  }
+}

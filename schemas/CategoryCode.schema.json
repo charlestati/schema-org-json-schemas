@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:CategoryCode",
+  "title": "CategoryCode",
+  "description": "A Category Code.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.",
+      "$ref": "schema:DefinedTerm"
+    }
+  ],
+  "properties": {
+    "codeValue": {
+      "description": "A short textual code that uniquely identifies the value.",
+      "type": "string"
+    },
+    "inCodeSet": {
+      "description": "A [[CategoryCodeSet]] that contains this category code.",
+      "oneOf": [
+        {
+          "anyOf": [
+            { "type": "string", "format": "uri" },
+            { "$ref": "schema:CategoryCodeSet" }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "schema:CategoryCodeSet" }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

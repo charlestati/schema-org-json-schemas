@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:WearableSizeSystemEnumeration",
+  "title": "WearableSizeSystemEnumeration",
+  "description": "Enumerates common size systems specific for wearable products",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Enumerates common size systems for different categories of products, for example \"EN-13402\" or \"UK\" for wearables or \"Imperial\" for screws.",
+      "$ref": "schema:SizeSystemEnumeration"
+    }
+  ]
+}

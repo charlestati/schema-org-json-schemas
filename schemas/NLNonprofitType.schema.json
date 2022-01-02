@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:NLNonprofitType",
+  "title": "NLNonprofitType",
+  "description": "NLNonprofitType: Non-profit organization type originating from the Netherlands.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "NonprofitType enumerates several kinds of official non-profit types of which a non-profit organization can be.",
+      "$ref": "schema:NonprofitType"
+    }
+  ]
+}

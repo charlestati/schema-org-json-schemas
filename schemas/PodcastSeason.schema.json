@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:PodcastSeason",
+  "title": "PodcastSeason",
+  "description": "A single season of a podcast. Many podcasts do not break down into separate seasons. In that case, PodcastSeries should be used.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A media season e.g. tv, radio, video game etc.",
+      "$ref": "schema:CreativeWorkSeason"
+    }
+  ]
+}

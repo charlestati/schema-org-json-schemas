@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:SizeGroupEnumeration",
+  "title": "SizeGroupEnumeration",
+  "description": "Enumerates common size groups for various product categories.",
+  "type": "object"
+}

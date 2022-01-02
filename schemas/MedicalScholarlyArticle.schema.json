@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalScholarlyArticle",
+  "title": "MedicalScholarlyArticle",
+  "description": "A scholarly article in the medical domain.",
+  "type": "object",
+  "allOf": [
+    { "description": "A scholarly article.", "$ref": "schema:ScholarlyArticle" }
+  ],
+  "properties": {
+    "publicationType": {
+      "description": "The type of the medical article, taken from the US NLM MeSH publication type catalog. See also [MeSH documentation](http://www.nlm.nih.gov/mesh/pubtypes.html).",
+      "type": "string"
+    }
+  }
+}

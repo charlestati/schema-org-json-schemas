@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ReactAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ReactAction",
   "title": "ReactAction",
   "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of forming one's opinion, reaction or sentiment.",
-      "$ref": "http://schema.org/AssessAction"
+      "$ref": "schema:AssessAction"
     }
   ]
 }

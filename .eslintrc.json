@@ -1,4 +1,5 @@
 {
+  "root": true,
   "extends": [
     "airbnb-base",
     "eslint:recommended",
@@ -7,62 +8,86 @@
     "plugin:sort-class-members/recommended",
     "plugin:promise/recommended",
     "plugin:node/recommended",
-    "plugin:prettier/recommended",
     "plugin:unicorn/recommended",
     "plugin:security/recommended",
     "plugin:jsdoc/recommended",
     "plugin:you-dont-need-lodash-underscore/compatible",
-    "prettier/unicorn"
+    "plugin:eslint-comments/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:prettier/recommended"
   ],
   "rules": {
-    "import/extensions": 0,
-    "import/no-extraneous-dependencies": 0,
-    "import/order": 2,
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/order": "error",
     "jsdoc/require-jsdoc": [
-      2,
+      "error",
       {
         "require": {
           "MethodDefinition": true
         }
       }
     ],
-    "jsdoc/require-param-type": 0,
-    "jsdoc/require-returns-type": 0,
-    "no-console": 0,
+    "jsdoc/require-param-type": "off",
+    "jsdoc/require-returns-type": "off",
+    "no-console": "off",
+    "no-restricted-syntax": "off",
     "no-underscore-dangle": [
-      2,
+      "error",
       {
         "allowAfterThis": true
       }
     ],
-    "node/exports-style": 2,
-    "node/no-missing-import": 0,
-    "node/no-unsupported-features/es-syntax": 0,
-    "node/prefer-global/buffer": 2,
-    "node/prefer-global/console": 2,
-    "node/prefer-global/process": 2,
-    "node/prefer-global/url-search-params": 2,
-    "node/prefer-global/url": 2,
-    "node/prefer-promises/dns": 2,
-    "node/prefer-promises/fs": 2,
-    "promise/always-return": 0,
-    "promise/prefer-await-to-callbacks": 2,
-    "promise/prefer-await-to-then": 2,
-    "security/detect-non-literal-fs-filename": 0,
-    "sonarjs/no-duplicate-string": 0,
-    "unicorn/filename-case": 0,
-    "unicorn/prefer-spread": 0,
-    "unicorn/prevent-abbreviations": 0
-  },
-  "env": {
-    "es6": true,
-    "node": true
+    "node/exports-style": "error",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "node/prefer-global/buffer": "error",
+    "node/prefer-global/console": "error",
+    "node/prefer-global/process": "error",
+    "node/prefer-global/url-search-params": "error",
+    "node/prefer-global/url": "error",
+    "node/prefer-promises/dns": "error",
+    "node/prefer-promises/fs": "error",
+    "promise/always-return": "off",
+    "promise/prefer-await-to-callbacks": "error",
+    "promise/prefer-await-to-then": "error",
+    "security/detect-non-literal-fs-filename": "off",
+    "sonarjs/cognitive-complexity": ["error", 25],
+    "sonarjs/no-duplicate-string": "off",
+    "unicorn/filename-case": "off",
+    "unicorn/no-array-reduce": "off",
+    "unicorn/prefer-module": "off",
+    "unicorn/prefer-object-from-entries": "off",
+    "unicorn/prefer-spread": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "you-dont-need-lodash-underscore/cast-array": "off"
   },
   "overrides": [
     {
       "files": ["**/*.test.js"],
       "plugins": ["jest"],
-      "extends": ["plugin:jest/recommended"]
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest/style",
+        "plugin:jest-formatting/recommended"
+      ],
+      "rules": {
+        "jest/consistent-test-it": "error",
+        "jest/no-disabled-tests": "error",
+        "jest/no-if": "error",
+        "jest/no-large-snapshots": "error",
+        "jest/no-test-return-statement": "error",
+        "jest/prefer-lowercase-title": [
+          "error",
+          {
+            "ignore": ["describe"]
+          }
+        ],
+        "jest/prefer-spy-on": "error",
+        "jest/prefer-strict-equal": "error",
+        "jest/prefer-todo": "error",
+        "jest/require-top-level-describe": "error"
+      }
     }
   ]
 }

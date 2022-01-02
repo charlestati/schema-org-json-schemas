@@ -1,31 +1,28 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/MenuSection",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MenuSection",
   "title": "MenuSection",
   "description": "A sub-grouping of food or drink items in a menu. E.g. courses (such as 'Dinner', 'Breakfast', etc.), specific type of dishes (such as 'Meat', 'Vegan', 'Drinks', etc.), or some other classification made by the menu provider.",
   "type": "object",
   "allOf": [
     {
       "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "$ref": "http://schema.org/CreativeWork"
+      "$ref": "schema:CreativeWork"
     }
   ],
   "properties": {
     "hasMenuItem": {
       "description": "A food or drink item contained in a menu or menu section.",
       "oneOf": [
-        { "$ref": "http://schema.org/MenuItem" },
-        { "type": "array", "items": { "$ref": "http://schema.org/MenuItem" } }
+        { "$ref": "schema:MenuItem" },
+        { "type": "array", "items": { "$ref": "schema:MenuItem" } }
       ]
     },
     "hasMenuSection": {
       "description": "A subgrouping of the menu (by dishes, course, serving time period, etc.).",
       "oneOf": [
-        { "$ref": "http://schema.org/MenuSection" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/MenuSection" }
-        }
+        { "$ref": "schema:MenuSection" },
+        { "type": "array", "items": { "$ref": "schema:MenuSection" } }
       ]
     }
   }

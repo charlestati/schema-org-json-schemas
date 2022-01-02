@@ -1,23 +1,23 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/Flight",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Flight",
   "title": "Flight",
   "description": "An airline flight.",
   "type": "object",
   "allOf": [
     {
       "description": "A trip or journey. An itinerary of visits to one or more places.",
-      "$ref": "http://schema.org/Trip"
+      "$ref": "schema:Trip"
     }
   ],
   "properties": {
     "aircraft": {
       "description": "The kind of aircraft (e.g., \"Boeing 747\").",
-      "anyOf": [{ "type": "string" }, { "$ref": "http://schema.org/Vehicle" }]
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:Vehicle" }]
     },
     "arrivalAirport": {
       "description": "The airport where the flight terminates.",
-      "$ref": "http://schema.org/Airport"
+      "$ref": "schema:Airport"
     },
     "arrivalGate": {
       "description": "Identifier of the flight's arrival gate.",
@@ -35,15 +35,15 @@
     },
     "boardingPolicy": {
       "description": "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
-      "$ref": "http://schema.org/BoardingPolicyType"
+      "$ref": "schema:BoardingPolicyType"
     },
     "carrier": {
       "description": "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
-      "$ref": "http://schema.org/Organization"
+      "$ref": "schema:Organization"
     },
     "departureAirport": {
       "description": "The airport where the flight originates.",
-      "$ref": "http://schema.org/Airport"
+      "$ref": "schema:Airport"
     },
     "departureGate": {
       "description": "Identifier of the flight's departure gate.",
@@ -62,15 +62,15 @@
     "estimatedFlightDuration": {
       "description": "The estimated time the flight will take.",
       "anyOf": [
-        { "type": "string" },
-        { "type": "string", "$comment": "https://schema.org/Duration" }
+        { "type": "string", "$comment": "https://schema.org/Duration" },
+        { "type": "string" }
       ]
     },
     "flightDistance": {
       "description": "The distance of the flight.",
       "anyOf": [
-        { "type": "string" },
-        { "type": "string", "$comment": "https://schema.org/Distance" }
+        { "type": "string", "$comment": "https://schema.org/Distance" },
+        { "type": "string" }
       ]
     },
     "flightNumber": {
@@ -86,10 +86,7 @@
     },
     "seller": {
       "description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
-      "anyOf": [
-        { "$ref": "http://schema.org/Organization" },
-        { "$ref": "http://schema.org/Person" }
-      ]
+      "anyOf": [{ "$ref": "schema:Organization" }, { "$ref": "schema:Person" }]
     },
     "webCheckinTime": {
       "description": "The time when a passenger can check into the flight online.",

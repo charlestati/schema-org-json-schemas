@@ -1,17 +1,17 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/HealthClub",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:HealthClub",
   "title": "HealthClub",
   "description": "A health club.",
   "type": "object",
   "allOf": [
     {
       "description": "Health and beauty.",
-      "$ref": "http://schema.org/HealthAndBeautyBusiness"
+      "$ref": "schema:HealthAndBeautyBusiness"
     },
     {
       "description": "A sports location, such as a playing field.",
-      "$ref": "http://schema.org/SportsActivityLocation"
+      "$ref": "schema:SportsActivityLocation"
     }
   ]
 }

@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/RadioChannel",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:RadioChannel",
   "title": "RadioChannel",
   "description": "A unique instance of a radio BroadcastService on a CableOrSatelliteService lineup.",
   "type": "object",
   "allOf": [
     {
       "description": "A unique instance of a BroadcastService on a CableOrSatelliteService lineup.",
-      "$ref": "http://schema.org/BroadcastChannel"
+      "$ref": "schema:BroadcastChannel"
     }
   ]
 }

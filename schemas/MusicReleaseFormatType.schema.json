@@ -1,6 +1,6 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/MusicReleaseFormatType",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MusicReleaseFormatType",
   "title": "MusicReleaseFormatType",
   "description": "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
   "type": "string",

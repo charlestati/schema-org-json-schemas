@@ -1,19 +1,19 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ReservationPackage",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ReservationPackage",
   "title": "ReservationPackage",
   "description": "A group of multiple reservations with common values for all sub-reservations.",
   "type": "object",
   "allOf": [
     {
-      "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use Offer.",
-      "$ref": "http://schema.org/Reservation"
+      "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \\n\\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].",
+      "$ref": "schema:Reservation"
     }
   ],
   "properties": {
     "subReservation": {
       "description": "The individual reservations included in the package. Typically a repeated property.",
-      "$ref": "http://schema.org/Reservation"
+      "$ref": "schema:Reservation"
     }
   }
 }

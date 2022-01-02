@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/GatedResidenceCommunity",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:GatedResidenceCommunity",
   "title": "GatedResidenceCommunity",
   "description": "Residence type: Gated community.",
   "type": "object",
   "allOf": [
     {
       "description": "The place where a person lives.",
-      "$ref": "http://schema.org/Residence"
+      "$ref": "schema:Residence"
     }
   ]
 }

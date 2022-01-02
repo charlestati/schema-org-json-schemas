@@ -1,22 +1,27 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/BroadcastFrequencySpecification",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BroadcastFrequencySpecification",
   "title": "BroadcastFrequencySpecification",
   "description": "The frequency in MHz and the modulation used for a particular BroadcastService.",
   "type": "object",
   "allOf": [
     {
       "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "$ref": "http://schema.org/Intangible"
+      "$ref": "schema:Intangible"
     }
   ],
   "properties": {
     "broadcastFrequencyValue": {
       "description": "The frequency in MHz for a particular broadcast.",
-      "anyOf": [
-        { "type": "number" },
-        { "$ref": "http://schema.org/QuantitativeValue" }
-      ]
+      "anyOf": [{ "type": "number" }, { "$ref": "schema:QuantitativeValue" }]
+    },
+    "broadcastSignalModulation": {
+      "description": "The modulation (e.g. FM, AM, etc) used by a particular broadcast service.",
+      "anyOf": [{ "type": "string" }, { "$ref": "schema:QualitativeValue" }]
+    },
+    "broadcastSubChannel": {
+      "description": "The subchannel used for the broadcast.",
+      "type": "string"
     }
   }
 }

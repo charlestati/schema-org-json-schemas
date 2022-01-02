@@ -1,27 +1,27 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/BusinessAudience",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:BusinessAudience",
   "title": "BusinessAudience",
   "description": "A set of characteristics belonging to businesses, e.g. who compose an item's target audience.",
   "type": "object",
   "allOf": [
     {
       "description": "Intended audience for an item, i.e. the group for whom the item was created.",
-      "$ref": "http://schema.org/Audience"
+      "$ref": "schema:Audience"
     }
   ],
   "properties": {
     "numberOfEmployees": {
       "description": "The number of employees in an organization e.g. business.",
-      "$ref": "http://schema.org/QuantitativeValue"
+      "$ref": "schema:QuantitativeValue"
     },
     "yearlyRevenue": {
       "description": "The size of the business in annual revenue.",
-      "$ref": "http://schema.org/QuantitativeValue"
+      "$ref": "schema:QuantitativeValue"
     },
     "yearsInOperation": {
       "description": "The age of the business.",
-      "$ref": "http://schema.org/QuantitativeValue"
+      "$ref": "schema:QuantitativeValue"
     }
   }
 }

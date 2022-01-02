@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Observation",
+  "title": "Observation",
+  "description": "Instances of the class [[Observation]] are used to specify observations about an entity (which may or may not be an instance of a [[StatisticalPopulation]]), at a particular time. The principal properties of an [[Observation]] are [[observedNode]], [[measuredProperty]], [[measuredValue]] (or [[median]], etc.) and [[observationDate]] ([[measuredProperty]] properties can, but need not always, be W3C RDF Data Cube \"measure properties\", as in the [lifeExpectancy example](https://www.w3.org/TR/vocab-data-cube/#dsd-example)).\nSee also [[StatisticalPopulation]], and the [data and datasets](/docs/data-and-datasets.html) overview for more details.\n  ",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "schema:Intangible"
+    }
+  ],
+  "properties": {
+    "marginOfError": {
+      "description": "A marginOfError for an [[Observation]].",
+      "oneOf": [
+        { "$ref": "schema:QuantitativeValue" },
+        { "type": "array", "items": { "$ref": "schema:QuantitativeValue" } }
+      ]
+    },
+    "measuredProperty": {
+      "description": "The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).",
+      "$ref": "schema:Property"
+    },
+    "measuredValue": {
+      "description": "The measuredValue of an [[Observation]].",
+      "$ref": "schema:DataType"
+    },
+    "observationDate": {
+      "description": "The observationDate of an [[Observation]].",
+      "type": "string",
+      "format": "date-time"
+    },
+    "observedNode": {
+      "description": "The observedNode of an [[Observation]], often a [[StatisticalPopulation]].",
+      "$ref": "schema:StatisticalPopulation"
+    }
+  }
+}

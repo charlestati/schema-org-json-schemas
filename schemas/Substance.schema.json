@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:Substance",
+  "title": "Substance",
+  "description": "Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "The most generic type of entity related to health and the practice of medicine.",
+      "$ref": "schema:MedicalEntity"
+    }
+  ],
+  "properties": {
+    "activeIngredient": {
+      "description": "An active ingredient, typically chemical compounds and/or biologic substances.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "maximumIntake": {
+      "description": "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
+      "$ref": "schema:MaximumDoseSchedule"
+    }
+  }
+}

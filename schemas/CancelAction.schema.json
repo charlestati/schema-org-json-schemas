@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/CancelAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:CancelAction",
   "title": "CancelAction",
-  "description": "The act of asserting that a future event/action is no longer going to happen.\n\nRelated actions:\n\n\nConfirmAction: The antonym of CancelAction.\n\n",
+  "description": "The act of asserting that a future event/action is no longer going to happen.\\n\\nRelated actions:\\n\\n* [[ConfirmAction]]: The antonym of CancelAction.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of planning the execution of an event/task/action/reservation/plan to a future date.",
-      "$ref": "http://schema.org/PlanAction"
+      "$ref": "schema:PlanAction"
     }
   ]
 }

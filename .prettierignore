@@ -1,4 +1,4 @@
 coverage/
-test/schema.json
+test/schemaorg-current-https.json
 CHANGELOG.md
 package-lock.json

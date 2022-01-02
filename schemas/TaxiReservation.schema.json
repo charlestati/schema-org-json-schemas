@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/TaxiReservation",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:TaxiReservation",
   "title": "TaxiReservation",
-  "description": "A reservation for a taxi.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use Offer.",
+  "description": "A reservation for a taxi.\\n\\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].",
   "type": "object",
   "allOf": [
     {
-      "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use Offer.",
-      "$ref": "http://schema.org/Reservation"
+      "description": "Describes a reservation for travel, dining or an event. Some reservations require tickets. \\n\\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].",
+      "$ref": "schema:Reservation"
     }
   ],
   "properties": {
@@ -17,7 +17,7 @@
         {
           "anyOf": [
             { "type": "integer" },
-            { "$ref": "http://schema.org/QuantitativeValue" }
+            { "$ref": "schema:QuantitativeValue" }
           ]
         },
         {
@@ -25,7 +25,7 @@
           "items": {
             "anyOf": [
               { "type": "integer" },
-              { "$ref": "http://schema.org/QuantitativeValue" }
+              { "$ref": "schema:QuantitativeValue" }
             ]
           }
         }
@@ -34,8 +34,8 @@
     "pickupLocation": {
       "description": "Where a taxi will pick up a passenger or a rental car can be picked up.",
       "oneOf": [
-        { "$ref": "http://schema.org/Place" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Place" } }
+        { "$ref": "schema:Place" },
+        { "type": "array", "items": { "$ref": "schema:Place" } }
       ]
     },
     "pickupTime": {

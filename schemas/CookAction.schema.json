@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/CookAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:CookAction",
   "title": "CookAction",
   "description": "The act of producing/preparing food.",
   "type": "object",
   "allOf": [
     {
       "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",
-      "$ref": "http://schema.org/CreateAction"
+      "$ref": "schema:CreateAction"
     }
   ],
   "properties": {
@@ -16,16 +16,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/FoodEstablishment" },
-            { "$ref": "http://schema.org/Place" }
+            { "$ref": "schema:FoodEstablishment" },
+            { "$ref": "schema:Place" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/FoodEstablishment" },
-              { "$ref": "http://schema.org/Place" }
+              { "$ref": "schema:FoodEstablishment" },
+              { "$ref": "schema:Place" }
             ]
           }
         }
@@ -34,15 +34,15 @@
     "foodEvent": {
       "description": "A sub property of location. The specific food event where the action occurred.",
       "oneOf": [
-        { "$ref": "http://schema.org/FoodEvent" },
-        { "type": "array", "items": { "$ref": "http://schema.org/FoodEvent" } }
+        { "$ref": "schema:FoodEvent" },
+        { "type": "array", "items": { "$ref": "schema:FoodEvent" } }
       ]
     },
     "recipe": {
       "description": "A sub property of instrument. The recipe/instructions used to perform the action.",
       "oneOf": [
-        { "$ref": "http://schema.org/Recipe" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Recipe" } }
+        { "$ref": "schema:Recipe" },
+        { "type": "array", "items": { "$ref": "schema:Recipe" } }
       ]
     }
   }

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:InvestmentFund",
+  "title": "InvestmentFund",
+  "description": "A company or fund that gathers capital from a number of investors to create a pool of money that is then re-invested into stocks, bonds and other assets.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.",
+      "$ref": "schema:InvestmentOrDeposit"
+    }
+  ]
+}

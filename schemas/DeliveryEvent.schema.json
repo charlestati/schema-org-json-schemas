@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/DeliveryEvent",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:DeliveryEvent",
   "title": "DeliveryEvent",
   "description": "An event involving the delivery of an item.",
   "type": "object",
   "allOf": [
     {
-      "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",
-      "$ref": "http://schema.org/Event"
+      "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.",
+      "$ref": "schema:Event"
     }
   ],
   "properties": {
@@ -27,7 +27,7 @@
     },
     "hasDeliveryMethod": {
       "description": "Method used for delivery or shipping.",
-      "$ref": "http://schema.org/DeliveryMethod"
+      "$ref": "schema:DeliveryMethod"
     }
   }
 }

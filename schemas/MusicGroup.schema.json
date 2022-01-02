@@ -1,28 +1,28 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/MusicGroup",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MusicGroup",
   "title": "MusicGroup",
   "description": "A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.",
   "type": "object",
   "allOf": [
     {
       "description": "A performance group, such as a band, an orchestra, or a circus.",
-      "$ref": "http://schema.org/PerformingGroup"
+      "$ref": "schema:PerformingGroup"
     }
   ],
   "properties": {
     "album": {
       "description": "A music album.",
       "oneOf": [
-        { "$ref": "http://schema.org/MusicAlbum" },
-        { "type": "array", "items": { "$ref": "http://schema.org/MusicAlbum" } }
+        { "$ref": "schema:MusicAlbum" },
+        { "type": "array", "items": { "$ref": "schema:MusicAlbum" } }
       ]
     },
     "albums": {
       "description": "A collection of music albums.",
       "oneOf": [
-        { "$ref": "http://schema.org/MusicAlbum" },
-        { "type": "array", "items": { "$ref": "http://schema.org/MusicAlbum" } }
+        { "$ref": "schema:MusicAlbum" },
+        { "type": "array", "items": { "$ref": "schema:MusicAlbum" } }
       ]
     },
     "genre": {
@@ -32,8 +32,8 @@
     "musicGroupMember": {
       "description": "A member of a music group—for example, John, Paul, George, or Ringo.",
       "oneOf": [
-        { "$ref": "http://schema.org/Person" },
-        { "type": "array", "items": { "$ref": "http://schema.org/Person" } }
+        { "$ref": "schema:Person" },
+        { "type": "array", "items": { "$ref": "schema:Person" } }
       ]
     },
     "track": {
@@ -41,16 +41,16 @@
       "oneOf": [
         {
           "anyOf": [
-            { "$ref": "http://schema.org/ItemList" },
-            { "$ref": "http://schema.org/MusicRecording" }
+            { "$ref": "schema:ItemList" },
+            { "$ref": "schema:MusicRecording" }
           ]
         },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "http://schema.org/ItemList" },
-              { "$ref": "http://schema.org/MusicRecording" }
+              { "$ref": "schema:ItemList" },
+              { "$ref": "schema:MusicRecording" }
             ]
           }
         }
@@ -59,11 +59,8 @@
     "tracks": {
       "description": "A music recording (track)—usually a single song.",
       "oneOf": [
-        { "$ref": "http://schema.org/MusicRecording" },
-        {
-          "type": "array",
-          "items": { "$ref": "http://schema.org/MusicRecording" }
-        }
+        { "$ref": "schema:MusicRecording" },
+        { "type": "array", "items": { "$ref": "schema:MusicRecording" } }
       ]
     }
   }

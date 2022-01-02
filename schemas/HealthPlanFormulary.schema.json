@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:HealthPlanFormulary",
+  "title": "HealthPlanFormulary",
+  "description": "For a given health insurance plan, the specification for costs and coverage of prescription drugs. ",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "schema:Intangible"
+    }
+  ],
+  "properties": {
+    "healthPlanCostSharing": {
+      "description": "Whether The costs to the patient for services under this network or formulary.",
+      "type": "boolean"
+    },
+    "healthPlanDrugTier": {
+      "description": "The tier(s) of drugs offered by this formulary or insurance plan.",
+      "type": "string"
+    },
+    "offersPrescriptionByMail": {
+      "description": "Whether prescriptions can be delivered by mail.",
+      "type": "boolean"
+    }
+  }
+}

@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/ScholarlyArticle",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:ScholarlyArticle",
   "title": "ScholarlyArticle",
   "description": "A scholarly article.",
   "type": "object",
   "allOf": [
     {
-      "description": "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\n\nSee also blog post.",
-      "$ref": "http://schema.org/Article"
+      "description": "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\\n\\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html).",
+      "$ref": "schema:Article"
     }
   ]
 }

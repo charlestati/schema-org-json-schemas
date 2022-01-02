@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:LegalForceStatus",
+  "title": "LegalForceStatus",
+  "description": "A list of possible statuses for the legal force of a legislation.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Lists or enumerations dealing with status types.",
+      "$ref": "schema:StatusEnumeration"
+    }
+  ]
+}

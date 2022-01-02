@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:HealthPlanNetwork",
+  "title": "HealthPlanNetwork",
+  "description": "A US-style health insurance plan network. ",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "$ref": "schema:Intangible"
+    }
+  ],
+  "properties": {
+    "healthPlanCostSharing": {
+      "description": "Whether The costs to the patient for services under this network or formulary.",
+      "type": "boolean"
+    },
+    "healthPlanNetworkId": {
+      "description": "Name or unique ID of network. (Networks are often reused across different insurance plans).",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "healthPlanNetworkTier": {
+      "description": "The tier(s) for this network.",
+      "type": "string"
+    }
+  }
+}

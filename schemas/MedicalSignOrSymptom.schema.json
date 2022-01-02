@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalSignOrSymptom",
+  "title": "MedicalSignOrSymptom",
+  "description": "Any feature associated or not with a medical condition. In medicine a symptom is generally subjective while a sign is objective.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.",
+      "$ref": "schema:MedicalCondition"
+    }
+  ],
+  "properties": {
+    "possibleTreatment": {
+      "description": "A possible treatment to address this condition, sign or symptom.",
+      "oneOf": [
+        { "$ref": "schema:MedicalTherapy" },
+        { "type": "array", "items": { "$ref": "schema:MedicalTherapy" } }
+      ]
+    }
+  }
+}

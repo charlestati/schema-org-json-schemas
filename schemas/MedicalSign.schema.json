@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:MedicalSign",
+  "title": "MedicalSign",
+  "description": "Any physical manifestation of a person's medical condition discoverable by objective diagnostic tests or physical examination.",
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Any feature associated or not with a medical condition. In medicine a symptom is generally subjective while a sign is objective.",
+      "$ref": "schema:MedicalSignOrSymptom"
+    }
+  ],
+  "properties": {
+    "identifyingExam": {
+      "description": "A physical examination that can identify this sign.",
+      "oneOf": [
+        { "$ref": "schema:PhysicalExam" },
+        { "type": "array", "items": { "$ref": "schema:PhysicalExam" } }
+      ]
+    },
+    "identifyingTest": {
+      "description": "A diagnostic test that can identify this sign.",
+      "oneOf": [
+        { "$ref": "schema:MedicalTest" },
+        { "type": "array", "items": { "$ref": "schema:MedicalTest" } }
+      ]
+    }
+  }
+}

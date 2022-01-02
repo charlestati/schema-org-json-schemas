@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://schema.org/SuspendAction",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:SuspendAction",
   "title": "SuspendAction",
   "description": "The act of momentarily pausing a device or application (e.g. pause music playback or pause a timer).",
   "type": "object",
   "allOf": [
     {
       "description": "An agent controls a device or application.",
-      "$ref": "http://schema.org/ControlAction"
+      "$ref": "schema:ControlAction"
     }
   ]
 }
