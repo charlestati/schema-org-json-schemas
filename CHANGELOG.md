@@ -1,3 +1,15 @@
+# [2.1.0](https://github.com/charlestati/schema-org-json-schema/compare/v2.0.0...v2.1.0) (2022-01-03)
+
+
+### Bug Fixes
+
+* use ci env variable instead of disabling husky ([26781c9](https://github.com/charlestati/schema-org-json-schema/commit/26781c9ec216c511d663979c9cba2db392b28324))
+
+
+### Features
+
+* add github release in semantic-release config file ([4acd318](https://github.com/charlestati/schema-org-json-schema/commit/4acd318806b1ac84997c8878c26b8d217c3cf68d))
+
 # [2.0.0](https://github.com/charlestati/schema-org-json-schema/compare/v1.4.2...v2.0.0) (2022-01-03)
 
 
