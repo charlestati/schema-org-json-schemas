@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/charlestati/schema-org-json-schema/compare/v2.1.1...v2.1.2) (2022-01-03)
+
+
+### Bug Fixes
+
+* add .npmrc file ([b414d92](https://github.com/charlestati/schema-org-json-schema/commit/b414d9282fd20bbf4325cc7a4a4511d3ce34801f))
+
 ## [2.1.1](https://github.com/charlestati/schema-org-json-schema/compare/v2.1.0...v2.1.1) (2022-01-03)
 
 
