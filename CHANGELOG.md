@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/charlestati/schema-org-json-schema/compare/v2.1.3...v2.1.4) (2022-01-03)
+
+
+### Bug Fixes
+
+* remove github release as it contains hundreds of files and slows down ci ([b0bf42f](https://github.com/charlestati/schema-org-json-schema/commit/b0bf42faab227904e4cea091132440f7f83f2fe6))
+
 ## [2.1.3](https://github.com/charlestati/schema-org-json-schema/compare/v2.1.2...v2.1.3) (2022-01-03)
 
 
