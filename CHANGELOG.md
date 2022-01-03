@@ -1,3 +1,19 @@
+# [2.0.0](https://github.com/charlestati/schema-org-json-schema/compare/v1.4.2...v2.0.0) (2022-01-03)
+
+
+### Bug Fixes
+
+* circleci config ([32ef0a1](https://github.com/charlestati/schema-org-json-schema/commit/32ef0a1f3bf5040cb61841765bc7b4b8ec2789b7))
+* circleci node version ([2424cfe](https://github.com/charlestati/schema-org-json-schema/commit/2424cfeceedf48bfb2f3bb67f9f75493b35efb39))
+* circleci node version ([47bde29](https://github.com/charlestati/schema-org-json-schema/commit/47bde29bae9e987e51f41fac6bd7f83ecb602976))
+* schema url 404 ([e8b1f2c](https://github.com/charlestati/schema-org-json-schema/commit/e8b1f2cc6ffa01721896e87736f87654885d1475)), closes [#18](https://github.com/charlestati/schema-org-json-schema/issues/18)
+* skip hooks in ci ([aa1eb6f](https://github.com/charlestati/schema-org-json-schema/commit/aa1eb6f0b64bab8f7b2f3703fb47941387bf5fe4))
+
+
+### BREAKING CHANGES
+
+* Use most recent JSON schema draft version (2020-12)
+
 ## [1.4.2](https://github.com/charlestati/schema-org-json-schema/compare/v1.4.1...v1.4.2) (2020-05-28)
 
 
