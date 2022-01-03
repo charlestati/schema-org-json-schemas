@@ -8,7 +8,9 @@ orbs:
 
 jobs:
   release:
-    executor: node/current
+    executor:
+      name: node/default
+      tag: 'lts'
     steps:
       - checkout
       - node/install-packages
