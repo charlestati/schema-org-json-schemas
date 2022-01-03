@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/charlestati/schema-org-json-schema/compare/v2.1.0...v2.1.1) (2022-01-03)
+
+
+### Bug Fixes
+
+* avoid silent release fail ([2820a42](https://github.com/charlestati/schema-org-json-schema/commit/2820a425f4b17b5be7bff284a32706106d627927))
+
 # [2.1.0](https://github.com/charlestati/schema-org-json-schema/compare/v2.0.0...v2.1.0) (2022-01-03)
 
 
