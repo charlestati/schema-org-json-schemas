@@ -1,6 +1,6 @@
 # Schema.org to JSON Schema
 
-[![Build Status](https://travis-ci.org/charlestati/schema-org-json-schemas.svg?branch=master)](https://travis-ci.org/charlestati/schema-org-json-schemas)
+[![CircleCI](https://circleci.com/gh/charlestati/schema-org-json-schemas.svg?style=svg)](https://circleci.com/gh/charlestati/schema-org-json-schemas)
 
 **Generate JSON Schemas from Schema.org classes**
 

@@ -8,7 +8,7 @@
     [
       "@semantic-release/github",
       {
-        "assets": [{ "path": "schemas/*", "label": "Schemas" }]
+        "assets": [{ "path": "schemas/", "label": "Schemas" }]
       }
     ]
   ]
