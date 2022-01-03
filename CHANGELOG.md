@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/charlestati/schema-org-json-schema/compare/v2.1.2...v2.1.3) (2022-01-03)
+
+
+### Bug Fixes
+
+* use circleci status badge ([aa98336](https://github.com/charlestati/schema-org-json-schema/commit/aa983367329fdad6b24ffc4552168800f9e2f932))
+
 ## [2.1.2](https://github.com/charlestati/schema-org-json-schema/compare/v2.1.1...v2.1.2) (2022-01-03)
 
 
